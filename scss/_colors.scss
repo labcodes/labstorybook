@@ -1,0 +1,23 @@
+$teal-10: #E8F7F7;
+$teal-20: #93ECEC;
+$teal-30: #54DEDC;
+$teal-40: #009EA1;
+$teal-80: #004748;
+$teal-60: #007B7D;
+$teal-70: #005F61;
+
+$coral-10: #FFF1F0;
+$coral-20: #FCD4D0;
+$coral-30: #FFACA4;
+$coral-40: #EC6056;
+$coral-80: #BC442F;
+$coral-60: #A2331C;
+$coral-70: #751F0E;
+
+$color-palette: (
+  primary: $teal-40,
+  secondary: $coral-40,
+  danger: #dc3545,
+  info: #17a2b8,
+  success: #28a745,
+)
