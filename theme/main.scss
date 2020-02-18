@@ -1,15 +1,9 @@
-/* 1rem = 10px */
-html {
-  font-size: 62.5%;
-}
-body {
-  font-size: 1.6rem;
-}
-
 #root {
   > div {
     > .css-sqdry3 {
       top: 0 !important;
+      right: 0 !important;
+      width: auto !important;
       height: 100vh !important;
     }
   }
