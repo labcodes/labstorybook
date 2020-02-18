@@ -1,6 +1,6 @@
 import { addons } from '@storybook/addons';
-import yourTheme from './yourTheme';
+import labcodesDesignSystem from './labcodesDesignSystem';
 
 addons.setConfig({
-  theme: yourTheme,
+  theme: labcodesDesignSystem,
 });
