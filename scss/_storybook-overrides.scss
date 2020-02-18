@@ -1,20 +1,18 @@
-@import url("https://use.typekit.net/boj8rad.css");
-@import url('https://fonts.googleapis.com/css?family=Mukta+Vaani:300,400,500,700&display=swap');
 
 .sb-show-main {
   margin: 0 !important;
 }
 
 h1, h2, h3, h4, h5 {
-  color: #5A3489 !important;
-  font-family: 'ff-meta-serif-web-pro', serif !important;
+  color: $purple !important;
+  font-family: $font-primary !important;
   font-weight: 900;
   margin: 1rem 0 1.5rem !important;
 }
 
 p {
-  color: rgba(0, 0, 0, 0.75) !important;
-  font-family: 'freight-sans-pro', sans-serif !important;
+  color: $black-75 !important;
+  font-family: $font-secondary !important;
   font-weight: 400;
   font-size: 1rem !important;
   line-height: 1.5 !important;
