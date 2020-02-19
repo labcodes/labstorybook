@@ -9,7 +9,7 @@ export default create({
   // UI
   appBg: '#E8F7F7;',
   appBorderColor: 'white',
-  appBorderRadius: 8,
+  appBorderRadius: 0,
 
   // Typography
   fontBase: '"Open Sans", sans-serif',

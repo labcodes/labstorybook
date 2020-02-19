@@ -1,25 +1,24 @@
 h1, h2, h3, h4, h5 {
   color: $purple !important;
   font-family: $font-primary !important;
-  font-weight: 900;
   margin: 1rem 0 1.5rem !important;
 }
 
 p {
   color: $black-75 !important;
   font-family: $font-secondary !important;
-  font-weight: 400;
-  font-size: 1rem !important;
-  line-height: 1.5 !important;
+  // font-weight: 400 !important;
+  font-size: 1.8rem !important;
+  line-height: 2.4rem !important;
   margin: 0 !important;
 }
 
-li {
+li, ol {
   color: $black-75 !important;
   font-family: $font-secondary !important;
   font-weight: 400;
-  font-size: 1rem !important;
-  line-height: 1.5 !important;
+  font-size: 1.8rem !important;
+  line-height: 2.4rem !important;
 }
 
 .sb-show-main {
