@@ -12,18 +12,124 @@
   }
 }
 //sidebar//
+
+.sidebar-header{
+  padding: 28px !important;
+}
+
 .sidebar-subheading {
   color: #007B7D !important;
   font-family: "freight-sans-pro" !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+  font-size: 14px !important;
+
 }
 
 .sidebar-svg-icon {
   display: none !important;
 }
 
-.sidebar-item{
-  color: rgba(0, 0, 0, 0.8) !important;
+.sidebar-item {
+  color: rgba(0, 0, 0, 0.85) !important;
   font-family: "freight-sans-pro" !important;
   font-size: 16px !important;
+  font-weight: 500;
 }
+
+.css-1uufoqv {
+  //sidebar-selected//
+  background-color: #009EA1 !important;
+  color: white !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+}
+
+.css-1k6p28m {
+//shortcuts-button//
+color: #007B7D !important;
+box-shadow: #007B7D 0 0 0 1px inset !important;
+
+}
+
+.css-qab6xu {
+  //shortcut-text//
+  background: #009EA1 !important;
+  font-family: "freight-sans-pro" !important;
+  font-weight: 500;
+  font-size: 14px !important;
+  color: rgba(0, 0, 0, .8) !important;
+}
+
+.css-8w7sok {
+  //shortcut-menu-icon//
+  color: white !important;
+}
+
+.css-w5ik8{
+  //shortcuts//
+  color: white !important;
+}
+
+
+
+
+input {
+   border: 2px solid #B1C2CE !important;
+   border-radius: 6px !important;
+   height: 40px;
+   padding: 8px 20px 8px 32px !important;
+   transition: border .3s ease, box-shadow .3s ease;
+   font-family: "freight-sans-pro" !important;
+   font-weight: 500;
+   font-size: 14px !important;
+   color: rgba(0, 0, 0, .8);
+
+   &:focus{
+     border: 2px solid #007B7D !important;
+     outline: none;
+     box-shadow: 0 0 0 2px #93ECEC !important;
+   }
+
+   &:hover{
+     box-shadow: 0px 0px 0px 6px #E8EFF3;
+   }
+
+}
+
+  input:empty + svg {
+  //search icon//
+  color: #899CA9 !important;
+  opacity:inherit !important;
+  position: absolute !important;
+  left: 12px !important;
+  height: 16px !important;
+  width: 16px !important;
+
+}
+
+input:focus + svg {
+//search icon//
+color: #007B7D !important;
+opacity:inherit !important;
+position: absolute !important;
+left: 12px !important;
+height: 16px !important;
+width: 16px !important;
+
+}
+
+  .css-6lylrw {
+    //close icon//
+    right: 12px !important;
+    background: none !important;
+
+  }
+
+  .css-vfbafm{
+    //filter result text//
+    color: #007B7D !important;
+    font-family: "freight-sans-pro" !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+  }
