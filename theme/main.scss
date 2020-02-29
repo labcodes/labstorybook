@@ -12,7 +12,7 @@
   }
 }
 
-//sidebar//
+//sidebar
 .sidebar-header{
   padding: 28px !important;
 }
@@ -34,39 +34,16 @@
   font-family: "freight-sans-pro" !important;
   font-size: 16px !important;
   font-weight: 500;
-}
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
 
-//sidebar-selected//
-.css-1uufoqv {
-  background-color: #009EA1 !important;
-  color: white !important;
-  font-size: 16px !important;
-  font-weight: 500 !important;
-}
-
-//shortcuts-button//
-.css-1k6p28m {
-  color: #007B7D !important;
-  box-shadow: #007B7D 0 0 0 1px inset !important;
-}
-
-//shortcut-text//
-.css-qab6xu {
-  background: #009EA1 !important;
-  font-family: "freight-sans-pro" !important;
-  font-weight: 500;
-  font-size: 14px !important;
-  color: rgba(0, 0, 0, .8) !important;
-}
-
-//shortcut-menu-icon//
-.css-8w7sok {
-  color: white !important;
-}
-
-//shortcuts//
-.css-w5ik8{
-  color: white !important;
+  //sidebar-selected//
+  &.selected {
+    background-color: #009EA1 !important;
+    color: white !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+  }
 }
 
 input {
@@ -91,7 +68,7 @@ input {
   }
 }
 
-//search icon//
+//search icon
 input:empty + svg {
   color: #899CA9 !important;
   opacity:inherit !important;
@@ -101,7 +78,7 @@ input:empty + svg {
   width: 16px !important;
 }
 
-//search icon//
+//search icon
 input:focus + svg {
   color: #007B7D !important;
   opacity:inherit !important;
@@ -111,16 +88,69 @@ input:focus + svg {
   width: 16px !important;
 }
 
-//close icon//
-.css-6lylrw {
-  right: 12px !important;
-  background: none !important;
+//close icon
+.simplebar-content {
+  button[type="reset"] {
+    right: 12px !important;
+    background: none !important;
+  }
+  
+  //filter result text//
+  form ~ div {
+    color: #007B7D !important;
+    font-family: "freight-sans-pro" !important;
+    font-size: 16px !important;
+
+    .css-g90fw7 {
+      font-weight: 600 !important;
+    }
+  }
 }
 
-//filter result text//
-.css-vfbafm{
+/*
+Sidebar "more" actions
+The classes below didn't have a defined name.
+*/
+
+//button
+.css-1k6p28m {
   color: #007B7D !important;
+  box-shadow: #007B7D 0 0 0 1px inset !important;
+}
+
+//dropdown chevron
+.css-10xy9do {
+  border-bottom-color: #009EA1 !important;
+}
+
+//dropdown container
+.css-8ra542 {
+  max-height: none !important;
+  border-radius: 4px !important;
+  padding: 8px 0;
+  background: #009EA1;
+}
+
+//dropdown item
+.css-qab6xu {
+  background: #009EA1 !important;
   font-family: "freight-sans-pro" !important;
   font-size: 14px !important;
-  font-weight: 600 !important;
+  color: rgba(0, 0, 0, .8) !important;
+}
+
+//dropdown item text
+.css-w5ik8{
+  font-weight: 500 !important;
+  color: white !important;
+}
+
+//dropdown item icon
+.css-8w7sok {
+  color: white !important;
+}
+
+//dropdown item shortcut
+.css-1g2a4s1 {
+  color: white !important;
 }
