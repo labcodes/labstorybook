@@ -6,14 +6,15 @@
 }
 
 h1, h2, h3, h4, h5 {
-color: #5A3489 !important;
-font-family: 'ff-meta-serif-web-pro', serif !important;
-font-weight: 900
+  color: $coral !important;
+  font-family: $font-primary !important;
+  font-weight: 900
 }
 
+
 p, li {
-  color: rgba(0, 0, 0, 0.75) !important;
-  font-family: 'freight-sans-pro', sans-serif !important;
+  color: $black-75 !important;
+  font-family: $font-secondary !important;
   font-size: 18px !important;
   font-weight: 500 !important;
 }
