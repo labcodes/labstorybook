@@ -1,0 +1,104 @@
+@import url("https://use.typekit.net/boj8rad.css");
+@import url('https://fonts.googleapis.com/css?family=Mukta+Vaani:300,400,500,700&display=swap');
+
+// COLORS
+// Logo - Teal
+$teal-10: #E8F7F7;
+$teal-20: #93ECEC;
+$teal-30: #54DEDC;
+$teal-40: #009EA1;
+$teal-60: #007B7D;
+$teal-70: #005F61;
+$teal-80: #004748;
+$teal: $teal-40;
+
+// Secondary - Purple
+$purple-10: #F7F0FF;
+$purple-20: #FCE9CF;
+$purple-30: #C7A3F5;
+$purple-40: #935FD3;
+$purple-60: #5A3489;
+$purple-70: #3D235C;
+$purple-80: #201230;
+$purple: $purple-60;
+
+// Additional - Mustard
+$mustard-10: #FDF8ED;
+$mustard-20: #E3D1FA;
+$mustard-30: #FFC978;
+$mustard-40: #E9A449;
+$mustard-60: #935E25;
+$mustard-70: #663F19;
+$mustard-80: #38210A;
+$mustard: $mustard-40;
+
+// Logo - Coral
+$coral-10: #FFF1F0;
+$coral-20: #FCD4D0;
+$coral-30: #FFACA4;
+$coral-40: #EC6056;
+$coral-60: #BC442F;
+$coral-70: #A2331C;
+$coral-80: #751F0E;
+$coral: $coral-40;
+
+// Text
+$black-80: rgba(0, 0, 0, .8);
+$black-75: rgba(0, 0, 0, .75);
+$black-50: rgba(0, 0, 0, .5);
+
+// Neutrals
+$white: #FFFFFF;
+$mineral-10: #E8EFF3;
+$mineral-20: #CDDBE4;
+$mineral-30: #B1C2CE;
+$mineral-40: #899CA9;
+$mineral-60: #576975;
+$mineral-70: #414F58;
+$mineral-80: #2E3942;
+$mineral-90: #1B2327;
+$black: #000000;
+
+// Message
+$green-20: #AEEABF;
+$green-60: #168938;
+$red-20: #F9C3C3;
+$red-60: #C22929;
+$yellow-20: #FFEA99;
+$yellow-60: #F1BC04;
+
+// Support
+$cyan-20: #A4D0F4;
+$cyan-60: #0077CC;
+$pink-20: #0077CC;
+$pink-60: #CC005C;
+$orange-20: #FFC499;
+$orange60: #D16900;
+
+$color-palette: (
+  primary: $teal-40,
+  secondary: $coral-40,
+  danger: #dc3545,
+  info: #17a2b8,
+  success: #28a745,
+);
+
+// FONT FAMILIES
+$font-primary: 'ff-meta-serif-web-pro', serif;
+$font-secondary: 'freight-sans-pro', sans-serif;
+$font-monospace: Monaco, Consolas, 'Lucida Console', monospace;
+
+// SPACING
+$spacing-none: 0;
+$spacing-extra-tight: 4px;
+$spacing-tight: 8px;
+$spacing-base-tight: 12px;
+$spacing-base: 16px;
+$spacing-loose: 20px;
+$spacing-extra-loose: 32px;
+
+// TIME
+$duration-none: 0;
+$duration-fast: 100ms;
+$duration-base: 200ms;
+$duration-slow: 300ms;

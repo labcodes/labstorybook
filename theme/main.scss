@@ -1,0 +1,156 @@
+@import url("https://use.typekit.net/boj8rad.css");
+@import url('https://fonts.googleapis.com/css?family=Mukta+Vaani:300,400,500,700&display=swap');
+
+#root {
+  > div {
+    > .css-sqdry3 {
+      top: 0 !important;
+      right: 0 !important;
+      width: auto !important;
+      height: 100vh !important;
+    }
+  }
+}
+
+//sidebar
+.sidebar-header{
+  padding: 28px !important;
+}
+
+.sidebar-subheading {
+  color: #007B7D !important;
+  font-family: "freight-sans-pro" !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+  font-size: 14px !important;
+}
+
+.sidebar-svg-icon {
+  display: none !important;
+}
+
+.sidebar-item {
+  color: rgba(0, 0, 0, 0.85) !important;
+  font-family: "freight-sans-pro" !important;
+  font-size: 16px !important;
+  font-weight: 500;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+
+  //sidebar-selected//
+  &.selected {
+    background-color: #009EA1 !important;
+    color: white !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+  }
+}
+
+input {
+  border: 2px solid #B1C2CE !important;
+  border-radius: 6px !important;
+  height: 40px;
+  padding: 8px 20px 8px 32px !important;
+  transition: border .3s ease, box-shadow .3s ease;
+  font-family: "freight-sans-pro" !important;
+  font-weight: 500;
+  font-size: 14px !important;
+  color: rgba(0, 0, 0, .8);
+
+  &:focus{
+   border: 2px solid #007B7D !important;
+   outline: none;
+   box-shadow: 0 0 0 2px #93ECEC !important;
+  }
+
+  &:hover{
+   box-shadow: 0px 0px 0px 6px #E8EFF3;
+  }
+}
+
+//search icon
+input:empty + svg {
+  color: #899CA9 !important;
+  opacity:inherit !important;
+  position: absolute !important;
+  left: 12px !important;
+  height: 16px !important;
+  width: 16px !important;
+}
+
+//search icon
+input:focus + svg {
+  color: #007B7D !important;
+  opacity:inherit !important;
+  position: absolute !important;
+  left: 12px !important;
+  height: 16px !important;
+  width: 16px !important;
+}
+
+//close icon
+.simplebar-content {
+  button[type="reset"] {
+    right: 12px !important;
+    background: none !important;
+  }
+  
+  //filter result text//
+  form ~ div {
+    color: #007B7D !important;
+    font-family: "freight-sans-pro" !important;
+    font-size: 16px !important;
+
+    .css-g90fw7 {
+      font-weight: 600 !important;
+    }
+  }
+}
+
+/*
+Sidebar "more" actions
+The classes below didn't have a defined name.
+*/
+
+//button
+.css-1k6p28m {
+  color: #007B7D !important;
+  box-shadow: #007B7D 0 0 0 1px inset !important;
+}
+
+//dropdown chevron
+.css-10xy9do {
+  border-bottom-color: #009EA1 !important;
+}
+
+//dropdown container
+.css-8ra542 {
+  max-height: none !important;
+  border-radius: 4px !important;
+  padding: 8px 0;
+  background: #009EA1;
+}
+
+//dropdown item
+.css-qab6xu {
+  background: #009EA1 !important;
+  font-family: "freight-sans-pro" !important;
+  font-size: 14px !important;
+  color: rgba(0, 0, 0, .8) !important;
+}
+
+//dropdown item text
+.css-w5ik8{
+  font-weight: 500 !important;
+  color: white !important;
+}
+
+//dropdown item icon
+.css-8w7sok {
+  color: white !important;
+}
+
+//dropdown item shortcut
+.css-1g2a4s1 {
+  color: white !important;
+}

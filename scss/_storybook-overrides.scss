@@ -1,0 +1,20 @@
+@import url("https://use.typekit.net/boj8rad.css");
+@import url('https://fonts.googleapis.com/css?family=Mukta+Vaani:300,400,500,700&display=swap');
+
+.sb-show-main {
+  margin: 0 !important;
+}
+
+h1, h2, h3, h4, h5 {
+  color: $coral !important;
+  font-family: $font-primary !important;
+  font-weight: 900
+}
+
+
+p, li {
+  color: $black-75 !important;
+  font-family: $font-secondary !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+}
