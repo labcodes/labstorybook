@@ -1,0 +1,76 @@
+import { Fragment } from 'react';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+
+import ExampleInputs from '../src/ExampleInputs';
+
+<Meta title="Components | Text Inputs" component={ExampleInputs} />
+
+
+# General usage
+
+This component is a form field that allows user to type text information.
+We can have 4 types of text inputs:
+
+## Default Input
+
+It’s a standard text input. Can be used for enter a name, phone number, street address, email address, etc.
+
+<Preview>
+  <Story name="Default Input">
+  <div className="input-wrapper">
+    <ExampleInputs id="name" placeholder="  "></ExampleInputs>
+    <label for="name">Label</label>
+  </div>
+  </Story>
+</Preview>
+
+## Required Input
+
+It’s a default input that is required to be filled. It has a helper message to inform if a required input text is missing.
+
+<Preview>
+  <Story name="Required Input">
+  <div className="input-wrapper">
+    <span class="required"></span>
+    <ExampleInputs className="text-input" id="name" placeholder="  "></ExampleInputs>
+    <label for="name">Label</label>
+  </div>
+  </Story>
+</Preview>
+
+## Prefix & Suffix Input
+
+It’s a text field input + fixed prefix.
+
+<Preview>
+  <Story name="Prefix Input">
+  <Fragment>
+  <div className="input-wrapper">
+      <span class="prefix">R$</span>
+      <ExampleInputs className="input-prefix" id="help" placeholder="  "></ExampleInputs>
+      <label for="help">Label</label>
+  </div>
+</Fragment>
+  </Story>
+</Preview>
+
+## Prefix/Suffix Required Input
+
+It’s a Prefix/Suffix input that is required to be filled.
+
+<Preview>
+  <Story name="Suffix Input">
+  <Fragment>
+  <div className="input-wrapper">
+      <span class="suffix">.com</span>
+      <ExampleInputs className="text-input" id="address" placeholder="  "></ExampleInputs>
+      <label for="address">Label</label>
+  </div>
+</Fragment>
+  </Story>
+</Preview>
+
+
+## Variations
+
+This is the place for better explaining the possible variants of your button, for example.

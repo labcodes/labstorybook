@@ -5,12 +5,17 @@
   margin: 0 !important;
 }
 
-h1, h2, h3, h4, h5 {
+h1 {
   color: $coral !important;
   font-family: $font-primary !important;
   font-weight: 900
 }
 
+h2, h3, h4, h5 {
+  color: $mineral-60 !important;
+  font-family: $font-secondary !important;
+  font-weight: 600
+}
 
 p, li {
   color: $black-75 !important;
