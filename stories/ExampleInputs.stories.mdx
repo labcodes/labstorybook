@@ -31,8 +31,8 @@ It’s a default input that is required to be filled. It has a helper message to
 <Preview>
   <Story name="Required Input">
   <div className="input-wrapper">
+    <ExampleInputs type="text" id="name" placeholder="  "></ExampleInputs>
     <span class="required"></span>
-    <ExampleInputs className="text-input" id="name" placeholder="  "></ExampleInputs>
     <label for="name">Label</label>
   </div>
   </Story>
@@ -46,8 +46,8 @@ It’s a text field input + fixed prefix.
   <Story name="Prefix Input">
   <Fragment>
   <div className="input-wrapper">
-      <span class="prefix">R$</span>
       <ExampleInputs className="input-prefix" id="help" placeholder="  "></ExampleInputs>
+      <span class="prefix">R$</span>
       <label for="help">Label</label>
   </div>
 </Fragment>
@@ -62,8 +62,8 @@ It’s a Prefix/Suffix input that is required to be filled.
   <Story name="Suffix Input">
   <Fragment>
   <div className="input-wrapper">
+      <ExampleInputs className="input-suffix" id="address" placeholder="  "></ExampleInputs>
       <span class="suffix">.com</span>
-      <ExampleInputs className="text-input" id="address" placeholder="  "></ExampleInputs>
       <label for="address">Label</label>
   </div>
 </Fragment>

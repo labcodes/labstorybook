@@ -1,14 +1,14 @@
 @use 'sass:map';
 
 $input-types: 'default', 'required', 'prefix', 'prefix-required';
-//
-// .input-field {
-//   position: relative;
-// }
 
-.input-wrapper{
-  outline:none;
+.input-wrapper {
   position: relative;
+  width:fit-content;
+}
+
+//Input base
+input {
   display: inline-block;
   border: 2px solid $mineral-40;
   border-radius: 6px;
@@ -16,89 +16,44 @@ $input-types: 'default', 'required', 'prefix', 'prefix-required';
   font-family: $font-secondary;
   font-weight: 500;
   transition: border .3s ease, box-shadow .3s ease;
-  color: red;
-  position:relative;
+  color: $black-80;
   height: 40px;
+  font-size: 16px;
+  margin: 0px;
+  text-indent: 12px;
+  text-overflow: clip;
+  outline: none;
 
   &::placeholder {
     color: $black-50;
-  }
-
-  &:not(:placeholder-shown)input{
-    border: 2px solid $teal-40;
-    box-shadow: none;
   }
 
   &:hover {
     box-shadow: 0px 0px 0px 6px $mineral-10;
   }
 
-
-  //
-  // &:hover:focus {
-  //   border: 2px solid $teal-70;
-  //   box-shadow: 0px 0px 0px 2px $teal-30, 0px 0px 0px 6px $teal-10;
-  // }
-  //
-
-
-
-
-    & .input:focus{
-      border: 2px solid $teal-70;
-      box-shadow: 0px 0px 0px 2px $teal-30, 0px 0px 0px 6px $teal-10;
-      border-radius: 6px;
-      padding: 0px;
-      background-color: inherit;
-    }
-
-}
-
-
-input{
-  height: 38px;
-  font-size:16px;
-  margin:0px;
-  border:none;
-  display:block;
-  text-indent: 12px;
-  padding: 0px;
-  text-overflow: clip;
-  background: none;
-
-
-  &:focus {
+  &:focus, &:not(:placeholder-shown):focus {
     outline: none;
+    border: 2px solid $teal-70;
+    box-shadow: 0 0 0 2px $teal-20;
   }
 
   &:not(:placeholder-shown):hover:focus {
-    box-shadow: 0px 0px 0px 6px $teal-10;
-    top:-2px;
+    border: 2px solid $teal-80;
+    box-shadow: 0px 0px 0px 2px $teal-30, 0px 0px 0px 6px $teal-10;
   }
 
-  // &:not(:placeholder-shown):hover {
-  //   box-shadow: 0px 0px 0px 6px $teal-10;
-  //   border: 1px solid $teal-40;
-  // }
+  &:not(:placeholder-shown) {
+    border-color: $teal-40;
+  }
 
-
-}
-
-.required {
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  background-color: $mineral-40;
-  border-radius: 24px;
-  position: absolute;
-  z-index: 1;
-  right: -8px;
-  top: -8px;
-  // background-image: url('../src/imgs/required-icon.svg');
+  &:not(:placeholder-shown):hover{
+    box-shadow: 0px 0px 0px 6px $teal-10;
+  }
 
 }
 
-
+//Label
 label {
   font-family: $font-secondary;
   font-weight: 500;
@@ -109,11 +64,11 @@ label {
   color: $mineral-30;
   transition: 0.2s all;
   cursor: text;
+  z-index: 1;
 }
 
-
 input:not(:placeholder-shown)~label,
-input-wrapper:focus~label {
+input:focus~label {
   font-size: 12px;
   padding: 2px;
   top: -12px;
@@ -132,44 +87,133 @@ input:not(:placeholder-shown):invalid~label {
   width: auto;
 }
 
-.prefix{
-  font-size: 16px;
-  border: none;
-  border-radius: 4px;
-  height: 24px;
-  padding: 6px 10px 6px 10px;
-  font-family: $font-secondary;
-  font-weight: 500;
-  transition: border .3s ease, box-shadow .3s ease;
-  background-color: $teal-10;
-  position:absolute;
-  left: 3px;
-  top:3px;
-  z-index:1;
+//Prefix
+input.input-prefix {
+  padding-left: 36px;
 
+  &:not(:placeholder-shown)~label,
+  &:focus~label {
+    background: rgb(255,255,255);
+    background: linear-gradient(360deg, rgba(255,255,255,0) 28%, rgba(255,255,255,1) 28%);
+  }
+
+  + .prefix {
+    display: inline-block;
+    background-color: $mineral-10;
+    font-family: $font-secondary;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 0 8px;
+    border-radius: 4px;
+    position: absolute;
+    top: 2px;
+    line-height: 40px;
+    bottom: 3px;
+    left: 3px;
+    z-index: 1;
+    text-align: center;
+    pointer-events: none;
+  }
+
+
+  &:focus {
+    + .prefix {
+      background-color: $teal-10;
+    }
+  }
+
+  &:not(:placeholder-shown){
+    + .prefix{
+      background-color: $teal-10;
+    }
+  }
 }
 
-.input-prefix{
-  color:$black-80;
-  text-indent: 4em;
+.prefix
+  +label{
+    font-family: $font-secondary;
+    font-weight: 500;
+    font-size: 16px;
+    position: absolute;
+    top: 10px;
+    padding-left: 32px;
+    color: $mineral-40;
+    transition: 0.2s all;
+    cursor: text;
+    z-index: 1;
+
+
+  }
+
+
+
+
+
+//Sufix
+input.input-suffix {
+  padding-right: 36px;
+
+  + .suffix {
+    display: inline-block;
+    background-color: $mineral-10;
+    font-family: $font-secondary;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 0 10px;
+    border-radius: 4px;
+    position: absolute;
+    top: 2px;
+    line-height: 40px;
+    bottom: 3px;
+    right: 3px;
+    z-index: 1;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  &:focus {
+    + .suffix {
+      background-color: $teal-10;
+    }
+  }
+
+  &:not(:placeholder-shown){
+    + .suffix{
+      background-color: $teal-10;
+    }
+  }
 }
 
+//Required
+input {
+  + .required {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: $mineral-40;
+    border-radius: 24px;
+    position: absolute;
+    z-index: 1;
+    right: -8px;
+    top: -8px;
+    // background-image: url('../src/imgs/required-icon.svg');
+  }
 
+  &:focus, &:not(:placeholder-shown):focus {
+    + .required {
+      background-color: $teal-70;
+    }
+  }
 
+  &:not(:placeholder-shown):focus:hover {
+    + .required {
+      background-color: $teal-80;
+    }
+  }
 
-.suffix{
-  font-size: 16px;
-  border: 1px solid $teal-10;
-  border-radius: 4px;
-  height: 24px;
-  padding: 6px 10px;
-  font-family: $font-secondary;
-  font-weight: 500;
-  transition: border .3s ease, box-shadow .3s ease;
-  background-color: $teal-10;
-  color: $black-75;
-  position:absolute;
-  right: 1px;
-  top:1px;
-  z-index:1;
+  &:not(:placeholder-shown){
+    + .required{
+      background-color: $teal-40;
+    }
+  }
 }
