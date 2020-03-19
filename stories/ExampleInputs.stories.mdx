@@ -18,8 +18,12 @@ It’s a standard text input. Can be used for enter a name, phone number, street
 <Preview>
   <Story name="Default Input">
   <div className="input-wrapper">
-    <ExampleInputs id="name" placeholder="  "></ExampleInputs>
+    <ExampleInputs id="name" placeholder="  " ></ExampleInputs>
     <label for="name">Label</label>
+    <ExampleInputs className="input-disabled" type="text" id="disabled" placeholder="  " disabled></ExampleInputs>
+    <label for="disabled">disabled</label>
+    <ExampleInputs type="email" id="error" placeholder="  " Error></ExampleInputs>
+    <label for="error">disabled</label>
   </div>
   </Story>
 </Preview>
@@ -32,13 +36,14 @@ It’s a default input that is required to be filled. It has a helper message to
   <Story name="Required Input">
   <div className="input-wrapper">
     <ExampleInputs type="text" id="name" placeholder="  "></ExampleInputs>
+    <div class="required-message">Help message</div>
     <span class="required"></span>
     <label for="name">Label</label>
   </div>
   </Story>
 </Preview>
 
-## Prefix & Suffix Input
+## Prefix
 
 It’s a text field input + fixed prefix.
 
@@ -54,9 +59,9 @@ It’s a text field input + fixed prefix.
   </Story>
 </Preview>
 
-## Prefix/Suffix Required Input
+## Suffix
 
-It’s a Prefix/Suffix input that is required to be filled.
+It’s a text field input + fixed suffix.
 
 <Preview>
   <Story name="Suffix Input">

@@ -16,13 +16,14 @@ input {
   font-family: $font-secondary;
   font-weight: 500;
   transition: border .3s ease, box-shadow .3s ease;
-  color: $black-80;
+  color: $black-75;
   height: 40px;
   font-size: 16px;
   margin: 0px;
   text-indent: 12px;
   text-overflow: clip;
   outline: none;
+  min-width: 164px;
 
   &::placeholder {
     color: $black-50;
@@ -32,10 +33,15 @@ input {
     box-shadow: 0px 0px 0px 6px $mineral-10;
   }
 
+  &:disabled{
+    opacity: .5;
+  }
+
+
   &:focus, &:not(:placeholder-shown):focus {
     outline: none;
     border: 2px solid $teal-70;
-    box-shadow: 0 0 0 2px $teal-20;
+    box-shadow: 0 0 0 2px $teal-30;
   }
 
   &:not(:placeholder-shown):hover:focus {
@@ -141,8 +147,6 @@ input.input-prefix {
     transition: 0.2s all;
     cursor: text;
     z-index: 1;
-
-
   }
 
 
@@ -186,7 +190,7 @@ input.input-suffix {
 
 //Required
 input {
-  + .required {
+  ~ .required {
     display: inline-block;
     width: 24px;
     height: 24px;
@@ -200,20 +204,67 @@ input {
   }
 
   &:focus, &:not(:placeholder-shown):focus {
-    + .required {
+    ~ .required {
       background-color: $teal-70;
     }
   }
 
   &:not(:placeholder-shown):focus:hover {
-    + .required {
+    ~ .required {
       background-color: $teal-80;
     }
   }
 
   &:not(:placeholder-shown){
-    + .required{
+    ~ .required{
       background-color: $teal-40;
     }
+  }
+
+  &:placeholder-shown {
+    + .required-message{
+      opacity:0;
+    }
+  }
+}
+.required-message {
+  font-size: 12px;
+  color: $teal-60;
+  font-family: $font-secondary;
+  font-weight: 500;
+  padding: 2px 0 12px 12px;
+  opacity: 1;
+}
+
+//disabled
+.input-wrapper{
+  .input-disabled {
+  border: 2px solid $mineral-30;
+  background-color: $mineral-10;
+  position: relative;
+  margin-left: 40px;
+  }
+} 
+
+//invalid
+input:invalid{
+  background-color: $coral-10;
+  border-color: $red-60;
+  color: $red-60;
+
+  &:focus,&:not(:placeholder-shown):focus {
+    outline: none;
+    border: 2px solid $red-60;
+    box-shadow: 0 0 0 2px $coral-20;
+  }
+
+  &:not(:placeholder-shown):hover:focus {
+    border: 2px solid $red-60;
+    box-shadow: 0px 0px 0px 2px $coral-20, 0px 0px 0px 6px $coral-10;
+  }
+
+
+  &:not(:placeholder-shown):hover{
+    box-shadow: 0px 0px 0px 6px $coral-10;
   }
 }
