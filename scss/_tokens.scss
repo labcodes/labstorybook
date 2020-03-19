@@ -89,33 +89,33 @@ $font-secondary: 'freight-sans-pro', sans-serif;
 $font-monospace: Monaco, Consolas, 'Lucida Console', monospace;
 
 // SPACING
-$spacing-0: 0;
-$spacing-1: 4px;
-$spacing-2: 8px;
-$spacing-3: 12px;
-$spacing-4: 16px;
-$spacing-5: 20px;
-$spacing-6: 24px;
-$spacing-7: 32px;
-$spacing-8: 40px;
-$spacing-9: 52px;
-$spacing-10: 60px;
+$spacing-0: 0; 
+$spacing-1: 0.25rem; //4px
+$spacing-2: 0.5rem; //8px
+$spacing-3: 0.75rem; //12px
+$spacing-4: 1rem; //16px
+$spacing-5: 1.25rem; //20px
+$spacing-6: 1.5rem; //24px
+$spacing-7: 2rem; //32px
+$spacing-8: 2.5rem; //40px
+$spacing-9: 3.25rem; //52px
+$spacing-10: 3.75rem; //60px
 
 // LAYOUT
-$layout-1: 12px;
-$layout-2: 16px;
-$layout-3: 20px;
-$layout-4: 24px;
-$layout-5: 32px;
-$layout-6: 40px;
-$layout-7: 44px;
-$layout-8: 52px;
-$layout-9: 64px;
-$layout-10: 72px;
-$layout-11: 92px;
-$layout-12: 100px;
-$layout-13: 124px;
-$layout-14: 140px;
+$layout-1: 0.75rem; //12px
+$layout-2: 1rem; //16px
+$layout-3: 1.25rem; //20px
+$layout-4: 1.5rem; //24px
+$layout-5: 2rem; //32px
+$layout-6: 2.5rem; //40px
+$layout-7: 2.75rem; // 44px
+$layout-8: 3.25rem; //52px
+$layout-9: 4rem; //64px
+$layout-10: 4.5rem; //72px
+$layout-11: 5.75rem; //92px
+$layout-12: 6.25rem; //100px
+$layout-13: 7.75rem; //124px
+$layout-14: 8.85rem; //140px
 
 // TIME
 $duration-none: 0;
