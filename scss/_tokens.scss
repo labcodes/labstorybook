@@ -89,13 +89,33 @@ $font-secondary: 'freight-sans-pro', sans-serif;
 $font-monospace: Monaco, Consolas, 'Lucida Console', monospace;
 
 // SPACING
-$spacing-none: 0;
-$spacing-extra-tight: 4px;
-$spacing-tight: 8px;
-$spacing-base-tight: 12px;
-$spacing-base: 16px;
-$spacing-loose: 20px;
-$spacing-extra-loose: 32px;
+$spacing-0: 0;
+$spacing-1: 4px;
+$spacing-2: 8px;
+$spacing-3: 12px;
+$spacing-4: 16px;
+$spacing-5: 20px;
+$spacing-6: 24px;
+$spacing-7: 32px;
+$spacing-8: 40px;
+$spacing-9: 52px;
+$spacing-10: 60px;
+
+// LAYOUT
+$layout-1: 12px;
+$layout-2: 16px;
+$layout-3: 20px;
+$layout-4: 24px;
+$layout-5: 32px;
+$layout-6: 40px;
+$layout-7: 44px;
+$layout-8: 52px;
+$layout-9: 64px;
+$layout-10: 72px;
+$layout-11: 92px;
+$layout-12: 100px;
+$layout-13: 124px;
+$layout-14: 140px;
 
 // TIME
 $duration-none: 0;
