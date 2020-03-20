@@ -106,3 +106,10 @@ dist
 # Lock files
 yarn.lock
 package-lock.json
+
+# OS generated files #
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db
+*.DS_Store
