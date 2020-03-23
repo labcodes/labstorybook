@@ -1,11 +1,13 @@
-/* 1rem = 10px */
-html {
-  font-size: 62.5%;
-}
-body {
-  font-size: 1.6rem;
-}
+// Variables
+@import '~bulma/sass/utilities/all';
+@import 'tokens/all';
 
-@import 'tokens';
-@import 'storybook-overrides';
-@import 'example-button';
+// Grid
+@import '~bulma/sass/base/all';
+@import '~bulma/sass/grid/all';
+
+// Components
+@import 'components/all';
+
+// Storybook
+@import 'vendor/storybook-overrides';
