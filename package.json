@@ -6,8 +6,8 @@
     "npm": ">=6.13.4"
   },
   "scripts": {
-    "start": "start-storybook -p 8000 --ci --docs",
-    "build": "build-storybook -o dist --docs && gzipper --verbose ./dist",
+    "start": "start-storybook -s ./static -p 8000 --ci --docs",
+    "build": "build-storybook -o dist -s ./static --docs && gzipper --verbose ./dist",
     "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {

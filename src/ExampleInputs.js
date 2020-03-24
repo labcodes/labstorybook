@@ -17,7 +17,9 @@ export default class ExampleInputs extends React.Component {
       id,
       placeholder,
       type,
-      label
+      label,
+      disabled,
+      value
     } = this.props;
     return (
       <input
@@ -26,6 +28,8 @@ export default class ExampleInputs extends React.Component {
         type={type}
         placeholder={placeholder}
         label={label}
+        disabled={disabled}
+        value={value}
       >
         {this.props.children}
       </input>

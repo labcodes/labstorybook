@@ -11,20 +11,48 @@ import ExampleInputs from '../src/ExampleInputs';
 This component is a form field that allows user to type text information.
 We can have 4 types of text inputs:
 
+## Anatomy
+
+### Field elements
+![input anatomy](/anatomy.png)
+
+### Prefix and Suffix elements
+![prefix and suffix input anatomy](/anatomy-02.png)
+<br />
+
 ## Default Input
 
 It’s a standard text input. Can be used for enter a name, phone number, street address, email address, etc.
 
 <Preview>
   <Story name="Default Input">
-  <div className="input-wrapper">
-    <ExampleInputs id="name" placeholder="  " ></ExampleInputs>
-    <label for="name">Label</label>
-    <ExampleInputs className="input-disabled" type="text" id="disabled" placeholder="  " disabled></ExampleInputs>
-    <label for="disabled">disabled</label>
-    <ExampleInputs type="email" id="error" placeholder="  " Error></ExampleInputs>
-    <label for="error">disabled</label>
-  </div>
+    <Fragment>
+      <h3>Disabled</h3>
+      <div className="input-wrapper">
+        <ExampleInputs type="text" id="Disabled" placeholder="  " disabled></ExampleInputs>
+        <label for="Disabled">Disabled</label>
+      </div>
+      <br />
+        <h3>Default</h3>
+      <div className="input-wrapper">
+        <ExampleInputs id="name" placeholder="  " ></ExampleInputs>
+        <label for="name">Label</label>
+      </div>
+      <br />
+      <h3>With Trailing Icon</h3>
+      <div className="input-wrapper">
+        <ExampleInputs id="icon" placeholder="  " ></ExampleInputs>
+        <button class="icon"></button>
+        <label for="icon">Label</label>
+      </div>
+      <br />
+      <h3>Error</h3>
+      <div className="input-wrapper">
+        <ExampleInputs type="email" id="error" placeholder="  " value="Error"></ExampleInputs>
+        <div class="error-message">Error message</div>
+        <label className="label-error" for="error">Name</label>
+      </div>
+    </Fragment>
   </Story>
 </Preview>
 
@@ -34,12 +62,26 @@ It’s a default input that is required to be filled. It has a helper message to
 
 <Preview>
   <Story name="Required Input">
-  <div className="input-wrapper">
-    <ExampleInputs type="text" id="name" placeholder="  "></ExampleInputs>
-    <div class="required-message">Help message</div>
-    <span class="required"></span>
-    <label for="name">Label</label>
-  </div>
+  <Fragment>
+    <h3>Required Default</h3>
+    <div className="input-wrapper">
+      <ExampleInputs type="text" id="name" placeholder="  "></ExampleInputs>
+      <div class="required-message">
+        Help message
+      </div>
+      <span class="required"></span>
+      <label for="name">Label</label>
+    </div>
+    <h3>Required Error</h3>
+    <div className="input-wrapper">
+      <ExampleInputs type="email" id="name" placeholder="  " value="Error"></ExampleInputs>
+      <div class="required-message">
+        Help message
+      </div>
+      <span class="required"></span>
+      <label for="name">Label</label>
+    </div>
+  </Fragment>
   </Story>
 </Preview>
 
@@ -50,10 +92,26 @@ It’s a text field input + fixed prefix.
 <Preview>
   <Story name="Prefix Input">
   <Fragment>
+  <h3>Prefix Disabled</h3>
+  <div className="input-wrapper">
+      <ExampleInputs className="input-prefix" id="prefix" placeholder="  " disabled></ExampleInputs>
+      <span class="prefix">R$</span>
+      <label for="prefix">Label</label>
+  </div>
+  <br />
+  <h3>Prefix Default</h3>
   <div className="input-wrapper">
       <ExampleInputs className="input-prefix" id="help" placeholder="  "></ExampleInputs>
       <span class="prefix">R$</span>
       <label for="help">Label</label>
+  </div>
+  <br />
+  <h3>Prefix Error</h3>
+  <div className="input-wrapper">
+      <ExampleInputs className="input-prefix" type="email" id="prefix-error" placeholder="  " value="Error"></ExampleInputs>
+      <span class="prefix">R$</span>
+      <div class="error-message">Error message</div>
+      <label for="prefix-error">Label</label>
   </div>
 </Fragment>
   </Story>
@@ -66,16 +124,77 @@ It’s a text field input + fixed suffix.
 <Preview>
   <Story name="Suffix Input">
   <Fragment>
+  <h3>Suffix Disabled</h3>
+  <div className="input-wrapper">
+      <ExampleInputs className="input-suffix" id="suffix" placeholder="  " disabled></ExampleInputs>
+      <span class="suffix">.com</span>
+      <label for="suffix">Label</label>
+  </div>
+  < br/>
+  <h3>Suffix Default</h3>
   <div className="input-wrapper">
       <ExampleInputs className="input-suffix" id="address" placeholder="  "></ExampleInputs>
       <span class="suffix">.com</span>
       <label for="address">Label</label>
+  </div>
+    <br />
+  <h3>Suffix Error</h3>
+  <div className="input-wrapper">
+      <ExampleInputs className="input-suffix" type="email" id="suffix-error" placeholder="  " value="Error"></ExampleInputs>
+      <span class="suffix">.com</span>
+      <div class="error-message">Error message</div>
+      <label for="suffix-error">Label</label>
   </div>
 </Fragment>
   </Story>
 </Preview>
 
 
-## Variations
+## Behavior
+### Default input/ Prefix and suffix input
 
-This is the place for better explaining the possible variants of your button, for example.
+1. Click on the component to focus
+2. The placeholder will move up and behave like a label
+3. Type what the label suggests you to
+4. If you don't fill the input correctly, the input will show a error help message,
+changing the component for error state
+5. Click outside the component to unfocus
+
+### Required Input
+
+1. Click on the component to focus
+2. The placeholder will move up and behave like a label
+3. Type what the label suggests you to
+4. If you don't fill the input correctly,
+the input will show a error help message, changing the component for error state
+5. Click outside the component to unfocus
+6. If you don't fill the input at all, the input will show a required help
+message after you unfocus it, changing the component for error state.
+
+## Styles
+
+For text inputs, you can use this other color scheme
+<Preview>
+  <Story name="Styles">
+  <Fragment>
+    <div className="input-colors base">
+      base border
+    </div>
+    <div className="input-colors hover">
+      <span>hover border</span>
+    </div>
+    <div className="input-colors hover-border">
+      base border : hover
+    </div>
+    <div className="input-colors focus">
+      focus border
+    </div>
+    <div className="input-colors focus-border">
+      base border : focus    
+    </div>
+    <div className="input-colors prefix">
+      prefix / suffix area    
+    </div>
+  </Fragment>
+  </Story>
+</Preview>
