@@ -60,7 +60,7 @@ input {
     z-index: 1;
     right: 8px;
     top: 10px;
-    background-image: url(../static/eye.svg);
+    background-image: url(../static/icons/eye.svg);
     background-repeat: no-repeat;
     border: none;
     outline: none;
@@ -281,7 +281,7 @@ input {
     z-index: 1;
     right: -8px;
     top: -8px;
-    background-image: url(../static/required-icon.svg);
+    background-image: url(../static/icons/required-icon.svg);
   }  
 
   &:not(:placeholder-shown):invalid,
