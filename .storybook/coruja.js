@@ -21,16 +21,11 @@ export default function corujaWatch(elements) {
   }
 
   const setUpObserver = () => {
-    const mutationObserver = new MutationObserver(mutations => {
-      mutations.forEach(mutation => {
-        if (mutation.addedNodes && mutation.addedNodes.length) {
-          applyClasses();
-        }
-      })
-    });
+    const mutationObserver = new MutationObserver(applyClasses);
 
     mutationObserver.observe(document.documentElement, {
       childList: true,
+      attributes: true,
       subtree: true,
       attributeOldValue: true,
     });
