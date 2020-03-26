@@ -8,7 +8,7 @@ It contains all the documentation and sample components in a storybook-like page
 
 To install this project, be sure to have the correct node/npm installed (currently 12.14.0/6.13.4). Though we support npm, we prefer using yarn (1.21.1).
 
-To install yarn, you may run `npm i -g yarn`. Then, to install the dependencies, just run `yarn` and you're good to go.
+To install yarn, you may run `npm i -g yarn`. Then, to install the dependencies, run `yarn` on the root folder **and** on the labsystem folder, then you're good to go.
 
 ### Running and deploying
 
