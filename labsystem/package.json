@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bulma": "^0.8.1"
+    "bulma": "^0.8.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1"
   }
 }
