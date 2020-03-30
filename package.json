@@ -10,6 +10,11 @@
     "build": "build-storybook -o dist -s ./.storybook/static,./labsystem/static --docs && gzipper --verbose ./dist",
     "deploy": "npm run build && gh-pages -d dist"
   },
+  "husky": {
+    "hooks": {
+      "pre-push": "eslint ./labsystem/src"
+    }
+  },
   "dependencies": {
     "@babel/core": "^7.7.5",
     "@babel/plugin-proposal-class-properties": "^7.7.4",
@@ -32,6 +37,7 @@
     "sass-loader": "^8.0.0"
   },
   "devDependencies": {
-    "gzipper": "^3.4.2"
+    "gzipper": "^3.4.2",
+    "husky": "^4.2.3"
   }
 }
