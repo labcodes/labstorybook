@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
-import LabIcon from '../labsystem/src/LabIcon';
+import Icon from '../labsystem/src/Icon';
 
 <Meta title="Components | Icons" component={LabIcon} />
 
@@ -9,30 +9,31 @@ import LabIcon from '../labsystem/src/LabIcon';
 
 The LabIcon component receives two inputs as props, where `type` indicates which symbol to show, while `variant` defines its color variant.
 
-## Sample LabIcons
-This is the place for better explaining why your LabIcon defaults to 'primary'. Then, there's the preview:
 
-### Arrow Left - Mineral (Default)
-
-<Preview>
-  <Story name="Sample LabIcon - Mineral">
-    <LabIcon type='arrow-left' variant="mineral" />
-  </Story>
-</Preview>
+## Sample Icons
+Icons can be used as shown in the examples below:
 
 ### Arrow Left - Teal
 
 <Preview>
-  <Story name="Sample LabIcon - Teal">
-    <LabIcon type='arrow-left' variant="teal" />
+  <Story name="Sample Icon - Teal">
+    <Icon type='arrow-left' color="teal" />
   </Story>
 </Preview>
 
-### Arrow Left - Disabled
+### Arrow Left - Mineral 70
 
 <Preview>
-  <Story name="Sample LabIcon - Disabled">
-    <LabIcon type='arrow-left' variant="disabled" />
+  <Story name="Sample Icon - Mineral 70">
+    <Icon type='arrow-left' color="mineral70" />
+  </Story>
+</Preview>
+
+### Arrow Left - Mineral 20
+
+<Preview>
+  <Story name="Sample Icon - Mineral 20">
+    <Icon type='arrow-left' color="mineral20" />
   </Story>
 </Preview>
 
@@ -41,113 +42,120 @@ This is the place for better explaining why your LabIcon defaults to 'primary'. 
 This is the place for better explaining the possible variants of your button, for example.
 
 
-### LabIcon - Mineral
+All the available Icons and its colors are shown below:
+
+
+### Icon - Teal
 <Preview>
-  <Story name="LabIcon Mineral">
+  <Story name="Icon Teal">
     <Fragment>
-      <LabIcon type='arrow-left' variant="mineral"/>
-      <LabIcon type='dropdown-closed' variant="mineral"/>
-      <LabIcon type='remove' variant="mineral"/>
-      <LabIcon type='eye-opened' variant="mineral"/>
-      <LabIcon type='logout' variant="mineral"/>
-      <LabIcon type='edit' variant="mineral"/>
+      <Icon type='arrow-left' color="teal"/>
+      <Icon type='dropdown-closed' color="teal"/>
+      <Icon type='remove' color="teal"/>
+      <Icon type='eye-opened' color="teal"/>
+      <Icon type='logout' color="teal"/>
+      <Icon type='edit' color="teal"/>
       <br />
-      <LabIcon type='arrow-right' variant="mineral"/>
-      <LabIcon type='dropdown-open' variant="mineral"/>
-      <LabIcon type='plus' variant="mineral"/>
-      <LabIcon type='eye-closed' variant="mineral"/>
-      <LabIcon type='track' variant="mineral"/>
-      <LabIcon type='key' variant="mineral"/>
+      <Icon type='arrow-right' color="teal"/>
+      <Icon type='dropdown-open' color="teal"/>
+      <Icon type='plus' color="teal"/>
+      <Icon type='eye-closed' color="teal"/>
+      <Icon type='track' color="teal"/>
+      <Icon type='key' color="teal"/>
       <br />
-      <LabIcon type='arrow-top' variant="mineral"/>
-      <LabIcon type='collapse-closed' variant="mineral"/>
-      <LabIcon type='minus' variant="mineral"/>
-      <LabIcon type='lupe' variant="mineral"/>
-      <LabIcon type='calendar' variant="mineral"/>
-      <LabIcon type='upload' variant="mineral"/>
+      <Icon type='arrow-top' color="teal"/>
+      <Icon type='collapse-closed' color="teal"/>
+      <Icon type='minus' color="teal"/>
+      <Icon type='lupe' color="teal"/>
+      <Icon type='calendar' color="teal"/>
+      <Icon type='upload' color="teal"/>
       <br />
-      <LabIcon type='arrow-down' variant="mineral"/>
-      <LabIcon type='collapse-open' variant="mineral"/>
-      <LabIcon type='check' variant="mineral"/>
-      <LabIcon type='trash' variant="mineral"/>
-      <LabIcon type='coin' variant="mineral"/>
-      <LabIcon type='reload' variant="mineral"/>
+      <Icon type='arrow-down' color="teal"/>
+      <Icon type='collapse-open' color="teal"/>
+      <Icon type='check' color="teal"/>
+      <Icon type='trash' color="teal"/>
+      <Icon type='coin' color="teal"/>
+      <Icon type='reload' color="teal"/>
       <br />
-      <LabIcon type='sort' variant="mineral" />
+      <Icon type='sort' color="teal" />
     </Fragment>
   </Story>
 </Preview>
 
-### LabIcon - Teal
+### Icon - Mineral 70
 <Preview>
-  <Story name="LabIcon Teal">
+  <Story name="Icon Mineral 70">
     <Fragment>
-      <LabIcon type='arrow-left' variant="teal"/>
-      <LabIcon type='dropdown-closed' variant="teal"/>
-      <LabIcon type='remove' variant="teal"/>
-      <LabIcon type='eye-opened' variant="teal"/>
-      <LabIcon type='logout' variant="teal"/>
-      <LabIcon type='edit' variant="teal"/>
+      <Icon type='arrow-left' color="mineral70"/>
+      <Icon type='dropdown-closed' color="mineral70"/>
+      <Icon type='remove' color="mineral70"/>
+      <Icon type='eye-opened' color="mineral70"/>
+      <Icon type='logout' color="mineral70"/>
+      <Icon type='edit' color="mineral70"/>
       <br />
-      <LabIcon type='arrow-right' variant="teal"/>
-      <LabIcon type='dropdown-open' variant="teal"/>
-      <LabIcon type='plus' variant="teal"/>
-      <LabIcon type='eye-closed' variant="teal"/>
-      <LabIcon type='track' variant="teal"/>
-      <LabIcon type='key' variant="teal"/>
+      <Icon type='arrow-right' color="mineral70"/>
+      <Icon type='dropdown-open' color="mineral70"/>
+      <Icon type='plus' color="mineral70"/>
+      <Icon type='eye-closed' color="mineral70"/>
+      <Icon type='track' color="mineral70"/>
+      <Icon type='key' color="mineral70"/>
       <br />
-      <LabIcon type='arrow-top' variant="teal"/>
-      <LabIcon type='collapse-closed' variant="teal"/>
-      <LabIcon type='minus' variant="teal"/>
-      <LabIcon type='lupe' variant="teal"/>
-      <LabIcon type='calendar' variant="teal"/>
-      <LabIcon type='upload' variant="teal"/>
+      <Icon type='arrow-top' color="mineral70"/>
+      <Icon type='collapse-closed' color="mineral70"/>
+      <Icon type='minus' color="mineral70"/>
+      <Icon type='lupe' color="mineral70"/>
+      <Icon type='calendar' color="mineral70"/>
+      <Icon type='upload' color="mineral70"/>
       <br />
-      <LabIcon type='arrow-down' variant="teal"/>
-      <LabIcon type='collapse-open' variant="teal"/>
-      <LabIcon type='check' variant="teal"/>
-      <LabIcon type='trash' variant="teal"/>
-      <LabIcon type='coin' variant="teal"/>
-      <LabIcon type='reload' variant="teal"/>
+      <Icon type='arrow-down' color="mineral70"/>
+      <Icon type='collapse-open' color="mineral70"/>
+      <Icon type='check' color="mineral70"/>
+      <Icon type='trash' color="mineral70"/>
+      <Icon type='coin' color="mineral70"/>
+      <Icon type='reload' color="mineral70"/>
       <br />
-      <LabIcon type='sort' variant="teal" />
+      <Icon type='sort' color="mineral70" />
     </Fragment>
   </Story>
 </Preview>
 
-### LabIcon - Disabled
+### Icon - Mineral 20
 <Preview>
-  <Story name="LabIcon Disabled">
+  <Story name="Icon Mineral 20">
     <Fragment>
-      <LabIcon type='arrow-left' variant="disabled"/>
-      <LabIcon type='dropdown-closed' variant="disabled"/>
-      <LabIcon type='remove' variant="disabled"/>
-      <LabIcon type='eye-opened' variant="disabled"/>
-      <LabIcon type='logout' variant="disabled"/>
-      <LabIcon type='edit' variant="disabled"/>
+      <Icon type='arrow-left' color="mineral20"/>
+      <Icon type='dropdown-closed' color="mineral20"/>
+      <Icon type='remove' color="mineral20"/>
+      <Icon type='eye-opened' color="mineral20"/>
+      <Icon type='logout' color="mineral20"/>
+      <Icon type='edit' color="mineral20"/>
       <br />
-      <LabIcon type='arrow-right' variant="disabled"/>
-      <LabIcon type='dropdown-open' variant="disabled"/>
-      <LabIcon type='plus' variant="disabled"/>
-      <LabIcon type='eye-closed' variant="disabled"/>
-      <LabIcon type='track' variant="disabled"/>
-      <LabIcon type='key' variant="disabled"/>
+      <Icon type='arrow-right' color="mineral20"/>
+      <Icon type='dropdown-open' color="mineral20"/>
+      <Icon type='plus' color="mineral20"/>
+      <Icon type='eye-closed' color="mineral20"/>
+      <Icon type='track' color="mineral20"/>
+      <Icon type='key' color="mineral20"/>
       <br />
-      <LabIcon type='arrow-top' variant="disabled"/>
-      <LabIcon type='collapse-closed' variant="disabled"/>
-      <LabIcon type='minus' variant="disabled"/>
-      <LabIcon type='lupe' variant="disabled"/>
-      <LabIcon type='calendar' variant="disabled"/>
-      <LabIcon type='upload' variant="disabled"/>
+      <Icon type='arrow-top' color="mineral20"/>
+      <Icon type='collapse-closed' color="mineral20"/>
+      <Icon type='minus' color="mineral20"/>
+      <Icon type='lupe' color="mineral20"/>
+      <Icon type='calendar' color="mineral20"/>
+      <Icon type='upload' color="mineral20"/>
       <br />
-      <LabIcon type='arrow-down' variant="disabled"/>
-      <LabIcon type='collapse-open' variant="disabled"/>
-      <LabIcon type='check' variant="disabled"/>
-      <LabIcon type='trash' variant="disabled"/>
-      <LabIcon type='coin' variant="disabled"/>
-      <LabIcon type='reload' variant="disabled"/>
+      <Icon type='arrow-down' color="mineral20"/>
+      <Icon type='collapse-open' color="mineral20"/>
+      <Icon type='check' color="mineral20"/>
+      <Icon type='trash' color="mineral20"/>
+      <Icon type='coin' color="mineral20"/>
+      <Icon type='reload' color="mineral20"/>
       <br />
-      <LabIcon type='sort' variant="disabled" />
+      <Icon type='sort' color="mineral20" />
+    </Fragment>
+  </Story>
+</Preview>
+      <br />
     </Fragment>
   </Story>
 </Preview>
@@ -155,5 +163,6 @@ This is the place for better explaining the possible variants of your button, fo
 ## Prop API docs
 
 Here's the list of props based on the component's prop types definitions.
+### Icon
+<Props of={Icon} />
 
-<Props of={LabIcon} />

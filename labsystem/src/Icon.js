@@ -1,11 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default class LabIcon extends React.Component {
-  static defaultProps = {
-    variant: 'mineral',
-  }
-
+export default class Icon extends React.Component {
   static propTypes = {
     type: PropTypes.oneOf([
       'arrow-down',
@@ -34,16 +30,15 @@ export default class LabIcon extends React.Component {
       'trash',
       'upload',
     ]).isRequired,
-    variant: PropTypes.oneOf([
+    color: PropTypes.oneOf([
       'teal',
-      'mineral',
-      'disabled',
-    ]),
+      'mineral70',
+      'mineral20',
+    ]).isRequired,
   }
 
-
   render() {
-    const { type, variant } = this.props;
-    return <span className={`lab-icon ${variant} ${type}`} />;
+    const { type, color } = this.props;
+    return <span className={`lab-icon ${color} ${type}`} />;
   };
 }
