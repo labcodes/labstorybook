@@ -2,13 +2,15 @@ import { Fragment } from 'react';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
 import Icon from '../labsystem/src/Icon';
+import Badge from '../labsystem/src/Badge';
 
-<Meta title="Components | Icons" component={LabIcon} />
+<Meta title="Components | Icons & Badges" component={Icon} />
 
-# Icons
+# Icons & Badges
 
-The LabIcon component receives two inputs as props, where `type` indicates which symbol to show, while `variant` defines its color variant.
+The `Icon` and `Badge` components have similar behavior.
 
+Both receive two inputs as props, where `type` indicates which symbol to show, while `color` defines its color.
 
 ## Sample Icons
 Icons can be used as shown in the examples below:
@@ -37,10 +39,34 @@ Icons can be used as shown in the examples below:
   </Story>
 </Preview>
 
-## LabIcon Variants
+## Sample Badges
+Badges can be used as shown in the examples below:
 
-This is the place for better explaining the possible variants of your button, for example.
+### Harvest - Teal
 
+<Preview>
+  <Story name="Sample Badge - Teal">
+    <Badge type='harvest' color="teal" />
+  </Story>
+</Preview>
+
+### Harvest - Mineral 70
+
+<Preview>
+  <Story name="Sample Badge - Mineral 70">
+    <Badge type='harvest' color="mineral70" />
+  </Story>
+</Preview>
+
+### Harvest - Mineral 20
+
+<Preview>
+  <Story name="Sample Badge - Mineral 20">
+    <Badge type='harvest' color="mineral20" />
+  </Story>
+</Preview>
+
+## Icon Colors
 
 All the available Icons and its colors are shown below:
 
@@ -155,7 +181,50 @@ All the available Icons and its colors are shown below:
     </Fragment>
   </Story>
 </Preview>
+
+## Badge Colors
+
+All the available Badges and its colors are shown below:
+
+
+### Badge - Teal
+<Preview>
+  <Story name="Badge Teal">
+    <Fragment>
+      <Badge type='harvest' color="teal"/>
+      <Badge type='ponto' color="teal"/>
+      <Badge type='meta' color="teal"/>
       <br />
+      <Badge type='star' color="teal"/>
+      <Badge type='floating-add' color="teal"/>
+    </Fragment>
+  </Story>
+</Preview>
+
+### Badge - Mineral 70
+<Preview>
+  <Story name="Badge Mineral 70">
+    <Fragment>
+      <Badge type='harvest' color="mineral70"/>
+      <Badge type='ponto' color="mineral70"/>
+      <Badge type='meta' color="mineral70"/>
+      <br />
+      <Badge type='star' color="mineral70"/>
+      <Badge type='floating-add' color="mineral70"/>
+    </Fragment>
+  </Story>
+</Preview>
+
+### Badge - Mineral 20
+<Preview>
+  <Story name="Badge Mineral 20">
+    <Fragment>
+      <Badge type='harvest' color="mineral20"/>
+      <Badge type='ponto' color="mineral20"/>
+      <Badge type='meta' color="mineral20"/>
+      <br />
+      <Badge type='star' color="mineral20"/>
+      <Badge type='floating-add' color="mineral20"/>
     </Fragment>
   </Story>
 </Preview>
@@ -166,3 +235,5 @@ Here's the list of props based on the component's prop types definitions.
 ### Icon
 <Props of={Icon} />
 
+### Badge
+<Props of={Badge} />
