@@ -10,21 +10,34 @@
     "build": "build-storybook -o dist -s ./.storybook/static,./labsystem/static --docs && gzipper --verbose ./dist",
     "deploy": "npm run build && gh-pages -d dist"
   },
+  "husky": {
+    "hooks": {
+      "pre-push": "npx eslint ./labsystem/src -c .eslintrc.js"
+    }
+  },
   "dependencies": {
     "@babel/core": "^7.7.5",
     "@babel/plugin-proposal-class-properties": "^7.7.4",
     "@babel/plugin-transform-runtime": "^7.7.6",
     "@storybook/addon-docs": "^5.2.8",
     "@storybook/react": "^5.2.8",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.6",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.19.0",
     "gh-pages": "^2.1.1",
     "node-sass": "^4.13.0",
     "prop-types": "^15.7.2",
-    "react": "^16.12.0",
+    "react": "^16.13.1",
     "react-dom": "^16.12.0",
     "sass-loader": "^8.0.0"
   },
   "devDependencies": {
-    "gzipper": "^3.4.2"
+    "gzipper": "^3.4.2",
+    "husky": "^4.2.3"
   }
 }
