@@ -19,9 +19,11 @@ export default class ExampleButton extends React.Component {
   };
 
   render() {
+    const { type, children } = this.props;
+
     return (
-      <button type="button" className={`button ${this.props.type}`}>
-        {this.props.children}
+      <button type="button" className={`button ${type}`}>
+        {children}
       </button>
     );
   }
