@@ -1,0 +1,52 @@
+$icon-size: 1.5rem !default;
+
+.lab-icon {
+  &.teal {
+    background-image: url('/icons/main-teal.svg');
+  }
+  &.mineral70 {
+    background-image: url('/icons/main-mineral70.svg');
+  }
+  &.mineral20 {
+    background-image: url('/icons/main-disabled.svg');
+  }
+  background-repeat: no-repeat;
+
+  height: $icon-size;
+  width: $icon-size;
+  font-size: $icon-size;
+  line-height: 1;
+  display: inline-block;
+
+  &.arrow-left { background-position: left 0 top 0; }
+  &.arrow-right { background-position: left 0 top $icon-size*-1; }
+  &.arrow-top { background-position: left 0 top $icon-size*-2; }
+  &.arrow-down { background-position: left 0 top $icon-size*-3; }
+  &.sort { background-position: left 0 top $icon-size*-4; }
+
+  &.dropdown-closed { background-position: left $icon-size*-1 top 0; }
+  &.dropdown-open { background-position: left $icon-size*-1 top $icon-size*-1; }
+  &.collapse-closed { background-position: left $icon-size*-1 top $icon-size*-2; }
+  &.collapse-open { background-position: left $icon-size*-1 top $icon-size*-3; }
+
+  &.remove { background-position: left $icon-size*-2 top 0; }
+  &.plus { background-position: left $icon-size*-2 top $icon-size*-1; }
+  &.minus { background-position: left $icon-size*-2 top $icon-size*-2; }
+  &.check { background-position: left $icon-size*-2 top $icon-size*-3; }
+
+  &.eye-opened { background-position: left $icon-size*-3 top 0; }
+  &.eye-closed { background-position: left $icon-size*-3 top $icon-size*-1; }
+  &.lupe { background-position: left $icon-size*-3 top $icon-size*-2; }
+  &.trash { background-position: left $icon-size*-3 top $icon-size*-3; }
+
+  &.logout { background-position: left $icon-size*-4 top 0; }
+  &.track { background-position: left $icon-size*-4 top $icon-size*-1; }
+  &.calendar { background-position: left $icon-size*-4 top $icon-size*-2; }
+  &.coin { background-position: left $icon-size*-4 top $icon-size*-3; }
+
+  &.edit {  background-position: left $icon-size*-5 top 0; }
+  &.key { background-position: left $icon-size*-5 top $icon-size*-1; }
+  &.upload { background-position: left $icon-size*-5 top $icon-size*-2; }
+  &.reload { background-position: left $icon-size*-5 top $icon-size*-3; }
+
+}
