@@ -18,7 +18,7 @@ export default class Icon extends React.Component {
     return (
       <label className="toggle" htmlFor={toggleId}>
         <input type="checkbox" id={toggleId} />
-        <span className="slider" />
+        <span className={`slider ${color} ${disabled}`} />
       </label>
     );
   }
