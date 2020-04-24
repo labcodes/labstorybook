@@ -9,6 +9,7 @@ export default class Toggle extends React.Component {
     defaultValue: PropTypes.bool,
     value: PropTypes.bool,
     name: PropTypes.string.isRequired,
+    handleToggle: PropTypes.func,
   };
 
   static defaultProps = {
@@ -16,6 +17,7 @@ export default class Toggle extends React.Component {
     disabled: false,
     defaultValue: undefined,
     value: undefined,
+    handleToggle: undefined,
   };
 
   constructor(props) {
@@ -31,9 +33,14 @@ export default class Toggle extends React.Component {
     };
   }
 
-  // handleOnClick = () => {
-  //   this.setState()
-  // };
+  handleOnChange = (e) => {
+    const { handleToggle } = this.props;
+    if (!isUndefined(handleToggle)) {
+      handleToggle(e);
+    }
+
+    this.setState((state) => ({ localValue: !state.localValue }));
+  };
 
   render() {
     const { color, name, disabled, value } = this.props;
@@ -47,6 +54,7 @@ export default class Toggle extends React.Component {
           id={name}
           checked={isChecked}
           disabled={disabled}
+          onChange={this.handleOnChange}
         />
         <span className={`slider ${color} ${disabled}`} />
       </label>
