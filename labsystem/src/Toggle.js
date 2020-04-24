@@ -5,17 +5,17 @@ import { isUndefined } from "lodash";
 export default class Toggle extends React.Component {
   static propTypes = {
     color: PropTypes.oneOf(["teal", "purple", "coral"]),
-    disabled: PropTypes.oneOf([true, false]),
+    disabled: PropTypes.bool,
     defaultValue: PropTypes.bool,
     value: PropTypes.bool,
-    name: PropTypes.string.isRequired
+    name: PropTypes.string.isRequired,
   };
 
   static defaultProps = {
     color: "teal",
-    disabled: "false",
+    disabled: false,
     defaultValue: undefined,
-    value: undefined
+    value: undefined,
   };
 
   constructor(props) {
@@ -26,7 +26,9 @@ export default class Toggle extends React.Component {
         `You are setting both value and defaultValue for input ${name} at the same time. We always initialize the toggle with defaultValue. Make sure this is the behaviour you want.`
       );
     }
-    this.state = { localValue: !isUndefined(defaultValue)? defaultValue : false };
+    this.state = {
+      localValue: !isUndefined(defaultValue) ? defaultValue : false,
+    };
   }
 
   // handleOnClick = () => {
@@ -40,7 +42,12 @@ export default class Toggle extends React.Component {
 
     return (
       <label className="toggle" htmlFor={name}>
-        <input type="checkbox" id={name} checked={isChecked} />
+        <input
+          type="checkbox"
+          id={name}
+          checked={isChecked}
+          disabled={disabled}
+        />
         <span className={`slider ${color} ${disabled}`} />
       </label>
     );
