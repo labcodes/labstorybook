@@ -10,6 +10,7 @@ module.exports = {
     'no-case-declarations': 'off',
     'no-console': ['error', { allow: ['error'] }],
     'no-underscore-dangle': 'off',
+    'no-console': 'off',
 
     'prettier/prettier': 'error',
 

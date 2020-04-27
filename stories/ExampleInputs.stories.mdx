@@ -28,28 +28,32 @@ It’s a standard text input. Can be used for enter a name, phone number, street
   <Story name="Default Input">
     <Fragment>
       <h3>Disabled</h3>
-      <div className="input-wrapper">
+      <div className="input__wrapper
+  ">
         <ExampleInputs type="text" id="Disabled" placeholder="  " disabled></ExampleInputs>
         <label for="Disabled">Disabled</label>
       </div>
       <br />
         <h3>Default</h3>
-      <div className="input-wrapper">
+      <div className="input__wrapper
+  ">
         <ExampleInputs id="name" placeholder="  " ></ExampleInputs>
         <label for="name">Label</label>
       </div>
       <br />
       <h3>With Trailing Icon</h3>
-      <div className="input-wrapper">
+      <div className="input__wrapper
+  ">
         <ExampleInputs id="icon" placeholder="  " ></ExampleInputs>
-        <button class="icon"></button>
+        <button class="input__icon"></button>
         <label for="icon">Label</label>
       </div>
       <br />
       <h3>Error</h3>
-      <div className="input-wrapper">
+      <div className="input__wrapper
+  ">
         <ExampleInputs type="email" id="error" placeholder="  " value="Error"></ExampleInputs>
-        <div class="error-message">Error message</div>
+        <div class="input__error-message">Error message</div>
         <label className="label-error" for="error">Name</label>
       </div>
     </Fragment>
@@ -64,7 +68,8 @@ It’s a default input that is required to be filled. It has a helper message to
   <Story name="Required Input">
   <Fragment>
     <h3>Required Default</h3>
-    <div className="input-wrapper">
+    <div className="input__wrapper
+">
       <ExampleInputs type="text" id="name" placeholder="  "></ExampleInputs>
       <div class="required-message">
         Help message
@@ -73,13 +78,14 @@ It’s a default input that is required to be filled. It has a helper message to
       <label for="name">Label</label>
     </div>
     <h3>Required Error</h3>
-    <div className="input-wrapper">
-      <ExampleInputs type="email" id="name" placeholder="  " value="Error"></ExampleInputs>
+    <div className="input__wrapper
+">
+      <ExampleInputs type="email" id="required" placeholder="  " value="Error"></ExampleInputs>
       <div class="required-message">
         Help message
       </div>
       <span class="required"></span>
-      <label for="name">Label</label>
+      <label for="required">Label</label>
     </div>
   </Fragment>
   </Story>
@@ -93,24 +99,24 @@ It’s a text field input + fixed prefix.
   <Story name="Prefix Input">
   <Fragment>
   <h3>Prefix Disabled</h3>
-  <div className="input-wrapper">
+  <div className="input__wrapper">
       <ExampleInputs className="input-prefix" id="prefix" placeholder="  " disabled></ExampleInputs>
       <span class="prefix">R$</span>
       <label for="prefix">Label</label>
   </div>
   <br />
   <h3>Prefix Default</h3>
-  <div className="input-wrapper">
+  <div className="input__wrapper">
       <ExampleInputs className="input-prefix" id="help" placeholder="  "></ExampleInputs>
       <span class="prefix">R$</span>
       <label for="help">Label</label>
   </div>
   <br />
   <h3>Prefix Error</h3>
-  <div className="input-wrapper">
+  <div className="input__wrapper">
       <ExampleInputs className="input-prefix" type="email" id="prefix-error" placeholder="  " value="Error"></ExampleInputs>
       <span class="prefix">R$</span>
-      <div class="error-message">Error message</div>
+      <div class="input__error-message">Error message</div>
       <label for="prefix-error">Label</label>
   </div>
 </Fragment>
@@ -125,24 +131,24 @@ It’s a text field input + fixed suffix.
   <Story name="Suffix Input">
   <Fragment>
   <h3>Suffix Disabled</h3>
-  <div className="input-wrapper">
+  <div className="input__wrapper">
       <ExampleInputs className="input-suffix" id="suffix" placeholder="  " disabled></ExampleInputs>
       <span class="suffix">.com</span>
       <label for="suffix">Label</label>
   </div>
   < br/>
   <h3>Suffix Default</h3>
-  <div className="input-wrapper">
+  <div className="input__wrapper">
       <ExampleInputs className="input-suffix" id="address" placeholder="  "></ExampleInputs>
       <span class="suffix">.com</span>
       <label for="address">Label</label>
   </div>
     <br />
   <h3>Suffix Error</h3>
-  <div className="input-wrapper">
+  <div className="input__wrapper">
       <ExampleInputs className="input-suffix" type="email" id="suffix-error" placeholder="  " value="Error"></ExampleInputs>
       <span class="suffix">.com</span>
-      <div class="error-message">Error message</div>
+      <div class="input__error-message">Error message</div>
       <label for="suffix-error">Label</label>
   </div>
 </Fragment>

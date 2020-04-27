@@ -2,47 +2,58 @@
 
 $input-types: 'default', 'required', 'prefix', 'prefix-required';
 
-.input-wrapper {
+$border-01: 2px solid;
+$hover-shadow: 0 0 0 6px;
+$focus-shadow: 0 0 0 2px;
+
+$radius-01: 2px;
+$radius-02: 4px;
+
+$input-internal-spacing: 2px;
+
+
+.input__wrapper {
   position: relative;
   width:fit-content;
-  margin-top: 12px;
+  margin-top: $spacing-03;
 }
 
 //Input base
 input {
   display: inline-block;
-  border: 2px solid $mineral-40;
-  border-radius: 4px;
-  padding: 0px;
+  min-width: 164px;
+  height: 40px;
+  padding: 0;
+  margin: 0;
   font-family: $font-secondary;
   font-weight: 500;
-  transition: border .3s ease, box-shadow .3s ease;
-  color: $black-75;
-  height: 40px;
   font-size: 16px;
-  margin: 0px;
-  text-indent: 12px;
+  color: $black-75;
+  text-indent: $spacing-03;
   text-overflow: clip;
+  border: $border-01 $mineral-40;
+  border-radius: $radius-02;
   outline: none;
-  min-width: 164px;
+  transition: border $duration-base ease, box-shadow $duration-base ease;
 
   &::placeholder {
     color: $black-50;
   }
 
   &:hover {
-    box-shadow: 0px 0px 0px 6px $mineral-10;
+    box-shadow: 0 0 0 6px $mineral-10;
   }
 
-  &:focus, &:not(:placeholder-shown):focus {
-    outline: none;
+  &:focus,
+  &:not(:placeholder-shown):focus {
     border: 2px solid $teal-70;
+    outline: none;
     box-shadow: 0 0 0 2px $teal-30;
   }
 
   &:not(:placeholder-shown):hover:focus {
     border: 2px solid $teal-80;
-    box-shadow: 0px 0px 0px 2px $teal-30, 0px 0px 0px 6px $teal-10;
+    box-shadow: 0 0 0 2px $teal-30, 0 0 0 6px $teal-10;
   }
 
   &:not(:placeholder-shown) {
@@ -50,18 +61,18 @@ input {
   }
 
   &:not(:placeholder-shown):hover{
-    box-shadow: 0px 0px 0px 6px $teal-10;
+    box-shadow: 0 0 0 6px $teal-10;
   }
 
-  ~ .icon {
+  ~ .input__icon {
+    position: absolute;
+    top: $spacing-02;
+    right: $spacing-02;
+    z-index: 1;
     display: inline-block;
     width: 24px;
     height: 24px;
-    position: absolute;
-    z-index: 1;
-    right: 8px;
-    top: 10px;
-    background-image: url(../static/icons/eye.svg);
+    background-image: url("../static/icons/eye.svg");
     background-repeat: no-repeat;
     border: none;
     outline: none;
@@ -71,42 +82,47 @@ input {
 
 //disabled
 input:disabled, input:disabled:hover{
-  border: 2px solid $mineral-30;
-  background-color: $mineral-10;
   color: $black-75;
+  background-color: $mineral-10;
+  border: $border-01 $mineral-30;
   box-shadow: none;
 }
 
 //invalid
 input:invalid {
+  color: $red-60;
   background-color: $coral-10;
   border-color: $red-60;
-  color: $red-60;
 
-  &:focus,&:not(:placeholder-shown):focus {
+  &:focus,
+  &:not(:placeholder-shown):focus {
+    border: $border-01 $red-60;
     outline: none;
-    border: 2px solid $red-60;
     box-shadow: 0 0 0 2px $coral-20;
   }
 
   &:not(:placeholder-shown):hover:focus {
-    border: 2px solid $red-60;
-    box-shadow: 0px 0px 0px 2px $coral-20, 0px 0px 0px 6px $coral-10;
+    border: $border-01 $red-60;
+    box-shadow: 0 0 0 2px $coral-20, 0 0 0 6px $coral-10;
   }
 
   &:not(:placeholder-shown):hover {
-    box-shadow: 0px 0px 0px 6px $coral-10;
+    box-shadow: 0 0 0 6px $coral-10;
   }
 }
 
-  .error-message {
-    font-size: 12px;
-    color: $red-60;
+  .input__message {
+    padding: 2px 0 $spacing-03 $spacing-03;
     font-family: $font-secondary;
-    font-weight: 500;
-    padding: 2px 0 12px 12px;
+    font-size: 12px;
     opacity: 0;
-    transition: opacity 0.2s ease;
+    transition: opacity $duration-base ease;
+    color: $red-60;
+    font-weight: 500;
+
+    &--error {
+      color: $red-60;
+    }
   }
 
   .label-error {
@@ -114,70 +130,70 @@ input:invalid {
   }
 
   input:not(:placeholder-shown):invalid~label{
-    font-size: 12px;
-    padding: 2px;
-    top: -12px;
-    color: $red-60;
-    background: rgb(255,255,255);
-    background: linear-gradient(360deg, rgba(255,255,255,0) 28%, rgba(255,255,255,1) 28%);
+    top: -$spacing-03;
     width: auto;
+    padding: 2px;
+    font-size: 12px;
+    color: $red-60;
+    background: rgb(255,255,255),;
+    background: linear-gradient(360deg, rgba(255,255,255,0) 28%, rgba(255,255,255,1) 28%);
   }
 
-  input:not(:placeholder-shown):invalid~.error-message{
+  input:not(:placeholder-shown):invalid~.input__error-message{
   opacity: 1;
 }
 
 //Label
 label {
+  position: absolute;
+  top: $spacing-02;
+  left: $spacing-03;
+  z-index: 1;
   font-family: $font-secondary;
   font-weight: 500;
   font-size: 16px;
-  position: absolute;
-  top: 10px;
-  left: 12px;
   color: $mineral-30;
-  transition: 0.2s all;
   cursor: text;
-  z-index: 1;
+  transition: $duration-base all;
 }  
 
 input:not(:placeholder-shown)~label,
 input:focus~label {
-  font-size: 12px;
+  top: -$spacing-03;
   padding: 2px;
-  top: -12px;
+  width: auto;
+  font-size: 12px;
   color: $teal-60;
   background-color: $white;
-  width: auto;
 }  
 
 //Prefix
 input.input-prefix {
-  padding-left: 36px;
+  padding-left: $spacing-08;
 
   &:not(:placeholder-shown)~label,
   &:focus~label {
-    background: rgb(255,255,255);
+    background: rgb(255,255,255),;
     background: linear-gradient(360deg, rgba(255,255,255,0) 28%, rgba(255,255,255,1) 28%);
   }  
 
   + .prefix {
-    display: inline-block;
-    background-color: $mineral-10;
-    font-family: $font-secondary;
-    font-weight: 500;
-    font-size: 16px;
-    padding: 0 10px;
-    height: 36px;
-    border-radius: 2px;
     position: absolute;
     top: 2px;
-    line-height: 40px;
     bottom: 2px;
     left: 2px;
     z-index: 1;
+    display: inline-block;
+    height: 36px;
+    padding: 0 $spacing-03;
+    font-family: $font-secondary;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 36px;
     text-align: center;
     pointer-events: none;
+    background-color: $mineral-10;
+    border-radius: $radius-01;
   }  
 
   &:focus {
@@ -212,35 +228,35 @@ input.input-prefix {
     font-weight: 500;
     font-size: 16px;
     position: absolute;
-    top: 10px;
-    padding-left: 40px;
+    top: $spacing-02;
+    padding-left: $spacing-08;
     color: $mineral-40;
-    transition: 0.2s all;
+    transition: $duration-base all;
     cursor: text;
     z-index: 1;
   }  
 
 //Sufix  
 input.input-suffix {
-  padding-right: 36px;
+  padding-right: $spacing-08;
 
   + .suffix {
-    display: inline-block;
-    background-color: $mineral-10;
-    font-family: $font-secondary;
-    font-weight: 500;
-    font-size: 16px;
-    padding: 0 10px;
-    height: 36px;
-    border-radius: 2px;
     position: absolute;
     top: 2px;
-    line-height: 40px;
-    bottom: 2px;
     right: 2px;
+    bottom: 2px;
     z-index: 1;
+    display: inline-block;
+    height: 36px;
+    padding: 0 $spacing-02;
+    font-family: $font-secondary;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 36px;
     text-align: center;
     pointer-events: none;
+    background-color: $mineral-10;
+    border-radius: $radius-01;
   }  
 
   &:focus {
@@ -257,15 +273,15 @@ input.input-suffix {
 
   &:disabled{
     + .suffix{
-      background-color: $mineral-20;
       color: $black-50;
+      background-color: $mineral-20;
     }  
   }  
 
   &:invalid{
     + .suffix{
-      background-color: $coral-20;
       color: $red-60;
+      background-color: $coral-20;
     }  
   }  
 }  
@@ -273,16 +289,16 @@ input.input-suffix {
 //Required
 input {
   ~ .required {
+    position: absolute;
+    top: -$spacing-01;
+    right: -$spacing-01;
+    z-index: 1;
     display: inline-block;
     width: 24px;
     height: 24px;
     background-color: $mineral-40;
+    background-image: url("../static/icons/required-icon.svg");
     border-radius: 24px;
-    position: absolute;
-    z-index: 1;
-    right: -8px;
-    top: -8px;
-    background-image: url(../static/icons/required-icon.svg);
   }  
 
   &:not(:placeholder-shown):invalid,
@@ -326,31 +342,31 @@ input {
 }  
 
 .required-message {
+  padding: 2px 0 $spacing-03 $spacing-03;
   font-size: 12px;
   color: $teal-60;
   font-family: $font-secondary;
   font-weight: 500;
-  padding: 2px 0 12px 12px;
   opacity: 1;
 }  
 // Input style
 .input-colors {
   width: 140px;
   height: 36px; 
-  padding: 4px;
-  color: $white;
-  font-family: $font-secondary;
+  padding: $spacing-01;
   display: inline-flex;
-  justify-content: center;
+  font-family: $font-secondary;
+  color: $white;
   align-items: center;
+  justify-content: center;
   
   &.base {
     background-color: $purple-60;
   }
   
   &.hover {
-    background-color: $purple-10;
     color: $black-75;
+    background-color: $purple-10;
   }
 
   &.hover-border{
@@ -366,7 +382,7 @@ input {
   }
 
   &.prefix{
-    background-color: $purple-10;
     color: $black-75;
+    background-color: $purple-10;
   }
 }

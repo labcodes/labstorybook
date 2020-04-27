@@ -1,0 +1,62 @@
+import { Fragment } from 'react';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+
+import Toggle from '../labsystem/src/Toggle';
+
+<Meta title="Components | Toggle & Switcher" component={Toggle} />
+
+# Toggle & Switcher
+
+The `Toggle` and `Switcher` components (...).
+
+Both receive two inputs as props, where `type` indicates which symbol to show, while `color` defines its color.
+
+## Sample Toggle
+Toggle can be used as shown in the examples below:
+
+
+<Preview>
+  <Story name="Sample Toggle">
+    <Toggle name="sample-toggle-1" color="teal" />
+  </Story>
+</Preview>
+
+## Sample Switcher
+Switcher can be used as shown in the examples below:
+
+
+[insert Sample Switcher here]
+
+
+## Toggle Colors
+
+<Preview>
+  <Story name="Sample Toggle Colors">
+    <Fragment>
+      <Toggle name="sample-toggle-teal" color="teal"/>
+      <Toggle name="sample-toggle-purple" color="purple"/>
+      <Toggle name="sample-toggle-coral" color="coral"/>
+    </Fragment>
+  </Story>
+</Preview>
+
+## Switcher Colors
+All the available Switcher colors are shown below:
+
+<Preview>
+  <Story name="Switcher Colors">
+    <Fragment>
+      <span>insert Switcher components here</span>
+    </Fragment>
+  </Story>
+</Preview>
+
+
+## Prop API docs
+
+Here's the list of props based on the component's prop types definitions.
+### Toggle
+<Props of={Toggle} />
+
+### Switcher
+
