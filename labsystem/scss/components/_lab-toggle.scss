@@ -2,8 +2,8 @@
 .toggle {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 44px;
+  height: 24px;
 }
 
 /* Hide default HTML checkbox */
@@ -21,23 +21,24 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
   -webkit-transition: .4s;
   transition: .4s;
   border-radius: 34px;
+  border: $border-01;
 }
 
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
+  height: 24px;
+  width: 24px;
+  left: -2px;
+  bottom: -2px;
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
   border-radius: 50%;
+  border: $border-01;
 }
 
 input:checked + .slider {
@@ -49,7 +50,73 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+input:hover + .slider:before {
+  -webkit-transform: translateX(4px);
+  -ms-transform: translateX(4px);
+  transform: translateX(4px);
+}
+
+input:hover:checked + .slider:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+
+.teal {
+  background-color: $teal-10;
+  border-color: $teal-40;
+}
+
+.slider.teal:before {
+  border-color: $teal-60;
+}
+
+input:checked + .slider.teal {
+  background-color: $teal-60;
+}
+
+input:focus + .slider.teal {
+  box-shadow: 0 0 0 2px $teal-30;
+}
+
+/* PURPLE */
+.purple {
+  background-color: $purple-10;
+  border-color: $purple-40;
+}
+
+.slider.purple:before {
+  border-color: $purple-60;
+}
+
+input:checked + .slider.purple {
+  background-color: $purple-60;
+}
+
+input:focus + .slider.purple {
+  box-shadow: 0 0 0 2px $purple-30;
+}
+
+
+/* CORAL */
+.coral {
+  background-color: $coral-10;
+  border-color: $coral-40;
+}
+
+.slider.coral:before {
+  border-color: $coral-60;
+}
+
+input:checked + .slider.coral {
+  background-color: $coral-60;
+}
+
+input:focus + .slider.coral {
+  box-shadow: 0 0 0 2px $coral-30;
 }
