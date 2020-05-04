@@ -56,7 +56,7 @@ export default class Toggle extends React.Component {
           disabled={disabled}
           onChange={this.handleOnChange}
         />
-        <span className={`slider ${color} ${disabled}`} />
+          <span className={`toggle__slider toggle--${color}`} />
       </label>
     );
   }
