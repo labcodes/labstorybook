@@ -111,6 +111,34 @@
   .toggle__input:focus + .toggle__slider.toggle--coral {
     box-shadow: 0 0 0 2px $coral-30;
   }
+  /* DISABLED */
+  .toggle--disabled {
+    background-color: #ffffff;
+    border-color: $mineral-20;
+  }
 
+  .toggle__slider.toggle--disabled:before {
+    border-color: $mineral-20;
+  }
+
+  .toggle__input:checked + .toggle__slider.toggle--disabled {
+    background-color: $mineral-20;
+  }
+
+  .toggle__input:focus + .toggle__slider.toggle--disabled {
+    box-shadow: 0 0 0 2px $mineral-20;
+  }
+
+  .toggle__input:hover + .toggle--disabled.toggle__slider:before {
+    -webkit-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+
+  .toggle__input:checked:hover + .toggle--disabled.toggle__slider:before  {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
 }
 

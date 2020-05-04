@@ -49,14 +49,29 @@ export default class Toggle extends React.Component {
 
     return (
       <label className="toggle" htmlFor={name}>
-        <input
-          type="checkbox"
-          id={name}
-          checked={isChecked}
-          disabled={disabled}
-          onChange={this.handleOnChange}
-        />
+        {disabled ? (
+          <input
+            type="checkbox"
+            id={name}
+            className="toggle__input"
+            checked={isChecked}
+            disabled
+            onChange={this.handleOnChange}
+          />
+        ) : (
+          <input
+            type="checkbox"
+            id={name}
+            className="toggle__input"
+            checked={isChecked}
+            onChange={this.handleOnChange}
+          />
+        )}
+        {disabled ? (
+          <span className="toggle__slider toggle--disabled" />
+        ) : (
           <span className={`toggle__slider toggle--${color}`} />
+        )}
       </label>
     );
   }
