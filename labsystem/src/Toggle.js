@@ -15,7 +15,7 @@ export default class Toggle extends React.Component {
   static defaultProps = {
     color: "teal",
     disabled: false,
-    defaultValue: undefined,
+    defaultValue: false,
     value: undefined,
     handleToggle: undefined,
   };
@@ -24,12 +24,13 @@ export default class Toggle extends React.Component {
     super(props);
     const { defaultValue, value, name } = props;
     if (!isUndefined(defaultValue) && !isUndefined(value)) {
+      // eslint-disable-next-line no-console
       console.warn(
         `You are setting both value and defaultValue for input ${name} at the same time. We always initialize the toggle with defaultValue. Make sure this is the behaviour you want.`
       );
     }
     this.state = {
-      localValue: !isUndefined(defaultValue) ? defaultValue : false,
+      localValue: defaultValue,
     };
   }
 
