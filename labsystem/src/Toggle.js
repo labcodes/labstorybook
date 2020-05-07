@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { isUndefined } from "lodash";
 
@@ -48,30 +48,21 @@ export default class Toggle extends React.Component {
     const isChecked = !isUndefined(value) ? value : localValue;
 
     return (
-      <label className="toggle" htmlFor={name}>
-        {disabled ? (
-          <input
-            type="checkbox"
-            id={name}
-            className="toggle__input"
-            checked={isChecked}
-            disabled
-            onChange={this.handleOnChange}
-          />
-        ) : (
-          <input
-            type="checkbox"
-            id={name}
-            className="toggle__input"
-            checked={isChecked}
-            onChange={this.handleOnChange}
-          />
-        )}
-        {disabled ? (
-          <span className="toggle__slider toggle--disabled" />
-        ) : (
-          <span className={`toggle__slider toggle--${color}`} />
-        )}
+      <label
+        className={`toggle toggle--${color}${
+          disabled ? " toggle--disabled" : ""
+        }`}
+        htmlFor={name}
+      >
+        <input
+          type="checkbox"
+          id={name}
+          className="toggle__input"
+          checked={isChecked}
+          disabled={disabled}
+          onChange={this.handleOnChange}
+        />
+        <span className="toggle__slider" />
       </label>
     );
   }
