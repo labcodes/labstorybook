@@ -11,11 +11,11 @@ module.exports = {
     'no-console': ['error', { allow: ['error'] }],
     'no-underscore-dangle': 'off',
     'no-console': 'off',
-
     'prettier/prettier': 'error',
 
     'react/forbid-prop-types': 0,
     'react/jsx-filename-extension': 0,
+    'react/jsx-fragments': 0,
     'react/prefer-stateless-function': 0,
     'react/static-property-placement': 0,
   },
