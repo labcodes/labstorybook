@@ -7,12 +7,16 @@ import Toggle from '../labsystem/src/Toggle';
 
 # Toggle & Switcher
 
-The `Toggle` and `Switcher` components (...).
-
-Both receive two inputs as props, where `type` indicates which symbol to show, while `color` defines its color.
+The `Toggle` component might receive up to five inputs as props, where the `color` and `name` parameters are the only required ones.
+- `name`: should be an unique identifier and works as the `id` of the `input` tag within the component; it's also an important accessibility tool
+- `color`: defines the Toggle color
+- `disabled`: sets the Toggle component as disabled; includes functionality and styles
+- `defaultValue`: you can set a default value for the toggle to start with; it normally starts as `false`
+- `value`: you might need to set the component value from outside the component; if so, the internal logic to handle the component value won't be used
+- `handleToggle`: you might need to perform other actions when the component value changes; use this param to pass a function that's gonna be called on value changes
 
 ## Sample Toggle
-Toggle can be used as shown in the examples below:
+Toggle can be used as shown in the example below:
 
 
 <Preview>
@@ -29,23 +33,25 @@ Switcher can be used as shown in the examples below:
 
 
 ## Toggle Colors
+Toggle can be used in the following colors:
 
 <Preview>
   <Story name="Sample Toggle Colors">
     <Fragment>
-      <Toggle name="sample-toggle-teal" color="teal"/><br />
-      <Toggle name="sample-toggle-purple" color="purple" defaultValue="checked" /><br />
-      <Toggle name="sample-toggle-coral" color="coral"/><br />
+      <Toggle name="sample-toggle-teal" color="teal"/><br /><br />
+      <Toggle name="sample-toggle-purple" color="purple" defaultValue="checked" /><br /><br />
+      <Toggle name="sample-toggle-coral" color="coral"/><br /><br />
     </Fragment>
   </Story>
 </Preview>
 
 ## Toggle Disabled
+Togge can be disabled and, at the same time receive, a `defaultValue`:
 
 <Preview>
   <Story name="Sample Toggle Disabled">
     <Fragment>
-      <Toggle name="sample-toggle-disabled" disabled /><br />
+      <Toggle name="sample-toggle-disabled" disabled /><br /><br />
       <Toggle name="sample-toggle-disabled" disabled value="checked"/>
     </Fragment>
   </Story>
