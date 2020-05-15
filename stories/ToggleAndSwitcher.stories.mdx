@@ -3,9 +3,9 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
 import Toggle from '../labsystem/src/Toggle';
 
-<Meta title="Components | Toggle & Switcher" component={Toggle} />
+<Meta title="Components | Toggle" component={Toggle} />
 
-# Toggle & Switcher
+# Toggle
 
 The `Toggle` component might receive up to five inputs as props, where the `color` and `name` parameters are the only required ones.
 - `name`: should be an unique identifier and works as the `id` of the `input` tag within the component; it's also an important accessibility tool
@@ -24,13 +24,6 @@ Toggle can be used as shown in the example below:
     <Toggle name="sample-toggle-1" color="teal" />
   </Story>
 </Preview>
-
-## Sample Switcher
-Switcher can be used as shown in the examples below:
-
-
-[insert Sample Switcher here]
-
 
 ## Toggle Colors
 Toggle can be used in the following colors:
@@ -57,23 +50,8 @@ Togge can be disabled and, at the same time receive, a `defaultValue`:
   </Story>
 </Preview>
 
-## Switcher Colors
-All the available Switcher colors are shown below:
-
-<Preview>
-  <Story name="Switcher Colors">
-    <Fragment>
-      <span>insert Switcher components here</span>
-    </Fragment>
-  </Story>
-</Preview>
-
-
 ## Prop API docs
 
 Here's the list of props based on the component's prop types definitions.
 ### Toggle
 <Props of={Toggle} />
-
-### Switcher
-
