@@ -4,7 +4,7 @@ jobs:
     working_directory: ~/labsystem
     # The primary container is an instance of the first image listed. The job's commands run in this container.
     docker:
-      - image: circleci/node:lts/*
+      - image: circleci/node:v12.16.2
 
     steps:
       - checkout
