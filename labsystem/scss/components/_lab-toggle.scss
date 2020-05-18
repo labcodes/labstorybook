@@ -104,27 +104,6 @@
   }
 
 
-  /* CORAL */
-  &.toggle--coral {
-    .toggle__slider{
-      background-color: $coral-10;
-      border-color: $coral-40;
-    }
-
-    .toggle__slider:before {
-      border-color: $coral-60;
-    }
-
-    .toggle__input:checked + .toggle__slider {
-      background-color: $coral-60;
-    }
-
-    .toggle__input:focus + .toggle__slider {
-      box-shadow: 0 0 0 2px $coral-30;
-    }
-
-  }
-
   /* DISABLED */
   &.toggle--disabled {
     .toggle__slider{
