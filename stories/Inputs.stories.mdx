@@ -1,9 +1,9 @@
 import { Fragment } from 'react';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
-import ExampleInputs from '../labsystem/src/ExampleInputs';
+import Inputs from '../labsystem/src/Inputs';
 
-<Meta title="Components | Text Inputs" component={ExampleInputs} />
+<Meta title="Components | Text Inputs" component={Inputs} />
 
 
 # General usage
@@ -30,21 +30,21 @@ It’s a standard text input. Can be used for enter a name, phone number, street
       <h3>Disabled</h3>
       <div className="input__wrapper
   ">
-        <ExampleInputs type="text" id="Disabled" placeholder="  " disabled></ExampleInputs>
+        <Inputs type="text" id="Disabled" placeholder="  " disabled></Inputs>
         <label for="Disabled">Disabled</label>
       </div>
       <br />
         <h3>Default</h3>
       <div className="input__wrapper
   ">
-        <ExampleInputs id="name" placeholder="  " ></ExampleInputs>
+        <Inputs id="name" placeholder="  " ></Inputs>
         <label for="name">Label</label>
       </div>
       <br />
       <h3>With Trailing Icon</h3>
       <div className="input__wrapper
   ">
-        <ExampleInputs id="icon" placeholder="  " ></ExampleInputs>
+        <Inputs id="icon" placeholder="  " ></Inputs>
         <button class="input__icon"></button>
         <label for="icon">Label</label>
       </div>
@@ -52,7 +52,7 @@ It’s a standard text input. Can be used for enter a name, phone number, street
       <h3>Error</h3>
       <div className="input__wrapper
   ">
-        <ExampleInputs type="email" id="error" placeholder="  " value="Error"></ExampleInputs>
+        <Inputs type="email" id="error" placeholder="  " value="Error"></Inputs>
         <div class="input__error-message">Error message</div>
         <label className="label-error" for="error">Name</label>
       </div>
@@ -70,7 +70,7 @@ It’s a default input that is required to be filled. It has a helper message to
     <h3>Required Default</h3>
     <div className="input__wrapper
 ">
-      <ExampleInputs type="text" id="name" placeholder="  "></ExampleInputs>
+      <Inputs type="text" id="name" placeholder="  "></Inputs>
       <div class="required-message">
         Help message
       </div>
@@ -80,7 +80,7 @@ It’s a default input that is required to be filled. It has a helper message to
     <h3>Required Error</h3>
     <div className="input__wrapper
 ">
-      <ExampleInputs type="email" id="required" placeholder="  " value="Error"></ExampleInputs>
+      <Inputs type="email" id="required" placeholder="  " value="Error"></Inputs>
       <div class="required-message">
         Help message
       </div>
@@ -100,21 +100,21 @@ It’s a text field input + fixed prefix.
   <Fragment>
   <h3>Prefix Disabled</h3>
   <div className="input__wrapper">
-      <ExampleInputs className="input-prefix" id="prefix" placeholder="  " disabled></ExampleInputs>
+      <Inputs className="input-prefix" id="prefix" placeholder="  " disabled></Inputs>
       <span class="prefix">R$</span>
       <label for="prefix">Label</label>
   </div>
   <br />
   <h3>Prefix Default</h3>
   <div className="input__wrapper">
-      <ExampleInputs className="input-prefix" id="help" placeholder="  "></ExampleInputs>
+      <Inputs className="input-prefix" id="help" placeholder="  "></Inputs>
       <span class="prefix">R$</span>
       <label for="help">Label</label>
   </div>
   <br />
   <h3>Prefix Error</h3>
   <div className="input__wrapper">
-      <ExampleInputs className="input-prefix" type="email" id="prefix-error" placeholder="  " value="Error"></ExampleInputs>
+      <Inputs className="input-prefix" type="email" id="prefix-error" placeholder="  " value="Error"></Inputs>
       <span class="prefix">R$</span>
       <div class="input__error-message">Error message</div>
       <label for="prefix-error">Label</label>
@@ -132,21 +132,21 @@ It’s a text field input + fixed suffix.
   <Fragment>
   <h3>Suffix Disabled</h3>
   <div className="input__wrapper">
-      <ExampleInputs className="input-suffix" id="suffix" placeholder="  " disabled></ExampleInputs>
+      <Inputs className="input-suffix" id="suffix" placeholder="  " disabled></Inputs>
       <span class="suffix">.com</span>
       <label for="suffix">Label</label>
   </div>
   < br/>
   <h3>Suffix Default</h3>
   <div className="input__wrapper">
-      <ExampleInputs className="input-suffix" id="address" placeholder="  "></ExampleInputs>
+      <Inputs className="input-suffix" id="address" placeholder="  "></Inputs>
       <span class="suffix">.com</span>
       <label for="address">Label</label>
   </div>
     <br />
   <h3>Suffix Error</h3>
   <div className="input__wrapper">
-      <ExampleInputs className="input-suffix" type="email" id="suffix-error" placeholder="  " value="Error"></ExampleInputs>
+      <Inputs className="input-suffix" type="email" id="suffix-error" placeholder="  " value="Error"></Inputs>
       <span class="suffix">.com</span>
       <div class="input__error-message">Error message</div>
       <label for="suffix-error">Label</label>

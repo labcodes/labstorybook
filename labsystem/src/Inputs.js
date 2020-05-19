@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default class ExampleInputs extends React.Component {
+export default class Inputs extends React.Component {
   static propTypes = {
     type: PropTypes.oneOf(['default', 'required', 'prefix', 'prefix-required'])
   }
