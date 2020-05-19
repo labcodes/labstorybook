@@ -28,9 +28,9 @@ export default class Icon extends React.Component {
       "remove",
       "sort",
       "trash",
-      "upload",
+      "upload"
     ]).isRequired,
-    color: PropTypes.oneOf(["teal", "mineral70", "mineral20"]).isRequired,
+    color: PropTypes.oneOf(["teal", "mineral70", "mineral20"]).isRequired
   };
 
   render() {

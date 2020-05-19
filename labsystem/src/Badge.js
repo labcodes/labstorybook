@@ -5,7 +5,7 @@ export default class Badge extends React.Component {
   static propTypes = {
     type: PropTypes.oneOf(["floating-add", "harvest", "meta", "ponto", "star"])
       .isRequired,
-    color: PropTypes.oneOf(["teal", "mineral70", "mineral20"]).isRequired,
+    color: PropTypes.oneOf(["teal", "mineral70", "mineral20"]).isRequired
   };
 
   render() {

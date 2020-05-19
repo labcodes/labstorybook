@@ -32,5 +32,5 @@ export default create({
 
   brandTitle: 'labcodes',
   brandUrl: 'https://labcodes.com.br',
-  brandImage: 'https://labcodes.com.br/blog/images/labcodes-logo.svg',
+  brandImage: 'slogan-color-2.png',
 });
