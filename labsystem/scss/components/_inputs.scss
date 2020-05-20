@@ -118,17 +118,29 @@ input:invalid {
     font-size: 12px;
     opacity: 0;
     transition: opacity $duration-base ease;
-    color: $red-60;
     font-weight: 500;
-
+    
     &--error {
       color: $red-60;
     }
+    
+    &--required {
+      color: $teal-60;
+      opacity: 1;
+    }
   }
+  
+  // .required-message {
+  //   padding: 2px 0 $spacing-03 $spacing-03;
+  //   font-size: 12px;
+  //   color: $teal-60;
+  //   font-family: $font-secondary;
+  //   font-weight: 500;
+  //   opacity: 1;
+  // }  
 
-  .label-error {
-    color: $red-60;
-  }
+
+  // Input style
 
   input:not(:placeholder-shown):invalid~label{
     top: -$spacing-03;
@@ -140,7 +152,7 @@ input:invalid {
     background: linear-gradient(360deg, rgba(255,255,255,0) 28%, rgba(255,255,255,1) 28%);
   }
 
-  input:not(:placeholder-shown):invalid~.input__error-message{
+  input:not(:placeholder-shown):invalid~.input__message--error{
   opacity: 1;
 }
 
@@ -330,27 +342,18 @@ input {
   }  
 
   &:placeholder-shown {
-    + .required-message {
+    + .input__message--required  {
       opacity:0;
     }  
   }  
 
   &:invalid {
-    + .required-message {
+    + .input__message--required {
       color: $red-60;
     }  
   }  
 }  
 
-.required-message {
-  padding: 2px 0 $spacing-03 $spacing-03;
-  font-size: 12px;
-  color: $teal-60;
-  font-family: $font-secondary;
-  font-weight: 500;
-  opacity: 1;
-}  
-// Input style
 .input-colors {
   width: 140px;
   height: 36px; 

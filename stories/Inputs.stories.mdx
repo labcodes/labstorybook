@@ -53,7 +53,7 @@ It’s a standard text input. Can be used for enter a name, phone number, street
       <div className="input__wrapper
   ">
         <Inputs type="email" id="error" placeholder="  " value="Error"></Inputs>
-        <div class="input__error-message">Error message</div>
+        <div class="input__message input__message--error">Error message</div>
         <label className="label-error" for="error">Name</label>
       </div>
     </Fragment>
@@ -71,7 +71,7 @@ It’s a default input that is required to be filled. It has a helper message to
     <div className="input__wrapper
 ">
       <Inputs type="text" id="name" placeholder="  "></Inputs>
-      <div class="required-message">
+      <div class="input__message input__message--required">
         Help message
       </div>
       <span class="required"></span>
@@ -81,7 +81,7 @@ It’s a default input that is required to be filled. It has a helper message to
     <div className="input__wrapper
 ">
       <Inputs type="email" id="required" placeholder="  " value="Error"></Inputs>
-      <div class="required-message">
+      <div class="input__message input__message--error">
         Help message
       </div>
       <span class="required"></span>
@@ -116,7 +116,7 @@ It’s a text field input + fixed prefix.
   <div className="input__wrapper">
       <Inputs className="input-prefix" type="email" id="prefix-error" placeholder="  " value="Error"></Inputs>
       <span class="prefix">R$</span>
-      <div class="input__error-message">Error message</div>
+      <div class="input__message input__message--error">Error message</div>
       <label for="prefix-error">Label</label>
   </div>
 </Fragment>
@@ -148,7 +148,7 @@ It’s a text field input + fixed suffix.
   <div className="input__wrapper">
       <Inputs className="input-suffix" type="email" id="suffix-error" placeholder="  " value="Error"></Inputs>
       <span class="suffix">.com</span>
-      <div class="input__error-message">Error message</div>
+      <div class="input__message input__message--error">Error message</div>
       <label for="suffix-error">Label</label>
   </div>
 </Fragment>
