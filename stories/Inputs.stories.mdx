@@ -34,15 +34,14 @@ It’s a standard text input. Can be used for enter a name, phone number, street
       <h3>Default</h3>
       <Inputs id="name" label="Label" />
       <br />
-
-      <h3>With Trailing Icon</h3>
-      <Inputs id="icon" label="Label" />
-      <br />
       
+      <h3>Trailing icon</h3>
+      <Inputs id="name2" label="Label" icon="eye-opened" iconColor="mineral70" />
+      <br />
+     
       <h3>Error</h3>
-        <Inputs type="email" id="error" value="Error"  />
-        <div class="input__message input__message--error">Error message</div>
-        <label className="label-error" for="error">Name</label>
+      <Inputs type="email" id="error" label="Name" value="Error" />
+      
     </Fragment>
   </Story>
 </Preview>
@@ -53,26 +52,13 @@ It’s a default input that is required to be filled. It has a helper message to
 
 <Preview>
   <Story name="Required Input">
-  <Fragment>
-    <h3>Required Default</h3>
-    <div className="input__wrapper">
-      <Inputs type="text" id="name" />
-      <div class="input__message input__message--required">
-        Help message
-      </div>
-      <span class="required"></span>
-      <label for="name">Label</label>
-    </div>
-    <h3>Required Error</h3>
-    <div className="input__wrapper">
-      <Inputs type="email" id="required" value="Error" />
-      <div class="input__message input__message--error">
-        Help message
-      </div>
-      <span class="required"></span>
-      <label for="required">Label</label>
-    </div>
-  </Fragment>
+    <Fragment>
+      <h3>Required Default</h3>
+      <Inputs type="text" id="required" label= "Label" helpMessage="Help message" required />
+      
+      <h3>Required Error</h3>
+      <Inputs type="email" id="required2" value="Error" label= "Required" required />
+    </Fragment>
   </Story>
 </Preview>
 
@@ -82,29 +68,24 @@ It’s a text field input + fixed prefix.
 
 <Preview>
   <Story name="Prefix Input">
-  <Fragment>
-  <h3>Prefix Disabled</h3>
-  <div className="input__wrapper">
-      <Inputs className="input-prefix" id="prefix" disabled />
-      <span class="prefix">R$</span>
-      <label for="prefix">Label</label>
-  </div>
-  <br />
-  <h3>Prefix Default</h3>
-  <div className="input__wrapper">
-      <Inputs className="input-prefix" id="help" />
-      <span class="prefix">R$</span>
-      <label for="help">Label</label>
-  </div>
-  <br />
-  <h3>Prefix Error</h3>
-  <div className="input__wrapper">
-      <Inputs className="input-prefix" type="email" id="prefix-error" value="Error" />
-      <span class="prefix">R$</span>
-      <div class="input__message input__message--error">Error message</div>
-      <label for="prefix-error">Label</label>
-  </div>
-</Fragment>
+    <Fragment>
+      <h3>Prefix Disabled</h3>
+      <Inputs className="input-prefix" id="prefix" label="Label" prefix="R$" disabled />
+      <br />
+      
+      <h3>Prefix Default</h3>
+      <Inputs className="input-prefix" id="help" label="Label" prefix="R$" />
+      <br />
+      
+      <h3>Prefix Error</h3>
+      <Inputs
+        className="input-prefix"
+        type="email"
+        id="prefix-error"
+        value="Error"
+        label="Label"
+        prefix="R$" />
+    </Fragment>
   </Story>
 </Preview>
 
@@ -114,32 +95,20 @@ It’s a text field input + fixed suffix.
 
 <Preview>
   <Story name="Suffix Input">
-  <Fragment>
-  <h3>Suffix Disabled</h3>
-  <div className="input__wrapper">
-      <Inputs className="input-suffix" id="suffix" disabled />
-      <span class="suffix">.com</span>
-      <label for="suffix">Label</label>
-  </div>
-  < br/>
-  <h3>Suffix Default</h3>
-  <div className="input__wrapper">
-      <Inputs className="input-suffix" id="address" />
-      <span class="suffix">.com</span>
-      <label for="address">Label</label>
-  </div>
-    <br />
-  <h3>Suffix Error</h3>
-  <div className="input__wrapper">
-      <Inputs className="input-suffix" type="email" id="suffix-error" value="Error" />
-      <span class="suffix">.com</span>
-      <div class="input__message input__message--error">Error message</div>
-      <label for="suffix-error">Label</label>
-  </div>
-</Fragment>
+    <Fragment>
+      <h3>Suffix Disabled</h3>
+      <Inputs className="input-suffix" id="suffix" suffix=".com" disabled />
+      <br/>
+      
+      <h3>Suffix Default</h3>
+      <Inputs className="input-suffix" id="address" suffix=".com" />
+      <br />
+      
+      <h3>Suffix Error</h3>
+      <Inputs className="input-suffix" type="email" id="suffix-error" value="Error" suffix=".com" />
+    </Fragment>
   </Story>
 </Preview>
-
 
 ## Behavior
 ### Default input/ Prefix and suffix input
