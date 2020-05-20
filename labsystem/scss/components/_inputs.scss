@@ -65,21 +65,18 @@ input {
     box-shadow: 0 0 0 6px $teal-10;
   }
 
-  ~ .input__icon {
-    position: absolute;
-    top: $spacing-02;
-    right: $spacing-02;
-    z-index: 1;
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    background-image: url("../static/icons/eye.svg");
-    background-repeat: no-repeat;
-    border: none;
-    outline: none;
-  }
 }
 
+.input__icon {
+  position: absolute;
+  top: $spacing-02;
+  right: $spacing-02;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+  padding: 0px;
+  border: none;
+}
 
 //disabled
 input:disabled, input:disabled:hover{
@@ -130,14 +127,6 @@ input:invalid {
     }
   }
   
-  // .required-message {
-  //   padding: 2px 0 $spacing-03 $spacing-03;
-  //   font-size: 12px;
-  //   color: $teal-60;
-  //   font-family: $font-secondary;
-  //   font-weight: 500;
-  //   opacity: 1;
-  // }  
 
 
   // Input style
@@ -303,8 +292,8 @@ input.input-suffix {
 input {
   ~ .required {
     position: absolute;
-    top: -$spacing-01;
-    right: -$spacing-01;
+    top: -$spacing-02;
+    right: -$spacing-02;
     z-index: 1;
     display: inline-block;
     width: 24px;

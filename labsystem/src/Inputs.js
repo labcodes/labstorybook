@@ -15,24 +15,24 @@ export default class Inputs extends React.Component {
       autocomplete,
       className,
       id,
-      placeholder,
       type,
       label,
       disabled,
-      value
+      value,
+      icon,
+      iconColor
     } = this.props;
     return (
-      <input
-        className={`input ${className}`}
-        id={id}
-        type={type}
-        placeholder={placeholder}
-        label={label}
-        disabled={disabled}
-        value={value}
-      >
-        {this.props.children}
-      </input>
+      <div className="input__wrapper">
+        <input
+          className={`input ${className}`}
+          id={id}
+          type={type}
+          placeholder=" "
+          disabled={disabled}
+          value={value} />
+        <label for={id}>{label}</label>
+      </div>
     )
   }
 }
