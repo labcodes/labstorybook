@@ -1,3 +1,5 @@
+@use "sass:map";
+
 /* The the box around the slider */
 .toggle {
   position: relative;
@@ -20,31 +22,38 @@
     left: 0;
     right: 0;
     bottom: 0;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    -webkit-transition: $duration-slow;
+    transition: $duration-slow;
     border-radius: 34px;
     border: $border-01;
+    background-color: map-get($map: $toggle-theme, $key: "background-color-off");
+    border-color: map-get($map: $toggle-theme, $key: "slider-border-color");
+
+    /* The circle that slides */
+    &:before {
+      position: absolute;
+      content: "";
+      height: 24px;
+      width: 24px;
+      left: -2px;
+      bottom: -2px;
+      background-color: white;
+      -webkit-transition: $duration-slow;
+      transition: $duration-slow;
+      border-radius: 50%;
+      border: $border-01;
+      border-color: map-get($map: $toggle-theme, $key: "background-color-on");
+    }
   }
 
-  /* The circle that slides */
-  .toggle__slider:before {
-    position: absolute;
-    content: "";
-    height: 24px;
-    width: 24px;
-    left: -2px;
-    bottom: -2px;
-    background-color: white;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-    border-radius: 50%;
-    border: $border-01;
-  }
+  .toggle__input:checked + .toggle__slider {
+    background-color: map-get($map: $toggle-theme, $key: "background-color-on");
 
-  .toggle__input:checked + .toggle__slider:before {
-    -webkit-transform: translateX(20px);
-    -ms-transform: translateX(20px);
-    transform: translateX(20px);
+    &:before {
+      -webkit-transform: translateX(20px);
+      -ms-transform: translateX(20px);
+      transform: translateX(20px);
+    }
   }
 
   .toggle__input:hover + .toggle__slider:before {
@@ -59,50 +68,49 @@
     transform: translateX(16px);
   }
 
+  .toggle__input:focus + .toggle__slider {
+    box-shadow: 0 0 0 2px map-get($map: $toggle-theme, $key: "focus-border-color");
+  }
+
   /* TEAL */
   &.toggle--teal {
     .toggle__slider{
-      background-color: $teal-10;
-      border-color: $teal-40;
+      background-color: map-get($map: $toggle-teal-theme, $key: "background-color-off");
+      border-color: map-get($map: $toggle-teal-theme, $key: "slider-border-color");
     }
 
     .toggle__slider:before {
-      border-color: $teal-60;
+      border-color: map-get($map: $toggle-teal-theme, $key: "background-color-on");
     }
 
     .toggle__input:checked + .toggle__slider {
-      background-color: $teal-60;
+      background-color: map-get($map: $toggle-teal-theme, $key: "background-color-on");
     }
 
     .toggle__input:focus + .toggle__slider {
-      box-shadow: 0 0 0 2px $teal-30;
+      box-shadow: 0 0 0 2px map-get($map: $toggle-teal-theme, $key: "focus-border-color");
     }
   }
-
-
-
 
   /* PURPLE */
   &.toggle--purple {
     .toggle__slider{
-      background-color: $purple-10;
-      border-color: $purple-40;
+      background-color: map-get($map: $toggle-purple-theme, $key: "background-color-off");
+      border-color: map-get($map: $toggle-purple-theme, $key: "slider-border-color");
     }
 
     .toggle__slider:before {
-      border-color: $purple-60;
+      border-color: map-get($map: $toggle-purple-theme, $key: "background-color-on");
     }
 
     .toggle__input:checked + .toggle__slider {
-      background-color: $purple-60;
+      background-color: map-get($map: $toggle-purple-theme, $key: "background-color-on");
     }
 
     .toggle__input:focus + .toggle__slider {
-      box-shadow: 0 0 0 2px $purple-30;
+      box-shadow: 0 0 0 2px map-get($map: $toggle-purple-theme, $key: "focus-border-color");
     }
-
   }
-
 
   /* DISABLED */
   &.toggle--disabled {

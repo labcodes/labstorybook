@@ -4,7 +4,7 @@ import { isUndefined } from "lodash";
 
 export default class Toggle extends React.Component {
   static propTypes = {
-    color: PropTypes.oneOf(["teal", "purple"]),
+    theme: PropTypes.string,
     disabled: PropTypes.bool,
     defaultValue: PropTypes.bool,
     value: PropTypes.bool,
@@ -13,7 +13,7 @@ export default class Toggle extends React.Component {
   };
 
   static defaultProps = {
-    color: "teal",
+    theme: undefined,
     disabled: false,
     defaultValue: false,
     value: undefined,
@@ -44,15 +44,17 @@ export default class Toggle extends React.Component {
   };
 
   render() {
-    const { color, name, disabled, value } = this.props;
+    const { theme, name, disabled, value } = this.props;
     const { localValue } = this.state;
     const isChecked = !isUndefined(value) ? value : localValue;
 
     return (
       <label
-        className={`toggle toggle--${color}${
-          disabled ? " toggle--disabled" : ""
-        }`}
+        className={`
+          toggle
+          ${theme ? `toggle--${theme}` : ""}
+          ${disabled ? " toggle--disabled" : ""}
+        `}
         htmlFor={name}
       >
         <input
