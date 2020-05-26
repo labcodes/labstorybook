@@ -82,5 +82,15 @@ $cyan-60: #0077CC;
 $pink-20: #F8B9D6;
 $pink-60: #CC005C;
 $orange-20: #FFC499;
-$orange60: #D16900;
+$orange-60: #D16900;
 
+$main-palette: (
+  primary: $teal,
+  secondary: $coral,
+  support: $purple,
+  additional: $mustard,
+  neutral: $mineral-60,
+  success: $green-60,
+  danger: $red-60,
+  warning: $yellow-60,
+);
