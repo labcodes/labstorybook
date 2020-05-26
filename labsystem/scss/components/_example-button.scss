@@ -17,9 +17,7 @@ $button-types: 'primary', 'secondary', 'info', 'danger', 'success';
   &.success { border-color: $teal-80; }
 
   @each $type in $button-types {
-    &.#{$type} {
-      background-color: map-get($color-palette, $type);
-    }
+    background-color: $teal;
   }
 }
 
