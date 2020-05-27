@@ -12,25 +12,26 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "npx eslint ./labsystem/src -c .eslintrc.js"
+      "pre-push": "NODE_PATH=./labsystem npx eslint ./labsystem/src -c .eslintrc.js && cd labsystem && NODE_PATH=. npm test && cd .."
     }
   },
   "dependencies": {
     "@babel/core": "^7.7.5",
     "@babel/plugin-proposal-class-properties": "^7.7.4",
     "@babel/plugin-transform-runtime": "^7.7.6",
-    "@storybook/addon-docs": "^5.2.8",
-    "@storybook/react": "^5.2.8",
+    "@storybook/addon-docs": "^6.0.0-alpha.42",
+    "@storybook/react": "^6.0.0-alpha.42",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.6",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.19.0",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
     "gh-pages": "^2.1.1",
+    "lodash": "^4.17.15",
     "node-sass": "^4.13.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",

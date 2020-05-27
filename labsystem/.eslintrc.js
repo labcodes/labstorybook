@@ -6,18 +6,20 @@ module.exports = {
     'class-methods-use-this': [1, { 'exceptMethods': ['render'] }],
     'import/prefer-default-export': 'off',
 
-    'no-param-reassign': 'off',
     'no-case-declarations': 'off',
     'no-console': ['error', { allow: ['error'] }],
+    'no-param-reassign': 'off',
+    'no-shadow': 'off',
     'no-underscore-dangle': 'off',
-    'no-console': 'off',
+
     'prettier/prettier': 'error',
 
-    'react/forbid-prop-types': 0,
-    'react/jsx-filename-extension': 0,
-    'react/jsx-fragments': 0,
-    'react/prefer-stateless-function': 0,
-    'react/static-property-placement': 0,
+    'react/forbid-prop-types': 'off',
+    'react/jsx-filename-extension': 'off',
+    'react/jsx-one-expression-per-line': 'off',
+    'react/prefer-stateless-function': 'off',
+    'react/state-in-constructor': 'off',
+    'react/static-property-placement': 'off',
   },
   env: {
     es6: true,
