@@ -27,7 +27,7 @@
     border-radius: 34px;
     border: $border-01;
     background-color: map-get($map: $toggle-theme, $key: "background-color-off");
-    border-color: map-get($map: $toggle-theme, $key: "slider-border-color");
+    border-color: map-get($map: $toggle-theme, $key: "slider-border-color-off");
 
     /* The circle that slides */
     &:before {
@@ -48,6 +48,8 @@
 
   .toggle__input:checked + .toggle__slider {
     background-color: map-get($map: $toggle-theme, $key: "background-color-on");
+    border-color: map-get($map: $toggle-theme, $key: "slider-border-color-on");
+
 
     &:before {
       -webkit-transform: translateX(20px);
@@ -76,7 +78,7 @@
   &.toggle--teal {
     .toggle__slider{
       background-color: map-get($map: $toggle-teal-theme, $key: "background-color-off");
-      border-color: map-get($map: $toggle-teal-theme, $key: "slider-border-color");
+      border-color: map-get($map: $toggle-teal-theme, $key: "slider-border-color-off");
     }
 
     .toggle__slider:before {
@@ -85,6 +87,7 @@
 
     .toggle__input:checked + .toggle__slider {
       background-color: map-get($map: $toggle-teal-theme, $key: "background-color-on");
+      border-color: map-get($map: $toggle-teal-theme, $key: "slider-border-color-on");
     }
 
     .toggle__input:focus + .toggle__slider {
@@ -96,15 +99,17 @@
   &.toggle--purple {
     .toggle__slider{
       background-color: map-get($map: $toggle-purple-theme, $key: "background-color-off");
-      border-color: map-get($map: $toggle-purple-theme, $key: "slider-border-color");
+      border-color: map-get($map: $toggle-purple-theme, $key: "slider-border-color-off");
     }
 
     .toggle__slider:before {
       border-color: map-get($map: $toggle-purple-theme, $key: "background-color-on");
+
     }
 
     .toggle__input:checked + .toggle__slider {
       background-color: map-get($map: $toggle-purple-theme, $key: "background-color-on");
+      border-color: map-get($map: $toggle-purple-theme, $key: "slider-border-color-on");
     }
 
     .toggle__input:focus + .toggle__slider {
@@ -125,6 +130,7 @@
 
     .toggle__input:checked + .toggle__slider {
       background-color: $mineral-20;
+      border-color: $mineral-20;
     }
 
     .toggle__input:focus + .toggle__slider {
