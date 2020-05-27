@@ -1,0 +1,56 @@
+import { Fragment } from 'react';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+
+import Toggle from '../labsystem/src/Toggle';
+
+<Meta title="Components | Toggle" component={Toggle} />
+
+# Toggle
+
+The `Toggle` component might receive up to five inputs as props, where the `color` and `name` parameters are the only required ones.
+- `name`: should be an unique identifier and works as the `id` of the `input` tag within the component; it's also an important accessibility tool
+- `color`: defines the Toggle color
+- `disabled`: sets the Toggle component as disabled; includes functionality and styles
+- `defaultValue`: you can set a default value for the toggle to start with; it normally starts as `false`
+- `value`: you might need to set the component value from outside the component; if so, the internal logic to handle the component value won't be used
+- `handleToggle`: you might need to perform other actions when the component value changes; use this param to pass a function that's gonna be called on value changes
+
+## Sample Toggle
+Toggle can be used as shown in the example below:
+
+
+<Preview>
+  <Story name="Sample Toggle">
+    <Toggle name="sample-toggle-1" />
+  </Story>
+</Preview>
+
+## Toggle themes
+Toggle can be used in the following themes:
+
+<Preview>
+  <Story name="Sample Toggle Themes">
+    <Fragment>
+      <Toggle name="sample-toggle-teal" theme="teal"/><br /><br />
+      <Toggle name="sample-toggle-purple" theme="purple" defaultValue="checked" /><br /><br />
+    </Fragment>
+  </Story>
+</Preview>
+
+## Toggle Disabled
+Togge can be disabled and, at the same time receive, a `defaultValue`:
+
+<Preview>
+  <Story name="Sample Toggle Disabled">
+    <Fragment>
+      <Toggle name="sample-toggle-disabled" disabled /><br /><br />
+      <Toggle name="sample-toggle-disabled" disabled value="checked"/>
+    </Fragment>
+  </Story>
+</Preview>
+
+## Prop API docs
+
+Here's the list of props based on the component's prop types definitions.
+### Toggle
+<Props of={Toggle} />
