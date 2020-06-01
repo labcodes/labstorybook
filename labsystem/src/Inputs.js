@@ -28,7 +28,7 @@ export default class Inputs extends React.Component {
 
     if (icon) {
       trailingIcon = (
-        <button className="input__icon">
+        <button className="lab-input__icon">
           <Icon type={icon} color={iconColor} />
         </button>
       );
@@ -36,36 +36,36 @@ export default class Inputs extends React.Component {
 
     if (required) {
       requiredIcon = (
-        <span class="required"></span>
+        <span class="lab-input__required"></span>
       );
       message = (
-        <div class="input__message input__message--required">{helpMessage}</div>
+        <div class="lab-input__message lab-input__message--required">{helpMessage}</div>
       );
     }
 
     if (prefix) {
       prefixArea = (
-        <span class="prefix">{prefix}</span>
+        <span class="lab-input__prefix">{prefix}</span>
       );
     }
 
     if (suffix) {
       suffixArea = (
-        <span class="suffix">{suffix}</span>
+        <span class="lab-input__suffix">{suffix}</span>
       );
     }
 
     //Checked for value just to simulate the UI.
     if (value == "Error") {
       message = (
-        <div class="input__message input__message--error">Error message</div>
+        <div class="lab-input__message lab-input__message--error">Error message</div>
       );
     }
 
     return (
-      <div className="input__wrapper">
+      <div className="lab-input">
         <input
-          className={`input ${className}`}
+          className={`lab-input__field ${className}`}
           id={id}
           type={type}
           placeholder=" "
@@ -82,7 +82,8 @@ export default class Inputs extends React.Component {
 
         {requiredIcon}
 
-        <label for={id}>{label}</label>
+        <label 
+          className={`lab-input__label`} for={id}>{label}</label>
       </div>
     )
   }
