@@ -154,7 +154,7 @@ $white-palette: (
 );
 
 $neutral-palette: (
-  white: white,
+  white: $white,
   mineral-10: $mineral-10,
   mineral-20: $mineral-20,
   mineral-30: $mineral-30,
@@ -163,7 +163,7 @@ $neutral-palette: (
   mineral-70: $mineral-70,
   mineral-80: $mineral-80,
   mineral-90: $mineral-90,
-  black: black,
+  black: $black,
 );
 
 $messages-palette: (
