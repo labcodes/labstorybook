@@ -28,6 +28,7 @@
     border: $border-01;
     background-color: map-get($map: $toggle-theme, $key: "background-color-off");
     border-color: map-get($map: $toggle-theme, $key: "slider-border-color-off");
+    box-sizing: border-box;
 
     /* The circle that slides */
     &:before {
