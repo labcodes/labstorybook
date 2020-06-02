@@ -1,16 +1,15 @@
 // Variables
-@import "~bulma/sass/utilities/all";
 @import "variables/all";
-
-// Grid
-@import "~bulma/sass/base/all";
-@import "~bulma/sass/grid/all";
 
 // Components
 @import "components/all";
 
 // Helpers
 @import "utilities/all";
+
+// Bulma Grid
+@import "~bulma/sass/utilities/all";
+@import "~bulma/sass/grid/all";
 
 // Storybook
 @import "vendor/storybook-overrides";
