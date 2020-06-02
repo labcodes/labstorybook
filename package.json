@@ -12,7 +12,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "npx eslint ./labsystem/src -c .eslintrc.js"
+      "pre-push": "NODE_PATH=./labsystem npx eslint ./labsystem/src -c .eslintrc.js && cd labsystem && NODE_PATH=. npm test && cd .."
     }
   },
   "dependencies": {

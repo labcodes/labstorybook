@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toggle renders as expected when passing a different theme 1`] = `
+<label
+  className="
+          toggle
+          toggle--purple
+           toggle--disabled
+        "
+  htmlFor="test-toggle"
+>
+  <input
+    checked={false}
+    className="toggle__input"
+    disabled={true}
+    id="test-toggle"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <span
+    className="toggle__slider"
+  />
+</label>
+`;
+
+exports[`Toggle renders as expected when passing disabled as true 1`] = `
+<label
+  className="
+          toggle
+          
+           toggle--disabled
+        "
+  htmlFor="test-toggle"
+>
+  <input
+    checked={false}
+    className="toggle__input"
+    disabled={true}
+    id="test-toggle"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <span
+    className="toggle__slider"
+  />
+</label>
+`;
+
+exports[`Toggle renders with base props 1`] = `
+<label
+  className="
+          toggle
+          
+          
+        "
+  htmlFor="test-toggle"
+>
+  <input
+    checked={false}
+    className="toggle__input"
+    disabled={false}
+    id="test-toggle"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <span
+    className="toggle__slider"
+  />
+</label>
+`;
