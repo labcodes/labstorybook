@@ -1,13 +1,71 @@
 import { Fragment } from 'react';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
-<Meta title="Atoms | Type system" />
+<Meta title="Atoms | Typography" />
 
-<h1 style={{fontWeight: 100}}>Design principles - Freight Pro lights Hairline 100</h1>
-<h1 style={{fontWeight: 200}}>Design principles - Freight Pro lights Thin 200</h1>
-<h1 style={{fontWeight: 300}}>Design principles - Light 300</h1>
-<h1 style={{fontWeight: 400}}>Design principles - Book 400</h1>
-<h1 style={{fontWeight: 500}}>Design principles - Medium 500</h1>
-<h1 style={{fontWeight: 600}}>Design principles - Semibold 600</h1>
-<h1 style={{fontWeight: 700}}>Design principles - Bold 700</h1>
-<h1 style={{fontWeight: 900}}>Design principles - Black 900</h1>
+# Typography
+
+Typography can help express clear hierarchies, organize information, and guide users through a product or experience. It has a high impact on brand recognition and user experience. 
+
+<h2>Typefaces</h2>
+
+We chose 3 typefaces to use in all our internal products and marketing pieces: one serif font for headings, one sans-serif for body copy and a monospaced for code.
+
+<h3>Serif</h3>
+
+**FF Meta Serif** is the companion serif to Erik Spiekermann’s influential FF Meta typeface and it was released by FontFont in 2007. FF Meta Serif is available on Adobe Fonts for both desktop and web use in six weights—light, book, medium, bold, extrabold and black—each with corresponding italics.
+
+<h3>Sans Serif</h3>
+
+**Freight Sans** is the sans-serif companion to the typeface Freight Text. Its humanist forms give it a warm and friendly appearance. It has a large x-height and open apertures which makes it a great sans for setting body copy. Freight Sans is available on Adobe Fonts for both desktop and web use in six weights—light, book, medium, semi-bold, bold and black—each with matching italics and small caps styles.
+
+<h3>Monospace</h3>
+
+**IBM Plex** is an open source typeface superfamily conceptually designed and developed by Mike Abbink at IBM in collaboration with Bold Monday to reflect the brand spirit, beliefs and design principles of IBM and to be used for all brand experiences across the company internationally. Version 1.0 of the font family had four typefaces, each with 8 weights (Thin, Extra Light, Light, Regular, Text, Medium, Semi-bold, Bold) and true italics to complement them.
+We chose **IBM Plex Mono** as our monospaced typece.
+
+<h2>Headlines</h2>
+
+In the type scale, headlines span from a range of 1 through 6. Headlines are the largest text on the screen, reserved for short, important text or numerals.
+
+We use Freight Sans on all headelines, but `h1` can also be used with FF Meta Serif.
+
+<Preview>
+  <Story name="Headlines">
+    <Fragment>
+      <h1>Example of h1</h1>
+      <h1 className="headline--display">Example of h1</h1>
+      <h2>Example of h2</h2>
+      <h3>Example of h3</h3>
+      <h4>Example of h4</h4>
+      <h5>Example of h5</h5>
+      <h6>Example of h6</h6>
+    </Fragment>
+  </Story>
+</Preview>
+
+## Subtitles
+
+Subtitles are smaller than headlines. They are typically reserved for medium-emphasis text that is shorter in length. Serif or sans serif typefaces work well for subtitles.
+
+## Body
+
+Body text comes in ranges 1-2, and it’s typically used for long-form writing as it works well for small text sizes. For longer sections of text, a serif or sans serif typeface is recommended.
+
+<Preview>
+  <Story name="Paragraphs">
+    <Fragment>
+      <p>This is a example of text paragraph with default size</p>
+      <p class="paragraph-large">This is a example of text paragraph with large size</p>
+      <p class="paragraph-small">This is a example of text paragraph with small size</p>
+      <p class="paragraph-petit">This is a example of text paragraph with petit size</p>
+      <p class="paragraph-tiny">This is a example of text paragraph with tiny size</p>
+    </Fragment>
+  </Story>
+</Preview>
+
+## Caption and overline
+
+Caption and overline text (text with a line above it) are the smallest font sizes. They are used sparingly to annotate imagery or to introduce a headline.
+
+
