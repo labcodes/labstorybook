@@ -1,0 +1,36 @@
+.input-colors {
+    width: 140px;
+    height: 36px; 
+    padding: $spacing-01;
+    display: inline-flex;
+    font-family: $font-secondary;
+    color: $white;
+    align-items: center;
+    justify-content: center;
+    
+    &.base {
+      background-color: $purple-60;
+    }
+    
+    &.hover {
+      color: $black-75;
+      background-color: $purple-10;
+    }
+    
+    &.hover-border{
+      background-color: $purple-70;
+    }
+    
+    &.focus{
+      background-color: $purple-30;
+    }
+    
+    &.focus-border{
+      background-color: $purple-80;
+    }
+    
+    &.lab-input__prefix{
+      color: $black-75;
+      background-color: $purple-10;
+    }
+  }

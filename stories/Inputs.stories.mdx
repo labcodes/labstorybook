@@ -27,8 +27,6 @@ It’s a standard text input. Can be used for enter a name, phone number, street
 <Preview>
   <Story name="Default Input">
     <Fragment>
-      <h3>Elemento vazio</h3>
-      <input type="text" />
       <h3>Disabled</h3>
       <Inputs type="text" id="disabled" label="Disabled" disabled />
       <br />
@@ -68,16 +66,16 @@ It’s a text field input + fixed prefix.
   <Story name="Prefix Input">
     <Fragment>
       <h3>Prefix Disabled</h3>
-      <Inputs className="lab-input__field--prefix" id="prefix" label="Label" prefix="R$" disabled />
+      <Inputs className="lab-input__field--prefixed" id="prefix" label="Label" prefix="R$" disabled />
       <br />
       
       <h3>Prefix Default</h3>
-      <Inputs className="lab-input__field--prefix" id="help" label="Label" prefix="R$" />
+      <Inputs className="lab-input__field--prefixed" id="help" label="Label" prefix="R$" />
       <br />
       
       <h3>Prefix Error</h3>
       <Inputs
-        className="lab-input__field--prefix"
+        className="lab-input__field--prefixed"
         type="email"
         id="prefix-error"
         value="Error"
@@ -95,15 +93,15 @@ It’s a text field input + fixed suffix.
   <Story name="Suffix Input">
     <Fragment>
       <h3>Suffix Disabled</h3>
-      <Inputs className="lab-input__field--suffix" id="suffix" suffix=".com" disabled />
+      <Inputs className="lab-input__field--suffixed" id="suffix" label="Label" suffix=".com" disabled />
       <br/>
       
       <h3>Suffix Default</h3>
-      <Inputs className="lab-input__field--suffix" id="address" suffix=".com" />
+      <Inputs className="lab-input__field--suffixed" id="address" label="Label" suffix=".com" />
       <br />
       
       <h3>Suffix Error</h3>
-      <Inputs className="lab-input__field--suffix" type="email" id="suffix-error" value="Error" suffix=".com" />
+      <Inputs className="lab-input__field--suffixed" type="email" id="suffix-error" label="Label" value="Error" suffix=".com" />
     </Fragment>
   </Story>
 </Preview>

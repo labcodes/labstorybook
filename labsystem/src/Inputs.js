@@ -36,7 +36,7 @@ export default class Inputs extends React.Component {
 
     if (required) {
       requiredIcon = (
-        <span class="lab-input__required"></span>
+        <span class="lab-input__required-icon"></span>
       );
       message = (
         <div class="lab-input__message lab-input__message--required">{helpMessage}</div>
