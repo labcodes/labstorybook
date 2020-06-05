@@ -1,11 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Icon from './Icon';
+import React from "react";
+import Icon from "./Icon";
 
 export default class Inputs extends React.Component {
   render() {
     const {
-      autocomplete,
       className,
       id,
       type,
@@ -17,7 +15,7 @@ export default class Inputs extends React.Component {
       required,
       helpMessage,
       prefix,
-      suffix
+      suffix,
     } = this.props;
 
     let trailingIcon = null;
@@ -36,29 +34,29 @@ export default class Inputs extends React.Component {
 
     if (required) {
       requiredIcon = (
-        <span class="lab-input__required-icon"></span>
+        <span className="lab-input__required-icon"></span>
       );
       message = (
-        <div class="lab-input__message lab-input__message--required">{helpMessage}</div>
+        <div className="lab-input__message lab-input__message--required">{helpMessage}</div>
       );
     }
 
     if (prefix) {
       prefixArea = (
-        <span class="lab-input__prefix">{prefix}</span>
+        <span className="lab-input__prefix">{prefix}</span>
       );
     }
 
     if (suffix) {
       suffixArea = (
-        <span class="lab-input__suffix">{suffix}</span>
+        <span className="lab-input__suffix">{suffix}</span>
       );
     }
 
     //Checked for value just to simulate the UI.
-    if (value == "Error") {
+    if (value === "Error") {
       message = (
-        <div class="lab-input__message lab-input__message--error">Error message</div>
+        <div className="lab-input__message lab-input__message--error"> Error message </div>
       );
     }
 
@@ -70,7 +68,8 @@ export default class Inputs extends React.Component {
           type={type}
           placeholder=" "
           disabled={disabled}
-          value={value} />
+          value={value} 
+        />
 
         {trailingIcon}
 
@@ -83,8 +82,11 @@ export default class Inputs extends React.Component {
         {requiredIcon}
 
         <label 
-          className={`lab-input__label`} for={id}>{label}</label>
+          className={`lab-input__label`} 
+          for={id}>{label}
+        </label>
       </div>
-    )
+    );
   }
+
 }
