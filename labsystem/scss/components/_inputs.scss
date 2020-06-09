@@ -25,6 +25,7 @@ $input-internal-spacing: 2px;
 .lab-input {
   position: relative;
   width:fit-content;
+  width: -moz-fit-content;
   margin-top: $spacing-03;
 }
 
