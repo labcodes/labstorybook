@@ -1,11 +1,83 @@
 import React from "react";
 import Icon from "./Icon";
+import PropTypes from "prop-types";
 
 export default class Inputs extends React.Component {
+  static propTypes = {
+    theme: PropTypes.string,
+    className: PropTypes.string, // falar com luci para confirmar se pode//
+    name: PropTypes.string.isRequired,
+    type: PropTypes.string,
+    label: PropTypes.string.isRequired,
+    disabled: PropTypes.bool,
+    value: PropTypes.string, // avaliar depois como resolver// 
+    icon: PropTypes.string,
+    iconColor: PropTypes.string,
+    required: PropTypes.bool,
+    helpMessage: PropTypes.string,
+    prefix: PropTypes.string,
+    suffix: PropTypes.string,
+  };
+
+  static defaultProps = {
+    theme: undefined,
+    className: undefined,
+    type: "text",
+    disabled: false,
+    value: undefined, // avaliar depois como resolver// 
+    icon: undefined,
+    iconColor: "mineral-70",
+    required: false,
+    helpMessage: undefined,
+    prefix: undefined,
+    suffix: undefined,
+  };
+
+  trailingIcon = () => {
+    const { icon, iconColor } = this.props;
+    return (icon ? (
+      <button className="lab-input__icon">
+        <Icon type={icon} color={iconColor} />
+      </button>
+    ) : "")
+  };
+
+  requiredIcon = () => {
+    const { required } = this.props;
+    return (required ? (
+      <span className="lab-input__required-icon"></span>
+      ) : "")
+  };
+
+  message = () => {
+    const { helpMessage, value } = this.props;
+    if (value === "Error") {
+      return <div className="lab-input__message lab-input__message--error"> Error message </div>
+    };        
+    if (helpMessage) { 
+      return <div className="lab-input__message lab-input__message--required">{helpMessage}</div>
+    };    
+  };
+
+  prefixArea = () => {
+    const { prefix } = this.props;
+    return (prefix ? (
+      <span className="lab-input__prefix">{prefix}</span>
+      ) : "")
+  };
+
+  suffixArea = () => {
+    const { suffix } = this.props;
+    return (suffix ? (
+      <span className="lab-input__suffix">{suffix}</span>
+      ) : "")
+  };
+
+
   render() {
     const {
       className,
-      id,
+      name,
       type,
       label,
       disabled,
@@ -18,72 +90,31 @@ export default class Inputs extends React.Component {
       suffix,
     } = this.props;
 
-    let trailingIcon = null;
-    let message = null;
-    let requiredIcon = null;
-    let prefixArea = null;
-    let suffixArea = null;
-
-    if (icon) {
-      trailingIcon = (
-        <button className="lab-input__icon">
-          <Icon type={icon} color={iconColor} />
-        </button>
-      );
-    }
-
-    if (required) {
-      requiredIcon = (
-        <span className="lab-input__required-icon"></span>
-      );
-      message = (
-        <div className="lab-input__message lab-input__message--required">{helpMessage}</div>
-      );
-    }
-
-    if (prefix) {
-      prefixArea = (
-        <span className="lab-input__prefix">{prefix}</span>
-      );
-    }
-
-    if (suffix) {
-      suffixArea = (
-        <span className="lab-input__suffix">{suffix}</span>
-      );
-    }
-
-    //Checked for value just to simulate the UI.
-    if (value === "Error") {
-      message = (
-        <div className="lab-input__message lab-input__message--error"> Error message </div>
-      );
-    }
 
     return (
       <div className="lab-input">
         <input
           className={`lab-input__field ${className}`}
-          id={id}
+          id={name}
           type={type}
           placeholder=" "
           disabled={disabled}
-          value={value} 
+          value={value}
         />
 
-        {trailingIcon}
+        {this.trailingIcon()}
 
-        {prefixArea}
+        {this.prefixArea()}
 
-        {suffixArea}
+        {this.suffixArea()}
 
-        {message}
+        {this.message()}
 
-        {requiredIcon}
+        {this.requiredIcon()}
 
-        <label 
-          className={`lab-input__label`} 
-          for={id}>{label}
+        <label
+          className={`lab-input__label`}
+          htmlFor={name}>{label}
         </label>
       </div>
     );
