@@ -5,8 +5,8 @@ import PropTypes from "prop-types";
 export default class Inputs extends React.Component {
   static propTypes = {
     theme: PropTypes.string,
-    className: PropTypes.string, // falar com luci para confirmar se pode//
-    name: PropTypes.string.isRequired,
+    className: PropTypes.string, 
+    id: PropTypes.string.isRequired,
     type: PropTypes.string,
     label: PropTypes.string.isRequired,
     disabled: PropTypes.bool,
@@ -17,6 +17,9 @@ export default class Inputs extends React.Component {
     helpMessage: PropTypes.string,
     prefix: PropTypes.string,
     suffix: PropTypes.string,
+    isValid: PropTypes.bool,
+    customErrorMsg: PropTypes.string,
+    customValidationMethod: PropTypes.func,
   };
 
   static defaultProps = {
@@ -31,7 +34,25 @@ export default class Inputs extends React.Component {
     helpMessage: undefined,
     prefix: undefined,
     suffix: undefined,
+    isValid: true,
+    customErrorMsg: "Custom Error",
   };
+
+  constructor(props) {
+    super(props);
+    this.inputRef = React.createRef();
+  }
+
+  componentDidMount() {
+    const { isValid, customErrorMsg } = this.props;
+    if (!isValid) {
+      const inputElement = this.inputRef.current;
+      console.log(
+        isValid, customErrorMsg
+      );
+      inputElement.setCustomValidity(customErrorMsg);
+    }
+  }
 
   trailingIcon = () => {
     const { icon, iconColor } = this.props;
@@ -50,9 +71,10 @@ export default class Inputs extends React.Component {
   };
 
   message = () => {
-    const { helpMessage, value } = this.props;
-    if (value === "Error") {
-      return <div className="lab-input__message lab-input__message--error"> Error message </div>
+    const { helpMessage, isValid, customErrorMsg } = this.props;
+    console.log("MESSAGE", isValid, customErrorMsg);
+    if (!isValid) {
+      return <div className="lab-input__message lab-input__message--error"> { customErrorMsg } </div>
     };        
     if (helpMessage) { 
       return <div className="lab-input__message lab-input__message--required">{helpMessage}</div>
@@ -77,7 +99,7 @@ export default class Inputs extends React.Component {
   render() {
     const {
       className,
-      name,
+      id,
       type,
       label,
       disabled,
@@ -95,11 +117,12 @@ export default class Inputs extends React.Component {
       <div className="lab-input">
         <input
           className={`lab-input__field ${className}`}
-          id={name}
+          id={id}
           type={type}
           placeholder=" "
           disabled={disabled}
           value={value}
+          ref={this.inputRef}
         />
 
         {this.trailingIcon()}
@@ -114,7 +137,7 @@ export default class Inputs extends React.Component {
 
         <label
           className={`lab-input__label`}
-          htmlFor={name}>{label}
+          htmlFor={id}>{label}
         </label>
       </div>
     );
