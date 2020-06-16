@@ -2,13 +2,13 @@ $icon-size: 1.5rem !default;
 
 .lab-icon {
   &.teal {
-    background-image: url('/icons/main-teal.svg');
+    background-image: url('~labsystem/static/icons/main-teal.svg');
   }
   &.mineral70 {
-    background-image: url('/icons/main-mineral70.svg');
+    background-image: url('~labsystem/static/icons/main-mineral70.svg');
   }
   &.mineral20 {
-    background-image: url('/icons/main-disabled.svg');
+    background-image: url('~labsystem/static/icons/main-disabled.svg');
   }
   background-repeat: no-repeat;
 
