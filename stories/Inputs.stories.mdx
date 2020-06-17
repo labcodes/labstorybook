@@ -37,7 +37,7 @@ It’s a standard text input. Can be used for enter a id, phone number, street a
       <Inputs id="id2" label="Label" icon="eye-opened" iconColor="mineral70" />
       <br />
       <h3>Error</h3>
-      <Inputs type="email" id="error" label="Name" isValid={false} customErrorMsg="lalala" />
+      <Inputs type="email" id="error" label="Name" value="Invalid Input" isValid={false} customErrorMsg="lalala" />
     </Fragment>
   </Story>
 </Preview>
@@ -53,7 +53,7 @@ It’s a default input that is required to be filled. It has a helper message to
       <Inputs type="text" id="required" label= "Label" helpMessage="Help message" required />
       
       <h3>Required Error</h3>
-      <Inputs type="email" id="required2" value="Error" label= "Required" required />
+      <Inputs type="email" id="required2" value="Invalid Input" label= "Required" required />
     </Fragment>
   </Story>
 </Preview>
