@@ -38,7 +38,7 @@ It’s a standard text input. Can be used for enter a id, phone number, street a
       <Input id="id2" label="Label" icon="eye-opened" iconColor="mineral70" />
       <br />
       <h3>Error</h3>
-      <Input type="email" id="error" label="Name" value="Invalid Input" isValid={false} customErrorMsg="lalala" />
+      <Input type="email" id="error" label="Name" value="Invalid Input" isValid={false} customErrorMsg="Error message" />
     </Fragment>
   </Story>
 </Preview>
@@ -54,7 +54,7 @@ It’s a default input that is required to be filled. It has a helper message to
       <Input type="text" id="required" label= "Label" helpMessage="Help message" required />
       
       <h3>Required Error</h3>
-      <Input type="email" id="required2" value="Invalid Input" label= "Required" isValid={false} customErrorMsg="lalala" required />
+      <Input type="email" id="required2" value="Invalid Input" label= "Required" isValid={false} customErrorMsg="Error message" required />
     </Fragment>
   </Story>
 </Preview>
@@ -81,7 +81,10 @@ It’s a text field input + fixed prefix.
         id="prefix-error"
         value="Error"
         label="Label"
-        prefix="R$" />
+        prefix="R$"
+        isValid={false} 
+        customErrorMsg="Error message"
+      />
     </Fragment>
   </Story>
 </Preview>
@@ -102,7 +105,16 @@ It’s a text field input + fixed suffix.
       <br />
       
       <h3>Suffix Error</h3>
-      <Input className="lab-input__field--suffixed" type="email" id="suffix-error" label="Label" value="Error" suffix=".com" />
+      <Input 
+        className="lab-input__field--suffixed" 
+        type="email" 
+        id="suffix-error" 
+        label="Label" 
+        value="Error" 
+        suffix=".com"
+        isValid={false} 
+        customErrorMsg="Error message" 
+      />
     </Fragment>
   </Story>
 </Preview>
@@ -128,10 +140,10 @@ the input will show a error help message, changing the component for error state
 6. If you don't fill the input at all, the input will show a required help
 message after you unfocus it, changing the component for error state.
 
-### Testing input
+### Input Playground
 
 <Preview>
-  <Story name="Testing">
+  <Story name="Input Playground">
   <Fragment>
     <InputBehaviorTest />
   </Fragment>
