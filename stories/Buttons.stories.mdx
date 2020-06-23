@@ -1,0 +1,83 @@
+import { Fragment } from 'react';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+
+import Button from '../labsystem/src/Button';
+
+<Meta title="Components | Button" component={Button} />
+
+# Buttons
+
+## States and Styles
+
+### Default
+
+<Preview>
+  <Story name="Default Button">
+    <Fragment>
+      <Button>Débora</Button>
+      <Button disabled>Disabled</Button>
+    </Fragment>
+  </Story>
+</Preview>
+
+### Ghost
+
+<Preview>
+  <Story name="Ghost Button">
+    <Fragment>
+      <Button type="ghost">Pepes</Button>
+      <Button type="ghost" disabled>Disabled</Button>
+    </Fragment>
+  </Story>
+</Preview>
+
+### Text
+
+<Preview>
+  <Story name="Text Button">
+    <Fragment>
+      <Button type="text">Nenis</Button>
+      <Button type="text" disabled>Disabled</Button>
+    </Fragment>
+  </Story>
+</Preview>
+
+### Destructive and Warning
+
+<Preview>
+  <Story name="Destructive Button">
+    <Fragment>
+      <Button type="destructive">Queima</Button>
+      <Button type="warning">Pirigo</Button>
+    </Fragment>
+  </Story>
+</Preview>
+
+### Destructive and Warning
+
+<Preview>
+  <Story name="Link Button">
+    <Fragment>
+      <Button type="link">Linkinito</Button>
+    </Fragment>
+  </Story>
+</Preview>
+
+
+
+Type:
+- default
+- ghost
+- text
+- warning
+- destructive
+- link 
+
+Size:
+- normal
+- small
+- large
+
+Color:
+- teal
+- purple
