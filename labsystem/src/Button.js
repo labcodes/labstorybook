@@ -7,20 +7,26 @@ export default class Button extends React.Component {
     disabled: PropTypes.bool,
     type: PropTypes.string,
     size: PropTypes.string,
-    
+    children: PropTypes.element,
   };
 
   static defaultProps = {
     disabled: false,
     type: undefined,
     size: undefined,
-
+    children: undefined,
   };
 
   render() {
-    const { disabled, type, size } = this.props;
+    const { children, disabled, type, size } = this.props;
     return (
-      <button className={`btn btn--${type} btn--${size} `} disabled={disabled}>{this.props.children}</button> 
+      <button
+        type="button"
+        className={`btn btn--${type} btn--${size}`}
+        disabled={disabled}
+      >
+        {children}
+      </button>
     );
   }
 }
