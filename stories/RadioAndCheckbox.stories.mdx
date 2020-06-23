@@ -1,0 +1,108 @@
+import { Fragment } from 'react';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+
+import Radio from '../labsystem/src/RadioAndCheckbox';
+import Checkbox from '../labsystem/src/Checkbox';
+
+<Meta title="Components | Selectors" />
+
+
+<h1>Selectors</h1>
+<h2>General Usages</h2>
+<div class="columns">
+    <div class="column">
+        <p>Radio and Checkboxes are selection controls that allows the user to select options. 
+        They should be used in situations that the user needs to decide or declare preferences by choosing options on the screen.
+        We can have these 2 types of selectors:
+        </p> 
+    </div>
+    <div class="column">
+        <p>
+            <strong>Radio</strong>
+            <br />
+            This type of selector is used when we have a list of options where only one option can be selected.
+        </p> 
+        <p>
+            <strong>Checkbox</strong>
+            <br />
+            This type of selector is used when we have a list of options that can be multiple selected or don't have 
+            a selected option at all.
+        </p> 
+    </div>
+</div>
+
+<h2>Anatomy</h2>
+<div class="columns">
+    <div class="column">
+        <img src="docs/tokens-spacing/01-spacing.png" />
+    </div>
+    <div class="column">
+        <p>
+            <strong>Radio</strong>
+            <br />
+            This type of selector is used when we have a list of options where only one option can be selected.
+        </p> 
+    </div>
+</div>
+
+## Radio 
+
+
+<Preview>
+  <Story name="Radio">
+    <Fragment>
+        <Radio id="radio-1" label="Idle" name="radio"/>
+        <br />
+        <Radio id="radio-2" label="Idle" name="radio" />
+        <br />
+        <Radio id="radio-3" label="Disabled" name="radio" disabled/>
+        {/* <div class="radio">
+            <input id="radio-3" name="radio" type="radio" disabled />
+            <label for="radio-3" class="radio-label">Disabled</label>
+        </div> */} 
+    </Fragment>
+  </Story>
+</Preview>
+
+## Checkbox 
+
+<Preview>
+  <Story name="Checkbox">
+    <Fragment>
+         <Checkbox id="checkbox-1" label="Idle" name="checkbox"/>
+         <br />
+         <Checkbox id="checkbox-2" label="Disabled" name="checkbox" checked disabled/>
+        <br />
+         <Checkbox id="checkbox-3" label="Disabled" name="checkbox" disabled/>
+        {/* <div>
+            <input type="checkbox" id="checkbox1" name="checkbox" />
+            <label for="checkbox1">Idle</label>
+        </div>
+        <br />
+        <div>
+            <input type="checkbox" id="checkbox2" name="checkbox" />
+            <label for="checkbox2">Checked</label>
+        </div>
+        <br />
+        <div>
+            <input type="checkbox" id="checkbox3" name="checkbox" disabled/>
+            <label for="checkbox3">Indeterminate</label>
+        </div>
+        <br />
+        <div>
+            <input type="checkbox" id="checkbox4" name="checkbox" disabled/>
+            <label for="checkbox4">Disabled</label>
+        </div>
+        <br />
+         <div>
+            <input type="checkbox" id="checkbox5" name="checkbox" disabled checked/>
+            <label for="checkbox5">Disabled checked</label>
+        </div>
+        <br />
+        <div>
+            <input type="checkbox" id="checkbox6" name="checkbox" disabled indeterminate/>
+            <label for="checkbox6">Disabled indeterminate</label>
+        </div> */}
+    </Fragment>
+  </Story>
+</Preview>

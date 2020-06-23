@@ -1,0 +1,117 @@
+input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+  
+    + .checkbox-label {
+        display: inline-block;
+        line-height: 1.4;
+        margin: 0;
+        padding-left: 30px;
+        position: relative;
+        font-family: $font-secondary;
+        font-size: 16px;
+        font-weight: 500;
+        vertical-align: top;
+      &::before {
+        border: 2px solid $mineral-20;
+        border-radius: 4px;
+        content: "";
+        cursor: pointer;
+        display: block;
+        height: 20px;
+        width: 20px;
+        left: 0;
+        position: absolute;
+        vertical-align: text-bottom;
+        top: -1px;
+      }
+    } 
+    &:focus + .checkbox-label {
+        &::before {
+            outline: none;
+            box-shadow: 0 0 0 2px $mineral-30;
+        }
+    } 
+  
+    &:hover + .checkbox-label {
+        &::before {
+            outline: none;
+            box-shadow: 0 0 0 6px $mineral-10;
+        }
+    } 
+
+    &:hover:focus + .checkbox-label {
+        &::before {
+          outline: none;
+          box-shadow: 0 0 0 2px $mineral-30, 0 0 0 6px $mineral-10;
+        }
+    } 
+  
+    &:checked + .checkbox-label {
+      &::before {
+        background-color: $teal-60;
+        border: 2px solid $teal-60;
+      }
+    }
+  
+    &:checked:hover + .checkbox-label {
+        &::before {
+            outline: none;
+            box-shadow: 0 0 0 6px $teal-10;
+        }
+    } 
+    
+    &:checked:focus + .checkbox-label {
+        &::before {
+          outline: none;
+          box-shadow: 0 0 0 2px $teal-30;
+        }
+    } 
+
+    &:checked:hover:focus + .checkbox-label {
+        &::before {
+          outline: none;
+          box-shadow: 0 0 0 2px $teal-30, 0 0 0 6px $teal-10;
+        }
+    } 
+
+    
+
+    &:checked + .checkbox-label {
+        &::before {
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-image: url("../static/icons/check.svg");
+        }
+    }
+
+  
+    &:disabled + .checkbox-label, &:disabled:hover + .checkbox-label {
+        &::before {
+            border-color: $mineral-20;
+            background: $white;
+            box-shadow: none;
+        }
+    }
+
+    &:disabled:checked + .checkbox-label {
+        &::before {
+            border-color: $mineral-20;
+            background: $mineral-20;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-image: url("../static/icons/check.svg");
+        }
+    }
+
+    // &:disabled:indeterminate + .checkbox-label {
+    //     &::before {
+    //         border-color: red;
+    //         background: $mineral-20;
+    //         background-position: center center;
+    //         background-repeat: no-repeat;
+    //         background-image: url("../static/icons/minus.svg");
+    //     }
+    // }
+    
+}
