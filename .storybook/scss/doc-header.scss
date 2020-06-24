@@ -66,10 +66,13 @@ $docs-content-margin: $docs-title-height - $content-margin-top;
   font-family: $family-sans-serif;
   font-size: 18px;
   font-weight: 600;
-  margin-right: 8px;
   margin-bottom: 40px;
-  cursor: pointer;
   background-color: $teal-60;
+
+  &:hover {
+    background-color: $teal-70;
+    cursor: pointer;
+  }
 }
 .simple-tab:checked + label {
   background: $white;
