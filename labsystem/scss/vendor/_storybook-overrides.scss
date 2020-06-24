@@ -3,26 +3,61 @@
   padding: 0 !important;
 }
 
-// h1, h2, h3, h4, h5 {
-//   color: $coral !important;
-//   font-family: $font-primary !important;
-//   font-weight: 900
-// }
 
-// p, li {
-//   color: $black-75 !important;
-//   font-family: $font-secondary !important;
-//   font-size: 18px !important;
-//   font-weight: 500 !important;
-// }
+h1.sbdocs-h1,
+h2.sbdocs-h2,
+h3.sbdocs-h3,
+h4.sbdocs-h4,
+h5.sbdocs-h5 {
+  font-family: $font-primary;
+  font-weight: $title-weight;
+  letter-spacing: $letter-spacing;
+  text-rendering: $render-mode;
+  line-height: 1.1;
+  color: $black-75;
+  border: none;
 
-p.sbdocs-p {
-  font-family: $family-sans-serif;
+  strong {
+    font-weight: $title-strong-weight;
+  }
+}
+
+h1.sbdocs-h1 {
+  font-size: $font-size-10;
+}
+
+h2.sbdocs-h2 {
+  font-size: $font-size-9;
+}
+
+h3.sbdocs-h3 {
+  font-size: $font-size-8;
+  line-height: 1.125;
+}
+
+h4.sbdocs-h4 {
+  font-size: $font-size-7;
+  line-height: 1.14;
+}
+
+h5.sbdocs-h5 {
+  font-size: $font-size-6;
+  line-height: 1.16;
+}
+
+h6.sbdocs-h6 {
+  font-size: $font-size-4;
+}
+
+p.sbdocs-p,
+li.sbdocs-li {
+  font-family: $font-primary;
   font-weight: $paragraph-weight;
   letter-spacing: $letter-spacing;
   text-rendering: $render-mode;
-  font-size: $font-size-4;
+  font-size: $paragraph-defaul-size;
   line-height: 1.5rem;
+  color: $black-75;
 
   strong {
     font-weight: $title-strong-weight;
