@@ -11,7 +11,6 @@ $docs-content-margin: $docs-title-height - $content-margin-top;
   top: 0;
   right: 0;
   height: $docs-title-height;
-  padding-bottom: 24px;
   display: flex;
   align-items: flex-end;
 
@@ -26,7 +25,6 @@ $docs-content-margin: $docs-title-height - $content-margin-top;
   color: $white !important;
   font-size: 48px !important;
   line-height: 60px !important;
-  margin: 0 !important;
   font-family: $family-serif !important;
   font-weight: $weight-bold !important;
 }

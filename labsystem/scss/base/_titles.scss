@@ -4,8 +4,9 @@ $font-primary: $family-sans-serif !default;
 $font-secondary: $family-serif !default;
 $font-code: $family-monospace !default;
 
-$title-weight: $weight-semibold !default;
-$title-strong-weight: $weight-black !default;
+$title-weight: $weight-medium !default;
+$title-strong-weight: $weight-bold !default;
+$title-margin: $spacing-06 !default;
 
 $paragraph-weight: $weight-medium !default;
 $paragraph-strong-weight: $weight-bold !default;
@@ -24,7 +25,8 @@ h1, h2, h3, h4, h5, h6 {
   text-rendering: $render-mode;
   line-height: 1.1;
   color: inherit;
-  // margin: 0;
+  margin-block-start: $title-margin;
+  margin-block-end: $title-margin;
 
   strong {
     font-weight: $title-strong-weight;
@@ -35,6 +37,7 @@ h1 {
   font-size: $font-size-10;
 
   &.headline--display {
+    font-weight: $weight-bold;
     font-family: $font-secondary;
   }
 }
@@ -56,10 +59,12 @@ h4 {
 h5 {
   font-size: $font-size-6;
   line-height: 1.16;
+  font-weight: $weight-semibold;
 }
 
 h6 {
   font-size: $font-size-4;
+  font-weight: $weight-semibold;
 }
 
 p {

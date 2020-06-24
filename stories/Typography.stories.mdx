@@ -9,16 +9,21 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
   </div>
 </div>
 
-<div class="docs-content">
+<div class="docs-content docs-content--with-tab">
+  <div class="simple-tab-wrapper"></div>
+  <input class="simple-tab" type="radio" name="type-tab" id="tab1"/>
+  <label for="tab1">Overview</label>
+
+  <input class="simple-tab" type="radio" name="type-tab" id="tab2" />
+  <label for="tab2">Type system</label>
+
+  <input class="simple-tab" type="radio" name="type-tab" id="tab3" />
+  <label for="tab3">Responsiviness</label>
+
+  <div class="simple-tab__content content1">
   <p>Typography can help express clear hierarchies, organize information, and guide users through a product or experience. It has a high impact on brand recognition and user experience.</p>
 
   <p>To manage typography on our design system, we use inital variables or tokens to describe pre-set configuration of typographic elements such as font family, size, weight, line-height and others. We then use those tokens to configure titles, paragraphs and all text elements on the page.</p>
-
-  <nav>
-    <a href="#typefaces"> Typefaces </a> -
-    <a href="#scale"> Type scale </a> -
-    <a href="#styles"> Type styles </a>
-  </nav>
 
   <h2 id="typefaces">Typefaces</h2>
 
@@ -36,36 +41,24 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
     </Fragment>
   </Story>
 
-  <h3>Serif</h3>
+  <h3 id="typefaces__serif">Serif</h3>
 
   <p><strong>FF Meta Serif</strong> is the companion serif to Erik Spiekermann’s influential FF Meta typeface and it was released by FontFont in 2007. FF Meta Serif is available on Adobe Fonts for both desktop and web use in six weights: <code>light</code>, <code>book</code>, <code>medium</code>, <code>bold</code>, <code>extrabold</code> and <code>black</code> each with corresponding italics.</p>
 
-  <pre>
-    <code>
-      $family-serif: "ff-meta-serif-web-pro", Times, serif !default;
-    </code>
-  </pre>
+    $family-serif: "ff-meta-serif-web-pro", Times, serif !default;
 
-  <h3>Sans Serif</h3>
+  <h3 id="typefaces__sans-serif">Sans Serif</h3>
 
   <p><strong>Freight Sans</strong> is the sans-serif companion to the typeface Freight Text. Its humanist forms give it a warm and friendly appearance. It has a large x-height and open apertures which makes it a great sans for setting body copy. Freight Sans is available on Adobe Fonts for both desktop and web use in six weight: <code>light</code>, <code>book</code>, <code>medium</code>, <code>semi-bold</code>, <code>bold</code> and <code>black</code> each with matching italics and small caps styles.</p>
 
-  <pre>
-    <code>
-      $family-sans-serif: "freight-sans-pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
-    </code>
-  </pre>
+    $family-sans-serif: "freight-sans-pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
 
-  <h3>Monospace</h3>
+  <h3 id="typefaces__mono">Monospace</h3>
 
   <p><strong>IBM Plex</strong> is an open source typeface superfamily conceptually designed and developed by Mike Abbink at IBM in collaboration with Bold Monday to reflect the brand spirit, beliefs and design principles of IBM and to be used for all brand experiences across the company internationally. Version 1.0 of the font family had four typefaces, each with 8 weights: <code>thin</code>, <code>extra light</code>, <code>light</code>, <code>regular</code>, <code>text</code>, <code>medium</code>, <code>semi-bold</code>, <code>bold</code> and true italics to complement them.</p>
   <p>We chose <strong>IBM Plex Mono</strong> as our monospaced typeface. We only use <code>medium</code> and <code>semibold</code> weights.</p>
 
-  <pre>
-    <code>
-      $family-monospace: "IBM Plex Mono", monospace !default;
-    </code>
-  </pre>
+    $family-monospace: "IBM Plex Mono", monospace !default;
 
   <h2 id="scale">Scale</h2>
 
@@ -229,12 +222,16 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
       <td><p className="type__text type__text--ibm-plex-mono type__text--weight-black">-</p></td>
     </tr>
   </table>
+  </div>
+
+  <div class="simple-tab__content content2">
+  <p>The type attributes described on the overview appears as text in titles, subtitles, paragraphs, components and the overall layout. They can be used to custom values for the typeface, font, weight, size, case and letter spacing.</p>
+
+  <p>Here we describe how to apply those attributes on headlines and paragraph elements.</p>
 
   <h2 id="styles">Headlines</h2>
-
   <p>In the type scale, headlines p from a range of 1 through 6. Headlines are the largest text on the screen, reserved for short, important text or numerals.</p>
-
-  <p>We use Freight Sans on all headelines, but `h1` can also be used with FF Meta Serif.</p>
+  <p>We use Freight Sans on all headelines, but <code>h1</code> can also be used with FF Meta Serif.</p>
 
   <Preview>
     <Story name="Headlines">
@@ -246,6 +243,7 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
         <h4>Example of h4</h4>
         <h5>Example of h5</h5>
         <h6>Example of h6</h6>
+        <h6 className="u--uppercase">Example of h6</h6>
       </Fragment>
     </Story>
   </Preview>
@@ -267,6 +265,6 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
   </Preview>
 
   <p>Use <code>paragraph-petit</code> and <code>paragraph-tiny</code> as caption and overline text (text with a line above it) to annotate imagery or to introduce a headline. They can also be used to compose some components. On mobile, both will have <code>16px</code>.</p>
-
+  </div>
 </div>
 
