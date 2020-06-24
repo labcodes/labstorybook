@@ -9,7 +9,6 @@ $title-strong-weight: $weight-black !default;
 
 $paragraph-weight: $weight-medium !default;
 $paragraph-strong-weight: $weight-bold !default;
-
 $paragraph-defaul-size: $font-size-4 !default;
 $paragraph-sizes: (
   "large": $font-size-5,
@@ -25,6 +24,7 @@ h1, h2, h3, h4, h5, h6 {
   text-rendering: $render-mode;
   line-height: 1.1;
   color: inherit;
+  // margin: 0;
 
   strong {
     font-weight: $title-strong-weight;
@@ -69,6 +69,10 @@ p {
   text-rendering: $render-mode;
   font-size: $font-size-4;
   line-height: 1.5rem;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
   
   strong {
     font-weight: $title-strong-weight;
