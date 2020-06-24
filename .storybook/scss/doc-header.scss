@@ -28,6 +28,7 @@ $docs-content-margin: $docs-title-height - $content-margin-top;
   line-height: 60px !important;
   margin: 0 !important;
   font-family: $family-serif !important;
+  font-weight: $weight-bold !important;
 }
 
 .docs-content {
@@ -65,7 +66,7 @@ $docs-content-margin: $docs-title-height - $content-margin-top;
   position: relative;
   color: white;
   font-family: $family-sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   margin-right: 8px;
   margin-bottom: 40px;
