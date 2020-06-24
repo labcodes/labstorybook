@@ -3,63 +3,270 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
 <Meta title="Atoms | Typography" />
 
-# Typography
+<div class="docs-title">
+  <div>
+    <h1 class="docs-title__text">Typography</h1>
+  </div>
+</div>
 
-Typography can help express clear hierarchies, organize information, and guide users through a product or experience. It has a high impact on brand recognition and user experience. 
+<div class="docs-content">
+  <p>Typography can help express clear hierarchies, organize information, and guide users through a product or experience. It has a high impact on brand recognition and user experience.</p>
 
-<h2>Typefaces</h2>
+  <p>To manage typography on our design system, we use inital variables or tokens to describe pre-set configuration of typographic elements such as font family, size, weight, line-height and others. We then use those tokens to configure titles, paragraphs and all text elements on the page.</p>
 
-We chose 3 typefaces to use in all our internal products and marketing pieces: one serif font for headings, one sans-serif for body copy and a monospaced for code.
+  <nav>
+    <a href="#typefaces"> Typefaces </a> -
+    <a href="#scale"> Type scale </a> -
+    <a href="#styles"> Type styles </a>
+  </nav>
 
-<h3>Serif</h3>
+  <h2 id="typefaces">Typefaces</h2>
 
-**FF Meta Serif** is the companion serif to Erik Spiekermann’s influential FF Meta typeface and it was released by FontFont in 2007. FF Meta Serif is available on Adobe Fonts for both desktop and web use in six weights—light, book, medium, bold, extrabold and black—each with corresponding italics.
+  <p>We use type tokens and themes to manage typography. Type tokens are pre-set configurations of typographic elements such as font size, weight and line height that are specifically calibrated for use alongside IBM Plex in product. Selecting the appropriate type style is determined by layout or template structure. Layouts may have several levels of architecture or areas that require varying typographic hierarchies.</p>
 
-<h3>Sans Serif</h3>
+  <p>We chose 3 typefaces to use in all our internal products and marketing pieces: one serif font for headings, one sans-serif for body copy and a monospaced for code.</p>
 
-**Freight Sans** is the sans-serif companion to the typeface Freight Text. Its humanist forms give it a warm and friendly appearance. It has a large x-height and open apertures which makes it a great sans for setting body copy. Freight Sans is available on Adobe Fonts for both desktop and web use in six weights—light, book, medium, semi-bold, bold and black—each with matching italics and small caps styles.
-
-<h3>Monospace</h3>
-
-**IBM Plex** is an open source typeface superfamily conceptually designed and developed by Mike Abbink at IBM in collaboration with Bold Monday to reflect the brand spirit, beliefs and design principles of IBM and to be used for all brand experiences across the company internationally. Version 1.0 of the font family had four typefaces, each with 8 weights (Thin, Extra Light, Light, Regular, Text, Medium, Semi-bold, Bold) and true italics to complement them.
-We chose **IBM Plex Mono** as our monospaced typece.
-
-<h2>Headlines</h2>
-
-In the type scale, headlines span from a range of 1 through 6. Headlines are the largest text on the screen, reserved for short, important text or numerals.
-
-We use Freight Sans on all headelines, but `h1` can also be used with FF Meta Serif.
-
-<Preview>
-  <Story name="Headlines">
+  <Story name="Serif">
     <Fragment>
-      <h1>Example of h1</h1>
-      <h1 className="headline--display">Example of h1</h1>
-      <h2>Example of h2</h2>
-      <h3>Example of h3</h3>
-      <h4>Example of h4</h4>
-      <h5>Example of h5</h5>
-      <h6>Example of h6</h6>
+      <div className="type">
+        <p className="type__text type__text--meta">FF Meta Serif</p>
+        <p className="type__text type__text--freight">Fright Sans</p>
+        <p className="type__text type__text--ibm-plex-mono">Ibm Plex Mono</p>
+      </div>
     </Fragment>
   </Story>
-</Preview>
 
-## Body
+  <h3>Serif</h3>
 
-Body text comes in ranges 1-3, and it’s typically used for long-form writing as it works well for small text sizes. For longer sections of text, a serif or sans serif typeface is recommended.
+  <p><strong>FF Meta Serif</strong> is the companion serif to Erik Spiekermann’s influential FF Meta typeface and it was released by FontFont in 2007. FF Meta Serif is available on Adobe Fonts for both desktop and web use in six weights: <code>light</code>, <code>book</code>, <code>medium</code>, <code>bold</code>, <code>extrabold</code> and <code>black</code> each with corresponding italics.</p>
 
-<Preview>
-  <Story name="Paragraphs">
-    <Fragment>
-      <p>This is a example of text paragraph with default size</p>
-      <p class="paragraph-large">This is a example of text paragraph with large size</p>
-      <p class="paragraph-small">This is a example of text paragraph with small size</p>
-      <p class="paragraph-petit">This is a example of text paragraph with petit size</p>
-      <p class="paragraph-tiny">This is a example of text paragraph with tiny size</p>
-    </Fragment>
-  </Story>
-</Preview>
+  <pre>
+    <code>
+      $family-serif: "ff-meta-serif-web-pro", Times, serif !default;
+    </code>
+  </pre>
 
-Use `paragraph-petit` and `paragraph-tiny` as caption and overline text (text with a line above it) to annotate imagery or to introduce a headline. They can also be used to compose some components. On mobile, both will have `16px`.
+  <h3>Sans Serif</h3>
 
+  <p><strong>Freight Sans</strong> is the sans-serif companion to the typeface Freight Text. Its humanist forms give it a warm and friendly appearance. It has a large x-height and open apertures which makes it a great sans for setting body copy. Freight Sans is available on Adobe Fonts for both desktop and web use in six weight: <code>light</code>, <code>book</code>, <code>medium</code>, <code>semi-bold</code>, <code>bold</code> and <code>black</code> each with matching italics and small caps styles.</p>
+
+  <pre>
+    <code>
+      $family-sans-serif: "freight-sans-pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+    </code>
+  </pre>
+
+  <h3>Monospace</h3>
+
+  <p><strong>IBM Plex</strong> is an open source typeface superfamily conceptually designed and developed by Mike Abbink at IBM in collaboration with Bold Monday to reflect the brand spirit, beliefs and design principles of IBM and to be used for all brand experiences across the company internationally. Version 1.0 of the font family had four typefaces, each with 8 weights: <code>thin</code>, <code>extra light</code>, <code>light</code>, <code>regular</code>, <code>text</code>, <code>medium</code>, <code>semi-bold</code>, <code>bold</code> and true italics to complement them.</p>
+  <p>We chose <strong>IBM Plex Mono</strong> as our monospaced typeface. We only use <code>medium</code> and <code>semibold</code> weights.</p>
+
+  <pre>
+    <code>
+      $family-monospace: "IBM Plex Mono", monospace !default;
+    </code>
+  </pre>
+
+  <h2 id="scale">Scale</h2>
+
+  <table>
+    <tr>
+      <th>Token</th>
+      <th>rem</th>
+      <th>px</th>
+      <th>FF Meta Serif</th>
+      <th>Fright Sans</th>
+      <th>Ibm Plex Mono</th>
+    </tr>
+    <tr>
+      <td><code>$font-size-1</code></td>
+      <td>0.75</td>
+      <td>12</td>
+      <td><p className="type__text type__text--meta type__text--size-1">Serif</p></td>
+      <td><p className="type__text type__text--freight type__text--size-1">Sans Serif</p></td>
+      <td><p className="type__text type__text--ibm-plex-mono type__text--size-1">Mono</p></td>
+    </tr>
+    <tr>
+      <td><code>$font-size-2</code></td>
+      <td>0.875</td>
+      <td>14</td>
+      <td><p className="type__text type__text--meta type__text--size-2">Serif</p></td>
+      <td><p className="type__text type__text--freight type__text--size-2">Sans Serif</p></td>
+      <td><p className="type__text type__text--ibm-plex-mono type__text--size-2">Mono</p></td>
+    </tr>
+    <tr>
+      <td><code>$font-size-3</code></td>
+      <td>1</td>
+      <td>16</td>
+      <td><p className="type__text type__text--meta type__text--size-3">Serif</p></td>
+      <td><p className="type__text type__text--freight type__text--size-3">Sans Serif</p></td>
+      <td><p className="type__text type__text--ibm-plex-mono type__text--size-3">Mono</p></td>
+    </tr>
+    <tr>
+      <td><code>$font-size-4</code></td>
+      <td>1.125</td>
+      <td>18</td>
+      <td><p className="type__text type__text--meta type__text--size-4">Serif</p></td>
+      <td><p className="type__text type__text--freight type__text--size-4">Sans Serif</p></td>
+      <td><p className="type__text type__text--ibm-plex-mono type__text--size-4">Mono</p></td>
+    </tr>
+    <tr>
+      <td><code>$font-size-5</code></td>
+      <td>1.25</td>
+      <td>20</td>
+      <td><p className="type__text type__text--meta type__text--size-5">Serif</p></td>
+      <td><p className="type__text type__text--freight type__text--size-5">Sans Serif</p></td>
+      <td><p className="type__text type__text--ibm-plex-mono type__text--size-5">Mono</p></td>
+    </tr>
+    <tr>
+      <td><code>$font-size-6</code></td>
+      <td>1.5</td>
+      <td>24</td>
+      <td><p className="type__text type__text--meta type__text--size-6">Serif</p></td>
+      <td><p className="type__text type__text--freight type__text--size-6">Sans Serif</p></td>
+      <td><p className="type__text type__text--ibm-plex-mono type__text--size-6">Mono</p></td>
+    </tr>
+    <tr>
+      <td><code>$font-size-7</code></td>
+      <td>1.75</td>
+      <td>28</td>
+      <td><p className="type__text type__text--meta type__text--size-7">Serif</p></td>
+      <td><p className="type__text type__text--freight type__text--size-7">Sans Serif</p></td>
+      <td><p className="type__text type__text--ibm-plex-mono type__text--size-7">Mono</p></td>
+    </tr>
+    <tr>
+      <td><code>$font-size-8</code></td>
+      <td>2</td>
+      <td>32</td>
+      <td><p className="type__text type__text--meta type__text--size-8">Serif</p></td>
+      <td><p className="type__text type__text--freight type__text--size-8">Sans Serif</p></td>
+      <td><p className="type__text type__text--ibm-plex-mono type__text--size-8">Mono</p></td>
+    </tr>
+    <tr>
+      <td><code>$font-size-9</code></td>
+      <td>2.5</td>
+      <td>40</td>
+      <td><p className="type__text type__text--meta type__text--size-9">Serif</p></td>
+      <td><p className="type__text type__text--freight type__text--size-9">Sans Serif</p></td>
+      <td><p className="type__text type__text--ibm-plex-mono type__text--size-9">Mono</p></td>
+    </tr>
+    <tr>
+      <td><code>$font-size-10</code></td>
+      <td>3</td>
+      <td>48</td>
+      <td><p className="type__text type__text--meta type__text--size-10">Serif</p></td>
+      <td><p className="type__text type__text--freight type__text--size-10">Sans Serif</p></td>
+      <td><p className="type__text type__text--ibm-plex-mono type__text--size-10">Mono</p></td>
+    </tr>
+    <tr>
+      <td><code>$font-size-11</code></td>
+      <td>3.25</td>
+      <td>52</td>
+      <td><p className="type__text type__text--meta type__text--size-11">Serif</p></td>
+      <td><p className="type__text type__text--freight type__text--size-11">Sans Serif</p></td>
+      <td><p className="type__text type__text--ibm-plex-mono type__text--size-11">Mono</p></td>
+    </tr>
+    <tr>
+      <td><code>$font-size-12</code></td>
+      <td>3.75</td>
+      <td>60</td>
+      <td><p className="type__text type__text--meta type__text--size-12">Serif</p></td>
+      <td><p className="type__text type__text--freight type__text--size-12">Sans Serif</p></td>
+      <td><p className="type__text type__text--ibm-plex-mono type__text--size-12">Mono</p></td>
+    </tr>
+  </table>
+
+  <h2 id="scale">Weights</h2>
+
+  <table>
+    <tr>
+      <th>Token</th>
+      <th>Value</th>
+      <th>FF Meta Serif</th>
+      <th>Fright Sans</th>
+      <th>Ibm Plex Mono</th>
+    </tr>
+    <tr>
+      <td><code>$weight-light</code></td>
+      <td>300</td>
+      <td><p className="type__text type__text--meta type__text--weight-light">Serif</p></td>
+      <td><p className="type__text type__text--freight type__text--weight-light">Sans Serif</p></td>
+      <td><p className="type__text type__text--ibm-plex-mono type__text--weight-light">-</p></td>
+    </tr>
+    <tr>
+      <td><code>$weight-normal</code></td>
+      <td>400</td>
+      <td><p className="type__text type__text--meta type__text--weight-normal">Serif</p></td>
+      <td><p className="type__text type__text--freight type__text--weight-normal">Sans Serif</p></td>
+      <td><p className="type__text type__text--ibm-plex-mono type__text--weight-normal">-</p></td>
+    </tr>
+    <tr>
+      <td><code>$weight-medium</code></td>
+      <td>500</td>
+      <td><p className="type__text type__text--meta type__text--weight-medium">Serif</p></td>
+      <td><p className="type__text type__text--freight type__text--weight-medium">Sans Serif</p></td>
+      <td><p className="type__text type__text--ibm-plex-mono type__text--weight-medium">Mono</p></td>
+    </tr>
+    <tr>
+      <td><code>$weight-semibold</code></td>
+      <td>600</td>
+      <td><p className="type__text type__text--meta type__text--weight-semibold">Serif</p></td>
+      <td><p className="type__text type__text--freight type__text--weight-semibold">Sans Serif</p></td>
+      <td><p className="type__text type__text--ibm-plex-mono type__text--weight-semibold">Mono</p></td>
+    </tr>
+    <tr>
+      <td><code>$weight-bold</code></td>
+      <td>700</td>
+      <td><p className="type__text type__text--meta type__text--weight-bold">Serif</p></td>
+      <td><p className="type__text type__text--freight type__text--weight-bold">Sans Serif</p></td>
+      <td><p className="type__text type__text--ibm-plex-mono type__text--weight-bold">-</p></td>
+    </tr>
+    <tr>
+      <td><code>$weight-black</code></td>
+      <td>900</td>
+      <td><p className="type__text type__text--meta type__text--weight-black">Serif</p></td>
+      <td><p className="type__text type__text--freight type__text--weight-black">Sans Serif</p></td>
+      <td><p className="type__text type__text--ibm-plex-mono type__text--weight-black">-</p></td>
+    </tr>
+  </table>
+
+  <h2 id="styles">Headlines</h2>
+
+  <p>In the type scale, headlines p from a range of 1 through 6. Headlines are the largest text on the screen, reserved for short, important text or numerals.</p>
+
+  <p>We use Freight Sans on all headelines, but `h1` can also be used with FF Meta Serif.</p>
+
+  <Preview>
+    <Story name="Headlines">
+      <Fragment>
+        <h1>Example of h1</h1>
+        <h1 className="headline--display">Example of h1</h1>
+        <h2>Example of h2</h2>
+        <h3>Example of h3</h3>
+        <h4>Example of h4</h4>
+        <h5>Example of h5</h5>
+        <h6>Example of h6</h6>
+      </Fragment>
+    </Story>
+  </Preview>
+
+  <h2>Body</h2>
+
+  <p>Body text comes in ranges 1-3, and it’s typically used for long-form writing as it works well for small text sizes. For longer sections of text, a serif or sans serif typeface is recommended.</p>
+
+  <Preview>
+    <Story name="Paragraphs">
+      <Fragment>
+        <p>This is a example of text paragraph with default size</p>
+        <p className="paragraph-large">This is a example of text paragraph with large size</p>
+        <p className="paragraph-small">This is a example of text paragraph with small size</p>
+        <p className="paragraph-petit">This is a example of text paragraph with petit size</p>
+        <p className="paragraph-tiny">This is a example of text paragraph with tiny size</p>
+      </Fragment>
+    </Story>
+  </Preview>
+
+  <p>Use <code>paragraph-petit</code> and <code>paragraph-tiny</code> as caption and overline text (text with a line above it) to annotate imagery or to introduce a headline. They can also be used to compose some components. On mobile, both will have <code>16px</code>.</p>
+
+</div>
 
