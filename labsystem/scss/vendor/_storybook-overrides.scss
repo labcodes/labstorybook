@@ -63,3 +63,7 @@ li.sbdocs-li {
     font-weight: $title-strong-weight;
   }
 }
+
+.sbdocs-content {
+  max-width: $content-max-width !important;
+}

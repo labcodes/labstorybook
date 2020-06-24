@@ -16,7 +16,7 @@ $docs-content-margin: $docs-title-height - $content-margin-top;
   align-items: flex-end;
 
   div {
-    max-width: 1000px;
+    max-width: $content-max-width;
     width: 100%;
     margin: 0 auto;
   }
