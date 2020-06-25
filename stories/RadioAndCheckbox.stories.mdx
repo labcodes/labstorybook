@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
-import Radio from '../labsystem/src/RadioAndCheckbox';
+import Radio from '../labsystem/src/Radio';
 import Checkbox from '../labsystem/src/Checkbox';
 
 <Meta title="Components | Selectors" />
@@ -56,10 +56,8 @@ import Checkbox from '../labsystem/src/Checkbox';
         <Radio id="radio-2" label="Idle" name="radio" />
         <br />
         <Radio id="radio-3" label="Disabled" name="radio" disabled/>
-        {/* <div class="radio">
-            <input id="radio-3" name="radio" type="radio" disabled />
-            <label for="radio-3" class="radio-label">Disabled</label>
-        </div> */} 
+         <br />
+        <Radio id="radio-3" label="Disabled" name="radio-disabled" checked disabled/>
     </Fragment>
   </Story>
 </Preview>
@@ -71,9 +69,11 @@ import Checkbox from '../labsystem/src/Checkbox';
     <Fragment>
          <Checkbox id="checkbox-1" label="Idle" name="checkbox"/>
          <br />
-         <Checkbox id="checkbox-2" label="Disabled" name="checkbox" checked disabled/>
+         <Checkbox id="checkbox-2" label="Idle" name="checkbox" indeterminate />
+         <br />
+         <Checkbox id="checkbox-3" label="Disabled" name="checkbox" checked disabled/>
         <br />
-         <Checkbox id="checkbox-3" label="Disabled" name="checkbox" disabled/>
+         <Checkbox id="checkbox-4" label="Disabled" name="checkbox" disabled/>
         {/* <div>
             <input type="checkbox" id="checkbox1" name="checkbox" />
             <label for="checkbox1">Idle</label>

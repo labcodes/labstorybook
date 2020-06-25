@@ -1,0 +1,111 @@
+@use 'sass:map';
+
+// Wrapper div around input element. All inputs must have it.
+.lab-radio {
+  input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    + .lab-radio__label {
+        font-family: $font-secondary;
+        font-size: 16px;
+        font-weight: 500;
+        vertical-align: top;
+      &:before {
+        content: '';
+        position: relative;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right:$spacing-03;
+        vertical-align: text-bottom;
+        background: $white;
+        border: 2px solid $mineral-60;
+        border-radius: 100%;
+        transition: all 0.2s ease;
+        cursor: pointer;
+      }
+    }
+    // Radio checked
+    &:checked {
+      + .lab-radio__label {
+        &:before {
+          background-color: $teal-60;
+          border: 2px solid $teal-60;
+          box-shadow: inset 0 0 0 2px $white;
+        }
+      }
+    }
+    &:focus:checked {
+      + .lab-radio__label {
+        &:before {
+          outline: none;
+          box-shadow: 0 0 0 2px $teal-30, inset 0 0 0 2px $white;
+        }
+      }
+    }
+    
+    &:hover:checked {
+      + .lab-radio__label {
+        &:before {
+          outline: none;
+          box-shadow: 0 0 0 6px $teal-10, inset 0 0 0 2px $white;
+        }
+      }
+    }
+
+    &:hover:focus:checked {
+      + .lab-radio__label {
+        &:before {
+          outline: none;
+          box-shadow: 0 0 0 2px $teal-30, 0 0 0 6px $teal-10, inset 0 0 0 2px $white;
+        }
+      }
+    }
+
+    &:disabled:checked {
+      + .lab-radio__label {
+        &:before {
+          background: $mineral-20;
+          border-color: $mineral-20;
+          box-shadow: inset 0 0 0 2px $white;
+        }
+      }
+    }
+    
+    //Radio Idle
+
+    &:focus {
+      + .lab-radio__label {
+        &:before {
+          outline: none;
+          box-shadow: 0 0 0 2px $mineral-30;
+        }
+      }
+    }
+
+    &:hover {
+        + .lab-radio__label {
+          &:before {
+            outline: none;
+            box-shadow: 0 0 0 6px $mineral-10, inset 0 0 0 2px $white;
+          }
+        }
+      }
+
+    &:disabled {
+      + .lab-radio__label {
+        &:before {
+          border-color: $mineral-20;
+          box-shadow: inset 0 0 0 2px $white;
+        }
+      }
+    }
+    + .lab-radio__label {
+      &:empty {
+        &:before {
+          margin-right: 0px;
+        }
+      }
+    }
+  }
+}
