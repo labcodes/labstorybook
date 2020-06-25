@@ -9,8 +9,7 @@ export default class Radio extends React.Component {
       type: PropTypes.string,
       label: PropTypes.string,
       disabled: PropTypes.bool,
-      icon: PropTypes.string,
-      iconColor: PropTypes.string,
+      checked: PropTypes.string,
       name: PropTypes.string.isRequired
     };
   
@@ -18,8 +17,8 @@ export default class Radio extends React.Component {
       theme: undefined,
       type: "radio",
       disabled: false,
-      icon: undefined,
-      iconColor: "mineral-70",
+      checked: undefined,
+  
     };
   
 
@@ -32,21 +31,23 @@ export default class Radio extends React.Component {
         type,
         label,
         disabled,
+        checked,
         name,
       } = this.props;
   
   
     return (
-        <div className="radio">
+        <div className="lab-radio">
             <input
                 type={type}
                 id={id}
                 disabled={disabled}
+                checked={checked}
                 name={name}
                 onChange={this.handleOnChange}
             />
             <label
-                className={`radio-label`}
+                className={`lab-radio__label`}
                 htmlFor={id}>{label}
             </label>
         </div>

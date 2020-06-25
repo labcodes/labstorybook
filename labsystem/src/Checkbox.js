@@ -7,24 +7,20 @@ import PropTypes from "prop-types";
   export default class Checkbox extends React.Component {
     static propTypes = {
       id: PropTypes.string.isRequired,
-      type: PropTypes.string,
       label: PropTypes.string,
       disabled: PropTypes.bool,
       checked: PropTypes.string,
-      icon: PropTypes.string,
+      indeterminate: PropTypes.bool,
       value: PropTypes.bool,
-      iconColor: PropTypes.string,
       name: PropTypes.string.isRequired
     };
   
     static defaultProps = {
       theme: undefined,
-      type: "checkbox",
       disabled: false,
       checked: undefined,
-      icon: undefined,
+      indeterminate: false,
       value: undefined,
-      iconColor: "mineral-70",
     };
   
   
@@ -33,12 +29,10 @@ import PropTypes from "prop-types";
       const {
         className,
         id,
-        type,
         label,
         disabled,
         checked,
-        icon,
-        iconColor,
+        indeterminate,
         name,
       } = this.props;
   
@@ -46,14 +40,15 @@ import PropTypes from "prop-types";
       return (
         <div>
             <input
-                type={type}
+                type="checkbox"
                 id={id}
                 disabled={disabled}
                 name={name}
                 checked={checked}
                 onChange={this.handleOnChange}
-            />
-            <label
+                ref={el => el && (el.indeterminate = indeterminate)}
+          />
+          <label
                 className={`checkbox-label`}
                 htmlFor={id}>{label}
             </label>
