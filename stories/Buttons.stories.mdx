@@ -14,19 +14,133 @@ import Button from '../labsystem/src/Button';
 <Preview>
   <Story name="Default Button">
     <Fragment>
-      <Button>Débora</Button>
-      <Button disabled>Disabled</Button>
+      <div className="doc-buttons">
+      <Button>Normal</Button>
+      </div>
+      <div className="doc-buttons">
+      <Button disabled>Normal disabled</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button size="large">Large</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button size="large" disabled>Large disabled</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button size="small">Small</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button size="small" disabled>Small disabled</Button>
+      </div>
     </Fragment>
   </Story>
 </Preview>
+
+#### Exceptions
+
+<Preview>
+  <Story name="Default Button Exceptions">
+    <Fragment>
+      <div className="doc-buttons">
+        <Button exception="dark">Exception</Button>
+      </div>
+      <div className="doc-buttons doc-buttons--warning">
+        <Button exception="dark-warning">Exception</Button>
+      </div>
+      <div className="doc-buttons doc-buttons--light">
+        <Button exception="light">Exception</Button>
+      </div>
+      <div className="doc-buttons doc-buttons--destructive">
+        <Button exception="light-destructive">Exception</Button>
+      </div>
+      <div className="doc-buttons doc-buttons--confirmation">
+        <Button exception="light-confirmation">Exception</Button>
+      </div><br/>
+      <div className="doc-buttons">
+        <Button size="large" exception="dark">Exception</Button>
+      </div>
+      <div className="doc-buttons doc-buttons--warning">
+        <Button size="large" exception="dark-warning">Exception</Button>
+      </div>
+      <div className="doc-buttons doc-buttons--light">
+        <Button size="large" exception="light">Exception</Button>
+      </div>
+      <div className="doc-buttons doc-buttons--destructive">
+        <Button size="large" exception="light-destructive">Exception</Button>
+      </div>
+      <div className="doc-buttons doc-buttons--confirmation">
+        <Button size="large" exception="light-confirmation">Exception</Button>
+      </div><br/>
+      <div className="doc-buttons">
+        <Button size="small" exception="dark">Exception</Button>
+      </div>
+      <div className="doc-buttons doc-buttons--warning">
+        <Button size="small" exception="dark-warning">Exception</Button>
+      </div>
+      <div className="doc-buttons doc-buttons--light">
+        <Button size="small" exception="light">Exception</Button>
+      </div>
+      <div className="doc-buttons doc-buttons--destructive">
+        <Button size="small" exception="light-destructive">Exception</Button>
+      </div>
+      <div className="doc-buttons doc-buttons--confirmation">
+        <Button size="small" exception="light-confirmation">Exception</Button>
+      </div>
+    </Fragment>
+  </Story>
+</Preview>
+
 
 ### Ghost
 
 <Preview>
   <Story name="Ghost Button">
     <Fragment>
-      <Button type="ghost">Pepes</Button>
-      <Button type="ghost" disabled>Disabled</Button>
+      <div className="doc-buttons">
+        <Button type="ghost">Normal</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="ghost" disabled>Normal disabled</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="ghost" size="large">Large</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="ghost" size="large" disabled>Large disabled</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="ghost" size="small">Small</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="ghost" size="small" disabled>Small disabled</Button>
+      </div>
+    </Fragment>
+  </Story>
+</Preview>
+
+#### Exceptions
+
+<Preview>
+  <Story name="Ghost Button Exceptions">
+    <Fragment>
+      <div className="doc-buttons doc-buttons--light">
+        <Button type="ghost" exception="ghost-light">Exception</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="ghost" exception="ghost-dark">Exception</Button>
+      </div>
+      <div className="doc-buttons doc-buttons--light">
+        <Button type="ghost" size="large" exception="ghost-light">Exception Large</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="ghost" size="large" exception="ghost-dark">Exception Large</Button>
+      </div>
+      <div className="doc-buttons doc-buttons--light">
+        <Button type="ghost" size="small" exception="ghost-light">Exception Small</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="ghost" size="small" exception="ghost-dark">Exception Small</Button>
+      </div>
     </Fragment>
   </Story>
 </Preview>
@@ -36,8 +150,24 @@ import Button from '../labsystem/src/Button';
 <Preview>
   <Story name="Text Button">
     <Fragment>
-      <Button type="text">Nenis</Button>
-      <Button type="text" disabled>Disabled</Button>
+      <div className="doc-buttons">
+        <Button type="text">Normal</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="text" disabled>Normal disabled</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="text" size="large">Large</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="text" size="large" disabled>Large disabled</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="text" size="small">Small</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="text" size="small" disabled>Small disabled</Button>
+      </div>
     </Fragment>
   </Story>
 </Preview>
@@ -47,8 +177,24 @@ import Button from '../labsystem/src/Button';
 <Preview>
   <Story name="Destructive Button">
     <Fragment>
-      <Button type="destructive">Queima</Button>
-      <Button type="warning">Pirigo</Button>
+      <div className="doc-buttons">
+        <Button type="destructive">Destructive</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="warning">Warning</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="destructive" size="large">Large</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="warning" size="large">Large</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="destructive" size="small">Small</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="warning" size="small">Small</Button>
+      </div>
     </Fragment>
   </Story>
 </Preview>
@@ -58,26 +204,8 @@ import Button from '../labsystem/src/Button';
 <Preview>
   <Story name="Link Button">
     <Fragment>
-      <Button type="link">Linkinito</Button>
+      {/* <Button type="link">Linkinito</Button> */}
+      <p>This is <a class="" href="">inline link</a> example.</p>
     </Fragment>
   </Story>
 </Preview>
-
-
-
-Type:
-- default
-- ghost
-- text
-- warning
-- destructive
-- link 
-
-Size:
-- normal
-- small
-- large
-
-Color:
-- teal
-- purple

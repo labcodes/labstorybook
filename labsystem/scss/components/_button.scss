@@ -22,7 +22,19 @@ $btn-line-heigt: 14px;
   }
 }
 
-@mixin btn-default-structure {
+.btn--normal {
+  padding: 12px 16px;
+}
+
+.btn--small {
+  padding: 8px 16px;
+}
+
+.btn--large {
+  padding: 16px 16px;
+}
+
+.btn {
   font-size: $btn-font-size;
   line-height: $btn-line-heigt;
   font-weight: 600;
@@ -34,6 +46,7 @@ $btn-line-heigt: 14px;
   font-family: $font-secondary;
   display: inline-block; 
   vertical-align: top;
+  border: 2px solid;
 
   &:hover,
   &:focus,
@@ -54,12 +67,10 @@ $btn-line-heigt: 14px;
   }
 }
 
-.btn {
-  @include btn-default-structure();
+.btn--default {
   background-color: $teal-60;
   color: white;
-  border: 2px solid $teal-60;
-  padding: 12px 16px;
+  border-color: $teal-60;
   
   &:hover {
     @include btn-shadow(hover, $teal-10);
@@ -85,9 +96,9 @@ $btn-line-heigt: 14px;
   }
   
    &:focus:active {
+     @include btn-shadow(focus, $teal-30);
     background-color: $teal-80;
     border-color: $teal;
-    box-shadow: 0px 0px 0px 2px $teal-30;
   }
   
   &:disabled {
@@ -103,118 +114,84 @@ $btn-line-heigt: 14px;
   
   &:hover {
     @include btn-shadow(hover, $teal-10);
-    background-color: transparent;
     color: $teal-60;
     border-color: $teal-80;
   }
   
   &:focus {
     @include btn-shadow(focus, $teal-30);
-    background-color: transparent;
     color: $teal-60;
     border-color: $teal-70;
   }
 
   &:active {
-    background-color: transparent;
     color: $teal-80;
     border-color: $teal;
   }
   
   &:focus:hover {
     @include btn-shadow(focus-hover, $teal-30, $teal-10);
-    background-color: transparent;
     color: $teal-60;
     border-color: $teal-80;
   }
   
   &:focus:active {
-    background-color: transparent;
+    @include btn-shadow(focus, $teal-30);
     color: $teal-80;
     border-color: $teal;
-    box-shadow: 0px 0px 0px 2px $teal-30;
   }
   
   &:disabled {
-    background-color: transparent;
     border-color: $mineral-20;
     color: $mineral-30;
-    cursor: default;
-    pointer-events: none;
   }
 }
 
 .btn--text {
   background-color: transparent;
   color: $teal-60;
-  border: 2px solid transparent;
-  font-size: 16px;
-  line-height: 14px;
-  font-weight: 600;
+  border-color: transparent;
   text-transform: uppercase;
   letter-spacing: 1%;
-  border-radius: 4px;
-  padding: 12px 16px;
-  transition: all 0.3s;
-  cursor: pointer;
-  outline: none;
-  text-decoration: none;
-  font-family: $font-secondary;
-  display: inline-block; 
-  vertical-align: top;
   
   &:hover {
-    border: 2px solid transparent;
     background-color: $teal-10;
-    color: $teal-60;
-    box-shadow: none;
   }
   
   &:focus {
     @include btn-shadow(focus, $teal-30);
-    border: 2px solid transparent;
-    background-color: transparent;
-    color: $teal-60;
   }
 
-    &:active {
-    border: 2px solid transparent;
+  &:active {
     background-color: $teal-20;
     color: $teal-80;
   }
   
-   &:focus:hover {
+  &:focus:hover {
     @include btn-shadow(focus, $teal-30);
-    border: 2px solid transparent;
     background-color: $teal-10;
-    color: $teal-60;
   }
   
-   &:focus:active {
-    border: 2px solid transparent;
+  &:focus:active {
     @include btn-shadow(focus, $teal-30);
     background-color: $teal-20;
     color: $teal-80;
   }
   
   &:disabled {
-    border: 2px solid transparent;
-    background-color: transparent;
     color: $mineral-30;
-    cursor: default;
-    pointer-events: none;
   }
 }
 
 .btn--destructive {
   background-color: $red-60;
-  border: 2px solid $red-60;
+  border-color: $red-60;
   color: $white;
   
   &:hover {
     @include btn-shadow(hover, $red-20);
     background-color: $red-60;
-    border: 2px solid $red-60;
+    border-color: $red-60;
   }
   
   &:focus {
@@ -241,13 +218,13 @@ $btn-line-heigt: 14px;
 
 .btn--warning {
   background-color: $yellow-60;
-  border: 2px solid $yellow-60;
+  border-color: $yellow-60;
   color: $black-75;
   
   &:hover {
     @include btn-shadow(hover, $yellow-20);
     background-color: $yellow-60;
-    border: 2px solid $yellow-60;
+    border-color: $yellow-60;
   }
   
   &:focus {
@@ -273,36 +250,271 @@ $btn-line-heigt: 14px;
   }
 }
 
-.btn--link {
-  /* normalizing button */
-  border: 0;
+.btn--dark {
+  background-color: $mineral-90;
+  color: $white;
+  border-color: $mineral-90;
   
-  background: transparent;
-  position: relative;
-  line-height: 1.6;
-  z-index: 1;
-  color: $mineral-80;
-  padding: 0 2px;
-  margin: 0 4px;
+  &:hover {
+    @include btn-shadow(hover, $black-20);
+    border-color: $mineral-90;
+    background-color: $mineral-90;
+  }
   
-  transition: all 0.2s;
-
-  -moz-appearance: none;
-  -webkit-appearance: none;
-
-  &:hover,
-  &:focus,
-  &:focus:hover {
-    background: transparent;
-    box-shadow: none;
+  &:focus {
+    @include btn-shadow(focus, $mineral-90);
+    background-color: $mineral-90;
+    border-color: $white;
   }
 
   &:active {
-    background: transparent;
-    box-shadow: none;
-    bottom: 0;
-    height: 100%;
+    background-color: $black-50;
   }
+  
+   &:focus:hover {
+    @include btn-shadow(focus-hover, $mineral-90, $black-20);
+    background-color: $mineral-90;
+    border-color: $white;
+  }
+  
+   &:focus:active {
+    @include btn-shadow(focus, $mineral-90);
+    background-color: $black-50;
+    border-color: $white;
+  }
+}
+
+.btn--dark-warning {
+  background-color: $mineral-90;
+  color: $yellow-60;
+  border-color: $mineral-90;
+  
+  &:hover {
+    @include btn-shadow(hover, $black-20);
+    background-color: $mineral-90;
+    border-color: $mineral-90;
+  }
+  
+  &:focus {
+    @include btn-shadow(focus, $mineral-90);
+    background-color: $mineral-90;
+    border-color: $yellow-60;
+  }
+
+  &:active {
+    background-color: $black-50;
+    border-color: $mineral-90;
+  }
+  
+   &:focus:hover {
+    @include btn-shadow(focus-hover, $mineral-90, $black-20);
+    background-color: $mineral-90;
+    border-color: $yellow-60;
+  }
+  
+   &:focus:active {
+    @include btn-shadow(focus, $mineral-90);
+    background-color: $black-50;
+    border-color: $yellow-60;
+  }
+}
+
+.btn--light {
+  background-color: $white;
+  color: $mineral-90;
+  border-color: $white;
+  
+  &:hover {
+    @include btn-shadow(hover, $white-20);
+    background-color: $white;
+    border-color: $white;
+  }
+  
+  &:focus {
+    @include btn-shadow(focus, $white);
+    background-color: $white;
+    border-color: $mineral-90;
+  }
+
+  &:active {
+    background-color: $white-50;
+    border-color: $white;
+  }
+  
+   &:focus:hover {
+    @include btn-shadow(focus-hover, $white, $white-20);
+    background-color: $white;
+    border-color: $black-75;
+  }
+  
+   &:focus:active {
+    @include btn-shadow(focus, $white);
+    background-color: $white-50;
+    border-color: $mineral-90;
+  }
+}
+
+.btn--light-destructive {
+  background-color: $white;
+  color: $red-60;
+  border-color: $white;
+  
+  &:hover {
+    @include btn-shadow(hover, $white-20);
+    background-color: $white;
+    border-color: $white;
+    
+  }
+  
+  &:focus {
+    @include btn-shadow(focus, $white);
+    background-color: $white;
+    border-color: $red-60;
+  }
+
+  &:active {
+    background-color: $white-50;
+    border-color: $white;
+  }
+  
+   &:focus:hover {
+    @include btn-shadow(focus-hover, $white, $white-20);
+    background-color: $white;
+    border-color: $red-60;
+  }
+  
+   &:focus:active {
+    @include btn-shadow(focus, $white);
+    background-color: $white-50;
+    border-color: $mineral-90;
+  }
+}
+
+.btn--light-confirmation {
+  background-color: $white;
+  color: $green-60;
+  border-color: $white;
+  
+  &:hover {
+    @include btn-shadow(hover, $white-20);
+    background-color: $white;
+    border-color: $white;
+  }
+  
+  &:focus {
+    @include btn-shadow(focus, $white);
+    background-color: $white;
+    border-color: $green-60;
+  }
+
+  &:active {
+    background-color: $white-50;
+    border-color: $white;
+  }
+  
+   &:focus:hover {
+    @include btn-shadow(focus-hover, $white, $white-20);
+    background-color: $white;
+    border-color: $green-60;
+  }
+  
+   &:focus:active {
+    @include btn-shadow(focus, $white);
+    background-color: $white-50;
+    border-color: $mineral-90;
+  }
+}
+
+.btn--ghost-light {
+  background-color: transparent;
+  color: $white;
+  border-color: $white;
+  
+  &:hover {
+    @include btn-shadow(hover, $white-20);
+    color: $white;
+    border-color: $white;
+  }
+  
+  &:focus {
+    @include btn-shadow(focus, $white);
+    color: $white;
+    border-color: $white-35;
+  }
+
+  &:active {
+    background-color: $white-10;
+    color: $white;
+    border-color: $white-50;
+  }
+  
+   &:focus:hover {
+    @include btn-shadow(focus-hover, $white, $white-20);
+    color: $white;
+    border-color: $white-35;
+  }
+  
+   &:focus:active {
+    @include btn-shadow(focus, $white);
+    color: $white;
+    background-color: $white-10;
+    border-color: $white-35;
+  }
+}
+
+.btn--ghost-dark {
+  background-color: transparent;
+  color: $mineral-90;
+  border-color: $mineral-90;
+  
+  &:hover {
+    @include btn-shadow(hover, $black-20);
+    color: $mineral-90;
+    border-color: $mineral-90;
+  }
+  
+  &:focus {
+    @include btn-shadow(focus, $mineral-90);
+    border-color: $black-35;
+    color: $mineral-90;
+  }
+
+  &:active {
+    background-color: $black-10;
+    border-color: $black-50;
+    color: $mineral-90;
+  }
+  
+   &:focus:hover {
+    @include btn-shadow(focus-hover, $mineral-90, $black-20);
+    border-color: $black-35;
+    color: $mineral-90;
+  }
+  
+   &:focus:active {
+    @include btn-shadow(focus, $mineral-90);
+    background-color: $black-10;
+    border-color: $black-50;
+    color: $mineral-90;
+  }
+}
+
+a {
+  position: relative;
+  z-index: 1;
+  display: inline-block; 
+  padding: 0 2px;
+  margin: 0 1px;
+  font-family: $font-secondary;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  color: $mineral-80;
+  vertical-align: top;
+  transition: all $duration-base;
+  cursor: pointer;
+  outline: none;
 
   &::before {
     content: " ";
@@ -326,11 +538,6 @@ $btn-line-heigt: 14px;
     height: 100%;
   }
 
-  &:hover::before {
-    bottom: 0;
-    height: 100%;
-  }
-
   &:focus::before {
     @include btn-shadow(focus, $teal-30);
     bottom: 0;
@@ -343,368 +550,5 @@ $btn-line-heigt: 14px;
     bottom: 0;
     height: 100%;
     background: $teal-10;
-  }
-}
-
-
-
-
-
-//Exceptions
-.btn-default-white {
-  background-color: $white;
-  color: $mineral-90;
-  border: 2px solid $white;
-  font-size: 16px;
-  line-height: 14px;
-  font-weight: 600;
-  border-radius: 4px;
-  padding: 12px 16px;
-  transition: all 0.3s;
-  cursor: pointer;
-  outline: none;
-  text-decoration: none;
-  font-family: $font-secondary;
-  display: inline-block; 
-  vertical-align: top;
-  
-  &:hover {
-    outline: none;
-    background-color: $white;
-    box-shadow: 0px 0px 0px 6px $white-20;
-  }
-  
-  &:focus {
-    outline: none;
-    background-color: $white;
-    border-color: $mineral-90;
-    box-shadow: 0px 0px 0px 2px $white;
-  }
-
-  &:active {
-    outline: none;
-    background-color: $white-50;
-    border-color: $white;
-  }
-  
-   &:focus:hover {
-    outline: none;
-    background-color: $white;
-    border-color: $black-75;
-    box-shadow: 0px 0px 0px 2px $white, 0px 0px 0px 6px $white-20;
-  }
-  
-   &:focus:active {
-    outline: none;
-    background-color: $white-50;
-    border-color: $mineral-90;
-    box-shadow: 0px 0px 0px 2px $white;
-  }
-}
-
-.btn-default-mineral {
-  background-color: $mineral-90;
-  color: $white;
-  border: 2px solid $mineral-90;
-  font-size: 16px;
-  line-height: 14px;
-  font-weight: 600;
-  border-radius: 4px;
-  padding: 12px 16px;
-  transition: all 0.3s;
-  cursor: pointer;
-  outline: none;
-  text-decoration: none;
-  font-family: $font-secondary;
-  display: inline-block; 
-  vertical-align: top;
-  
-  &:hover {
-    outline: none;
-    background-color: $mineral-90;
-    box-shadow: 0px 0px 0px 6px $black-20;
-  }
-  
-  &:focus {
-    outline: none;
-    background-color: $mineral-90;
-    border-color: $white;
-    box-shadow: 0px 0px 0px 2px $mineral-90;
-  }
-
-  &:active {
-    outline: none;
-    background-color: $black-50;
-    border-color: $mineral-90;
-    transform: translateY(2px);
-  }
-  
-   &:focus:hover {
-    outline: none;
-    background-color: $mineral-90;
-    border-color: $white;
-    box-shadow: 0px 0px 0px 2px $mineral-90, 0px 0px 0px 6px $black-20;
-  }
-  
-   &:focus:active {
-    outline: none;
-    background-color: $black-50;
-    border-color: $white;
-    box-shadow: 0px 0px 0px 2px $mineral-90;
-  }
-}
-
-.btn-ghost-white {
-  background-color: transparent;
-  color: $white;
-  border: 2px solid $white;
-  font-size: 16px;
-  line-height: 14px;
-  font-weight: 600;
-  border-radius: 4px;
-  padding: 12px 16px;
-  transition: all 0.3s;
-  cursor: pointer;
-  outline: none;
-  text-decoration: none;
-  font-family: $font-secondary;
-  display: inline-block; 
-  vertical-align: top;
-  
-  &:hover {
-    outline: none;
-    box-shadow: 0px 0px 0px 6px $white-20;
-  }
-  
-  &:focus {
-    outline: none;
-    border-color: $white-35;
-    box-shadow: 0px 0px 0px 2px $white;
-  }
-
-  &:active {
-    outline: none;
-    background-color: $white-10;
-    border-color: $white-50;
-    transform: translateY(2px);
-  }
-  
-   &:focus:hover {
-    outline: none;
-    border-color: white-35;
-    box-shadow: 0px 0px 0px 2px $white, 0px 0px 0px 6px $white-20;
-  }
-  
-   &:focus:active {
-    outline: none;
-    background-color: $white-10;
-    border-color: $white-35;
-    box-shadow: 0px 0px 0px 2px $white;
-  }
-}
-
-.btn-ghost-mineral {
-  background-color: transparent;
-  color: $mineral-90;
-  border: 2px solid $mineral-90;
-  font-size: 16px;
-  line-height: 14px;
-  font-weight: 600;
-  border-radius: 4px;
-  padding: 12px 16px;
-  transition: all 0.3s;
-  cursor: pointer;
-  outline: none;
-  text-decoration: none;
-  font-family: $font-secondary;
-  display: inline-block; 
-  vertical-align: top;
-  
-  &:hover {
-    outline: none;
-    box-shadow: 0px 0px 0px 6px $black-20;
-  }
-  
-  &:focus {
-    outline: none;
-    border-color: $black-35;
-    box-shadow: 0px 0px 0px 2px $mineral-90;
-  }
-
-  &:active {
-    outline: none;
-    background-color: $black-10;
-    border-color: $black-50;
-    transform: translateY(2px);
-  }
-  
-   &:focus:hover {
-    outline: none;
-    border-color: $black-35;
-    box-shadow: 0px 0px 0px 2px $mineral-90, 0px 0px 0px 6px $black-20;
-  }
-  
-   &:focus:active {
-    outline: none;
-    background-color: $black-10;
-    border-color: $black-50;
-    box-shadow: 0px 0px 0px 2px $mineral-90;
-  }
-}
-
-.btn-destructive-white {
-  background-color: $white;
-  color: $red-60;
-  border: 2px solid $white;
-  font-size: 16px;
-  line-height: 14px;
-  font-weight: 600;
-  border-radius: 4px;
-  padding: 12px 16px;
-  transition: all 0.3s;
-  cursor: pointer;
-  outline: none;
-  text-decoration: none;
-  font-family: $font-secondary;
-  display: inline-block; 
-  vertical-align: top;
-  
-  &:hover {
-    outline: none;
-    background-color: $white;
-    box-shadow: 0px 0px 0px 6px $white-20;
-  }
-  
-  &:focus {
-    outline: none;
-    background-color: $white;
-    border-color: $red-60;
-    box-shadow: 0px 0px 0px 2px $white;
-  }
-
-  &:active {
-    outline: none;
-    background-color: $white-50;
-    border-color: $white;
-    transform: translateY(2px);
-  }
-  
-   &:focus:hover {
-    outline: none;
-    background-color: $white;
-    border-color: $red-60;
-    box-shadow: 0px 0px 0px 2px $white, 0px 0px 0px 6px $white-20;
-  }
-  
-   &:focus:active {
-    outline: none;
-    background-color: $white-50;
-    border-color: $mineral-90;
-    box-shadow: 0px 0px 0px 2px $white;
-  }
-}
-
-
-.btn-warning-mineral {
-  background-color: $mineral-90;
-  color: $yellow-60;
-  border: 2px solid $mineral-90;
-  font-size: 16px;
-  line-height: 14px;
-  font-weight: 600;
-  border-radius: 4px;
-  padding: 12px 16px;
-  transition: all 0.3s;
-  cursor: pointer;
-  outline: none;
-  text-decoration: none;
-  font-family: $font-secondary;
-  display: inline-block; 
-  vertical-align: top;
-  
-  &:hover {
-    outline: none;
-    background-color: $mineral-90;
-    box-shadow: 0px 0px 0px 6px $black-20;
-  }
-  
-  &:focus {
-    outline: none;
-    background-color: $mineral-90;
-    border-color: $yellow-60;
-    box-shadow: 0px 0px 0px 2px $mineral-90;
-  }
-
-  &:active {
-    outline: none;
-    background-color: $black-50;
-    border-color: $mineral-90;
-    transform: translateY(2px);
-  }
-  
-   &:focus:hover {
-    outline: none;
-    background-color: $mineral-90;
-    border-color: $yellow-60;
-    box-shadow: 0px 0px 0px 2px $mineral-90, 0px 0px 0px 6px $black-20;
-  }
-  
-   &:focus:active {
-    outline: none;
-    background-color: $black-50;
-    border-color: $yellow-60;
-    box-shadow: 0px 0px 0px 2px $mineral-90;
-  }
-}
-
-.btn-confirmation-white {
-  background-color: $white;
-  color: $green-60;
-  border: 2px solid $white;
-  font-size: 16px;
-  line-height: 14px;
-  font-weight: 600;
-  border-radius: 4px;
-  padding: 12px 16px;
-  transition: all 0.3s;
-  cursor: pointer;
-  outline: none;
-  text-decoration: none;
-  font-family: $font-secondary;
-  display: inline-block; 
-  vertical-align: top;
-  
-  &:hover {
-    outline: none;
-    background-color: $white;
-    box-shadow: 0px 0px 0px 6px $white-20;
-  }
-  
-  &:focus {
-    outline: none;
-    background-color: $white;
-    border-color: $green-60;
-    box-shadow: 0px 0px 0px 2px $white;
-  }
-
-  &:active {
-    outline: none;
-    background-color: $white-50;
-    border-color: $white;
-    transform: translateY(2px);
-  }
-  
-   &:focus:hover {
-    outline: none;
-    background-color: $white;
-    border-color: $green-60;
-    box-shadow: 0px 0px 0px 2px $white, 0px 0px 0px 6px $white-20;
-  }
-  
-   &:focus:active {
-    outline: none;
-    background-color: $white-50;
-    border-color: $mineral-90;
-    box-shadow: 0px 0px 0px 2px $white;
   }
 }
