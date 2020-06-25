@@ -24,19 +24,17 @@ export default class Button extends React.Component {
 
   icon = () => {
     const { icon } = this.props;
-    return ( icon ? (
-      <Icon type={icon} color="mineral20"/>
-    ) : "")
+    return icon ? <Icon type={icon} color="mineral20" /> : "";
   };
 
   render() {
-    const { children, disabled, type, size, icon, exception, } = this.props;
+    const { children, disabled, type, size, exception } = this.props;
     return (
       <button
         type="button"
         className={`btn btn--${type} btn--${size} btn--${exception}`}
         disabled={disabled}
-        >
+      >
         {this.icon()}
         {children}
       </button>
