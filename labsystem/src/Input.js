@@ -11,6 +11,7 @@ export default class Inputs extends React.Component {
     type: PropTypes.string,
     label: PropTypes.string.isRequired,
     disabled: PropTypes.bool,
+    defaultValue: PropTypes.string,
     value: PropTypes.string, // avaliar depois como resolver//
     icon: PropTypes.string,
     iconColor: PropTypes.string,
@@ -22,11 +23,13 @@ export default class Inputs extends React.Component {
     customErrorMsg: PropTypes.string,
     onChange: PropTypes.func,
   };
+
   static defaultProps = {
     theme: undefined,
     className: undefined,
     type: "text",
     disabled: false,
+    defaultValue: undefined,
     value: undefined, // avaliar depois como resolver//
     icon: undefined,
     iconColor: "mineral-70",
@@ -38,12 +41,31 @@ export default class Inputs extends React.Component {
     customErrorMsg: "Custom Error",
     onChange: undefined,
   };
+
   constructor(props) {
     super(props);
     this.inputRef = React.createRef();
+    const { defaultValue, value, id } = props;
+    if (!isUndefined(defaultValue) && !isUndefined(value)) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        `You are setting both value and defaultValue for input ${name} at the same time. We always initialize the toggle with defaultValue. Make sure this is the behaviour you want.`
+      );
+    }
     this.state = {
-      stateValue: '',
+      localValue: defaultValue,
     };
+  }
+  
+  componentDidMount() {
+    const { isValid, customErrorMsg } = this.props;
+    if (!isValid) {
+      const inputElement = this.inputRef.current;
+      console.log(
+        isValid, customErrorMsg
+      );
+      inputElement.setCustomValidity(customErrorMsg);
+    }
   }
   
   trailingIcon = () => {
@@ -62,16 +84,15 @@ export default class Inputs extends React.Component {
   };
   message = () => {
     const { helpMessage, isValid, customErrorMsg } = this.props;
-    if (helpMessage) {
+    if (helpMessage && isValid) {
       return <div className="lab-input__message lab-input__message--required">{helpMessage}</div>
     };
+    if (!isValid && helpMessage && !this.state.localValue) {
+      return <div className="lab-input__message lab-input__message--error"> {helpMessage} </div>
+    };    
     if (!isValid) {
       return <div className="lab-input__message lab-input__message--error"> {customErrorMsg} </div>
     };
-    if (!isValid, helpMessage) {
-      return <div className="lab-input__message lab-input__message--error"> {customErrorMsg} </div>
-    };
-
 
   };
   prefixArea = () => {
@@ -95,20 +116,9 @@ export default class Inputs extends React.Component {
     if (!isUndefined(onChange)) {
       onChange(inputElementValue);
     }
-    this.setState((state) => ({ stateValue: inputElementValue }));
+    this.setState((state) => ({ localValue: inputElementValue }));
   };
 
-  // componentDidMount() {
-  //   const { isValid, customErrorMsg } = this.props;
-  //   if (!isValid) {
-  //     const inputElement = this.inputRef.current;
-  //     console.log(
-  //       isValid, customErrorMsg
-  //     );
-  //     inputElement.setCustomValidity(customErrorMsg);
-  //   }
-    
-  // }
 
 
   render() {
@@ -129,7 +139,7 @@ export default class Inputs extends React.Component {
       ...rest
     } = this.props;
 
-    const {stateValue} = this.state;
+    const {localValue} = this.state;
 
     return (
       <div className="lab-input">
@@ -139,6 +149,7 @@ export default class Inputs extends React.Component {
           type={type}
           placeholder=" "
           disabled={disabled}
+          defaultValue={localValue}
           value={value}
           ref={this.inputRef}
           onChange={this.handleOnChange}
@@ -153,7 +164,7 @@ export default class Inputs extends React.Component {
           className={`lab-input__label`}
           htmlFor={id}>{label}
         </label>
-
+        <p>Local value:</p>{localValue}
       </div>
     );
   }
