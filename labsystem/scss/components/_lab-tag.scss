@@ -1,0 +1,60 @@
+@use "sass:map";
+
+$tag-font-size: 14px;
+$tag-line-heigt: 16px;
+
+$tag-background: $teal-40;
+
+.tag {
+  height: 24px;
+  padding: 0 8px;
+  font-size: $tag-font-size;
+  line-height: $tag-line-heigt;
+  font-weight: 600;
+  border-radius: 12px;
+  border: $border-01 $teal-40;
+  text-decoration: none;
+  transition: all $duration-base;
+  cursor: pointer;
+  outline: none;
+  font-family: $font-secondary;
+  display: inline-block; 
+  background-color: $tag-background;
+  color: white;
+
+  &:hover {
+    background-color: mix($tag-background, black, 50%);
+    box-shadow: 0 0 0 4px $teal-10;
+    border-color: mix($tag-background, black, 50%);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px $teal-30;
+  }
+
+  &:focus:hover {
+    box-shadow: 0 0 0 2px $teal-30, 0 0 0 4px $teal-10;
+    border-color: mix($tag-background, black, 50%);
+  }
+
+  /* TEAL */
+  &.tag--teal {
+    .tag__input:focus {
+      background-color: $teal-40;
+    }
+  }
+
+  /* PURPLE */
+  &.tag--purple {
+    .tag__input:focus {
+      box-shadow: 0 0 0 2px;
+    }
+  }
+
+  /* DISABLED */
+  &.tag--disabled {
+    .tag__input:focus {
+      box-shadow: 0 0 0 2px $mineral-20;
+    }
+  }
+}

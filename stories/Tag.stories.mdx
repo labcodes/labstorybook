@@ -1,0 +1,56 @@
+import { Fragment } from 'react';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+
+<Meta title="Components | Tag" component={Tag} />
+
+# Tag
+
+The `Tag` component might receive up to five inputs as props, where the `color` and `name` parameters are the only required ones.
+- `name`: should be an unique identifier and works as the `id` of the `input` tag within the component; it's also an important accessibility tool
+- `color`: defines the Tag color
+- `disabled`: sets the Tag component as disabled; includes functionality and styles
+- `defaultValue`: you can set a default value for the Tag to start with; it normally starts as `false`
+- `value`: you might need to set the component value from outside the component; if so, the internal logic to handle the component value won't be used
+- `handleTag`: you might need to perform other actions when the component value changes; use this param to pass a function that's gonna be called on value changes
+
+## Sample Tag
+Tag can be used as shown in the example below:
+
+
+<Preview>
+  <Story name="Sample Tag">
+    <Fragment>
+      <div class="tag">helga</div>
+    </Fragment>
+  </Story>
+</Preview>
+
+## Tag themes
+Tag can be used in the following themes:
+
+<Preview>
+  <Story name="Sample Tag Themes">
+    <Fragment>
+      <Tag name="sample-Tag-teal" theme="teal"/><br /><br />
+      <Tag name="sample-Tag-purple" theme="purple" defaultValue={true} /><br /><br />
+    </Fragment>
+  </Story>
+</Preview>
+
+## Tag Disabled
+Togge can be disabled and, at the same time receive, a `defaultValue`:
+
+<Preview>
+  <Story name="Sample Tag Disabled">
+    <Fragment>
+      <Tag name="sample-Tag-disabled" disabled /><br /><br />
+      <Tag name="sample-Tag-disabled" disabled value={true} />
+    </Fragment>
+  </Story>
+</Preview>
+
+## Prop API docs
+
+Here's the list of props based on the component's prop types definitions.
+### Tag
+<Props of={Tag} />
