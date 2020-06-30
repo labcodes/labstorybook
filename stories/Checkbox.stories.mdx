@@ -1,0 +1,47 @@
+import { Fragment } from 'react';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+
+import Checkbox from '../labsystem/src/Checkbox';
+
+<Meta title="Components | Checkbox" />
+
+
+<h1>Checkbox</h1>
+<h2>General Usages</h2>
+<div class="columns">
+    <p>Checkboxes are selection controls that allows the user to select options. 
+    They should be used when we have a list of options that can be multiple selected.
+    </p> 
+</div>
+
+<h2>Anatomy</h2>
+<div class="columns">
+    <div class="column">
+        <img src="docs/tokens-spacing/01-spacing.png" />
+    </div>
+    <div class="column">
+        <ol>
+         <li>Checkbox container</li>
+         <li>Checkbox icon status indicator</li>
+         <li>Hover stroke</li>
+         <li>Base container stroke</li>
+         <li>Focus stroke</li>
+        </ol> 
+    </div>
+</div>
+
+## Checkbox 
+
+<Preview>
+  <Story name="Checkbox">
+    <Fragment>
+         <Checkbox id="checkbox-1" label="Idle" name="checkbox"/>
+         <br />
+         <Checkbox id="checkbox-2" label="Idle" name="checkbox" indeterminate />
+         <br />
+         <Checkbox id="checkbox-3" label="Disabled" name="checkbox" checked disabled/>
+        <br />
+         <Checkbox id="checkbox-4" label="Disabled" name="checkbox" disabled/>
+    </Fragment>
+  </Story>
+</Preview>

@@ -6,7 +6,6 @@ import PropTypes from "prop-types";
 export default class Radio extends React.Component {
     static propTypes = {
       id: PropTypes.string.isRequired,
-      type: PropTypes.string,
       label: PropTypes.string,
       disabled: PropTypes.bool,
       checked: PropTypes.string,
@@ -15,7 +14,6 @@ export default class Radio extends React.Component {
   
     static defaultProps = {
       theme: undefined,
-      type: "radio",
       disabled: false,
       checked: undefined,
   
@@ -28,7 +26,6 @@ export default class Radio extends React.Component {
       const {
         className,
         id,
-        type,
         label,
         disabled,
         checked,
@@ -39,7 +36,7 @@ export default class Radio extends React.Component {
     return (
         <div className="lab-radio">
             <input
-                type={type}
+                type="radio"
                 id={id}
                 disabled={disabled}
                 checked={checked}

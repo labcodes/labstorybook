@@ -1,6 +1,6 @@
 @use 'sass:map';
 
-// Wrapper div around input element. All inputs must have it.
+// Wrapper div around radio element. All inputs must have it.
 .lab-radio {
   input[type="radio"] {
     position: absolute;
