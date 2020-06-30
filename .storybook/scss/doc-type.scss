@@ -24,76 +24,16 @@ p.type__text {
   &--ibm-plex-mono {
     font-family: $family-monospace;
   }
-  
-  &--size-1 {
-    font-size: $font-size-1;
-  }
-  
-  &--size-2 {
-    font-size: $font-size-2;
-  }
-  
-  &--size-3 {
-    font-size: $font-size-3;
-  }
-  
-  &--size-4 {
-    font-size: $font-size-4;
-  }
-  
-  &--size-5 {
-    font-size: $font-size-5;
-  }
-  
-  &--size-6 {
-    font-size: $font-size-6;
-  }
-  
-  &--size-7 {
-    font-size: $font-size-7;
-  }
-  
-  &--size-8 {
-    font-size: $font-size-8;
-  }
-  
-  &--size-9 {
-    font-size: $font-size-9;
-  }
-  
-  &--size-10 {
-    font-size: $font-size-10;
-  }
-  
-  &--size-11 {
-    font-size: $font-size-11;
-  }
-  
-  &--size-12 {
-    font-size: $font-size-12;
+
+  @each $name, $size in $font-sizes {
+    &--#{$name} {
+      font-size: $size;
+    }
   }
 
-  &--weight-light {
-    font-weight: $weight-light;
-  }
-
-  &--weight-normal {
-    font-weight: $weight-normal;
-  }
-
-  &--weight-medium {
-    font-weight: $weight-medium;
-  }
-
-  &--weight-semibold {
-    font-weight: $weight-semibold;
-  }
-
-  &--weight-bold {
-    font-weight: $weight-bold;
-  }
-
-  &--weight-black {
-    font-weight: $weight-black;
+  @each $name, $weight in $font-weights {
+    &--weight-#{$name} {
+      font-weight: $weight;
+    }
   }
 }
