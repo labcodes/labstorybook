@@ -38,7 +38,7 @@ import PropTypes from "prop-types";
   
   
       return (
-        <div>
+        <div className="lab-checkbox">
             <input
                 type="checkbox"
                 id={id}
@@ -49,7 +49,7 @@ import PropTypes from "prop-types";
                 ref={el => el && (el.indeterminate = indeterminate)}
           />
           <label
-                className={`checkbox-label`}
+                className={`lab-checkbox__label`}
                 htmlFor={id}>{label}
             </label>
         </div>

@@ -38,7 +38,7 @@ It’s a standard text input. Can be used for enter a id, phone number, street a
       <Input id="id2" label="Label" icon="eye-opened" iconColor="mineral70" />
       <br />
       <h3>Error</h3>
-      <Input type="email" id="error" label="Name" value="Invalid Input" isValid={false} customErrorMsg="Error message" />
+      <Input type="email" id="error" label="Name" defaultValue="Teste" customErrorMsg="Error message" />
     </Fragment>
   </Story>
 </Preview>
@@ -54,7 +54,7 @@ It’s a default input that is required to be filled. It has a helper message to
       <Input type="text" id="required" label= "Label" helpMessage="Help message" required />
       
       <h3>Required Error</h3>
-      <Input type="email" id="required2" value="Invalid Input" label= "Required" isValid={false} customErrorMsg="Error message" required />
+      <Input type="email" id="required2" defaultValue=" " label= "Required" isValid={false} customErrorMsg="Error message" helpMessage="Help message" required />
     </Fragment>
   </Story>
 </Preview>
@@ -79,7 +79,7 @@ It’s a text field input + fixed prefix.
         className="lab-input__field--prefixed"
         type="email"
         id="prefix-error"
-        value="Error"
+        defaultValue="Error"
         label="Label"
         prefix="R$"
         isValid={false} 
@@ -110,7 +110,7 @@ It’s a text field input + fixed suffix.
         type="email" 
         id="suffix-error" 
         label="Label" 
-        value="Error" 
+        defaultValue="Error" 
         suffix=".com"
         isValid={false} 
         customErrorMsg="Error message" 
