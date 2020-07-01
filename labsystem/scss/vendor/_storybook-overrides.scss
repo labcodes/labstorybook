@@ -16,49 +16,46 @@ h6.sbdocs-h6 {
   line-height: 1.1;
   color: $black-75;
   border: none;
-
+  margin-block-start: $spacing-06 !important;
+  margin-block-end: $spacing-05;
+  
   strong {
     font-weight: $title-strong-weight;
   }
 }
 
 h1.sbdocs-h1 {
+  margin-block-start: $spacing-08 !important;
+  margin-block-end: $spacing-06;
   font-size: $font-size-10;
-  margin-top: $spacing-10 !important;
-  margin-bottom: $spacing-06;
 }
 
 h2.sbdocs-h2 {
-  margin-top: $spacing-10 !important;
-  margin-bottom: $spacing-06;
+  margin-block-start: $spacing-08 !important;
   font-size: $font-size-9;
 }
 
 h3.sbdocs-h3 {
-  margin-top: $spacing-09 !important;
-  margin-bottom: $spacing-05;
   font-size: $font-size-8;
   line-height: 1.125;
 }
 
 h4.sbdocs-h4 {
-  margin-top: $spacing-08 !important;
-  margin-bottom: $spacing-04;
+  margin-block-end: $spacing-04;
   font-size: $font-size-7;
   line-height: 1.14;
 }
 
 h5.sbdocs-h5 {
-  margin-top: $spacing-07 !important;
-  margin-bottom: $spacing-04;
+  margin-block-start: $spacing-05 !important;
+  margin-block-end: $spacing-04;
   font-size: $font-size-6;
   line-height: 1.16;
   font-weight: $weight-semibold;
 }
 
 h6.sbdocs-h6 {
-  margin-top: $spacing-06 !important;
-  margin-bottom: $spacing-04;
+  margin-block-end: $spacing-04;
   font-size: $font-size-4;
   font-weight: $weight-semibold;
 }
@@ -72,6 +69,10 @@ li.sbdocs-li {
   font-size: $paragraph-defaul-size;
   line-height: 1.5rem;
   color: $black-75;
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
 
   strong {
     font-weight: $title-strong-weight;
