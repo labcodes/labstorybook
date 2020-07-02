@@ -10,9 +10,10 @@ $input-internal-spacing: 2px;
 
 .search-input {
     position: relative;
-    width:fit-content;
+    width: fit-content;
     width: -moz-fit-content;
     margin-top: $spacing-03;
+    box-sizing: border-box;
 
 }
 
@@ -67,10 +68,8 @@ outline: none;
     }
 
     &:disabled::placeholder{
-        color:$mineral-40;
+        color: $mineral-40;
     }
-
-
 }
 
 .searchButton {
@@ -83,9 +82,8 @@ outline: none;
     padding: 0px;
     border: none;
     background-repeat: no-repeat;
-    background-image: url('~labsystem/static/icons/lupe.svg');
     background-position: center;
-    background-color:$mineral-40;
+    background-color: $mineral-40;
     outline: none;
     cursor: pointer;
 
@@ -119,23 +117,24 @@ outline: none;
     }
 
     .search-input__field:not(:placeholder-shown)~ &:focus {
-        background-color:$teal-70;
-        border: 0.5px solid $teal-10;
+        background-color: $teal-70;
+        border: 1px solid $teal-10;
         border-radius: 3px;
         transition-duration: 0.05s;
     }
     .search-input__field:not(:placeholder-shown)~ &:active {
-        background-color:$teal-80;               
+        background-color: $teal-80;               
     }
 
     &:disabled {
-        background-color:$mineral-20;  
-        border:none;        
+        background-color: $mineral-20;  
+        border: none;
+        pointer-events: none;        
     }
 
     &:active {
-        background-color:$mineral-70;
-        border: 0.5px solid $teal-10;
+        background-color: $mineral-70;
+        border: 1px solid $teal-10;
         border-radius: 3px;
                     
     }
@@ -193,6 +192,7 @@ outline: none;
     background-color: transparent;
     outline: none;
     opacity: 0;
+    cursor: pointer;
 
     .search-input__field:not(:placeholder-shown) ~ & {
         opacity:1;

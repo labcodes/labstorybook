@@ -3,6 +3,7 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
 import SearchInput from '../labsystem/src/SearchInput';
 import InlineSearch from '../labsystem/src/InlineSearch';
+import TesteInput from '../labsystem/src/TesteInput';
 
 <Meta title="Components | Search Inputs" component={SearchInput} />
 
@@ -27,18 +28,10 @@ it can take the user to another page.
   <Story name="Standard Search">
     <Fragment>
         <h3>Default</h3>
-        <div className="search-input">
-            <input className="search-input__field" type="text" placeholder="Search"/>
-            <span className= "search-separator" />
-            <button type="submit" className="searchButton" />
-        </div>
+       <SearchInput placeholder= "Search"/>
         <br />
         <h3> Disabled</h3>
-        <div className="search-input">
-            <input className="search-input__field" type="text" placeholder="Search" disabled/>
-            <span className= "search-separator" />
-            <button type="submit" className="searchButton" disabled />
-        </div>
+        <SearchInput placeholder= "Search" disabled/>
     </Fragment>
   </Story>
 </Preview>
@@ -54,6 +47,7 @@ component. This search works filtering the results and showing them simultaneous
         <h3>Default</h3>
         <InlineSearch placeholder="Search" />
         <InlineSearch placeholder="Search" disabled />
+        <TesteInput />
     </Fragment>
   </Story>
 </Preview>

@@ -21,24 +21,6 @@ export default class DefaultSearch extends React.Component {
     iconColor: undefined
   };
   
-  // searchIcon = () => {
-  //   const { icon, iconColor } = this.props;
-  //   return (icon ? (
-  //     <span className="search-icon">
-  //       <Icon type={icon} color={iconColor} />
-  //     </span>
-  //   ) : "")
-  // };
-
-  // lupe = () => {
-  //   const { icon, iconColor } = this.props;
-  //   return (icon ? (
-  //     <span className="search-icon">
-  //       <Icon type='lupe' color='mineral70' />
-  //     </span>
-  //   ) : "")
-  // };
-
 
 
   render() {
@@ -52,17 +34,19 @@ export default class DefaultSearch extends React.Component {
     } = this.props;
 
     return (
-      <div className="search-input">
-        <input
-          className={`search-input__field ${className || ""}`}
-          type="text"
-          placeholder={placeholder}
-          disabled={disabled}
-          {...rest}
-        />
-
-
-      </div>
+        <div className="search-input">
+          <input
+            className={`search-input__field ${className || ""}`}
+            type="text"
+            placeholder={placeholder}
+            disabled={disabled}
+            {...rest}
+          />
+          <span className= "search-separator" />
+          <button type="button" className="searchButton" disabled={disabled}>
+              <Icon type='lupe' color='mineral70' />
+          </button>
+        </div>
     );
   }
 }

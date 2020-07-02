@@ -21,26 +21,19 @@ export default class InlineSearch extends React.Component {
       iconColor: undefined
     };
     
-    // searchIcon = () => {
-    //   const { icon, iconColor } = this.props;
-    //   return (icon ? (
-    //     <span className="search-icon">
-    //       <Icon type={icon} color={iconColor} />
-    //     </span>
-    //   ) : "")
-    // };
+    state = {
+      teste: 'teste',
+    }
   
-    // lupe = () => {
-    //   const { icon, iconColor } = this.props;
-    //   return (icon ? (
-    //     <span className="search-icon">
-    //       <Icon type='lupe' color='mineral70' />
-    //     </span>
-    //   ) : "")
-    // };
-  
-  
-  
+    handleOnChange = ( {newValue} ) => {
+      console.warn(newValue);
+      this.setState({ teste: newValue })
+    }
+
+    handleButtonClick = () => {
+      console.warn("handleButtonClick");
+    };
+
     render() {
       const {
         className,
@@ -49,22 +42,28 @@ export default class InlineSearch extends React.Component {
         ...rest
       } = this.props;
   
+      const { teste } = this.state;
+
       return (
-        <div className="search-input" >
-          <span className="search-icon">
-            <Icon type='lupe' color='mineral70' />
-          </span>
-          <input
-            className={`search-input__field`}
-            type="text"
-            placeholder={placeholder}
-            disabled={disabled}
-            {...rest}
-          />
-            <button className="remove-icon">
-            <Icon type='remove' color='mineral20' />
-          </button>
-  
+        <div>
+          <div className="search-input" >
+            <span className="search-icon">
+              <Icon type='lupe' color='mineral70' />
+            </span>
+            <input
+              value={teste}
+              className={`search-input__field`}
+              type="text"
+              placeholder={placeholder}
+              disabled={disabled}
+              onChange={this.handleOnChange}
+              {...rest}
+            />
+            <button className="remove-icon" disabled={disabled} onClick={this.handleButtonClick}>
+              <Icon type='remove' color='mineral20' />
+            </button>
+          </div>
+          <p><strong>Input value: </strong>{this.state.teste}</p>
         </div>
       );
     }   
