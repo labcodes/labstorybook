@@ -49,4 +49,11 @@ $icon-size: 1.5rem !default;
   &.upload { background-position: left $icon-size*-5 top $icon-size*-2; }
   &.reload { background-position: left $icon-size*-5 top $icon-size*-3; }
 
+  &--petit {
+    transform: scale(0.66666);
+  }
+
+  &--small {
+    transform: scale(0.83333);
+  }
 }
