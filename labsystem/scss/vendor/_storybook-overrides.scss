@@ -24,3 +24,10 @@ p, li {
   font-size: 18px !important;
   font-weight: 500 !important;
 }
+
+span,
+span.sbdocs-span {
+  font-size: inherit;
+  font-family: $font-secondary;
+  color: inherit;
+}
