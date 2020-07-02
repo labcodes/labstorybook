@@ -7,6 +7,16 @@ $btn-radius: $radius-02; //4px
 $btn-font-size: 16px;
 $btn-line-heigt: 14px;
 
+$main-color: map-get($button-theme, "-60");
+$bg-color-active: map-get($button-theme, "-80");
+$border-color-idle: map-get($button-theme, "-60");
+$border-color-hover: map-get($button-theme, "-80");
+$border-color-focus: map-get($button-theme, "-70");
+$border-color-active: map-get($button-theme, "-40");
+$shadow-hover: map-get($button-theme, "-10");
+$shadow-focus: map-get($button-theme, "-30");
+
+
 @mixin btn-shadow($type, $color1, $color2 : none) {
   @if $type != "hover" and $type != "focus" and $type != "focus-hover" {
     @error "Property #{$type} must be either hover, focus or focus-hover.";
