@@ -1,0 +1,204 @@
+// Wrapper div around input element. All inputs must have it.
+$border-01: 2px solid;
+$hover-shadow: 0 0 0 6px;
+$focus-shadow: 0 0 0 2px;
+
+$radius-01: 2px;
+$radius-02: 4px;
+
+$input-internal-spacing: 2px;
+
+.search-input {
+    position: relative;
+    width:fit-content;
+    width: -moz-fit-content;
+    margin-top: $spacing-03;
+
+}
+
+.search-input__field {
+display: inline-block;
+min-width: 260px;
+height: 36px;
+padding: 0;
+margin: 0;
+font-family: $font-secondary;
+font-weight: 500;
+font-size: 16px;
+color: $black-75;
+text-indent: $spacing-03;
+text-overflow: clip;
+border: $border-01 $mineral-40;
+border-radius: $radius-02;
+outline: none;
+
+    &::placeholder {
+        color: $black-50;
+    }
+    
+    &:not(:placeholder-shown){
+        border: 2px solid $teal-40;
+    }
+
+    &:not(:placeholder-shown):hover{
+        border: 2px solid $teal-60;
+        box-shadow: 0 0 0 6px $teal-10;
+    }
+
+    &:focus {
+        border: 2px solid $teal-70;
+        outline: none;
+        box-shadow: 0 0 0 2px $teal-30;
+    }
+
+    &:hover{
+        box-shadow: 0 0 0 6px $mineral-10; ;
+    }
+
+    &:hover:focus {
+        border: 2px solid $teal-80;
+        box-shadow: 0 0 0 2px $teal-30, 0 0 0 6px $teal-10;
+    }
+
+    &:disabled, &:disabled:hover {
+        border: 2px solid $mineral-20;
+        background-color: $mineral-10;
+        box-shadow: none;
+    }
+
+    &:disabled::placeholder{
+        color:$mineral-40;
+    }
+
+
+}
+
+.searchButton {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    width: 40px;
+    height: 32px;
+    padding: 0px;
+    border: none;
+    background-repeat: no-repeat;
+    background-image: url('~labsystem/static/icons/lupe.svg');
+    background-position: center;
+    background-color:$mineral-40;
+    outline: none;
+    cursor: pointer;
+
+    .search-input__field:focus ~ & {
+        background-color: $teal-70;
+    }
+
+    .search-input__field:focus:hover ~ & {
+        background-color: $teal-80;
+        
+    }
+
+    .search-input__field:not(:placeholder-shown) ~ & {
+        background-color: $teal-40;
+        
+    }
+
+    .search-input__field:not(:placeholder-shown):focus ~ & {
+        background-color: $teal-70;
+        
+    }
+
+    .search-input__field:not(:placeholder-shown):hover ~ & {
+        background-color: $teal-60;
+        
+    }
+
+    .search-input__field:not(:placeholder-shown):focus:hover ~ & {
+        background-color: $teal-80;
+        
+    }
+
+    .search-input__field:not(:placeholder-shown)~ &:focus {
+        background-color:$teal-70;
+        border: 0.5px solid $teal-10;
+        border-radius: 3px;
+        transition-duration: 0.05s;
+    }
+    .search-input__field:not(:placeholder-shown)~ &:active {
+        background-color:$teal-80;               
+    }
+
+    &:disabled {
+        background-color:$mineral-20;  
+        border:none;        
+    }
+
+    &:active {
+        background-color:$mineral-70;
+        border: 0.5px solid $teal-10;
+        border-radius: 3px;
+                    
+    }
+
+    
+}
+
+
+
+.search-separator {
+    position: absolute;
+    top: 2px;
+    right: 38px;
+    bottom: 3px;
+    background-color: $white;
+    width: 36px;
+    height: 32px;
+    border-radius: $radius-02;
+    z-index: 1;
+
+    .search-input__field:disabled~ & {
+        background-color:$mineral-10;               
+    }
+}
+
+
+// Inline 
+
+.search-icon {
+    position: absolute;
+    top: 6px;
+    left: $spacing-02;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+
+    &~ .search-input__field {
+        padding-left: $spacing-06;
+        padding-right: $spacing-07;
+    }
+}
+
+.remove-icon {
+    position: absolute;
+    top: 6px;
+    right: $spacing-02;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    opacity: 0;
+
+    .search-input__field:not(:placeholder-shown) ~ & {
+        opacity:1;
+    }
+
+    &:active {
+        opacity:1;
+    }
+}
