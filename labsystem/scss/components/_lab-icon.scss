@@ -1,26 +1,28 @@
 $icon-size: 1.5rem !default;
 
 .lab-icon {
-  -webkit-mask-image: url('~labsystem/static/icons/main-teal.svg');
-  mask-image: url('~labsystem/static/icons/main-teal.svg');
-
-  &.teal {
-    background-color: $teal;
-  }
-  &.mineral70 {
-    background-color: $mineral-70;
-  }
-  &.mineral20 {
-    background-color: $mineral-20;
-  }
+  -webkit-mask-image: url('~labsystem/static/icons/main-icons.svg');
+  mask-image: url('~labsystem/static/icons/main-icons.svg');
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-
   height: $icon-size;
   width: $icon-size;
   font-size: $icon-size;
   line-height: 1;
   display: inline-block;
+
+  //Create classes like '.lab-icon--teal40' with only a different background-color
+  @each $key, $palette in $all-colors {
+    @each $color-palette, $color in $palette {
+      &--#{$key}#{$color-palette} {
+          background-color: $color;
+      }
+    }
+  }
+
+  &--black { background-color: $black; }
+
+  &--white { background-color: $white; }
 
   &.arrow-left {
     -webkit-mask-position: left 0 top 0;
