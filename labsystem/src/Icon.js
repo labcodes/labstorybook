@@ -30,17 +30,21 @@ export default class Icon extends React.Component {
       "trash",
       "upload",
     ]).isRequired,
-    color: PropTypes.oneOf([
-      "white",
-      "teal40",
-      "mineral70",
-      "mineral20"
-    ]).isRequired,
+    color: PropTypes.oneOf(["white", "teal40", "mineral70", "mineral20"])
+      .isRequired,
     size: PropTypes.oneOf(["small", "petit"]),
+  };
+
+  static defaultProps = {
+    size: undefined,
   };
 
   render() {
     const { type, color, size } = this.props;
-    return <span className={`lab-icon ${type} lab-icon--${color} lab-icon--${size}`} />;
+    return (
+      <span
+        className={`lab-icon ${type} lab-icon--${color} lab-icon--${size}`}
+      />
+    );
   }
 }
