@@ -6,11 +6,11 @@
 @import "~bulma/sass/base/all";
 @import "~bulma/sass/grid/all";
 
-// Components
-@import "components/all";
-
 // Helpers
 @import "utilities/all";
+
+// Components
+@import "components/all";
 
 // Storybook
 @import "vendor/storybook-overrides";
