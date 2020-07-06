@@ -1,11 +1,23 @@
 @use 'sass:map';
-$default-color-types: 'primary', 'secondary', 'support', 'additional', 'neutral', 'success', 'danger', 'warning';
 
 //Text color helpers
-.u-color{
-  @each $type in $default-color-types {
-    &-#{$type} {
-      color: map-get($main-palette, $type);
-    }
+.u-{
+  @each $key, $palette in $all-colors {
+      @each $color-palette, $color in $palette {
+        &color-#{$key}#{$color-palette} {
+            color: $color;
+        }
+
+        &bg-#{$key}#{$color-palette} {
+            background-color: $color;
+        }
+      }
   }
+}
+
+.u-{
+  &color-black { color: $black; }
+  &bg-black { background-color: $black; }
+  &color-white { color: $white; }
+  &bg-white { background-color: $white; }
 }
