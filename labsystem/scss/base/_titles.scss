@@ -20,14 +20,14 @@ $paragraph-sizes: (
 );
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $font-primary;
-  font-weight: $title-weight;
-  letter-spacing: $letter-spacing;
-  text-rendering: $render-mode;
-  line-height: 1.1;
-  color: inherit;
   margin-block-start: $title-margin;
   margin-block-end: $title-margin;
+  font-family: $font-primary;
+  font-weight: $title-weight;
+  line-height: 1.1;
+  color: inherit;
+  text-rendering: $render-mode;
+  letter-spacing: $letter-spacing;
 
   strong {
     font-weight: $title-strong-weight;
@@ -59,8 +59,8 @@ h4 {
 
 h5 {
   font-size: $font-size-6;
-  line-height: 1.16;
   font-weight: $weight-semibold;
+  line-height: 1.16;
 }
 
 h6 {
@@ -69,16 +69,16 @@ h6 {
 }
 
 p {
-  font-family: $family-sans-serif;
-  font-weight: $paragraph-weight;
-  letter-spacing: $letter-spacing;
-  text-rendering: $render-mode;
-  font-size: $font-size-4;
-  line-height: 1.5rem;
   margin-block-start: $paragraph-margin;
   margin-block-end: $paragraph-margin;
   margin-inline-start: 0;
   margin-inline-end: 0;
+  font-family: $family-sans-serif;
+  font-size: $font-size-4;
+  font-weight: $paragraph-weight;
+  line-height: 1.5rem;
+  text-rendering: $render-mode;
+  letter-spacing: $letter-spacing;
   
   strong {
     font-weight: $title-strong-weight;

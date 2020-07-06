@@ -9,16 +9,16 @@ h3.sbdocs-h3,
 h4.sbdocs-h4,
 h5.sbdocs-h5,
 h6.sbdocs-h6 {
-  font-family: $font-primary;
-  font-weight: $title-weight;
-  letter-spacing: $letter-spacing;
-  text-rendering: $render-mode;
-  line-height: 1.1;
-  color: $black-75;
-  border: none;
   margin-block-start: $spacing-06 !important;
   margin-block-end: $spacing-05;
-  
+  font-family: $font-primary;
+  font-weight: $title-weight;
+  line-height: 1.1;
+  color: $black-75;
+  text-rendering: $render-mode;
+  letter-spacing: $letter-spacing;
+  border: none;
+
   strong {
     font-weight: $title-strong-weight;
   }
@@ -50,8 +50,8 @@ h5.sbdocs-h5 {
   margin-block-start: $spacing-05 !important;
   margin-block-end: $spacing-04;
   font-size: $font-size-6;
-  line-height: 1.16;
   font-weight: $weight-semibold;
+  line-height: 1.16;
 }
 
 h6.sbdocs-h6 {
@@ -62,17 +62,17 @@ h6.sbdocs-h6 {
 
 p.sbdocs-p,
 li.sbdocs-li {
-  font-family: $font-primary;
-  font-weight: $paragraph-weight;
-  letter-spacing: $letter-spacing;
-  text-rendering: $render-mode;
-  font-size: $paragraph-defaul-size;
-  line-height: 1.5rem;
-  color: $black-75;
   margin-block-start: 1rem;
   margin-block-end: 1rem;
   margin-inline-start: 0;
   margin-inline-end: 0;
+  font-family: $font-primary;
+  font-size: $paragraph-defaul-size;
+  font-weight: $paragraph-weight;
+  line-height: 1.5rem;
+  color: $black-75;
+  text-rendering: $render-mode;
+  letter-spacing: $letter-spacing;
 
   strong {
     font-weight: $title-strong-weight;
