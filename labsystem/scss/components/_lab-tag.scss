@@ -1,60 +1,176 @@
 @use "sass:map";
 
 $tag-font-size: 14px;
-$tag-line-heigt: 16px;
+$tag-line-heigt: 20px;
 
 $tag-background: $teal-40;
+$tag-border: 2px;
+
+
+// //soft
+$tag-main-color: map-get($tag-theme, "-20");
+$tag-border-color: map-get($tag-theme, "-20");
+$tag-text-color: map-get($tag-theme, "-80");
+$tag-hover-color: white;
+$tag-hover-shadow-color: map-get($tag-theme, "-20");
+$tag-focus-shadow-color: map-get($tag-theme, "-40");
+$tag-focus-hover-bg-color: $tag-hover-color;
+
+// intense
+// $tag-intense-main-color: map-get($tag-theme, "-60");
+// $tag-intense-border-color: $tag-main-color;
+// $tag-intense-text-color: $tag-main-color;
+// $tag-intense-hover-color: mix($tag-main-color, black, 50%);
+// $tag-intense-hover-shadow-color: map-get($tag-theme, "-10");
+// $tag-intense-focus-shadow-color: map-get($tag-theme, "-30");
+// $tag-intense-focus-hover-bg-color: $tag-hover-color;
 
 .tag {
   height: 24px;
-  padding: 0 8px;
+  margin: 0 4px;
+  padding: 0 16px;
   font-size: $tag-font-size;
   line-height: $tag-line-heigt;
   font-weight: 600;
   border-radius: 12px;
-  border: $border-01 $teal-40;
+  border: $tag-border solid;
   text-decoration: none;
   transition: all $duration-base;
   cursor: pointer;
   outline: none;
   font-family: $font-secondary;
-  display: inline-block; 
-  background-color: $tag-background;
-  color: white;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
 
   &:hover {
-    background-color: mix($tag-background, black, 50%);
-    box-shadow: 0 0 0 4px $teal-10;
-    border-color: mix($tag-background, black, 50%);
+    box-shadow: 0 0 0 4px $tag-hover-shadow-color;
   }
 
   &:focus {
-    box-shadow: 0 0 0 2px $teal-30;
+    box-shadow: 0 0 0 2px $tag-focus-shadow-color;
   }
 
   &:focus:hover {
-    box-shadow: 0 0 0 2px $teal-30, 0 0 0 4px $teal-10;
-    border-color: mix($tag-background, black, 50%);
+    box-shadow: 0 0 0 2px $tag-focus-shadow-color, 0 0 0 4px $tag-hover-shadow-color;
+  }
+}
+
+/* Tag styles */
+.tag--fill {
+  border-color: $tag-main-color;
+  background-color: $tag-main-color;
+  color: $tag-text-color;
+
+  &:hover {
+    background-color: $tag-hover-color;
+    border-color: $tag-hover-color;
   }
 
-  /* TEAL */
-  &.tag--teal {
-    .tag__input:focus {
-      background-color: $teal-40;
-    }
+  &:focus:hover {
+    border-color: $tag-focus-hover-bg-color;
   }
 
-  /* PURPLE */
-  &.tag--purple {
-    .tag__input:focus {
-      box-shadow: 0 0 0 2px;
-    }
-  }
-
-  /* DISABLED */
   &.tag--disabled {
-    .tag__input:focus {
-      box-shadow: 0 0 0 2px $mineral-20;
+    background-color: $mineral-10;
+    color: $mineral-30;
+    border-color: $mineral-10;
+    pointer-events: none;
+  }
+
+  //Colors and styles
+  &.tag--teal-intense {
+    border-color: map-get($teal-palette, "-60");
+    background-color: map-get($teal-palette, "-60");
+    color: white;
+
+    &:hover {
+      background-color: mix(map-get($teal-palette, "-60"), black, 50%);
+      border-color: mix(map-get($teal-palette, "-60"), black, 50%);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px map-get($teal-palette, "-30");
+    }
+
+    &:focus:hover {
+      border-color: mix(map-get($teal-palette, "-60"), black, 50%);
+      box-shadow: 0 0 0 2px map-get($teal-palette, "-30"), 0 0 0 4px map-get($teal-palette, "-10");
     }
   }
 }
+
+.tag--outline {
+  border-color: $tag-border-color;
+  background-color: white;
+  color: $tag-text-color;
+
+  &.tag--disabled {
+    color: $mineral-30;
+    border-color: $mineral-10;
+    pointer-events: none;
+  }
+
+  &.tag--intense {
+    color: $tag-main-color;
+  }
+}
+
+
+/* Elements */
+.tag__thumb {
+  position: relative;
+  left: -$tag-border;
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  margin-right: calc(#{$spacing-02} - #{$tag-border});
+}
+
+.tag__lef-icon {
+  margin-right: 8px;
+}
+
+.tag__right-icon {
+  margin-left: 8px;
+  width: 16px;
+  height: 16px;
+
+  /* Tag right icon modifier */
+  &--remove {
+    background-color: white;
+    border-radius: 8px;
+  }
+}
+
+.tag--has-thumb {
+  padding-left: 0;
+}
+
+.tag--has-left-icon {
+  padding-left: 8px;
+}
+
+.tag--has-right-icon {
+  padding-right: 2px;
+}
+
+// Colors
+/* TEAL */
+
+// $tag-main-palettes: (
+//   "teal": $teal-palette,
+//   "purple": $purple-palette,
+// );
+
+// .tag--fill {
+//     border-color: $teal;
+
+//     @each $name, $palette in $tag-main-palettes {
+//         @each $key, $color in $palette {
+//             .tag--#{$name}-intense {
+//                 color: $color;
+//             }
+//         }
+//     }
+// }

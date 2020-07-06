@@ -1,6 +1,8 @@
 import { Fragment } from 'react';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
+import Tag from '../labsystem/src/Tag';
+
 <Meta title="Components | Tag" component={Tag} />
 
 # Tag
@@ -16,11 +18,36 @@ The `Tag` component might receive up to five inputs as props, where the `color` 
 ## Sample Tag
 Tag can be used as shown in the example below:
 
+<Preview>
+  <Story name="Soft Tag">
+    <Fragment>
+      <Tag>Label</Tag>
+      <Tag style="outline">Label</Tag>
+      <Tag icon="calendar">Label</Tag>
+      <Tag style="outline" icon="calendar">Label</Tag>
+      <Tag dropdown>Label</Tag>
+      <Tag dropdown style="outline">Label</Tag>
+      <Tag removable>Label</Tag>
+      <Tag removable style="outline">Label</Tag>
+      <Tag thumbSrc="docs/tokens-spacing/10-spacing.png" thumbAlt="token image">Label</Tag>
+      <Tag style="outline" thumbSrc="docs/tokens-spacing/10-spacing.png" thumbAlt="token image">Label</Tag>
+    </Fragment>
+  </Story>
+</Preview>
 
 <Preview>
-  <Story name="Sample Tag">
+  <Story name="Intense Tag">
     <Fragment>
-      <div class="tag">helga</div>
+      <Tag colorStyle="intense">Label</Tag>
+      <Tag colorStyle="intense" style="outline">Label</Tag>
+      <Tag colorStyle="intense" icon="calendar">Label</Tag>
+      <Tag colorStyle="intense" style="outline" icon="calendar">Label</Tag>
+      <Tag colorStyle="intense" dropdown>Label</Tag>
+      <Tag colorStyle="intense" dropdown style="outline">Label</Tag>
+      <Tag colorStyle="intense" removable>Label</Tag>
+      <Tag colorStyle="intense" removable style="outline">Label</Tag>
+      <Tag colorStyle="intense" thumbSrc="docs/tokens-spacing/10-spacing.png" thumbAlt="token image">Label</Tag>
+      <Tag colorStyle="intense" style="outline" thumbSrc="docs/tokens-spacing/10-spacing.png" thumbAlt="token image">Label</Tag>
     </Fragment>
   </Story>
 </Preview>
@@ -31,8 +58,9 @@ Tag can be used in the following themes:
 <Preview>
   <Story name="Sample Tag Themes">
     <Fragment>
-      <Tag name="sample-Tag-teal" theme="teal"/><br /><br />
-      <Tag name="sample-Tag-purple" theme="purple" defaultValue={true} /><br /><br />
+      <Tag color="purple" style="outline">Daniela Ágatha</Tag>
+      <Tag thumbSrc="docs/tokens-spacing/10-spacing.png" thumbAlt="token image">With thumb</Tag>
+      <Tag thumbSrc="docs/tokens-spacing/10-spacing.png" thumbAlt="">With thumb</Tag>
     </Fragment>
   </Story>
 </Preview>
@@ -43,8 +71,8 @@ Togge can be disabled and, at the same time receive, a `defaultValue`:
 <Preview>
   <Story name="Sample Tag Disabled">
     <Fragment>
-      <Tag name="sample-Tag-disabled" disabled /><br /><br />
-      <Tag name="sample-Tag-disabled" disabled value={true} />
+      <Tag disabled>Disabled</Tag>
+      <Tag disabled style="outline">Disabled</Tag>
     </Fragment>
   </Story>
 </Preview>
@@ -54,3 +82,22 @@ Togge can be disabled and, at the same time receive, a `defaultValue`:
 Here's the list of props based on the component's prop types definitions.
 ### Tag
 <Props of={Tag} />
+
+
+### TODO
+
+Dúvidas
+- Ver pq o operador ternário é melhor que o if para devs. A gente acha o if mais legível
+- Dentro das {} tem ou não espaço?
+- Queremos um guideline de react
+
+Todos
+- Ajeitar ícone 
+- Mostrar erro quando passa na thumb src sem alt
+- Estados aberto/fechado pra dropdowns
+- Estados selecionado/idle pra chips
+
+tag
+-> simples sem interação. com ícone ou thumb de elemento
+-> dropdowns. com ícone de elemento
+-> removable. com ícone ou thumb de elemnto
