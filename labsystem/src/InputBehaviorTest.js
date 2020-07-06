@@ -11,7 +11,7 @@ export default class InputBehaviorTest extends React.Component {
     }
 
     handleOnChange = (newValue) => {
-        console.warn(newValue);
+        console.warn({newValue});
         this.setState({testValue: newValue})
     }
 

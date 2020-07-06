@@ -18,20 +18,20 @@ $input-internal-spacing: 2px;
 }
 
 .search-input__field {
-display: inline-block;
-min-width: 260px;
-height: 36px;
-padding: 0;
-margin: 0;
-font-family: $font-secondary;
-font-weight: 500;
-font-size: 16px;
-color: $black-75;
-text-indent: $spacing-03;
-text-overflow: clip;
-border: $border-01 $mineral-40;
-border-radius: $radius-02;
-outline: none;
+    display: inline-block;
+    min-width: 260px;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    font-family: $font-secondary;
+    font-weight: 500;
+    font-size: 16px;
+    color: $black-75;
+    text-indent: $spacing-03;
+    text-overflow: clip;
+    border: $border-01 $mineral-40;
+    border-radius: $radius-02;
+    outline: none;
 
     &::placeholder {
         color: $black-50;
@@ -78,7 +78,7 @@ outline: none;
     right: 2px;
     bottom: 2px;
     width: 40px;
-    height: 32px;
+    height: 36px;
     padding: 0px;
     border: none;
     background-repeat: no-repeat;
@@ -151,7 +151,7 @@ outline: none;
     bottom: 3px;
     background-color: $white;
     width: 36px;
-    height: 32px;
+    height: 36px;
     border-radius: $radius-02;
     z-index: 1;
 
@@ -163,9 +163,11 @@ outline: none;
 
 // Inline 
 
+
+
 .search-icon {
     position: absolute;
-    top: 6px;
+    top: 8px;
     left: $spacing-02;
     z-index: 1;
     width: 24px;
@@ -182,7 +184,7 @@ outline: none;
 
 .remove-icon {
     position: absolute;
-    top: 6px;
+    top: 8px;
     right: $spacing-02;
     z-index: 1;
     width: 24px;
@@ -191,14 +193,19 @@ outline: none;
     border: none;
     background-color: transparent;
     outline: none;
-    opacity: 0;
+    opacity: 1;
     cursor: pointer;
 
-    .search-input__field:not(:placeholder-shown) ~ & {
-        opacity:1;
-    }
+    // .search-input__field:not(:placeholder-shown) ~ & {
+    //     opacity:1;
+    // }
 
-    &:active {
-        opacity:1;
-    }
+    // &:active {
+    //     opacity:1;
+    // }
+}
+
+.inline-search-input{
+    padding-left: $spacing-06;
+    padding-right: $spacing-07; 
 }

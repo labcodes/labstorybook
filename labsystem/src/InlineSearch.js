@@ -1,6 +1,8 @@
 import React from "react";
 import Icon from "./Icon";
 import PropTypes from "prop-types";
+import Input from "./Input";
+
 
 
 export default class InlineSearch extends React.Component {
@@ -22,18 +24,21 @@ export default class InlineSearch extends React.Component {
     };
     
     state = {
-      teste: 'teste',
-    }
-  
-    handleOnChange = ( {newValue} ) => {
-      console.warn(newValue);
-      this.setState({ teste: newValue })
+      inputValue: '',
     }
 
-    handleButtonClick = () => {
-      console.warn("handleButtonClick");
+    handleOnChange = (evt) => {
+      this.setState({ value: evt.target.value })
+    }
+
+    handleOnChange = (newValue) => {
+      this.setState({ value: newValue })
+    }
+    
+    handleButtonClick = (evt) => {
+      this.setState({ inputValue: ''})
     };
-
+  
     render() {
       const {
         className,
@@ -42,29 +47,27 @@ export default class InlineSearch extends React.Component {
         ...rest
       } = this.props;
   
-      const { teste } = this.state;
+      const { inputValue } = this.state;
 
       return (
-        <div>
           <div className="search-input" >
             <span className="search-icon">
               <Icon type='lupe' color='mineral70' />
             </span>
-            <input
-              value={teste}
+            {/* <input
+              value={value}
               className={`search-input__field`}
               type="text"
               placeholder={placeholder}
               disabled={disabled}
               onChange={this.handleOnChange}
               {...rest}
-            />
-            <button className="remove-icon" disabled={disabled} onClick={this.handleButtonClick}>
+            /> */}
+            <Input className="inline-search-input" value={this.state.value} placeholder="Search input" onChange={this.handleOnChange} />
+            <button className="remove-icon" onClick={this.handleButtonClick}>
               <Icon type='remove' color='mineral20' />
             </button>
           </div>
-          <p><strong>Input value: </strong>{this.state.teste}</p>
-        </div>
       );
     }   
 }

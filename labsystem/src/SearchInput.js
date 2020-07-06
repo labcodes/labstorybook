@@ -1,6 +1,8 @@
 import React from "react";
 import Icon from "./Icon";
 import PropTypes from "prop-types";
+import Input from "./Input";
+
 
 export default class DefaultSearch extends React.Component {
   static propTypes = {
@@ -35,13 +37,14 @@ export default class DefaultSearch extends React.Component {
 
     return (
         <div className="search-input">
-          <input
+          {/* <input
             className={`search-input__field ${className || ""}`}
             type="text"
             placeholder={placeholder}
             disabled={disabled}
             {...rest}
-          />
+          /> */}
+          <Input className="search-input__field" placeholder="Search input" disabled={disabled} />
           <span className= "search-separator" />
           <button type="button" className="searchButton" disabled={disabled}>
               <Icon type='lupe' color='mineral70' />

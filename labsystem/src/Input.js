@@ -87,6 +87,13 @@ export default class Inputs extends React.Component {
       ) : "")
   };
 
+  label = () => {
+    const { label, id } = this.props;
+    return (label ? (
+      <label className={`lab-input__label`} htmlFor={id}>{label}</label>
+      ) : "")
+  };
+
   handleOnChange = (e) => {
     const { onChange } = this.props;
     const inputElementValue = this.inputRef.current.value;
@@ -149,10 +156,7 @@ export default class Inputs extends React.Component {
         {this.suffixArea()}
         {this.message()}
         {this.requiredIcon()}
-        <label
-          className={`lab-input__label`}
-          htmlFor={id}>{label}
-        </label>
+        {this.label()}
 
       </div>
     );
