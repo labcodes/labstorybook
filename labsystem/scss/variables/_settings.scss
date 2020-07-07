@@ -1,4 +1,7 @@
 // Default themes
+$default-theme: $teal-palette !default;
+$secondary-theme: $purple-palette !default;
 
+// Component's themes
 $toggle-theme: $toggle-teal-theme !default;
-$button-theme: $teal-palette !default;
+$button-theme: $default-theme !default;

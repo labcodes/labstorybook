@@ -3,14 +3,14 @@ $btn-font-size: 16px;
 $btn-line-heigt: 14px;
 
 //Button colors from theme.
-$main-color: map-get($button-theme, "60");
-$border-hover: map-get($button-theme, "80");
-$shadow-hover: map-get($button-theme, "10");
-$bg-active: map-get($button-theme, "70");
-$border-active: map-get($button-theme, "40");
-$border-focus: map-get($button-theme, "70");
-$shadow-focus: map-get($button-theme, "30");
-$bg-focus-active: map-get($button-theme, "80");
+$btn-main-color: map-get($button-theme, "60");
+$btn-border-hover: map-get($button-theme, "80");
+$btn-shadow-hover: map-get($button-theme, "10");
+$btn-bg-active: map-get($button-theme, "70");
+$btn-border-active: map-get($button-theme, "40");
+$btn-border-focus: map-get($button-theme, "70");
+$btn-shadow-focus: map-get($button-theme, "30");
+$btn-bg-focus-active: map-get($button-theme, "80");
 
 $ghost-color-active: map-get($button-theme, "70");
 $ghost-color-focus-active: map-get($button-theme, "80");
@@ -80,71 +80,76 @@ $link-bg: map-get($button-theme, "10");
 
 // Button type modifiers
 .btn--default {
-  background-color: $main-color;
+  background-color: $btn-main-color;
   color: white;
-  border-color: $main-color;
+  border-color: $btn-main-color;
   
   &:hover {
-    @include btn-shadow(hover, $shadow-hover);
-    border-color: $border-hover;
+    @include btn-shadow(hover, $btn-shadow-hover);
+    border-color: $btn-border-hover;
   }
   
   &:focus {
-    @include btn-shadow(focus, $shadow-focus);
-    border-color: $border-focus;
+    @include btn-shadow(focus, $btn-shadow-focus);
+    border-color: $btn-border-focus;
   }
 
   &:active {
-    background-color: $bg-active;
-    border-color: $border-active;
+    background-color: $btn-bg-active;
+    border-color: $btn-border-active;
   }
   
   &:focus:hover {
-    @include btn-shadow(focus-hover, $shadow-focus, $shadow-hover);
-    border-color: $border-hover;
+    @include btn-shadow(focus-hover, $btn-shadow-focus, $btn-shadow-hover);
+    border-color: $btn-border-hover;
   }
   
   &:focus:active {
-    @include btn-shadow(focus, $shadow-focus);
-    background-color: $bg-focus-active;
-    border-color: $border-active;
+    @include btn-shadow(focus, $btn-shadow-focus);
+    background-color: $btn-bg-focus-active;
+    border-color: $btn-border-active;
   }
   
   &:disabled {
     background-color: $mineral-20;
     border-color: $mineral-20;
     color: $mineral-40;
+
+    //Needs to access the lab_icon to chage its color.
+    .btn__icon .lab-icon {
+      background-color: $mineral-40;
+    }
   }
 }
 
 .btn--ghost {
   background-color: transparent;
-  color: $main-color;
-  
+  color: $btn-main-color;
+
   &:hover {
-    @include btn-shadow(hover, $shadow-hover);
-    border-color: $border-hover;
+    @include btn-shadow(hover, $btn-shadow-hover);
+    border-color: $btn-border-hover;
   }
   
   &:focus {
-    @include btn-shadow(focus, $shadow-focus);
-    border-color: $border-focus;
+    @include btn-shadow(focus, $btn-shadow-focus);
+    border-color: $btn-border-focus;
   }
 
   &:active {
     color: $ghost-color-active;
-    border-color: $border-active;
+    border-color: $btn-border-active;
   }
   
   &:focus:hover {
-    @include btn-shadow(focus-hover, $shadow-focus, $shadow-hover);
-    border-color: $border-hover;
+    @include btn-shadow(focus-hover, $btn-shadow-focus, $btn-shadow-hover);
+    border-color: $btn-border-hover;
   }
   
   &:focus:active {
-    @include btn-shadow(focus, $shadow-focus);
+    @include btn-shadow(focus, $btn-shadow-focus);
     color: $ghost-color-focus-active;
-    border-color: $border-active;
+    border-color: $btn-border-active;
   }
   
   &:disabled {
@@ -155,7 +160,7 @@ $link-bg: map-get($button-theme, "10");
 
 .btn--text {
   background-color: transparent;
-  color: $main-color;
+  color: $btn-main-color;
   border-color: transparent;
   text-transform: uppercase;
   letter-spacing: 1%;
@@ -165,7 +170,7 @@ $link-bg: map-get($button-theme, "10");
   }
   
   &:focus {
-    @include btn-shadow(focus, $shadow-focus);
+    @include btn-shadow(focus, $btn-shadow-focus);
   }
 
   &:active {
@@ -174,12 +179,12 @@ $link-bg: map-get($button-theme, "10");
   }
   
   &:focus:hover {
-    @include btn-shadow(focus, $shadow-focus);
+    @include btn-shadow(focus, $btn-shadow-focus);
     background-color: $text-bg-hover;
   }
   
   &:focus:active {
-    @include btn-shadow(focus, $shadow-focus);
+    @include btn-shadow(focus, $btn-shadow-focus);
     background-color: $text-bg-active;
     color: $text-color-active;
   }
