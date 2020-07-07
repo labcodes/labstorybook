@@ -7,30 +7,14 @@ $btn-radius: $radius-02; //4px
 $btn-font-size: 16px;
 $btn-line-heigt: 14px;
 
-$main-color: map-get($button-theme, "-60");
-$bg-color-active: map-get($button-theme, "-80");
-$border-color-idle: map-get($button-theme, "-60");
-$border-color-hover: map-get($button-theme, "-80");
-$border-color-focus: map-get($button-theme, "-70");
-$border-color-active: map-get($button-theme, "-40");
-$shadow-hover: map-get($button-theme, "-10");
-$shadow-focus: map-get($button-theme, "-30");
-
-
-@mixin btn-shadow($type, $color1, $color2 : none) {
-  @if $type != "hover" and $type != "focus" and $type != "focus-hover" {
-    @error "Property #{$type} must be either hover, focus or focus-hover.";
-  }
-  @if $type == "hover" {
-    box-shadow: 0 0 0 6px $color1;
-  }
-  @else if $type == "focus" {
-    box-shadow: 0 0 0 2px $color1;
-  }
-  @else if $type == "focus-hover" {
-    box-shadow: 0 0 0 2px $color1, 0 0 0 6px $color2;
-  }
-}
+// $main-color: map-get($button-theme, "-60");
+// $bg-color-active: map-get($button-theme, "-80");
+// $border-color-idle: map-get($button-theme, "-60");
+// $border-color-hover: map-get($button-theme, "-80");
+// $border-color-focus: map-get($button-theme, "-70");
+// $border-color-active: map-get($button-theme, "-40");
+// $shadow-hover: map-get($button-theme, "-10");
+// $shadow-focus: map-get($button-theme, "-30");
 
 .btn {
   font-size: $btn-font-size;
@@ -66,11 +50,13 @@ $shadow-focus: map-get($button-theme, "-30");
   }
 }
 
+// Button elements
 .btn__icon {
   margin-left: -4px;
   margin-right: 4px;
 }
 
+// Button sizes modifiers
 .btn--normal {
   height: 40px;
   padding: 0 16px;
@@ -86,6 +72,7 @@ $shadow-focus: map-get($button-theme, "-30");
   padding: 0 16px;
 }
 
+// Button type modifiers
 .btn--default {
   background-color: $teal-60;
   color: white;
@@ -114,8 +101,8 @@ $shadow-focus: map-get($button-theme, "-30");
     border-color: $teal-80;
   }
   
-   &:focus:active {
-     @include btn-shadow(focus, $teal-30);
+  &:focus:active {
+    @include btn-shadow(focus, $teal-30);
     background-color: $teal-80;
     border-color: $teal;
   }
@@ -269,6 +256,7 @@ $shadow-focus: map-get($button-theme, "-30");
   }
 }
 
+// Button exceptions
 .btn--dark {
   background-color: $mineral-90;
   color: $white;
