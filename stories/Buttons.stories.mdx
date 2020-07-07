@@ -5,37 +5,41 @@ import Button from '../labsystem/src/Button';
 
 <Meta title="Components | Button" component={Button} />
 
-# Buttons
+<div class="docs-title">
+  <div>
+    <h1 class="docs-title__text">Buttons</h1>
+  </div>
+</div>
+
+<div class="docs-content">
+
+<p>Buttons are used to initialize and trigger actions, link internal sections and point to external pages. Their primary use is triggering actions (e.g.: add, save, delete, confirmation prompts, etc.)</p>
 
 ## General Usage
 
-<div class="columns">
-  <div class="column">
-    <p>Buttons are used to initialize and trigger actions, link internal sections and point to external pages. Their primary use is triggering actions (e.g.: add, save, delete, confirmation prompts, etc.)</p>
-    <p>Buttons can be composed of just a label or an icon + label</p>
-    <p>Each primary call-to-action trigger on a dialog or page should be represented by the default (filled) button, and every secondary or related action, the ghost (outlined) button. In some cases, if you face the need of placing a tertiary action, choose the text button.</p>
-    <h4>Button positioning and order</h4>
-    <p>Default buttons always appear on the right on modals, dialogs, forms and most UI parts. Ghost and text buttons appear and pile to the left of the default button.</p>
-    <ul>
-      <li>Use full-width buttons for dialogs and side panels</li>
-      <li>Use right-aligned buttons primarily and if the main response advances the user through a screenflow (from left to the right)</li>
-      <li>Use left-aligned buttons to place actions at bottom of lists, comparative collums, tabled layouts, multiple content collumned layouts.</li>
-    </ul>
-  </div>
-  <div class="column">
-    <h4>Labels</h4>
-    <p>Button labels must say what will happen when the user interacts with it. Labels use sentence case (only the first word in a phrase and any proper nouns capitalized) and are as short as possible (max. of 3 words). They must clearly explain what happens when the button is clicked.</p>
-    <h4>Icon use</h4>
-    <ul>
-      <li>Use icon frames of 16px within buttons.</li>
-      <li>Icons should always appear to the left of the label.</li>
-      <li>Icons used in buttons must be directly related to the action that the user is taking. <span class="u-color-cyan60">Don't hesitate to create a new icon when it is necessary.</span></li>
-      <li>Always use the same color value as the label within a button. Icon follows label with equal emphasys.</li>
-      <li>Use icon in buttons to give more significancy to any action, function or indicate triggers as "open external link".</li>
-    </ul>
-    <p><span class="u-color-pink60">You can use an only icon button on extreme situations. Remember that, in these cases, the label is represented by the pictogram itself, so, its drawing must be clear and communicate in one glance what action it triggers.</span></p>
-  </div>
-</div>
+<p>Buttons can be composed of just a label or an icon + label</p>
+<p>Each primary call-to-action trigger on a dialog or page should be represented by the default (filled) button, and every secondary or related action, the ghost (outlined) button. In some cases, if you face the need of placing a tertiary action, choose the text button.</p>
+
+<h4>Button positioning and order</h4>
+<p>Default buttons always appear on the right on modals, dialogs, forms and most UI parts. Ghost and text buttons appear and pile to the left of the default button.</p>
+<ul>
+  <li>Use full-width buttons for dialogs and side panels</li>
+  <li>Use right-aligned buttons primarily and if the main response advances the user through a screenflow (from left to the right)</li>
+  <li>Use left-aligned buttons to place actions at bottom of lists, comparative collums, tabled layouts, multiple content collumned layouts.</li>
+</ul>
+
+<h4>Labels</h4>
+<p>Button labels must say what will happen when the user interacts with it. Labels use sentence case (only the first word in a phrase and any proper nouns capitalized) and are as short as possible (max. of 3 words). They must clearly explain what happens when the button is clicked.</p>
+
+<h4>Icon use</h4>
+<ul>
+  <li>Use icon frames of 16px within buttons.</li>
+  <li>Icons should always appear to the left of the label.</li>
+  <li>Icons used in buttons must be directly related to the action that the user is taking. <span class="u-color-cyan60">Don't hesitate to create a new icon when it is necessary.</span></li>
+  <li>Always use the same color value as the label within a button. Icon follows label with equal emphasys.</li>
+  <li>Use icon in buttons to give more significancy to any action, function or indicate triggers as "open external link".</li>
+</ul>
+<p><span class="u-color-pink60">You can use an only icon button on extreme situations. Remember that, in these cases, the label is represented by the pictogram itself, so, its drawing must be clear and communicate in one glance what action it triggers.</span></p>
 
 ## Variations
 
@@ -540,3 +544,5 @@ Use only primary or secondary colors on the Hyperlink indicator
     </Fragment>
   </Story>
 </Preview>
+
+</div>
