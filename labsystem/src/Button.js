@@ -24,13 +24,18 @@ export default class Button extends React.Component {
 
   icon = () => {
     const { icon } = this.props;
+
     /*
-    Set color variable to be the icon color of default button.
+    Set icon color to be the icon color of default button.
     Icon color changes according to button type and exception on _buttons.scss
     */
-    let color = "white";
-
-    return icon ? <span className="btn__icon"><Icon type={icon} color={color} size="petit" /></span> : ""
+    return icon ? (
+      <span className="btn__icon">
+        <Icon type={icon} color="white" size="petit" />
+      </span>
+    ) : (
+      ""
+    );
   };
 
   render() {
