@@ -26,6 +26,7 @@ $link-bg: map-get($button-theme, "10");
   font-size: $btn-font-size;
   line-height: $btn-line-heigt;
   font-weight: 600;
+  -webkit-font-smoothing: antialiased;
   border-radius: $btn-radius;
   text-decoration: none;
   transition: all $duration-base;
