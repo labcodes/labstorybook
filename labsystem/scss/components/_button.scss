@@ -23,20 +23,20 @@ $link-color: map-get($button-theme, "30");
 $link-bg: map-get($button-theme, "10");
 
 .btn {
-  font-size: $btn-font-size;
-  line-height: $btn-line-heigt;
-  font-weight: 600;
-  -webkit-font-smoothing: antialiased;
-  border-radius: $btn-radius;
-  text-decoration: none;
-  transition: all $duration-base;
-  cursor: pointer;
-  outline: none;
-  font-family: $font-primary;
   display: inline-flex;
   align-items: center;
+  font-family: $font-primary;
+  font-size: $btn-font-size;
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+  line-height: $btn-line-heigt;
+  text-decoration: none;
   vertical-align: top;
+  cursor: pointer;
   border: 2px solid;
+  border-radius: $btn-radius;
+  outline: none;
+  transition: all $duration-base;
 
   &:hover,
   &:focus,
@@ -52,15 +52,15 @@ $link-bg: map-get($button-theme, "10");
   }
 
   &:disabled {
-    cursor: default;
     pointer-events: none;
+    cursor: default;
   }
 }
 
 // Button elements
 .btn__icon {
-  margin-left: -4px;
   margin-right: 4px;
+  margin-left: -4px;
 }
 
 // Button sizes modifiers
@@ -81,8 +81,8 @@ $link-bg: map-get($button-theme, "10");
 
 // Button type modifiers
 .btn--default {
-  background-color: $btn-main-color;
   color: white;
+  background-color: $btn-main-color;
   border-color: $btn-main-color;
   
   &:hover {
@@ -112,9 +112,9 @@ $link-bg: map-get($button-theme, "10");
   }
   
   &:disabled {
+    color: $mineral-40;
     background-color: $mineral-20;
     border-color: $mineral-20;
-    color: $mineral-40;
 
     //Needs to access the lab_icon to chage its color.
     .btn__icon .lab-icon {
@@ -124,8 +124,8 @@ $link-bg: map-get($button-theme, "10");
 }
 
 .btn--ghost {
-  background-color: transparent;
   color: $btn-main-color;
+  background-color: transparent;
 
   //Needs to access the lab_icon to chage its color.
   .btn__icon .lab-icon {
@@ -159,8 +159,8 @@ $link-bg: map-get($button-theme, "10");
   }
   
   &:disabled {
-    border-color: $mineral-20;
     color: $mineral-30;
+    border-color: $mineral-20;
 
     //Needs to access the lab_icon to chage its color.
     .btn__icon .lab-icon {
@@ -170,11 +170,11 @@ $link-bg: map-get($button-theme, "10");
 }
 
 .btn--text {
-  background-color: transparent;
   color: $btn-main-color;
-  border-color: transparent;
   text-transform: uppercase;
   letter-spacing: 1%;
+  background-color: transparent;
+  border-color: transparent;
 
   //Needs to access the lab_icon to chage its color.
   .btn__icon .lab-icon {
@@ -190,8 +190,8 @@ $link-bg: map-get($button-theme, "10");
   }
 
   &:active {
-    background-color: $text-bg-active;
     color: $text-color-active;
+    background-color: $text-bg-active;
   }
   
   &:focus:hover {
@@ -201,8 +201,8 @@ $link-bg: map-get($button-theme, "10");
   
   &:focus:active {
     @include btn-shadow(focus, $btn-shadow-focus);
-    background-color: $text-bg-active;
     color: $text-color-active;
+    background-color: $text-bg-active;
   }
   
   &:disabled {
@@ -216,9 +216,9 @@ $link-bg: map-get($button-theme, "10");
 }
 
 .btn--destructive {
+  color: $white;
   background-color: $red-60;
   border-color: $red-60;
-  color: $white;
   
   &:hover {
     @include btn-shadow(hover, $red-20);
@@ -238,8 +238,8 @@ $link-bg: map-get($button-theme, "10");
   
   &:focus:hover {
     @include btn-shadow(focus-hover, $red-60, $red-20);
-    border-color: $white;
     background-color: $red-60;
+    border-color: $white;
   }
   
   &:focus:active {
@@ -249,9 +249,9 @@ $link-bg: map-get($button-theme, "10");
 }
 
 .btn--warning {
+  color: $black-75;
   background-color: $yellow-60;
   border-color: $yellow-60;
-  color: $black-75;
 
   //Needs to access the lab_icon to chage its color.
   .btn__icon .lab-icon {
@@ -266,8 +266,8 @@ $link-bg: map-get($button-theme, "10");
   
   &:focus {
     @include btn-shadow(focus, $yellow-60);
-    border-color: $white;
     background-color: $yellow-60;
+    border-color: $white;
   }
 
   &:active {
@@ -275,13 +275,13 @@ $link-bg: map-get($button-theme, "10");
     background: mix($yellow-60, black, 50%);
   }
   
-   &:focus:hover {
+  &:focus:hover {
     @include btn-shadow(focus-hover, $yellow-60, $yellow-20);
-    border-color: $white;
     background-color: $yellow-60;
+    border-color: $white;
   }
   
-   &:focus:active {
+  &:focus:active {
     background: mix($yellow-60, black, 50%);
     border-color: $white;
   }
@@ -289,14 +289,14 @@ $link-bg: map-get($button-theme, "10");
 
 // Button exceptions
 .btn--dark {
-  background-color: $mineral-90;
   color: $white;
+  background-color: $mineral-90;
   border-color: $mineral-90;
   
   &:hover {
     @include btn-shadow(hover, $black-20);
-    border-color: $mineral-90;
     background-color: $mineral-90;
+    border-color: $mineral-90;
   }
   
   &:focus {
@@ -323,8 +323,8 @@ $link-bg: map-get($button-theme, "10");
 }
 
 .btn--dark-warning {
-  background-color: $mineral-90;
   color: $yellow-60;
+  background-color: $mineral-90;
   border-color: $mineral-90;
 
   //Needs to access the lab_icon to chage its color.
@@ -363,8 +363,8 @@ $link-bg: map-get($button-theme, "10");
 }
 
 .btn--light {
-  background-color: $white;
   color: $mineral-90;
+  background-color: $white;
   border-color: $white;
 
   //Needs to access the lab_icon to chage its color.
@@ -403,8 +403,8 @@ $link-bg: map-get($button-theme, "10");
 }
 
 .btn--light-destructive {
-  background-color: $white;
   color: $red-60;
+  background-color: $white;
   border-color: $white;
 
   //Needs to access the lab_icon to chage its color.
@@ -429,13 +429,13 @@ $link-bg: map-get($button-theme, "10");
     border-color: $white;
   }
   
-   &:focus:hover {
+  &:focus:hover {
     @include btn-shadow(focus-hover, $white, $white-20);
     background-color: $white;
     border-color: $red-60;
   }
   
-   &:focus:active {
+  &:focus:active {
     @include btn-shadow(focus, $white);
     background-color: $white-50;
     border-color: $mineral-90;
@@ -443,8 +443,8 @@ $link-bg: map-get($button-theme, "10");
 }
 
 .btn--light-confirmation {
-  background-color: $white;
   color: $green-60;
+  background-color: $white;
   border-color: $white;
 
   //Needs to access the lab_icon to chage its color.
@@ -469,13 +469,13 @@ $link-bg: map-get($button-theme, "10");
     border-color: $white;
   }
   
-   &:focus:hover {
+  &:focus:hover {
     @include btn-shadow(focus-hover, $white, $white-20);
     background-color: $white;
     border-color: $green-60;
   }
   
-   &:focus:active {
+  &:focus:active {
     @include btn-shadow(focus, $white);
     background-color: $white-50;
     border-color: $mineral-90;
@@ -483,8 +483,8 @@ $link-bg: map-get($button-theme, "10");
 }
 
 .btn--ghost-light {
-  background-color: transparent;
   color: $white;
+  background-color: transparent;
   border-color: $white;
 
   //Needs to access the lab_icon to chage its color.
@@ -505,18 +505,18 @@ $link-bg: map-get($button-theme, "10");
   }
 
   &:active {
-    background-color: $white-10;
     color: $white;
+    background-color: $white-10;
     border-color: $white-50;
   }
   
-   &:focus:hover {
+  &:focus:hover {
     @include btn-shadow(focus-hover, $white, $white-20);
     color: $white;
     border-color: $white-35;
   }
   
-   &:focus:active {
+  &:focus:active {
     @include btn-shadow(focus, $white);
     color: $white;
     background-color: $white-10;
@@ -525,8 +525,8 @@ $link-bg: map-get($button-theme, "10");
 }
 
 .btn--ghost-dark {
-  background-color: transparent;
   color: $mineral-90;
+  background-color: transparent;
   border-color: $mineral-90;
 
   //Needs to access the lab_icon to chage its color.
@@ -542,27 +542,27 @@ $link-bg: map-get($button-theme, "10");
   
   &:focus {
     @include btn-shadow(focus, $mineral-90);
-    border-color: $black-35;
     color: $mineral-90;
+    border-color: $black-35;
   }
 
   &:active {
+    color: $mineral-90;
     background-color: $black-10;
     border-color: $black-50;
-    color: $mineral-90;
   }
   
-   &:focus:hover {
+  &:focus:hover {
     @include btn-shadow(focus-hover, $mineral-90, $black-20);
-    border-color: $black-35;
     color: $mineral-90;
+    border-color: $black-35;
   }
   
-   &:focus:active {
+  &:focus:active {
     @include btn-shadow(focus, $mineral-90);
+    color: $mineral-90;
     background-color: $black-10;
     border-color: $black-50;
-    color: $mineral-90;
   }
 }
 
@@ -574,29 +574,26 @@ a {
   margin: 0 1px;
   font-family: $font-primary;
   font-size: inherit;
-  line-height: inherit;
   font-weight: 600;
-  text-decoration: none;
+  line-height: inherit;
   color: $mineral-80;
+  text-decoration: none;
   vertical-align: top;
-  transition: all $duration-base;
   cursor: pointer;
   outline: none;
+  transition: all $duration-base;
 
   &::before {
-    content: " ";
-    z-index: -1;
-
+    content: "";
     position: absolute;
+    right: 0;
     bottom: 0;
     left: 0;
-    right: 0;
+    z-index: -1;
     width: 100%;
     height: 4px;
-
     background: $link-color;
     border-radius: 4px;
-
     transition: all 0.2s;
   }
 
