@@ -23,70 +23,14 @@ export default class Button extends React.Component {
   };
 
   icon = () => {
-    const { icon, type, disabled, exception } = this.props;
-    let returnIcon;
-    let color;
+    const { icon } = this.props;
+    /*
+    Set color variable to be the icon color of default button.
+    Icon color changes according to button type and exception on _buttons.scss
+    */
+    let color = "white";
 
-    // Default buttons
-    if (type === "default") {
-      color = "white";
-    }
-    if (type === "default" && disabled) {
-      color = "mineral40";
-    }
-    // Default buttons with exceptions
-    if (type === "default" && exception === "dark") {
-      color = "white";
-    }
-    if (type === "default" && exception === "dark-warning") {
-      color = "yellow60";
-    }
-    if (type === "default" && exception === "light") {
-      color = "mineral90";
-    }
-    if (type === "default" && exception === "light-destructive") {
-      color = "red60";
-    }
-    if (type === "default" && exception === "light-confirmation") {
-      color = "green60";
-    }
-    // Ghost buttons
-    if (type === "ghost") {
-      color = "teal60";
-    }
-    if (type === "ghost" && disabled) {
-      color = "mineral30";
-    }
-    // Ghost buttons with exceptions
-    if (type === "ghost" && exception === "ghost-light") {
-      color = "white";
-    }
-    if (type === "ghost" && exception === "ghost-dark") {
-      color = "mineral90";
-    }
-    // Text buttons
-    if (type === "text") {
-      color = "teal60";
-    }
-    if (type === "text" && disabled) {
-      color = "mineral30";
-    }
-    // Destructive and warning buttons
-    if (type === "destructive") {
-      color = "white";
-    }
-    if (type === "warning") {
-      color = "black75";
-    }
-
-    if (icon) {
-      returnIcon = (
-        <span className="btn__icon">
-          <Icon type={icon} color={color} size="petit" />
-        </span>
-      );
-    }
-    return returnIcon;
+    return icon ? <span className="btn__icon"><Icon type={icon} color={color} size="petit" /></span> : ""
   };
 
   render() {
