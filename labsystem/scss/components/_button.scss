@@ -31,7 +31,7 @@ $link-bg: map-get($button-theme, "10");
   transition: all $duration-base;
   cursor: pointer;
   outline: none;
-  font-family: $font-secondary;
+  font-family: $font-primary;
   display: inline-flex;
   align-items: center;
   vertical-align: top;
@@ -571,7 +571,7 @@ a {
   display: inline-block; 
   padding: 0 2px;
   margin: 0 1px;
-  font-family: $font-secondary;
+  font-family: $font-primary;
   font-size: inherit;
   line-height: inherit;
   font-weight: 600;

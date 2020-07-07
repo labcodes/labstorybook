@@ -1,37 +1,50 @@
-$simple-tab-item-height: 36px;
+$simple-tab-item-height: 48px;
 $content-margin-top: 64px;
-$docs-title-height: 200px;
+$docs-title-height: 240px;
 $docs-content-margin: $docs-title-height - $content-margin-top;
 
 // Title of a documentation page, or story.
 .docs-title {
-  background-color: $mineral-10;
   position: absolute;
-  left: 0;
   top: 0;
   right: 0;
-  padding: 80px 20px 40px 20px;
+  left: 0;
+  display: flex;
+  align-items: flex-end;
   height: $docs-title-height;
+  background-color: $teal;
 
   div {
-    max-width: 1000px;
     width: 100%;
+    max-width: $content-max-width;
     margin: 0 auto;
   }
 }
+
 .docs-title__text {
-  color: $mineral-80 !important;
+  font-family: $family-serif !important;
   font-size: 48px !important;
+  font-weight: $weight-bold !important;
   line-height: 60px !important;
-  margin: 0 !important;
+  color: $white !important;
 }
 
 .docs-content {
+  padding-top: 40px;
   margin-top: $docs-content-margin !important;
 }
 
 .docs-content--with-tab {
-  margin-top: $docs-content-margin - $simple-tab-item-height !important;
+  padding: 0;
+}
+
+.simple-tab-wrapper {
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: $simple-tab-item-height;
+  background-color: $teal-60;
+  border-bottom-right-radius: 80px;
 }
 
 // Tabs used for documentation. Should be later replaced by our top bar or tabs.
@@ -44,21 +57,24 @@ $docs-content-margin: $docs-title-height - $content-margin-top;
 #tab3:checked ~ .simple-tab__content.content3 { display: block; }
 
 .simple-tab + label {
-  padding: 4px 16px;
-  border-radius: 4px 4px 0 0;
   position: relative;
-  color: $mineral-80;
-  margin-right: 8px;
-  font-family: $font-secondary;
-  font-size: 18px;
-  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
   height: $simple-tab-item-height;
+  padding: 0 16px;
+  margin-bottom: 40px;
+  font-family: $family-sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  background-color: $teal-60;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $teal-70;
+  }
 }
 .simple-tab:checked + label {
-  background:white;
-  border-bottom: 1px solid white;
-  color: $teal;
-}
-.simple-tab ~ .simple-tab__content {
-  margin-top: $content-margin-top;
+  color: $teal-60;
+  background: $white;
 }

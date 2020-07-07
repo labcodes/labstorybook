@@ -10,7 +10,8 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 </div>
 
 <div class="docs-content docs-content--with-tab">
-  <input class="simple-tab" type="radio" name="colors-tab" id="tab1" checked />
+  <div class="simple-tab-wrapper"></div>
+  <input class="simple-tab" type="radio" name="colors-tab" id="tab1" checked/>
   <label for="tab1">Design</label>
 
   <input class="simple-tab" type="radio" name="colors-tab" id="tab2" />
@@ -95,10 +96,11 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
   <div class="simple-tab__content content2">Work in progress</div>
 
   <div class="simple-tab__content content3">
-    <h1>Implementing color</h1>
     <p>We use color tokens and themes to manage color. Tokens define color hex, and themes specify the roles that those colors have in the UI.</p>
     <p>We are still implementing themes, so for now we will only display our color tokens</p>
     <h2>Main colors</h2>
+    <p>The color system for digital products is derived from the complete color palette. Our main palette unites the brand color teal with support color purple and mineral neutrals</p>
+    <p>The teal stack is set to be the primary action and highlight color and purple as secondary highlight and also action.</p>
     <div class="columns">
       <div class="column">
         <h3>Teal</h3>
@@ -447,6 +449,7 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
       </tr>
     </table>
     <h2>Message and Support</h2>
+    <p>In addition for on-screen messages and special UI features and support, there are specific dual-tone color stacks.</p>
     <div class="columns">
       <div class="column">
         <h3>Message</h3>
