@@ -49,42 +49,42 @@ import Button from '../labsystem/src/Button';
       <tr>
         <td>
           <div class="doc-buttons"><Button>Default</Button></div>
-          <div class="doc-buttons"><Button>Default</Button></div>
+          <div class="doc-buttons"><Button icon="reload">Default</Button></div>
         </td>
         <td><p><strong>Default:</strong> Primary call to action or trigger on the page or modal. Use it to highlight the strongest call to action on a page. Default buttons should only appear once per screen area. Not every screen requires a default button.</p></td>
       </tr>
       <tr>
         <td>
           <div className="doc-buttons"><Button type="ghost">Ghost</Button></div>
-          <div className="doc-buttons"><Button type="ghost">Ghost</Button></div>
+          <div className="doc-buttons"><Button type="ghost" icon="reload">Ghost</Button></div>
         </td>
         <td><p><strong>Ghost:</strong> Secondary actions or triggers on each page. Prefer this one to the default one, specially on a page with lots of buttons.</p></td>
       </tr>
       <tr>
         <td>
           <div className="doc-buttons"><Button type="text">Text</Button></div>
-          <div className="doc-buttons"><Button type="text">Text</Button></div>
+          <div className="doc-buttons"><Button type="text" icon="reload">Text</Button></div>
         </td>
         <td><p><strong>Text:</strong> Tertiary or less important actions or triggers. Use it to connect internal pages or trigger internal functions of a component.</p></td>
       </tr>
       <tr>
         <td>
           <div className="doc-buttons"><Button disabled>Disabled</Button></div>
-          <div className="doc-buttons"><Button disabled>Disabled</Button></div>
+          <div className="doc-buttons"><Button icon="reload" disabled>Disabled</Button></div>
         </td>
         <td><p><strong>Disabled:</strong> Use when a previous action is required to enable the button (as input validation) or when the system is busy.</p></td>
       </tr>
       <tr>
         <td>
           <div className="doc-buttons"><Button type="warning">Warning</Button></div>
-          <div className="doc-buttons"><Button type="warning">Warning</Button></div>
+          <div className="doc-buttons"><Button type="warning" icon="reload">Warning</Button></div>
         </td>
         <td><p><strong>Warning:</strong> Can be found mostly in confirmation dialogs or pages do indicate significant change, but non destructive.</p></td>
       </tr>
       <tr>
         <td>
           <div className="doc-buttons"><Button type="destructive">Destructive</Button></div>
-          <div className="doc-buttons"><Button type="destructive">Destructive</Button></div>
+          <div className="doc-buttons"><Button type="destructive" icon="reload">Destructive</Button></div>
         </td>
         <td><p><strong>Destructive:</strong> Appears as a final confirmation for a destructive action such as deleting or any trigger that can compromise user data.</p></td>
       </tr>
@@ -195,6 +195,33 @@ import Button from '../labsystem/src/Button';
   </Story>
 </Preview>
 
+#### Default with icons
+
+<Preview>
+  <Story name="Default Button icons">
+    <Fragment>
+      <div className="doc-buttons">
+        <Button icon="reload">Normal</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button icon="reload" disabled>Normal disabled</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button icon="reload" size="large">Large</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button icon="reload" size="large" disabled>Large disabled</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button icon="reload" size="small">Small</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button icon="reload" size="small" disabled>Small disabled</Button>
+      </div>
+    </Fragment>
+  </Story>
+</Preview>
+
 #### Exceptions
 
 Use the mineral or white exceptions for primary actions on <b>toasts</b> and <b>banners</b>.
@@ -253,6 +280,30 @@ You can also use <b>Message Colors</b> on labels to place these buttons also in 
   </Story>
 </Preview>
 
+#### Exceptions with icons
+
+<Preview>
+  <Story name="Default Button Exceptions icons">
+    <Fragment>
+      <div className="doc-buttons">
+        <Button icon="reload" exception="dark">Exception</Button>
+      </div>
+      <div className="doc-buttons doc-buttons--warning">
+        <Button icon="reload" exception="dark-warning">Exception</Button>
+      </div>
+      <div className="doc-buttons doc-buttons--light">
+        <Button icon="reload" exception="light">Exception</Button>
+      </div>
+      <div className="doc-buttons doc-buttons--destructive">
+        <Button icon="reload" exception="light-destructive">Exception</Button>
+      </div>
+      <div className="doc-buttons doc-buttons--confirmation">
+        <Button icon="reload" exception="light-confirmation">Exception</Button>
+      </div>
+    </Fragment>
+  </Story>
+</Preview>
+
 
 ### Ghost
 
@@ -276,6 +327,33 @@ You can also use <b>Message Colors</b> on labels to place these buttons also in 
       </div>
       <div className="doc-buttons">
         <Button type="ghost" size="small" disabled>Small disabled</Button>
+      </div>
+    </Fragment>
+  </Story>
+</Preview>
+
+#### Ghost with icons
+
+<Preview>
+  <Story name="Ghost Button icons">
+    <Fragment>
+      <div className="doc-buttons">
+        <Button type="ghost" icon="reload"> Normal</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="ghost" icon="reload" disabled>Normal disabled</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="ghost" icon="reload" size="large">Large</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="ghost" icon="reload" size="large" disabled>Large disabled</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="ghost" icon="reload" size="small">Small</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="ghost" icon="reload" size="small" disabled>Small disabled</Button>
       </div>
     </Fragment>
   </Story>
@@ -312,6 +390,33 @@ On <b>dialogs</b>, the secondary action for <b>destructive</b> or <b>warning</b>
   </Story>
 </Preview>
 
+#### Exceptions with icon
+
+<Preview>
+  <Story name="Ghost Button Exceptions icon">
+    <Fragment>
+      <div className="doc-buttons doc-buttons--light">
+        <Button type="ghost" icon="reload" exception="ghost-light">Exception</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="ghost" icon="reload" exception="ghost-dark">Exception</Button>
+      </div>
+      <div className="doc-buttons doc-buttons--light">
+        <Button type="ghost" icon="reload" size="large" exception="ghost-light">Exception Large</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="ghost" icon="reload" size="large" exception="ghost-dark">Exception Large</Button>
+      </div>
+      <div className="doc-buttons doc-buttons--light">
+        <Button type="ghost" icon="reload" size="small" exception="ghost-light">Exception Small</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="ghost" icon="reload" size="small" exception="ghost-dark">Exception Small</Button>
+      </div>
+    </Fragment>
+  </Story>
+</Preview>
+
 ### Text
 
 <Preview>
@@ -334,6 +439,33 @@ On <b>dialogs</b>, the secondary action for <b>destructive</b> or <b>warning</b>
       </div>
       <div className="doc-buttons">
         <Button type="text" size="small" disabled>Small disabled</Button>
+      </div>
+    </Fragment>
+  </Story>
+</Preview>
+
+### Text with icon
+
+<Preview>
+  <Story name="Text Button icon">
+    <Fragment>
+      <div className="doc-buttons">
+        <Button type="text" icon="reload">Normal</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="text" icon="reload" disabled>Normal disabled</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="text" icon="reload" size="large">Large</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="text" icon="reload" size="large" disabled>Large disabled</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="text" icon="reload" size="small">Small</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="text" icon="reload" size="small" disabled>Small disabled</Button>
       </div>
     </Fragment>
   </Story>
@@ -363,6 +495,33 @@ There is no Outline or Ghost variations for Warning buttons.
       </div>
       <div className="doc-buttons">
         <Button type="warning" size="small">Small</Button>
+      </div>
+    </Fragment>
+  </Story>
+</Preview>
+
+### Destructive and Warning with icon
+
+<Preview>
+  <Story name="Destructive Button icon">
+    <Fragment>
+      <div className="doc-buttons">
+        <Button type="destructive" icon="reload">Destructive</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="warning" icon="reload">Warning</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="destructive" icon="reload" size="large">Large</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="warning" icon="reload" size="large">Large</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="destructive" icon="reload" size="small">Small</Button>
+      </div>
+      <div className="doc-buttons">
+        <Button type="warning" icon="reload" size="small">Small</Button>
       </div>
     </Fragment>
   </Story>

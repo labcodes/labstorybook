@@ -32,18 +32,6 @@ $shadow-focus: map-get($button-theme, "-30");
   }
 }
 
-.btn--normal {
-  padding: 12px 16px;
-}
-
-.btn--small {
-  padding: 8px 16px;
-}
-
-.btn--large {
-  padding: 16px 16px;
-}
-
 .btn {
   font-size: $btn-font-size;
   line-height: $btn-line-heigt;
@@ -54,7 +42,8 @@ $shadow-focus: map-get($button-theme, "-30");
   cursor: pointer;
   outline: none;
   font-family: $font-secondary;
-  display: inline-block; 
+  display: inline-flex;
+  align-items: center;
   vertical-align: top;
   border: 2px solid;
 
@@ -75,6 +64,21 @@ $shadow-focus: map-get($button-theme, "-30");
     cursor: default;
     pointer-events: none;
   }
+}
+
+.btn--normal {
+  height: 40px;
+  padding: 0 16px;
+}
+
+.btn--small {
+  height: 32px;
+  padding: 0 16px;
+}
+
+.btn--large {
+  height: 48px;
+  padding: 0 16px;
 }
 
 .btn--default {
