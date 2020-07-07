@@ -1,20 +1,26 @@
-$btn-border-default: $border-01; //2px
-$btn-border-hover: $border-03; //6px
-$btn-border-focus: $border-01; //2px
-
 $btn-radius: $radius-02; //4px
-
 $btn-font-size: 16px;
 $btn-line-heigt: 14px;
 
-// $main-color: map-get($button-theme, "-60");
-// $bg-color-active: map-get($button-theme, "-80");
-// $border-color-idle: map-get($button-theme, "-60");
-// $border-color-hover: map-get($button-theme, "-80");
-// $border-color-focus: map-get($button-theme, "-70");
-// $border-color-active: map-get($button-theme, "-40");
-// $shadow-hover: map-get($button-theme, "-10");
-// $shadow-focus: map-get($button-theme, "-30");
+//Button colors from theme.
+$main-color: map-get($button-theme, "60");
+$border-hover: map-get($button-theme, "80");
+$shadow-hover: map-get($button-theme, "10");
+$bg-active: map-get($button-theme, "70");
+$border-active: map-get($button-theme, "40");
+$border-focus: map-get($button-theme, "70");
+$shadow-focus: map-get($button-theme, "30");
+$bg-focus-active: map-get($button-theme, "80");
+
+$ghost-color-active: map-get($button-theme, "70");
+$ghost-color-focus-active: map-get($button-theme, "80");
+
+$text-bg-hover: map-get($button-theme, "10");
+$text-color-active: map-get($button-theme, "70");
+$text-bg-active: map-get($button-theme, "20");
+
+$link-color: map-get($button-theme, "30");
+$link-bg: map-get($button-theme, "10");
 
 .btn {
   font-size: $btn-font-size;
@@ -74,37 +80,34 @@ $btn-line-heigt: 14px;
 
 // Button type modifiers
 .btn--default {
-  background-color: $teal-60;
+  background-color: $main-color;
   color: white;
-  border-color: $teal-60;
+  border-color: $main-color;
   
   &:hover {
-    @include btn-shadow(hover, $teal-10);
-    background-color: $teal-60;
-    border-color: $teal-80;
+    @include btn-shadow(hover, $shadow-hover);
+    border-color: $border-hover;
   }
   
   &:focus {
-    @include btn-shadow(focus, $teal-30);
-    background-color: $teal-60;
-    border-color: $teal-70;
+    @include btn-shadow(focus, $shadow-focus);
+    border-color: $border-focus;
   }
 
   &:active {
-    background-color: $teal-80;
-    border-color: $teal;
+    background-color: $bg-active;
+    border-color: $border-active;
   }
   
   &:focus:hover {
-    @include btn-shadow(focus-hover, $teal-30, $teal-10);
-    background-color: $teal-60;
-    border-color: $teal-80;
+    @include btn-shadow(focus-hover, $shadow-focus, $shadow-hover);
+    border-color: $border-hover;
   }
   
   &:focus:active {
-    @include btn-shadow(focus, $teal-30);
-    background-color: $teal-80;
-    border-color: $teal;
+    @include btn-shadow(focus, $shadow-focus);
+    background-color: $bg-focus-active;
+    border-color: $border-active;
   }
   
   &:disabled {
@@ -116,35 +119,32 @@ $btn-line-heigt: 14px;
 
 .btn--ghost {
   background-color: transparent;
-  color: $teal-60;
+  color: $main-color;
   
   &:hover {
-    @include btn-shadow(hover, $teal-10);
-    color: $teal-60;
-    border-color: $teal-80;
+    @include btn-shadow(hover, $shadow-hover);
+    border-color: $border-hover;
   }
   
   &:focus {
-    @include btn-shadow(focus, $teal-30);
-    color: $teal-60;
-    border-color: $teal-70;
+    @include btn-shadow(focus, $shadow-focus);
+    border-color: $border-focus;
   }
 
   &:active {
-    color: $teal-80;
-    border-color: $teal;
+    color: $ghost-color-active;
+    border-color: $border-active;
   }
   
   &:focus:hover {
-    @include btn-shadow(focus-hover, $teal-30, $teal-10);
-    color: $teal-60;
-    border-color: $teal-80;
+    @include btn-shadow(focus-hover, $shadow-focus, $shadow-hover);
+    border-color: $border-hover;
   }
   
   &:focus:active {
-    @include btn-shadow(focus, $teal-30);
-    color: $teal-80;
-    border-color: $teal;
+    @include btn-shadow(focus, $shadow-focus);
+    color: $ghost-color-focus-active;
+    border-color: $border-active;
   }
   
   &:disabled {
@@ -155,33 +155,33 @@ $btn-line-heigt: 14px;
 
 .btn--text {
   background-color: transparent;
-  color: $teal-60;
+  color: $main-color;
   border-color: transparent;
   text-transform: uppercase;
   letter-spacing: 1%;
   
   &:hover {
-    background-color: $teal-10;
+    background-color: $text-bg-hover;
   }
   
   &:focus {
-    @include btn-shadow(focus, $teal-30);
+    @include btn-shadow(focus, $shadow-focus);
   }
 
   &:active {
-    background-color: $teal-20;
-    color: $teal-80;
+    background-color: $text-bg-active;
+    color: $text-color-active;
   }
   
   &:focus:hover {
-    @include btn-shadow(focus, $teal-30);
-    background-color: $teal-10;
+    @include btn-shadow(focus, $shadow-focus);
+    background-color: $text-bg-hover;
   }
   
   &:focus:active {
-    @include btn-shadow(focus, $teal-30);
-    background-color: $teal-20;
-    color: $teal-80;
+    @include btn-shadow(focus, $shadow-focus);
+    background-color: $text-bg-active;
+    color: $text-color-active;
   }
   
   &:disabled {
@@ -534,7 +534,7 @@ a {
     width: 100%;
     height: 4px;
 
-    background: $teal-30;
+    background: $link-color;
     border-radius: 4px;
 
     transition: all 0.2s;
@@ -546,16 +546,16 @@ a {
   }
 
   &:focus::before {
-    @include btn-shadow(focus, $teal-30);
+    @include btn-shadow(focus, $link-color);
     bottom: 0;
     height: 100%;
     background: transparent;
   }
 
   &:focus:hover::before {
-    @include btn-shadow(focus, $teal-30);
+    @include btn-shadow(focus, $link-color);
     bottom: 0;
     height: 100%;
-    background: $teal-10;
+    background: $link-bg;
   }
 }
