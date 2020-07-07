@@ -80,7 +80,11 @@ export default class Button extends React.Component {
     }
 
     if (icon) {
-      returnIcon = <Icon type={icon} color={color} size="petit" />;
+      returnIcon = (
+        <span className="btn__icon">
+          <Icon type={icon} color={color} size="petit" />
+        </span>
+      );
     }
     return returnIcon;
   };

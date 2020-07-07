@@ -66,6 +66,11 @@ $shadow-focus: map-get($button-theme, "-30");
   }
 }
 
+.btn__icon {
+  margin-left: -4px;
+  margin-right: 4px;
+}
+
 .btn--normal {
   height: 40px;
   padding: 0 16px;

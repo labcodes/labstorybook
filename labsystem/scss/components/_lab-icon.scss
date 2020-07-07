@@ -10,6 +10,7 @@ $icon-size: 1.5rem !default;
   font-size: $icon-size;
   line-height: 1;
   display: inline-block;
+  vertical-align: middle;
 
   /* Color modifiers. 
    * Create classes '.lab-icon--white' and '.lab-icon--black' directly.
