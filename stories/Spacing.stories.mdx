@@ -3,189 +3,194 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
 <Meta title="Atoms | Spacing" />
 
-<div>
-  <h1>Spacing</h1>
-  <p>This token can be applied to <code>margin</code> or <code>padding</code> properties to both vertical and horizontal edges.</p>
+<div class="docs-title">
+  <div>
+    <h1 class="docs-title__text">Spacing</h1>
+  </div>
 </div>
 
-<div>
-  <h2>Scales</h2>
-  <div class="columns">
-    <div class="column">
-      <p>On spacing, we have <code>$spacing</code> and <code>$layout</code> tokens, the first for general spacing within components, and the other for layout spacing. They are built to complement components and type system and to assemble elements within a page.</p>
+<div class="docs-content">
+  <p>This token can be applied to <code>margin</code> or <code>padding</code> properties to both vertical and horizontal edges.</p>
+
+  <div>
+    <h2>Scales</h2>
+    <div class="columns">
+      <div class="column">
+        <p>On spacing, we have <code>$spacing</code> and <code>$layout</code> tokens, the first for general spacing within components, and the other for layout spacing. They are built to complement components and type system and to assemble elements within a page.</p>
+      </div>
+      <div class="column">
+        <p>The two scales have certain overlapping values that serve two different roles, so be mindful when picking a spacing token.</p>
+      </div>
     </div>
-    <div class="column">
-      <p>The two scales have certain overlapping values that serve two different roles, so be mindful when picking a spacing token.</p>
-    </div>
-  </div>
-  <div class="columns">
-    <div class="column">
-      <h3>Spacing scale</h3>
-      <p>Used for refinement, specifically used within a component (i.e. the space between a label and a text input).</p>
-      <table>
-        <tr>
-          <th>Token</th>
-          <th>rem</th>
-          <th>px</th>
-          <th>Example</th>
-        </tr>
-        <tr>
-          <td><code>$spacing-01</code></td>
-          <td>0.25</td>
-          <td>4</td>
-          <td><img src="docs/tokens-spacing/01-spacing.png" /></td>
-        </tr>
-        <tr>
-          <td><code>$spacing-02</code></td>
-          <td>0.5</td>
-          <td>8</td>
-          <td><img src="docs/tokens-spacing/02-spacing.png" /></td>
-        </tr>
-        <tr>
-          <td><code>$spacing-03</code></td>
-          <td>0.75</td>
-          <td>12</td>
-          <td><img src="docs/tokens-spacing/03-spacing.png" /></td>
-        </tr>
-        <tr>
-          <td><code>$spacing-04</code></td>
-          <td>1</td>
-          <td>16</td>
-          <td><img src="docs/tokens-spacing/04-spacing.png" /></td>
-        </tr>
-        <tr>
-          <td><code>$spacing-05</code></td>
-          <td>1.25</td>
-          <td>20</td>
-          <td><img src="docs/tokens-spacing/05-spacing.png" /></td>
-        </tr>
-        <tr>
-          <td><code>$spacing-06</code></td>
-          <td>1.5</td>
-          <td>24</td>
-          <td><img src="docs/tokens-spacing/06-spacing.png" /></td>
-        </tr>
-        <tr>
-          <td><code>$spacing-07</code></td>
-          <td>2</td>
-          <td>32</td>
-          <td><img src="docs/tokens-spacing/07-spacing.png" /></td>
-        </tr>
-        <tr>
-          <td><code>$spacing-08</code></td>
-          <td>2.5</td>
-          <td>40</td>
-          <td><img src="docs/tokens-spacing/08-spacing.png" /></td>
-        </tr>
-        <tr>
-          <td><code>$spacing-09</code></td>
-          <td>3.25</td>
-          <td>52</td>
-          <td><img src="docs/tokens-spacing/09-spacing.png" /></td>
-        </tr>
-        <tr>
-          <td><code>$spacing-10</code></td>
-          <td>3.75</td>
-          <td>60</td>
-          <td><img src="docs/tokens-spacing/10-spacing.png" /></td>
-        </tr>
-      </table>
-    </div>
-    <div class="column">
-      <h3>Layout scale</h3>
-      <p>Used for positioning components on a page (i.e., the space between a text field and a selector).</p>
-      <table>
-        <tr>
-          <th>Token</th>
-          <th>rem</th>
-          <th>px</th>
-          <th>Example</th>
-        </tr>
-        <tr>
-          <td><code>$layout-01</code></td>
-          <td>0.75</td>
-          <td>12</td>
-          <td><img src="docs/tokens-spacing/01-layout.png" /></td>
-        </tr>
-        <tr>
-          <td><code>$layout-02</code></td>
-          <td>1</td>
-          <td>16</td>
-          <td><img src="docs/tokens-spacing/02-layout.png" /></td>
-        </tr>
-        <tr>
-          <td><code>$layout-03</code></td>
-          <td>1.25</td>
-          <td>20</td>
-          <td><img src="docs/tokens-spacing/03-layout.png" /></td>
-        </tr>
-        <tr>
-          <td><code>$layout-04</code></td>
-          <td>1.5</td>
-          <td>24</td>
-          <td><img src="docs/tokens-spacing/04-layout.png" /></td>
-        </tr>
-        <tr>
-          <td><code>$layout-05</code></td>
-          <td>2</td>
-          <td>32</td>
-          <td><img src="docs/tokens-spacing/05-layout.png" /></td>
-        </tr>
-        <tr>
-          <td><code>$layout-06</code></td>
-          <td>2.5</td>
-          <td>40</td>
-          <td><img src="docs/tokens-spacing/06-layout.png" /></td>
-        </tr>
-        <tr>
-          <td><code>$layout-07</code></td>
-          <td>2.75</td>
-          <td>44</td>
-          <td><img src="docs/tokens-spacing/07-layout.png" /></td>
-        </tr>
-        <tr>
-          <td><code>$layout-08</code></td>
-          <td>3.25</td>
-          <td>52</td>
-          <td><img src="docs/tokens-spacing/08-layout.png" /></td>
-        </tr>
-        <tr>
-          <td><code>$layout-09</code></td>
-          <td>4</td>
-          <td>64</td>
-          <td><img src="docs/tokens-spacing/09-layout.png" /></td>
-        </tr>
-        <tr>
-          <td><code>$layout-10</code></td>
-          <td>4.5</td>
-          <td>72</td>
-          <td><img src="docs/tokens-spacing/10-layout.png" /></td>
-        </tr>
-        <tr>
-          <td><code>$layout-11</code></td>
-          <td>5.75</td>
-          <td>92</td>
-          <td><img src="docs/tokens-spacing/11-layout.png" /></td>
-        </tr>
-        <tr>
-          <td><code>$layout-12</code></td>
-          <td>6.25</td>
-          <td>100</td>
-          <td><img src="docs/tokens-spacing/12-layout.png" /></td>
-        </tr>
-        <tr>
-          <td><code>$layout-13</code></td>
-          <td>7.75</td>
-          <td>124</td>
-          <td><img src="docs/tokens-spacing/13-layout.png" /></td>
-        </tr>
-        <tr>
-          <td><code>$layout-14</code></td>
-          <td>8.75</td>
-          <td>140</td>
-          <td><img src="docs/tokens-spacing/14-layout.png" /></td>
-        </tr>
-      </table>
+    <div class="columns">
+      <div class="column">
+        <h3>Spacing scale</h3>
+        <p>Used for refinement, specifically used within a component (i.e. the space between a label and a text input).</p>
+        <table>
+          <tr>
+            <th>Token</th>
+            <th>rem</th>
+            <th>px</th>
+            <th>Example</th>
+          </tr>
+          <tr>
+            <td><code>$spacing-01</code></td>
+            <td>0.25</td>
+            <td>4</td>
+            <td><img src="docs/tokens-spacing/01-spacing.png" /></td>
+          </tr>
+          <tr>
+            <td><code>$spacing-02</code></td>
+            <td>0.5</td>
+            <td>8</td>
+            <td><img src="docs/tokens-spacing/02-spacing.png" /></td>
+          </tr>
+          <tr>
+            <td><code>$spacing-03</code></td>
+            <td>0.75</td>
+            <td>12</td>
+            <td><img src="docs/tokens-spacing/03-spacing.png" /></td>
+          </tr>
+          <tr>
+            <td><code>$spacing-04</code></td>
+            <td>1</td>
+            <td>16</td>
+            <td><img src="docs/tokens-spacing/04-spacing.png" /></td>
+          </tr>
+          <tr>
+            <td><code>$spacing-05</code></td>
+            <td>1.25</td>
+            <td>20</td>
+            <td><img src="docs/tokens-spacing/05-spacing.png" /></td>
+          </tr>
+          <tr>
+            <td><code>$spacing-06</code></td>
+            <td>1.5</td>
+            <td>24</td>
+            <td><img src="docs/tokens-spacing/06-spacing.png" /></td>
+          </tr>
+          <tr>
+            <td><code>$spacing-07</code></td>
+            <td>2</td>
+            <td>32</td>
+            <td><img src="docs/tokens-spacing/07-spacing.png" /></td>
+          </tr>
+          <tr>
+            <td><code>$spacing-08</code></td>
+            <td>2.5</td>
+            <td>40</td>
+            <td><img src="docs/tokens-spacing/08-spacing.png" /></td>
+          </tr>
+          <tr>
+            <td><code>$spacing-09</code></td>
+            <td>3.25</td>
+            <td>52</td>
+            <td><img src="docs/tokens-spacing/09-spacing.png" /></td>
+          </tr>
+          <tr>
+            <td><code>$spacing-10</code></td>
+            <td>3.75</td>
+            <td>60</td>
+            <td><img src="docs/tokens-spacing/10-spacing.png" /></td>
+          </tr>
+        </table>
+      </div>
+      <div class="column">
+        <h3>Layout scale</h3>
+        <p>Used for positioning components on a page (i.e., the space between a text field and a selector).</p>
+        <table>
+          <tr>
+            <th>Token</th>
+            <th>rem</th>
+            <th>px</th>
+            <th>Example</th>
+          </tr>
+          <tr>
+            <td><code>$layout-01</code></td>
+            <td>0.75</td>
+            <td>12</td>
+            <td><img src="docs/tokens-spacing/01-layout.png" /></td>
+          </tr>
+          <tr>
+            <td><code>$layout-02</code></td>
+            <td>1</td>
+            <td>16</td>
+            <td><img src="docs/tokens-spacing/02-layout.png" /></td>
+          </tr>
+          <tr>
+            <td><code>$layout-03</code></td>
+            <td>1.25</td>
+            <td>20</td>
+            <td><img src="docs/tokens-spacing/03-layout.png" /></td>
+          </tr>
+          <tr>
+            <td><code>$layout-04</code></td>
+            <td>1.5</td>
+            <td>24</td>
+            <td><img src="docs/tokens-spacing/04-layout.png" /></td>
+          </tr>
+          <tr>
+            <td><code>$layout-05</code></td>
+            <td>2</td>
+            <td>32</td>
+            <td><img src="docs/tokens-spacing/05-layout.png" /></td>
+          </tr>
+          <tr>
+            <td><code>$layout-06</code></td>
+            <td>2.5</td>
+            <td>40</td>
+            <td><img src="docs/tokens-spacing/06-layout.png" /></td>
+          </tr>
+          <tr>
+            <td><code>$layout-07</code></td>
+            <td>2.75</td>
+            <td>44</td>
+            <td><img src="docs/tokens-spacing/07-layout.png" /></td>
+          </tr>
+          <tr>
+            <td><code>$layout-08</code></td>
+            <td>3.25</td>
+            <td>52</td>
+            <td><img src="docs/tokens-spacing/08-layout.png" /></td>
+          </tr>
+          <tr>
+            <td><code>$layout-09</code></td>
+            <td>4</td>
+            <td>64</td>
+            <td><img src="docs/tokens-spacing/09-layout.png" /></td>
+          </tr>
+          <tr>
+            <td><code>$layout-10</code></td>
+            <td>4.5</td>
+            <td>72</td>
+            <td><img src="docs/tokens-spacing/10-layout.png" /></td>
+          </tr>
+          <tr>
+            <td><code>$layout-11</code></td>
+            <td>5.75</td>
+            <td>92</td>
+            <td><img src="docs/tokens-spacing/11-layout.png" /></td>
+          </tr>
+          <tr>
+            <td><code>$layout-12</code></td>
+            <td>6.25</td>
+            <td>100</td>
+            <td><img src="docs/tokens-spacing/12-layout.png" /></td>
+          </tr>
+          <tr>
+            <td><code>$layout-13</code></td>
+            <td>7.75</td>
+            <td>124</td>
+            <td><img src="docs/tokens-spacing/13-layout.png" /></td>
+          </tr>
+          <tr>
+            <td><code>$layout-14</code></td>
+            <td>8.75</td>
+            <td>140</td>
+            <td><img src="docs/tokens-spacing/14-layout.png" /></td>
+          </tr>
+        </table>
+      </div>
     </div>
   </div>
 </div>
