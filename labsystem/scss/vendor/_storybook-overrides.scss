@@ -18,7 +18,9 @@ h1, h2, h3, h4, h5 {
   }
 }
 
-p, li {
+p,
+p.sbdocs-p,
+li {
   color: $black-75 !important;
   font-family: $font-secondary !important;
   font-size: 18px !important;
@@ -29,5 +31,4 @@ span,
 span.sbdocs-span {
   font-size: inherit;
   font-family: $font-secondary;
-  color: inherit;
 }

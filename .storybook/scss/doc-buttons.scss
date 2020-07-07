@@ -19,18 +19,6 @@
   background-color: $green-60;
 }
 
-@each $name, $color in $support-palette {
-  .u-#{$name} {
-    color: $color !important;
-  }
-}
-
-@each $name, $color in $messages-palette {
-  .u-#{$name} {
-    color: $color !important;
-  }
-}
-
 .doc-btn-table {
   td, th, tr {
     background-color: $white !important;
