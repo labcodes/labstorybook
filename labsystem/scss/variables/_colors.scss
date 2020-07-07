@@ -95,91 +95,118 @@ $main-palette: (
   warning: $yellow-60,
 );
 
+// Color maps
 $teal-palette: (
-  '-10': $teal-10,
-  '-20': $teal-20,
-  '-30': $teal-30,
-  '-40': $teal-40,
-  '-60': $teal-60,
-  '-70': $teal-70,
-  '-80': $teal-80,
+  "10": $teal-10,
+  "20": $teal-20,
+  "30": $teal-30,
+  "40": $teal-40,
+  "60": $teal-60,
+  "70": $teal-70,
+  "80": $teal-80,
 );
 
 $purple-palette: (
-  '-10': $purple-10,
-  '-20': $purple-20,
-  '-30': $purple-30,
-  '-40': $purple-40,
-  '-60': $purple-60,
-  '-70': $purple-70,
-  '-80': $purple-80,
+  "10": $purple-10,
+  "20": $purple-20,
+  "30": $purple-30,
+  "40": $purple-40,
+  "60": $purple-60,
+  "70": $purple-70,
+  "80": $purple-80,
 );
 
 $mustard-palette: (
-  '-10': $mustard-10,
-  '-20': $mustard-20,
-  '-30': $mustard-30,
-  '-40': $mustard-40,
-  '-60': $mustard-60,
-  '-70': $mustard-70,
-  '-80': $mustard-80,
+  "10": $mustard-10,
+  "20": $mustard-20,
+  "30": $mustard-30,
+  "40": $mustard-40,
+  "60": $mustard-60,
+  "70": $mustard-70,
+  "80": $mustard-80,
 );
 
 $coral-palette: (
-  '-10': $coral-10,
-  '-20': $coral-20,
-  '-30': $coral-30,
-  '-40': $coral-40,
-  '-60': $coral-60,
-  '-70': $coral-70,
-  '-80': $coral-80,
+  "10": $coral-10,
+  "20": $coral-20,
+  "30": $coral-30,
+  "40": $coral-40,
+  "60": $coral-60,
+  "70": $coral-70,
+  "80": $coral-80,
 );
 
 $black-palette: (
-  '-87': $black-87,
-  '-75': $black-75,
-  '-50': $black-50,
-  '-35': $black-35,
-  '-20': $black-20,
-  '-10': $black-10,
+  "87": $black-87,
+  "75": $black-75,
+  "50": $black-50,
+  "35": $black-35,
+  "20": $black-20,
+  "10": $black-10,
 );
 
 $white-palette: (
-  '-87': $white-87,
-  '-75': $white-75,
-  '-50': $white-50,
-  '-35': $white-35,
-  '-20': $white-20,
-  '-10': $white-10,
+  "87": $white-87,
+  "75": $white-75,
+  "50": $white-50,
+  "35": $white-35,
+  "20": $white-20,
+  "10": $white-10,
 );
 
 $neutral-palette: (
-  white: $white,
-  mineral-10: $mineral-10,
-  mineral-20: $mineral-20,
-  mineral-30: $mineral-30,
-  mineral-40: $mineral-40,
-  mineral-60: $mineral-60,
-  mineral-70: $mineral-70,
-  mineral-80: $mineral-80,
-  mineral-90: $mineral-90,
-  black: $black,
+  "10": $mineral-10,
+  "20": $mineral-20,
+  "30": $mineral-30,
+  "40": $mineral-40,
+  "60": $mineral-60,
+  "70": $mineral-70,
+  "80": $mineral-80,
+  "90": $mineral-90,
 );
 
 $messages-palette: (
-  green-20: $green-20,
-  green-60: $green-60,
-  red-20: $red-20,
-  red-60: $red-60,
-  yellow-20: $yellow-20,
-  yellow-60: $yellow-60,
+  "green": (
+    "20": $green-20,
+    "60": $green-60
+  ),
+  "red": (
+    "20": $red-20,
+    "60": $red-60
+  ),
+  "yellow": (
+    "20": $yellow-20,
+    "60": $yellow-60
+  ),
 );
 
 $support-palette: (
-  cyan-20: $cyan-20,
-  cyan-60: $cyan-60,
-  pink-20: $pink-20,
-  pink-60: $pink-60,
-  orange-20: $orange-20,
-  orange-60: $orange-60,
+  "cyan": (
+    "20": $cyan-20,
+    "60": $cyan-60
+  ),
+  "pink": (
+    "20": $pink-20,
+    "60": $pink-60
+  ),
+  "orange": (
+    "20": $orange-20,
+    "60": $orange-60
+  ),
+);
+
+$all-colors: (
+  "teal": $teal-palette,
+  "coral": $coral-palette,
+  "purple": $purple-palette,
+  "mustard": $mustard-palette,
+  "mineral": $neutral-palette,
+  "black": $black-palette,
+  "white": $white-palette,
+  "green": map-get($messages-palette, "green"),
+  "red": map-get($messages-palette, "red"),
+  "yellow": map-get($messages-palette, "yellow"),
+  "cyan": map-get($support-palette, "cyan"),
+  "pink": map-get($support-palette, "pink"),
+  "orange": map-get($support-palette, "orange"),
 );
