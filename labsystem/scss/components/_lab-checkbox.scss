@@ -19,7 +19,7 @@ $checkbox-bg-disabled: $mineral-20;
   vertical-align: middle;
   box-sizing: border-box;
   cursor: pointer;
-  margin-right: 12px;
+  margin-right: $spacing-03;
 }
 
 .lab-checkbox__icon {
@@ -37,8 +37,8 @@ $checkbox-bg-disabled: $mineral-20;
     display: inline-block;
     margin: 0;
     font-family: $font-primary;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: $font-size-3;
+    font-weight: $weight-medium;
     line-height: 1.4;
     vertical-align: middle;
   }
@@ -60,7 +60,7 @@ $checkbox-bg-disabled: $mineral-20;
   &:indeterminate:hover + .lab-checkbox__label {
     .lab-checkbox__box {
       outline: none;
-      box-shadow: 0 0 0 6px $checkbox-checked-shadow-hover;
+      @include border-shadow(hover, $checkbox-checked-shadow-hover);
     }
   } 
   
@@ -68,7 +68,7 @@ $checkbox-bg-disabled: $mineral-20;
   &:indeterminate:focus + .lab-checkbox__label {
     .lab-checkbox__box {
       outline: none;
-      box-shadow: 0 0 0 2px $checkbox-checked-shadow-focus;
+      @include border-shadow(focus, $checkbox-checked-shadow-focus);
     }
   } 
 
@@ -76,7 +76,7 @@ $checkbox-bg-disabled: $mineral-20;
   &:indeterminate:hover:focus + .lab-checkbox__label {
     .lab-checkbox__box {
       outline: none;
-      box-shadow: 0 0 0 2px $checkbox-checked-shadow-focus, 0 0 0 6px $checkbox-checked-shadow-hover;
+      @include border-shadow(focus-hover, $checkbox-checked-shadow-focus, $checkbox-checked-shadow-hover);
     }
   } 
 
@@ -84,21 +84,21 @@ $checkbox-bg-disabled: $mineral-20;
   &:focus + .lab-checkbox__label {
     .lab-checkbox__box {
       outline: none;
-      box-shadow: 0 0 0 2px $checkbox-idle-shadow-focus;
+      @include border-shadow(focus, $checkbox-idle-shadow-focus);
     }
   }
   
   &:hover + .lab-checkbox__label {
     .lab-checkbox__box {
       outline: none;
-      box-shadow: 0 0 0 6px $checkbox-idle-shadow-hover;
+      @include border-shadow(hover, $checkbox-idle-shadow-hover);
     }
   } 
 
   &:hover:focus + .lab-checkbox__label {
     .lab-checkbox__box {
       outline: none;
-      box-shadow: 0 0 0 2px $checkbox-idle-shadow-focus, 0 0 0 6px $checkbox-idle-shadow-hover;
+      @include border-shadow(focus-hover, $checkbox-idle-shadow-focus, $checkbox-idle-shadow-hover);
     }
   } 
       
