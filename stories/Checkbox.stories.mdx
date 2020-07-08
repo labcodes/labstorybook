@@ -16,12 +16,14 @@ import Checkbox from '../labsystem/src/Checkbox';
   They should be used when we have a list of options that can be multiple selected.
   </p> 
 
-<h3>Anatomy</h3>
+<h4>Anatomy</h4>
 <div class="columns">
     <div class="column">
-        <img src="docs/tokens-spacing/01-spacing.png" />
+        <img src="docs/checkbox/checkbox-anatomy.png" />
     </div>
     <div class="column">
+        <br />
+        <br />
         <ol>
          <li>Checkbox container</li>
          <li>Checkbox icon status indicator</li>
@@ -32,19 +34,46 @@ import Checkbox from '../labsystem/src/Checkbox';
     </div>
 </div>
 
-### Checkbox 
+#### Checkbox 
 
 <Preview>
   <Story name="Checkbox">
     <Fragment>
-         <Checkbox id="checkbox-1" label="Idle" name="checkbox"/>
+         <Checkbox id="checkbox-1" label="Idle" name="checkbox" />
          <br />
-         <Checkbox id="checkbox-2" label="Idle" name="checkbox" indeterminate />
+         <Checkbox id="checkbox-2" label="Indeterminate" name="checkbox" indeterminate />
          <br />
-         <Checkbox id="checkbox-3" label="Disabled" name="checkbox" checked disabled/>
+         <Checkbox id="checkbox-3" label="Disabled Checked" name="checkbox" checked disabled/>
         <br />
-         <Checkbox id="checkbox-4" label="Disabled" name="checkbox" disabled/>
+         <Checkbox id="checkbox-4" label="Disabled Idle" name="checkbox" disabled/>
     </Fragment>
+  </Story>
+</Preview>
+
+#### Behavior 
+1. Choose an option
+2. Click on it and the chosen option will be selected
+3. Once the first option was selected, another one can be chosen
+<br />
+
+#### Styles
+For radio and checkboxes, you can use these color schemes
+<Preview>
+  <Story name="Styles">
+  <Fragment>
+    <div className="input-colors base">
+      base border and fill
+    </div>
+    <div className="input-colors hover">
+      <span>hover border</span>
+    </div>
+    <div className="input-colors hover-border">
+      base border : hover
+    </div>
+    <div className="input-colors focus">
+      focus border
+    </div>
+  </Fragment>
   </Story>
 </Preview>
 
