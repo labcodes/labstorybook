@@ -35,7 +35,7 @@ export default class Checkbox extends React.Component {
       color = "mineral40"
     }
 
-    return <Icon type={type} color={color} size="small" />
+    return <Icon className="lab-checkbox__icon" type={type} color={color} size="small" />
   };
 
   render() {
@@ -52,7 +52,7 @@ export default class Checkbox extends React.Component {
     return (
       <div>
         <input
-          className="lab-checkbox"
+          className={`lab-checkbox ${className || ""}`}
           type="checkbox"
           id={id}
           disabled={disabled}

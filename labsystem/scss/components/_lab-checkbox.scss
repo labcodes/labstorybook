@@ -1,21 +1,31 @@
 @use 'sass:map';
 
-// Wrapper div around input element. All inputs must have it.
+$checkbox-idle-color-main: $mineral-60;
+$checkbox-idle-shadow-hover: $mineral-10;
+$checkbox-idle-shadow-focus: $mineral-30;
+$checkbox-checked-color-main: map-get($checkbox-theme, "60");
+$checkbox-checked-shadow-hover: map-get($checkbox-theme, "10");
+$checkbox-checked-shadow-focus: map-get($checkbox-theme, "30");
 
+$checkbox-bg-disabled: $mineral-20;
+
+// Wrapper div around input element. All inputs must have it.
 .lab-checkbox__box {
   display: inline-block;
   width: 24px;
   height: 24px;
-  border: 2px solid $mineral-60;
+  border: 2px solid $checkbox-idle-color-main;
   border-radius: 4px;
   vertical-align: middle;
   box-sizing: border-box;
   cursor: pointer;
   margin-right: 12px;
+}
 
-  .lab-icon {
-    display: none;
-  }
+.lab-checkbox__icon {
+  margin-top: -2px;
+  margin-left: -2px;
+  display: none;
 }
 
 .lab-checkbox {
@@ -34,35 +44,39 @@
   }
 
   // Checkbox checked
-  &:checked + .lab-checkbox__label {
+  &:checked + .lab-checkbox__label,
+  &:indeterminate + .lab-checkbox__label {
     .lab-checkbox__box {
-      background-color: $teal-60;
-      border: 2px solid $teal-60;
+      background-color: $checkbox-checked-color-main;
+      border: 2px solid $checkbox-checked-color-main;
 
-      .lab-icon {
+      .lab-checkbox__icon {
         display: inline-block;
       }
     }
   }
   
-  &:checked:hover + .lab-checkbox__label {
+  &:checked:hover + .lab-checkbox__label,
+  &:indeterminate:hover + .lab-checkbox__label {
     .lab-checkbox__box {
       outline: none;
-      box-shadow: 0 0 0 6px $teal-10;
+      box-shadow: 0 0 0 6px $checkbox-checked-shadow-hover;
     }
   } 
   
-  &:checked:focus + .lab-checkbox__label {
+  &:checked:focus + .lab-checkbox__label,
+  &:indeterminate:focus + .lab-checkbox__label {
     .lab-checkbox__box {
       outline: none;
-      box-shadow: 0 0 0 2px $teal-30;
+      box-shadow: 0 0 0 2px $checkbox-checked-shadow-focus;
     }
   } 
 
-  &:checked:hover:focus + .lab-checkbox__label {
+  &:checked:hover:focus + .lab-checkbox__label,
+  &:indeterminate:hover:focus + .lab-checkbox__label {
     .lab-checkbox__box {
       outline: none;
-      box-shadow: 0 0 0 2px $teal-30, 0 0 0 6px $teal-10;
+      box-shadow: 0 0 0 2px $checkbox-checked-shadow-focus, 0 0 0 6px $checkbox-checked-shadow-hover;
     }
   } 
 
@@ -70,21 +84,21 @@
   &:focus + .lab-checkbox__label {
     .lab-checkbox__box {
       outline: none;
-      box-shadow: 0 0 0 2px $mineral-30;
+      box-shadow: 0 0 0 2px $checkbox-idle-shadow-focus;
     }
   }
   
   &:hover + .lab-checkbox__label {
     .lab-checkbox__box {
       outline: none;
-      box-shadow: 0 0 0 6px $mineral-10;
+      box-shadow: 0 0 0 6px $checkbox-idle-shadow-hover;
     }
   } 
 
   &:hover:focus + .lab-checkbox__label {
     .lab-checkbox__box {
       outline: none;
-      box-shadow: 0 0 0 2px $mineral-30, 0 0 0 6px $mineral-10;
+      box-shadow: 0 0 0 2px $checkbox-idle-shadow-focus, 0 0 0 6px $checkbox-idle-shadow-hover;
     }
   } 
       
@@ -92,27 +106,16 @@
   &:disabled + .lab-checkbox__label, &:disabled:hover + .lab-checkbox__label {
     .lab-checkbox__box {
       background: $white;
-      border-color: $mineral-20;
+      border-color: $checkbox-bg-disabled;
       box-shadow: none;
     }
   }
 
   &:disabled:checked + .lab-checkbox__label {
     .lab-checkbox__box {
-      background: $mineral-20;
-      border-color: $mineral-20;
+      background: $checkbox-bg-disabled;
+      border-color: $checkbox-bg-disabled;
     }
   }
 
-  // Checkbox Indeterminate
-  &:indeterminate + .lab-checkbox__label {
-    .lab-checkbox__box {
-      background-color: $teal-60;
-      border: 2px solid $teal-60;
-
-      .lab-icon {
-        display: inline-block;
-      }
-    }
-  }
 }
