@@ -1,129 +1,118 @@
 @use 'sass:map';
 
 // Wrapper div around input element. All inputs must have it.
+
+.lab-checkbox__box {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 2px solid $mineral-60;
+  border-radius: 4px;
+  vertical-align: middle;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin-right: 12px;
+
+  .lab-icon {
+    display: none;
+  }
+}
+
 .lab-checkbox {
-    input[type="checkbox"] {
-        position: absolute;
-        opacity: 0;
-    
-        + .lab-checkbox__label {
-            position: relative;
-            display: inline-block;
-            padding-left: 36px;
-            margin: 0;
-            font-family: $font-secondary;
-            font-size: 16px;
-            font-weight: 500;
-            line-height: 1.4;
-            vertical-align: top;
-        &::before {
-            position: absolute;
-            top: -1px;
-            left: 0;
-            display: block;
-            width: 20px;
-            height: 20px;
-            vertical-align: text-bottom;
-            border: 2px solid $mineral-60;
-            border-radius: 4px;
-            box-sizing: content-box;
-            content: "";
-            cursor: pointer;
-        }
-    } 
+  position: absolute;
+  opacity: 0;
 
-    // Checkbox checked
+  + .lab-checkbox__label {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    font-family: $font-primary;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+    vertical-align: middle;
+  }
 
-    &:checked + .lab-checkbox__label {
-    &::before {
-        background-color: $teal-60;
-        border: 2px solid $teal-60;
+  // Checkbox checked
+  &:checked + .lab-checkbox__label {
+    .lab-checkbox__box {
+      background-color: $teal-60;
+      border: 2px solid $teal-60;
+
+      .lab-icon {
+        display: inline-block;
+      }
     }
+  }
+  
+  &:checked:hover + .lab-checkbox__label {
+    .lab-checkbox__box {
+      outline: none;
+      box-shadow: 0 0 0 6px $teal-10;
     }
-    
-
-    &:checked:hover + .lab-checkbox__label {
-        &::before {
-            outline: none;
-            box-shadow: 0 0 0 6px $teal-10;
-        }
-    } 
-    
-    &:checked:focus + .lab-checkbox__label {
-        &::before {
-        outline: none;
-        box-shadow: 0 0 0 2px $teal-30;
-        }
-    } 
-
-    &:checked:hover:focus + .lab-checkbox__label {
-        &::before {
-        outline: none;
-        box-shadow: 0 0 0 2px $teal-30, 0 0 0 6px $teal-10;
-        }
-    } 
-
-    &:checked + .lab-checkbox__label {
-        &::before {
-            background-image: url("../static/icons/check.svg");
-            background-position: center center;
-            background-repeat: no-repeat;
-        }
+  } 
+  
+  &:checked:focus + .lab-checkbox__label {
+    .lab-checkbox__box {
+      outline: none;
+      box-shadow: 0 0 0 2px $teal-30;
     }
+  } 
 
-    // Checkbox Idle
-
-    &:focus + .lab-checkbox__label {
-            &::before {
-                outline: none;
-                box-shadow: 0 0 0 2px $mineral-30;
-            }
-        } 
-    
-        &:hover + .lab-checkbox__label {
-            &::before {
-                outline: none;
-                box-shadow: 0 0 0 6px $mineral-10;
-            }
-        } 
-
-        &:hover:focus + .lab-checkbox__label {
-            &::before {
-            outline: none;
-            box-shadow: 0 0 0 2px $mineral-30, 0 0 0 6px $mineral-10;
-            }
-        } 
-        
-        // Checkbox Disabled
-    
-        &:disabled + .lab-checkbox__label, &:disabled:hover + .lab-checkbox__label {
-            &::before {
-                background: $white;
-                border-color: $mineral-20;
-                box-shadow: none;
-            }
-        }
-
-        &:disabled:checked + .lab-checkbox__label {
-            &::before {
-                background: $mineral-60;
-                background-position: center center;
-                background-repeat: no-repeat;
-                background-image: url("../static/icons/check.svg");
-                border-color: $mineral-60;
-            }
-        }
-
-        // Checkbox Indeterminate
-
-        &:indeterminate + .lab-checkbox__label {
-            &::before {
-                background-color: $teal-60;
-                border: 2px solid $teal-60;
-                background-position: center center;
-                background-repeat: no-repeat;
-                background-image: url("../static/icons/minus.svg");
-            }
-        }
+  &:checked:hover:focus + .lab-checkbox__label {
+    .lab-checkbox__box {
+      outline: none;
+      box-shadow: 0 0 0 2px $teal-30, 0 0 0 6px $teal-10;
     }
+  } 
+
+  // Checkbox Idle
+  &:focus + .lab-checkbox__label {
+    .lab-checkbox__box {
+      outline: none;
+      box-shadow: 0 0 0 2px $mineral-30;
+    }
+  }
+  
+  &:hover + .lab-checkbox__label {
+    .lab-checkbox__box {
+      outline: none;
+      box-shadow: 0 0 0 6px $mineral-10;
+    }
+  } 
+
+  &:hover:focus + .lab-checkbox__label {
+    .lab-checkbox__box {
+      outline: none;
+      box-shadow: 0 0 0 2px $mineral-30, 0 0 0 6px $mineral-10;
+    }
+  } 
+      
+  // Checkbox Disabled
+  &:disabled + .lab-checkbox__label, &:disabled:hover + .lab-checkbox__label {
+    .lab-checkbox__box {
+      background: $white;
+      border-color: $mineral-20;
+      box-shadow: none;
+    }
+  }
+
+  &:disabled:checked + .lab-checkbox__label {
+    .lab-checkbox__box {
+      background: $mineral-20;
+      border-color: $mineral-20;
+    }
+  }
+
+  // Checkbox Indeterminate
+  &:indeterminate + .lab-checkbox__label {
+    .lab-checkbox__box {
+      background-color: $teal-60;
+      border: 2px solid $teal-60;
+
+      .lab-icon {
+        display: inline-block;
+      }
+    }
+  }
 }
