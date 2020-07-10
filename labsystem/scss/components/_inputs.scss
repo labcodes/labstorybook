@@ -123,12 +123,12 @@ $input-shadow-filled-focus: map-get($input-theme, "30");
     box-shadow: 0 0 0 2px $coral-20;
   }
   
-  &:not(:placeholder-shown):hover:focus {
+  &:hover:focus {
     border: $border-01 $red-60;
     box-shadow: 0 0 0 2px $coral-20, 0 0 0 6px $coral-10;
   }
   
-  &:not(:placeholder-shown):hover {
+  &:hover {
     box-shadow: 0 0 0 6px $coral-10;
   }
 }
@@ -146,7 +146,8 @@ $input-shadow-filled-focus: map-get($input-theme, "30");
   cursor: text;
   transition: $duration-base all;
   
-  .lab-input__field:not(:placeholder-shown):invalid~ & {
+  .lab-input__field:not(:placeholder-shown):invalid ~ &,
+  .lab-input__field:invalid:focus ~ & {
     top: -$spacing-03;
     width: auto;
     padding: 2px;
@@ -215,7 +216,7 @@ $input-shadow-filled-focus: map-get($input-theme, "30");
   }
 
   // Input filled invalid on all states
-  .lab-input__field:not(:placeholder-shown):invalid ~ &,
+  .lab-input__field:invalid ~ &,
   .lab-input__field:not(:placeholder-shown):invalid:hover ~ &,
   .lab-input__field:not(:placeholder-shown):invalid:focus ~ &,
   .lab-input__field:not(:placeholder-shown):invalid:focus:hover ~ & {
@@ -238,7 +239,7 @@ $input-shadow-filled-focus: map-get($input-theme, "30");
   padding: 2px 0 $spacing-03 $spacing-03;
   font-family: $font-primary;
   font-size: 12px;
-  opacity: 0; //Hides message by default
+  opacity: 1;
   transition: opacity $duration-base ease;
   font-weight: 500;
   

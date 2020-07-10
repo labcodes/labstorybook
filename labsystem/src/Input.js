@@ -37,7 +37,7 @@ export default class Inputs extends React.Component {
     helpMessage: undefined,
     prefix: undefined,
     suffix: undefined,
-    isValid: true,
+    isValid: undefined,
     customErrorMsg: "Custom Error",
     onChange: undefined,
   };
@@ -45,7 +45,7 @@ export default class Inputs extends React.Component {
   constructor(props) {
     super(props);
     this.inputRef = React.createRef();
-    const { defaultValue, value, id } = props;
+    const { defaultValue, value, id, isValid } = props;
     if (!isUndefined(defaultValue) && !isUndefined(value)) {
       // eslint-disable-next-line no-console
       console.warn(
@@ -54,15 +54,22 @@ export default class Inputs extends React.Component {
     }
     this.state = {
       localValue: defaultValue,
+      localIsValid: !isUndefined(isValid)? isValid : true,
     };
   }
   
   componentDidMount() {
-    const { isValid, customErrorMsg } = this.props;
-    if (!isValid) {
+    const { customErrorMsg, defaultValue } = this.props;
+    let { localIsValid } = this.state;
+
+    if (defaultValue) {
+      localIsValid = this.inputRef.current.validity.valid;
+      this.setState((state) => ({ localIsValid: localIsValid }));
+    }
+    if (!localIsValid) {
       const inputElement = this.inputRef.current;
       console.log(
-        isValid, customErrorMsg
+        localIsValid, customErrorMsg
       );
       inputElement.setCustomValidity(customErrorMsg);
     }
@@ -83,14 +90,15 @@ export default class Inputs extends React.Component {
       ) : "")
   };
   message = () => {
-    const { helpMessage, isValid, customErrorMsg } = this.props;
-    if (helpMessage && isValid) {
+    const { helpMessage, customErrorMsg } = this.props;
+    const { localIsValid } = this.state;
+    if (helpMessage && localIsValid) {
       return <div className="lab-input__message lab-input__message--required">{helpMessage}</div>
     };
-    if (!isValid && helpMessage && !this.state.localValue) {
+    if (!localIsValid && helpMessage && !this.state.localValue) {
       return <div className="lab-input__message lab-input__message--error"> {helpMessage} </div>
-    };    
-    if (!isValid) {
+    };  
+    if (!localIsValid) {
       return <div className="lab-input__message lab-input__message--error"> {customErrorMsg} </div>
     };
 
@@ -109,16 +117,19 @@ export default class Inputs extends React.Component {
   };
 
   handleOnChange = (e) => {
-    const { onChange } = this.props;
+    const { onChange, isValid } = this.props;
     const inputElementValue = this.inputRef.current.value;
+    const inputElementIsValid = this.inputRef.current.validity.valid;
 
-    console.log("handleOnChange:", inputElementValue);
+    console.log("handleOnChange:", this.inputRef.current.validity.valid);
     if (!isUndefined(onChange)) {
       onChange(inputElementValue);
     }
     this.setState((state) => ({ localValue: inputElementValue }));
+    if (isUndefined(isValid)) {
+      this.setState((state) => ({ localIsValid: inputElementIsValid }));
+    }
   };
-
 
 
   render() {
@@ -139,7 +150,7 @@ export default class Inputs extends React.Component {
       ...rest
     } = this.props;
 
-    const {localValue} = this.state;
+    const { localValue, localIsValid } = this.state;
 
     return (
       <div className="lab-input">
@@ -164,7 +175,8 @@ export default class Inputs extends React.Component {
           className={`lab-input__label`}
           htmlFor={id}>{label}
         </label>
-        <p>Local value:</p>{localValue}
+        <p>Local value: {localValue}</p>
+        <p>Local isValid: { ""+localIsValid}</p>
       </div>
     );
   }
