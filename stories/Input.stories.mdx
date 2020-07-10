@@ -6,75 +6,82 @@ import InputBehaviorTest from '../labsystem/src/InputBehaviorTest';
 
 <Meta title="Components | Text Inputs" component={Input} />
 
+<div class="docs-title">
+  <div>
+    <h1 class="docs-title__text">Inputs</h1>
+  </div>
+</div>
 
-# General usage
+<div class="docs-content">
+
+## General usage
 
 This component is a form field that allows user to type text information.
 We can have 4 types of text inputs:
 
 ## Anatomy
 
-### Field elements
+###### Field elements
 ![input anatomy](docs/anatomy.png)
 
-### Prefix and Suffix elements
+###### Prefix and Suffix elements
 ![prefix and suffix input anatomy](docs/anatomy-02.png)
 <br />
 
-## Default Input
+### Default Input
 
 It’s a standard text input. Can be used for enter a id, phone number, street address, email address, etc.
 
 <Preview>
   <Story name="Default Input">
     <Fragment>
-      <h3>Disabled</h3>
+      <h6>Disabled</h6>
       <Input type="text" id="disabled" label="Disabled" disabled />
       <br />
-      <h3>Default</h3>
+      <h6>Default</h6>
       <Input id="id" label="Label" />
       <br />
-      <h3>Trailing icon</h3>
+      <h6>Trailing icon</h6>
       <Input id="id2" label="Label" icon="eye-opened" iconColor="mineral70" />
       <br />
-      <h3>Error</h3>
+      <h6>Error</h6>
       <Input type="email" id="error" label="Name" defaultValue="Teste" customErrorMsg="Error message" />
     </Fragment>
   </Story>
 </Preview>
 
-## Required Input
+### Required Input
 
 It’s a default input that is required to be filled. It has a helper message to inform if a required input text is missing.
 
 <Preview>
   <Story name="Required Input">
     <Fragment>
-      <h3>Required Default</h3>
+      <h6>Required Default</h6>
       <Input type="text" id="required" label= "Label" helpMessage="Help message" required />
       
-      <h3>Required Error</h3>
+      <h6>Required Error</h6>
       <Input type="email" id="required2" defaultValue=" " label= "Required" isValid={false} customErrorMsg="Error message" required />
     </Fragment>
   </Story>
 </Preview>
 
-## Prefix
+### Prefix
 
 It’s a text field input + fixed prefix.
 
 <Preview>
   <Story name="Prefix Input">
     <Fragment>
-      <h3>Prefix Disabled</h3>
+      <h6>Prefix Disabled</h6>
       <Input className="lab-input__field--prefixed" id="prefix" label="Label" prefix="R$" disabled />
       <br />
       
-      <h3>Prefix Default</h3>
+      <h6>Prefix Default</h6>
       <Input className="lab-input__field--prefixed" id="help" label="Label" prefix="R$" />
       <br />
       
-      <h3>Prefix Error</h3>
+      <h6>Prefix Error</h6>
       <Input
         className="lab-input__field--prefixed"
         type="email"
@@ -89,22 +96,22 @@ It’s a text field input + fixed prefix.
   </Story>
 </Preview>
 
-## Suffix
+### Suffix
 
 It’s a text field input + fixed suffix.
 
 <Preview>
   <Story name="Suffix Input">
     <Fragment>
-      <h3>Suffix Disabled</h3>
+      <h6>Suffix Disabled</h6>
       <Input className="lab-input__field--suffixed" id="suffix" label="Label" suffix=".com" disabled />
       <br/>
       
-      <h3>Suffix Default</h3>
+      <h6>Suffix Default</h6>
       <Input className="lab-input__field--suffixed" id="address" label="Label" suffix=".com" />
       <br />
       
-      <h3>Suffix Error</h3>
+      <h6>Suffix Error</h6>
       <Input 
         className="lab-input__field--suffixed" 
         type="email" 
@@ -177,3 +184,5 @@ For text inputs, you can use this other color scheme
   </Fragment>
   </Story>
 </Preview>
+
+</div>

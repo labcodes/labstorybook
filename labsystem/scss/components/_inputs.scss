@@ -21,6 +21,20 @@ $radius-02: 4px;
 
 $input-internal-spacing: 2px;
 
+//Theme
+
+$input-border-disabled: $mineral-30;
+$input-border-unfilled-idle: $mineral-40;
+$input-border-filled-idle: map-get($input-theme, "40");
+$input-border-filled-focus: map-get($input-theme, "70");
+$input-border-filled-hover-focus: map-get($input-theme, "80");
+$input-background-prefix-filled: map-get($input-theme, "10");
+
+$input-shadow-unfilled-hover: $mineral-10;
+$input-shadow-filled-hover: map-get($input-theme, "10");
+$input-shadow-filled-focus: map-get($input-theme, "30");
+
+
 // Wrapper div around input element. All inputs must have it.
 .lab-input {
   position: relative;
@@ -37,13 +51,13 @@ $input-internal-spacing: 2px;
   height: 40px;
   padding: 0;
   margin: 0;
-  font-family: $font-secondary;
+  font-family: $font-primary;
   font-weight: 500;
   font-size: 16px;
   color: $black-75;
   text-indent: $spacing-03;
   text-overflow: clip;
-  border: $border-01 $mineral-40;
+  border: $border-01 $input-border-unfilled-idle;
   border-radius: $radius-02;
   outline: none;
   transition: border $duration-base ease, box-shadow $duration-base ease;
@@ -53,34 +67,35 @@ $input-internal-spacing: 2px;
   }
 
   &:hover {
-    box-shadow: 0 0 0 6px $mineral-10;
+    @include border-shadow(hover, $input-shadow-unfilled-hover);
   }
-
+  
   &:focus,
   &:not(:placeholder-shown):focus {
-    border: 2px solid $teal-70;
+    border: 2px solid $input-border-filled-focus;
     outline: none;
-    box-shadow: 0 0 0 2px $teal-30;
+    @include border-shadow(focus, $input-shadow-filled-focus);
   }
-
+  
   &:not(:placeholder-shown):hover:focus {
-    border: 2px solid $teal-80;
-    box-shadow: 0 0 0 2px $teal-30, 0 0 0 6px $teal-10;
+    border: 2px solid $input-border-filled-hover-focus;
+    @include border-shadow(focus-hover, $input-shadow-filled-focus, $input-shadow-filled-hover);
   }
-
+  
   &:not(:placeholder-shown) {
-    border-color: $teal-40;
+    border-color: $input-border-filled-idle;
   }
-
+  
   &:not(:placeholder-shown):hover {
     box-shadow: 0 0 0 6px $teal-10;
+    @include border-shadow(hover, $input-shadow-filled-hover);
   }
 
   &:disabled, 
   &:disabled:hover {
     color: $black-75;
     background-color: $mineral-10;
-    border: $border-01 $mineral-30;
+    border: $border-01 $input-border-disabled;
     box-shadow: none;
   }
   
@@ -124,7 +139,7 @@ $input-internal-spacing: 2px;
   top: $spacing-02;
   left: $spacing-03;
   z-index: 1;
-  font-family: $font-secondary;
+  font-family: $font-primary;
   font-weight: 500;
   font-size: 16px;
   color: $black-75;
@@ -138,7 +153,7 @@ $input-internal-spacing: 2px;
     font-size: 12px;
     color: $red-60;
     background: rgb(255,255,255),;
-    background: linear-gradient(360deg, rgba(255,255,255,0) 35%, rgba(255,255,255,1) 35%);
+    background: linear-gradient(360deg, rgba(255,255,255,0) 32%, rgba(255,255,255,1) 32%);
   }
   
   .lab-input__field:not(:placeholder-shown) ~ &,
@@ -154,7 +169,7 @@ $input-internal-spacing: 2px;
   .lab-input__field--prefixed:not(:placeholder-shown) ~ &,
   .lab-input__field--prefixed:focus ~ & {
     background: rgb(255,255,255),;
-    background: linear-gradient(360deg, rgba(255,255,255,0) 35%, rgba(255,255,255,1) 35%);
+    background: linear-gradient(360deg, rgba(255,255,255,0) 32%, rgba(255,255,255,1) 32%);
   }  
 
   .lab-input__prefix + & {
@@ -221,7 +236,7 @@ $input-internal-spacing: 2px;
 // Input message
 .lab-input__message {
   padding: 2px 0 $spacing-03 $spacing-03;
-  font-family: $font-secondary;
+  font-family: $font-primary;
   font-size: 12px;
   opacity: 0; //Hides message by default
   transition: opacity $duration-base ease;
@@ -259,7 +274,7 @@ $input-internal-spacing: 2px;
   display: inline-block;
   height: 36px;
   padding: 0 $spacing-03;
-  font-family: $font-secondary;
+  font-family: $font-primary;
   font-weight: 500;
   font-size: 16px;
   line-height: 36px;
@@ -269,11 +284,11 @@ $input-internal-spacing: 2px;
   border-radius: $radius-01;
   
   .lab-input__field--prefixed:focus + &  {
-    background-color: $teal-10;
+    background-color: $input-background-prefix-filled;
   }
   
   .lab-input__field--prefixed:not(:placeholder-shown) + & {
-    background-color: $teal-10;
+    background-color: $input-background-prefix-filled;
   }
 
   .lab-input__field--prefixed:disabled + & {
@@ -297,7 +312,7 @@ $input-internal-spacing: 2px;
   display: inline-block;
   height: 36px;
   padding: 0 $spacing-02;
-  font-family: $font-secondary;
+  font-family: $font-primary;
   font-size: 16px;
   font-weight: 500;
   line-height: 36px;
@@ -307,11 +322,11 @@ $input-internal-spacing: 2px;
   border-radius: $radius-01;
 
   .lab-input__field--suffixed:focus + &  {
-    background-color: $teal-10;
+    background-color: $input-background-prefix-filled;
   }  
   
   .lab-input__field--suffixed:not(:placeholder-shown) + & {
-    background-color: $teal-10;
+    background-color: $input-background-prefix-filled;
   }  
   
   .lab-input__field--suffixed:disabled + & {
