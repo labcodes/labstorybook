@@ -23,16 +23,26 @@ $input-internal-spacing: 2px;
 
 //Theme
 
-$input-border-disabled: $mineral-30;
+
 $input-border-unfilled-idle: $mineral-40;
+$input-text-color: map-get($input-theme, "60");
 $input-border-filled-idle: map-get($input-theme, "40");
 $input-border-filled-focus: map-get($input-theme, "70");
-$input-border-filled-hover-focus: map-get($input-theme, "80");
+$input-border-filled-focus-hover: map-get($input-theme, "80");
 $input-background-prefix-filled: map-get($input-theme, "10");
 
 $input-shadow-unfilled-hover: $mineral-10;
 $input-shadow-filled-hover: map-get($input-theme, "10");
 $input-shadow-filled-focus: map-get($input-theme, "30");
+$input-shadow-invalid-focus: $coral-20; 
+
+$input-main-invalid: $red-60;
+$input-background-invalid: $coral-10;
+$input-background-invalid-prefix: $coral-20; 
+
+$input-border-disabled: $mineral-30;
+
+
 
 
 // Wrapper div around input element. All inputs must have it.
@@ -78,7 +88,7 @@ $input-shadow-filled-focus: map-get($input-theme, "30");
   }
   
   &:not(:placeholder-shown):hover:focus {
-    border: 2px solid $input-border-filled-hover-focus;
+    border: 2px solid $input-border-filled-focus-hover;
     @include border-shadow(focus-hover, $input-shadow-filled-focus, $input-shadow-filled-hover);
   }
   
@@ -87,7 +97,6 @@ $input-shadow-filled-focus: map-get($input-theme, "30");
   }
   
   &:not(:placeholder-shown):hover {
-    box-shadow: 0 0 0 6px $teal-10;
     @include border-shadow(hover, $input-shadow-filled-hover);
   }
 
@@ -112,24 +121,24 @@ $input-shadow-filled-focus: map-get($input-theme, "30");
 
 // Input element invalid.
 .lab-input__field:invalid {
-  color: $red-60;
-  background-color: $coral-10;
-  border-color: $red-60;
+  color: $input-main-invalid;
+  background-color: $input-background-invalid;
+  border-color: $input-main-invalid;
   
   &:focus,
   &:not(:placeholder-shown):focus {
-    border: $border-01 $red-60;
+    border: $border-01 $input-main-invalid;
     outline: none;
-    box-shadow: 0 0 0 2px $coral-20;
+    @include border-shadow(focus, $input-shadow-invalid-focus);
   }
   
   &:hover:focus {
-    border: $border-01 $red-60;
-    box-shadow: 0 0 0 2px $coral-20, 0 0 0 6px $coral-10;
+    border: $border-01 $input-main-invalid;
+    @include border-shadow(focus-hover, $input-shadow-invalid-focus, $input-background-invalid);
   }
   
   &:hover {
-    box-shadow: 0 0 0 6px $coral-10;
+    @include border-shadow(focus, $input-background-invalid);
   }
 }
 
@@ -152,7 +161,7 @@ $input-shadow-filled-focus: map-get($input-theme, "30");
     width: auto;
     padding: 2px;
     font-size: 12px;
-    color: $red-60;
+    color: $input-main-invalid;
     background: rgb(255,255,255),;
     background: linear-gradient(360deg, rgba(255,255,255,0) 32%, rgba(255,255,255,1) 32%);
   }
@@ -163,7 +172,7 @@ $input-shadow-filled-focus: map-get($input-theme, "30");
     padding: 2px;
     width: auto;
     font-size: 12px;
-    color: $teal-60;
+    color: $input-text-color;
     background-color: $white;
   }  
   
@@ -207,12 +216,12 @@ $input-shadow-filled-focus: map-get($input-theme, "30");
 
   // Input not filled focused
   .lab-input__field:focus ~ & {
-    background-color: $teal-70;
+    background-color: $input-border-filled-focus;
   }
 
   // Input filled idle
   .lab-input__field:not(:placeholder-shown) ~ & {
-    background-color: $teal-40;
+    background-color: $input-border-filled-idle;
   }
 
   // Input filled invalid on all states
@@ -220,17 +229,17 @@ $input-shadow-filled-focus: map-get($input-theme, "30");
   .lab-input__field:not(:placeholder-shown):invalid:hover ~ &,
   .lab-input__field:not(:placeholder-shown):invalid:focus ~ &,
   .lab-input__field:not(:placeholder-shown):invalid:focus:hover ~ & {
-    background-color: $red-60;
+    background-color: $input-main-invalid;
   }
 
   // Input filled focus
   .lab-input__field:not(:placeholder-shown):focus ~ & {
-    background-color: $teal-70;
+    background-color: $input-border-filled-focus;
   }
 
   // Input filled focus hover
   .lab-input__field:not(:placeholder-shown):focus:hover ~ & {
-    background-color: $teal-80;
+    background-color: $input-border-filled-focus-hover;
   }
 }
 
@@ -244,7 +253,7 @@ $input-shadow-filled-focus: map-get($input-theme, "30");
   font-weight: 500;
   
   &--error {
-    color: $red-60;
+    color: $input-main-invalid;
     
     .lab-input__field:not(:placeholder-shown):invalid ~ & {
       opacity: 1;
@@ -252,7 +261,7 @@ $input-shadow-filled-focus: map-get($input-theme, "30");
   }
   
   &--required {
-    color: $teal-60;
+    color: $input-text-color;
     opacity: 1; //Show required message
 
     .lab-input__field:placeholder-shown + & {
@@ -298,8 +307,8 @@ $input-shadow-filled-focus: map-get($input-theme, "30");
   }
 
   .lab-input__field--prefixed:invalid + & {
-    background-color: $coral-20;
-    color: $red-60;
+    background-color: $input-background-invalid-prefix;
+    color: $input-main-invalid;
   }
 }
 
@@ -336,7 +345,7 @@ $input-shadow-filled-focus: map-get($input-theme, "30");
   }  
   
   .lab-input__field--suffixed:invalid + & {
-    color: $red-60;
-    background-color: $coral-20; 
+    color: $input-main-invalid;
+    background-color: $input-background-invalid-prefix;
   } 
 }
