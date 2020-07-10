@@ -1,52 +1,75 @@
 $icon-size: 1.5rem !default;
 
 .lab-icon {
-  &.teal {
-    background-image: url('~labsystem/static/icons/main-teal.svg');
-  }
-  &.mineral70 {
-    background-image: url('~labsystem/static/icons/main-mineral70.svg');
-  }
-  &.mineral20 {
-    background-image: url('~labsystem/static/icons/main-disabled.svg');
-  }
-  background-repeat: no-repeat;
-
+  -webkit-mask-image: url('~labsystem/static/icons/main-icons.svg');
+  mask-image: url('~labsystem/static/icons/main-icons.svg');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
   height: $icon-size;
   width: $icon-size;
   font-size: $icon-size;
   line-height: 1;
   display: inline-block;
 
-  &.arrow-left { background-position: left 0 top 0; }
-  &.arrow-right { background-position: left 0 top $icon-size*-1; }
-  &.arrow-top { background-position: left 0 top $icon-size*-2; }
-  &.arrow-down { background-position: left 0 top $icon-size*-3; }
-  &.sort { background-position: left 0 top $icon-size*-4; }
+  /* Color modifiers. 
+   * Create classes '.lab-icon--white' and '.lab-icon--black' directly.
+   * Iterates over $all-colors map to also create classes like '.lab-icon--white'.
+   * Each ones sets a different background color. */
+  &--black { background-color: $black; }
+  &--white { background-color: $white; }
 
-  &.dropdown-closed { background-position: left $icon-size*-1 top 0; }
-  &.dropdown-open { background-position: left $icon-size*-1 top $icon-size*-1; }
-  &.collapse-closed { background-position: left $icon-size*-1 top $icon-size*-2; }
-  &.collapse-open { background-position: left $icon-size*-1 top $icon-size*-3; }
+  @each $key, $palette in $all-colors {
+    @each $color-palette, $color in $palette {
+      &--#{$key}#{$color-palette} {
+          background-color: $color;
+      }
+    }
+  }
 
-  &.remove { background-position: left $icon-size*-2 top 0; }
-  &.plus { background-position: left $icon-size*-2 top $icon-size*-1; }
-  &.minus { background-position: left $icon-size*-2 top $icon-size*-2; }
-  &.check { background-position: left $icon-size*-2 top $icon-size*-3; }
+  /* Size modifiers */
+  &--petit { transform: scale(0.66666); }
+  &--small { transform: scale(0.83333); }
 
-  &.eye-opened { background-position: left $icon-size*-3 top 0; }
-  &.eye-closed { background-position: left $icon-size*-3 top $icon-size*-1; }
-  &.lupe { background-position: left $icon-size*-3 top $icon-size*-2; }
-  &.trash { background-position: left $icon-size*-3 top $icon-size*-3; }
+  /* Type modifiers */
+  &--arrow-left { @include icon-position(0, 0); }
+  &--arrow-right { @include icon-position(0, 1); }
+  &--arrow-top { @include icon-position(0, 2); }
+  &--arrow-down { @include icon-position(0, 3); }
+  &--sort { @include icon-position(0, 4); }
 
-  &.logout { background-position: left $icon-size*-4 top 0; }
-  &.track { background-position: left $icon-size*-4 top $icon-size*-1; }
-  &.calendar { background-position: left $icon-size*-4 top $icon-size*-2; }
-  &.coin { background-position: left $icon-size*-4 top $icon-size*-3; }
+  &--dropdown-closed { @include icon-position(1, 0); }
+  &--dropdown-open { @include icon-position(1, 1); }
+  &--collapse-closed { @include icon-position(1, 2); }
+  &--collapse-open { @include icon-position(1, 3); }
+  &--menu-expand { @include icon-position(1, 4); }
 
-  &.edit {  background-position: left $icon-size*-5 top 0; }
-  &.key { background-position: left $icon-size*-5 top $icon-size*-1; }
-  &.upload { background-position: left $icon-size*-5 top $icon-size*-2; }
-  &.reload { background-position: left $icon-size*-5 top $icon-size*-3; }
+  &--remove { @include icon-position(2, 0); }
+  &--plus { @include icon-position(2, 1); }
+  &--minus { @include icon-position(2, 2); }
+  &--check { @include icon-position(2, 3); }
+  &--menu-collapse { @include icon-position(2, 4); }
 
+  &--eye-opened { @include icon-position(3, 0); }
+  &--eye-closed { @include icon-position(3, 1); }
+  &--lupe { @include icon-position(3, 2); }
+  &--trash { @include icon-position(3, 3); }
+  &--menu-default { @include icon-position(3, 4); }
+
+  &--logout { @include icon-position(4, 0); }
+  &--track { @include icon-position(4, 1); }
+  &--calendar { @include icon-position(4, 2); }
+  &--coin { @include icon-position(4, 3); }
+  &--external { @include icon-position(4, 4); }
+
+  &--edit { @include icon-position(5, 0); }
+  &--key { @include icon-position(5, 1); }
+  &--upload { @include icon-position(5, 2); }
+  &--reload { @include icon-position(5, 3); }
+  &--wallet { @include icon-position(5, 4); }
+
+  &--arrow-fill-right { @include icon-position(6, 0); }
+  &--arrow-fill-left { @include icon-position(6, 1); }
+  &--chevron-right { @include icon-position(6, 2); }
+  &--chevron-left { @include icon-position(6, 3); }
+  &--workspace { @include icon-position(6, 4); }
 }
