@@ -14,9 +14,6 @@ jobs:
       - restore_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
-          name: Install npm labstorybook
-          command: npm install
-      - run:
           name: Install npm labsystem
           command: 'cd labsystem/ && npm install'
       - run:
