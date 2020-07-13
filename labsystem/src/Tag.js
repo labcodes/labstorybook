@@ -32,7 +32,7 @@ export default class Tag extends React.Component {
     if (icon) {
       return (
         <span class="lab-tag__left-icon">
-          <Icon type={ icon } color="teal70" size="petit" />
+          <Icon type={ icon } color="black75" size="petit" />
         </span>
       );
     }
@@ -50,7 +50,7 @@ export default class Tag extends React.Component {
     if (dropdown) {
       return (
         <span className="lab-tag__right-icon lab-tag__right-icon--dropdown">
-          <Icon type="dropdown-closed" color="teal70" size="petit"/>
+          <Icon type="dropdown-closed" color="black75" size="petit"/>
         </span>
       );
     }
@@ -61,7 +61,7 @@ export default class Tag extends React.Component {
     if (removable) {
       return (
         <span className="lab-tag__right-icon lab-tag__right-icon--remove">
-          <Icon type="remove" color="teal70" size="petit"/>
+          <Icon type="remove" color="black75" size="petit"/>
         </span>
       );
     }

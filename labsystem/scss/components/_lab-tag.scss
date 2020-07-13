@@ -2,10 +2,7 @@
 
 $tag-font-size: 14px;
 $tag-line-heigt: 20px;
-
-$tag-background: $teal-40;
 $tag-border: 2px;
-
 
 // soft
 $tag-soft-color: map-get($tag-theme, "20");
@@ -178,39 +175,6 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
 .lab-tag--mineral-soft {}
 .lab-tag--mineral-intense {}
 
-.lab-tag--green-soft {}
-.lab-tag--green-intense {}
-.lab-tag--red-soft {
-  background-color: map-get(map-get($all-colors, "red"), "20");
-  color: $black-75;
-  border-color: map-get(map-get($all-colors, "red"), "20");
-
-  &:hover {
-    background-color: white;
-    border-color: white;
-    box-shadow: 0 0 0 4px map-get(map-get($all-colors, "red"), "20");
-  }
-  
-  &:focus {
-    box-shadow: 0 0 0 2px map-get(map-get($all-colors, "red"), "60");
-  }
-
-  &:focus:hover {
-    box-shadow: 0 0 0 2px map-get(map-get($all-colors, "red"), "60"), 0 0 0 4px map-get(map-get($all-colors, "red"), "20");
-  }
-}
-
-.lab-tag--red-intense {}
-.lab-tag--yellow-soft {}
-.lab-tag--yellow-intense {}
-
-.lab-tag--cyan-soft {}
-.lab-tag--cyan-intense {}
-.lab-tag--pink-soft {}
-.lab-tag--pink-intense {}
-.lab-tag--orange-soft {}
-.lab-tag--orange-intense {}
-
 @each $name, $palette in $tag-all-colors {
   .lab-tag--#{$name}-soft {
     background-color: map-get($palette, "20");
@@ -230,22 +194,27 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
     &:focus:hover {
       box-shadow: 0 0 0 2px map-get($palette, "60"), 0 0 0 4px map-get($palette, "20");
     }
+
+    .lab-icon {
+      background-color: $black-75;
+    }
   }
 
   .lab-tag--#{$name}-intense {
     background-color: map-get($palette, "60");
     border-color: map-get($palette, "60");
     color: white;
-    
-    @if $name == "yellow" {
-      color: $black-75;
-    }
+    @if $name == "yellow" { color: $black-75; }
     
     &:hover {
       background-color: mix(map-get($palette, "60"), black, 50%);
       border-color: mix(map-get($palette, "60"), black, 50%);
       box-shadow: 0 0 0 4px map-get($palette, "60");
       color: white;
+
+      .lab-icon {
+        background-color: white;
+      }
     }
     
     &:focus {
@@ -257,13 +226,18 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
       box-shadow: 0 0 0 2px map-get($palette, "20"), 0 0 0 4px map-get($palette, "60");
       border-color: mix(map-get($palette, "60"), black, 50%);
     }
+
+    .lab-icon {
+      background-color: white;
+      @if $name == "yellow" { background-color: $black-75; }
+    }
+
+    .lab-tag__right-icon--remove .lab-icon {
+      background-color: $black-75;
+    }
   }
 }
 
-
-/* Tag colorStyle: soft or intense */
-
-/* Tag colors */ 
 
 
 
