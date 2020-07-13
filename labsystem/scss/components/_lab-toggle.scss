@@ -33,6 +33,7 @@
     /* The circle that slides */
     &:before {
       position: absolute;
+      box-sizing: border-box;
       content: "";
       height: 24px;
       width: 24px;

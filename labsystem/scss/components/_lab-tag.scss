@@ -8,12 +8,12 @@ $tag-border: 2px;
 
 
 // //soft
-$tag-main-color: map-get($tag-theme, "-20");
-$tag-border-color: map-get($tag-theme, "-20");
-$tag-text-color: map-get($tag-theme, "-80");
+$tag-main-color: map-get($tag-theme, "20");
+$tag-border-color: map-get($tag-theme, "20");
+$tag-text-color: map-get($tag-theme, "80");
 $tag-hover-color: white;
-$tag-hover-shadow-color: map-get($tag-theme, "-20");
-$tag-focus-shadow-color: map-get($tag-theme, "-40");
+$tag-hover-shadow-color: map-get($tag-theme, "20");
+$tag-focus-shadow-color: map-get($tag-theme, "40");
 $tag-focus-hover-bg-color: $tag-hover-color;
 
 // intense
@@ -31,17 +31,18 @@ $tag-focus-hover-bg-color: $tag-hover-color;
   padding: 0 16px;
   font-size: $tag-font-size;
   line-height: $tag-line-heigt;
-  font-weight: 600;
+  font-weight: $weight-bold;
   border-radius: 12px;
   border: $tag-border solid;
   text-decoration: none;
   transition: all $duration-base;
   cursor: pointer;
   outline: none;
-  font-family: $font-secondary;
+  font-family: $font-primary;
   display: inline-flex;
   align-items: center;
   vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
 
   &:hover {
     box-shadow: 0 0 0 4px $tag-hover-shadow-color;
@@ -80,22 +81,22 @@ $tag-focus-hover-bg-color: $tag-hover-color;
 
   //Colors and styles
   &.tag--teal-intense {
-    border-color: map-get($teal-palette, "-60");
-    background-color: map-get($teal-palette, "-60");
+    border-color: map-get($teal-palette, "60");
+    background-color: map-get($teal-palette, "60");
     color: white;
 
     &:hover {
-      background-color: mix(map-get($teal-palette, "-60"), black, 50%);
-      border-color: mix(map-get($teal-palette, "-60"), black, 50%);
+      background-color: mix(map-get($teal-palette, "60"), black, 50%);
+      border-color: mix(map-get($teal-palette, "60"), black, 50%);
     }
 
     &:focus {
-      box-shadow: 0 0 0 2px map-get($teal-palette, "-30");
+      box-shadow: 0 0 0 2px map-get($teal-palette, "30");
     }
 
     &:focus:hover {
-      border-color: mix(map-get($teal-palette, "-60"), black, 50%);
-      box-shadow: 0 0 0 2px map-get($teal-palette, "-30"), 0 0 0 4px map-get($teal-palette, "-10");
+      border-color: mix(map-get($teal-palette, "60"), black, 50%);
+      box-shadow: 0 0 0 2px map-get($teal-palette, "30"), 0 0 0 4px map-get($teal-palette, "10");
     }
   }
 }

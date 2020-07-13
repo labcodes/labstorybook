@@ -1,0 +1,39 @@
+.type {
+  display: block;
+  padding: $spacing-04;
+  margin: $layout-06 0;
+  background-color: $mineral-10;
+  border-radius: $radius-02;
+}
+
+p.type__text {
+  margin: $spacing-02 0;
+  font-size: $font-size-8;
+  font-weight: $weight-normal;
+  line-height: 1;
+  color: $black-75;
+
+  &--meta {
+    font-family: $family-serif;
+  }
+
+  &--freight {
+    font-family: $family-sans-serif;
+  }
+
+  &--ibm-plex-mono {
+    font-family: $family-monospace;
+  }
+
+  @each $name, $size in $font-sizes {
+    &--#{$name} {
+      font-size: $size;
+    }
+  }
+
+  @each $name, $weight in $font-weights {
+    &--weight-#{$name} {
+      font-weight: $weight;
+    }
+  }
+}
