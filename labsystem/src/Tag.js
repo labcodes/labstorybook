@@ -30,28 +30,40 @@ export default class Tag extends React.Component {
   icon = () => {
     const { icon } = this.props;
     if (icon) {
-      return <span class="tag__left-icon"><Icon type={ icon } color="mineral70" /></span>
+      return (
+        <span class="lab-tag__left-icon">
+          <Icon type={ icon } color="teal70" size="petit" />
+        </span>
+      );
     }
   };
 
   thumb = () => {
     const { thumbSrc, thumbAlt } = this.props;
     if (thumbSrc && thumbAlt) {
-      return <img className="tag__thumb" src={ thumbSrc } alt={ thumbAlt } />
+      return <img className="lab-tag__thumb" src={ thumbSrc } alt={ thumbAlt } />
     }
   };
 
   dropdownIcon = () => {
     const { dropdown } = this.props;
     if (dropdown) {
-      return <span className="tag__right-icon"><Icon type="dropdown-closed" color="mineral70" /></span>
+      return (
+        <span className="lab-tag__right-icon lab-tag__right-icon--dropdown">
+          <Icon type="dropdown-closed" color="teal70" size="petit"/>
+        </span>
+      );
     }
   };
 
   removeIcon = () => {
     const { removable } = this.props;
     if (removable) {
-      return <span className="tag__right-icon tag__right-icon--remove"><Icon type="remove" color="mineral70" /></span>
+      return (
+        <span className="lab-tag__right-icon lab-tag__right-icon--remove">
+          <Icon type="remove" color="teal70" size="petit"/>
+        </span>
+      );
     }
   };
   
@@ -60,12 +72,12 @@ export default class Tag extends React.Component {
     return (
       <span 
         className={`
-          tag tag--${style} tag--${color}-${colorStyle}
-          ${icon ? "tag--has-left-icon" : ''}
-          ${thumbSrc ? "tag--has-thumb" : ''}
-          ${dropdown ? "tag--has-right-icon" : ''}
-          ${removable ? "tag--has-right-icon" : ''}
-          ${disabled ? "tag--disabled" : ''}
+          lab-tag lab-tag--${style} lab-tag--${color}-${colorStyle}
+          ${icon ? "lab-tag--has-left-icon" : ''}
+          ${thumbSrc ? "lab-tag--has-thumb" : ''}
+          ${dropdown ? "lab-tag--has-right-icon" : ''}
+          git ${removable ? "lab-tag--has-right-icon" : ''}
+          ${disabled ? "lab-tag--disabled" : ''}
         `}
       >
           { this.thumb() }

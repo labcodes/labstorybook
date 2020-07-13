@@ -7,27 +7,27 @@ $tag-background: $teal-40;
 $tag-border: 2px;
 
 
-// //soft
+// soft
 $tag-main-color: map-get($tag-theme, "20");
 $tag-border-color: map-get($tag-theme, "20");
-$tag-text-color: map-get($tag-theme, "80");
+$tag-text-color: map-get($tag-theme, "70");
 $tag-hover-color: white;
 $tag-hover-shadow-color: map-get($tag-theme, "20");
-$tag-focus-shadow-color: map-get($tag-theme, "40");
+$tag-focus-shadow-color: map-get($tag-theme, "30");
 $tag-focus-hover-bg-color: $tag-hover-color;
 
 // intense
-// $tag-intense-main-color: map-get($tag-theme, "-60");
-// $tag-intense-border-color: $tag-main-color;
-// $tag-intense-text-color: $tag-main-color;
-// $tag-intense-hover-color: mix($tag-main-color, black, 50%);
-// $tag-intense-hover-shadow-color: map-get($tag-theme, "-10");
-// $tag-intense-focus-shadow-color: map-get($tag-theme, "-30");
+$tag-intense-main-color: map-get($tag-theme, "60");
+$tag-intense-border-color: $tag-main-color;
+$tag-intense-text-color: white;
+$tag-intense-hover-color: mix($tag-intense-main-color, black, 50%);
+// $tag-intense-hover-shadow-color: map-get($tag-theme, "20");
+// $tag-intense-focus-shadow-color: map-get($tag-theme, "30");
 // $tag-intense-focus-hover-bg-color: $tag-hover-color;
 
-.tag {
+.lab-tag {
   height: 24px;
-  margin: 0 4px;
+  margin: 4px; //think if this should be here or not
   padding: 0 16px;
   font-size: $tag-font-size;
   line-height: $tag-line-heigt;
@@ -58,7 +58,7 @@ $tag-focus-hover-bg-color: $tag-hover-color;
 }
 
 /* Tag styles */
-.tag--fill {
+.lab-tag--fill {
   border-color: $tag-main-color;
   background-color: $tag-main-color;
   color: $tag-text-color;
@@ -72,7 +72,7 @@ $tag-focus-hover-bg-color: $tag-hover-color;
     border-color: $tag-focus-hover-bg-color;
   }
 
-  &.tag--disabled {
+  &.lab-tag--disabled {
     background-color: $mineral-10;
     color: $mineral-30;
     border-color: $mineral-10;
@@ -80,46 +80,40 @@ $tag-focus-hover-bg-color: $tag-hover-color;
   }
 
   //Colors and styles
-  &.tag--teal-intense {
-    border-color: map-get($teal-palette, "60");
-    background-color: map-get($teal-palette, "60");
+  &.lab-tag--teal-intense {
+    border-color: $tag-intense-main-color;
+    background-color: $tag-intense-main-color;
     color: white;
 
     &:hover {
-      background-color: mix(map-get($teal-palette, "60"), black, 50%);
-      border-color: mix(map-get($teal-palette, "60"), black, 50%);
+      background-color: $tag-intense-hover-color;
+      border-color: $tag-intense-hover-color;
     }
 
-    &:focus {
-      box-shadow: 0 0 0 2px map-get($teal-palette, "30");
-    }
-
-    &:focus:hover {
-      border-color: mix(map-get($teal-palette, "60"), black, 50%);
-      box-shadow: 0 0 0 2px map-get($teal-palette, "30"), 0 0 0 4px map-get($teal-palette, "10");
-    }
+    .lab-icon { background-color: $white; }
+    .lab-tag__right-icon--remove  .lab-icon { background-color: $tag-intense-main-color }
   }
 }
 
-.tag--outline {
+.lab-tag--outline {
   border-color: $tag-border-color;
   background-color: white;
   color: $tag-text-color;
 
-  &.tag--disabled {
+  &.lab-tag--disabled {
     color: $mineral-30;
     border-color: $mineral-10;
     pointer-events: none;
   }
 
-  &.tag--intense {
+  &.lab-tag--intense {
     color: $tag-main-color;
   }
 }
 
 
 /* Elements */
-.tag__thumb {
+.lab-tag__thumb {
   position: relative;
   left: -$tag-border;
   width: 24px;
@@ -128,32 +122,53 @@ $tag-focus-hover-bg-color: $tag-hover-color;
   margin-right: calc(#{$spacing-02} - #{$tag-border});
 }
 
-.tag__lef-icon {
-  margin-right: 8px;
+.lab-tag__left-icon {
+  display: flex;
+  margin-right: $spacing-01;
+
+  .lab-icon {
+    background-color: $tag-text-color;
+  }
 }
 
-.tag__right-icon {
-  margin-left: 8px;
+.lab-tag__right-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: $spacing-02;
   width: 16px;
   height: 16px;
+
+  .lab-icon {
+    background-color: $tag-text-color;
+  }
 
   /* Tag right icon modifier */
   &--remove {
     background-color: white;
     border-radius: 8px;
+
+    .lab-tag--outline & {
+      background-color: $tag-border-color;
+    }
+  }
+
+  /* Tag dropdown icon modifier */
+  &--dropdown {
+    padding-right: $spacing-02;
   }
 }
 
-.tag--has-thumb {
+.lab-tag--has-thumb {
   padding-left: 0;
 }
 
-.tag--has-left-icon {
-  padding-left: 8px;
+.lab-tag--has-left-icon {
+  padding-left: $spacing-01;
 }
 
-.tag--has-right-icon {
-  padding-right: 2px;
+.lab-tag--has-right-icon {
+  padding-right: calc(#{$spacing-01} - #{$tag-border});
 }
 
 // Colors
@@ -164,12 +179,12 @@ $tag-focus-hover-bg-color: $tag-hover-color;
 //   "purple": $purple-palette,
 // );
 
-// .tag--fill {
+// .lab-tag--fill {
 //     border-color: $teal;
 
 //     @each $name, $palette in $tag-main-palettes {
 //         @each $key, $color in $palette {
-//             .tag--#{$name}-intense {
+//             .lab-tag--#{$name}-intense {
 //                 color: $color;
 //             }
 //         }
