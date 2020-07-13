@@ -8,7 +8,7 @@ $tag-border: 2px;
 
 
 // soft
-$tag-main-color: map-get($tag-theme, "20");
+$tag-soft-color: map-get($tag-theme, "20");
 $tag-border-color: map-get($tag-theme, "20");
 $tag-text-color: map-get($tag-theme, "70");
 $tag-hover-color: white;
@@ -17,10 +17,10 @@ $tag-focus-shadow-color: map-get($tag-theme, "30");
 $tag-focus-hover-bg-color: $tag-hover-color;
 
 // intense
-$tag-intense-main-color: map-get($tag-theme, "60");
-$tag-intense-border-color: $tag-main-color;
+$tag-intense-color: map-get($tag-theme, "60");
+$tag-intense-border-color: $tag-intense-color;
 $tag-intense-text-color: white;
-$tag-intense-hover-color: mix($tag-intense-main-color, black, 50%);
+$tag-intense-hover-color: mix($tag-intense-color, black, 50%);
 // $tag-intense-hover-shadow-color: map-get($tag-theme, "20");
 // $tag-intense-focus-shadow-color: map-get($tag-theme, "30");
 // $tag-intense-focus-hover-bg-color: $tag-hover-color;
@@ -56,61 +56,6 @@ $tag-intense-hover-color: mix($tag-intense-main-color, black, 50%);
     box-shadow: 0 0 0 2px $tag-focus-shadow-color, 0 0 0 4px $tag-hover-shadow-color;
   }
 }
-
-/* Tag styles */
-.lab-tag--fill {
-  border-color: $tag-main-color;
-  background-color: $tag-main-color;
-  color: $tag-text-color;
-
-  &:hover {
-    background-color: $tag-hover-color;
-    border-color: $tag-hover-color;
-  }
-
-  &:focus:hover {
-    border-color: $tag-focus-hover-bg-color;
-  }
-
-  &.lab-tag--disabled {
-    background-color: $mineral-10;
-    color: $mineral-30;
-    border-color: $mineral-10;
-    pointer-events: none;
-  }
-
-  //Colors and styles
-  &.lab-tag--teal-intense {
-    border-color: $tag-intense-main-color;
-    background-color: $tag-intense-main-color;
-    color: white;
-
-    &:hover {
-      background-color: $tag-intense-hover-color;
-      border-color: $tag-intense-hover-color;
-    }
-
-    .lab-icon { background-color: $white; }
-    .lab-tag__right-icon--remove  .lab-icon { background-color: $tag-intense-main-color }
-  }
-}
-
-.lab-tag--outline {
-  border-color: $tag-border-color;
-  background-color: white;
-  color: $tag-text-color;
-
-  &.lab-tag--disabled {
-    color: $mineral-30;
-    border-color: $mineral-10;
-    pointer-events: none;
-  }
-
-  &.lab-tag--intense {
-    color: $tag-main-color;
-  }
-}
-
 
 /* Elements */
 .lab-tag__thumb {
@@ -159,6 +104,7 @@ $tag-intense-hover-color: mix($tag-intense-main-color, black, 50%);
   }
 }
 
+/* Tag with elements */
 .lab-tag--has-thumb {
   padding-left: 0;
 }
@@ -171,10 +117,160 @@ $tag-intense-hover-color: mix($tag-intense-main-color, black, 50%);
   padding-right: calc(#{$spacing-01} - #{$tag-border});
 }
 
+/* Tag styles: fill or outline */
+.lab-tag--fill {
+  border-color: $tag-soft-color;
+  background-color: $tag-soft-color;
+  color: $tag-text-color;
+
+  &:hover {
+    background-color: $tag-hover-color;
+    border-color: $tag-hover-color;
+  }
+
+  &:focus:hover {
+    border-color: $tag-focus-hover-bg-color;
+  }
+
+  &.lab-tag--disabled {
+    background-color: $mineral-10;
+    color: $mineral-30;
+    border-color: $mineral-10;
+    pointer-events: none;
+  }
+}
+
+.lab-tag--outline {
+  border-color: $tag-border-color;
+  background-color: white;
+  color: $tag-text-color;
+  
+  &.lab-tag--disabled {
+    color: $mineral-30;
+    border-color: $mineral-10;
+    pointer-events: none;
+  }
+  
+  &.lab-tag--intense {
+    color: $tag-soft-color;
+  }
+}
+
+//Tag colors and color styles
+.lab-tag--teal-soft {}
+.lab-tag--teal-intense {
+  border-color: $tag-intense-color;
+  background-color: $tag-intense-color;
+  color: white;
+
+  &:hover {
+    background-color: $tag-intense-hover-color;
+    border-color: $tag-intense-hover-color;
+  }
+
+  .lab-icon { background-color: $white; }
+  .lab-tag__right-icon--remove  .lab-icon { background-color: $tag-intense-color }
+}
+
+.lab-tag--purple-soft {}
+.lab-tag--purple-intense {}
+
+.lab-tag--mineral-soft {}
+.lab-tag--mineral-intense {}
+
+.lab-tag--green-soft {}
+.lab-tag--green-intense {}
+.lab-tag--red-soft {
+  background-color: map-get(map-get($all-colors, "red"), "20");
+  color: $black-75;
+  border-color: map-get(map-get($all-colors, "red"), "20");
+
+  &:hover {
+    background-color: white;
+    border-color: white;
+    box-shadow: 0 0 0 4px map-get(map-get($all-colors, "red"), "20");
+  }
+  
+  &:focus {
+    box-shadow: 0 0 0 2px map-get(map-get($all-colors, "red"), "60");
+  }
+
+  &:focus:hover {
+    box-shadow: 0 0 0 2px map-get(map-get($all-colors, "red"), "60"), 0 0 0 4px map-get(map-get($all-colors, "red"), "20");
+  }
+}
+
+.lab-tag--red-intense {}
+.lab-tag--yellow-soft {}
+.lab-tag--yellow-intense {}
+
+.lab-tag--cyan-soft {}
+.lab-tag--cyan-intense {}
+.lab-tag--pink-soft {}
+.lab-tag--pink-intense {}
+.lab-tag--orange-soft {}
+.lab-tag--orange-intense {}
+
+@each $name, $palette in $tag-all-colors {
+  .lab-tag--#{$name}-soft {
+    background-color: map-get($palette, "20");
+    color: $black-75;
+    border-color: map-get($palette, "20");
+
+    &:hover {
+      background-color: white;
+      border-color: white;
+      box-shadow: 0 0 0 4px map-get($palette, "20");
+    }
+    
+    &:focus {
+      box-shadow: 0 0 0 2px map-get($palette, "60");
+    }
+
+    &:focus:hover {
+      box-shadow: 0 0 0 2px map-get($palette, "60"), 0 0 0 4px map-get($palette, "20");
+    }
+  }
+
+  .lab-tag--#{$name}-intense {
+    background-color: map-get($palette, "60");
+    border-color: map-get($palette, "60");
+    color: white;
+    
+    @if $name == "yellow" {
+      color: $black-75;
+    }
+    
+    &:hover {
+      background-color: mix(map-get($palette, "60"), black, 50%);
+      border-color: mix(map-get($palette, "60"), black, 50%);
+      box-shadow: 0 0 0 4px map-get($palette, "60");
+      color: white;
+    }
+    
+    &:focus {
+      box-shadow: 0 0 0 2px map-get($palette, "60");
+      border-color: map-get($palette, "20");
+    }
+
+    &:focus:hover {
+      box-shadow: 0 0 0 2px map-get($palette, "20"), 0 0 0 4px map-get($palette, "60");
+      border-color: mix(map-get($palette, "60"), black, 50%);
+    }
+  }
+}
+
+
+/* Tag colorStyle: soft or intense */
+
+/* Tag colors */ 
+
+
+
 // Colors
 /* TEAL */
 
-// $tag-main-palettes: (
+// $tag-soft-palettes: (
 //   "teal": $teal-palette,
 //   "purple": $purple-palette,
 // );
@@ -182,7 +278,7 @@ $tag-intense-hover-color: mix($tag-intense-main-color, black, 50%);
 // .lab-tag--fill {
 //     border-color: $teal;
 
-//     @each $name, $palette in $tag-main-palettes {
+//     @each $name, $palette in $tag-soft-palettes {
 //         @each $key, $color in $palette {
 //             .lab-tag--#{$name}-intense {
 //                 color: $color;

@@ -17,6 +17,14 @@ $toggle-purple-theme: (
 );
 
 // Tags
+$tag-all-colors: (
+  "green": map-get($messages-palette, "green"),
+  "red": map-get($messages-palette, "red"),
+  "yellow": map-get($messages-palette, "yellow"),
+  "cyan": map-get($support-palette, "cyan"),
+  "pink": map-get($support-palette, "pink"),
+  "orange": map-get($support-palette, "orange"),
+);
 
 //Teal
 // $tag-main-palettes: (

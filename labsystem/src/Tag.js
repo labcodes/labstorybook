@@ -23,7 +23,7 @@ export default class Tag extends React.Component {
     thumbSrc: undefined,
     thumbAlt: undefined,
     style: "fill",
-    colorStyle: "",
+    colorStyle: "soft",
     color: "teal",
   };
 
@@ -76,7 +76,7 @@ export default class Tag extends React.Component {
           ${icon ? "lab-tag--has-left-icon" : ''}
           ${thumbSrc ? "lab-tag--has-thumb" : ''}
           ${dropdown ? "lab-tag--has-right-icon" : ''}
-          git ${removable ? "lab-tag--has-right-icon" : ''}
+          ${removable ? "lab-tag--has-right-icon" : ''}
           ${disabled ? "lab-tag--disabled" : ''}
         `}
       >
