@@ -175,8 +175,8 @@ export default class Inputs extends React.Component {
           className={`lab-input__label`}
           htmlFor={id}>{label}
         </label>
-        <p>Local value: {localValue}</p>
-        <p>Local isValid: { ""+localIsValid}</p>
+        {/* <p>Local value: {localValue}</p>
+        <p>Local isValid: { ""+localIsValid}</p> */}
       </div>
     );
   }
