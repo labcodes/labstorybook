@@ -51,7 +51,9 @@ export default class Badge extends React.Component {
   render() {
     const { type, color, size, wrapperColor } = this.props;
     return (
-      <div className={`lab-badge-wrapper lab-badge-wrapper--${wrapperColor} lab-badge-wrapper--${size}`}>
+      <div
+        className={`lab-badge-wrapper lab-badge-wrapper--${wrapperColor} lab-badge-wrapper--${size}`}
+      >
         <span
           className={`lab-badge lab-badge--${color} lab-badge--${type} lab-badge--${size}`}
         />
