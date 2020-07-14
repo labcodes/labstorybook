@@ -26,10 +26,6 @@ $icon-size: 1.5rem !default;
      }
    }
 
-  /* Size modifiers */
-  &--tiny { transform: scale(0.66666); }
-  &--small { transform: scale(0.83333); }
-
   /* Type modifiers */
   &--harvest { @include icon-position(0, 0); }
   &--star { @include icon-position(0, 1); }
@@ -61,7 +57,4 @@ $icon-size: 1.5rem !default;
     }
   }
 
-  /* Size modifiers */
-  &--tiny { transform: scale(0.66666); }
-  &--small { transform: scale(0.83333); }
 }

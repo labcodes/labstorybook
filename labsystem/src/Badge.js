@@ -41,21 +41,19 @@ export default class Badge extends React.Component {
       "purple60",
       "purple70",
     ]).isRequired,
-    size: PropTypes.oneOf(["small", "tiny"]),
   };
 
-  static defaultProps = {
-    size: undefined,
-  };
 
   render() {
-    const { type, color, size, wrapperColor } = this.props;
+    const { type, color, wrapperColor } = this.props;
     return (
       <div
-        className={`lab-badge-wrapper lab-badge-wrapper--${wrapperColor} lab-badge-wrapper--${size}`}
+        className={`lab-badge-wrapper lab-badge-wrapper--${wrapperColor}`}
       >
         <span
-          className={`lab-badge lab-badge--${color} lab-badge--${type} lab-badge--${size}`}
+          className={
+            `lab-badge lab-badge--${color} lab-badge--${type}`
+          }
         />
       </div>
     );
