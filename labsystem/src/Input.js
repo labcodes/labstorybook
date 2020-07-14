@@ -87,7 +87,7 @@ export default class Inputs extends React.Component {
     const { required } = this.props;
     return (required ? (
       <span className="lab-input__required-icon">
-          <Icon type="plus" color="white" />
+          <Icon type="star" color="white" />
       </span>
       ) : "")
   };
