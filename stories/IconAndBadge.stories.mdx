@@ -17,6 +17,8 @@ import Badge from '../labsystem/src/Badge';
 The `Icon` and `Badge` components have similar behavior.
 
 Both receive two inputs as props, where `type` indicates which symbol to show, while `color` defines its color.
+`Badge` receives an extra prop `wrapperColor`, since the background color is different from the symbol color.
+Also, the `size` option is available only for `Icon`
 
 ## Sample Icons
 Icons can be used as shown in the examples below:
@@ -34,13 +36,13 @@ Icons can be used as shown in the examples below:
 ## Sample Badges
 Badges can be used as shown in the examples below:
 
-### Harvest - Sizes
+### Harvest - Wrapper Colors
 
 <Preview>
-  <Story name="Sample Badge - Sizes">
+  <Story name="Sample Badge - Wrapper Colors">
     <Badge type='harvest' wrapperColor="teal40" color="white" />
-    <Badge type='harvest' wrapperColor="teal40" color="white" size="small" />
-    <Badge type='harvest' wrapperColor="teal40" color="white" size="tiny" />
+    <Badge type='harvest' wrapperColor="purple40" color="white" />
+    <Badge type='harvest' wrapperColor="white" color="black" />
   </Story>
 </Preview>
 
@@ -143,7 +145,7 @@ All the available Icons are shown below. You can use them with all the colors av
 
 ## Badge Colors
 
-All the available Badges and its colors are shown below:
+All the available Badges are shown below. You can use all the colors available on the design system for the props `color` and `wrapperColor`.
 
 
 ### Badge - Teal
