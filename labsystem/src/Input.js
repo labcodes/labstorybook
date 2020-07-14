@@ -86,7 +86,9 @@ export default class Inputs extends React.Component {
   requiredIcon = () => {
     const { required } = this.props;
     return (required ? (
-      <span className="lab-input__required-icon"></span>
+      <span className="lab-input__required-icon">
+          <Icon type="plus" color="white" />
+      </span>
       ) : "")
   };
   message = () => {
