@@ -117,6 +117,12 @@ $input-border-disabled: $mineral-30;
   &--suffixed {
     padding-right: $spacing-08; 
   }  
+
+   // Input element with trailing icon
+   &--icon {
+    padding-right: $spacing-07; 
+    width: 140px;
+  } 
 }
 
 // Input element invalid.
