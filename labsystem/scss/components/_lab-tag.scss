@@ -27,7 +27,6 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
   border: $tag-border solid;
   text-decoration: none;
   transition: all $duration-base;
-  cursor: pointer;
   outline: none;
   font-family: $font-primary;
   display: inline-flex;
@@ -35,24 +34,28 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
   vertical-align: middle;
   -webkit-font-smoothing: antialiased;
 
-  &:hover {
-    box-shadow: 0 0 0 4px $tag-hover-shadow-color;
-  }
-
   &:focus {
     box-shadow: 0 0 0 2px $tag-focus-shadow-color;
   }
 
-  &:focus:hover {
-    box-shadow: 0 0 0 2px $tag-focus-shadow-color, 0 0 0 4px $tag-hover-shadow-color;
-    border-color: $tag-focus-hover-bg-color;
-  }
+  &.lab-tag__chip {
+    cursor: pointer;
 
-  &.lab-tag--disabled {
-    background-color: $mineral-10;
-    color: $mineral-30;
-    border-color: $mineral-10;
-    pointer-events: none;
+    &:hover {
+      box-shadow: 0 0 0 4px $tag-hover-shadow-color;
+    }
+
+    &:focus:hover {
+      box-shadow: 0 0 0 2px $tag-focus-shadow-color, 0 0 0 4px $tag-hover-shadow-color;
+      border-color: $tag-focus-hover-bg-color;
+    }
+
+    &.lab-tag--disabled {
+      background-color: $mineral-10;
+      color: $mineral-30;
+      border-color: $mineral-10;
+      pointer-events: none;
+    }
   }
 }
 
@@ -65,14 +68,15 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
     background-color: $tag-text-color;
   }
 
-  &:hover {
-    background-color: $tag-hover-color;
-    border-color: $tag-hover-color;
+  &.chip
+    &:hover {
+      background-color: $tag-hover-color;
+      border-color: $tag-hover-color;
 
-    .lab-tag__right-icon--remove {
-      background-color: $tag-soft-color;
+      .lab-tag__right-icon--remove {
+        background-color: $tag-soft-color;
+      }
     }
-  }
 }
 
 .lab-tag__skin-intense {
@@ -141,7 +145,7 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
 }
 
 
-//Styles for soft and intense colorStyles with color from team
+//Styles for soft and intense colorStyles with color from theme
 @each $name, $palette in $tag-main-colors {
   .lab-tag--#{$name}-soft {
     background-color: map-get($palette, "20");
@@ -170,6 +174,25 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
       box-shadow: 0 0 0 2px map-get($palette, "30"), 0 0 0 4px map-get($palette, "20");
       border-color: $tag-focus-hover-bg-color;
     }
+
+    &.lab-tag--outline {
+      background-color: white;
+      color: map-get($palette, "70");
+
+      &:focus:hover {
+        border-color: map-get($palette, "20");
+      }
+
+      .lab-tag__right-icon--remove {
+        background-color: map-get($palette, "20");
+      }
+
+      &.lab-tag--disabled {
+        color: $mineral-40;
+      }
+    }
+
+    // .lab-tag .lab-tag__skin--soft .lab-tag--outline  .lag-tag-teal--soft
   }
 
   .lab-tag--#{$name}-intense {
@@ -183,6 +206,7 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
 
     .lab-tag__right-icon--remove  .lab-icon {
       background-color: $tag-intense-color;
+      @if $name == "mineral" { background-color: map-get($palette, "70"); }
     }
 
     &:hover {
@@ -198,6 +222,27 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
     &:focus:hover {
       box-shadow: 0 0 0 2px map-get($palette, "30"), 0 0 0 4px map-get($palette, "20");
       border-color: $tag-focus-hover-bg-color;
+    }
+
+    &.lab-tag--outline {
+      background-color: white;
+      color: map-get($palette, "60");
+
+      .lab-icon {
+        background-color: map-get($palette, "60");
+      }
+
+      .lab-tag__right-icon--remove {
+        background-color: map-get($palette, "20");
+      }
+
+      &:focus:hover {
+        border-color: map-get($palette, "60");
+      }
+
+      &.lab-tag--disabled {
+        color: $mineral-40;
+      }
     }
   }
 }
