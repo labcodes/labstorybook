@@ -1,7 +1,6 @@
 @mixin icon-position($left, $top) {
   -webkit-mask-position: left $icon-size*-$left top $icon-size*-$top;
   mask-position: left $icon-size*-$left top $icon-size*-$top;
-<<<<<<< HEAD
 }
 
 @mixin border-shadow($type, $color1, $color2 : none) {
@@ -17,6 +16,4 @@
   @else if $type == "focus-hover" {
     box-shadow: 0 0 0 2px $color1, 0 0 0 6px $color2;
   }
-=======
->>>>>>> b78ad56c6ad759bc58dd66dcdee6a61824546313
 }

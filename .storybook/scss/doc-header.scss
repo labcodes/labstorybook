@@ -13,10 +13,7 @@ $docs-content-margin: $docs-title-height - $content-margin-top;
   align-items: flex-end;
   height: $docs-title-height;
   background-color: $teal;
-<<<<<<< HEAD
-=======
   border-bottom-right-radius: 60px;
->>>>>>> b78ad56c6ad759bc58dd66dcdee6a61824546313
 
   div {
     width: 100%;
@@ -46,24 +43,13 @@ $docs-content-margin: $docs-title-height - $content-margin-top;
   }
 }
 
-<<<<<<< HEAD
-.docs-content--with-tab {
-  padding: 0;
-}
-
-=======
->>>>>>> b78ad56c6ad759bc58dd66dcdee6a61824546313
 .simple-tab-wrapper {
   position: absolute;
   right: 0;
   left: 0;
   height: $simple-tab-item-height;
   background-color: $teal-60;
-<<<<<<< HEAD
-  border-bottom-right-radius: 80px;
-=======
   border-bottom-right-radius: 60px;
->>>>>>> b78ad56c6ad759bc58dd66dcdee6a61824546313
 }
 
 // Tabs used for documentation. Should be later replaced by our top bar or tabs.

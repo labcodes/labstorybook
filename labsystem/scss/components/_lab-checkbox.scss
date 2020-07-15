@@ -11,7 +11,9 @@ $checkbox-bg-disabled: $mineral-20;
 
 // Wrapper div around input element. All inputs must have it.
 .lab-checkbox__box {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 24px;
   height: 24px;
   border: 2px solid $checkbox-idle-color-main;
@@ -22,11 +24,11 @@ $checkbox-bg-disabled: $mineral-20;
   margin-right: $spacing-03;
 }
 
-.lab-checkbox__icon {
-  margin-top: -2px;
-  margin-left: -2px;
-  display: none;
-}
+// .lab-icon--checkbox {
+//   margin-top: -2px;
+//   margin-left: -2px;
+//   display: none;
+// }
 
 .lab-checkbox {
   position: absolute;
