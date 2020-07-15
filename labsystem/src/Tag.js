@@ -30,6 +30,7 @@ export default class Tag extends React.Component {
     removable: undefined,
     dropdown: undefined,
     disabled: undefined,
+    chip: undefined,
   };
 
   icon = () => {
@@ -78,6 +79,7 @@ export default class Tag extends React.Component {
   removeIcon = () => {
     const { removable } = this.props;
     let returnRemoveIcon;
+
     if (removable) {
       returnRemoveIcon = (
         <span className="lab-tag__right-icon lab-tag__right-icon--remove">
@@ -90,18 +92,21 @@ export default class Tag extends React.Component {
   };
 
   chip = () => {
-    const { chip } = this.props;
+    const { chipActive, chipActiveMulti } = this.props;
     let returnChip;
 
-    if (chip) {
-      returnChip = (
-        <span colorStyle="intense"></span>
+    if (chipActive) {
+      returnChipActive = (
+        <span className={
+          `lab-tag__chip lab-tag__skin-intense`}>
+        </span>
       );
     }
 
-    if (chipMulti) {
-      returnChipMulti = (
-        <span colorStyle="intense">
+    if (chipActiveMulti) {
+      returnChipActiveMulti = (
+        <span className={
+          `lab-tag__chip lab-tag__skin-intense lab-tag--has-left-icon`}>
           <Icon type="check" color="black75" size="petit" />
         </span>
       );
@@ -121,12 +126,13 @@ export default class Tag extends React.Component {
       disabled,
       colorStyle,
       color,
-      // chip,
+      chip,
     } = this.props;
     return (
       <span
         className={
-          `lab-tag lab-tag__skin-${colorStyle}` +
+          `${chip ? ` lab-tag__chip lab-tag__skin-soft` : ` lab-tag lab-tag__skin-${colorStyle}`}` +
+          // `lab-tag lab-tag__skin-${colorStyle}` +
           `${style ? ` lab-tag--${style}` : ""}` +
           `${color ? ` lab-tag--${color}-${colorStyle}` : ""}` +
           `${icon ? ` lab-tag--has-left-icon` : ""}` +
@@ -134,7 +140,6 @@ export default class Tag extends React.Component {
           `${dropdown ? ` lab-tag--has-right-icon` : ""}` +
           `${removable ? ` lab-tag--has-right-icon` : ""}` +
           `${disabled ? " lab-tag--disabled" : ""}`
-          // `${chip ? ` lab-tag__chip-${chip} lab-tag--has-left-icon" : ""}`
         }
       >
         {this.thumb()}
