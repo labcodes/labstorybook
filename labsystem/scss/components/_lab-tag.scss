@@ -53,7 +53,7 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
   @extend .lab-tag;
   cursor: pointer;
 
-  &:hover{
+  &:hover {
     box-shadow: 0 0 0 4px $tag-hover-shadow-color;
   }
 
