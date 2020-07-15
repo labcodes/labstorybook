@@ -5,46 +5,35 @@ import Radio from '../labsystem/src/Radio';
 
 <Meta title="Components | Radio" />
 
+<div class="docs-title">
+  <div>
+    <h1 class="docs-title__text">Radio</h1>
+  </div>
+</div>
 
-<h1>Selectors</h1>
-<h2>General Usages</h2>
+<div class="docs-content">
+    <p>Radio is a type of selector that is used when we have a list of options, and only one option can be selected.
+    </p> 
+
+<h4>Anatomy</h4>
 <div class="columns">
     <div class="column">
-        <p>Radio and Checkboxes are selection controls that allows the user to select options. 
-        They should be used in situations that the user needs to decide or declare preferences by choosing options on the screen.
-        We can have these 2 types of selectors:
-        </p> 
+        <img src="docs/radio/radio-anatomy.png" />
     </div>
     <div class="column">
-        <p>
-            <strong>Radio</strong>
-            <br />
-            This type of selector is used when we have a list of options where only one option can be selected.
-        </p> 
-        <p>
-            <strong>Checkbox</strong>
-            <br />
-            This type of selector is used when we have a list of options that can be multiple selected or don't have 
-            a selected option at all.
-        </p> 
+        <br />
+        <br />
+        <ol>
+         <li>Radio border</li>
+         <li>Radio selection indicator</li>
+         <li>Hover stroke</li>
+         <li>Base container stroke</li>
+         <li>Focus stroke</li>
+        </ol> 
     </div>
 </div>
 
-<h2>Anatomy</h2>
-<div class="columns">
-    <div class="column">
-        <img src="docs/tokens-spacing/01-spacing.png" />
-    </div>
-    <div class="column">
-        <p>
-            <strong>Radio</strong>
-            <br />
-            This type of selector is used when we have a list of options where only one option can be selected.
-        </p> 
-    </div>
-</div>
-
-## Radio 
+#### Radio 
 
 
 <Preview>
@@ -56,8 +45,28 @@ import Radio from '../labsystem/src/Radio';
         <br />
         <Radio id="radio-3" label="Disabled" name="radio" disabled/>
          <br />
-        <Radio id="radio-3" label="Disabled" name="radio-disabled" checked disabled/>
+        <Radio id="radio-4" label="Disabled" name="radio-disabled" checked disabled/>
     </Fragment>
   </Story>
 </Preview>
 
+#### Behavior 
+1. Choose an option
+2. Click on it and the chosen option will be selected
+3. If another option is selected, the previous one will be deselected
+<br />
+<br />
+
+#### Styles
+Checkboxes can also be used in the purple theme
+<Preview>
+  <Story name="Styles">
+  <Fragment>
+    <Radio id="radio-5" label="Idle" name="radio2"/>
+    <br />
+    <Radio id="radio-6" label="Idle" name="radio2" />
+  </Fragment>
+  </Story>
+</Preview>
+
+</div>

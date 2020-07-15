@@ -34,22 +34,25 @@ export default class Radio extends React.Component {
   
   
     return (
-        <div className="lab-radio">
-            <input
-                type="radio"
-                id={id}
-                disabled={disabled}
-                checked={checked}
-                name={name}
-                onChange={this.handleOnChange}
-            />
-            <label
-                className={`lab-radio__label`}
-                htmlFor={id}>{label}
-            </label>
-        </div>
-      );
-    }
-  
+      <div>
+        <input
+            className={`lab-radio ${className || ""}`}
+            type="radio"
+            id={id}
+            disabled={disabled}
+            checked={checked}
+            name={name}
+            onChange={this.handleOnChange}
+        />
+        <label
+            className={`lab-radio__label`}
+            htmlFor={id}>
+            <span className='lab-radio__container'>
+            </span>
+            {label}
+        </label>
+      </div>
+    );
   }
+}
 
