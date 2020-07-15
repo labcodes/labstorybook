@@ -263,7 +263,8 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
   }
 }
 
-// Classes para intense e soft de red, green, yellow, cyan, pink, orange
+/* Get skin colors from messages & support color stacks */
+// SOFT FILL
 @each $name, $palette in $tag-all-colors {
   .lab-tag--#{$name}-soft {
     background-color: map-get($palette, "20");
@@ -290,6 +291,30 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
 
     &:focus:hover {
       box-shadow: 0 0 0 2px map-get($palette, "60"), 0 0 0 4px map-get($palette, "20");
+    }
+
+    // SOFT OUTLINE
+    &.lab-tag--outline {
+      background-color: white;
+      color: map-get($palette, "60");
+      @if $name == "yellow" { color: $mustard-60; }
+
+      .lab-icon {
+        background-color: map-get($palette, "60");
+        @if $name == "yellow" { background-color: $mustard-60; }
+      }
+
+      &:focus:hover {
+        border-color: map-get($palette, "20");
+      }
+
+      .lab-tag__right-icon--remove {
+        background-color: map-get($palette, "20");
+      }
+
+      &.lab-tag--disabled {
+        color: $mineral-40;
+      }
     }
   }
 
@@ -327,6 +352,51 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
 
     .lab-tag__right-icon--remove .lab-icon {
       background-color: $black-75;
+    }
+  // INTENSE OUTLINE
+    &.lab-tag--outline {
+      background-color: white;
+      border-color: map-get($palette, "60");
+      color: map-get($palette, "60");
+      @if $name == "yellow" { color: $mustard-60; }
+
+      .lab-icon {
+        background-color: map-get($palette, "60");
+        @if $name == "yellow" { background-color: $mustard-60; }
+      }
+
+      .lab-tag__right-icon--remove {
+        background-color: map-get($palette, "20");
+      }
+
+      &.lab-tag__chip:hover, &.lab-tag--has-right-icon:hover {
+        background-color: white;
+        border-color: map-get($palette, "60");
+        color: map-get($palette, "60");
+        box-shadow: 0 0 0 4px map-get($palette, "20");
+        @if $name == "yellow" { color: $mustard-60; }
+
+        .lab-icon {
+          background-color: map-get($palette, "60");
+          @if $name == "yellow" { background-color: $mustard-60; }
+        }
+      }
+
+      &:focus {
+        border-color: map-get($palette, "20");
+        box-shadow: 0 0 0 2px map-get($palette, "60");
+      }
+
+      &.lab-tag__chip:focus:hover, &.lab-tag--has-right-icon:focus:hover {
+        border-color: map-get($palette, "20");
+        box-shadow: 0 0 0 2px map-get($palette, "60"),
+                    0 0 0 4px map-get($palette, "20");
+      }
+
+      &.lab-tag--disabled {
+        color: $mineral-40;
+        border-color: $mineral-20;
+      }
     }
   }
 }
