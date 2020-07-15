@@ -27,6 +27,7 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
   border: $tag-border solid;
   text-decoration: none;
   transition: all $duration-base;
+  // cursor: pointer;
   outline: none;
   font-family: $font-primary;
   display: inline-flex;
@@ -38,24 +39,24 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
     box-shadow: 0 0 0 2px $tag-focus-shadow-color;
   }
 
+  &:hover {
+    box-shadow: 0 0 0 4px $tag-hover-shadow-color;
+  }
+
+  &:focus:hover {
+    box-shadow: 0 0 0 2px $tag-focus-shadow-color, 0 0 0 4px $tag-hover-shadow-color;
+    border-color: $tag-focus-hover-bg-color;
+  }
+
+  &.lab-tag--disabled {
+    background-color: $mineral-10;
+    color: $mineral-30;
+    border-color: $mineral-10;
+    pointer-events: none;
+  }
+
   &.lab-tag__chip {
     cursor: pointer;
-
-    &:hover {
-      box-shadow: 0 0 0 4px $tag-hover-shadow-color;
-    }
-
-    &:focus:hover {
-      box-shadow: 0 0 0 2px $tag-focus-shadow-color, 0 0 0 4px $tag-hover-shadow-color;
-      border-color: $tag-focus-hover-bg-color;
-    }
-
-    &.lab-tag--disabled {
-      background-color: $mineral-10;
-      color: $mineral-30;
-      border-color: $mineral-10;
-      pointer-events: none;
-    }
   }
 }
 
@@ -68,15 +69,14 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
     background-color: $tag-text-color;
   }
 
-  &.chip
-    &:hover {
-      background-color: $tag-hover-color;
-      border-color: $tag-hover-color;
+  &:hover {
+    background-color: $tag-hover-color;
+    border-color: $tag-hover-color;
 
-      .lab-tag__right-icon--remove {
-        background-color: $tag-soft-color;
-      }
+    .lab-tag__right-icon--remove {
+      background-color: $tag-soft-color;
     }
+  }
 }
 
 .lab-tag__skin-intense {
