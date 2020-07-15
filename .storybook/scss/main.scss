@@ -1,8 +1,13 @@
 @import '../../labsystem/scss/variables/all';
 
 @import 'doc-header';
+<<<<<<< HEAD
 @import 'doc-inputs';
 @import 'doc-type';
+=======
+@import 'doc-type';
+@import 'doc-color-swatches';
+>>>>>>> b78ad56c6ad759bc58dd66dcdee6a61824546313
 
 * {
   box-sizing: border-box;

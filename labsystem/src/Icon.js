@@ -71,7 +71,15 @@ export default class Icon extends React.Component {
     const { type, color, size, className } = this.props;
     return (
       <span
+<<<<<<< HEAD
         className={`lab-icon lab-icon--${type} lab-icon--${color} lab-icon--${size} ${className || ""}`}
+=======
+        className={
+          `lab-icon lab-icon--${type} lab-icon--${color}` +
+          `${size ? ` lab-icon--${size}` : ""}` +
+          `${className ? ` lab-icon--${className}` : ""}`
+        }
+>>>>>>> b78ad56c6ad759bc58dd66dcdee6a61824546313
       />
     );
   }

@@ -1,0 +1,42 @@
+version: 2.1
+jobs:
+  build:
+    # The primary container is an instance of the first image listed. The job's commands run in this container.
+    docker:
+      - image: circleci/node:lts
+
+    steps:
+      - checkout
+      - run:
+          name: Update npm
+          command: 'sudo npm install -g npm@latest'
+      - restore_cache:
+          key: labstorybook-dependency-cache-{{ checksum "package-lock.json" }}
+      - restore_cache:
+          key: labsystem-dependency-cache-{{ checksum "labsystem/package-lock.json" }}
+      - run:
+          name: Install npm labstorybook
+          command: npm install
+      - run:
+          name: Install npm labsystem
+          command: 'cd labsystem/ && npm install'
+      - run:
+          name: Run tests
+          command: 'cd labsystem/ && npm test'
+      - store_artifacts:
+          path: test-results.xml
+          prefix: tests
+      - save_cache:
+          key: labstorybook-dependency-cache-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
+      - save_cache:
+          key: labsystem-dependency-cache-{{ checksum "labsystem/package-lock.json" }}
+          paths:
+            - node_modules
+            - labsystem/node_modules
+workflows:
+  version: 2.1
+  build_and_test:
+    jobs:
+      - build
