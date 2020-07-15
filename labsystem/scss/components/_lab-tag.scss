@@ -16,10 +16,11 @@ $tag-focus-hover-bg-color: $tag-hover-color;
 $tag-intense-color: map-get($tag-theme, "60");
 $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
 
+/* variations */
 .lab-tag {
   height: 24px;
-  margin: 4px; //think if this should be here or not
-  padding: 0 16px;
+  margin: $spacing-01; //think if this should be here or not
+  padding: 0 $spacing-04;
   font-size: $tag-font-size;
   line-height: $tag-line-heigt;
   font-weight: $weight-bold;
@@ -27,7 +28,6 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
   border: $tag-border solid;
   text-decoration: none;
   transition: all $duration-base;
-  // cursor: pointer;
   outline: none;
   font-family: $font-primary;
   display: inline-flex;
@@ -38,34 +38,28 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
   &:focus {
     box-shadow: 0 0 0 2px $tag-focus-shadow-color;
   }
-}
 
-.lab-tag__skin-soft {
-  background-color: $tag-soft-color;
-  border-color: $tag-soft-color;
-  color: $tag-text-color;
-
-  .lab-icon {
-    background-color: $tag-text-color;
+//disabled for all variations
+  &.lab-tag--disabled {
+    background-color: $mineral-10;
+    color: $mineral-40;
+    border-color: $mineral-10;
+    pointer-events: none;
   }
 }
 
-.lab-tag__skin-intense {
-  border-color: $tag-intense-color;
-  background-color: $tag-intense-color;
-  color: white;
+//chip, removable & dropdown
+.lab-tag__chip, .lab-tag--has-right-icon {
+  @extend .lab-tag;
+  cursor: pointer;
 
-  .lab-icon {
-    background-color: $white;
+  &:hover{
+    box-shadow: 0 0 0 4px $tag-hover-shadow-color;
   }
 
-  .lab-tag__right-icon--remove  .lab-icon {
-    background-color: $tag-intense-color
-  }
-
-  &:hover {
-    background-color: $tag-intense-hover-color;
-    border-color: $tag-intense-hover-color;
+  &:focus:hover {
+    box-shadow: 0 0 0 2px $tag-focus-shadow-color, 0 0 0 4px $tag-hover-shadow-color;
+    border-color: $tag-focus-hover-bg-color;
   }
 }
 
@@ -111,33 +105,47 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
   padding-left: $spacing-01;
 }
 
-.lab-tag--has-right-icon {
+.lab-tag--has-right-icon { //entender como fazer pra posicionar isso
   padding-right: calc(#{$spacing-01} - #{$tag-border});
 }
 
-.lab-tag__chip, .lab-tag--has-right-icon {
-  @extend .lab-tag;
-  cursor: pointer;
-  
-  &:hover {
+/* color styles */
+.lab-tag__skin-soft {
+  background-color: $tag-soft-color;
+  border-color: $tag-soft-color;
+  color: $tag-text-color;
+
+  .lab-icon {
+    background-color: $tag-text-color;
+  }
+
+  &.lab-tag__chip:hover, &.lab-tag--has-right-icon:hover {
     background-color: $tag-hover-color;
     border-color: $tag-hover-color;
-    box-shadow: 0 0 0 4px $tag-hover-shadow-color;
-
-    &:focus:hover {
-      box-shadow: 0 0 0 2px $tag-focus-shadow-color, 0 0 0 4px $tag-hover-shadow-color;
-      border-color: $tag-focus-hover-bg-color;
-    }
-
-    &.lab-tag--disabled {
-      background-color: $mineral-10;
-      color: $mineral-30;
-      border-color: $mineral-10;
-      pointer-events: none;
-    }
 
     .lab-tag__right-icon--remove {
       background-color: $tag-soft-color;
+    }
+  }
+}
+
+.lab-tag__skin-intense {
+  border-color: $tag-intense-color;
+  background-color: $tag-intense-color;
+  color: white;
+
+  .lab-icon {
+    background-color: $white;
+  }
+
+  .lab-tag__right-icon--remove .lab-icon {
+    background-color: $tag-intense-color
+  }
+
+  .lab-tag__chip {
+    &:hover {
+      background-color: $tag-intense-hover-color;
+      border-color: $tag-intense-hover-color;
     }
   }
 }
