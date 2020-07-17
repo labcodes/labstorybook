@@ -7,7 +7,7 @@ import Tag from '../labsystem/src/Tag';
 
 <header class="docs-title docs-title--with-tab">
   <div>
-    <h1 class="docs-title__text">Tags</h1>
+    <h1 class="docs-title__text">Tag</h1>
   </div>
 </header>
 
@@ -19,34 +19,69 @@ import Tag from '../labsystem/src/Tag';
   <input class="simple-tab" type="radio" name="colors-tab" id="tab2" />
   <label for="tab2">Accessibility</label>
 </nav>
-<main>
-  <div class="simple-tab__content content1">
-    <h2>General usage</h2>
-    <div class="columns">
-      <div class="column">
-        <p>A tag is a compact component that represents an input entity, element attribute or action. It is used to bring attention to a relevant information in a compact and discrete format.</p> 
-        <p><strong>We have tags of 4 types with 2 different styles* of multiple colors of 2 distinct shades.</strong></p>
-      </div>
-      <div class="column">
-        <p><em>* Even though all types can be used accross the application, <strong>only one style can be used within the same context.</strong> Accross the application, use styles wisely in order to preserve consistancy and avoid user confusion.</em></p>
+
+<div class="simple-tab__content content1">
+  <h2>General usage</h2>
+  <div class="columns">
+    <div class="column">
+      <p>A tag is a compact component that represents an input entity, element attribute or action. It is used to bring attention to a relevant information in a compact and discrete format.</p> 
+      <p><strong>We have tags of 4 types with 2 different styles* of multiple colors of 2 distinct shades.</strong></p>
+    </div>
+    <div class="column">
+      <p><em>* Even though all types can be used accross the application, <strong>only one style can be used within the same context.</strong> Accross the application, use styles wisely in order to preserve consistancy and avoid user confusion.</em></p>
+    </div>
+  </div>
+  <h2>Anatomy</h2>
+  <div class="columns">
+    <div class="column">
+      <h5>Elements</h5>
+      <div class="columns">
+        <div class="column is-half">
+          <img src="docs/tag/anatomy.png"/>
+        </div>
+        <div class="column is-half">
+          <ol>
+            <li>Container</li>
+            <li>Left element (optional <code>icon</code> or <code>thumb</code>)</li>
+            <li>Text</li>
+            <li>Right element</li>
+          </ol>
+        </div>
       </div>
     </div>
-    <h2>Variations</h2>
+    <div class="column">
+      <h5>Borders & shadows</h5>
+      <div class="columns">
+        <div class="column is-half">
+          <img src="docs/tag/borders.png"/>
+        </div>
+        <div class="column is-half">
+          <ol>
+            <li>Border</li>
+            <li>Focus shadow</li>
+            <li>Hover shadow</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h2>Variations</h2>
+  <div>
     <div class="columns">
       <div class="column">
-        <h3>tag</h3>
-        <p>Used to indicate status, type, and other element variations. <strong>No actions are allowed for this type</strong> and focus is the only state styled.</p>
-        <p>It may use the props <code>icon</code> or <code>thumb</code>.</p>
+        <h3>Tag</h3>
+        <p>Used to indicate status, type, and other elements. <strong>No actions are allowed for this type</strong> and focus is the only state styled.</p>
+        <p>It may use the elements <code>icon</code> or <code>thumb</code>.</p>
         <span>
           <Tag>Simple tag</Tag>
           <Tag icon="calendar">Tag with icon</Tag>
-          <Tag thumbSrc="docs/tokens-spacing/10-spacing.png" thumbAlt="token image">Tag with thumb</Tag>
+          <Tag thumbSrc="docs/tokens-spacing/10-spacing.png">Tag with thumb</Tag>
         </span>
       </div>
       <div class="column">
-        <h3>dropdown</h3>
-        <p>Used to switch status, type, or other element variations represented using a tag.</p>
-        <p>It may use the props <code>icon</code>.</p>
+        <h3>Tag dropdown</h3>
+        <p>Used to switch status, type, or other variations represented using a tag.</p>
+        <p>It may use the element <code>icon</code>.</p>
         <span>
           <Tag dropdown>Label</Tag>
           <Tag dropdown icon="calendar">Label</Tag>
@@ -55,9 +90,9 @@ import Tag from '../labsystem/src/Tag';
     </div>
     <div class="columns">
       <div class="column">
-        <h3>chip</h3>
-        <p>Used to toggle actions on and off, and to represent single or multiple selection from a set.</p>
-        <p>Props are not allowed and color skin is fixed to match selection state.</p>
+        <h3>Chip</h3>
+        <p>Used to represent single or multiple selection from a set.</p>
+        <p>Other elements are not allowed and color skin is fixed to match selection state.</p>
         <div class="columns">
           <div class="column">
             <h6>Unselected chip</h6>
@@ -71,80 +106,124 @@ import Tag from '../labsystem/src/Tag';
         </div>
       </div>
       <div class="column">
-        <h3>removable</h3>
-        <p>Used as an entity of items picked from a list.</p>
+        <h3>Removable</h3>
+        <p>Used as an entity of items picked from a list, usually within a text input.</p>
         <p>It may use the props <code>icon</code> or <code>thumb</code></p>
         <h6>Idle</h6>
         <Tag removable>Label</Tag>
         <span>
-          <Tag removable>Label</Tag>
-          <Tag removable>Label</Tag>
+          <Tag removable icon="calendar">Label</Tag>
+          <Tag removable thumbSrc="docs/tokens-spacing/10-spacing.png">Label</Tag>
         </span>
       </div>
     </div>
-    <h2>Styles</h2>
-    <div class="columns">
-      <div class="column">
-        <h3>Fill (default)</h3>
-        <Tag color="mineral">Label</Tag>
-        <Tag color="mineral" icon="calendar">Label</Tag>
-        <Tag color="mineral" removable>Label</Tag>
-        <Tag color="mineral" dropdown>Label</Tag>
-        <Tag color="mineral" disabled>Label</Tag>
-      </div>
-      <div class="column">
-        <h3>Outline</h3>
-        <Tag color="mineral" style="outline">Label</Tag>
-        <Tag icon="calendar" color="mineral" style="outline">Label</Tag>
-        <Tag removable color="mineral" style="outline">Label</Tag>
-        <Tag dropdown color="mineral" style="outline">Label</Tag>
-        <Tag disabled color="mineral" style="outline">Label</Tag>
-      </div>
-    </div>
   </div>
-</main>
+</div>
 
-## Sample Tag
-Tag can be used as shown in the example below:
+## Elements
+
+<div class="columns">
+  <div class="column">
+    <h3>Icon</h3>
+    <p>Can be used to the left of simple tags, dropdown tags, and removable tags. To set use <code>lab-tag--has-left-icon</code></p>
+  </div>
+  <div class="column">
+    <h3>Thumbnail</h3>
+    <p>Can be used to the left of simple tags or removable tags. To set use <code>lab-tag--has-thumb</code></p>
+  </div>
+</div>
+
+## Styles
+- Ajustar icon & thumb
+- Remover disabled pra tag simples
+
+### Fill
+Fill is the default style.
 
 <Preview>
-  <Story name="Tag teste">
+  <Story name="Fill sample">
     <Fragment>
-      <Tag color="mineral" colorStyle="intense" style="outline">Label</Tag>
-      <Tag color="mineral" colorStyle="intense" icon="calendar" style="outline">Label</Tag>
-      <Tag color="mineral" colorStyle="intense" style="outline" removable>Label</Tag>
-      <Tag color="mineral" colorStyle="intense" style="outline" dropdown>Label</Tag>
-      <Tag color="mineral" colorStyle="intense" style="outline" disabled>Label</Tag>
-      <Tag color="mineral" style="outline">Label</Tag>
-      <Tag color="mineral" icon="calendar" style="outline">Label</Tag>
-      <Tag color="mineral" style="outline" removable>Label</Tag>
-      <Tag color="mineral" style="outline" dropdown>Label</Tag>
-      <Tag color="mineral" style="outline" disabled>Label</Tag>
+      <Tag>Tag</Tag>
+      <Tag icon="calendar">Tag with icon</Tag>
+      <Tag thumbSrc="docs/tokens-spacing/10-spacing.png">Tag with thumb</Tag>
+      <Tag dropdown>Tag dropdown</Tag>
+      <Tag removable>Removable</Tag>
     </Fragment>
   </Story>
 </Preview>
 
-
-Default tag
-(Color from theme (teal as default) and color style default soft).
+##### Disabled
+- Ajustar icon & thumb
 
 <Preview>
-  <Story name="Soft Tag">
+  <Story name="Disabled sample">
     <Fragment>
-      <Tag>Label</Tag>
-      <Tag icon="calendar">Label</Tag>
-      <Tag dropdown>Label</Tag>
-      <Tag removable>Label</Tag>
-      <Tag thumbSrc="docs/tokens-spacing/10-spacing.png" thumbAlt="token image">Label</Tag>
-      <br />
-      <Tag style="outline">Label</Tag>
-      <Tag style="outline" icon="calendar">Label</Tag>
-      <Tag dropdown style="outline">Label</Tag>
-      <Tag removable style="outline">Label</Tag>
-      <Tag style="outline" thumbSrc="docs/tokens-spacing/10-spacing.png" thumbAlt="token image">Label</Tag>
+      <Tag chip disabled>Chip disabled</Tag>
+      <Tag dropdown disabled>Tag dropdown disabled</Tag>
+      <Tag removable disabled>Removable disabled</Tag>
     </Fragment>
   </Story>
 </Preview>
+
+### Outline
+Outline style is set using the class `lab-tag--outline`
+
+- Fix outline to display without passing a color
+
+<Preview>
+  <Story name="Outline fill">
+    <Fragment>
+      <Tag style="outline">Tag</Tag>
+      <Tag style="outline" icon="calendar">Tag with icon</Tag>
+      <Tag style="outline" thumbSrc="docs/tokens-spacing/10-spacing.png">Tag with thumb</Tag>
+      <Tag style="outline" dropdown>Tag dropdown</Tag>
+      <Tag style="outline" removable>Removable</Tag>
+    </Fragment>
+  </Story>
+</Preview>
+
+##### Disabled
+- Ajustar icon & thumb
+
+<Preview>
+  <Story name="Disabled outline">
+    <Fragment>
+      <Tag style="outline" chip disabled>Chip disabled</Tag>
+      <Tag style="outline" dropdown disabled>Tag dropdown disabled</Tag>
+      <Tag style="outline" removable disabled>Removable disabled</Tag>
+    </Fragment>
+  </Story>
+</Preview>
+
+## Color
+Tag's default color is mineral, but it can also be displayed in teal, purple, mineral, green, red, yellow, orange, pink, and cyan.
+
+They also have two different skin tones, soft and intense.
+
+To set a color use `lab-tag--[color]-[skin]`
+
+The user may choose between two styles and tones as following.
+
+### Skin
+
+#### Soft
+Soft is the default skin.
+
+#### Intense
+Outline skin is set using the class `lab-tag__skin-intense"`
+
+<Preview>
+  <Story name="Intense sample">
+    <Fragment>
+      <Tag>Tag</Tag>
+      <Tag icon="calendar">Tag with icon</Tag>
+      <Tag thumbSrc="docs/tokens-spacing/10-spacing.png">Tag with thumb</Tag>
+      <Tag dropdown>Tag dropdown</Tag>
+      <Tag removable>Removable</Tag>
+    </Fragment>
+  </Story>
+</Preview>
+
 
 Default tag with intense color style
 (Color from theme (teal as default) and color style intense).
@@ -156,13 +235,13 @@ Default tag with intense color style
       <Tag colorStyle="intense" icon="calendar">Label</Tag>
       <Tag colorStyle="intense" dropdown>Label</Tag>
       <Tag colorStyle="intense" removable>Label</Tag>
-      <Tag colorStyle="intense" thumbSrc="docs/tokens-spacing/10-spacing.png" thumbAlt="token image">Label</Tag>
+      <Tag colorStyle="intense" thumbSrc="docs/tokens-spacing/10-spacing.png">Label</Tag>
       <br />
       <Tag colorStyle="intense" style="outline">Label</Tag>
       <Tag colorStyle="intense" style="outline" icon="calendar">Label</Tag>
       <Tag colorStyle="intense" dropdown style="outline">Label</Tag>
       <Tag colorStyle="intense" removable style="outline">Label</Tag>
-      <Tag colorStyle="intense" style="outline" thumbSrc="docs/tokens-spacing/10-spacing.png" thumbAlt="token image">Label</Tag>
+      <Tag colorStyle="intense" style="outline" thumbSrc="docs/tokens-spacing/10-spacing.png">Label</Tag>
     </Fragment>
   </Story>
 </Preview>
@@ -174,14 +253,11 @@ Tag can be used in the following themes:
   <Story name="Sample Tag Themes">
     <Fragment>
       <Tag color="purple" style="outline">Daniela</Tag>
-      <Tag thumbSrc="docs/tokens-spacing/10-spacing.png" thumbAlt="token image">With thumb</Tag>
+      <Tag thumbSrc="docs/tokens-spacing/10-spacing.png">With thumb</Tag>
       <Tag thumbSrc="docs/tokens-spacing/10-spacing.png" thumbAlt="">With thumb</Tag>
     </Fragment>
   </Story>
 </Preview>
-
-## Tag colors
-Tag can be used in the following themes:
 
 ### Fill
 <Preview>
@@ -329,20 +405,6 @@ Tag can be used in the following themes:
   </Story>
 </Preview>
 
-## Tag Disabled
-Togge can be disabled and, at the same time receive, a `defaultValue`:
-
-<Preview>
-  <Story name="Sample Tag Disabled">
-    <Fragment>
-      <Tag disabled>Disabled fill soft</Tag>
-      <Tag disabled>Disabled outline soft</Tag>
-      <Tag colorStyle="intense" disabled>Disabled fill Intense</Tag>
-      <Tag colorStyle="intense" disabled>Disabled outline intense</Tag>
-    </Fragment>
-  </Story>
-</Preview>
-
 ## Prop API docs
 
 Here's the list of props based on the component's prop types definitions.
@@ -357,14 +419,12 @@ Dúvidas
 - Dentro das {} tem ou não espaço?
 - Queremos um guideline de react
 
-Todos
-- Ajeitar ícone 
-- Mostrar erro quando passa na thumb src sem alt
+To dos
 - Estados aberto/fechado pra dropdowns
-- Estados selecionado/idle pra chips
+- Estados selecionado/idle pra chips (single e multi)
 - tooltip pra removable chips e pra texto longo elipsado
+- Entender como estilizar as classes. Usa como no scss ou como no story? :thinking:
 
-tag
-- simples sem interação. com ícone ou thumb de elemento
-- dropdowns. com ícone de elemento
-- removable. com ícone ou thumb de elemnto
+Decisions:
+- Removed thumb alt since the tag itself should be descriptive.
+- O default ficou mineral mesmo

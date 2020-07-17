@@ -5,17 +5,16 @@ import Icon from "./Icon";
 export default class Tag extends React.Component {
   static propTypes = {
     children: PropTypes.element,
-    type: PropTypes.string,
+    chip: PropTypes.string,
+    dropdown: PropTypes.string,
+    removable: PropTypes.string,
+    disabled: PropTypes.string,
     icon: PropTypes.string,
     thumbSrc: PropTypes.string,
     thumbAlt: PropTypes.string,
     style: PropTypes.string,
     colorStyle: PropTypes.string,
     color: PropTypes.string,
-    removable: PropTypes.string,
-    dropdown: PropTypes.string,
-    disabled: PropTypes.string,
-    chip: PropTypes.string,
   };
 
   static defaultProps = {
@@ -23,7 +22,6 @@ export default class Tag extends React.Component {
     type: undefined,
     icon: undefined,
     thumbSrc: undefined,
-    thumbAlt: undefined,
     style: "",
     colorStyle: "soft",
     color: "",
@@ -52,9 +50,9 @@ export default class Tag extends React.Component {
     const { thumbSrc, thumbAlt } = this.props;
     let returnThumb;
 
-    if (thumbSrc && thumbAlt) {
+    if (thumbSrc) {
       returnThumb = (
-        <img className="lab-tag__thumb" src={thumbSrc} alt={thumbAlt} />
+        <img className="lab-tag__thumb" src={thumbSrc}/>
       );
     }
 
@@ -117,29 +115,28 @@ export default class Tag extends React.Component {
 
   render() {
     const {
-      icon,
       children,
-      thumbSrc,
-      style,
+      chip,
       dropdown,
       removable,
       disabled,
+      icon,
+      thumbSrc,
+      style,
       colorStyle,
       color,
-      chip,
     } = this.props;
     return (
       <span
         className={
           `${chip ? ` lab-tag__chip lab-tag__skin-soft` : ` lab-tag lab-tag__skin-${colorStyle}`}` +
-          // `lab-tag lab-tag__skin-${colorStyle}` +
+          `${removable ? ` lab-tag--has-right-icon` : ""}` +
+          `${dropdown ? ` lab-tag--has-right-icon` : ""}` +
+          `${disabled ? " lab-tag--disabled" : ""}` +
           `${style ? ` lab-tag--${style}` : ""}` +
           `${color ? ` lab-tag--${color}-${colorStyle}` : ""}` +
           `${icon ? ` lab-tag--has-left-icon` : ""}` +
-          `${thumbSrc ? ` lab-tag--has-thumb` : ""}` +
-          `${dropdown ? ` lab-tag--has-right-icon` : ""}` +
-          `${removable ? ` lab-tag--has-right-icon` : ""}` +
-          `${disabled ? " lab-tag--disabled" : ""}`
+          `${thumbSrc ? ` lab-tag--has-thumb` : ""}`
         }
       >
         {this.thumb()}
