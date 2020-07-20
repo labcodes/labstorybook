@@ -94,7 +94,7 @@ input:focus + svg {
     font-family: "freight-sans-pro" !important;
     font-size: 16px !important;
 
-    .css-g90fw7 {
+    .simplebar-content__text {
       font-weight: 600 !important;
     }
   }
@@ -106,18 +106,18 @@ The classes below didn't have a defined name.
 */
 
 //button
-.css-zrsa9l {
+.sidebar__more-actions-button {
   color: #007B7D !important;
   box-shadow: #007B7D 0 0 0 1px inset !important;
 }
 
 //dropdown chevron
-.css-10xy9do {
+.sidebar__dropdown-chevron {
   border-bottom-color: #009EA1 !important;
 }
 
 //dropdown container
-.css-5kfycg {
+.sidebar__dropdown-container {
   max-height: none !important;
   border-radius: 4px !important;
   padding: 8px 0;
@@ -125,7 +125,7 @@ The classes below didn't have a defined name.
 }
 
 //dropdown item
-.css-qab6xu {
+.sidebar__dropdown-item {
   background: #009EA1 !important;
   font-family: "freight-sans-pro" !important;
   font-size: 14px !important;
@@ -133,17 +133,17 @@ The classes below didn't have a defined name.
 }
 
 //dropdown item text
-.css-w5ik8{
+.sidebar__dropdown-text {
   font-weight: 500 !important;
   color: white !important;
 }
 
 //dropdown item icon
-.css-8w7sok {
+.sidebar__dropdown-item-icon {
   color: white !important;
 }
 
 //dropdown item shortcut
-.css-1g2a4s1 {
+.sidebar__dropdown-item-shortcut {
   color: white !important;
 }
