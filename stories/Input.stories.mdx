@@ -59,7 +59,6 @@ It’s a default input that is required to be filled. It has a helper message to
     <Fragment>
       <h6>Required Default</h6>
       <Input type="text" id="required" label= "Label" helpMessage="Help message" required />
-      
       <h6>Required Error</h6>
       <Input type="email" id="required2" label= "Required" isValid={false} helpMessage="Help message" customErrorMsg="teste" required />
     </Fragment>
@@ -74,13 +73,11 @@ It’s a text field input + fixed prefix.
   <Story name="Prefix Input">
     <Fragment>
       <h6>Prefix Disabled</h6>
-      <Input className="lab-input__field--prefixed" id="prefix" label="Label" prefix="R$" disabled />
+      <Input className="lab-input__field--prefixed" id="prefix" label="Label" prefix="Raaaa" disabled />
       <br />
-      
       <h6>Prefix Default</h6>
-      <Input className="lab-input__field--prefixed" id="help" label="Label" prefix="R$" />
+      <Input className="lab-input__field--prefixed" id="help" label="Label" prefix="aaaaaa$" />
       <br />
-      
       <h6>Prefix Error</h6>
       <Input
         className="lab-input__field--prefixed"
@@ -89,7 +86,7 @@ It’s a text field input + fixed prefix.
         defaultValue="Error"
         label="Label"
         prefix="R$"
-        isValid={false} 
+        isValid={false}
         customErrorMsg="Error message"
       />
     </Fragment>
@@ -106,21 +103,19 @@ It’s a text field input + fixed suffix.
       <h6>Suffix Disabled</h6>
       <Input className="lab-input__field--suffixed" id="suffix" label="Label" suffix=".com" disabled />
       <br/>
-      
       <h6>Suffix Default</h6>
       <Input className="lab-input__field--suffixed" id="address" label="Label" suffix=".com" />
       <br />
-      
       <h6>Suffix Error</h6>
-      <Input 
-        className="lab-input__field--suffixed" 
-        type="email" 
-        id="suffix-error" 
-        label="Label" 
-        defaultValue="Error" 
+      <Input
+        className="lab-input__field--suffixed"
+        type="email"
+        id="suffix-error"
+        label="Label"
+        defaultValue="Error"
         suffix=".com"
-        isValid={false} 
-        customErrorMsg="Error message" 
+        isValid={false}
+        customErrorMsg="Error message"
       />
     </Fragment>
   </Story>
@@ -166,7 +161,7 @@ For text inputs, you can also use purple theme. Error state remain with the same
     <h6>Default</h6>
       <Input className="lab-input__field--purple" defaultValue="Purple" id="purple1" label="Label" />
     <h6>Required Default</h6>
-      <Input className="lab-input__field--purple" id="purple2" label= "Label" defaultValue="Purple" 
+      <Input className="lab-input__field--purple" id="purple2" label= "Label" defaultValue="Purple"
       helpMessage="Help message" required />
     <h6>Prefix Default</h6>
       <Input className="lab-input__field--purple lab-input__field--prefixed-purple" defaultValue="Purple"
