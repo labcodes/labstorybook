@@ -49,7 +49,7 @@ export default class Inputs extends React.Component {
     if (!isUndefined(defaultValue) && !isUndefined(value)) {
       // eslint-disable-next-line no-console
       console.warn(
-        `You are setting both value and defaultValue for input ${name} at the same time. We always initialize the toggle with defaultValue. Make sure this is the behaviour you want.`
+        `You are setting both value and defaultValue for input ${id} at the same time. We always initialize the toggle with defaultValue. Make sure this is the behaviour you want.`
       );
     }
     this.state = {
@@ -76,7 +76,7 @@ export default class Inputs extends React.Component {
   trailingIcon = () => {
     const { icon, iconColor } = this.props;
     return icon ? (
-      <button className="lab-input__icon">
+      <button type="button" className="lab-input__icon">
         <Icon type={icon} color={iconColor} />
       </button>
     ) : (
@@ -170,30 +170,29 @@ export default class Inputs extends React.Component {
 
     return (
       <div className="lab-input">
-        <div className="lab-input__input-wrapper">
+        {this.prefixArea()}
+        <input
+          className={`lab-input__field ${className || ""}`}
+          id={id}
+          type={type}
+          placeholder=" "
+          disabled={disabled}
+          defaultValue={localValue}
+          value={value}
+          ref={this.inputRef}
+          onChange={this.handleOnChange}
+          {...rest}
+        />
+        <div className="lab-input__borders" />
+        <div className="lab-input__label-wrapper">
           {this.prefixArea()}
-          <input
-            className={`lab-input__field ${className || ""}`}
-            id={id}
-            type={type}
-            placeholder=" "
-            disabled={disabled}
-            defaultValue={localValue}
-            value={value}
-            ref={this.inputRef}
-            onChange={this.handleOnChange}
-            {...rest}
-          />
-          {this.trailingIcon()}
-          {this.suffixArea()}
-          {this.requiredIcon()}
-          <div className="lab-input__label-wrapper">
-            {this.prefixArea()}
-            <label className="lab-input__label" htmlFor={id}>
-              {label}
-            </label>
-          </div>
+          <label className="lab-input__label" htmlFor={id}>
+            {label}
+          </label>
         </div>
+        {this.trailingIcon()}
+        {this.suffixArea()}
+        {this.requiredIcon()}
         {this.message()}
       </div>
     );

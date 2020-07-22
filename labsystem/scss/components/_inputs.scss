@@ -21,9 +21,6 @@ $radius-02: 4px;
 
 $input-internal-spacing: 2px;
 
-//Theme
-
-
 $input-border-unfilled-idle: $mineral-40;
 $input-text-color: map-get($input-theme, "60");
 $input-border-filled-idle: map-get($input-theme, "40");
@@ -44,186 +41,161 @@ $input-border-disabled: $mineral-30;
 
 
 
+$input-height: 40px;
+$input-padding: 10px;
 
-// Wrapper div around input element. All inputs must have it.
+// Wrapper div around everything.
 .lab-input {
   position: relative;
-  width: fit-content;
-  width: -moz-fit-content;
-  margin-top: $spacing-03;
+  width: 100%;
+  max-width: 240px;
 }
 
-// Input element
+//Input tag
 .lab-input__field {
-  box-sizing: border-box;
-  display: inline-block;
-  min-width: 160px;
-  height: 40px;
-  padding: 0;
-  margin: 0;
   font-family: $font-primary;
   font-weight: 500;
   font-size: 16px;
   color: $black-75;
-  text-indent: $spacing-03;
-  text-overflow: clip;
+  border: none;
+  outline: none;
+  height: $input-height;
+  padding: 0 $input-padding;
+  margin: 0;
+  width: 100%;
+  background-color: white;
+
+  &:invalid {
+    background-color: $input-background-invalid;
+  }
+}
+
+// Changees visual according to inputs states
+.lab-input__borders {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: $input-height;
   border: $border-01 $input-border-unfilled-idle;
   border-radius: $radius-02;
-  outline: none;
+  pointer-events: none;
   transition: border $duration-base ease, box-shadow $duration-base ease;
-
-  &::placeholder {
-    color: $black-50;
-  }
-
-  &:hover {
-    @include border-shadow(hover, $input-shadow-unfilled-hover);
-  }
-
-  &:focus,
-  &:not(:placeholder-shown):focus {
-    border: 2px solid $input-border-filled-focus;
-    outline: none;
-    @include border-shadow(focus, $input-shadow-filled-focus);
-  }
-
-  &:not(:placeholder-shown):hover:focus {
-    border: 2px solid $input-border-filled-focus-hover;
-    @include border-shadow(focus-hover, $input-shadow-filled-focus, $input-shadow-filled-hover);
-  }
-
-  &:not(:placeholder-shown) {
+  
+  .lab-input__field:not(:placeholder-shown) + & {
     border-color: $input-border-filled-idle;
   }
 
-  &:not(:placeholder-shown):hover {
+  .lab-input__field:hover + & {
+    @include border-shadow(hover, $input-shadow-unfilled-hover);
+  }
+
+  .lab-input__field:not(:placeholder-shown):hover + & {
     @include border-shadow(hover, $input-shadow-filled-hover);
   }
 
-  &:disabled,
-  &:disabled:hover {
+  .lab-input__field:focus + &,
+  .lab-input__field:not(:placeholder-shown):focus + & {
+    @include border-shadow(focus, $input-shadow-filled-focus);
+    border: 2px solid $input-border-filled-focus;
+    outline: none;
+  }
+  
+  .lab-input__field:not(:placeholder-shown):hover:focus + & {
+    border: 2px solid $input-border-filled-focus-hover;
+    @include border-shadow(focus-hover, $input-shadow-filled-focus, $input-shadow-filled-hover);
+  }
+  
+  .lab-input__field:disabled + & {
     color: $black-75;
     background-color: $mineral-10;
     border: $border-01 $input-border-disabled;
     box-shadow: none;
   }
 
-  // Input element with suffix
-  &--suffixed {
-    padding-right: $spacing-08;
+  .lab-input__field:invalid + & {
+    color: $input-main-invalid;
+    border-color: $input-main-invalid;
   }
-
-   // Input element with trailing icon
-   &--icon {
-    padding-right: $spacing-07;
-    width: 140px;
-  }
-}
-
-// Input element invalid.
-.lab-input__field:invalid {
-  color: $input-main-invalid;
-  background-color: $input-background-invalid;
-  border-color: $input-main-invalid;
-
-  &:focus,
-  &:not(:placeholder-shown):focus {
+  
+  .lab-input__field:invalid:focus + &,
+  .lab-input__field:invalid:not(:placeholder-shown):focus + & {
+    @include border-shadow(focus, $input-shadow-invalid-focus);
     border: $border-01 $input-main-invalid;
     outline: none;
-    @include border-shadow(focus, $input-shadow-invalid-focus);
   }
-
-  &:hover:focus {
-    border: $border-01 $input-main-invalid;
+  
+  .lab-input__field:invalid:hover:focus + & {
     @include border-shadow(focus-hover, $input-shadow-invalid-focus, $input-background-invalid);
+    border: $border-01 $input-main-invalid;
   }
-
-  &:hover {
+  
+  .lab-input__field:invalid:hover + & {
     @include border-shadow(hover, $input-background-invalid);
   }
 }
 
-.lab-input__label-wrapper,
-.lab-input__input-wrapper {
-  display: flex;
-}
-
 .lab-input__label-wrapper {
+  display: flex;
   position: absolute;
-  top: 0;
+  top: 10px;
+  left: 0;
   pointer-events: none;
   align-items: center;
   transition: $duration-slow all;
 
-  .lab-input__prefix {
-    opacity: 0;
-    width: 100%;
-    max-width: 100%;
-    transition: $duration-slow all;
+  .lab-input__field:focus ~ &,
+  .lab-input__field:not(:placeholder-shown) ~ & {
+    top: -$spacing-03;
+    left: $spacing-02;
+
+    .lab-input__label {
+      padding: 2px;
+      font-size: 12px;
+      color: $input-text-color;
+      margin-left: 0;
+      background-color: $white;
+    }
   }
 
-  .lab-input__label {
-    transition: $duration-slow all;
+  .lab-input__field:not(:placeholder-shown):invalid ~ & {
+    .lab-input__label {
+      color: $input-main-invalid;
+      background: rgb(255,255,255),;
+      background: linear-gradient(360deg, rgba(255,255,255,0) 30%, rgba(255,255,255,1) 30%);
+    }
   }
+
+  // .lab-input__field:not(:placeholder-shown) ~ &,
+  // .lab-input__field:focus ~ & {
+  //   padding: 2px;
+  //   width: auto;
+  //   font-size: 12px;
+  //   color: $input-text-color;
+  //   background-color: $white;
+  // }
+
+  // .lab-input__field--prefixed:not(:placeholder-shown) ~ &,
+  // .lab-input__field--prefixed:focus ~ & {
+  //   background: rgb(255,255,255),;
+  //   background: linear-gradient(360deg, rgba(255,255,255,0) 32%, rgba(255,255,255,1) 32%);
+  // }
 }
 
-.lab-input__field:focus ~ .lab-input__label-wrapper,
-.lab-input__field:not(:placeholder-shown) ~ .lab-input__label-wrapper {
-  top: -$spacing-03;
-  left: $spacing-02;
-
-  .lab-input__prefix {
-    line-height: 0;
-    height: 0;
-    max-width: 0;
-    padding: 0;
-    overflow: hidden;
-  }
-
-  .lab-input__label {
-    padding: 2px;
-    font-size: 12px;
-    color: $input-text-color;
-    background-color: $white;
-  }
-}
-
-// Label
 .lab-input__label {
   z-index: 1;
   font-family: $font-primary;
   font-weight: 500;
   font-size: 16px;
-  line-height: 1;
   color: $black-75;
-  cursor: text;
-  padding-left: 14px;
-
-  .lab-input__field:not(:placeholder-shown):invalid ~ &,
-  .lab-input__field:invalid:focus ~ & {
-    width: auto;
-    padding: 2px;
-    font-size: 12px;
-    color: $input-main-invalid;
-    background: rgb(255,255,255),;
-    background: linear-gradient(360deg, rgba(255,255,255,0) 32%, rgba(255,255,255,1) 32%);
-  }
-
-  .lab-input__field:not(:placeholder-shown) ~ &,
-  .lab-input__field:focus ~ & {
-    padding: 2px;
-    width: auto;
-    font-size: 12px;
-    color: $input-text-color;
-    background-color: $white;
-  }
-
-  .lab-input__field--prefixed:not(:placeholder-shown) ~ &,
-  .lab-input__field--prefixed:focus ~ & {
-    background: rgb(255,255,255),;
-    background: linear-gradient(360deg, rgba(255,255,255,0) 32%, rgba(255,255,255,1) 32%);
-  }
+  margin-left: $input-padding;
+  transition: $duration-slow all;
 }
+
+
+
+//------------------------------------
+
 
 // Icon that goes inside the field
 .lab-input__icon {
@@ -235,50 +207,50 @@ $input-border-disabled: $mineral-30;
   height: 24px;
   padding: 0px;
   border: none;
-  background-color: transparent;
+  background-color: red;
 }
 
-// Required icon
-// The icon color change according to it's input state.
-.lab-input__required-icon {
-  position: absolute;
-  top: -$spacing-02;
-  right: -$spacing-02;
-  z-index: 1;
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  background-color: $mineral-40;
-  border-radius: 24px;
+// // Required icon
+// // The icon color change according to it's input state.
+// .lab-input__required-icon {
+//   position: absolute;
+//   top: -$spacing-02;
+//   right: -$spacing-02;
+//   z-index: 1;
+//   display: inline-block;
+//   width: 24px;
+//   height: 24px;
+//   background-color: $mineral-40;
+//   border-radius: 24px;
 
-  // Input not filled focused
-  .lab-input__field:focus ~ & {
-    background-color: $input-border-filled-focus;
-  }
+//   // Input not filled focused
+//   .lab-input__field:focus ~ & {
+//     background-color: $input-border-filled-focus;
+//   }
 
-  // Input filled idle
-  .lab-input__field:not(:placeholder-shown) ~ & {
-    background-color: $input-border-filled-idle;
-  }
+//   // Input filled idle
+//   .lab-input__field:not(:placeholder-shown) ~ & {
+//     background-color: $input-border-filled-idle;
+//   }
 
-  // Input filled invalid on all states
-  .lab-input__field:invalid ~ &,
-  .lab-input__field:not(:placeholder-shown):invalid:hover ~ &,
-  .lab-input__field:not(:placeholder-shown):invalid:focus ~ &,
-  .lab-input__field:not(:placeholder-shown):invalid:focus:hover ~ & {
-    background-color: $input-main-invalid;
-  }
+//   // Input filled invalid on all states
+//   .lab-input__field:invalid ~ &,
+//   .lab-input__field:not(:placeholder-shown):invalid:hover ~ &,
+//   .lab-input__field:not(:placeholder-shown):invalid:focus ~ &,
+//   .lab-input__field:not(:placeholder-shown):invalid:focus:hover ~ & {
+//     background-color: $input-main-invalid;
+//   }
 
-  // Input filled focus
-  .lab-input__field:not(:placeholder-shown):focus ~ & {
-    background-color: $input-border-filled-focus;
-  }
+//   // Input filled focus
+//   .lab-input__field:not(:placeholder-shown):focus ~ & {
+//     background-color: $input-border-filled-focus;
+//   }
 
-  // Input filled focus hover
-  .lab-input__field:not(:placeholder-shown):focus:hover ~ & {
-    background-color: $input-border-filled-focus-hover;
-  }
-}
+//   // Input filled focus hover
+//   .lab-input__field:not(:placeholder-shown):focus:hover ~ & {
+//     background-color: $input-border-filled-focus-hover;
+//   }
+// }
 
 // Input message
 .lab-input__message {
@@ -311,74 +283,74 @@ $input-border-disabled: $mineral-30;
   }
 }
 
-// Prefix
-.lab-input__prefix {
-  z-index: 1;
-  display: inline-block;
-  height: 36px;
-  padding: 0 $spacing-03;
-  font-family: $font-primary;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 36px;
-  text-align: center;
-  pointer-events: none;
-  background-color: $mineral-10;
-  border-radius: $radius-01;
+// // Prefix
+// .lab-input__prefix {
+//   z-index: 1;
+//   display: inline-block;
+//   height: 36px;
+//   padding: 0 $spacing-03;
+//   font-family: $font-primary;
+//   font-weight: 500;
+//   font-size: 16px;
+//   line-height: 36px;
+//   text-align: center;
+//   pointer-events: none;
+//   background-color: $mineral-10;
+//   border-radius: $radius-01;
 
-  .lab-input__field--prefixed:focus + &  {
-    background-color: $input-background-prefix-filled;
-  }
+//   .lab-input__field--prefixed:focus + &  {
+//     background-color: $input-background-prefix-filled;
+//   }
 
-  .lab-input__field--prefixed:not(:placeholder-shown) + & {
-    background-color: $input-background-prefix-filled;
-  }
+//   .lab-input__field--prefixed:not(:placeholder-shown) + & {
+//     background-color: $input-background-prefix-filled;
+//   }
 
-  .lab-input__field--prefixed:disabled + & {
-    background-color: $mineral-20;
-    color: $black-50;
-  }
+//   .lab-input__field--prefixed:disabled + & {
+//     background-color: $mineral-20;
+//     color: $black-50;
+//   }
 
-  .lab-input__field--prefixed:invalid + & {
-    background-color: $input-background-invalid-prefix;
-    color: $input-main-invalid;
-  }
-}
+//   .lab-input__field--prefixed:invalid + & {
+//     background-color: $input-background-invalid-prefix;
+//     color: $input-main-invalid;
+//   }
+// }
 
-// Sufix
-.lab-input__suffix {
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  bottom: 2px;
-  z-index: 1;
-  display: inline-block;
-  height: 36px;
-  padding: 0 $spacing-02;
-  font-family: $font-primary;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 36px;
-  text-align: center;
-  pointer-events: none;
-  background-color: $mineral-10;
-  border-radius: $radius-01;
+// // Sufix
+// .lab-input__suffix {
+//   position: absolute;
+//   top: 2px;
+//   right: 2px;
+//   bottom: 2px;
+//   z-index: 1;
+//   display: inline-block;
+//   height: 36px;
+//   padding: 0 $spacing-02;
+//   font-family: $font-primary;
+//   font-size: 16px;
+//   font-weight: 500;
+//   line-height: 36px;
+//   text-align: center;
+//   pointer-events: none;
+//   background-color: $mineral-10;
+//   border-radius: $radius-01;
 
-  .lab-input__field--suffixed:focus + &  {
-    background-color: $input-background-prefix-filled;
-  }
+//   .lab-input__field--suffixed:focus + &  {
+//     background-color: $input-background-prefix-filled;
+//   }
 
-  .lab-input__field--suffixed:not(:placeholder-shown) + & {
-    background-color: $input-background-prefix-filled;
-  }
+//   .lab-input__field--suffixed:not(:placeholder-shown) + & {
+//     background-color: $input-background-prefix-filled;
+//   }
 
-  .lab-input__field--suffixed:disabled + & {
-    color: $black-50;
-    background-color: $mineral-20;
-  }
+//   .lab-input__field--suffixed:disabled + & {
+//     color: $black-50;
+//     background-color: $mineral-20;
+//   }
 
-  .lab-input__field--suffixed:invalid + & {
-    color: $input-main-invalid;
-    background-color: $input-background-invalid-prefix;
-  }
-}
+//   .lab-input__field--suffixed:invalid + & {
+//     color: $input-main-invalid;
+//     background-color: $input-background-invalid-prefix;
+//   }
+// }
