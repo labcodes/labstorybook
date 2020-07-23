@@ -186,8 +186,10 @@ $input-padding: 10px;
 
   .lab-input__field--prefixed:not(:placeholder-shown) ~ &,
   .lab-input__field--prefixed:focus ~ & {
-    background: rgb(255,255,255),;
-    background: linear-gradient(360deg, rgba(255,255,255,0) 32%, rgba(255,255,255,1) 32%);
+    .lab-input__label {
+      background: rgb(255,255,255),;
+      background: linear-gradient(360deg, rgba(255,255,255,0) 30%, rgba(255,255,255,1) 30%);
+    }
   }
 }
 
