@@ -1,7 +1,7 @@
 @use 'sass:map';
 
-/* For being able to do the input animation in CSS, 
-we used the placeholder only as a indicator of the field status, and it 
+/* For being able to do the input animation in CSS,
+we used the placeholder only as a indicator of the field status, and it
 must remain always blank.
 For the animation to work, we use the label as a placeholder, and
 change it position depending on the pseudo-classe state.
@@ -21,9 +21,6 @@ $radius-02: 4px;
 
 $input-internal-spacing: 2px;
 
-//Theme
-
-
 $input-border-unfilled-idle: $mineral-40;
 $input-text-color: map-get($input-theme, "60");
 $input-border-filled-idle: map-get($input-theme, "60");
@@ -34,163 +31,179 @@ $input-background-prefix-filled: map-get($input-theme, "10");
 $input-shadow-unfilled-hover: $mineral-10;
 $input-shadow-filled-hover: map-get($input-theme, "10");
 $input-shadow-filled-focus: map-get($input-theme, "30");
-$input-shadow-invalid-focus: $coral-20; 
+$input-shadow-invalid-focus: $coral-20;
 
 $input-main-invalid: $red-60;
 $input-background-invalid: $coral-10;
-$input-background-invalid-prefix: $coral-20; 
+$input-background-invalid-prefix: $coral-20;
 
 $input-border-disabled: $mineral-30;
 
 
 
+$input-height: 40px;
+$input-padding: 10px;
 
-// Wrapper div around input element. All inputs must have it.
+// Wrapper div around everything.
 .lab-input {
   position: relative;
-  width:fit-content;
-  width: -moz-fit-content;
-  margin-top: $spacing-03;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 240px;
 }
 
-// Input element
+//Input tag
 .lab-input__field {
-  box-sizing: border-box;
-  display: inline-block;
-  min-width: 160px;
-  height: 40px;
-  padding: 0;
-  margin: 0;
   font-family: $font-primary;
   font-weight: 500;
   font-size: 16px;
   color: $black-75;
-  text-indent: $spacing-03;
-  text-overflow: clip;
+  border: none;
+  outline: none;
+  height: $input-height;
+  padding: 0 $input-padding;
+  margin: 0;
+  width: 100%;
+
+  &:invalid {
+    background-color: $input-background-invalid;
+  }
+}
+
+// Changees visual according to inputs states
+.lab-input__borders {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: $input-height;
   border: $border-01 $input-border-unfilled-idle;
   border-radius: $radius-02;
-  outline: none;
+  pointer-events: none;
   transition: border $duration-base ease, box-shadow $duration-base ease;
-
-  &::placeholder {
-    color: $black-50;
+  
+  .lab-input__field:not(:placeholder-shown) + & {
+    border-color: $input-border-filled-idle;
   }
 
-  &:hover {
+  .lab-input__field:hover + & {
     @include border-shadow(hover, $input-shadow-unfilled-hover);
   }
-  
-  &:focus,
-  &:not(:placeholder-shown):focus {
+
+  .lab-input__field:not(:placeholder-shown):hover + & {
+    @include border-shadow(hover, $input-shadow-filled-hover);
+  }
+
+  .lab-input__field:focus + &,
+  .lab-input__field:not(:placeholder-shown):focus + & {
+    @include border-shadow(focus, $input-shadow-filled-focus);
     border: 2px solid $input-border-filled-focus;
     outline: none;
-    @include border-shadow(focus, $input-shadow-filled-focus);
   }
   
-  &:not(:placeholder-shown):hover:focus {
+  .lab-input__field:not(:placeholder-shown):hover:focus + & {
     border: 2px solid $input-border-filled-focus-hover;
     @include border-shadow(focus-hover, $input-shadow-filled-focus, $input-shadow-filled-hover);
   }
   
-  &:not(:placeholder-shown) {
-    border-color: $input-border-filled-idle;
-  }
-  
-  &:not(:placeholder-shown):hover {
-    @include border-shadow(hover, $input-shadow-filled-hover);
-  }
-
-  &:disabled, 
-  &:disabled:hover {
+  .lab-input__field:disabled + & {
     color: $black-75;
     background-color: $mineral-10;
     border: $border-01 $input-border-disabled;
     box-shadow: none;
   }
-  
-  // Input element with prefix
-  &--prefixed {
-    padding-left: $spacing-08;
-  }  
-  
-  // Input element with suffix
-  &--suffixed {
-    padding-right: $spacing-08; 
-  }  
 
-   // Input element with trailing icon
-   &--icon {
-    padding-right: $spacing-07; 
-    width: 140px;
-  } 
-}
-
-// Input element invalid.
-.lab-input__field:invalid {
-  color: $input-main-invalid;
-  background-color: $input-background-invalid;
-  border-color: $input-main-invalid;
+  .lab-input__field:invalid + & {
+    color: $input-main-invalid;
+    border-color: $input-main-invalid;
+  }
   
-  &:focus,
-  &:not(:placeholder-shown):focus {
+  .lab-input__field:invalid:focus + &,
+  .lab-input__field:invalid:not(:placeholder-shown):focus + & {
+    @include border-shadow(focus, $input-shadow-invalid-focus);
     border: $border-01 $input-main-invalid;
     outline: none;
-    @include border-shadow(focus, $input-shadow-invalid-focus);
   }
   
-  &:hover:focus {
-    border: $border-01 $input-main-invalid;
+  .lab-input__field:invalid:hover:focus + & {
     @include border-shadow(focus-hover, $input-shadow-invalid-focus, $input-background-invalid);
+    border: $border-01 $input-main-invalid;
   }
   
-  &:hover {
+  .lab-input__field:invalid:hover + & {
     @include border-shadow(hover, $input-background-invalid);
   }
 }
 
-// Label
-.lab-input__label {
+.lab-input__label-wrapper {
+  display: flex;
   position: absolute;
-  top: $spacing-02;
-  left: $spacing-03;
+  top: 10px;
+  left: 0;
+  pointer-events: none;
+  align-items: center;
+  transition: $duration-slow all;
+
+  .lab-input__prefix {
+    opacity: 0;
+    width: 100%;
+    max-width: 100%;
+    transition: $duration-slow all;
+  }
+
+  .lab-input__field:focus ~ &,
+  .lab-input__field:not(:placeholder-shown) ~ & {
+    top: -$spacing-03;
+    left: $spacing-02;
+
+    .lab-input__prefix {
+      line-height: 0;
+      height: 0;
+      max-width: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .lab-input__label {
+      padding: 2px;
+      font-size: 12px;
+      color: $input-text-color;
+      margin-left: 0;
+      background-color: $white;
+    }
+  }
+
+  .lab-input__field:focus:invalid ~ &,
+  .lab-input__field:not(:placeholder-shown):invalid ~ & {
+    .lab-input__label {
+      color: $input-main-invalid;
+      background: rgb(255,255,255),;
+      background: linear-gradient(360deg, rgba(255,255,255,0) 30%, rgba(255,255,255,1) 30%);
+    }
+  }
+
+  .lab-input__field--prefixed ~ & {
+    top: 2px;
+  }
+
+  .lab-input__field--prefixed:not(:placeholder-shown) ~ &,
+  .lab-input__field--prefixed:focus ~ & {
+    .lab-input__label {
+      background: rgb(255,255,255),;
+      background: linear-gradient(360deg, rgba(255,255,255,0) 30%, rgba(255,255,255,1) 30%);
+    }
+  }
+}
+
+.lab-input__label {
   z-index: 1;
   font-family: $font-primary;
   font-weight: 500;
   font-size: 16px;
   color: $black-75;
-  cursor: text;
-  transition: $duration-base all;
-  
-  .lab-input__field:not(:placeholder-shown):invalid ~ &,
-  .lab-input__field:invalid:focus ~ & {
-    top: -$spacing-03;
-    width: auto;
-    padding: 2px;
-    font-size: 12px;
-    color: $input-main-invalid;
-    background: rgb(255,255,255),;
-    background: linear-gradient(360deg, rgba(255,255,255,0) 32%, rgba(255,255,255,1) 32%);
-  }
-  
-  .lab-input__field:not(:placeholder-shown) ~ &,
-  .lab-input__field:focus ~ & {
-    top: -$spacing-03;
-    padding: 2px;
-    width: auto;
-    font-size: 12px;
-    color: $input-text-color;
-    background-color: $white;
-  }  
-  
-  .lab-input__field--prefixed:not(:placeholder-shown) ~ &,
-  .lab-input__field--prefixed:focus ~ & {
-    background: rgb(255,255,255),;
-    background: linear-gradient(360deg, rgba(255,255,255,0) 32%, rgba(255,255,255,1) 32%);
-  }  
-
-  .lab-input__prefix + & {
-    padding-left: $spacing-08;
-  }
+  margin-left: $input-padding;
+  transition: $duration-slow all;
 }
 
 // Icon that goes inside the field
@@ -203,7 +216,13 @@ $input-border-disabled: $mineral-30;
   height: 24px;
   padding: 0px;
   border: none;
-  background-color: transparent;
+  outline: none;
+  border-radius: 2px;
+  background-color: white;
+
+  &:focus {
+    @include border-shadow(focus, $input-shadow-filled-focus);
+  }
 }
 
 // Required icon
@@ -250,21 +269,21 @@ $input-border-disabled: $mineral-30;
 
 // Input message
 .lab-input__message {
-  padding: 2px 0 $spacing-03 $spacing-03;
+  padding: 2px 0 0 10px;
   font-family: $font-primary;
   font-size: 12px;
   opacity: 1;
   transition: opacity $duration-base ease;
   font-weight: 500;
-  
+
   &--error {
     color: $input-main-invalid;
-    
+
     .lab-input__field:not(:placeholder-shown):invalid ~ & {
       opacity: 1;
     }
   }
-  
+
   &--required {
     color: $input-text-color;
     opacity: 1; //Show required message
@@ -281,14 +300,10 @@ $input-border-disabled: $mineral-30;
 
 // Prefix
 .lab-input__prefix {
-  position: absolute;
-  top: 2px;
-  bottom: 2px;
-  left: 2px;
   z-index: 1;
   display: inline-block;
   height: 36px;
-  padding: 0 $spacing-03;
+  padding: 0 10px;
   font-family: $font-primary;
   font-weight: 500;
   font-size: 16px;
@@ -297,21 +312,25 @@ $input-border-disabled: $mineral-30;
   pointer-events: none;
   background-color: $mineral-10;
   border-radius: $radius-01;
-  
-  .lab-input__field--prefixed:focus + &  {
-    background-color: $input-background-prefix-filled;
+  position: relative;
+  left: 2px;
+  flex-grow: 1;
+  order: -1;
+
+  .lab-input__field--prefixed:focus ~ &  {
+    background-color: $input-background-prefix-filled ;
   }
-  
-  .lab-input__field--prefixed:not(:placeholder-shown) + & {
+
+  .lab-input__field--prefixed:not(:placeholder-shown) ~ & {
     background-color: $input-background-prefix-filled;
   }
 
-  .lab-input__field--prefixed:disabled + & {
+  .lab-input__field--prefixed:disabled ~ & {
     background-color: $mineral-20;
     color: $black-50;
   }
 
-  .lab-input__field--prefixed:invalid + & {
+  .lab-input__field--prefixed:invalid ~ & {
     background-color: $input-background-invalid-prefix;
     color: $input-main-invalid;
   }
@@ -319,10 +338,8 @@ $input-border-disabled: $mineral-30;
 
 // Sufix
 .lab-input__suffix {
-  position: absolute;
-  top: 2px;
+  position: relative;
   right: 2px;
-  bottom: 2px;
   z-index: 1;
   display: inline-block;
   height: 36px;
@@ -335,22 +352,23 @@ $input-border-disabled: $mineral-30;
   pointer-events: none;
   background-color: $mineral-10;
   border-radius: $radius-01;
+  order: 99;
 
-  .lab-input__field--suffixed:focus + &  {
+  .lab-input__field--suffixed:focus ~ &  {
     background-color: $input-background-prefix-filled;
-  }  
-  
-  .lab-input__field--suffixed:not(:placeholder-shown) + & {
+  }
+
+  .lab-input__field--suffixed:not(:placeholder-shown) ~ & {
     background-color: $input-background-prefix-filled;
-  }  
-  
-  .lab-input__field--suffixed:disabled + & {
+  }
+
+  .lab-input__field--suffixed:disabled ~ & {
     color: $black-50;
-    background-color: $mineral-20;  
-  }  
-  
-  .lab-input__field--suffixed:invalid + & {
+    background-color: $mineral-20;
+  }
+
+  .lab-input__field--suffixed:invalid ~ & {
     color: $input-main-invalid;
     background-color: $input-background-invalid-prefix;
-  } 
+  }
 }
