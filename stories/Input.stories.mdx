@@ -14,12 +14,31 @@ import InputBehaviorTest from '../labsystem/src/InputBehaviorTest';
 
 <div class="docs-content">
 
-### General usage
+#### General usage
 
 This component is a form field that allows user to type text information.
-We can have 4 types of text inputs:
+We can have 3 types of text inputs.
+<br />
 
-### Anatomy
+#### Type
+<div class="columns">
+  <div class="column">
+    <img src="docs/text-input/types-01.png" />
+    <p>
+      This component is a form field that allows user to type text information.
+      We can have 3 types of text inputs.
+    </p>
+  </div>
+  <div class="column">
+    <img src="docs/text-input/types-02.png" />
+    <p>
+      Password input type should be styling as the Default Input with trailing icon. 
+      The icon must work as a toggle, showing (or hiding) the visibility of the password as the user clicks on it. 
+    </p>
+  </div>
+</div>
+
+#### Anatomy
 
 ###### Field elements
 ![input anatomy](docs/anatomy.png)
@@ -28,7 +47,7 @@ We can have 4 types of text inputs:
 ![prefix and suffix input anatomy](docs/anatomy-02.png)
 <br />
 
-### Default Input
+#### Default Input
 
 It’s a standard text input. Can be used for enter a id, phone number, street address, email address, etc.
 
@@ -50,7 +69,7 @@ It’s a standard text input. Can be used for enter a id, phone number, street a
   </Story>
 </Preview>
 
-### Required Input
+#### Required Input
 
 It’s a default input that is required to be filled. It has a helper message to inform if a required input text is missing.
 
@@ -66,7 +85,7 @@ It’s a default input that is required to be filled. It has a helper message to
   </Story>
 </Preview>
 
-### Prefix
+#### Prefix
 
 It’s a text field input + fixed prefix.
 
@@ -96,7 +115,7 @@ It’s a text field input + fixed prefix.
   </Story>
 </Preview>
 
-### Suffix
+#### Suffix
 
 It’s a text field input + fixed suffix.
 
@@ -126,28 +145,33 @@ It’s a text field input + fixed suffix.
   </Story>
 </Preview>
 
-### Behavior
-##### Default input/ Prefix and suffix input
+#### Behavior
+<div class="columns">
+  <div class="column">
+    <h6>Default input/ Prefix and suffix input</h6>
+    <ol>
+      <li>Click on the component to focus </li>
+      <li>The placeholder will move up and behave like a label</li>
+      <li>Type what the label suggests you to</li>
+      <li>If you don't fill the input correctly, the input will show a error help message, changing the component for error state</li>
+      <li>Click outside the component to unfocus</li>
+    </ol>
+  </div>
+  <div class="column">
+    <h6>Required Input</h6>
+    <ol>
+      <li>Click on the component to focus</li>
+      <li>The placeholder will move up and behave like a label</li>
+      <li>Type what the label suggests you to</li>
+      <li>If you don't fill the input correctly,the input will show a error help message, changing the component for error state</li>
+      <li>Click outside the component to unfocus</li>
+      <li>If you don't fill the input at all, the input will show a required help message after you unfocus it, 
+      changing the component for error state.</li>
+    </ol>
+  </div>
+</div>
 
-1. Click on the component to focus
-2. The placeholder will move up and behave like a label
-3. Type what the label suggests you to
-4. If you don't fill the input correctly, the input will show a error help message,
-changing the component for error state
-5. Click outside the component to unfocus
-
-##### Required Input
-
-1. Click on the component to focus
-2. The placeholder will move up and behave like a label
-3. Type what the label suggests you to
-4. If you don't fill the input correctly,
-the input will show a error help message, changing the component for error state
-5. Click outside the component to unfocus
-6. If you don't fill the input at all, the input will show a required help
-message after you unfocus it, changing the component for error state.
-
-### Input Playground
+#### Input Playground
 
 <Preview>
   <Story name="Input Playground">
@@ -157,7 +181,7 @@ message after you unfocus it, changing the component for error state.
   </Story>
 </Preview>
 
-### Theming
+#### Theming
 
 For text inputs, you can also use purple theme. Error state remain with the same style in any theme.
 <Preview>
