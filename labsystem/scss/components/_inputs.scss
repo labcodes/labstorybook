@@ -315,24 +315,25 @@ $input-padding: 10px;
   position: relative;
   left: 2px;
   flex-grow: 1;
+  order: -1;
 
-  // .lab-input__field--prefixed:focus + &  {
-  //   background-color: $input-background-prefix-filled ;
-  // }
+  .lab-input__field--prefixed:focus ~ &  {
+    background-color: $input-background-prefix-filled ;
+  }
 
-  // .lab-input__field--prefixed:not(:placeholder-shown) + & {
-  //   background-color: $input-background-prefix-filled;
-  // }
+  .lab-input__field--prefixed:not(:placeholder-shown) ~ & {
+    background-color: $input-background-prefix-filled;
+  }
 
-  // .lab-input__field--prefixed:disabled + & {
-  //   background-color: $mineral-20;
-  //   color: $black-50;
-  // }
+  .lab-input__field--prefixed:disabled ~ & {
+    background-color: $mineral-20;
+    color: $black-50;
+  }
 
-  // .lab-input__field--prefixed:invalid + & {
-  //   background-color: $input-background-invalid-prefix;
-  //   color: $input-main-invalid;
-  // }
+  .lab-input__field--prefixed:invalid ~ & {
+    background-color: $input-background-invalid-prefix;
+    color: $input-main-invalid;
+  }
 }
 
 // Sufix
@@ -351,21 +352,22 @@ $input-padding: 10px;
   pointer-events: none;
   background-color: $mineral-10;
   border-radius: $radius-01;
+  order: 99;
 
-  .lab-input__field--suffixed:focus + &  {
+  .lab-input__field--suffixed:focus ~ &  {
     background-color: $input-background-prefix-filled;
   }
 
-  .lab-input__field--suffixed:not(:placeholder-shown) + & {
+  .lab-input__field--suffixed:not(:placeholder-shown) ~ & {
     background-color: $input-background-prefix-filled;
   }
 
-  .lab-input__field--suffixed:disabled + & {
+  .lab-input__field--suffixed:disabled ~ & {
     color: $black-50;
     background-color: $mineral-20;
   }
 
-  .lab-input__field--suffixed:invalid + & {
+  .lab-input__field--suffixed:invalid ~ & {
     color: $input-main-invalid;
     background-color: $input-background-invalid-prefix;
   }

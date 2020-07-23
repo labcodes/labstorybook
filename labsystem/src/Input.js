@@ -68,7 +68,6 @@ export default class Inputs extends React.Component {
     }
     if (!localIsValid) {
       const inputElement = this.inputRef.current;
-      console.log(localIsValid, customErrorMsg);
       inputElement.setCustomValidity(customErrorMsg);
     }
   }
@@ -98,15 +97,16 @@ export default class Inputs extends React.Component {
   message = () => {
     const { helpMessage, customErrorMsg } = this.props;
     const { localIsValid } = this.state;
+    let message;
     if (helpMessage && localIsValid) {
-      return (
+      message = (
         <div className="lab-input__message lab-input__message--required">
           {helpMessage}
         </div>
       );
     }
     if (!localIsValid && helpMessage && !this.state.localValue) {
-      return (
+      message = (
         <div className="lab-input__message lab-input__message--error">
           {" "}
           {helpMessage}{" "}
@@ -114,13 +114,15 @@ export default class Inputs extends React.Component {
       );
     }
     if (!localIsValid) {
-      return (
+      message = (
         <div className="lab-input__message lab-input__message--error">
           {" "}
           {customErrorMsg}{" "}
         </div>
       );
     }
+
+    return message;
   };
 
   prefixArea = () => {
@@ -138,7 +140,6 @@ export default class Inputs extends React.Component {
     const inputElementValue = this.inputRef.current.value;
     const inputElementIsValid = this.inputRef.current.validity.valid;
 
-    console.log("handleOnChange:", this.inputRef.current.validity.valid);
     if (!isUndefined(onChange)) {
       onChange(inputElementValue);
     }
@@ -166,14 +167,18 @@ export default class Inputs extends React.Component {
       ...rest
     } = this.props;
 
-    const { localValue, localIsValid } = this.state;
+    const { localValue } = this.state;
 
     return (
       <div>
         <div className="lab-input">
-          {this.prefixArea()}
           <input
-            className={`lab-input__field ${className || ""}`}
+            className={
+              `lab-input__field ` +
+              `${prefix ? `lab-input__field--prefixed ` : ``}` +
+              `${suffix ? `lab-input__field--suffixed ` : ``}` +
+              `${className || ""}`
+            }
             id={id}
             type={type}
             placeholder=" "
@@ -185,6 +190,8 @@ export default class Inputs extends React.Component {
             {...rest}
           />
           <div className="lab-input__borders" />
+          {this.prefixArea()}
+          {this.suffixArea()}
           <div className="lab-input__label-wrapper">
             {this.prefixArea()}
             <label className="lab-input__label" htmlFor={id}>
@@ -192,7 +199,6 @@ export default class Inputs extends React.Component {
             </label>
           </div>
           {this.trailingIcon()}
-          {this.suffixArea()}
           {this.requiredIcon()}
         </div>
         {this.message()}

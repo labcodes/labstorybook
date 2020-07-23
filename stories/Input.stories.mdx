@@ -69,14 +69,13 @@ It’s a text field input + fixed prefix.
   <Story name="Prefix Input">
     <Fragment>
       <h6>Prefix Disabled</h6>
-      <Input className="lab-input__field--prefixed" id="prefix" label="Label" prefix="Raaaa" disabled />
+      <Input id="prefix" label="Label" prefix="Raaaa" disabled />
       <br />
       <h6>Prefix Default</h6>
-      <Input className="lab-input__field--prefixed" id="help" label="Label" prefix="aaaaaa$" />
+      <Input id="help" label="Label" prefix="aaaaaa$" suffix=".com"/>
       <br />
       <h6>Prefix Error</h6>
       <Input
-        className="lab-input__field--prefixed"
         type="email"
         id="prefix-error"
         defaultValue="Error"
@@ -97,14 +96,13 @@ It’s a text field input + fixed suffix.
   <Story name="Suffix Input">
     <Fragment>
       <h6>Suffix Disabled</h6>
-      <Input className="lab-input__field--suffixed" id="suffix" label="Label" suffix=".com" disabled />
+      <Input id="suffix" label="Label" suffix=".com" disabled />
       <br/>
       <h6>Suffix Default</h6>
-      <Input className="lab-input__field--suffixed" id="address" label="Label" suffix=".com" />
+      <Input id="address" label="Label" suffix=".com" />
       <br />
       <h6>Suffix Error</h6>
       <Input
-        className="lab-input__field--suffixed"
         type="email"
         id="suffix-error"
         label="Label"
@@ -155,16 +153,16 @@ For text inputs, you can also use purple theme. Error state remain with the same
   <Story name="Styles">
   <Fragment>
     <h6>Default</h6>
-      <Input className="lab-input__field--purple" defaultValue="Purple" id="purple1" label="Label" />
+      <Input className="lab-input--purple" defaultValue="Purple" id="purple1" label="Label" />
     <h6>Required Default</h6>
-      <Input className="lab-input__field--purple" id="purple2" label= "Label" defaultValue="Purple"
+      <Input className="lab-input--purple" id="purple2" label= "Label" defaultValue="Purple"
       helpMessage="Help message" required />
     <h6>Prefix Default</h6>
-      <Input className="lab-input__field--purple lab-input__field--prefixed-purple" defaultValue="Purple"
+      <Input className="lab-input--purple" defaultValue="Purple"
       id="purple3" label="Label" prefix="R$" />
     <br />
     <h6>Suffix Default</h6>
-    <Input className="lab-input__field--purple lab-input__field--suffixed-purple" defaultValue="Purple"
+    <Input className="lab-input--purple" defaultValue="Purple"
     id="address" label="Label" suffix=".com" />
     <br />
   </Fragment>
