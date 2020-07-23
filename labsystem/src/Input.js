@@ -171,13 +171,12 @@ export default class Inputs extends React.Component {
 
     return (
       <div>
-        <div className="lab-input">
+        <div className={`lab-input ${className || ""}`}>
           <input
             className={
               `lab-input__field ` +
               `${prefix ? `lab-input__field--prefixed ` : ``}` +
-              `${suffix ? `lab-input__field--suffixed ` : ``}` +
-              `${className || ""}`
+              `${suffix ? `lab-input__field--suffixed ` : ``}`
             }
             id={id}
             type={type}
