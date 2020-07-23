@@ -13,11 +13,16 @@ $docs-content-margin: $docs-title-height - $content-margin-top;
   align-items: flex-end;
   height: $docs-title-height;
   background-color: $teal;
+  border-bottom-right-radius: 60px;
 
   div {
     width: 100%;
     max-width: $content-max-width;
     margin: 0 auto;
+  }
+
+  &--with-tab {
+    border-radius: 0;
   }
 }
 
@@ -32,10 +37,10 @@ $docs-content-margin: $docs-title-height - $content-margin-top;
 .docs-content {
   padding-top: 40px;
   margin-top: $docs-content-margin !important;
-}
 
-.docs-content--with-tab {
-  padding: 0;
+  .docs-title--with-tab +& {
+    padding-top: 0;
+  }
 }
 
 .simple-tab-wrapper {
@@ -44,7 +49,7 @@ $docs-content-margin: $docs-title-height - $content-margin-top;
   left: 0;
   height: $simple-tab-item-height;
   background-color: $teal-60;
-  border-bottom-right-radius: 80px;
+  border-bottom-right-radius: 60px;
 }
 
 // Tabs used for documentation. Should be later replaced by our top bar or tabs.
