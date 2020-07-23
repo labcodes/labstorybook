@@ -169,30 +169,32 @@ export default class Inputs extends React.Component {
     const { localValue, localIsValid } = this.state;
 
     return (
-      <div className="lab-input">
-        {this.prefixArea()}
-        <input
-          className={`lab-input__field ${className || ""}`}
-          id={id}
-          type={type}
-          placeholder=" "
-          disabled={disabled}
-          defaultValue={localValue}
-          value={value}
-          ref={this.inputRef}
-          onChange={this.handleOnChange}
-          {...rest}
-        />
-        <div className="lab-input__borders" />
-        <div className="lab-input__label-wrapper">
+      <div>
+        <div className="lab-input">
           {this.prefixArea()}
-          <label className="lab-input__label" htmlFor={id}>
-            {label}
-          </label>
+          <input
+            className={`lab-input__field ${className || ""}`}
+            id={id}
+            type={type}
+            placeholder=" "
+            disabled={disabled}
+            defaultValue={localValue}
+            value={value}
+            ref={this.inputRef}
+            onChange={this.handleOnChange}
+            {...rest}
+          />
+          <div className="lab-input__borders" />
+          <div className="lab-input__label-wrapper">
+            {this.prefixArea()}
+            <label className="lab-input__label" htmlFor={id}>
+              {label}
+            </label>
+          </div>
+          {this.trailingIcon()}
+          {this.suffixArea()}
+          {this.requiredIcon()}
         </div>
-        {this.trailingIcon()}
-        {this.suffixArea()}
-        {this.requiredIcon()}
         {this.message()}
       </div>
     );
