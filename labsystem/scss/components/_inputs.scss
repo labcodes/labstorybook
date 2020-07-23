@@ -140,7 +140,6 @@ $input-padding: 10px;
   display: flex;
   position: absolute;
   top: 10px;
-  top: 2px;
   left: 0;
   pointer-events: none;
   align-items: center;
@@ -182,6 +181,10 @@ $input-padding: 10px;
       background: rgb(255,255,255),;
       background: linear-gradient(360deg, rgba(255,255,255,0) 30%, rgba(255,255,255,1) 30%);
     }
+  }
+
+  .lab-input__field--prefixed ~ & {
+    top: 2px;
   }
 
   .lab-input__field--prefixed:not(:placeholder-shown) ~ &,
@@ -334,10 +337,8 @@ $input-padding: 10px;
 
 // Sufix
 .lab-input__suffix {
-  position: absolute;
-  top: 2px;
+  position: relative;
   right: 2px;
-  bottom: 2px;
   z-index: 1;
   display: inline-block;
   height: 36px;
