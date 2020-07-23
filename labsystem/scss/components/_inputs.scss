@@ -23,7 +23,7 @@ $input-internal-spacing: 2px;
 
 $input-border-unfilled-idle: $mineral-40;
 $input-text-color: map-get($input-theme, "60");
-$input-border-filled-idle: map-get($input-theme, "40");
+$input-border-filled-idle: map-get($input-theme, "60");
 $input-border-filled-focus: map-get($input-theme, "70");
 $input-border-filled-focus-hover: map-get($input-theme, "80");
 $input-background-prefix-filled: map-get($input-theme, "10");

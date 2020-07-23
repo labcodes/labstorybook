@@ -17,7 +17,7 @@
   }
   
   &:not(:placeholder-shown) {
-    border-color: $purple-40;
+    border-color: $purple-60;
   }
   
   &:not(:placeholder-shown):hover {
@@ -41,7 +41,7 @@
   }
 
   &:not(:placeholder-shown) ~ .lab-input__required-icon {
-    background-color: $purple-40;
+    background-color: $purple-60;
   }
 
   &:focus:hover ~ .lab-input__required-icon {
