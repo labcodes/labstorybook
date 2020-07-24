@@ -12,17 +12,14 @@
     &:focus ~ .lab-input__borders,
     &:not(:placeholder-shown):focus ~ .lab-input__borders {
       border: 2px solid $purple-70;
-      box-shadow: 0 0 0 2px $purple-30;
+      @include border-shadow(focus, $purple-30);
     }
 
     &:not(:placeholder-shown):hover:focus ~ .lab-input__borders {
       border: 2px solid $purple-80;
-      box-shadow: 0 0 0 2px $purple-30, 0 0 0 6px $purple-10;
+      @include border-shadow(focus-hover, $purple-30, $purple-10);
     }
 
-    &:not(:placeholder-shown):hover ~ .lab-input__borders {
-      box-shadow: 0 0 0 6px $purple-10;
-    }
 
     &:not(:placeholder-shown) ~ .lab-input__label ~ .lab-input__borders,
     &:focus ~ .lab-input__label ~ .lab-input__borders{
@@ -44,12 +41,9 @@
       background-color: $purple-60;
     }
 
-    &:focus:hover ~ .lab-input__required-icon {
-      background-color: $purple-80;
-    }
-
     &:not(:placeholder-shown) ~ .lab-input__label-wrapper .lab-input__label,
-    &:focus ~ .lab-input__label-wrapper .lab-input__label {
+    &:focus ~ .lab-input__label-wrapper .lab-input__label,
+    &:not(:placeholder-shown) ~ .lab-input__required-icon  {
       color: $purple-60;
     }
   }
@@ -65,9 +59,6 @@
     background-color: $purple-10;
   }
 
-  .lab-input__field:focus ~ .lab-input__suffix {
-    background-color: $purple-10;
-  }
 
   //Prefix
   .lab-input__field:focus ~ .lab-input__prefix,
@@ -75,7 +66,4 @@
     background-color: $purple-10;
   }
 
-  .lab-input__field:focus ~ .lab-input__prefix {
-    background-color: $purple-10;
-  }
 }

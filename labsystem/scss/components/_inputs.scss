@@ -48,24 +48,24 @@ $input-padding: 10px;
 .lab-input {
   position: relative;
   display: flex;
-  align-items: center;
   width: 100%;
   max-width: 240px;
+  align-items: center;
 }
 
 //Input tag
 .lab-input__field {
-  font-family: $font-primary;
-  font-weight: 500;
-  font-size: 16px;
-  color: $black-75;
-  border: none;
-  outline: none;
+  width: 100%;
   height: $input-height;
   padding: 0 $input-padding;
   margin: 0;
-  width: 100%;
-
+  font-family: $font-primary;
+  font-size: 16px;
+  font-weight: 500;
+  color: $black-75;
+  border: none;
+  outline: none;
+  
   &:invalid {
     background-color: $input-background-invalid;
   }
@@ -137,18 +137,18 @@ $input-padding: 10px;
 }
 
 .lab-input__label-wrapper {
-  display: flex;
   position: absolute;
   top: 10px;
   left: 0;
+  display: flex;
   pointer-events: none;
   align-items: center;
   transition: $duration-slow all;
 
   .lab-input__prefix {
-    opacity: 0;
     width: 100%;
     max-width: 100%;
+    opacity: 0;
     transition: $duration-slow all;
   }
 
@@ -158,18 +158,18 @@ $input-padding: 10px;
     left: $spacing-02;
 
     .lab-input__prefix {
-      line-height: 0;
       height: 0;
       max-width: 0;
       padding: 0;
+      line-height: 0;
       overflow: hidden;
     }
 
     .lab-input__label {
       padding: 2px;
+      margin-left: 0;
       font-size: 12px;
       color: $input-text-color;
-      margin-left: 0;
       background-color: $white;
     }
   }
@@ -198,11 +198,11 @@ $input-padding: 10px;
 
 .lab-input__label {
   z-index: 1;
-  font-family: $font-primary;
-  font-weight: 500;
-  font-size: 16px;
-  color: $black-75;
   margin-left: $input-padding;
+  font-family: $font-primary;
+  font-size: 16px;
+  font-weight: 500;
+  color: $black-75;
   transition: $duration-slow all;
 }
 
@@ -272,9 +272,9 @@ $input-padding: 10px;
   padding: 2px 0 0 10px;
   font-family: $font-primary;
   font-size: 12px;
+  font-weight: 500;
   opacity: 1;
   transition: opacity $duration-base ease;
-  font-weight: 500;
 
   &--error {
     color: $input-main-invalid;
@@ -300,6 +300,8 @@ $input-padding: 10px;
 
 // Prefix
 .lab-input__prefix {
+  position: relative;
+  left: 2px;
   z-index: 1;
   display: inline-block;
   height: 36px;
@@ -312,8 +314,6 @@ $input-padding: 10px;
   pointer-events: none;
   background-color: $mineral-10;
   border-radius: $radius-01;
-  position: relative;
-  left: 2px;
   flex-grow: 1;
   order: -1;
 
