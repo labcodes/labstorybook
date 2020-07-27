@@ -132,7 +132,7 @@ export default class Inputs extends React.Component {
 
   suffixArea = () => {
     const { suffix } = this.props;
-    return suffix ? <span className="lab-input__suffix">{suffix}</span> : "";
+    return suffix ? <div className="lab-input__suffix">{suffix}</div> : "";
   };
 
   handleOnChange = (e) => {
@@ -186,6 +186,7 @@ export default class Inputs extends React.Component {
             value={value}
             ref={this.inputRef}
             onChange={this.handleOnChange}
+            autoComplete="off"
             {...rest}
           />
           <div className="lab-input__borders" />
