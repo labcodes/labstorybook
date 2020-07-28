@@ -4,17 +4,17 @@ $tag-font-size: 14px;
 $tag-line-heigt: 20px;
 $tag-border: 2px;
 
-// soft
-$tag-soft-color: map-get($tag-theme, "20");
+// pale
+$tag-pale-color: map-get($tag-theme, "20");
 $tag-text-color: map-get($tag-theme, "70");
 $tag-hover-color: white;
 $tag-hover-shadow-color: map-get($tag-theme, "20");
 $tag-focus-shadow-color: map-get($tag-theme, "30");
 $tag-focus-hover-bg-color: $tag-hover-color;
 
-// intense
-$tag-intense-color: map-get($tag-theme, "60");
-$tag-intense-hover-color: mix($tag-intense-color, black, 50%);
+// vivid
+$tag-vivid-color: map-get($tag-theme, "60");
+$tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
 
 /* variations */
 .lab-tag {
@@ -121,9 +121,9 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
 }
 
 /* color styles */
-.lab-tag__skin-soft {
-  background-color: $tag-soft-color;
-  border-color: $tag-soft-color;
+.lab-tag__pale {
+  background-color: $tag-pale-color;
+  border-color: $tag-pale-color;
   color: $tag-text-color;
 
   .lab-icon {
@@ -135,7 +135,7 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
     border-color: $tag-hover-color;
 
     .lab-tag__right-icon--remove {
-      background-color: $tag-soft-color;
+      background-color: $tag-pale-color;
     }
   }
 
@@ -144,15 +144,15 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
     color: $tag-text-color;
 
     &:focus:hover {
-      border-color: $tag-soft-color;
+      border-color: $tag-pale-color;
     }
 
     .lab-tag__thumb {
-      border: 2px solid $tag-soft-color;
+      border: 2px solid $tag-pale-color;
     }
 
     .lab-tag__right-icon--remove {
-      background-color: $tag-soft-color;
+      background-color: $tag-pale-color;
     }
 
     &.lab-tag--disabled {
@@ -165,9 +165,9 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
   }
 }
 
-.lab-tag__skin-intense {
-  border-color: $tag-intense-color;
-  background-color: $tag-intense-color;
+.lab-tag__vivid {
+  border-color: $tag-vivid-color;
+  background-color: $tag-vivid-color;
   color: white;
 
   .lab-icon {
@@ -175,12 +175,12 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
   }
 
   .lab-tag__right-icon--remove .lab-icon {
-    background-color: $tag-intense-color
+    background-color: $tag-vivid-color
   }
 
   &.lab-tag__togglable:hover, &.lab-tag--has-right-icon:hover {
-    background-color: $tag-intense-hover-color;
-    border-color: $tag-intense-hover-color;
+    background-color: $tag-vivid-hover-color;
+    border-color: $tag-vivid-hover-color;
   }
 
   &.lab-tag--outline {
@@ -197,7 +197,7 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
     }
 
     .lab-tag__right-icon--remove {
-      background-color: $tag-soft-color;
+      background-color: $tag-pale-color;
     }
 
     &.lab-tag__togglable:hover, &.lab-tag--has-right-icon:hover {
@@ -207,7 +207,7 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
       box-shadow: 0 0 0 4px $tag-hover-shadow-color;
 
       .lab-icon {
-        background-color: $tag-intense-color;
+        background-color: $tag-vivid-color;
       }
     }
 
@@ -232,8 +232,8 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
 
 /* Get skin colors from theme */
 @each $name, $palette in $tag-main-colors {
-  // SOFT FILL
-  .lab-tag--#{$name}-soft {
+  // pale FILL
+  .lab-tag--#{$name}-pale {
     background-color: map-get($palette, "20");
     border-color: map-get($palette, "20");
     color: map-get($palette, "70");
@@ -262,7 +262,7 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
       box-shadow: 0 0 0 2px map-get($palette, "30");
     }
 
-    // SOFT OUTLINE
+    // pale OUTLINE
     &.lab-tag--outline {
       background-color: white;
       color: map-get($palette, "60");
@@ -285,8 +285,8 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
     }
   }
 
-// INTENSE FILL
-  .lab-tag--#{$name}-intense {
+// vivid FILL
+  .lab-tag--#{$name}-vivid {
     border-color: map-get($palette, "60");
     background-color: map-get($palette, "60");
     color: white;
@@ -296,7 +296,7 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
     }
 
     .lab-tag__right-icon--remove .lab-icon {
-      background-color: $tag-intense-color;
+      background-color: $tag-vivid-color;
       @if $name == "mineral" { background-color: map-get($palette, "70"); }
     }
 
@@ -315,7 +315,7 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
       box-shadow: 0 0 0 2px map-get($palette, "30");
     }
 
-    // INTENSE OUTLINE
+    // vivid OUTLINE
     &.lab-tag--outline {
       background-color: white;
       color: map-get($palette, "60");
@@ -354,9 +354,9 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
 }
 
 /* Get skin colors from messages & support color stacks */
-// SOFT FILL
+// pale FILL
 @each $name, $palette in $tag-all-colors {
-  .lab-tag--#{$name}-soft {
+  .lab-tag--#{$name}-pale {
     background-color: map-get($palette, "20");
     color: $black-75;
     border-color: map-get($palette, "20");
@@ -383,7 +383,7 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
       box-shadow: 0 0 0 2px map-get($palette, "60"), 0 0 0 4px map-get($palette, "20");
     }
 
-    // SOFT OUTLINE
+    // pale OUTLINE
     &.lab-tag--outline {
       background-color: white;
       color: map-get($palette, "60");
@@ -412,7 +412,7 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
     }
   }
 
-  .lab-tag--#{$name}-intense {
+  .lab-tag--#{$name}-vivid {
     background-color: map-get($palette, "60");
     border-color: map-get($palette, "60");
     color: white;
@@ -451,7 +451,7 @@ $tag-intense-hover-color: mix($tag-intense-color, black, 50%);
     .lab-tag__right-icon--remove .lab-icon {
       background-color: $black-75;
     }
-  // INTENSE OUTLINE
+  // vivid OUTLINE
     &.lab-tag--outline {
       background-color: white;
       border-color: map-get($palette, "60");

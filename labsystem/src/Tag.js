@@ -12,7 +12,7 @@ export default class Tag extends React.Component {
     icon: PropTypes.string,
     thumbSrc: PropTypes.string,
     outline: PropTypes.string,
-    colorStyle: PropTypes.string,
+    skin: PropTypes.string,
     color: PropTypes.string,
   };
 
@@ -21,7 +21,7 @@ export default class Tag extends React.Component {
     icon: undefined,
     thumbSrc: undefined,
     outline: undefined,
-    colorStyle: "soft",
+    skin: "pale",
     color: "",
     removable: undefined,
     dropdown: undefined,
@@ -96,18 +96,18 @@ export default class Tag extends React.Component {
       icon,
       thumbSrc,
       outline,
-      colorStyle,
+      skin,
       color,
     } = this.props;
     return (
       <span
         className={ `lab-tag` +
-          `${type === "togglable" ? ` lab-tag__togglable lab-tag__skin-soft` : ` lab-tag__skin-${colorStyle}`}` +
+          `${type === "togglable" ? ` lab-tag__togglable lab-tag__pale` : ` lab-tag__${skin}`}` +
           `${removable ? ` lab-tag--has-right-icon` : ""}` +
           `${dropdown ? ` lab-tag--has-right-icon` : ""}` +
           `${disabled ? " lab-tag--disabled" : ""}` +
           `${outline ? ` lab-tag--outline` : ""}` +
-          `${color ? ` lab-tag--${color}-${colorStyle}` : ""}` +
+          `${color ? ` lab-tag--${color}-${skin}` : ""}` +
           `${icon ? ` lab-tag--has-left-icon` : ""}` +
           `${thumbSrc ? ` lab-tag--has-thumb` : ""}`
         }

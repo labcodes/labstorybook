@@ -198,7 +198,7 @@ Outline style is set using the class `lab-tag--outline`
 ## Color
 Tag's default color is mineral, but it can also be displayed in teal, purple, mineral, green, red, yellow, orange, pink, and cyan.
 
-They also have two different skin tones, soft and intense.
+They also have two different skin tones, pale and vivid.
 
 To set a color use `lab-tag--[color]-[skin]`
 
@@ -206,11 +206,11 @@ The user may choose between two styles and tones as following.
 
 ### Skin
 
-#### Soft
-Soft is the default skin.
+#### pale
+pale is the default skin.
 
 <Preview>
-  <Story name="Soft sample">
+  <Story name="pale sample">
     <Fragment>
       <Tag text="Tag" />
       <Tag text="Tag with icon" icon="calendar" />
@@ -221,11 +221,11 @@ Soft is the default skin.
   </Story>
 </Preview>
 
-#### Intense
-Outline skin is set using the class `lab-tag__skin-intense"`
+#### vivid
+Outline skin is set using the class `lab-tag__skin-vivid"`
 
 <Preview>
-  <Story name="Intense fill sample">
+  <Story name="vivid fill sample">
     <Fragment>
       <Tag text="Tag" />
       <Tag text="Tag with icon" icon="calendar" />
@@ -237,35 +237,35 @@ Outline skin is set using the class `lab-tag__skin-intense"`
 </Preview>
 
 <Preview>
-  <Story name="Intense outline sample">
+  <Story name="vivid outline sample">
     <Fragment>
-      <Tag text="Tag" outline colorStyle="intense" />
-      <Tag text="Tag with icon" outline colorStyle="intense" icon="calendar" />
-      <Tag text="Tag with thumb" outline colorStyle="intense" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag dropdown" outline colorStyle="intense" dropdown />
-      <Tag text="Removable" outline colorStyle="intense" removable />
+      <Tag text="Tag" outline skin="vivid" />
+      <Tag text="Tag with icon" outline skin="vivid" icon="calendar" />
+      <Tag text="Tag with thumb" outline skin="vivid" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <Tag text="Tag dropdown" outline skin="vivid" dropdown />
+      <Tag text="Removable" outline skin="vivid" removable />
     </Fragment>
   </Story>
 </Preview>
 
 
-Default tag with intense color style
-(Color from theme (teal as default) and color style intense).
+Default tag with vivid color style
+(Color from theme (teal as default) and color style vivid).
 
 <Preview>
-  <Story name="Intense Tag">
+  <Story name="vivid Tag">
     <Fragment>
-      <Tag text="Tag" colorStyle="intense" />
-      <Tag text="Tag" colorStyle="intense" icon="calendar" />
-      <Tag text="Tag" colorStyle="intense" dropdown />
-      <Tag text="Tag" colorStyle="intense" removable />
-      <Tag text="Tag" colorStyle="intense" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <Tag text="Tag" skin="vivid" />
+      <Tag text="Tag" skin="vivid" icon="calendar" />
+      <Tag text="Tag" skin="vivid" dropdown />
+      <Tag text="Tag" skin="vivid" removable />
+      <Tag text="Tag" skin="vivid" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
       <br />
-      <Tag text="Tag" colorStyle="intense" outline />
-      <Tag text="Tag" colorStyle="intense" outline icon="calendar" />
-      <Tag text="Tag" colorStyle="intense" dropdown outline />
-      <Tag text="Tag" colorStyle="intense" removable outline />
-      <Tag text="Tag" colorStyle="intense" outline thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <Tag text="Tag" skin="vivid" outline />
+      <Tag text="Tag" skin="vivid" outline icon="calendar" />
+      <Tag text="Tag" skin="vivid" dropdown outline />
+      <Tag text="Tag" skin="vivid" removable outline />
+      <Tag text="Tag" skin="vivid" outline thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
     </Fragment>
   </Story>
 </Preview>
@@ -293,12 +293,12 @@ Tag can be used in the following themes:
       <Tag text="Tag" color="green" dropdown />
       <Tag text="Tag" color="green" removable />
       <Tag text="Tag" color="green" disabled />
-      <Tag text="Tag" color="green" colorStyle="intense" />
-      <Tag text="Tag" color="green" colorStyle="intense" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" color="green" icon="calendar" colorStyle="intense" />
-      <Tag text="Tag" color="green" colorStyle="intense" dropdown />
-      <Tag text="Tag" color="green" colorStyle="intense" removable />
-      <Tag text="Tag" color="green" colorStyle="intense" disabled />
+      <Tag text="Tag" color="green" skin="vivid" />
+      <Tag text="Tag" color="green" skin="vivid" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <Tag text="Tag" color="green" icon="calendar" skin="vivid" />
+      <Tag text="Tag" color="green" skin="vivid" dropdown />
+      <Tag text="Tag" color="green" skin="vivid" removable />
+      <Tag text="Tag" color="green" skin="vivid" disabled />
       <br />
       <Tag text="Tag" color="red" />
       <Tag text="Tag" color="red" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
@@ -306,12 +306,12 @@ Tag can be used in the following themes:
       <Tag text="Tag" color="red" dropdown />
       <Tag text="Tag" color="red" removable />
       <Tag text="Tag" color="red" disabled />
-      <Tag text="Tag" color="red" colorStyle="intense" />
-      <Tag text="Tag" color="red" colorStyle="intense" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" color="red" icon="calendar" colorStyle="intense" />
-      <Tag text="Tag" color="red" colorStyle="intense" dropdown />
-      <Tag text="Tag" color="red" colorStyle="intense" removable />
-      <Tag text="Tag" color="red" colorStyle="intense" disabled />
+      <Tag text="Tag" color="red" skin="vivid" />
+      <Tag text="Tag" color="red" skin="vivid" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <Tag text="Tag" color="red" icon="calendar" skin="vivid" />
+      <Tag text="Tag" color="red" skin="vivid" dropdown />
+      <Tag text="Tag" color="red" skin="vivid" removable />
+      <Tag text="Tag" color="red" skin="vivid" disabled />
       <br/>
       <Tag text="Tag" color="yellow" />
       <Tag text="Tag" color="yellow" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
@@ -319,12 +319,12 @@ Tag can be used in the following themes:
       <Tag text="Tag" color="yellow" dropdown />
       <Tag text="Tag" color="yellow" removable />
       <Tag text="Tag" color="yellow" disabled />
-      <Tag text="Tag" color="yellow" colorStyle="intense" />
-      <Tag text="Tag" color="yellow" colorStyle="intense" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" color="yellow" icon="calendar" colorStyle="intense" />
-      <Tag text="Tag" color="yellow" colorStyle="intense" dropdown />
-      <Tag text="Tag" color="yellow" colorStyle="intense" removable />
-      <Tag text="Tag" color="yellow" colorStyle="intense" disabled />
+      <Tag text="Tag" color="yellow" skin="vivid" />
+      <Tag text="Tag" color="yellow" skin="vivid" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <Tag text="Tag" color="yellow" icon="calendar" skin="vivid" />
+      <Tag text="Tag" color="yellow" skin="vivid" dropdown />
+      <Tag text="Tag" color="yellow" skin="vivid" removable />
+      <Tag text="Tag" color="yellow" skin="vivid" disabled />
       <br />
       <Tag text="Tag" color="cyan" />
       <Tag text="Tag" color="cyan" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
@@ -332,12 +332,12 @@ Tag can be used in the following themes:
       <Tag text="Tag" color="cyan" dropdown />
       <Tag text="Tag" color="cyan" removable />
       <Tag text="Tag" color="cyan" disabled />
-      <Tag text="Tag" color="cyan" colorStyle="intense" />
-      <Tag text="Tag" color="cyan" colorStyle="intense" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" color="cyan" icon="calendar" colorStyle="intense" />
-      <Tag text="Tag" color="cyan" colorStyle="intense" dropdown />
-      <Tag text="Tag" color="cyan" colorStyle="intense" removable />
-      <Tag text="Tag" color="cyan" colorStyle="intense" disabled />
+      <Tag text="Tag" color="cyan" skin="vivid" />
+      <Tag text="Tag" color="cyan" skin="vivid" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <Tag text="Tag" color="cyan" icon="calendar" skin="vivid" />
+      <Tag text="Tag" color="cyan" skin="vivid" dropdown />
+      <Tag text="Tag" color="cyan" skin="vivid" removable />
+      <Tag text="Tag" color="cyan" skin="vivid" disabled />
       <br />
       <Tag text="Tag" color="orange" />
       <Tag text="Tag" color="orange" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
@@ -345,12 +345,12 @@ Tag can be used in the following themes:
       <Tag text="Tag" color="orange" dropdown />
       <Tag text="Tag" color="orange" removable />
       <Tag text="Tag" color="orange" disabled />
-      <Tag text="Tag" color="orange" colorStyle="intense" />
-      <Tag text="Tag" color="orange" colorStyle="intense" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" color="orange" icon="calendar" colorStyle="intense" />
-      <Tag text="Tag" color="orange" colorStyle="intense" dropdown />
-      <Tag text="Tag" color="orange" colorStyle="intense" removable />
-      <Tag text="Tag" color="orange" colorStyle="intense" disabled />
+      <Tag text="Tag" color="orange" skin="vivid" />
+      <Tag text="Tag" color="orange" skin="vivid" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <Tag text="Tag" color="orange" icon="calendar" skin="vivid" />
+      <Tag text="Tag" color="orange" skin="vivid" dropdown />
+      <Tag text="Tag" color="orange" skin="vivid" removable />
+      <Tag text="Tag" color="orange" skin="vivid" disabled />
       <br />
       <Tag text="Tag" color="pink" />
       <Tag text="Tag" color="pink" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
@@ -358,12 +358,12 @@ Tag can be used in the following themes:
       <Tag text="Tag" color="pink" dropdown />
       <Tag text="Tag" color="pink" removable />
       <Tag text="Tag" color="pink" disabled />
-      <Tag text="Tag" color="pink" colorStyle="intense" />
-      <Tag text="Tag" color="pink" colorStyle="intense" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" color="pink" icon="calendar" colorStyle="intense" />
-      <Tag text="Tag" color="pink" colorStyle="intense" dropdown />
-      <Tag text="Tag" color="pink" colorStyle="intense" removable />
-      <Tag text="Tag" color="pink" colorStyle="intense" disabled />
+      <Tag text="Tag" color="pink" skin="vivid" />
+      <Tag text="Tag" color="pink" skin="vivid" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <Tag text="Tag" color="pink" icon="calendar" skin="vivid" />
+      <Tag text="Tag" color="pink" skin="vivid" dropdown />
+      <Tag text="Tag" color="pink" skin="vivid" removable />
+      <Tag text="Tag" color="pink" skin="vivid" disabled />
     </Fragment>
   </Story>
 </Preview>
@@ -378,12 +378,12 @@ Tag can be used in the following themes:
       <Tag text="Tag" outline color="green" dropdown />
       <Tag text="Tag" outline color="green" removable />
       <Tag text="Tag" outline color="green" disabled />
-      <Tag text="Tag" outline color="green" colorStyle="intense" />
-      <Tag text="Tag" outline color="green" colorStyle="intense" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" outline color="green" icon="calendar" colorStyle="intense" />
-      <Tag text="Tag" outline color="green" colorStyle="intense" dropdown />
-      <Tag text="Tag" outline color="green" colorStyle="intense" removable />
-      <Tag text="Tag" outline color="green" colorStyle="intense" disabled />
+      <Tag text="Tag" outline color="green" skin="vivid" />
+      <Tag text="Tag" outline color="green" skin="vivid" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <Tag text="Tag" outline color="green" icon="calendar" skin="vivid" />
+      <Tag text="Tag" outline color="green" skin="vivid" dropdown />
+      <Tag text="Tag" outline color="green" skin="vivid" removable />
+      <Tag text="Tag" outline color="green" skin="vivid" disabled />
       <br />
       <Tag text="Tag" outline color="red" />
       <Tag text="Tag" outline color="red" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
@@ -391,12 +391,12 @@ Tag can be used in the following themes:
       <Tag text="Tag" outline color="red" dropdown />
       <Tag text="Tag" outline color="red" removable />
       <Tag text="Tag" outline color="red" disabled />
-      <Tag text="Tag" outline color="red" colorStyle="intense" />
-      <Tag text="Tag" outline color="red" colorStyle="intense" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" outline color="red" icon="calendar" colorStyle="intense" />
-      <Tag text="Tag" outline color="red" colorStyle="intense" dropdown />
-      <Tag text="Tag" outline color="red" colorStyle="intense" removable />
-      <Tag text="Tag" outline color="red" colorStyle="intense" disabled />
+      <Tag text="Tag" outline color="red" skin="vivid" />
+      <Tag text="Tag" outline color="red" skin="vivid" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <Tag text="Tag" outline color="red" icon="calendar" skin="vivid" />
+      <Tag text="Tag" outline color="red" skin="vivid" dropdown />
+      <Tag text="Tag" outline color="red" skin="vivid" removable />
+      <Tag text="Tag" outline color="red" skin="vivid" disabled />
       <br/>
       <Tag text="Tag" outline color="yellow" />
       <Tag text="Tag" outline color="yellow" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
@@ -404,12 +404,12 @@ Tag can be used in the following themes:
       <Tag text="Tag" outline color="yellow" dropdown />
       <Tag text="Tag" outline color="yellow" removable />
       <Tag text="Tag" outline color="yellow" disabled />
-      <Tag text="Tag" outline color="yellow" colorStyle="intense" />
-      <Tag text="Tag" outline color="yellow" colorStyle="intense" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" outline color="yellow" icon="calendar" colorStyle="intense" />
-      <Tag text="Tag" outline color="yellow" colorStyle="intense" dropdown />
-      <Tag text="Tag" outline color="yellow" colorStyle="intense" removable />
-      <Tag text="Tag" outline color="yellow" colorStyle="intense" disabled />
+      <Tag text="Tag" outline color="yellow" skin="vivid" />
+      <Tag text="Tag" outline color="yellow" skin="vivid" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <Tag text="Tag" outline color="yellow" icon="calendar" skin="vivid" />
+      <Tag text="Tag" outline color="yellow" skin="vivid" dropdown />
+      <Tag text="Tag" outline color="yellow" skin="vivid" removable />
+      <Tag text="Tag" outline color="yellow" skin="vivid" disabled />
       <br />
       <Tag text="Tag" outline color="cyan" />
       <Tag text="Tag" outline color="cyan" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
@@ -417,12 +417,12 @@ Tag can be used in the following themes:
       <Tag text="Tag" outline color="cyan" dropdown />
       <Tag text="Tag" outline color="cyan" removable />
       <Tag text="Tag" outline color="cyan" disabled />
-      <Tag text="Tag" outline color="cyan" colorStyle="intense" />
-      <Tag text="Tag" outline color="cyan" colorStyle="intense" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" outline color="cyan" icon="calendar" colorStyle="intense" />
-      <Tag text="Tag" outline color="cyan" colorStyle="intense" dropdown />
-      <Tag text="Tag" outline color="cyan" colorStyle="intense" removable />
-      <Tag text="Tag" outline color="cyan" colorStyle="intense" disabled />
+      <Tag text="Tag" outline color="cyan" skin="vivid" />
+      <Tag text="Tag" outline color="cyan" skin="vivid" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <Tag text="Tag" outline color="cyan" icon="calendar" skin="vivid" />
+      <Tag text="Tag" outline color="cyan" skin="vivid" dropdown />
+      <Tag text="Tag" outline color="cyan" skin="vivid" removable />
+      <Tag text="Tag" outline color="cyan" skin="vivid" disabled />
       <br />
       <Tag text="Tag" outline color="orange" />
       <Tag text="Tag" outline color="orange" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
@@ -430,12 +430,12 @@ Tag can be used in the following themes:
       <Tag text="Tag" outline color="orange" dropdown />
       <Tag text="Tag" outline color="orange" removable />
       <Tag text="Tag" outline color="orange" disabled />
-      <Tag text="Tag" outline color="orange" colorStyle="intense" />
-      <Tag text="Tag" outline color="orange" colorStyle="intense" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" outline color="orange" icon="calendar" colorStyle="intense" />
-      <Tag text="Tag" outline color="orange" colorStyle="intense" dropdown />
-      <Tag text="Tag" outline color="orange" colorStyle="intense" removable />
-      <Tag text="Tag" outline color="orange" colorStyle="intense" disabled />
+      <Tag text="Tag" outline color="orange" skin="vivid" />
+      <Tag text="Tag" outline color="orange" skin="vivid" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <Tag text="Tag" outline color="orange" icon="calendar" skin="vivid" />
+      <Tag text="Tag" outline color="orange" skin="vivid" dropdown />
+      <Tag text="Tag" outline color="orange" skin="vivid" removable />
+      <Tag text="Tag" outline color="orange" skin="vivid" disabled />
       <br />
       <Tag text="Tag" outline color="pink" />
       <Tag text="Tag" outline color="pink" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
@@ -443,12 +443,12 @@ Tag can be used in the following themes:
       <Tag text="Tag" outline color="pink" dropdown />
       <Tag text="Tag" outline color="pink" removable />
       <Tag text="Tag" outline color="pink" disabled />
-      <Tag text="Tag" outline color="pink" colorStyle="intense" />
-      <Tag text="Tag" outline color="pink" colorStyle="intense" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" outline color="pink" icon="calendar" colorStyle="intense" />
-      <Tag text="Tag" outline color="pink" colorStyle="intense" dropdown />
-      <Tag text="Tag" outline color="pink" colorStyle="intense" removable />
-      <Tag text="Tag" outline color="pink" colorStyle="intense" disabled />
+      <Tag text="Tag" outline color="pink" skin="vivid" />
+      <Tag text="Tag" outline color="pink" skin="vivid" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <Tag text="Tag" outline color="pink" icon="calendar" skin="vivid" />
+      <Tag text="Tag" outline color="pink" skin="vivid" dropdown />
+      <Tag text="Tag" outline color="pink" skin="vivid" removable />
+      <Tag text="Tag" outline color="pink" skin="vivid" disabled />
     </Fragment>
   </Story>
 </Preview>
