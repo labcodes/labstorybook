@@ -4,13 +4,21 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Icon from '../labsystem/src/Icon';
 import Badge from '../labsystem/src/Badge';
 
-<Meta title="Components | Icons & Badges" component={Icon} />
+<Meta title="Components/Icons & Badges" component={Icon} />
 
-# Icons & Badges
+<div class="docs-title">
+  <div>
+    <h1 class="docs-title__text">Icons & Badges</h1>
+  </div>
+</div>
+
+<div class="docs-content">
 
 The `Icon` and `Badge` components have similar behavior.
 
 Both receive two inputs as props, where `type` indicates which symbol to show, while `color` defines its color.
+`Badge` receives an extra prop `wrapperColor`, since the background color is different from the symbol color.
+Also, the `size` option is available only for `Icon`
 
 ## Sample Icons
 Icons can be used as shown in the examples below:
@@ -28,27 +36,13 @@ Icons can be used as shown in the examples below:
 ## Sample Badges
 Badges can be used as shown in the examples below:
 
-### Harvest - Teal
+### Harvest - Wrapper Colors
 
 <Preview>
-  <Story name="Sample Badge - Teal">
-    <Badge type='harvest' color="teal" />
-  </Story>
-</Preview>
-
-### Harvest - Mineral 70
-
-<Preview>
-  <Story name="Sample Badge - Mineral 70">
-    <Badge type='harvest' color="mineral70" />
-  </Story>
-</Preview>
-
-### Harvest - Mineral 20
-
-<Preview>
-  <Story name="Sample Badge - Mineral 20">
-    <Badge type='harvest' color="mineral20" />
+  <Story name="Sample Badge - Wrapper Colors">
+    <Badge type='harvest' wrapperColor="teal40" color="white" />
+    <Badge type='harvest' wrapperColor="purple40" color="white" />
+    <Badge type='harvest' wrapperColor="white" color="black" />
   </Story>
 </Preview>
 
@@ -151,33 +145,33 @@ All the available Icons are shown below. You can use them with all the colors av
 
 ## Badge Colors
 
-All the available Badges and its colors are shown below:
+All the available Badges are shown below. You can use all the colors available on the design system for the props `color` and `wrapperColor`.
 
 
 ### Badge - Teal
 <Preview>
   <Story name="Badge Teal">
     <Fragment>
-      <Badge type='harvest' color="teal"/>
-      <Badge type='ponto' color="teal"/>
-      <Badge type='meta' color="teal"/>
+      <Badge type='harvest' wrapperColor="teal40" color="white"/>
+      <Badge type='ponto' wrapperColor="teal40" color="white"/>
+      <Badge type='meta' wrapperColor="teal40" color="white"/>
       <br />
-      <Badge type='star' color="teal"/>
-      <Badge type='floating-add' color="teal"/>
+      <Badge type='star' wrapperColor="teal40" color="white"/>
+      <Badge type='floating-add' wrapperColor="teal40" color="white"/>
     </Fragment>
   </Story>
 </Preview>
 
-### Badge - Mineral 70
+### Badge - Purple
 <Preview>
   <Story name="Badge Mineral 70">
     <Fragment>
-      <Badge type='harvest' color="mineral70"/>
-      <Badge type='ponto' color="mineral70"/>
-      <Badge type='meta' color="mineral70"/>
+      <Badge type='harvest' wrapperColor="purple60" color="white"/>
+      <Badge type='ponto' wrapperColor="purple60" color="white"/>
+      <Badge type='meta' wrapperColor="purple60" color="white"/>
       <br />
-      <Badge type='star' color="mineral70"/>
-      <Badge type='floating-add' color="mineral70"/>
+      <Badge type='star' wrapperColor="purple60" color="white"/>
+      <Badge type='floating-add' wrapperColor="purple60" color="white"/>
     </Fragment>
   </Story>
 </Preview>
@@ -186,12 +180,12 @@ All the available Badges and its colors are shown below:
 <Preview>
   <Story name="Badge Mineral 20">
     <Fragment>
-      <Badge type='harvest' color="mineral20"/>
-      <Badge type='ponto' color="mineral20"/>
-      <Badge type='meta' color="mineral20"/>
+      <Badge type='harvest' color="mineral30" wrapperColor="mineral10" />
+      <Badge type='ponto' color="mineral30" wrapperColor="mineral10" />
+      <Badge type='meta' color="mineral30" wrapperColor="mineral10" />
       <br />
-      <Badge type='star' color="mineral20"/>
-      <Badge type='floating-add' color="mineral20"/>
+      <Badge type='star' color="mineral30" wrapperColor="mineral10" />
+      <Badge type='floating-add' color="mineral30" wrapperColor="mineral10" />
     </Fragment>
   </Story>
 </Preview>
@@ -204,3 +198,5 @@ Here's the list of props based on the component's prop types definitions.
 
 ### Badge
 <Props of={Badge} />
+
+</div>
