@@ -11,8 +11,8 @@ export default class Tag extends React.Component {
     disabled: PropTypes.string,
     icon: PropTypes.string,
     thumbSrc: PropTypes.string,
-    thumbAlt: PropTypes.string,
     style: PropTypes.string,
+    vivid: PropTypes.string, 
     colorStyle: PropTypes.string,
     color: PropTypes.string,
   };
@@ -23,6 +23,7 @@ export default class Tag extends React.Component {
     icon: undefined,
     thumbSrc: undefined,
     style: "",
+    vivid: "soft",
     colorStyle: "soft",
     color: "",
     removable: undefined,
