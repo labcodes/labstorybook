@@ -1,28 +1,61 @@
 import React from "react";
-import Icon from "./Icon";
 import PropTypes from "prop-types";
+import { isUndefined } from "lodash";
 
- //Checkbox//
+import Icon from "./Icon";
+
+// Checkbox //
 
 export default class Checkbox extends React.Component {
   static propTypes = {
     id: PropTypes.string.isRequired,
-    theme: PropTypes.string,
-    label: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
     disabled: PropTypes.bool,
-    checked: PropTypes.string,
+    checked: PropTypes.bool,
     indeterminate: PropTypes.bool,
-    value: PropTypes.bool,
-    name: PropTypes.string.isRequired
+    defaultChecked: PropTypes.bool,
+    className: PropTypes.string,
+    onChange: PropTypes.func,
   };
 
   static defaultProps = {
-    theme: undefined,
     disabled: false,
     checked: undefined,
     indeterminate: false,
-    value: undefined,
+    defaultChecked: undefined,
+    className: undefined,
+    onChange: undefined,
   };
+
+  constructor(props) {
+    super(props);
+    const { defaultChecked, checked, id } = props;
+    if (!isUndefined(defaultChecked) && !isUndefined(checked)) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        `You are setting both checked and defaultChecked for input ${id} at the same time. We always initialize the checkbox with defaultChecked. Make sure this is the behaviour you want.`
+      );
+    }
+
+    let localChecked = false;
+    if (defaultChecked) {
+      localChecked = defaultChecked;
+    } else if (!isUndefined(checked)) {
+      localChecked = checked;
+    }
+
+    this.state = {
+      localChecked,
+    };
+  }
+
+  componentDidUpdate(prevProps) {
+    const { checked } = this.props;
+    if (checked !== prevProps.checked) {
+      this.setState((state) => ({ localChecked: checked }));
+    }
+  }
 
   checkIcon = () => {
     const { disabled, indeterminate } = this.props;
@@ -33,22 +66,25 @@ export default class Checkbox extends React.Component {
       type = "minus";
     }
     if (disabled) {
-      color = "mineral40"
+      color = "mineral40";
     }
 
-    return <Icon type={type} color={color} size="small" />
+    return <Icon type={type} color={color} size="small" />;
+  };
+
+  handleOnChange = (e) => {
+    const { onChange } = this.props;
+    if (!isUndefined(onChange)) {
+      onChange(e);
+    }
+
+    this.setState((state) => ({ localChecked: !state.localChecked }));
   };
 
   render() {
-    const {
-      className,
-      id,
-      label,
-      disabled,
-      checked,
-      indeterminate,
-      name,
-    } = this.props;
+    const { id, name, className, label, disabled, indeterminate } = this.props;
+
+    const { localChecked } = this.state;
 
     return (
       <div>
@@ -58,15 +94,12 @@ export default class Checkbox extends React.Component {
           id={id}
           disabled={disabled}
           name={name}
-          checked={checked}
+          checked={localChecked}
           onChange={this.handleOnChange}
-          ref={el => el && (el.indeterminate = indeterminate)}
         />
-        <label
-          className={`lab-checkbox__label`}
-          htmlFor={id}>
+        <label className="lab-checkbox__label" htmlFor={id}>
           <span className="lab-checkbox__box">
-            {this.checkIcon()}
+            {localChecked || indeterminate ? this.checkIcon() : ""}
           </span>
           {label}
         </label>
