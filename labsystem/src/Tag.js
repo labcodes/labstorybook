@@ -4,7 +4,7 @@ import Icon from "./Icon";
 
 export default class Tag extends React.Component {
   static propTypes = {
-    children: PropTypes.element,
+    text: PropTypes.string.isRequired,
     type: PropTypes.string,
     dropdown: PropTypes.string,
     removable: PropTypes.string,
@@ -12,18 +12,15 @@ export default class Tag extends React.Component {
     icon: PropTypes.string,
     thumbSrc: PropTypes.string,
     outline: PropTypes.string,
-    vivid: PropTypes.string, 
     colorStyle: PropTypes.string,
     color: PropTypes.string,
   };
 
   static defaultProps = {
-    children: undefined,
     type: undefined,
     icon: undefined,
     thumbSrc: undefined,
     outline: undefined,
-    vivid: "soft",
     colorStyle: "soft",
     color: "",
     removable: undefined,
@@ -91,7 +88,7 @@ export default class Tag extends React.Component {
 
   render() {
     const {
-      children,
+      text,
       type,
       dropdown,
       removable,
@@ -117,7 +114,7 @@ export default class Tag extends React.Component {
       >
         {this.thumb()}
         {this.icon()}
-        {children}
+        {text}
         {this.dropdownIcon()}
         {this.removeIcon()}
       </span>
