@@ -95,13 +95,13 @@ import Tag from '../labsystem/src/Tag';
         <p>Other elements are not allowed and color skin is fixed to match selection state.</p>
         <div class="columns">
           <div class="column">
-            <h6>Unselected chip</h6>
-            <Tag chip>Unselected</Tag>
+            <h6>Unselected togglable</h6>
+            <Tag type="togglable">Unselected</Tag>
           </div>
           <div class="column">
-            <h6>Selected chip</h6>
-            <Tag chipActive>Single selection</Tag>
-            <Tag chipActiveMulti>Multiple selection</Tag>
+            <h6>Selected togglable</h6>
+            <Tag type="togglable">Single selection</Tag>
+            <Tag type="togglable">Multiple selection</Tag>
           </div>
         </div>
       </div>
@@ -113,7 +113,7 @@ import Tag from '../labsystem/src/Tag';
         <Tag removable>Label</Tag>
         <span>
           <Tag removable icon="calendar">Label</Tag>
-          <Tag removable thumbSrc="docs/tokens-spacing/10-spacing.png">Label</Tag>
+          <Tag removable thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Label</Tag>
         </span>
       </div>
     </div>
@@ -152,14 +152,15 @@ Fill is the default style.
 </Preview>
 
 ##### Disabled
-- Ajustar icon & thumb
 
 <Preview>
   <Story name="Disabled sample">
     <Fragment>
-      <Tag chip disabled>Chip disabled</Tag>
+      <Tag icon="calendar" disabled>Simple with icon</Tag>
+      <Tag type="togglable" disabled>togglable disabled</Tag>
       <Tag dropdown disabled>Tag dropdown disabled</Tag>
       <Tag removable disabled>Removable disabled</Tag>
+      <Tag thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" disabled>Tag with thumb</Tag>
     </Fragment>
   </Story>
 </Preview>
@@ -172,11 +173,11 @@ Outline style is set using the class `lab-tag--outline`
 <Preview>
   <Story name="Outline fill">
     <Fragment>
-      <Tag style="outline">Tag</Tag>
-      <Tag style="outline" icon="calendar">Tag with icon</Tag>
-      <Tag style="outline" thumbSrc="docs/tokens-spacing/10-spacing.png">Tag with thumb</Tag>
-      <Tag style="outline" dropdown>Tag dropdown</Tag>
-      <Tag style="outline" removable>Removable</Tag>
+      <Tag outline>Tag</Tag>
+      <Tag outline icon="calendar">Tag with icon</Tag>
+      <Tag outline thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Tag with thumb</Tag>
+      <Tag outline dropdown>Tag dropdown</Tag>
+      <Tag outline removable>Removable</Tag>
     </Fragment>
   </Story>
 </Preview>
@@ -187,9 +188,9 @@ Outline style is set using the class `lab-tag--outline`
 <Preview>
   <Story name="Disabled outline">
     <Fragment>
-      <Tag style="outline" chip disabled>Chip disabled</Tag>
-      <Tag style="outline" dropdown disabled>Tag dropdown disabled</Tag>
-      <Tag style="outline" removable disabled>Removable disabled</Tag>
+      <Tag outline type="togglable" disabled>togglable disabled</Tag>
+      <Tag outline dropdown disabled>Tag dropdown disabled</Tag>
+      <Tag outline removable disabled>Removable disabled</Tag>
     </Fragment>
   </Story>
 </Preview>
@@ -208,17 +209,41 @@ The user may choose between two styles and tones as following.
 #### Soft
 Soft is the default skin.
 
+<Preview>
+  <Story name="Soft sample">
+    <Fragment>
+      <Tag>Tag</Tag>
+      <Tag icon="calendar">Tag with icon</Tag>
+      <Tag thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Tag with thumb</Tag>
+      <Tag dropdown>Tag dropdown</Tag>
+      <Tag removable>Removable</Tag>
+    </Fragment>
+  </Story>
+</Preview>
+
 #### Intense
 Outline skin is set using the class `lab-tag__skin-intense"`
 
 <Preview>
-  <Story name="Intense sample">
+  <Story name="Intense fill sample">
     <Fragment>
       <Tag>Tag</Tag>
       <Tag icon="calendar">Tag with icon</Tag>
-      <Tag thumbSrc="docs/tokens-spacing/10-spacing.png">Tag with thumb</Tag>
+      <Tag thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Tag with thumb</Tag>
       <Tag dropdown>Tag dropdown</Tag>
       <Tag removable>Removable</Tag>
+    </Fragment>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Intense outline sample">
+    <Fragment>
+      <Tag outline colorStyle="intense">Tag</Tag>
+      <Tag outline colorStyle="intense" icon="calendar">Tag with icon</Tag>
+      <Tag outline colorStyle="intense" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Tag with thumb</Tag>
+      <Tag outline colorStyle="intense" dropdown>Tag dropdown</Tag>
+      <Tag outline colorStyle="intense" removable>Removable</Tag>
     </Fragment>
   </Story>
 </Preview>
@@ -234,13 +259,13 @@ Default tag with intense color style
       <Tag colorStyle="intense" icon="calendar">Label</Tag>
       <Tag colorStyle="intense" dropdown>Label</Tag>
       <Tag colorStyle="intense" removable>Label</Tag>
-      <Tag colorStyle="intense" thumbSrc="docs/tokens-spacing/10-spacing.png">Label</Tag>
+      <Tag colorStyle="intense" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Label</Tag>
       <br />
-      <Tag colorStyle="intense" style="outline">Label</Tag>
-      <Tag colorStyle="intense" style="outline" icon="calendar">Label</Tag>
-      <Tag colorStyle="intense" dropdown style="outline">Label</Tag>
-      <Tag colorStyle="intense" removable style="outline">Label</Tag>
-      <Tag colorStyle="intense" style="outline" thumbSrc="docs/tokens-spacing/10-spacing.png">Label</Tag>
+      <Tag colorStyle="intense" outline>Label</Tag>
+      <Tag colorStyle="intense" outline icon="calendar">Label</Tag>
+      <Tag colorStyle="intense" dropdown outline>Label</Tag>
+      <Tag colorStyle="intense" removable outline>Label</Tag>
+      <Tag colorStyle="intense" outline thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Label</Tag>
     </Fragment>
   </Story>
 </Preview>
@@ -251,9 +276,9 @@ Tag can be used in the following themes:
 <Preview>
   <Story name="Sample Tag Themes">
     <Fragment>
-      <Tag color="purple" style="outline">Daniela</Tag>
-      <Tag thumbSrc="docs/tokens-spacing/10-spacing.png">With thumb</Tag>
-      <Tag thumbSrc="docs/tokens-spacing/10-spacing.png" thumbAlt="">With thumb</Tag>
+      <Tag color="purple" outline>Daniela</Tag>
+      <Tag thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">With thumb</Tag>
+      <Tag thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" thumbAlt="">With thumb</Tag>
     </Fragment>
   </Story>
 </Preview>
@@ -262,71 +287,83 @@ Tag can be used in the following themes:
 <Preview>
   <Story name="Colors Fill">
     <Fragment>
-      <Tag color="green">Dani</Tag>
-      <Tag color="green" icon="calendar">Dani  </Tag>
-      <Tag color="green" dropdown>Dani</Tag>
-      <Tag color="green" removable>Dani</Tag>
-      <Tag color="green" disabled>Dani</Tag>
-      <Tag color="green" colorStyle="intense">Dani</Tag>
-      <Tag color="green" icon="calendar" colorStyle="intense">Dani </Tag>
-      <Tag color="green" colorStyle="intense" dropdown>Dani</Tag>
-      <Tag color="green" colorStyle="intense" removable>Dani</Tag>
-      <Tag color="green" colorStyle="intense" disabled>Dani</Tag>
+      <Tag color="green">Tag</Tag>
+      <Tag color="green" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Tag</Tag>
+      <Tag color="green" icon="calendar">Tag  </Tag>
+      <Tag color="green" dropdown>Tag</Tag>
+      <Tag color="green" removable>Tag</Tag>
+      <Tag color="green" disabled>Tag</Tag>
+      <Tag color="green" colorStyle="intense">Tag</Tag>
+      <Tag color="green" colorStyle="intense" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Tag</Tag>
+      <Tag color="green" icon="calendar" colorStyle="intense">Tag </Tag>
+      <Tag color="green" colorStyle="intense" dropdown>Tag</Tag>
+      <Tag color="green" colorStyle="intense" removable>Tag</Tag>
+      <Tag color="green" colorStyle="intense" disabled>Tag</Tag>
       <br />
-      <Tag color="red">Dani</Tag>
-      <Tag color="red" icon="calendar">Dani  </Tag>
-      <Tag color="red" dropdown>Dani</Tag>
-      <Tag color="red" removable>Dani</Tag>
-      <Tag color="red" disabled>Dani</Tag>
-      <Tag color="red" colorStyle="intense">Dani</Tag>
-      <Tag color="red" icon="calendar" colorStyle="intense">Dani </Tag>
-      <Tag color="red" colorStyle="intense" dropdown>Dani</Tag>
-      <Tag color="red" colorStyle="intense" removable>Dani</Tag>
-      <Tag color="red" colorStyle="intense" disabled>Dani</Tag>
+      <Tag color="red">Tag</Tag>
+      <Tag color="red" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Tag</Tag>
+      <Tag color="red" icon="calendar">Tag  </Tag>
+      <Tag color="red" dropdown>Tag</Tag>
+      <Tag color="red" removable>Tag</Tag>
+      <Tag color="red" disabled>Tag</Tag>
+      <Tag color="red" colorStyle="intense">Tag</Tag>
+      <Tag color="red" colorStyle="intense" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Tag</Tag>
+      <Tag color="red" icon="calendar" colorStyle="intense">Tag </Tag>
+      <Tag color="red" colorStyle="intense" dropdown>Tag</Tag>
+      <Tag color="red" colorStyle="intense" removable>Tag</Tag>
+      <Tag color="red" colorStyle="intense" disabled>Tag</Tag>
       <br/>
-      <Tag color="yellow">Dani</Tag>
-      <Tag color="yellow" icon="calendar">Dani </Tag>
-      <Tag color="yellow" dropdown>Dani</Tag>
-      <Tag color="yellow" removable>Dani</Tag>
-      <Tag color="yellow" disabled>Dani</Tag>
-      <Tag color="yellow" colorStyle="intense">Dani</Tag>
-      <Tag color="yellow" icon="calendar" colorStyle="intense">Dani  </Tag>
-      <Tag color="yellow" colorStyle="intense" dropdown>Dani</Tag>
-      <Tag color="yellow" colorStyle="intense" removable>Dani</Tag>
-      <Tag color="yellow" colorStyle="intense" disabled>Dani</Tag>
+      <Tag color="yellow">Tag</Tag>
+      <Tag color="yellow" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Tag</Tag>
+      <Tag color="yellow" icon="calendar">Tag </Tag>
+      <Tag color="yellow" dropdown>Tag</Tag>
+      <Tag color="yellow" removable>Tag</Tag>
+      <Tag color="yellow" disabled>Tag</Tag>
+      <Tag color="yellow" colorStyle="intense">Tag</Tag>
+      <Tag color="yellow" colorStyle="intense" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Tag</Tag>
+      <Tag color="yellow" icon="calendar" colorStyle="intense">Tag  </Tag>
+      <Tag color="yellow" colorStyle="intense" dropdown>Tag</Tag>
+      <Tag color="yellow" colorStyle="intense" removable>Tag</Tag>
+      <Tag color="yellow" colorStyle="intense" disabled>Tag</Tag>
       <br />
-      <Tag color="cyan">Dani</Tag>
-      <Tag color="cyan" icon="calendar">Dani </Tag>
-      <Tag color="cyan" dropdown>Dani</Tag>
-      <Tag color="cyan" removable>Dani</Tag>
-      <Tag color="cyan" disabled>Dani</Tag>
-      <Tag color="cyan" colorStyle="intense">Dani</Tag>
-      <Tag color="cyan" icon="calendar" colorStyle="intense">Dani  </Tag>
-      <Tag color="cyan" colorStyle="intense" dropdown>Dani</Tag>
-      <Tag color="cyan" colorStyle="intense" removable>Dani</Tag>
-      <Tag color="cyan" colorStyle="intense" disabled>Dani</Tag>
+      <Tag color="cyan">Tag</Tag>
+      <Tag color="cyan" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Tag</Tag>
+      <Tag color="cyan" icon="calendar">Tag </Tag>
+      <Tag color="cyan" dropdown>Tag</Tag>
+      <Tag color="cyan" removable>Tag</Tag>
+      <Tag color="cyan" disabled>Tag</Tag>
+      <Tag color="cyan" colorStyle="intense">Tag</Tag>
+      <Tag color="cyan" colorStyle="intense" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Tag</Tag>
+      <Tag color="cyan" icon="calendar" colorStyle="intense">Tag  </Tag>
+      <Tag color="cyan" colorStyle="intense" dropdown>Tag</Tag>
+      <Tag color="cyan" colorStyle="intense" removable>Tag</Tag>
+      <Tag color="cyan" colorStyle="intense" disabled>Tag</Tag>
       <br />
-      <Tag color="orange">Dani</Tag>
-      <Tag color="orange" icon="calendar">Dani </Tag>
-      <Tag color="orange" dropdown>Dani</Tag>
-      <Tag color="orange" removable>Dani</Tag>
-      <Tag color="orange" disabled>Dani</Tag>
-      <Tag color="orange" colorStyle="intense">Dani</Tag>
-      <Tag color="orange" icon="calendar" colorStyle="intense">Dani  </Tag>
-      <Tag color="orange" colorStyle="intense" dropdown>Dani</Tag>
-      <Tag color="orange" colorStyle="intense" removable>Dani</Tag>
-      <Tag color="orange" colorStyle="intense" disabled>Dani</Tag>
+      <Tag color="orange">Tag</Tag>
+      <Tag color="orange" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Tag</Tag>
+      <Tag color="orange" icon="calendar">Tag </Tag>
+      <Tag color="orange" dropdown>Tag</Tag>
+      <Tag color="orange" removable>Tag</Tag>
+      <Tag color="orange" disabled>Tag</Tag>
+      <Tag color="orange" colorStyle="intense">Tag</Tag>
+      <Tag color="orange" colorStyle="intense" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Tag</Tag>
+      <Tag color="orange" icon="calendar" colorStyle="intense">Tag</Tag>
+      <Tag color="orange" colorStyle="intense" dropdown>Tag</Tag>
+      <Tag color="orange" colorStyle="intense" removable>Tag</Tag>
+      <Tag color="orange" colorStyle="intense" disabled>Tag</Tag>
       <br />
-      <Tag color="pink">Dani</Tag>
-      <Tag color="pink" icon="calendar">Dani </Tag>
-      <Tag color="pink" dropdown>Dani</Tag>
-      <Tag color="pink" removable>Dani</Tag>
-      <Tag color="pink" disabled>Dani</Tag>
-      <Tag color="pink" colorStyle="intense">Dani</Tag>
-      <Tag color="pink" icon="calendar" colorStyle="intense">Dani  </Tag>
-      <Tag color="pink" colorStyle="intense" dropdown>Dani</Tag>
-      <Tag color="pink" colorStyle="intense" removable>Dani</Tag>
-      <Tag color="pink" colorStyle="intense" disabled>Dani</Tag>
+      <Tag color="pink">Tag</Tag>
+      <Tag color="pink" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Tag</Tag>
+      <Tag color="pink" icon="calendar">Tag </Tag>
+      <Tag color="pink" dropdown>Tag</Tag>
+      <Tag color="pink" removable>Tag</Tag>
+      <Tag color="pink" disabled>Tag</Tag>
+      <Tag color="pink" colorStyle="intense">Tag</Tag>
+      <Tag color="pink" colorStyle="intense" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Tag</Tag>
+      <Tag color="pink" icon="calendar" colorStyle="intense">Tag  </Tag>
+      <Tag color="pink" colorStyle="intense" dropdown>Tag</Tag>
+      <Tag color="pink" colorStyle="intense" removable>Tag</Tag>
+      <Tag color="pink" colorStyle="intense" disabled>Tag</Tag>
     </Fragment>
   </Story>
 </Preview>
@@ -335,71 +372,83 @@ Tag can be used in the following themes:
 <Preview>
   <Story name="Colors Outline">
     <Fragment>
-      <Tag style="outline" color="green">Dani</Tag>
-      <Tag style="outline" color="green" icon="calendar">Dani  </Tag>
-      <Tag style="outline" color="green" dropdown>Dani</Tag>
-      <Tag style="outline" color="green" removable>Dani</Tag>
-      <Tag style="outline" color="green" disabled>Dani</Tag>
-      <Tag style="outline" color="green" colorStyle="intense">Dani</Tag>
-      <Tag style="outline" color="green" icon="calendar" colorStyle="intense">Dani </Tag>
-      <Tag style="outline" color="green" colorStyle="intense" dropdown>Dani</Tag>
-      <Tag style="outline" color="green" colorStyle="intense" removable>Dani</Tag>
-      <Tag style="outline" color="green" colorStyle="intense" disabled>Dani</Tag>
+      <Tag outline color="green">Tag</Tag>
+      <Tag outline color="green" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Tag</Tag>
+      <Tag outline color="green" icon="calendar">Tag  </Tag>
+      <Tag outline color="green" dropdown>Tag</Tag>
+      <Tag outline color="green" removable>Tag</Tag>
+      <Tag outline color="green" disabled>Tag</Tag>
+      <Tag outline color="green" colorStyle="intense">Tag</Tag>
+      <Tag outline color="green" colorStyle="intense" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Tag</Tag>
+      <Tag outline color="green" icon="calendar" colorStyle="intense">Tag </Tag>
+      <Tag outline color="green" colorStyle="intense" dropdown>Tag</Tag>
+      <Tag outline color="green" colorStyle="intense" removable>Tag</Tag>
+      <Tag outline color="green" colorStyle="intense" disabled>Tag</Tag>
       <br />
-      <Tag style="outline" color="red">Dani</Tag>
-      <Tag style="outline" color="red" icon="calendar">Dani  </Tag>
-      <Tag style="outline" color="red" dropdown>Dani</Tag>
-      <Tag style="outline" color="red" removable>Dani</Tag>
-      <Tag style="outline" color="red" disabled>Dani</Tag>
-      <Tag style="outline" color="red" colorStyle="intense">Dani</Tag>
-      <Tag style="outline" color="red" icon="calendar" colorStyle="intense">Dani </Tag>
-      <Tag style="outline" color="red" colorStyle="intense" dropdown>Dani</Tag>
-      <Tag style="outline" color="red" colorStyle="intense" removable>Dani</Tag>
-      <Tag style="outline" color="red" colorStyle="intense" disabled>Dani</Tag>
+      <Tag outline color="red">Tag</Tag>
+      <Tag outline color="red" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Tag</Tag>
+      <Tag outline color="red" icon="calendar">Tag  </Tag>
+      <Tag outline color="red" dropdown>Tag</Tag>
+      <Tag outline color="red" removable>Tag</Tag>
+      <Tag outline color="red" disabled>Tag</Tag>
+      <Tag outline color="red" colorStyle="intense">Tag</Tag>
+      <Tag outline color="red" colorStyle="intense" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Tag</Tag>
+      <Tag outline color="red" icon="calendar" colorStyle="intense">Tag </Tag>
+      <Tag outline color="red" colorStyle="intense" dropdown>Tag</Tag>
+      <Tag outline color="red" colorStyle="intense" removable>Tag</Tag>
+      <Tag outline color="red" colorStyle="intense" disabled>Tag</Tag>
       <br/>
-      <Tag style="outline" color="yellow">Dani</Tag>
-      <Tag style="outline" color="yellow" icon="calendar">Dani </Tag>
-      <Tag style="outline" color="yellow" dropdown>Dani</Tag>
-      <Tag style="outline" color="yellow" removable>Dani</Tag>
-      <Tag style="outline" color="yellow" disabled>Dani</Tag>
-      <Tag style="outline" color="yellow" colorStyle="intense">Dani</Tag>
-      <Tag style="outline" color="yellow" icon="calendar" colorStyle="intense">Dani  </Tag>
-      <Tag style="outline" color="yellow" colorStyle="intense" dropdown>Dani</Tag>
-      <Tag style="outline" color="yellow" colorStyle="intense" removable>Dani</Tag>
-      <Tag style="outline" color="yellow" colorStyle="intense" disabled>Dani</Tag>
+      <Tag outline color="yellow">Tag</Tag>
+      <Tag outline color="yellow" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Tag</Tag>
+      <Tag outline color="yellow" icon="calendar">Tag </Tag>
+      <Tag outline color="yellow" dropdown>Tag</Tag>
+      <Tag outline color="yellow" removable>Tag</Tag>
+      <Tag outline color="yellow" disabled>Tag</Tag>
+      <Tag outline color="yellow" colorStyle="intense">Tag</Tag>
+      <Tag outline color="yellow" colorStyle="intense" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Tag</Tag>
+      <Tag outline color="yellow" icon="calendar" colorStyle="intense">Tag  </Tag>
+      <Tag outline color="yellow" colorStyle="intense" dropdown>Tag</Tag>
+      <Tag outline color="yellow" colorStyle="intense" removable>Tag</Tag>
+      <Tag outline color="yellow" colorStyle="intense" disabled>Tag</Tag>
       <br />
-      <Tag style="outline" color="cyan">Dani</Tag>
-      <Tag style="outline" color="cyan" icon="calendar">Dani </Tag>
-      <Tag style="outline" color="cyan" dropdown>Dani</Tag>
-      <Tag style="outline" color="cyan" removable>Dani</Tag>
-      <Tag style="outline" color="cyan" disabled>Dani</Tag>
-      <Tag style="outline" color="cyan" colorStyle="intense">Dani</Tag>
-      <Tag style="outline" color="cyan" icon="calendar" colorStyle="intense">Dani  </Tag>
-      <Tag style="outline" color="cyan" colorStyle="intense" dropdown>Dani</Tag>
-      <Tag style="outline" color="cyan" colorStyle="intense" removable>Dani</Tag>
-      <Tag style="outline" color="cyan" colorStyle="intense" disabled>Dani</Tag>
+      <Tag outline color="cyan">Tag</Tag>
+      <Tag outline color="cyan" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Tag</Tag>
+      <Tag outline color="cyan" icon="calendar">Tag </Tag>
+      <Tag outline color="cyan" dropdown>Tag</Tag>
+      <Tag outline color="cyan" removable>Tag</Tag>
+      <Tag outline color="cyan" disabled>Tag</Tag>
+      <Tag outline color="cyan" colorStyle="intense">Tag</Tag>
+      <Tag outline color="cyan" colorStyle="intense" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Tag</Tag>
+      <Tag outline color="cyan" icon="calendar" colorStyle="intense">Tag  </Tag>
+      <Tag outline color="cyan" colorStyle="intense" dropdown>Tag</Tag>
+      <Tag outline color="cyan" colorStyle="intense" removable>Tag</Tag>
+      <Tag outline color="cyan" colorStyle="intense" disabled>Tag</Tag>
       <br />
-      <Tag style="outline" color="orange">Dani</Tag>
-      <Tag style="outline" color="orange" icon="calendar">Dani </Tag>
-      <Tag style="outline" color="orange" dropdown>Dani</Tag>
-      <Tag style="outline" color="orange" removable>Dani</Tag>
-      <Tag style="outline" color="orange" disabled>Dani</Tag>
-      <Tag style="outline" color="orange" colorStyle="intense">Dani</Tag>
-      <Tag style="outline" color="orange" icon="calendar" colorStyle="intense">Dani  </Tag>
-      <Tag style="outline" color="orange" colorStyle="intense" dropdown>Dani</Tag>
-      <Tag style="outline" color="orange" colorStyle="intense" removable>Dani</Tag>
-      <Tag style="outline" color="orange" colorStyle="intense" disabled>Dani</Tag>
+      <Tag outline color="orange">Tag</Tag>
+      <Tag outline color="orange" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Tag</Tag>
+      <Tag outline color="orange" icon="calendar">Tag </Tag>
+      <Tag outline color="orange" dropdown>Tag</Tag>
+      <Tag outline color="orange" removable>Tag</Tag>
+      <Tag outline color="orange" disabled>Tag</Tag>
+      <Tag outline color="orange" colorStyle="intense">Tag</Tag>
+      <Tag outline color="orange" colorStyle="intense" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Tag</Tag>
+      <Tag outline color="orange" icon="calendar" colorStyle="intense">Tag  </Tag>
+      <Tag outline color="orange" colorStyle="intense" dropdown>Tag</Tag>
+      <Tag outline color="orange" colorStyle="intense" removable>Tag</Tag>
+      <Tag outline color="orange" colorStyle="intense" disabled>Tag</Tag>
       <br />
-      <Tag style="outline" color="pink">Dani</Tag>
-      <Tag style="outline" color="pink" icon="calendar">Dani </Tag>
-      <Tag style="outline" color="pink" dropdown>Dani</Tag>
-      <Tag style="outline" color="pink" removable>Dani</Tag>
-      <Tag style="outline" color="pink" disabled>Dani</Tag>
-      <Tag style="outline" color="pink" colorStyle="intense">Dani</Tag>
-      <Tag style="outline" color="pink" icon="calendar" colorStyle="intense">Dani  </Tag>
-      <Tag style="outline" color="pink" colorStyle="intense" dropdown>Dani</Tag>
-      <Tag style="outline" color="pink" colorStyle="intense" removable>Dani</Tag>
-      <Tag style="outline" color="pink" colorStyle="intense" disabled>Dani</Tag>
+      <Tag outline color="pink">Tag</Tag>
+      <Tag outline color="pink" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Tag</Tag>
+      <Tag outline color="pink" icon="calendar">Tag </Tag>
+      <Tag outline color="pink" dropdown>Tag</Tag>
+      <Tag outline color="pink" removable>Tag</Tag>
+      <Tag outline color="pink" disabled>Tag</Tag>
+      <Tag outline color="pink" colorStyle="intense">Tag</Tag>
+      <Tag outline color="pink" colorStyle="intense" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4">Tag</Tag>
+      <Tag outline color="pink" icon="calendar" colorStyle="intense">Tag  </Tag>
+      <Tag outline color="pink" colorStyle="intense" dropdown>Tag</Tag>
+      <Tag outline color="pink" colorStyle="intense" removable>Tag</Tag>
+      <Tag outline color="pink" colorStyle="intense" disabled>Tag</Tag>
     </Fragment>
   </Story>
 </Preview>
@@ -420,10 +469,27 @@ Dúvidas
 
 To dos
 - Estados aberto/fechado pra dropdowns
-- Estados selecionado/idle pra chips (single e multi)
-- tooltip pra removable chips e pra texto longo elipsado
+- Estados selecionado/idle pra togglables (single e multi)
+- tooltip pra removable togglables e pra texto longo elipsado
 - Entender como estilizar as classes. Usa como no scss ou como no story? :thinking:
 
 Decisions:
 - Removed thumb alt since the tag itself should be descriptive.
 - O default ficou mineral mesmo
+
+
+Tag props
+
+- type = {simple, togglable, dropdown, removable}
+- text = a label que aparece (substitui children)
+- disabled
+- outline (antigo style. por padrão é "fill")
+- vivid (antigo colorStyle. por padrão é "pale")
+  Para o type==togglable ele é por padrão pale, mas quando selecionado fica vivid.togglable
+- color 
+
+- icon ou thumb
+
+
+
+span class="lab-tab tab-tag__togglable"

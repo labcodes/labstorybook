@@ -5,13 +5,13 @@ import Icon from "./Icon";
 export default class Tag extends React.Component {
   static propTypes = {
     children: PropTypes.element,
-    chip: PropTypes.string,
+    type: PropTypes.string,
     dropdown: PropTypes.string,
     removable: PropTypes.string,
     disabled: PropTypes.string,
     icon: PropTypes.string,
     thumbSrc: PropTypes.string,
-    style: PropTypes.string,
+    outline: PropTypes.string,
     vivid: PropTypes.string, 
     colorStyle: PropTypes.string,
     color: PropTypes.string,
@@ -22,14 +22,13 @@ export default class Tag extends React.Component {
     type: undefined,
     icon: undefined,
     thumbSrc: undefined,
-    style: "",
+    outline: undefined,
     vivid: "soft",
     colorStyle: "soft",
     color: "",
     removable: undefined,
     dropdown: undefined,
     disabled: undefined,
-    chip: undefined,
   };
 
   icon = () => {
@@ -90,51 +89,27 @@ export default class Tag extends React.Component {
     return returnRemoveIcon;
   };
 
-  chip = () => {
-    const { chipActive, chipActiveMulti } = this.props;
-    let returnChip;
-
-    if (chipActive) {
-      returnChipActive = (
-        <span className={
-          `lab-tag__chip lab-tag__skin-intense`}>
-        </span>
-      );
-    }
-
-    if (chipActiveMulti) {
-      returnChipActiveMulti = (
-        <span className={
-          `lab-tag__chip lab-tag__skin-intense lab-tag--has-left-icon`}>
-          <Icon type="check" color="black75" size="petit" />
-        </span>
-      );
-    }
-
-    return returnChip;
-  };
-
   render() {
     const {
       children,
-      chip,
+      type,
       dropdown,
       removable,
       disabled,
       icon,
       thumbSrc,
-      style,
+      outline,
       colorStyle,
       color,
     } = this.props;
     return (
       <span
-        className={
-          `${chip ? ` lab-tag__chip lab-tag__skin-soft` : ` lab-tag lab-tag__skin-${colorStyle}`}` +
+        className={ `lab-tag` +
+          `${type === "togglable" ? ` lab-tag__togglable lab-tag__skin-soft` : ` lab-tag__skin-${colorStyle}`}` +
           `${removable ? ` lab-tag--has-right-icon` : ""}` +
           `${dropdown ? ` lab-tag--has-right-icon` : ""}` +
           `${disabled ? " lab-tag--disabled" : ""}` +
-          `${style ? ` lab-tag--${style}` : ""}` +
+          `${outline ? ` lab-tag--outline` : ""}` +
           `${color ? ` lab-tag--${color}-${colorStyle}` : ""}` +
           `${icon ? ` lab-tag--has-left-icon` : ""}` +
           `${thumbSrc ? ` lab-tag--has-thumb` : ""}`
