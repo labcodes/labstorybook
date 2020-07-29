@@ -94,7 +94,7 @@ describe("Checkbox", () => {
         />
       )
       .toJSON();
-    expect(renderedComponent).toMatchSnapshot();and
+    expect(renderedComponent).toMatchSnapshot();
   });
 
   it("inits state.localChecked with defaultChecked if defined", async () => {
