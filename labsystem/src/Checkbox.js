@@ -13,7 +13,7 @@ export default class Checkbox extends React.Component {
     label: PropTypes.string.isRequired,
     disabled: PropTypes.bool,
     checked: PropTypes.bool,
-    value: PropTypes.oneOfType(string, number, bool),
+    value: PropTypes.oneOfType([string, number, bool]),
     indeterminate: PropTypes.bool,
     defaultChecked: PropTypes.bool,
     className: PropTypes.string,
