@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import PropTypes, { string, number, bool } from "prop-types";
 import { isUndefined } from "lodash";
 
 import Icon from "./Icon";
@@ -13,6 +13,7 @@ export default class Checkbox extends React.Component {
     label: PropTypes.string.isRequired,
     disabled: PropTypes.bool,
     checked: PropTypes.bool,
+    value: PropTypes.oneOfType(string, number, bool),
     indeterminate: PropTypes.bool,
     defaultChecked: PropTypes.bool,
     className: PropTypes.string,
@@ -22,6 +23,7 @@ export default class Checkbox extends React.Component {
   static defaultProps = {
     disabled: false,
     checked: undefined,
+    value: null,
     indeterminate: false,
     defaultChecked: undefined,
     className: undefined,
@@ -53,7 +55,7 @@ export default class Checkbox extends React.Component {
   componentDidUpdate(prevProps) {
     const { checked } = this.props;
     if (checked !== prevProps.checked) {
-      this.setState((state) => ({ localChecked: checked }));
+      this.setState(() => ({ localChecked: checked }));
     }
   }
 
@@ -82,7 +84,15 @@ export default class Checkbox extends React.Component {
   };
 
   render() {
-    const { id, name, className, label, disabled, indeterminate } = this.props;
+    const {
+      id,
+      name,
+      className,
+      label,
+      disabled,
+      indeterminate,
+      value,
+    } = this.props;
 
     const { localChecked } = this.state;
 
@@ -96,6 +106,8 @@ export default class Checkbox extends React.Component {
           name={name}
           checked={localChecked}
           onChange={this.handleOnChange}
+          // eslint-disable-next-line react/jsx-props-no-spreading
+          {...(value ? { value } : undefined)}
         />
         <label className="lab-checkbox__label" htmlFor={id}>
           <span className="lab-checkbox__box">
