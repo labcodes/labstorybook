@@ -55,6 +55,7 @@ export default class Checkbox extends React.Component {
   componentDidUpdate(prevProps) {
     const { checked } = this.props;
     if (checked !== prevProps.checked) {
+      // eslint-disable-next-line react/no-did-update-set-state
       this.setState(() => ({ localChecked: checked }));
     }
   }
