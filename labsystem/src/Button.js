@@ -5,21 +5,22 @@ import Icon from "./Icon";
 
 export default class Button extends React.Component {
   static propTypes = {
-    exception: PropTypes.string,
-    icon: PropTypes.string,
-    disabled: PropTypes.bool,
     type: PropTypes.string,
+    text: PropTypes.string.isRequired,
+    variant: PropTypes.string,
+    skin: PropTypes.string,
+    icon: PropTypes.string,
     size: PropTypes.string,
-    children: PropTypes.element,
+    disabled: PropTypes.bool,
   };
 
   static defaultProps = {
-    exception: undefined,
+    type: "button",
+    variant: "default",
+    skin: undefined,
     icon: undefined,
-    disabled: false,
-    type: "default",
     size: "normal",
-    children: undefined,
+    disabled: false,
   };
 
   icon = () => {
@@ -30,24 +31,23 @@ export default class Button extends React.Component {
     Icon color changes according to button type and exception on _buttons.scss
     */
     return icon ? (
-      <span className="btn__icon">
-        <Icon type={icon} color="white" size="petit" />
-      </span>
+      <Icon type={icon} color="white" size="petit" className="btn__icon" />
     ) : (
       ""
     );
   };
 
   render() {
-    const { children, disabled, type, size, exception } = this.props;
+    const { type, text, variant, skin, size, disabled } = this.props;
     return (
       <button
-        type="button"
-        className={`btn btn--${type} btn--${size} btn--${exception}`}
+        // eslint-disable-next-line react/button-has-type
+        type={type}
+        className={`btn btn--${variant} btn--${skin} btn--${size}`}
         disabled={disabled}
       >
         {this.icon()}
-        {children}
+        {text}
       </button>
     );
   }
