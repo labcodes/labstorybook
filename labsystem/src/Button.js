@@ -5,12 +5,20 @@ import Icon from "./Icon";
 
 export default class Button extends React.Component {
   static propTypes = {
-    type: PropTypes.string,
+    type: PropTypes.oneOf(["button", "submit", "reset"]),
     text: PropTypes.string.isRequired,
-    variant: PropTypes.string,
-    skin: PropTypes.string,
+    variant: PropTypes.oneOf(["default", "outline", "text"]),
+    skin: PropTypes.oneOf([
+      "light",
+      "dark",
+      "warning",
+      "destructive",
+      "warning-invert",
+      "destructive-invert",
+      "confirmation-invert",
+    ]),
     icon: PropTypes.string,
-    size: PropTypes.string,
+    size: PropTypes.oneOf(["normal", "small", "large"]),
     disabled: PropTypes.bool,
   };
 

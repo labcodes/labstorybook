@@ -55,6 +55,10 @@ $text-bg-active: map-get($button-theme, "20");
 }
 
 // Button elements
+
+// Button icon is scaled to 16x16px but it still occupies 24x24px, having a "native" margin of 4px.
+// We apply negative margin-left to remove this space and adds margin-right to match the expected 
+// 8px spacing between icon and text on button.
 .lab-icon--btn__icon {
   margin-right: 4px;
   margin-left: -4px;
