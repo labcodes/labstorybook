@@ -23,15 +23,18 @@ export default class CheckboxPlayground extends React.Component {
   };
 
   handleDisabled = () => {
-    this.setState({ disabled: !this.state.disabled });
+    const { disabled } = this.state;
+    this.setState({ disabled });
   };
 
   handleChecked = () => {
-    this.setState({ checked: !this.state.checked });
+    const { checked } = this.state;
+    this.setState({ checked });
   };
 
   handleIndeterminate = () => {
-    this.setState({ indeterminate: !this.state.indeterminate });
+    const { indeterminate } = this.state;
+    this.setState({ indeterminate });
   };
 
   render() {
