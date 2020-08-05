@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
 import Radio from '../labsystem/src/Radio';
+import RadioPlayground from '../playgrounds/RadioPlayground';
 
 
 <Meta title="Components/Radio" />
@@ -14,7 +15,7 @@ import Radio from '../labsystem/src/Radio';
 
 <div class="docs-content">
     <p>Radio is a type of selector that is used when we have a list of options, and only one option can be selected.
-    </p> 
+    </p>
 
 <h4>Anatomy</h4>
 <div class="columns">
@@ -30,11 +31,22 @@ import Radio from '../labsystem/src/Radio';
          <li>Hover stroke</li>
          <li>Base container stroke</li>
          <li>Focus stroke</li>
-        </ol> 
+        </ol>
     </div>
 </div>
 
-#### Radio 
+### Interactive demo
+  This demo lets you preview the radio component, its variations, and configuration options.
+  <Preview>
+    <Story name="InteractiveDemo">
+      <Fragment>
+        <RadioPlayground />
+      </Fragment>
+    </Story>
+  </Preview>
+
+
+#### Radio
 
 
 <Preview>
@@ -51,7 +63,7 @@ import Radio from '../labsystem/src/Radio';
   </Story>
 </Preview>
 
-#### Behavior 
+#### Behavior
 1. Choose an option
 2. Click on it and the chosen option will be selected
 3. If another option is selected, the previous one will be deselected
@@ -69,5 +81,11 @@ Checkboxes can also be used in the purple theme
   </Fragment>
   </Story>
 </Preview>
+
+## Prop API docs
+
+  Here's the list of props based on the component's prop types definitions.
+  ### Radio
+  <Props of={Radio} />
 
 </div>
