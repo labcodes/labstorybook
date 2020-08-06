@@ -12,15 +12,6 @@ describe("Checkbox", () => {
   });
 
   it("renders with base props", async () => {
-    expect(
-      shallow(
-        <Checkbox
-          name="test-checkbox-group"
-          id="test-checkbox"
-          label="test checkbox"
-        />
-      )
-    ).toBeTruthy();
     const renderedComponent = renderer
       .create(
         <Checkbox
