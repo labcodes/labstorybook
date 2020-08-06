@@ -22,6 +22,7 @@ export default class AbstractTextInput extends React.Component {
     isValid: PropTypes.bool,
     customErrorMsg: PropTypes.string,
     onChange: PropTypes.func,
+    onIconClick: PropTypes.func,
   };
 
   static defaultProps = {
@@ -40,6 +41,7 @@ export default class AbstractTextInput extends React.Component {
     isValid: undefined,
     customErrorMsg: "Custom Error",
     onChange: undefined,
+    onIconClick: undefined,
   };
 
   constructor(props) {
@@ -64,7 +66,7 @@ export default class AbstractTextInput extends React.Component {
 
     if (defaultValue) {
       localIsValid = this.inputRef.current.validity.valid;
-      this.setState((state) => ({ localIsValid }));
+      this.setState(() => ({ localIsValid }));
     }
     if (!localIsValid) {
       const inputElement = this.inputRef.current;
@@ -73,9 +75,9 @@ export default class AbstractTextInput extends React.Component {
   }
 
   trailingIcon = () => {
-    const { icon, iconColor } = this.props;
+    const { icon, iconColor, onIconClick } = this.props;
     return icon ? (
-      <button type="button" className="lab-input__icon">
+      <button type="button" className="lab-input__icon" onClick={onIconClick}>
         <Icon type={icon} color={iconColor} />
       </button>
     ) : (
@@ -187,6 +189,7 @@ export default class AbstractTextInput extends React.Component {
             ref={this.inputRef}
             onChange={this.handleOnChange}
             autoComplete="off"
+            // eslint-disable-next-line react/jsx-props-no-spreading
             {...rest}
           />
           <div className="lab-input__borders" />
