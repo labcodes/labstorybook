@@ -4,6 +4,7 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Input from '../labsystem/src/Input/AbstractTextInput';
 import TextInput from '../labsystem/src/Input/TextInput';
 import EmailInput from '../labsystem/src/Input/EmailInput';
+import PasswordInput from '../labsystem/src/Input/PasswordInput';
 import InputBehaviorTest from '../labsystem/src/InputBehaviorTest';
 
 <Meta title="Components/Text Input" component={Input} />
@@ -34,8 +35,8 @@ We can have 3 types of text inputs.
   <div class="column">
     <img src="docs/text-input/types-02.png" />
     <p>
-      Password input type should be styling as the Default Input with trailing icon. 
-      The icon must work as a toggle, showing (or hiding) the visibility of the password as the user clicks on it. 
+      Password input type should be styling as the Default Input with trailing icon.
+      The icon must work as a toggle, showing (or hiding) the visibility of the password as the user clicks on it.
     </p>
   </div>
 </div>
@@ -164,7 +165,7 @@ It’s a text field input + fixed suffix.
       <li>Type what the label suggests you to</li>
       <li>If you don't fill the input correctly,the input will show a error help message, changing the component for error state</li>
       <li>Click outside the component to unfocus</li>
-      <li>If you don't fill the input at all, the input will show a required help message after you unfocus it, 
+      <li>If you don't fill the input at all, the input will show a required help message after you unfocus it,
       changing the component for error state.</li>
     </ol>
   </div>
@@ -178,6 +179,7 @@ It’s a text field input + fixed suffix.
     <div className="lab-stories-wrapper">
       <TextInput id="text-input-component" label="Text Input Component" /><br />
       <EmailInput id="email-input-component" label="Email Input Component" /><br />
+      <PasswordInput id="password-input-component" label="Password Input Component" />
     </div>
   </Fragment>
   </Story>
