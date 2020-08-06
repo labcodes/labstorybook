@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Checkbox renders as expected when passing a different className 1`] = `
-<div>
+Array [
   <input
     checked={true}
     className="lab-checkbox lab-checkbox--purple"
@@ -10,7 +10,7 @@ exports[`Checkbox renders as expected when passing a different className 1`] = `
     name="test-checkbox"
     onChange={[Function]}
     type="checkbox"
-  />
+  />,
   <label
     className="lab-checkbox__label"
     htmlFor="test-checkbox"
@@ -23,12 +23,12 @@ exports[`Checkbox renders as expected when passing a different className 1`] = `
       />
     </span>
     test checkbox
-  </label>
-</div>
+  </label>,
+]
 `;
 
 exports[`Checkbox renders as expected when passing disabled as true 1`] = `
-<div>
+Array [
   <input
     checked={false}
     className="lab-checkbox "
@@ -37,7 +37,7 @@ exports[`Checkbox renders as expected when passing disabled as true 1`] = `
     name="test-checkbox"
     onChange={[Function]}
     type="checkbox"
-  />
+  />,
   <label
     className="lab-checkbox__label"
     htmlFor="test-checkbox"
@@ -48,12 +48,12 @@ exports[`Checkbox renders as expected when passing disabled as true 1`] = `
       
     </span>
     test checkbox
-  </label>
-</div>
+  </label>,
+]
 `;
 
 exports[`Checkbox renders as expected when passing indeterminate as true 1`] = `
-<div>
+Array [
   <input
     checked={true}
     className="lab-checkbox "
@@ -62,7 +62,7 @@ exports[`Checkbox renders as expected when passing indeterminate as true 1`] = `
     name="test-checkbox"
     onChange={[Function]}
     type="checkbox"
-  />
+  />,
   <label
     className="lab-checkbox__label"
     htmlFor="test-checkbox"
@@ -75,12 +75,12 @@ exports[`Checkbox renders as expected when passing indeterminate as true 1`] = `
       />
     </span>
     test checkbox
-  </label>
-</div>
+  </label>,
+]
 `;
 
 exports[`Checkbox renders with base props 1`] = `
-<div>
+Array [
   <input
     checked={false}
     className="lab-checkbox "
@@ -89,7 +89,7 @@ exports[`Checkbox renders with base props 1`] = `
     name="test-checkbox-group"
     onChange={[Function]}
     type="checkbox"
-  />
+  />,
   <label
     className="lab-checkbox__label"
     htmlFor="test-checkbox"
@@ -100,6 +100,6 @@ exports[`Checkbox renders with base props 1`] = `
       
     </span>
     test checkbox
-  </label>
-</div>
+  </label>,
+]
 `;
