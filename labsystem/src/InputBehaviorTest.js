@@ -1,6 +1,6 @@
 import React from "react";
 
-import Input from "./Input";
+import Input from "./Input/AbstractTextInput";
 
 export default class InputBehaviorTest extends React.Component {
   constructor(props) {

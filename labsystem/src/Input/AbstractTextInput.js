@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { isUndefined } from "lodash";
-import Icon from "./Icon";
+import Icon from "../Icon";
 
-export default class Inputs extends React.Component {
+export default class AbstractTextInput extends React.Component {
   static propTypes = {
     theme: PropTypes.string,
     className: PropTypes.string,
@@ -32,7 +32,7 @@ export default class Inputs extends React.Component {
     defaultValue: undefined,
     value: undefined, // avaliar depois como resolver//
     icon: undefined,
-    iconColor: "mineral-70",
+    iconColor: "mineral70",
     required: false,
     helpMessage: undefined,
     prefix: undefined,
