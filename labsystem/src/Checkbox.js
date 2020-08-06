@@ -98,7 +98,7 @@ export default class Checkbox extends React.Component {
     const { localChecked } = this.state;
 
     return (
-      <div>
+      <React.Fragment>
         <input
           className={`lab-checkbox ${className || ""}`}
           type="checkbox"
@@ -116,7 +116,7 @@ export default class Checkbox extends React.Component {
           </span>
           {label}
         </label>
-      </div>
+      </React.Fragment>
     );
   }
 }

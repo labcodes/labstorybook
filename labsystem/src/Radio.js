@@ -69,23 +69,25 @@ export default class Radio extends React.Component {
     const { className, id, label, disabled, checked, name, value } = this.props;
 
     return (
-      <div>
-        <input
-          className={`lab-radio ${className || ""}`}
-          type="radio"
-          id={id}
-          disabled={disabled}
-          checked={checked}
-          name={name}
-          onChange={this.handleOnChange}
-          // eslint-disable-next-line react/jsx-props-no-spreading
-          {...(value ? { value } : undefined)}
-        />
-        <label className="lab-radio__label" htmlFor={id}>
-          <span className="lab-radio__container" />
-          {label}
-        </label>
-      </div>
+      <React.Fragment>
+        <div>
+          <input
+            className={`lab-radio ${className || ""}`}
+            type="radio"
+            id={id}
+            disabled={disabled}
+            checked={checked}
+            name={name}
+            onChange={this.handleOnChange}
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...(value ? { value } : undefined)}
+          />
+          <label className="lab-radio__label" htmlFor={id}>
+            <span className="lab-radio__container" />
+            {label}
+          </label>
+        </div>
+      </React.Fragment>
     );
   }
 }
