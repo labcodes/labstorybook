@@ -36,11 +36,29 @@ export default class PasswordInput extends React.Component {
     onChange: undefined,
   };
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      showPassword: false,
+    };
+  }
+
+  toggleTrailingIcon = () => {
+    const { showPassword } = this.state;
+    this.setState({ showPassword: !showPassword });
+  };
+
   render() {
-    // eslint-disable-next-line react/jsx-props-no-spreading
+    const { showPassword } = this.state;
+
     return (
-      // eslint-disable-next-line react/jsx-props-no-spreading
-      <AbstractTextInput type="password" icon="eye-closed" {...this.props} />
+      <AbstractTextInput
+        type={showPassword ? "text" : "password"}
+        icon={showPassword ? "eye-opened" : "eye-closed"}
+        onIconClick={this.toggleTrailingIcon}
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...this.props}
+      />
     );
   }
 }
