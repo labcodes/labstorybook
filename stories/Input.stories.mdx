@@ -5,7 +5,7 @@ import Input from '../labsystem/src/Input/AbstractTextInput';
 import TextInput from '../labsystem/src/Input/TextInput';
 import EmailInput from '../labsystem/src/Input/EmailInput';
 import PasswordInput from '../labsystem/src/Input/PasswordInput';
-import InputBehaviorTest from '../labsystem/src/InputBehaviorTest';
+import InputPlayground from '../playgrounds/InputPlayground';
 
 <Meta title="Components/Text Input" component={Input} />
 
@@ -48,6 +48,18 @@ We can have 3 types of text inputs.
 
 ###### Prefix and Suffix elements
 ![prefix and suffix input anatomy](docs/anatomy-02.png)
+
+#### Input Playground
+
+<Preview>
+  <Story name="Input Playground">
+  <Fragment>
+    <div className="lab-stories-wrapper">
+      <InputPlayground />
+    </div>
+  </Fragment>
+  </Story>
+</Preview>
 
 #### Default Input
 
@@ -180,18 +192,6 @@ It’s a text field input + fixed suffix.
       <TextInput id="text-input-component" label="Text Input Component" /><br />
       <EmailInput id="email-input-component" label="Email Input Component" /><br />
       <PasswordInput id="password-input-component" label="Password Input Component" />
-    </div>
-  </Fragment>
-  </Story>
-</Preview>
-
-#### Input Playground
-
-<Preview>
-  <Story name="Input Playground">
-  <Fragment>
-    <div className="lab-stories-wrapper">
-      <InputBehaviorTest />
     </div>
   </Fragment>
   </Story>
