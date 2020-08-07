@@ -185,7 +185,7 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
 
   &.lab-tag--outline {
     background-color: white;
-    border-color: $tag-text-color;
+    border-color: $tag-vivid-color;
     color: $tag-text-color;
 
     .lab-icon {
@@ -319,7 +319,7 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
     &.lab-tag--outline {
       background-color: white;
       color: map-get($palette, "60");
-      border-color: map-get($palette, "40");
+      border-color: map-get($palette, "60");
 
       .lab-icon {
         background-color: map-get($palette, "60");
@@ -335,6 +335,7 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
 
       &.lab-tag__togglable:hover, &.lab-tag--has-right-icon:hover {
         background-color: white;
+        color: map-get($palette, "60");
         border-color: map-get($palette, "40");
         box-shadow: 0 0 0 4px map-get($palette, "20");
       }
@@ -387,11 +388,11 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
     &.lab-tag--outline {
       background-color: white;
       color: map-get($palette, "60");
-      @if $name == "yellow" { color: $mustard-60; }
+      @if $name == "yellow" { color: $mustard-70; }
 
       .lab-icon {
         background-color: map-get($palette, "60");
-        @if $name == "yellow" { background-color: $mustard-60; }
+        @if $name == "yellow" { background-color: $mustard-70; }
       }
 
       .lab-tag__thumb {
@@ -456,11 +457,11 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
       background-color: white;
       border-color: map-get($palette, "60");
       color: map-get($palette, "60");
-      @if $name == "yellow" { color: $mustard-60; }
+      @if $name == "yellow" { color: $mustard-70; }
 
       .lab-icon {
         background-color: map-get($palette, "60");
-        @if $name == "yellow" { background-color: $mustard-60; }
+        @if $name == "yellow" { background-color: $mustard-70; }
       }
 
       .lab-tag__right-icon--remove {
@@ -476,11 +477,11 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
         border-color: map-get($palette, "60");
         color: map-get($palette, "60");
         box-shadow: 0 0 0 4px map-get($palette, "20");
-        @if $name == "yellow" { color: $mustard-60; }
+        @if $name == "yellow" { color: $mustard-70; }
 
         .lab-icon {
           background-color: map-get($palette, "60");
-          @if $name == "yellow" { background-color: $mustard-60; }
+          @if $name == "yellow" { background-color: $mustard-70; }
         }
       }
 

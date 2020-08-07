@@ -42,9 +42,9 @@ import Tag from '../labsystem/src/Tag';
         <div class="column is-half">
           <ol>
             <li>Container</li>
-            <li>Left element (optional <code>icon</code> or <code>thumb</code>)</li>
+            <li>Left element (optional and customizable)</li>
             <li>Text</li>
-            <li>Right element</li>
+            <li>Right element (not customizable)</li>
           </ol>
         </div>
       </div>
@@ -70,385 +70,422 @@ import Tag from '../labsystem/src/Tag';
     <div class="columns">
       <div class="column">
         <h3>Simple tag</h3>
-        <p>Used to indicate status, type, and other elements. <strong>No actions are allowed for this type</strong> and focus is the only state styled.</p>
-        <p>It may use the elements <code>icon</code> or <code>thumb</code>.</p>
-        <span>
-          <Tag text="Simple tag" />
-          <Tag text="Tag with icon" icon="calendar" />
-          <Tag text="Tag with thumb" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-        </span>
+        <p>Used to indicate represent categories like status, type, etc. <strong>No actions are allowed for this type</strong>, focus is the only state styled. Supports the left element <code>icon</code> or <code>thumb</code> but doesn't support a right one.</p>
+        <Tag text="Simple tag" />
+        <Tag text="Simple tag" icon="calendar" />
+        <Tag text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
       </div>
       <div class="column">
         <h3>Dropdown tag</h3>
-        <p>Used to switch status, type, or other variations represented using a tag.</p>
-        <p>It may use the element <code>icon</code>.</p>
-        <span>
-          <Tag text="Label" dropdown />
-          <Tag text="Label" dropdown icon="calendar" />
-        </span>
+        <p>Used to switch between categories represented using a simple tag. Supports the left element <code>icon</code> and has a dropdown arrow to the right. <br /><br /></p>
+        <Tag text="Dropdown" dropdown />
+        <Tag text="Dropdown" dropdown icon="calendar" />
       </div>
     </div>
     <div class="columns">
       <div class="column">
         <h3>Togglable tag</h3>
-        <p>Used to represent single or multiple selection from a set.</p>
-        <p>Other elements are not allowed and color skin is fixed to match selection state.</p>
-        <div class="columns">
-          <div class="column">
-            <h6>Unselected togglable</h6>
-            <Tag text="Unselect" type="togglable" />
-          </div>
-          <div class="column">
-            <h6>Selected togglable</h6>
-            <Tag text="Single selection" type="tog" type="togglable" />
-            <Tag text="Multiple selection" type="togglable" />
-          </div>
-        </div>
+        <p>Used to represent single or multiple selection from a set. Do not support a right element and has a not-customizable left element.</p>
+        <Tag text="Togglable unselected" type="togglable" />
+        <Tag text="Togglable selected" type="togglable" skin="vivid" color="mineral" icon="check"/>
       </div>
       <div class="column">
         <h3>Removable tag</h3>
-        <p>Used as an entity of items picked from a list, usually within a text input.</p>
-        <p>It may use the props <code>icon</code> or <code>thumb</code></p>
-        <h6>Idle</h6>
-        <Tag text="Label" removable />
-        <span>
-          <Tag text="Label" removable icon="calendar" />
-          <Tag text="Label" removable thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-        </span>
+        <p>Used as an entity of a picked or typed item, often within a field. Supports the left element <code>icon</code> or <code>thumb</code> and has a remove button to the right.</p>
+        <Tag text="Removable" removable />
+        <Tag text="Removable" removable icon="calendar" />
+        <Tag text="Removable" removable thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
       </div>
     </div>
   </div>
 </div>
 
-## Elements
+## Style
+Tags has two styles settings, use `outline` to use borders instead of a filled background, and `skin="vivid"` to display more vivid colors.
 
-<div class="columns">
-  <div class="column">
-    <h3>Icon</h3>
-    <p>Can be used to the left of simple tags, dropdown tags, and removable tags. To set use <code>lab-tag--has-left-icon</code></p>
-  </div>
-  <div class="column">
-    <h3>Thumbnail</h3>
-    <p>Can be used to the left of simple tags or removable tags. To set use <code>lab-tag--has-thumb</code></p>
-  </div>
-</div>
-
-## Styles
-- Ajustar icon & thumb
-- Remover disabled pra tag simples
-
-### Fill
-Fill is the default style.
+##### Default tag style
+If no color setting is used, the tag will display with a mineral fill background using `skin="pale"`.
 
 <Preview>
-  <Story name="Fill sample simple">
+  <Story name="Fill sample">
     <Fragment>
-      <Tag text="Simple with icon" icon="calendar" />
+      <Tag text="Simple tag" />
+      <Tag text="Simple tag" icon="calendar" />
+      <Tag text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
       <Tag text="Togglable" type="togglable" />
+      <Tag text="Togg. selected" type="togglable" skin="vivid" color="mineral" icon="check" />
       <Tag text="Dropdown" dropdown />
       <Tag text="Removable" removable />
     </Fragment>
   </Story>
 </Preview>
 
+##### Outline
+Using `outline` will display a tag with white background and 2px border.
+
+<Preview>
+  <Story name="Outline sample">
+    <Fragment>
+      <Tag outline text="Simple tag" />
+      <Tag outline text="Simple tag" icon="calendar" />
+      <Tag outline text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <Tag outline text="Togglable" type="togglable" />
+      <Tag outline text="Togg. selected" type="togglable" skin="vivid" color="mineral" icon="check" />
+      <Tag outline text="Dropdown" dropdown />
+      <Tag outline text="Removable" removable />
+    </Fragment>
+  </Story>
+</Preview>
+
+##### Skin
+Using `skin="vivid"` will display a tag with more vivid colors either for fill or outline tags. Togglable tags cannot receive this prop.
+
+<Preview>
+  <Story name="Skin sample">
+    <Fragment>
+      <Tag skin="vivid" text="Simple tag" />
+      <Tag skin="vivid" text="Simple tag" icon="calendar" />
+      <Tag skin="vivid" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <Tag skin="vivid" text="Dropdown" dropdown />
+      <Tag skin="vivid" text="Removable" removable />
+      <br />
+      <Tag outline skin="vivid" text="Simple tag" />
+      <Tag outline skin="vivid" text="Simple tag" icon="calendar" />
+      <Tag outline skin="vivid" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <Tag outline skin="vivid" text="Dropdown" dropdown />
+      <Tag outline skin="vivid" text="Removable" removable />
+    </Fragment>
+  </Story>
+</Preview>
+
 ##### Disabled
+This prop is used if a tag action is disabled. Therefore, Simple Tags cannot receive this prop.
+
+All disabled styles remain the same regardless of any property other than `outline`.
+
+###### Default
 
 <Preview>
   <Story name="Disabled sample">
     <Fragment>
-      <Tag text="Simple with icon" icon="calendar" disabled />
-      <Tag text="togglable disabled" type="togglable" disabled />
-      <Tag text="Tag dropdown disabled" dropdown disabled />
-      <Tag text="Removable disabled" removable disabled />
-      <Tag text="Tag with thumb" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" disabled />
+      <Tag disabled text="Togglable" type="togglable" />
+      <Tag disabled text="Togg. selected" type="togglable" skin="vivid" color="mineral" icon="check" />
+      <Tag disabled text="Dropdown" dropdown />
+      <Tag disabled text="Removable" removable />
     </Fragment>
   </Story>
 </Preview>
 
-### Outline
-Outline style is set using the class `lab-tag--outline`
-
-- Fix outline to display without passing a color
+###### Outline
 
 <Preview>
-  <Story name="Outline fill">
+  <Story name="Disabled outline sample">
     <Fragment>
-      <Tag text="Tag" outline />
-      <Tag text="Tag with icon" outline icon="calendar" />
-      <Tag text="Tag dropdown" outline thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Dropdown" outline dropdown />
-      <Tag text="Removable" outline removable />
-    </Fragment>
-  </Story>
-</Preview>
-
-##### Disabled
-- Ajustar icon & thumb
-
-<Preview>
-  <Story name="Disabled outline">
-    <Fragment>
-      <Tag text="togglable disabled" outline type="togglable" disabled />
-      <Tag text="Tag dropdown disabled"  outline dropdown disabled />
-      <Tag text="Removable disabled"  outline removable disabled />
+      <Tag disabled outline text="Togglable" type="togglable" />
+      <Tag disabled outline text="Togg. selected" type="togglable" skin="vivid" color="mineral" icon="check" />
+      <Tag disabled outline text="Dropdown" dropdown />
+      <Tag disabled outline text="Removable" removable />
     </Fragment>
   </Story>
 </Preview>
 
 ## Color
-Tag's default color is mineral, but it can also be displayed in teal, purple, mineral, green, red, yellow, orange, pink, and cyan.
+The `color` prop can be set to any tag.
 
-They also have two different skin tones, pale and vivid.
+##### Theme
+Tag's default color is `mineral` but it can also be set to teal or purple from theme settings or by the user using `color="teal"` or `color="purple"`.
 
-To set a color use `lab-tag--[color]-[skin]`
+All disabled styles remains unchanged regardless of any value used.
 
-The user may choose between two styles and tones as following.
-
-### Skin
-
-#### pale
-pale is the default skin.
+###### Teal
 
 <Preview>
-  <Story name="pale sample">
+  <Story name="Teal Theme Sample">
     <Fragment>
-      <Tag text="Tag" />
-      <Tag text="Tag with icon" icon="calendar" />
-      <Tag text="Tag with thumb" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Dropdown tag" dropdown />
-      <Tag text="Removable tag" removable />
+      <Tag color="teal" text="Togglable unselected" type="togglable" />
+      <Tag color="teal" text="Dropdown" dropdown />
+      <Tag color="teal" text="Removable" removable />
+      <Tag color="teal" text="Simple tag" />
+      <Tag color="teal" text="Simple tag" icon="calendar" />
+      <Tag color="teal" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <br />
+      <Tag color="teal" skin="vivid" icon="check" text="Togglable selected" type="togglable" />
+      <Tag color="teal" skin="vivid" text="Dropdown" dropdown />
+      <Tag color="teal" skin="vivid" text="Removable" removable />
+      <Tag color="teal" skin="vivid" text="Simple tag" />
+      <Tag color="teal" skin="vivid" text="Simple tag" icon="calendar" />
+      <Tag color="teal" skin="vivid" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <br />
+      <Tag outline color="teal" text="Togglable unselected" type="togglable" />
+      <Tag outline color="teal" text="Dropdown" dropdown />
+      <Tag outline color="teal" text="Removable" removable />
+      <Tag outline color="teal" text="Simple tag" />
+      <Tag outline color="teal" text="Simple tag" icon="calendar" />
+      <Tag outline color="teal" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <br /> 
+      <Tag outline color="teal" skin="vivid" icon="check" text="Togglable selected" type="togglable" />
+      <Tag outline color="teal" skin="vivid" text="Dropdown" dropdown />
+      <Tag outline color="teal" skin="vivid" text="Removable" removable />
+      <Tag outline color="teal" skin="vivid" text="Simple tag" />
+      <Tag outline color="teal" skin="vivid" text="Simple tag" icon="calendar" />
+      <Tag outline color="teal" skin="vivid" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
     </Fragment>
   </Story>
 </Preview>
 
-#### vivid
-Outline skin is set using the class `lab-tag__skin-vivid"`
+###### Purple
 
 <Preview>
-  <Story name="vivid fill sample">
+  <Story name="Purple Theme Sample">
     <Fragment>
-      <Tag text="Tag" />
-      <Tag text="Tag with icon" icon="calendar" />
-      <Tag text="Tag with thumb" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Dropdown tag" dropdown />
-      <Tag text="Removable tag" removable />
+      <Tag color="purple" text="Togglable unselected" type="togglable" />
+      <Tag color="purple" text="Dropdown" dropdown />
+      <Tag color="purple" text="Removable" removable />
+      <Tag color="purple" text="Simple tag" />
+      <Tag color="purple" text="Simple tag" icon="calendar" />
+      <Tag color="purple" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <br />
+      <Tag color="purple" skin="vivid" icon="check" text="Togglable selected" type="togglable" />
+      <Tag color="purple" skin="vivid" text="Dropdown" dropdown />
+      <Tag color="purple" skin="vivid" text="Removable" removable />
+      <Tag color="purple" skin="vivid" text="Simple tag" />
+      <Tag color="purple" skin="vivid" text="Simple tag" icon="calendar" />
+      <Tag color="purple" skin="vivid" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <br />
+      <Tag outline color="purple" text="Togglable unselected" type="togglable" />
+      <Tag outline color="purple" text="Dropdown" dropdown />
+      <Tag outline color="purple" text="Removable" removable />
+      <Tag outline color="purple" text="Simple tag" />
+      <Tag outline color="purple" text="Simple tag" icon="calendar" />
+      <Tag outline color="purple" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <br /> 
+      <Tag outline color="purple" skin="vivid" icon="check" text="Togglable selected" type="togglable" />
+      <Tag outline color="purple" skin="vivid" text="Dropdown" dropdown />
+      <Tag outline color="purple" skin="vivid" text="Removable" removable />
+      <Tag outline color="purple" skin="vivid" text="Simple tag" />
+      <Tag outline color="purple" skin="vivid" text="Simple tag" icon="calendar" />
+      <Tag outline color="purple" skin="vivid" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
     </Fragment>
   </Story>
 </Preview>
 
+##### Other colors
+The `color` prop also supports the values `green`, `red`, `yellow`, `cyan`, `orange`, and `pink`.
+
+All disabled styles remains unchanged regardless of any value used.
+
+###### Green
+
 <Preview>
-  <Story name="vivid outline sample">
+  <Story name="Green Theme Sample">
     <Fragment>
-      <Tag text="Tag" outline skin="vivid" />
-      <Tag text="Tag with icon" outline skin="vivid" icon="calendar" />
-      <Tag text="Tag with thumb" outline skin="vivid" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag dropdown" outline skin="vivid" dropdown />
-      <Tag text="Removable" outline skin="vivid" removable />
+      <Tag color="green" text="Togglable unselected" type="togglable" />
+      <Tag color="green" text="Dropdown" dropdown />
+      <Tag color="green" text="Removable" removable />
+      <Tag color="green" text="Simple tag" />
+      <Tag color="green" text="Simple tag" icon="calendar" />
+      <Tag color="green" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <br />
+      <Tag color="green" skin="vivid" icon="check" text="Togglable selected" type="togglable" />
+      <Tag color="green" skin="vivid" text="Dropdown" dropdown />
+      <Tag color="green" skin="vivid" text="Removable" removable />
+      <Tag color="green" skin="vivid" text="Simple tag" />
+      <Tag color="green" skin="vivid" text="Simple tag" icon="calendar" />
+      <Tag color="green" skin="vivid" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <br />
+      <Tag outline color="green" text="Togglable unselected" type="togglable" />
+      <Tag outline color="green" text="Dropdown" dropdown />
+      <Tag outline color="green" text="Removable" removable />
+      <Tag outline color="green" text="Simple tag" />
+      <Tag outline color="green" text="Simple tag" icon="calendar" />
+      <Tag outline color="green" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <br /> 
+      <Tag outline color="green" skin="vivid" icon="check" text="Togglable selected" type="togglable" />
+      <Tag outline color="green" skin="vivid" text="Dropdown" dropdown />
+      <Tag outline color="green" skin="vivid" text="Removable" removable />
+      <Tag outline color="green" skin="vivid" text="Simple tag" />
+      <Tag outline color="green" skin="vivid" text="Simple tag" icon="calendar" />
+      <Tag outline color="green" skin="vivid" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
     </Fragment>
   </Story>
 </Preview>
 
-
-Default tag with vivid color style
-(Color from theme (teal as default) and color style vivid).
+###### Red
 
 <Preview>
-  <Story name="vivid Tag">
+  <Story name="Red Theme Sample">
     <Fragment>
-      <Tag text="Tag" skin="vivid" />
-      <Tag text="Tag" skin="vivid" icon="calendar" />
-      <Tag text="Tag" skin="vivid" dropdown />
-      <Tag text="Tag" skin="vivid" removable />
-      <Tag text="Tag" skin="vivid" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <Tag color="red" text="Togglable unselected" type="togglable" />
+      <Tag color="red" text="Dropdown" dropdown />
+      <Tag color="red" text="Removable" removable />
+      <Tag color="red" text="Simple tag" />
+      <Tag color="red" text="Simple tag" icon="calendar" />
+      <Tag color="red" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
       <br />
-      <Tag text="Tag" skin="vivid" outline />
-      <Tag text="Tag" skin="vivid" outline icon="calendar" />
-      <Tag text="Tag" skin="vivid" dropdown outline />
-      <Tag text="Tag" skin="vivid" removable outline />
-      <Tag text="Tag" skin="vivid" outline thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <Tag color="red" skin="vivid" icon="check" text="Togglable selected" type="togglable" />
+      <Tag color="red" skin="vivid" text="Dropdown" dropdown />
+      <Tag color="red" skin="vivid" text="Removable" removable />
+      <Tag color="red" skin="vivid" text="Simple tag" />
+      <Tag color="red" skin="vivid" text="Simple tag" icon="calendar" />
+      <Tag color="red" skin="vivid" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <br />
+      <Tag outline color="red" text="Togglable unselected" type="togglable" />
+      <Tag outline color="red" text="Dropdown" dropdown />
+      <Tag outline color="red" text="Removable" removable />
+      <Tag outline color="red" text="Simple tag" />
+      <Tag outline color="red" text="Simple tag" icon="calendar" />
+      <Tag outline color="red" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <br /> 
+      <Tag outline color="red" skin="vivid" icon="check" text="Togglable selected" type="togglable" />
+      <Tag outline color="red" skin="vivid" text="Dropdown" dropdown />
+      <Tag outline color="red" skin="vivid" text="Removable" removable />
+      <Tag outline color="red" skin="vivid" text="Simple tag" />
+      <Tag outline color="red" skin="vivid" text="Simple tag" icon="calendar" />
+      <Tag outline color="red" skin="vivid" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
     </Fragment>
   </Story>
 </Preview>
 
-## Tag themes
-Tag can be used in the following themes:
+###### Yellow
 
 <Preview>
-  <Story name="Sample Tag Themes">
+  <Story name="Yellow Theme Sample">
     <Fragment>
-      <Tag text="Tag" outline />
-      <Tag text="With thumb" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="With thumb" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" thumbAlt="" />
+      <Tag color="yellow" text="Togglable unselected" type="togglable" />
+      <Tag color="yellow" text="Dropdown" dropdown />
+      <Tag color="yellow" text="Removable" removable />
+      <Tag color="yellow" text="Simple tag" />
+      <Tag color="yellow" text="Simple tag" icon="calendar" />
+      <Tag color="yellow" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <br />
+      <Tag color="yellow" skin="vivid" icon="check" text="Togglable selected" type="togglable" />
+      <Tag color="yellow" skin="vivid" text="Dropdown" dropdown />
+      <Tag color="yellow" skin="vivid" text="Removable" removable />
+      <Tag color="yellow" skin="vivid" text="Simple tag" />
+      <Tag color="yellow" skin="vivid" text="Simple tag" icon="calendar" />
+      <Tag color="yellow" skin="vivid" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <br />
+      <Tag outline color="yellow" text="Togglable unselected" type="togglable" />
+      <Tag outline color="yellow" text="Dropdown" dropdown />
+      <Tag outline color="yellow" text="Removable" removable />
+      <Tag outline color="yellow" text="Simple tag" />
+      <Tag outline color="yellow" text="Simple tag" icon="calendar" />
+      <Tag outline color="yellow" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <br /> 
+      <Tag outline color="yellow" skin="vivid" icon="check" text="Togglable selected" type="togglable" />
+      <Tag outline color="yellow" skin="vivid" text="Dropdown" dropdown />
+      <Tag outline color="yellow" skin="vivid" text="Removable" removable />
+      <Tag outline color="yellow" skin="vivid" text="Simple tag" />
+      <Tag outline color="yellow" skin="vivid" text="Simple tag" icon="calendar" />
+      <Tag outline color="yellow" skin="vivid" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
     </Fragment>
   </Story>
 </Preview>
 
-### Fill
+###### Cyan
+
 <Preview>
-  <Story name="Colors Fill">
+  <Story name="Cyan Theme Sample">
     <Fragment>
-      <Tag text="Tag" color="green" />
-      <Tag text="Tag" color="green" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" color="green" icon="calendar" />
-      <Tag text="Tag" color="green" dropdown />
-      <Tag text="Tag" color="green" removable />
-      <Tag text="Tag" color="green" disabled />
-      <Tag text="Tag" color="green" skin="vivid" />
-      <Tag text="Tag" color="green" skin="vivid" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" color="green" icon="calendar" skin="vivid" />
-      <Tag text="Tag" color="green" skin="vivid" dropdown />
-      <Tag text="Tag" color="green" skin="vivid" removable />
-      <Tag text="Tag" color="green" skin="vivid" disabled />
+      <Tag color="cyan" text="Togglable unselected" type="togglable" />
+      <Tag color="cyan" text="Dropdown" dropdown />
+      <Tag color="cyan" text="Removable" removable />
+      <Tag color="cyan" text="Simple tag" />
+      <Tag color="cyan" text="Simple tag" icon="calendar" />
+      <Tag color="cyan" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
       <br />
-      <Tag text="Tag" color="red" />
-      <Tag text="Tag" color="red" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" color="red" icon="calendar" />
-      <Tag text="Tag" color="red" dropdown />
-      <Tag text="Tag" color="red" removable />
-      <Tag text="Tag" color="red" disabled />
-      <Tag text="Tag" color="red" skin="vivid" />
-      <Tag text="Tag" color="red" skin="vivid" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" color="red" icon="calendar" skin="vivid" />
-      <Tag text="Tag" color="red" skin="vivid" dropdown />
-      <Tag text="Tag" color="red" skin="vivid" removable />
-      <Tag text="Tag" color="red" skin="vivid" disabled />
-      <br/>
-      <Tag text="Tag" color="yellow" />
-      <Tag text="Tag" color="yellow" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" color="yellow" icon="calendar" />
-      <Tag text="Tag" color="yellow" dropdown />
-      <Tag text="Tag" color="yellow" removable />
-      <Tag text="Tag" color="yellow" disabled />
-      <Tag text="Tag" color="yellow" skin="vivid" />
-      <Tag text="Tag" color="yellow" skin="vivid" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" color="yellow" icon="calendar" skin="vivid" />
-      <Tag text="Tag" color="yellow" skin="vivid" dropdown />
-      <Tag text="Tag" color="yellow" skin="vivid" removable />
-      <Tag text="Tag" color="yellow" skin="vivid" disabled />
+      <Tag color="cyan" skin="vivid" icon="check" text="Togglable selected" type="togglable" />
+      <Tag color="cyan" skin="vivid" text="Dropdown" dropdown />
+      <Tag color="cyan" skin="vivid" text="Removable" removable />
+      <Tag color="cyan" skin="vivid" text="Simple tag" />
+      <Tag color="cyan" skin="vivid" text="Simple tag" icon="calendar" />
+      <Tag color="cyan" skin="vivid" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
       <br />
-      <Tag text="Tag" color="cyan" />
-      <Tag text="Tag" color="cyan" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" color="cyan" icon="calendar" />
-      <Tag text="Tag" color="cyan" dropdown />
-      <Tag text="Tag" color="cyan" removable />
-      <Tag text="Tag" color="cyan" disabled />
-      <Tag text="Tag" color="cyan" skin="vivid" />
-      <Tag text="Tag" color="cyan" skin="vivid" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" color="cyan" icon="calendar" skin="vivid" />
-      <Tag text="Tag" color="cyan" skin="vivid" dropdown />
-      <Tag text="Tag" color="cyan" skin="vivid" removable />
-      <Tag text="Tag" color="cyan" skin="vivid" disabled />
-      <br />
-      <Tag text="Tag" color="orange" />
-      <Tag text="Tag" color="orange" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" color="orange" icon="calendar" />
-      <Tag text="Tag" color="orange" dropdown />
-      <Tag text="Tag" color="orange" removable />
-      <Tag text="Tag" color="orange" disabled />
-      <Tag text="Tag" color="orange" skin="vivid" />
-      <Tag text="Tag" color="orange" skin="vivid" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" color="orange" icon="calendar" skin="vivid" />
-      <Tag text="Tag" color="orange" skin="vivid" dropdown />
-      <Tag text="Tag" color="orange" skin="vivid" removable />
-      <Tag text="Tag" color="orange" skin="vivid" disabled />
-      <br />
-      <Tag text="Tag" color="pink" />
-      <Tag text="Tag" color="pink" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" color="pink" icon="calendar" />
-      <Tag text="Tag" color="pink" dropdown />
-      <Tag text="Tag" color="pink" removable />
-      <Tag text="Tag" color="pink" disabled />
-      <Tag text="Tag" color="pink" skin="vivid" />
-      <Tag text="Tag" color="pink" skin="vivid" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" color="pink" icon="calendar" skin="vivid" />
-      <Tag text="Tag" color="pink" skin="vivid" dropdown />
-      <Tag text="Tag" color="pink" skin="vivid" removable />
-      <Tag text="Tag" color="pink" skin="vivid" disabled />
+      <Tag outline color="cyan" text="Togglable unselected" type="togglable" />
+      <Tag outline color="cyan" text="Dropdown" dropdown />
+      <Tag outline color="cyan" text="Removable" removable />
+      <Tag outline color="cyan" text="Simple tag" />
+      <Tag outline color="cyan" text="Simple tag" icon="calendar" />
+      <Tag outline color="cyan" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <br /> 
+      <Tag outline color="cyan" skin="vivid" icon="check" text="Togglable selected" type="togglable" />
+      <Tag outline color="cyan" skin="vivid" text="Dropdown" dropdown />
+      <Tag outline color="cyan" skin="vivid" text="Removable" removable />
+      <Tag outline color="cyan" skin="vivid" text="Simple tag" />
+      <Tag outline color="cyan" skin="vivid" text="Simple tag" icon="calendar" />
+      <Tag outline color="cyan" skin="vivid" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
     </Fragment>
   </Story>
 </Preview>
 
-### Outline
+###### Organge
+
 <Preview>
-  <Story name="Colors Outline">
+  <Story name="Organge Theme Sample">
     <Fragment>
-      <Tag text="Tag" outline color="green" />
-      <Tag text="Tag" outline color="green" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" outline color="green" icon="calendar" />
-      <Tag text="Tag" outline color="green" dropdown />
-      <Tag text="Tag" outline color="green" removable />
-      <Tag text="Tag" outline color="green" disabled />
-      <Tag text="Tag" outline color="green" skin="vivid" />
-      <Tag text="Tag" outline color="green" skin="vivid" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" outline color="green" icon="calendar" skin="vivid" />
-      <Tag text="Tag" outline color="green" skin="vivid" dropdown />
-      <Tag text="Tag" outline color="green" skin="vivid" removable />
-      <Tag text="Tag" outline color="green" skin="vivid" disabled />
+      <Tag color="orange" text="Togglable unselected" type="togglable" />
+      <Tag color="orange" text="Dropdown" dropdown />
+      <Tag color="orange" text="Removable" removable />
+      <Tag color="orange" text="Simple tag" />
+      <Tag color="orange" text="Simple tag" icon="calendar" />
+      <Tag color="orange" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
       <br />
-      <Tag text="Tag" outline color="red" />
-      <Tag text="Tag" outline color="red" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" outline color="red" icon="calendar" />
-      <Tag text="Tag" outline color="red" dropdown />
-      <Tag text="Tag" outline color="red" removable />
-      <Tag text="Tag" outline color="red" disabled />
-      <Tag text="Tag" outline color="red" skin="vivid" />
-      <Tag text="Tag" outline color="red" skin="vivid" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" outline color="red" icon="calendar" skin="vivid" />
-      <Tag text="Tag" outline color="red" skin="vivid" dropdown />
-      <Tag text="Tag" outline color="red" skin="vivid" removable />
-      <Tag text="Tag" outline color="red" skin="vivid" disabled />
-      <br/>
-      <Tag text="Tag" outline color="yellow" />
-      <Tag text="Tag" outline color="yellow" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" outline color="yellow" icon="calendar" />
-      <Tag text="Tag" outline color="yellow" dropdown />
-      <Tag text="Tag" outline color="yellow" removable />
-      <Tag text="Tag" outline color="yellow" disabled />
-      <Tag text="Tag" outline color="yellow" skin="vivid" />
-      <Tag text="Tag" outline color="yellow" skin="vivid" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" outline color="yellow" icon="calendar" skin="vivid" />
-      <Tag text="Tag" outline color="yellow" skin="vivid" dropdown />
-      <Tag text="Tag" outline color="yellow" skin="vivid" removable />
-      <Tag text="Tag" outline color="yellow" skin="vivid" disabled />
+      <Tag color="orange" skin="vivid" icon="check" text="Togglable selected" type="togglable" />
+      <Tag color="orange" skin="vivid" text="Dropdown" dropdown />
+      <Tag color="orange" skin="vivid" text="Removable" removable />
+      <Tag color="orange" skin="vivid" text="Simple tag" />
+      <Tag color="orange" skin="vivid" text="Simple tag" icon="calendar" />
+      <Tag color="orange" skin="vivid" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
       <br />
-      <Tag text="Tag" outline color="cyan" />
-      <Tag text="Tag" outline color="cyan" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" outline color="cyan" icon="calendar" />
-      <Tag text="Tag" outline color="cyan" dropdown />
-      <Tag text="Tag" outline color="cyan" removable />
-      <Tag text="Tag" outline color="cyan" disabled />
-      <Tag text="Tag" outline color="cyan" skin="vivid" />
-      <Tag text="Tag" outline color="cyan" skin="vivid" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" outline color="cyan" icon="calendar" skin="vivid" />
-      <Tag text="Tag" outline color="cyan" skin="vivid" dropdown />
-      <Tag text="Tag" outline color="cyan" skin="vivid" removable />
-      <Tag text="Tag" outline color="cyan" skin="vivid" disabled />
+      <Tag outline color="orange" text="Togglable unselected" type="togglable" />
+      <Tag outline color="orange" text="Dropdown" dropdown />
+      <Tag outline color="orange" text="Removable" removable />
+      <Tag outline color="orange" text="Simple tag" />
+      <Tag outline color="orange" text="Simple tag" icon="calendar" />
+      <Tag outline color="orange" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <br /> 
+      <Tag outline color="orange" skin="vivid" icon="check" text="Togglable selected" type="togglable" />
+      <Tag outline color="orange" skin="vivid" text="Dropdown" dropdown />
+      <Tag outline color="orange" skin="vivid" text="Removable" removable />
+      <Tag outline color="orange" skin="vivid" text="Simple tag" />
+      <Tag outline color="orange" skin="vivid" text="Simple tag" icon="calendar" />
+      <Tag outline color="orange" skin="vivid" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+    </Fragment>
+  </Story>
+</Preview>
+
+###### Pink
+
+<Preview>
+  <Story name="Pink Theme Sample">
+    <Fragment>
+      <Tag color="pink" text="Togglable unselected" type="togglable" />
+      <Tag color="pink" text="Dropdown" dropdown />
+      <Tag color="pink" text="Removable" removable />
+      <Tag color="pink" text="Simple tag" />
+      <Tag color="pink" text="Simple tag" icon="calendar" />
+      <Tag color="pink" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
       <br />
-      <Tag text="Tag" outline color="orange" />
-      <Tag text="Tag" outline color="orange" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" outline color="orange" icon="calendar" />
-      <Tag text="Tag" outline color="orange" dropdown />
-      <Tag text="Tag" outline color="orange" removable />
-      <Tag text="Tag" outline color="orange" disabled />
-      <Tag text="Tag" outline color="orange" skin="vivid" />
-      <Tag text="Tag" outline color="orange" skin="vivid" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" outline color="orange" icon="calendar" skin="vivid" />
-      <Tag text="Tag" outline color="orange" skin="vivid" dropdown />
-      <Tag text="Tag" outline color="orange" skin="vivid" removable />
-      <Tag text="Tag" outline color="orange" skin="vivid" disabled />
+      <Tag color="pink" skin="vivid" icon="check" text="Togglable selected" type="togglable" />
+      <Tag color="pink" skin="vivid" text="Dropdown" dropdown />
+      <Tag color="pink" skin="vivid" text="Removable" removable />
+      <Tag color="pink" skin="vivid" text="Simple tag" />
+      <Tag color="pink" skin="vivid" text="Simple tag" icon="calendar" />
+      <Tag color="pink" skin="vivid" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
       <br />
-      <Tag text="Tag" outline color="pink" />
-      <Tag text="Tag" outline color="pink" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" outline color="pink" icon="calendar" />
-      <Tag text="Tag" outline color="pink" dropdown />
-      <Tag text="Tag" outline color="pink" removable />
-      <Tag text="Tag" outline color="pink" disabled />
-      <Tag text="Tag" outline color="pink" skin="vivid" />
-      <Tag text="Tag" outline color="pink" skin="vivid" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
-      <Tag text="Tag" outline color="pink" icon="calendar" skin="vivid" />
-      <Tag text="Tag" outline color="pink" skin="vivid" dropdown />
-      <Tag text="Tag" outline color="pink" skin="vivid" removable />
-      <Tag text="Tag" outline color="pink" skin="vivid" disabled />
+      <Tag outline color="pink" text="Togglable unselected" type="togglable" />
+      <Tag outline color="pink" text="Dropdown" dropdown />
+      <Tag outline color="pink" text="Removable" removable />
+      <Tag outline color="pink" text="Simple tag" />
+      <Tag outline color="pink" text="Simple tag" icon="calendar" />
+      <Tag outline color="pink" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+      <br /> 
+      <Tag outline color="pink" skin="vivid" icon="check" text="Togglable selected" type="togglable" />
+      <Tag outline color="pink" skin="vivid" text="Dropdown" dropdown />
+      <Tag outline color="pink" skin="vivid" text="Removable" removable />
+      <Tag outline color="pink" skin="vivid" text="Simple tag" />
+      <Tag outline color="pink" skin="vivid" text="Simple tag" icon="calendar" />
+      <Tag outline color="pink" skin="vivid" text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
     </Fragment>
   </Story>
 </Preview>
@@ -462,34 +499,7 @@ Here's the list of props based on the component's prop types definitions.
 
 ### TODO
 
-Dúvidas
-- Ver pq o operador ternário é melhor que o if para devs. A gente acha o if mais legível
-- Dentro das {} tem ou não espaço?
-- Queremos um guideline de react
-
-To dos
-- Estados aberto/fechado pra dropdowns
 - Estados selecionado/idle pra togglables (single e multi)
 - tooltip pra removable togglables e pra texto longo elipsado
-- Entender como estilizar as classes. Usa como no scss ou como no story? :thinking:
-
-Decisions:
-- Removed thumb alt since the tag itself should be descriptive.
-- O default ficou mineral mesmo
-
-
-Tag props
-
-- type = {simple, togglable, dropdown, removable}
-- text = a label que aparece (substitui children)
-- disabled
-- outline (antigo style. por padrão é "fill")
-- vivid (antigo colorStyle. por padrão é "pale")
-  Para o type==togglable ele é por padrão pale, mas quando selecionado fica vivid.togglable
-- color 
-
-- icon ou thumb
-
-
-
-span class="lab-tab tab-tag__togglable"
+- ajustar uso do vivid pra ficar parecido com o uso de `outline`
+- criar estado ativo do togglable
