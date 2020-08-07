@@ -110,16 +110,14 @@ export default class AbstractTextInput extends React.Component {
     if (!localIsValid && helpMessage && !localValue) {
       message = (
         <div className="lab-input__message lab-input__message--error">
-          {" "}
-          {helpMessage}{" "}
+          {helpMessage}
         </div>
       );
     }
     if (!localIsValid) {
       message = (
         <div className="lab-input__message lab-input__message--error">
-          {" "}
-          {customErrorMsg}{" "}
+          {customErrorMsg}
         </div>
       );
     }
