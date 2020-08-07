@@ -15,17 +15,18 @@ export default class InputBehaviorTest extends React.Component {
   };
 
   render() {
+    const { testValue } = this.state;
     return (
       <>
         <Input
-          value={this.state.testValue}
+          value={testValue}
           id="testInput"
           label="Test here"
           onChange={this.handleOnChange}
         />
         <p>
           <strong>Input value: </strong>
-          {this.state.testValue}
+          {testValue}
         </p>
       </>
     );

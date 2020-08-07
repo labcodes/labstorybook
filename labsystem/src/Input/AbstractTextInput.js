@@ -98,7 +98,7 @@ export default class AbstractTextInput extends React.Component {
 
   message = () => {
     const { helpMessage, customErrorMsg } = this.props;
-    const { localIsValid } = this.state;
+    const { localIsValid, localValue } = this.state;
     let message;
     if (helpMessage && localIsValid) {
       message = (
@@ -107,7 +107,7 @@ export default class AbstractTextInput extends React.Component {
         </div>
       );
     }
-    if (!localIsValid && helpMessage && !this.state.localValue) {
+    if (!localIsValid && helpMessage && !localValue) {
       message = (
         <div className="lab-input__message lab-input__message--error">
           {" "}
@@ -137,7 +137,7 @@ export default class AbstractTextInput extends React.Component {
     return suffix ? <div className="lab-input__suffix">{suffix}</div> : "";
   };
 
-  handleOnChange = (e) => {
+  handleOnChange = () => {
     const { onChange, isValid } = this.props;
     const inputElementValue = this.inputRef.current.value;
     const inputElementIsValid = this.inputRef.current.validity.valid;
@@ -145,9 +145,9 @@ export default class AbstractTextInput extends React.Component {
     if (!isUndefined(onChange)) {
       onChange(inputElementValue);
     }
-    this.setState((state) => ({ localValue: inputElementValue }));
+    this.setState({ localValue: inputElementValue });
     if (isUndefined(isValid)) {
-      this.setState((state) => ({ localIsValid: inputElementIsValid }));
+      this.setState({ localIsValid: inputElementIsValid });
     }
   };
 
