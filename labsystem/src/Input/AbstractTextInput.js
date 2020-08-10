@@ -170,7 +170,7 @@ export default class AbstractTextInput extends React.Component {
     const { localValue } = this.state;
 
     return (
-      <div>
+      <>
         <div className={`lab-input ${className || ""}`}>
           <input
             className={
@@ -203,7 +203,7 @@ export default class AbstractTextInput extends React.Component {
           {this.requiredIcon()}
         </div>
         {this.message()}
-      </div>
+      </>
     );
   }
 }
