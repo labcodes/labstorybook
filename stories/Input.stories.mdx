@@ -1,13 +1,12 @@
 import { Fragment } from 'react';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
-import Input from '../labsystem/src/Input/AbstractTextInput';
 import TextInput from '../labsystem/src/Input/TextInput';
 import EmailInput from '../labsystem/src/Input/EmailInput';
 import PasswordInput from '../labsystem/src/Input/PasswordInput';
 import InputPlayground from '../playgrounds/InputPlayground';
 
-<Meta title="Components/Text Input" component={Input} />
+<Meta title="Components/Text Input" component={TextInput} />
 
 <div class="docs-title">
   <div>
@@ -70,13 +69,13 @@ It’s a standard text input. Can be used for enter a id, phone number, street a
     <Fragment>
       <div className="lab-stories-wrapper">
         <h6>Disabled</h6>
-        <Input type="text" id="disabled" label="Disabled" disabled />
+        <TextInput type="text" id="disabled" label="Disabled" disabled />
         <h6>Default</h6>
-        <Input id="id" label="Label" />
+        <TextInput id="id" label="Label" />
         <h6>Trailing icon</h6>
-        <Input className="lab-input__field--icon" id="id2" label="Label" icon="eye-opened" iconColor="mineral70" />
+        <TextInput className="lab-input__field--icon" id="id2" label="Label" icon="eye-opened" iconColor="mineral70" />
         <h6>Error</h6>
-        <Input type="email" id="error" label="Name" defaultValue="Teste" customErrorMsg="Error message" />
+        <TextInput type="email" id="error" label="Name" defaultValue="Teste" customErrorMsg="Error message" />
       </div>
     </Fragment>
   </Story>
@@ -91,9 +90,9 @@ It’s a default input that is required to be filled. It has a helper message to
     <Fragment>
       <div className="lab-stories-wrapper">
         <h6>Required Default</h6>
-        <Input type="text" id="required" label= "Label" helpMessage="Help message" required />
+        <TextInput type="text" id="required" label= "Label" helpMessage="Help message" required />
         <h6>Required Error</h6>
-        <Input type="email" id="required2" label= "Required" isValid={false} helpMessage="Help message" customErrorMsg="teste" required />
+        <TextInput type="email" id="required2" label= "Required" isValid={false} helpMessage="Help message" customErrorMsg="teste" required />
       </div>
     </Fragment>
   </Story>
@@ -108,13 +107,13 @@ It’s a text field input + fixed prefix.
     <Fragment>
       <div className="lab-stories-wrapper">
         <h6>Prefix Disabled</h6>
-        <Input id="prefix" label="Label" prefix="CAD" disabled />
+        <TextInput id="prefix" label="Label" prefix="CAD" disabled />
         <br />
         <h6>Prefix Default</h6>
-        <Input id="help" label="Label" prefix="R$"/>
+        <TextInput id="help" label="Label" prefix="R$"/>
         <br />
         <h6>Prefix Error</h6>
-        <Input
+        <TextInput
           type="email"
           id="prefix-error"
           defaultValue="Error"
@@ -137,13 +136,13 @@ It’s a text field input + fixed suffix.
     <Fragment>
       <div className="lab-stories-wrapper">
         <h6>Suffix Disabled</h6>
-        <Input id="suffix" label="Label" suffix=".com" disabled />
+        <TextInput id="suffix" label="Label" suffix=".com" disabled />
         <br/>
         <h6>Suffix Default</h6>
-        <Input id="address" label="Label" suffix=".com" />
+        <TextInput id="address" label="Label" suffix=".com" />
         <br />
         <h6>Suffix Error</h6>
-        <Input
+        <TextInput
           type="email"
           id="suffix-error"
           label="Label"
@@ -205,17 +204,17 @@ For text inputs, you can also use purple theme. Error state remain with the same
   <Fragment>
     <div className="lab-stories-wrapper">
       <h6>Default</h6>
-        <Input className="lab-input--purple" defaultValue="Purple" id="purple1" label="Label" />
+        <TextInput className="lab-input--purple" defaultValue="Purple" id="purple1" label="Label" />
       <h6>Required Default</h6>
-        <Input className="lab-input--purple" id="purple2" label= "Label" defaultValue="Purple"
+        <TextInput className="lab-input--purple" id="purple2" label= "Label" defaultValue="Purple"
         helpMessage="Help message" required />
       <h6>Prefix Default</h6>
-        <Input className="lab-input--purple" defaultValue="Purple"
+        <TextInput className="lab-input--purple" defaultValue="Purple"
         id="purple3" label="Label" prefix="R$" />
       <br />
       <h6>Suffix Default</h6>
-      <Input className="lab-input--purple" defaultValue="Purple"
-      id="address" label="Label" suffix=".com" />
+        <TextInput className="lab-input--purple" defaultValue="Purple"
+        id="address" label="Label" suffix=".com" />
       <br />
     </div>
   </Fragment>
