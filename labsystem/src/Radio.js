@@ -70,7 +70,7 @@ export default class Radio extends React.Component {
 
     return (
       <React.Fragment>
-        <div>
+        <>
           <input
             className={`lab-radio ${className || ""}`}
             type="radio"
@@ -86,7 +86,7 @@ export default class Radio extends React.Component {
             <span className="lab-radio__container" />
             {label}
           </label>
-        </div>
+        </>
       </React.Fragment>
     );
   }
