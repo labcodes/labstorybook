@@ -39,7 +39,7 @@ export default class AbstractTextInput extends React.Component {
     prefix: undefined,
     suffix: undefined,
     isValid: undefined,
-    customErrorMsg: "Custom Error",
+    customErrorMsg: undefined,
     onChange: undefined,
     onIconClick: undefined,
   };
@@ -83,35 +83,6 @@ export default class AbstractTextInput extends React.Component {
     ) : (
       ""
     );
-  };
-
-  message = () => {
-    const { helpMessage, customErrorMsg } = this.props;
-    const { localIsValid, localValue } = this.state;
-    let message;
-    if (helpMessage && localIsValid) {
-      message = (
-        <div className="lab-input__message lab-input__message--required">
-          {helpMessage}
-        </div>
-      );
-    }
-    if (!localIsValid && helpMessage && !localValue) {
-      message = (
-        <div className="lab-input__message lab-input__message--error">
-          {helpMessage}
-        </div>
-      );
-    }
-    if (!localIsValid) {
-      message = (
-        <div className="lab-input__message lab-input__message--error">
-          {customErrorMsg}
-        </div>
-      );
-    }
-
-    return message;
   };
 
   prefixArea = () => {
@@ -159,7 +130,7 @@ export default class AbstractTextInput extends React.Component {
       ...rest
     } = this.props;
 
-    const { localValue } = this.state;
+    const { localValue, localIsValid } = this.state;
 
     return (
       <>
@@ -198,7 +169,12 @@ export default class AbstractTextInput extends React.Component {
           />
           {this.requiredIcon()}
         </div>
-        {this.message()}
+        <TextInputMessage
+          helpMessage={helpMessage}
+          customErrorMsg={customErrorMsg}
+          localValue={localValue}
+          localIsValid={localIsValid}
+        />
       </>
     );
   }
@@ -226,4 +202,46 @@ TrailingIcon.defaultProps = {
   icon: undefined,
   iconColor: "mineral70",
   onIconClick: undefined,
+};
+
+function TextInputMessage(props) {
+  const { helpMessage, customErrorMsg, localIsValid, localValue } = props;
+  let message = null;
+  if (helpMessage && localIsValid) {
+    message = (
+      <div className="lab-input__message lab-input__message--required">
+        {helpMessage}
+      </div>
+    );
+  }
+  if (!localIsValid && helpMessage && !localValue) {
+    message = (
+      <div className="lab-input__message lab-input__message--error">
+        {helpMessage}
+      </div>
+    );
+  }
+  if (!localIsValid) {
+    message = (
+      <div className="lab-input__message lab-input__message--error">
+        {customErrorMsg}
+      </div>
+    );
+  }
+
+  return message;
+}
+
+TextInputMessage.propTypes = {
+  helpMessage: PropTypes.string,
+  customErrorMsg: PropTypes.string,
+  localValue: PropTypes.string,
+  localIsValid: PropTypes.bool,
+};
+
+TextInputMessage.defaultProps = {
+  helpMessage: undefined,
+  customErrorMsg: undefined,
+  localValue: undefined,
+  localIsValid: undefined,
 };
