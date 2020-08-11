@@ -31,13 +31,13 @@ $checkbox-bg-disabled: $mineral-20;
 
   + .lab-checkbox__label {
     position: relative;
-    display: inline-block;
+    display: inline-flex;
     margin: 6px;
     font-family: $font-primary;
     font-size: $font-size-3;
     font-weight: $weight-medium;
+    align-content: center;
     line-height: 1.4;
-    vertical-align: middle;
     cursor: pointer;
   }
 

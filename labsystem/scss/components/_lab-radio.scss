@@ -16,7 +16,6 @@ $radio-bg-disabled: $mineral-20;
   height: 20px;
   margin: 6px;
   margin-right:$spacing-03;
-  vertical-align: text-bottom;
   background: $white;
   border: 2px solid $radio-idle-color-main;
   border-radius: 100%;
@@ -34,7 +33,9 @@ $radio-bg-disabled: $mineral-20;
         font-family: $font-primary;
         font-size: 16px;
         font-weight: 500;
-        vertical-align: top;
+        line-height: 1.4;
+        display: inline-flex;
+        align-items: center;       
         cursor: pointer;
     }
 
