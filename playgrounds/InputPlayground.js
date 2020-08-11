@@ -7,7 +7,7 @@ export default class InputPlayground extends React.Component {
     super(props);
     this.state = {
       testValue: "",
-      label: undefined,
+      label: "",
       className: undefined,
       icon: undefined,
       iconColor: undefined,
@@ -51,157 +51,156 @@ export default class InputPlayground extends React.Component {
       isValid,
     } = this.state;
     return (
-      <>
-        <div className="columns lab-playground">
+      <div className="columns lab-playground">
+        <div className="column lab-playground__component">
           <h4>TextInput</h4>
-          <div className="column lab-playground__component">
-            <TextInput
-              value={testValue}
-              id="testInput"
-              label={label}
-              className={className}
-              disabled={disabled}
-              icon={icon}
-              iconColor={iconColor}
-              helpMessage={helpMessage}
-              prefix={prefix}
-              suffix={suffix}
-              customErrorMsg={customErrorMsg}
-              required={required}
-              isValid={isValid}
-              onChange={this.handleOnChange}
-            />
-            <p>
-              <strong>Input value: </strong>
-              {testValue}
-            </p>
-          </div>
-          <div className="column lab-playground__configs">
-            <h4>Configurations</h4>
-            <span className="lab-playground__item">
-              <label htmlFor="label">Label</label>
-              <br />
-              <input
-                id="label"
-                type="text"
-                label="Label"
-                value={label}
-                onChange={this.handlePropChangeText}
-              />
-            </span>
-            <span className="lab-playground__item">
-              <label htmlFor="className">className</label>
-              <br />
-              <input
-                id="className"
-                type="text"
-                label="className"
-                value={className}
-                onChange={this.handlePropChangeText}
-              />
-            </span>
-            <span className="lab-playground__item">
-              <label htmlFor="icon">icon</label>
-              <br />
-              <input
-                id="icon"
-                type="text"
-                label="icon"
-                value={icon}
-                onChange={this.handlePropChangeText}
-              />
-            </span>
-            <span className="lab-playground__item">
-              <label htmlFor="iconColor">iconColor</label>
-              <br />
-              <input
-                id="iconColor"
-                type="text"
-                label="iconColor"
-                value={iconColor}
-                onChange={this.handlePropChangeText}
-              />
-            </span>
-            <span className="lab-playground__item">
-              <label htmlFor="helpMessage">helpMessage</label>
-              <br />
-              <input
-                id="helpMessage"
-                type="text"
-                label="helpMessage"
-                value={helpMessage}
-                onChange={this.handlePropChangeText}
-              />
-            </span>
-            <span className="lab-playground__item">
-              <label htmlFor="customErrorMsg">customErrorMsg</label>
-              <br />
-              <input
-                id="customErrorMsg"
-                type="text"
-                label="customErrorMsg"
-                value={customErrorMsg}
-                onChange={this.handlePropChangeText}
-              />
-            </span>
-            <span className="lab-playground__item">
-              <label htmlFor="prefix">Prefix</label>
-              <br />
-              <input
-                id="prefix"
-                type="text"
-                label="prefix"
-                value={prefix}
-                onChange={this.handlePropChangeText}
-              />
-            </span>
-            <span className="lab-playground__item">
-              <label htmlFor="suffix">Suffix</label>
-              <br />
-              <input
-                id="suffix"
-                type="text"
-                label="suffix"
-                value={suffix}
-                onChange={this.handlePropChangeText}
-              />
-            </span>
-            <span className="lab-playground__item">
-              <label htmlFor="required">Required</label>
-              <br />
-              <input
-                id="required"
-                type="checkbox"
-                label="Required"
-                checked={required}
-                onChange={this.handlePropChangeBool}
-              />
-            </span>
-            <span className="lab-playground__item">
-              <label htmlFor="disabled">Disabled</label>
-              <br />
-              <input
-                id="disabled"
-                type="checkbox"
-                label="Disabled"
-                checked={disabled}
-                onChange={this.handlePropChangeBool}
-              />
-            </span>
-            <span className="lab-playground__item">
-              <label htmlFor="isValid">isValid</label>
-              <br />
-              <input
-                id="isValid"
-                type="checkbox"
-                label="IsValid"
-                checked={isValid}
-                onChange={this.handlePropChangeBool}
-              />
-            </span>
-          </div>
+          <TextInput
+            value={testValue}
+            id="testInput"
+            label={label}
+            className={className}
+            disabled={disabled}
+            icon={icon}
+            iconColor={iconColor}
+            helpMessage={helpMessage}
+            prefix={prefix}
+            suffix={suffix}
+            customErrorMsg={customErrorMsg}
+            required={required}
+            isValid={isValid}
+            onChange={this.handleOnChange}
+          />
+          <p>
+            <strong>Input value: </strong>
+            {testValue}
+          </p>
         </div>
-      </>
+        <div className="column lab-playground__configs">
+          <h4>Configurations</h4>
+          <span className="lab-playground__item">
+            <label htmlFor="label">Label</label>
+            <br />
+            <input
+              id="label"
+              type="text"
+              label="Label"
+              value={label}
+              onChange={this.handlePropChangeText}
+            />
+          </span>
+          <span className="lab-playground__item">
+            <label htmlFor="className">className</label>
+            <br />
+            <input
+              id="className"
+              type="text"
+              label="className"
+              value={className}
+              onChange={this.handlePropChangeText}
+            />
+          </span>
+          <span className="lab-playground__item">
+            <label htmlFor="icon">icon</label>
+            <br />
+            <input
+              id="icon"
+              type="text"
+              label="icon"
+              value={icon}
+              onChange={this.handlePropChangeText}
+            />
+          </span>
+          <span className="lab-playground__item">
+            <label htmlFor="iconColor">iconColor</label>
+            <br />
+            <input
+              id="iconColor"
+              type="text"
+              label="iconColor"
+              value={iconColor}
+              onChange={this.handlePropChangeText}
+            />
+          </span>
+          <span className="lab-playground__item">
+            <label htmlFor="helpMessage">helpMessage</label>
+            <br />
+            <input
+              id="helpMessage"
+              type="text"
+              label="helpMessage"
+              value={helpMessage}
+              onChange={this.handlePropChangeText}
+            />
+          </span>
+          <span className="lab-playground__item">
+            <label htmlFor="customErrorMsg">customErrorMsg</label>
+            <br />
+            <input
+              id="customErrorMsg"
+              type="text"
+              label="customErrorMsg"
+              value={customErrorMsg}
+              onChange={this.handlePropChangeText}
+            />
+          </span>
+          <span className="lab-playground__item">
+            <label htmlFor="prefix">Prefix</label>
+            <br />
+            <input
+              id="prefix"
+              type="text"
+              label="prefix"
+              value={prefix}
+              onChange={this.handlePropChangeText}
+            />
+          </span>
+          <span className="lab-playground__item">
+            <label htmlFor="suffix">Suffix</label>
+            <br />
+            <input
+              id="suffix"
+              type="text"
+              label="suffix"
+              value={suffix}
+              onChange={this.handlePropChangeText}
+            />
+          </span>
+          <br />
+          <span className="lab-playground__item">
+            <label htmlFor="required">Required</label>
+            <br />
+            <input
+              id="required"
+              type="checkbox"
+              label="Required"
+              checked={required}
+              onChange={this.handlePropChangeBool}
+            />
+          </span>
+          <span className="lab-playground__item">
+            <label htmlFor="disabled">Disabled</label>
+            <br />
+            <input
+              id="disabled"
+              type="checkbox"
+              label="Disabled"
+              checked={disabled}
+              onChange={this.handlePropChangeBool}
+            />
+          </span>
+          <span className="lab-playground__item">
+            <label htmlFor="isValid">isValid</label>
+            <br />
+            <input
+              id="isValid"
+              type="checkbox"
+              label="IsValid"
+              checked={isValid}
+              onChange={this.handlePropChangeBool}
+            />
+          </span>
+        </div>
+      </div>
     );
   }
 }
