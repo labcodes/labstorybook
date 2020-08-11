@@ -22,6 +22,7 @@ $checkbox-bg-disabled: $mineral-20;
   box-sizing: border-box;
   cursor: pointer;
   margin-right: $spacing-03;
+  transition: all 0.2s ease;
 }
 
 .lab-checkbox {
