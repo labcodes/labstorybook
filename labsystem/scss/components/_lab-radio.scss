@@ -106,7 +106,10 @@ $radio-bg-disabled: $mineral-20;
 
   &:disabled {
     + .lab-radio__label {
+      cursor: default;
+
       .lab-radio__container  {
+        cursor: default;
         border-color: $radio-bg-disabled;
         box-shadow: inset 0 0 0 2px $white;
       }

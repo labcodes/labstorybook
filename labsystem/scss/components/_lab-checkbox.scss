@@ -102,7 +102,10 @@ $checkbox-bg-disabled: $mineral-20;
 
   // Checkbox Disabled
   &:disabled + .lab-checkbox__label, &:disabled:hover + .lab-checkbox__label {
+    cursor: default;
+
     .lab-checkbox__box {
+      cursor: default;
       background: $white;
       border-color: $checkbox-bg-disabled;
       box-shadow: none;
