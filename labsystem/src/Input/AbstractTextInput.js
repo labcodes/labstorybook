@@ -164,6 +164,9 @@ export default class AbstractTextInput extends React.Component {
       prefix,
       suffix,
       onChange,
+      onIconClick,
+      isValid,
+      customErrorMsg,
       ...rest
     } = this.props;
 
