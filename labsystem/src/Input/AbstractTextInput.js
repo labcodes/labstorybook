@@ -74,17 +74,6 @@ export default class AbstractTextInput extends React.Component {
     }
   }
 
-  trailingIcon = () => {
-    const { icon, iconColor, onIconClick } = this.props;
-    return icon ? (
-      <button type="button" className="lab-input__icon" onClick={onIconClick}>
-        <Icon type={icon} color={iconColor} />
-      </button>
-    ) : (
-      ""
-    );
-  };
-
   requiredIcon = () => {
     const { required } = this.props;
     return required ? (
@@ -202,7 +191,11 @@ export default class AbstractTextInput extends React.Component {
               {label}
             </label>
           </div>
-          {this.trailingIcon()}
+          <TrailingIcon
+            icon={icon}
+            iconColor={iconColor}
+            onIconClick={onIconClick}
+          />
           {this.requiredIcon()}
         </div>
         {this.message()}
@@ -210,3 +203,27 @@ export default class AbstractTextInput extends React.Component {
     );
   }
 }
+
+function TrailingIcon(props) {
+  const { icon, iconColor, onIconClick } = props;
+  if (icon) {
+    return (
+      <button type="button" className="lab-input__icon" onClick={onIconClick}>
+        <Icon type={icon} color={iconColor} />
+      </button>
+    );
+  }
+  return null;
+}
+
+TrailingIcon.propTypes = {
+  icon: PropTypes.string,
+  iconColor: PropTypes.string,
+  onIconClick: PropTypes.func,
+};
+
+TrailingIcon.defaultProps = {
+  icon: undefined,
+  iconColor: "mineral70",
+  onIconClick: undefined,
+};
