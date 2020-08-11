@@ -1,0 +1,37 @@
+import { Fragment } from 'react';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+
+import NarrowSidebar from '../labsystem/src/Sidebar/Narrow-Sidebar';
+import Header from '../labsystem/src/Sidebar/Header';
+import Body from '../labsystem/src/Sidebar/Body';
+import Footer from '../labsystem/src/Sidebar/Footer';
+import Item from '../labsystem/src/Sidebar/Item';
+import Icon from '../labsystem/src/Icon';
+
+<Meta title="Components/Narrow Sidebar" component={NarrowSidebar} />
+
+## Sample Toggle
+Toggle can be used as shown in the example below:
+
+<Preview>
+  <Story name="Narrow Sidebar">
+    <NarrowSidebar>
+      <Header altText="Labcodes" />
+      <Body>
+        <Item icon="calendar" iconColor="mineral60" label="Teste" />
+        <Item icon="coin" iconColor="mineral60" label="Teste" />
+        <Item icon="wallet" iconColor="mineral60" label="Teste" />
+       
+      </Body>
+      <Footer>
+        <div className="lab-narrow-sidebar__footer--avatar"/>
+        <a className="lab-narrow-sidebar__item">
+          <Icon type='arrow-left' color="mineral60" />
+        </a>
+        <a className="lab-narrow-sidebar__item">
+          <Icon type='arrow-left' color="mineral60" />
+        </a>
+      </Footer>
+    </NarrowSidebar>
+  </Story>
+</Preview>
