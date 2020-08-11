@@ -31,7 +31,7 @@ $checkbox-bg-disabled: $mineral-20;
   + .lab-checkbox__label {
     position: relative;
     display: inline-block;
-    margin: 0;
+    margin: 6px;
     font-family: $font-primary;
     font-size: $font-size-3;
     font-weight: $weight-medium;
@@ -51,22 +51,22 @@ $checkbox-bg-disabled: $mineral-20;
       }
     }
   }
-  
+
   &:checked:hover + .lab-checkbox__label,
   &:indeterminate:hover + .lab-checkbox__label {
     .lab-checkbox__box {
       outline: none;
       @include border-shadow(hover, $checkbox-checked-shadow-hover);
     }
-  } 
-  
+  }
+
   &:checked:focus + .lab-checkbox__label,
   &:indeterminate:focus + .lab-checkbox__label {
     .lab-checkbox__box {
       outline: none;
       @include border-shadow(focus, $checkbox-checked-shadow-focus);
     }
-  } 
+  }
 
   &:checked:hover:focus + .lab-checkbox__label,
   &:indeterminate:hover:focus + .lab-checkbox__label {
@@ -74,7 +74,7 @@ $checkbox-bg-disabled: $mineral-20;
       outline: none;
       @include border-shadow(focus-hover, $checkbox-checked-shadow-focus, $checkbox-checked-shadow-hover);
     }
-  } 
+  }
 
   // Checkbox Idle
   &:focus + .lab-checkbox__label {
@@ -83,21 +83,21 @@ $checkbox-bg-disabled: $mineral-20;
       @include border-shadow(focus, $checkbox-idle-shadow-focus);
     }
   }
-  
+
   &:hover + .lab-checkbox__label {
     .lab-checkbox__box {
       outline: none;
       @include border-shadow(hover, $checkbox-idle-shadow-hover);
     }
-  } 
+  }
 
   &:hover:focus + .lab-checkbox__label {
     .lab-checkbox__box {
       outline: none;
       @include border-shadow(focus-hover, $checkbox-idle-shadow-focus, $checkbox-idle-shadow-hover);
     }
-  } 
-      
+  }
+
   // Checkbox Disabled
   &:disabled + .lab-checkbox__label, &:disabled:hover + .lab-checkbox__label {
     .lab-checkbox__box {
