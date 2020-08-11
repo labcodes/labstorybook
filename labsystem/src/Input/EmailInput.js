@@ -21,6 +21,7 @@ export default class EmailInput extends React.Component {
     isValid: PropTypes.bool,
     customErrorMsg: PropTypes.string,
     onChange: PropTypes.func,
+    onIconClick: PropTypes.func,
   };
 
   static defaultProps = {
@@ -38,6 +39,7 @@ export default class EmailInput extends React.Component {
     isValid: undefined,
     customErrorMsg: "Custom Error",
     onChange: undefined,
+    onIconClick: undefined,
   };
 
   render() {
