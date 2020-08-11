@@ -14,27 +14,14 @@ export default class CheckboxPlayground extends React.Component {
     };
   }
 
-  handleLabel = (e) => {
-    this.setState({ label: e.target.value });
+  handlePropString = (e) => {
+    const { id, value } = e.target;
+    this.setState({ [id]: value });
   };
 
-  handleClassName = (e) => {
-    this.setState({ className: e.target.value });
-  };
-
-  handleDisabled = () => {
-    const { disabled } = this.state;
-    this.setState({ disabled });
-  };
-
-  handleChecked = () => {
-    const { checked } = this.state;
-    this.setState({ checked });
-  };
-
-  handleIndeterminate = () => {
-    const { indeterminate } = this.state;
-    this.setState({ indeterminate });
+  handlePropBool = (e) => {
+    const { id, checked } = e.target;
+    this.setState({ [id]: checked });
   };
 
   render() {
@@ -68,60 +55,70 @@ export default class CheckboxPlayground extends React.Component {
           <div className="column lab-playground__configs">
             <h4>Configurations</h4>
             <span className="lab-playground__item">
-              <label htmlFor="label">Label</label>
-              <br />
-              <input
-                id="label"
-                type="text"
-                label="label"
-                value={label}
-                onChange={this.handleLabel}
-              />{" "}
+              <label htmlFor="label">
+                Label
+                <br />
+                <input
+                  id="label"
+                  type="text"
+                  label="label"
+                  value={label}
+                  onChange={this.handlePropString}
+                />
+              </label>
             </span>
             <span className="lab-playground__item">
-              <label htmlFor="className">className</label>
-              <br />
-              <input
-                id="className"
-                type="text"
-                label="className"
-                value={className}
-                onChange={this.handleClassName}
-              />
+              <label htmlFor="className">
+                className
+                <br />
+                <input
+                  id="className"
+                  type="text"
+                  label="className"
+                  value={className}
+                  onChange={this.handlePropString}
+                />
+              </label>
             </span>
             <br />
             <span className="lab-playground__item">
-              <label htmlFor="disabled">Disabled</label>
-              <br />
-              <input
-                id="disabled"
-                type="checkbox"
-                label="disabled"
-                checked={disabled}
-                onChange={this.handleDisabled}
-              />
+              <label htmlFor="disabled">
+                Disabled
+                <br />
+                <input
+                  id="disabled"
+                  type="checkbox"
+                  label="disabled"
+                  checked={disabled}
+                  onChange={this.handlePropBool}
+                />
+              </label>
             </span>
             <span className="lab-playground__item">
-              <label htmlFor="checked">Checked</label>
-              <br />
-              <input
-                id="defaultIndeterminate"
-                type="checkbox"
-                label="checked"
-                checked={checked}
-                onChange={this.handleChecked}
-              />
+              <label htmlFor="checked">
+                Checked
+                <br />
+                <input
+                  id="checked"
+                  type="checkbox"
+                  label="checked"
+                  checked={checked}
+                  onChange={this.handlePropBool}
+                />
+              </label>
             </span>
             <span className="lab-playground__item">
-              <label htmlFor="indeterminate">Indeterminate</label>
-              <br />
-              <input
-                id="indeterminate"
-                type="checkbox"
-                label="indeterminate"
-                checked={indeterminate}
-                onChange={this.handleIndeterminate}
-              />
+              <label htmlFor="indeterminate">
+                Indeterminate
+                <br />
+                <input
+                  id="indeterminate"
+                  type="checkbox"
+                  label="indeterminate"
+                  checked={indeterminate}
+                  onChange={this.handlePropBool}
+                />
+              </label>
             </span>
           </div>
         </div>
