@@ -13,6 +13,6 @@ export default class Body extends React.Component {
 
   render() {
     const { children } = this.props;
-    return <div className="lab-narrow-sidebar__body"> {children}</div>;
+    return <nav className="lab-narrow-sidebar__body"> {children}</nav>;
   }
 }

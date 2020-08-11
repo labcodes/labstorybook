@@ -13,28 +13,32 @@
 .lab-narrow-sidebar__header {
   display: flex;
   justify-content: center;
-  height: 15%;
   padding: 30px 0;
   flex-wrap: wrap;
+  flex-grow: 0;
 }
 
 .lab-narrow-sidebar__logo {
   display: block;
-  width: 44px;
+  width: 52px;
   height: 44px;
   background-color: $mineral-20;
 }
 
+//Body
 .lab-narrow-sidebar__body {
   display: flex;
   align-self: flex-start;
   width: 100%;
-  height: 55%;
   flex-direction: column;
-  padding: 20px 0;
+  padding: 4px 0;
+  flex-grow: 1;
+  box-shadow: inset 0px -2px 2px -1px $mineral-10;
+  overflow: auto;
 }
 
 .lab-narrow-sidebar__item {
+  position: relative;
   display: flex;
   flex-direction: column; 
   align-items: center;
@@ -42,20 +46,40 @@
   font-family: $font-primary;
   font-weight: $weight-medium;
   font-size: $font-size-1;
+  text-decoration: none;
   color: $mineral-60;
   padding: 16px 0px;
   cursor: pointer;
 
   &:focus {
-    outline: 2px solid red;
-  }
-  
-  &:hover {
-    background-color:$teal-10;
+    outline: none;
+
+    &:before {
+      content: " ";
+      display: block;
+      border: 2px solid $teal-30;
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      right: 6px;
+      bottom: 6px;
+      border-radius: 8px;
+    }
   }
 
-  &:active {
+  &:hover {
+    background-color:$teal-10;
+  } 
+
+  &:active,
+  &::selection{
     background-color:$teal-30;
+    font-weight: $weight-semibold;
+    color: $teal-70;
+
+    .lab-icon--nome-da-classe {
+      background-color: $teal-70;
+    }
   }
 
 }
@@ -64,10 +88,11 @@
 .lab-narrow-sidebar__footer {
   display: flex;
   width: 100%;
-  height: 30%;
+  margin: 12px 0 28px;
   flex-direction: column;
   align-items: center;
-  padding: 20px 0 0 0;
+  padding-top: 20px;
+  flex-grow: 0;
   
   &--avatar {
     display: block;
@@ -77,4 +102,15 @@
     margin-bottom: 8px;
     background-color: $mineral-20;
   }
+  
+  &--button {
+    display: flex;
+    flex-direction: column; 
+    padding: 8px;
+    margin: 4px;
+    background-color: transparent;
+    border: none;
+  }
+
 }
+
