@@ -88,10 +88,9 @@
 .lab-narrow-sidebar__footer {
   display: flex;
   width: 100%;
-  margin: 12px 0 28px;
+  margin: 24px 0 24px;
   flex-direction: column;
   align-items: center;
-  padding-top: 20px;
   flex-grow: 0;
   
   &--avatar {
@@ -99,17 +98,32 @@
     width: 44px;
     height: 44px;
     border-radius: 100%;
-    margin-bottom: 8px;
+    margin-bottom: 16px;
     background-color: $mineral-20;
   }
   
   &--button {
     display: flex;
+    box-sizing: border-box;
     flex-direction: column; 
     padding: 8px;
-    margin: 4px;
+    margin-bottom: 4px;
     background-color: transparent;
     border: none;
+    border-radius: 4px;
+  }
+
+  &--button:focus {
+    border: 2px solid $teal-30;
+    outline: none;
+  }
+
+  &--button:hover {
+    background-color: $teal-10;
+  }
+
+  &--button:active {
+    background-color: $teal-20;
   }
 
 }

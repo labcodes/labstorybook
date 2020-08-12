@@ -4,13 +4,13 @@ import PropTypes from "prop-types";
 export default class NarrowSidebar extends React.Component {
   static propTypes = {
     children: PropTypes.element,
-    skin: PropTypes.element,
-    color: PropTypes.element,
+    skin: PropTypes.oneOf(["light", "dark"]),
+    color: PropTypes.oneOf(["mineral", "teal", "purple", "coral"]),
   };
 
   static defaultProps = {
     children: undefined,
-    skin: "pale",
+    skin: undefined,
     color: undefined,
   };
 
