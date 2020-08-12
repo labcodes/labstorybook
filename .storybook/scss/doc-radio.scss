@@ -1,0 +1,38 @@
+//Purple Theme
+
+ // Radio checked
+ .lab-radio--purple:checked {
+  + .lab-radio__label {
+    .lab-radio__container  {
+      background-color: $purple-60;
+      border: 2px solid $purple-60;
+      box-shadow: inset 0 0 0 2px $white;
+    }
+  }
+}
+.lab-radio--purple:focus:checked {
+  + .lab-radio__label {
+    .lab-radio__container  {
+      outline: none;
+      box-shadow: 0 0 0 2px $purple-30, inset 0 0 0 2px $white;
+    }
+  }
+}
+
+.lab-radio--purple:hover:checked {
+  + .lab-radio__label {
+    .lab-radio__container  {
+      outline: none;
+      box-shadow: 0 0 0 6px $purple-10, inset 0 0 0 2px $white;
+    }
+  }
+}
+
+.lab-radio--purple:hover:focus:checked {
+  + .lab-radio__label {
+    .lab-radio__container  {
+      outline: none;
+      box-shadow: 0 0 0 2px $purple-30, 0 0 0 6px $purple-10, inset 0 0 0 2px $white;
+    }
+  }
+}
