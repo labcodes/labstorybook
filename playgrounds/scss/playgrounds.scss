@@ -1,0 +1,9 @@
+.lab-playground__configs {
+  border-left: 2px solid $teal-40;
+  height: 100%;
+
+  .lab-playground__item {
+    display: inline-block;
+    margin: 4px;
+  }
+}
