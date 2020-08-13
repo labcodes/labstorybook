@@ -56,7 +56,6 @@ export default class PasswordInput extends React.Component {
         type={showPassword ? "text" : "password"}
         icon={showPassword ? "eye-opened" : "eye-closed"}
         onIconClick={this.toggleTrailingIcon}
-        // eslint-disable-next-line react/jsx-props-no-spreading
         {...this.props}
       />
     );

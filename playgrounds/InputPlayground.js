@@ -59,7 +59,6 @@ export default class InputPlayground extends React.Component {
             id="testInput"
             label={label}
             className={className}
-            disabled={disabled}
             icon={icon}
             iconColor={iconColor}
             helpMessage={helpMessage}
@@ -69,6 +68,7 @@ export default class InputPlayground extends React.Component {
             required={required}
             isValid={isValid}
             onChange={this.handleOnChange}
+            {...(disabled ? { disabled } : undefined)}
           />
           <p>
             <strong>Input value: </strong>

@@ -43,7 +43,6 @@ export default class EmailInput extends React.Component {
   };
 
   render() {
-    // eslint-disable-next-line react/jsx-props-no-spreading
     return <AbstractTextInput type="email" {...this.props} />;
   }
 }

@@ -143,12 +143,12 @@ export default class AbstractTextInput extends React.Component {
             id={id}
             type={type}
             placeholder=" "
-            disabled={disabled}
             defaultValue={localValue}
             value={value}
             ref={this.inputRef}
             onChange={this.handleOnChange}
             autoComplete="off"
+            {...(disabled ? { disabled } : undefined)}
           />
           <div className="lab-input__borders" />
           {this.prefixArea()}

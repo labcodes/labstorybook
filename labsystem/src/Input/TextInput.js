@@ -43,7 +43,6 @@ export default class TextInput extends React.Component {
   };
 
   render() {
-    // eslint-disable-next-line react/jsx-props-no-spreading
     return <AbstractTextInput type="text" {...this.props} />;
   }
 }
