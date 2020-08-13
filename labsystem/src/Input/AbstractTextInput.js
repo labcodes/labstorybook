@@ -127,7 +127,6 @@ export default class AbstractTextInput extends React.Component {
       onIconClick,
       isValid,
       customErrorMsg,
-      ...rest
     } = this.props;
 
     const { localValue, localIsValid } = this.state;
@@ -150,8 +149,6 @@ export default class AbstractTextInput extends React.Component {
             ref={this.inputRef}
             onChange={this.handleOnChange}
             autoComplete="off"
-            // eslint-disable-next-line react/jsx-props-no-spreading
-            {...rest}
           />
           <div className="lab-input__borders" />
           {this.prefixArea()}
