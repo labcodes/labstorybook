@@ -220,9 +220,6 @@ $input-border-disabled: $mineral-30;
 
 // Icon that goes inside the field
 .lab-input__icon {
-  position: absolute;
-  top: $spacing-02;
-  right: $spacing-02;
   z-index: 1;
   width: $input-icon-size;
   height: $input-icon-size;
@@ -231,6 +228,7 @@ $input-border-disabled: $mineral-30;
   outline: none;
   border-radius: 2px;
   background-color: white;
+  margin: 0 $spacing-02;
 
   &:focus {
     @include border-shadow(focus, $input-shadow-filled-focus);
