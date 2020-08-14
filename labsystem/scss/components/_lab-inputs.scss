@@ -69,7 +69,8 @@ $input-border-disabled: $mineral-30;
   }
 
   &:disabled {
-    background-color: transparent;
+    color: $black-75;
+    background-color: $mineral-10;
   }
 }
 
@@ -116,8 +117,6 @@ $input-border-disabled: $mineral-30;
 
   // Input disabled
   .lab-input__field:disabled + & {
-    color: $black-75;
-    background-color: $mineral-10;
     border: $border-01 $input-border-disabled;
     box-shadow: none;
   }
