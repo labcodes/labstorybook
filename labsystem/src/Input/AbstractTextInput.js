@@ -177,6 +177,8 @@ export default class AbstractTextInput extends React.Component {
   }
 }
 
+// ----- Auxiliary components ----- //
+
 function TrailingIcon(props) {
   const { icon, iconColor, onIconClick } = props;
   if (icon) {
