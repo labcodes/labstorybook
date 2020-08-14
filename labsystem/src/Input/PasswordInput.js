@@ -32,7 +32,7 @@ export default class PasswordInput extends React.Component {
     prefix: undefined,
     suffix: undefined,
     isValid: undefined,
-    customErrorMsg: "Custom Error",
+    customErrorMsg: undefined,
     onChange: undefined,
   };
 

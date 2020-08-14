@@ -7,7 +7,7 @@ export default class InputPlayground extends React.Component {
     super(props);
     this.state = {
       testValue: "",
-      label: "",
+      label: "Label example",
       className: undefined,
       icon: undefined,
       iconColor: undefined,
