@@ -8,6 +8,7 @@
   "scripts": {
     "start": "NODE_PATH=. start-storybook -s ./.storybook/static,./labsystem/static -p 8000 --ci --docs",
     "build": "NODE_PATH=. build-storybook -o dist -s ./.storybook/static,./labsystem/static --docs && gzipper --verbose ./dist",
+    "build:netlify": "NODE_PATH=. cd labsystem && npm i -D && cd .. && npm run build",
     "deploy": "NODE_PATH=. npm run build && gh-pages -d dist"
   },
   "husky": {
@@ -31,7 +32,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.19.0",
     "gh-pages": "^2.1.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "node-sass": "^4.13.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",

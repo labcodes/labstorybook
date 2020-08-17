@@ -1,3 +1,10 @@
 [
-  { "cssInJsSelector": ".css-8x22z7", "customClassName": "example" }
+  { "cssInJsSelector": ".css-g90fw7", "customClassName": "simplebar-content__text" },
+  { "cssInJsSelector": ".css-zrsa9l", "customClassName": "sidebar__more-actions-button" },
+  { "cssInJsSelector": ".css-10xy9do", "customClassName": "sidebar__dropdown-chevron" },
+  { "cssInJsSelector": ".css-5kfycg", "customClassName": "sidebar__dropdown-container" },
+  { "cssInJsSelector": ".css-qab6xu", "customClassName": "sidebar__dropdown-item" },
+  { "cssInJsSelector": ".css-w5ik8", "customClassName": "sidebar__dropdown-text" },
+  { "cssInJsSelector": ".css-8w7sok", "customClassName": "sidebar__dropdown-item-icon" },
+  { "cssInJsSelector": ".css-1g2a4s1", "customClassName": "sidebar__dropdown-item-shortcut" }
 ]

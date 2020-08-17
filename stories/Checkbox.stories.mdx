@@ -1,0 +1,90 @@
+import { Fragment } from 'react';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+
+import Checkbox from '../labsystem/src/Checkbox';
+import CheckboxPlayground from '../playgrounds/CheckboxPlayground';
+
+<Meta title="Components/Checkbox" />
+
+<div class="docs-title">
+  <div>
+    <h1 class="docs-title__text">Checkbox</h1>
+  </div>
+</div>
+
+<div class="docs-content">
+  <p>Checkboxes are selection controls that allows the user to select options.
+  They should be used when we have a list of options that can be multiple selected.
+  </p>
+
+<h4>Anatomy</h4>
+<div class="columns">
+    <div class="column">
+        <img src="docs/checkbox/checkbox-anatomy.png" />
+    </div>
+    <div class="column">
+        <br />
+        <br />
+        <ol>
+         <li>Checkbox container</li>
+         <li>Checkbox icon status indicator</li>
+         <li>Hover stroke</li>
+         <li>Base container stroke</li>
+         <li>Focus stroke</li>
+        </ol>
+    </div>
+</div>
+
+### Interactive demo
+  This demo lets you preview the checkbox component, its variations, and configuration options.
+  <Preview>
+    <Story name="InteractiveDemo">
+      <Fragment>
+        <CheckboxPlayground />
+      </Fragment>
+    </Story>
+  </Preview>
+
+
+#### Checkbox
+
+<Preview>
+  <Story name="Checkbox">
+    <Fragment>
+         <Checkbox id="checkbox-1" label="Idle" name="checkbox" defaultChecked />
+         <br />
+         <Checkbox id="checkbox-2" label="Indeterminate" name="checkbox" indeterminate defaultChecked />
+         <br />
+         <Checkbox id="checkbox-3" label="Disabled Checked" name="checkbox" checked disabled/>
+        <br />
+         <Checkbox id="checkbox-4" label="Disabled Idle" name="checkbox" disabled />
+    </Fragment>
+  </Story>
+</Preview>
+
+#### Behavior
+1. Choose an option
+2. Click on it and the chosen option will be selected
+3. Once the first option was selected, another one can be chosen
+<br />
+<br />
+
+#### Styles
+Checkboxes can also be used in the purple theme
+<Preview>
+  <Story name="Styles">
+  <Fragment>
+    <Checkbox className='lab-checkbox--purple' id="checkbox-5" label="Idle" name="checkbox2" />
+    <br />
+    <Checkbox className='lab-checkbox--purple' id="checkbox-6" label="Indeterminate" name="checkbox2" indeterminate />
+  </Fragment>
+  </Story>
+</Preview>
+
+## Prop API docs
+
+  Here's the list of props based on the component's prop types definitions.
+  ### Checkbox
+  <Props of={Checkbox} />
+
+</div>

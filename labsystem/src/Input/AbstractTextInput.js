@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { isUndefined } from "lodash";
-import Icon from "./Icon";
+import Icon from "../Icon";
 
-export default class Inputs extends React.Component {
+export default class AbstractTextInput extends React.Component {
   static propTypes = {
     theme: PropTypes.string,
     className: PropTypes.string,
@@ -22,6 +22,7 @@ export default class Inputs extends React.Component {
     isValid: PropTypes.bool,
     customErrorMsg: PropTypes.string,
     onChange: PropTypes.func,
+    onIconClick: PropTypes.func,
   };
 
   static defaultProps = {
@@ -32,14 +33,15 @@ export default class Inputs extends React.Component {
     defaultValue: undefined,
     value: undefined, // avaliar depois como resolver//
     icon: undefined,
-    iconColor: "mineral-70",
+    iconColor: "mineral70",
     required: false,
     helpMessage: undefined,
     prefix: undefined,
     suffix: undefined,
     isValid: undefined,
-    customErrorMsg: "Custom Error",
+    customErrorMsg: undefined,
     onChange: undefined,
+    onIconClick: undefined,
   };
 
   constructor(props) {
@@ -64,24 +66,13 @@ export default class Inputs extends React.Component {
 
     if (defaultValue) {
       localIsValid = this.inputRef.current.validity.valid;
-      this.setState((state) => ({ localIsValid }));
+      this.setState(() => ({ localIsValid }));
     }
     if (!localIsValid) {
       const inputElement = this.inputRef.current;
       inputElement.setCustomValidity(customErrorMsg);
     }
   }
-
-  trailingIcon = () => {
-    const { icon, iconColor } = this.props;
-    return icon ? (
-      <button type="button" className="lab-input__icon">
-        <Icon type={icon} color={iconColor} />
-      </button>
-    ) : (
-      ""
-    );
-  };
 
   requiredIcon = () => {
     const { required } = this.props;
@@ -94,37 +85,6 @@ export default class Inputs extends React.Component {
     );
   };
 
-  message = () => {
-    const { helpMessage, customErrorMsg } = this.props;
-    const { localIsValid } = this.state;
-    let message;
-    if (helpMessage && localIsValid) {
-      message = (
-        <div className="lab-input__message lab-input__message--required">
-          {helpMessage}
-        </div>
-      );
-    }
-    if (!localIsValid && helpMessage && !this.state.localValue) {
-      message = (
-        <div className="lab-input__message lab-input__message--error">
-          {" "}
-          {helpMessage}{" "}
-        </div>
-      );
-    }
-    if (!localIsValid) {
-      message = (
-        <div className="lab-input__message lab-input__message--error">
-          {" "}
-          {customErrorMsg}{" "}
-        </div>
-      );
-    }
-
-    return message;
-  };
-
   prefixArea = () => {
     const { prefix } = this.props;
     return prefix ? <span className="lab-input__prefix">{prefix}</span> : "";
@@ -135,7 +95,7 @@ export default class Inputs extends React.Component {
     return suffix ? <div className="lab-input__suffix">{suffix}</div> : "";
   };
 
-  handleOnChange = (e) => {
+  handleOnChange = () => {
     const { onChange, isValid } = this.props;
     const inputElementValue = this.inputRef.current.value;
     const inputElementIsValid = this.inputRef.current.validity.valid;
@@ -143,9 +103,9 @@ export default class Inputs extends React.Component {
     if (!isUndefined(onChange)) {
       onChange(inputElementValue);
     }
-    this.setState((state) => ({ localValue: inputElementValue }));
+    this.setState({ localValue: inputElementValue });
     if (isUndefined(isValid)) {
-      this.setState((state) => ({ localIsValid: inputElementIsValid }));
+      this.setState({ localIsValid: inputElementIsValid });
     }
   };
 
@@ -159,18 +119,17 @@ export default class Inputs extends React.Component {
       value,
       icon,
       iconColor,
-      required,
       helpMessage,
       prefix,
       suffix,
-      onChange,
-      ...rest
+      onIconClick,
+      customErrorMsg,
     } = this.props;
 
-    const { localValue } = this.state;
+    const { localValue, localIsValid } = this.state;
 
     return (
-      <div>
+      <>
         <div className={`lab-input ${className || ""}`}>
           <input
             className={
@@ -181,13 +140,12 @@ export default class Inputs extends React.Component {
             id={id}
             type={type}
             placeholder=" "
-            disabled={disabled}
             defaultValue={localValue}
             value={value}
             ref={this.inputRef}
             onChange={this.handleOnChange}
             autoComplete="off"
-            {...rest}
+            {...(disabled ? { disabled } : undefined)}
           />
           <div className="lab-input__borders" />
           {this.prefixArea()}
@@ -198,11 +156,88 @@ export default class Inputs extends React.Component {
               {label}
             </label>
           </div>
-          {this.trailingIcon()}
+          <TrailingIcon
+            icon={icon}
+            iconColor={iconColor}
+            onIconClick={onIconClick}
+          />
           {this.requiredIcon()}
         </div>
-        {this.message()}
-      </div>
+        <TextInputMessage
+          helpMessage={helpMessage}
+          customErrorMsg={customErrorMsg}
+          localValue={localValue}
+          localIsValid={localIsValid}
+        />
+      </>
     );
   }
 }
+
+// ----- Auxiliary components ----- //
+
+function TrailingIcon(props) {
+  const { icon, iconColor, onIconClick } = props;
+  if (icon) {
+    return (
+      <button type="button" className="lab-input__icon" onClick={onIconClick}>
+        <Icon type={icon} color={iconColor} />
+      </button>
+    );
+  }
+  return null;
+}
+
+TrailingIcon.propTypes = {
+  icon: PropTypes.string,
+  iconColor: PropTypes.string,
+  onIconClick: PropTypes.func,
+};
+
+TrailingIcon.defaultProps = {
+  icon: undefined,
+  iconColor: "mineral70",
+  onIconClick: undefined,
+};
+
+function TextInputMessage(props) {
+  const { helpMessage, customErrorMsg, localIsValid, localValue } = props;
+  let message = null;
+  if (helpMessage && localIsValid) {
+    message = (
+      <div className="lab-input__message lab-input__message--required">
+        {helpMessage}
+      </div>
+    );
+  }
+  if (!localIsValid && helpMessage && !localValue) {
+    message = (
+      <div className="lab-input__message lab-input__message--error">
+        {helpMessage}
+      </div>
+    );
+  }
+  if (!localIsValid) {
+    message = (
+      <div className="lab-input__message lab-input__message--error">
+        {customErrorMsg}
+      </div>
+    );
+  }
+
+  return message;
+}
+
+TextInputMessage.propTypes = {
+  helpMessage: PropTypes.string,
+  customErrorMsg: PropTypes.string,
+  localValue: PropTypes.string,
+  localIsValid: PropTypes.bool,
+};
+
+TextInputMessage.defaultProps = {
+  helpMessage: undefined,
+  customErrorMsg: undefined,
+  localValue: undefined,
+  localIsValid: undefined,
+};
