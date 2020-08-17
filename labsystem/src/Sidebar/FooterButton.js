@@ -4,24 +4,22 @@ import Icon from "../Icon";
 
 export default class FooterButton extends React.Component {
   static propTypes = {
+    label:PropTypes.string,
     className: PropTypes.string,
     icon: PropTypes.string,
-    iconColor:PropTypes.string,
-    size: PropTypes.string
   };
 
   static defaultProps = {
+    label: undefined,
     className: undefined,
     icon: undefined,
-    iconColor:"mineral60",
   };
 
   buttonIcon = () => {
-    const { icon, iconColor } = this.props;
+    const { icon } = this.props;
     return icon ? (
       <Icon
         type={icon}
-        color={iconColor}
         className="nome-da-classe"
       />
     ) : (
@@ -32,8 +30,8 @@ export default class FooterButton extends React.Component {
   render() {
     const { 
       className,
-      icon, 
-      iconColor,
+      icon,
+      label,
     ...rest
    } = this.props;
 
@@ -41,6 +39,7 @@ export default class FooterButton extends React.Component {
     <React.Fragment>
       <button className="lab-narrow-sidebar__footer--button" >
       {this.buttonIcon()}
+      {label}
       </button>
     </React.Fragment>
     );

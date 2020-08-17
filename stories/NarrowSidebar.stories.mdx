@@ -17,7 +17,7 @@ Toggle can be used as shown in the example below:
 <Preview>
   <Story name="Narrow Sidebar">
     <NarrowSidebar>
-      <Header altText="Labcodes" />
+      <Header altText="Labcodes" className="with-scroll" />
       <Body>
         <Item icon="calendar" iconColor="mineral60" label="Teste" />
         <Item icon="coin" iconColor="mineral60" label="Teste" />
@@ -29,13 +29,11 @@ Toggle can be used as shown in the example below:
         <Item icon="wallet" iconColor="mineral60" label="Teste" />
         <Item icon="wallet" iconColor="mineral60" label="Teste" />
         <Item icon="wallet" iconColor="mineral60" label="Teste" />
-        <Item icon="wallet" iconColor="mineral60" label="Teste" />
-       
       </Body>
       <Footer>
         <div className="lab-narrow-sidebar__footer--avatar"/>
-        <FooterButton icon="key" iconColor="mineral60" />
-        <FooterButton icon="logout" iconColor="mineral60" />
+        <FooterButton icon="key" label="Password"/>
+        <FooterButton icon="logout" label="Logout" />
       </Footer>
     </NarrowSidebar>
   </Story>

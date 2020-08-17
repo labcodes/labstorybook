@@ -6,6 +6,7 @@
   flex-direction: column;
   background-color: white;
   border: 2px solid $mineral-20;
+  box-sizing: border-box;
   border-top-right-radius: $radius-default;
 }
 
@@ -16,6 +17,10 @@
   padding: 30px 0;
   flex-wrap: wrap;
   flex-grow: 0;
+
+  .with-scroll {
+    box-shadow: inset 0px -2px 2px -1px $mineral-10;
+  }
 }
 
 .lab-narrow-sidebar__logo {
@@ -71,8 +76,7 @@
     background-color:$teal-10;
   } 
 
-  &:active,
-  &::selection{
+  &:active {
     background-color:$teal-30;
     font-weight: $weight-semibold;
     color: $teal-70;
@@ -98,19 +102,30 @@
     width: 44px;
     height: 44px;
     border-radius: 100%;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     background-color: $mineral-20;
   }
   
   &--button {
     display: flex;
+    width: 100px;
     box-sizing: border-box;
-    flex-direction: column; 
-    padding: 8px;
+    align-items: center;
+    padding: 4px 8px;
     margin-bottom: 4px;
+    text-align: center;
+    font-family: $font-primary;
+    font-weight: $weight-medium;
+    font-size: $font-size-1;
+    color: $mineral-60;
     background-color: transparent;
-    border: none;
+    border: 2px solid transparent;
     border-radius: 4px;
+
+    .lab-icon--nome-da-classe {
+      background-color: $mineral-60;
+      margin-right: 4px;
+    }
   }
 
   &--button:focus {
@@ -123,7 +138,8 @@
   }
 
   &--button:active {
-    background-color: $teal-20;
+    background-color: $teal-30;
+    
   }
 
 }
