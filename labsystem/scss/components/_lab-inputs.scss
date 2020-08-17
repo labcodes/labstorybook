@@ -116,7 +116,8 @@ $input-border-disabled: $mineral-30;
   }
   
   // Input disabled
-  .lab-input__field:disabled + & {
+  .lab-input__field:disabled + &,
+  .lab-input__field:not(:placeholder-shown):disabled + &  {
     color: $black-75;
     background-color: $mineral-10;
     border: $border-01 $input-border-disabled;
@@ -219,6 +220,13 @@ $input-border-disabled: $mineral-30;
     background: rgb(255,255,255);
     background: linear-gradient(360deg, rgba(255,255,255,0) 30%, rgba(255,255,255,1) 30%);
   }
+
+  //Change label when input is disabled
+  .lab-input__field:not(:placeholder-shown):disabled ~ .lab-input__label-wrapper & {
+    color: $input-border-unfilled-idle;
+    background: rgb(255,255,255);
+    background: linear-gradient(360deg, rgba(255,255,255,0) 30%, rgba(255,255,255,1) 30%);
+  }
 }
 
 // Icon that goes inside the field
@@ -233,10 +241,15 @@ $input-border-disabled: $mineral-30;
   border: none;
   outline: none;
   border-radius: 2px;
-  background-color: white;
+  background-color: transparent;
 
   &:focus {
     @include border-shadow(focus, $input-shadow-filled-focus);
+  }
+
+  .lab-input__field:not(:placeholder-shown):disabled ~ &:focus {
+    cursor: none;
+    box-shadow: none;
   }
 }
 
