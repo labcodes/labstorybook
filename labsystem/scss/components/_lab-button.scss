@@ -5,11 +5,11 @@ $btn-line-heigt: 14px;
 //Button colors from theme.
 $btn-main-color: map-get($button-theme, "60");
 $btn-border-hover: map-get($button-theme, "80");
-$btn-shadow-hover: map-get($button-theme, "10");
+$border-shadow-hover: map-get($button-theme, "10");
 $btn-bg-active: map-get($button-theme, "70");
 $btn-border-active: map-get($button-theme, "40");
 $btn-border-focus: map-get($button-theme, "70");
-$btn-shadow-focus: map-get($button-theme, "30");
+$border-shadow-focus: map-get($button-theme, "30");
 $btn-bg-focus-active: map-get($button-theme, "80");
 
 $outline-color-active: map-get($button-theme, "70");
@@ -87,12 +87,12 @@ $text-bg-active: map-get($button-theme, "20");
   border-color: $btn-main-color;
 
   &:hover {
-    @include btn-shadow(hover, $btn-shadow-hover);
+    @include border-shadow(hover, $border-shadow-hover);
     border-color: $btn-border-hover;
   }
 
   &:focus {
-    @include btn-shadow(focus, $btn-shadow-focus);
+    @include border-shadow(focus, $border-shadow-focus);
     border-color: $btn-border-focus;
   }
 
@@ -102,12 +102,12 @@ $text-bg-active: map-get($button-theme, "20");
   }
 
   &:focus:hover {
-    @include btn-shadow(focus-hover, $btn-shadow-focus, $btn-shadow-hover);
+    @include border-shadow(focus-hover, $border-shadow-focus, $border-shadow-hover);
     border-color: $btn-border-hover;
   }
 
   &:focus:active {
-    @include btn-shadow(focus, $btn-shadow-focus);
+    @include border-shadow(focus, $border-shadow-focus);
     background-color: $btn-bg-focus-active;
     border-color: $btn-border-active;
   }
@@ -135,13 +135,13 @@ $text-bg-active: map-get($button-theme, "20");
     border-color: $mineral-90;
 
     &:hover {
-      @include btn-shadow(hover, $black-20);
+      @include border-shadow(hover, $black-20);
       background-color: $mineral-90;
       border-color: $mineral-90;
     }
 
     &:focus {
-      @include btn-shadow(focus, $mineral-90);
+      @include border-shadow(focus, $mineral-90);
       background-color: $mineral-90;
       border-color: $white;
     }
@@ -151,13 +151,13 @@ $text-bg-active: map-get($button-theme, "20");
     }
 
     &:focus:hover {
-      @include btn-shadow(focus-hover, $mineral-90, $black-20);
+      @include border-shadow(focus-hover, $mineral-90, $black-20);
       background-color: $mineral-90;
       border-color: $white;
     }
 
     &:focus:active {
-      @include btn-shadow(focus, $mineral-90);
+      @include border-shadow(focus, $mineral-90);
       background-color: $black-50;
       border-color: $white;
     }
@@ -173,13 +173,13 @@ $text-bg-active: map-get($button-theme, "20");
     }
 
     &:hover {
-      @include btn-shadow(hover, $white-20);
+      @include border-shadow(hover, $white-20);
       background-color: $white;
       border-color: $white;
     }
 
     &:focus {
-      @include btn-shadow(focus, $white);
+      @include border-shadow(focus, $white);
       background-color: $white;
       border-color: $mineral-90;
     }
@@ -190,13 +190,13 @@ $text-bg-active: map-get($button-theme, "20");
     }
 
     &:focus:hover {
-      @include btn-shadow(focus-hover, $white, $white-20);
+      @include border-shadow(focus-hover, $white, $white-20);
       background-color: $white;
       border-color: $black-75;
     }
 
     &:focus:active {
-      @include btn-shadow(focus, $white);
+      @include border-shadow(focus, $white);
       background-color: $white-50;
       border-color: $mineral-90;
     }
@@ -212,13 +212,13 @@ $text-bg-active: map-get($button-theme, "20");
     }
 
     &:hover {
-      @include btn-shadow(hover, $yellow-20);
+      @include border-shadow(hover, $yellow-20);
       background-color: $yellow-60;
       border-color: $yellow-60;
     }
 
     &:focus {
-      @include btn-shadow(focus, $yellow-60);
+      @include border-shadow(focus, $yellow-60);
       background-color: $yellow-60;
       border-color: $white;
     }
@@ -229,7 +229,7 @@ $text-bg-active: map-get($button-theme, "20");
     }
 
     &:focus:hover {
-      @include btn-shadow(focus-hover, $yellow-60, $yellow-20);
+      @include border-shadow(focus-hover, $yellow-60, $yellow-20);
       background-color: $yellow-60;
       border-color: $white;
     }
@@ -250,13 +250,13 @@ $text-bg-active: map-get($button-theme, "20");
     }
 
     &:hover {
-      @include btn-shadow(hover, $black-20);
+      @include border-shadow(hover, $black-20);
       background-color: $mineral-90;
       border-color: $mineral-90;
     }
 
     &:focus {
-      @include btn-shadow(focus, $mineral-90);
+      @include border-shadow(focus, $mineral-90);
       background-color: $mineral-90;
       border-color: $yellow-60;
     }
@@ -267,13 +267,13 @@ $text-bg-active: map-get($button-theme, "20");
     }
 
     &:focus:hover {
-      @include btn-shadow(focus-hover, $mineral-90, $black-20);
+      @include border-shadow(focus-hover, $mineral-90, $black-20);
       background-color: $mineral-90;
       border-color: $yellow-60;
     }
 
     &:focus:active {
-      @include btn-shadow(focus, $mineral-90);
+      @include border-shadow(focus, $mineral-90);
       background-color: $black-50;
       border-color: $yellow-60;
     }
@@ -285,13 +285,13 @@ $text-bg-active: map-get($button-theme, "20");
     border-color: $red-60;
     
     &:hover {
-      @include btn-shadow(hover, $red-20);
+      @include border-shadow(hover, $red-20);
       background-color: $red-60;
       border-color: $red-60;
     }
     
     &:focus {
-      @include btn-shadow(focus, $red-60);
+      @include border-shadow(focus, $red-60);
       background-color: $red-60;
       border-color: $white;
     }
@@ -301,7 +301,7 @@ $text-bg-active: map-get($button-theme, "20");
     }
     
     &:focus:hover {
-      @include btn-shadow(focus-hover, $red-60, $red-20);
+      @include border-shadow(focus-hover, $red-60, $red-20);
       background-color: $red-60;
       border-color: $white;
     }
@@ -322,13 +322,13 @@ $text-bg-active: map-get($button-theme, "20");
     }
 
     &:hover {
-      @include btn-shadow(hover, $white-20);
+      @include border-shadow(hover, $white-20);
       background-color: $white;
       border-color: $white;
     }
 
     &:focus {
-      @include btn-shadow(focus, $white);
+      @include border-shadow(focus, $white);
       background-color: $white;
       border-color: $red-60;
     }
@@ -339,13 +339,13 @@ $text-bg-active: map-get($button-theme, "20");
     }
 
     &:focus:hover {
-      @include btn-shadow(focus-hover, $white, $white-20);
+      @include border-shadow(focus-hover, $white, $white-20);
       background-color: $white;
       border-color: $red-60;
     }
 
     &:focus:active {
-      @include btn-shadow(focus, $white);
+      @include border-shadow(focus, $white);
       background-color: $white-50;
       border-color: $red-60
     }
@@ -361,13 +361,13 @@ $text-bg-active: map-get($button-theme, "20");
     }
 
     &:hover {
-      @include btn-shadow(hover, $white-20);
+      @include border-shadow(hover, $white-20);
       background-color: $white;
       border-color: $white;
     }
 
     &:focus {
-      @include btn-shadow(focus, $white);
+      @include border-shadow(focus, $white);
       background-color: $white;
       border-color: $green-60;
     }
@@ -378,13 +378,13 @@ $text-bg-active: map-get($button-theme, "20");
     }
 
     &:focus:hover {
-      @include btn-shadow(focus-hover, $white, $white-20);
+      @include border-shadow(focus-hover, $white, $white-20);
       background-color: $white;
       border-color: $green-60;
     }
 
     &:focus:active {
-      @include btn-shadow(focus, $white);
+      @include border-shadow(focus, $white);
       background-color: $white-50;
       border-color: $green-60;
     }
@@ -400,12 +400,12 @@ $text-bg-active: map-get($button-theme, "20");
   }
 
   &:hover {
-    @include btn-shadow(hover, $btn-shadow-hover);
+    @include border-shadow(hover, $border-shadow-hover);
     border-color: $btn-border-hover;
   }
 
   &:focus {
-    @include btn-shadow(focus, $btn-shadow-focus);
+    @include border-shadow(focus, $border-shadow-focus);
     border-color: $btn-border-focus;
   }
 
@@ -415,12 +415,12 @@ $text-bg-active: map-get($button-theme, "20");
   }
 
   &:focus:hover {
-    @include btn-shadow(focus-hover, $btn-shadow-focus, $btn-shadow-hover);
+    @include border-shadow(focus-hover, $border-shadow-focus, $border-shadow-hover);
     border-color: $btn-border-hover;
   }
 
   &:focus:active {
-    @include btn-shadow(focus, $btn-shadow-focus);
+    @include border-shadow(focus, $border-shadow-focus);
     color: $outline-color-focus-active;
     border-color: $btn-border-active;
   }
@@ -454,13 +454,13 @@ $text-bg-active: map-get($button-theme, "20");
     }
 
     &:hover {
-      @include btn-shadow(hover, $black-20);
+      @include border-shadow(hover, $black-20);
       color: $mineral-90;
       border-color: $mineral-90;
     }
 
     &:focus {
-      @include btn-shadow(focus, $mineral-90);
+      @include border-shadow(focus, $mineral-90);
       color: $mineral-90;
       border-color: $black-35;
     }
@@ -472,13 +472,13 @@ $text-bg-active: map-get($button-theme, "20");
     }
 
     &:focus:hover {
-      @include btn-shadow(focus-hover, $mineral-90, $black-20);
+      @include border-shadow(focus-hover, $mineral-90, $black-20);
       color: $mineral-90;
       border-color: $black-35;
     }
 
     &:focus:active {
-      @include btn-shadow(focus, $mineral-90);
+      @include border-shadow(focus, $mineral-90);
       color: $mineral-90;
       background-color: $black-10;
       border-color: $black-50;
@@ -495,13 +495,13 @@ $text-bg-active: map-get($button-theme, "20");
     }
 
     &:hover {
-      @include btn-shadow(hover, $white-20);
+      @include border-shadow(hover, $white-20);
       color: $white;
       border-color: $white;
     }
 
     &:focus {
-      @include btn-shadow(focus, $white);
+      @include border-shadow(focus, $white);
       color: $white;
       border-color: $white-35;
     }
@@ -513,13 +513,13 @@ $text-bg-active: map-get($button-theme, "20");
     }
 
     &:focus:hover {
-      @include btn-shadow(focus-hover, $white, $white-20);
+      @include border-shadow(focus-hover, $white, $white-20);
       color: $white;
       border-color: $white-35;
     }
 
     &:focus:active {
-      @include btn-shadow(focus, $white);
+      @include border-shadow(focus, $white);
       color: $white;
       background-color: $white-10;
       border-color: $white-35;
@@ -543,7 +543,7 @@ $text-bg-active: map-get($button-theme, "20");
   }
 
   &:focus {
-    @include btn-shadow(focus, $btn-shadow-focus);
+    @include border-shadow(focus, $border-shadow-focus);
   }
 
   &:active {
@@ -552,12 +552,12 @@ $text-bg-active: map-get($button-theme, "20");
   }
 
   &:focus:hover {
-    @include btn-shadow(focus, $btn-shadow-focus);
+    @include border-shadow(focus, $border-shadow-focus);
     background-color: $text-bg-hover;
   }
 
   &:focus:active {
-    @include btn-shadow(focus, $btn-shadow-focus);
+    @include border-shadow(focus, $border-shadow-focus);
     color: $text-color-active;
     background-color: $text-bg-active;
   }
@@ -591,7 +591,7 @@ $text-bg-active: map-get($button-theme, "20");
     }
 
     &:focus {
-      @include btn-shadow(focus, $white-50);
+      @include border-shadow(focus, $white-50);
     }
 
     &:active {
@@ -612,7 +612,7 @@ $text-bg-active: map-get($button-theme, "20");
     }
 
     &:focus {
-      @include btn-shadow(focus, $black-50);
+      @include border-shadow(focus, $black-50);
     }
 
     &:active {
