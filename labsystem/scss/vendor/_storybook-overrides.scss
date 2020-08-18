@@ -3,6 +3,10 @@
   padding: 0 !important;
 }
 
+.sbdocs-content {
+  max-width: $content-max-width !important;
+}
+
 h1.sbdocs-h1,
 h2.sbdocs-h2,
 h3.sbdocs-h3,
@@ -21,6 +25,12 @@ h6.sbdocs-h6 {
 
   strong {
     font-weight: $title-strong-weight;
+  }
+
+  a {
+    &:before {
+      display: none;
+    }
   }
 }
 
@@ -60,6 +70,7 @@ h6.sbdocs-h6 {
   font-weight: $weight-semibold;
 }
 
+p, li, 
 p.sbdocs-p,
 li.sbdocs-li {
   margin-block-start: 1rem;
@@ -67,7 +78,7 @@ li.sbdocs-li {
   margin-inline-start: 0;
   margin-inline-end: 0;
   font-family: $font-primary;
-  font-size: $paragraph-defaul-size;
+  font-size: $paragraph-default-size;
   font-weight: $paragraph-weight;
   line-height: 1.5rem;
   color: $black-75;
@@ -79,6 +90,8 @@ li.sbdocs-li {
   }
 }
 
-.sbdocs-content {
-  max-width: $content-max-width !important;
+span,
+span.sbdocs-span {
+  font-size: inherit;
+  font-family: $font-primary;
 }

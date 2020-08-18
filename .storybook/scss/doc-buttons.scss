@@ -1,0 +1,38 @@
+.doc-buttons {
+  padding: 16px;
+  display: inline-block;
+}
+
+.doc-buttons--light {
+  background-color: $mineral-80;
+}
+
+.doc-buttons--warning {
+  background-color: $yellow-60;
+}
+
+.doc-buttons--destructive {
+  background-color: $red-60;
+}
+
+.doc-buttons--confirmation  {
+  background-color: $green-60;
+}
+
+.doc-btn-table {
+  td, th, tr {
+    background-color: $white !important;
+    border: none !important;
+    padding: 4px 4px !important;
+  }
+  
+  tr td {
+    padding: 20px 4px !important;
+    border: none !important;
+  }
+  
+  ol li {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+  }
+}
