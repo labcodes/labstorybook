@@ -46,6 +46,11 @@ $input-border-disabled: $mineral-30;
   align-items: center;
 }
 
+.lab-input--disabled {
+  background-color: $mineral-10;
+  border-radius: $radius-02
+}
+
 //Input tag
 .lab-input__field {
   // width: 100%;
@@ -66,7 +71,8 @@ $input-border-disabled: $mineral-30;
   }
 
   &:disabled {
-    background-color: transparent;
+    color: $black-75;
+    background-color: $mineral-10;
   }
 
   &--suffixed {
@@ -119,7 +125,6 @@ $input-border-disabled: $mineral-30;
   .lab-input__field:disabled + &,
   .lab-input__field:not(:placeholder-shown):disabled + &  {
     color: $black-75;
-    background-color: $mineral-10;
     border: $border-01 $input-border-disabled;
     box-shadow: none;
   }
@@ -231,9 +236,6 @@ $input-border-disabled: $mineral-30;
 
 // Icon that goes inside the field
 .lab-input__icon {
-  position: absolute;
-  top: $spacing-02;
-  right: $spacing-02;
   z-index: 1;
   width: $input-icon-size;
   height: $input-icon-size;
@@ -242,13 +244,13 @@ $input-border-disabled: $mineral-30;
   outline: none;
   border-radius: 2px;
   background-color: transparent;
-
+  margin: 0 $spacing-02;
   &:focus {
     @include border-shadow(focus, $input-shadow-filled-focus);
   }
 
   .lab-input__field:not(:placeholder-shown):disabled ~ &:focus {
-    cursor: none;
+    cursor: default;
     box-shadow: none;
   }
 }

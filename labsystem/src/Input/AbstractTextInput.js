@@ -111,7 +111,6 @@ export default class AbstractTextInput extends React.Component {
 
   render() {
     const {
-      className,
       id,
       type,
       label,
@@ -126,7 +125,12 @@ export default class AbstractTextInput extends React.Component {
       customErrorMsg,
     } = this.props;
 
+    let { className } = this.props;
+
     const { localValue, localIsValid } = this.state;
+    if (disabled) {
+      className += " lab-input--disabled";
+    }
 
     return (
       <>
