@@ -3,6 +3,7 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
 import Button from '../labsystem/src/Button';
 import OutlineButton from '../labsystem/src/Buttons/OutlineButton';
+import TextButton from '../labsystem/src/Buttons/TextButton';
 
 <Meta title="Components/Button" component={Button} />
 
@@ -70,8 +71,8 @@ import OutlineButton from '../labsystem/src/Buttons/OutlineButton';
         </tr>
         <tr>
           <td>
-            <div className="doc-buttons"><Button text="Text" variant="text" /></div>
-            <div className="doc-buttons"><Button text="Text" variant="text" icon="reload" /></div>
+            <div className="doc-buttons"><TextButton text="Text" /></div>
+            <div className="doc-buttons"><TextButton text="Text" icon="reload" /></div>
           </td>
           <td><p><strong>Text:</strong> Tertiary or less important actions or triggers. Use it to connect internal pages or to trigger internal functions of a component.</p></td>
         </tr>
@@ -368,22 +369,22 @@ On <b>dialogs</b>, the secondary action for <b>destructive</b> or <b>warning</b>
   <Story name="Text Button">
     <Fragment>
       <div className="doc-buttons">
-        <Button text="Normal" variant="text" />
+        <TextButton text="Normal" />
       </div>
       <div className="doc-buttons">
-        <Button text="Normal disabled" variant="text" disabled />
+        <TextButton text="Normal disabled" disabled />
       </div>
       <div className="doc-buttons">
-        <Button text="Large" variant="text" size="large" />
+        <TextButton text="Large" size="large" />
       </div>
       <div className="doc-buttons">
-        <Button text="Large disabled" variant="text" size="large" disabled />
+        <TextButton text="Large disabled" size="large" disabled />
       </div>
       <div className="doc-buttons">
-        <Button text="Small" variant="text" size="small" />
+        <TextButton text="Small" size="small" />
       </div>
       <div className="doc-buttons">
-        <Button text="Small disabled" variant="text" size="small" disabled />
+        <TextButton text="Small disabled" size="small" disabled />
       </div>
     </Fragment>
   </Story>
@@ -395,22 +396,22 @@ On <b>dialogs</b>, the secondary action for <b>destructive</b> or <b>warning</b>
   <Story name="Text Button icon">
     <Fragment>
       <div className="doc-buttons">
-        <Button text="Normal" variant="text" icon="reload" />
+        <TextButton text="Normal" icon="reload" />
       </div>
       <div className="doc-buttons">
-        <Button text="Normal disabled" variant="text" icon="reload" disabled />
+        <TextButton text="Normal disabled" icon="reload" disabled />
       </div>
       <div className="doc-buttons">
-        <Button text="Large" variant="text" icon="reload" size="large" />
+        <TextButton text="Large" icon="reload" size="large" />
       </div>
       <div className="doc-buttons">
-        <Button text="Large disabled" variant="text" icon="reload" size="large" disabled />
+        <TextButton text="Large disabled" icon="reload" size="large" disabled />
       </div>
       <div className="doc-buttons">
-        <Button text="Small" variant="text" icon="reload" size="small" />
+        <TextButton text="Small" icon="reload" size="small" />
       </div>
       <div className="doc-buttons">
-        <Button text="Small disabled" variant="text" icon="reload" size="small" disabled />
+        <Button text="Small disabled" icon="reload" size="small" disabled />
       </div>
     </Fragment>
   </Story>
@@ -424,10 +425,10 @@ Use the mineral or white skins for secondary actions on <b>notifications</b> and
   <Story name="Text Button Skins">
     <Fragment>
       <div className="doc-buttons doc-buttons--light">
-        <Button text="Light" variant="text" skin="light" />
+        <TextButton text="Light" skin="light" />
       </div>
       <div className="doc-buttons">
-        <Button text="Dark" variant="text" skin="dark" />
+        <TextButton text="Dark" skin="dark" />
       </div>
     </Fragment>
   </Story>
@@ -439,10 +440,10 @@ Use the mineral or white skins for secondary actions on <b>notifications</b> and
   <Story name="Text Button Skins icon">
     <Fragment>
       <div className="doc-buttons doc-buttons--light">
-        <Button text="Light" variant="text" skin="light" icon="reload" />
+        <TextButton text="Light" skin="light" icon="reload" />
       </div>
       <div className="doc-buttons">
-        <Button text="Dark" variant="text" skin="dark" icon="reload" />
+        <TextButton text="Dark" skin="dark" icon="reload" />
       </div>
     </Fragment>
   </Story>
