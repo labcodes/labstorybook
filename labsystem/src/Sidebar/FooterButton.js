@@ -37,7 +37,7 @@ export default class FooterButton extends React.Component {
 
    return (
     <React.Fragment>
-      <button className="lab-narrow-sidebar__footer--button" >
+      <button className="lab-narrow-sidebar__footer__button" >
       {this.buttonIcon()}
       {label}
       </button>

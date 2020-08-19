@@ -55,6 +55,8 @@
   color: $mineral-60;
   padding: 16px 0px;
   cursor: pointer;
+  border: none;
+  background-color: transparent;
 
   &:focus {
     outline: none;
@@ -78,6 +80,10 @@
 
   &:active {
     background-color:$teal-30;
+  }
+
+  &--active {
+    background-color:$teal-20;
     font-weight: $weight-semibold;
     color: $teal-70;
 
@@ -97,7 +103,7 @@
   align-items: center;
   flex-grow: 0;
   
-  &--avatar {
+  &__avatar {
     display: block;
     width: 44px;
     height: 44px;
@@ -106,7 +112,7 @@
     background-color: $mineral-20;
   }
   
-  &--button {
+  &__button {
     display: flex;
     width: 100px;
     box-sizing: border-box;
@@ -128,18 +134,29 @@
     }
   }
 
-  &--button:focus {
+  &__button:focus {
     border: 2px solid $teal-30;
     outline: none;
   }
 
-  &--button:hover {
+  &__button:hover {
     background-color: $teal-10;
   }
 
-  &--button:active {
+  &__button:active {
     background-color: $teal-30;
     
+  }
+
+  &__button--active {
+    background-color: $teal-20;
+    color: $teal-70;
+    font-weight: $weight-semibold;
+
+    .lab-icon--nome-da-classe {
+      background-color: $teal-70;
+    }
+
   }
 
 }

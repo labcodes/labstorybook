@@ -37,10 +37,10 @@ export default class Item extends React.Component {
 
    return (
     <React.Fragment>
-      <a href="#" className="lab-narrow-sidebar__item" >
+      <button href="#" className="lab-narrow-sidebar__item" >
       {this.itemIcon()}
       {label}
-      </a>
+      </button>
     </React.Fragment>
     );
   }
