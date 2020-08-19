@@ -72,6 +72,22 @@ export default class AbstractTextInput extends React.Component {
     }
   }
 
+  componentDidUpdate(prevProps) {
+    const { customErrorMsg } = this.props;
+    const isValid = this.props.isValid;
+
+    if (isValid !== prevProps.isValid) {
+      this.setState({localIsValid: isValid});
+      const inputElement = this.inputRef.current;
+
+      if (!isUndefined(isValid) && !isValid) {
+        inputElement.setCustomValidity(customErrorMsg);
+      } else if (isValid) {
+        inputElement.setCustomValidity("");
+      }
+    }
+  }
+
   requiredIcon = () => {
     const { required } = this.props;
     return required ? (
@@ -95,8 +111,9 @@ export default class AbstractTextInput extends React.Component {
 
   handleOnChange = () => {
     const { onChange, isValid } = this.props;
-    const inputElementValue = this.inputRef.current.value;
-    const inputElementIsValid = this.inputRef.current.validity.valid;
+    const inputElement = this.inputRef.current;
+    const inputElementValue = inputElement.value;
+    const inputElementIsValid = inputElement.validity.valid;
 
     if (!isUndefined(onChange)) {
       onChange(inputElementValue);
@@ -104,6 +121,9 @@ export default class AbstractTextInput extends React.Component {
     this.setState({ localValue: inputElementValue });
     if (isUndefined(isValid)) {
       this.setState({ localIsValid: inputElementIsValid });
+    } else if (!isValid) {
+      inputElement.setCustomValidity(customErrorMsg);
+      this.setState({ localIsValid: isValid });
     }
   };
 
