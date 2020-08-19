@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
 import Button from '../labsystem/src/Button';
+import OutlineButton from '../labsystem/src/Buttons/OutlineButton';
 
 <Meta title="Components/Button" component={Button} />
 
@@ -62,8 +63,8 @@ import Button from '../labsystem/src/Button';
         </tr>
         <tr>
           <td>
-            <div className="doc-buttons"><Button text="Outline" variant="outline" /></div>
-            <div className="doc-buttons"><Button text="Outline" variant="outline" icon="reload" /></div>
+            <div className="doc-buttons"><OutlineButton text="Outline" /></div>
+            <div className="doc-buttons"><OutlineButton text="Outline" icon="reload" /></div>
           </td>
           <td><p><strong>Outline:</strong> Secondary actions or triggers on each page. Prefer this one to the default one, specially on a page with lots of buttons.</p></td>
         </tr>
@@ -279,22 +280,22 @@ You can also use <b>Message Colors</b> on labels to place these buttons also in 
   <Story name="Outline Button">
     <Fragment>
       <div className="doc-buttons">
-        <Button text="Normal" variant="outline" />
+        <OutlineButton text="Normal" />
       </div>
       <div className="doc-buttons">
-        <Button text="Normal disabled" variant="outline" disabled />
+        <OutlineButton text="Normal disabled" disabled />
       </div>
       <div className="doc-buttons">
-        <Button text="Large" variant="outline" size="large" />
+        <OutlineButton text="Large" size="large" />
       </div>
       <div className="doc-buttons">
-        <Button text="Large disabled" variant="outline" size="large" disabled />
+        <OutlineButton text="Large disabled" size="large" disabled />
       </div>
       <div className="doc-buttons">
-        <Button text="Small" variant="outline" size="small" />
+        <OutlineButton text="Small" size="small" />
       </div>
       <div className="doc-buttons">
-        <Button text="Small disabled" variant="outline" size="small" disabled />
+        <OutlineButton text="Small disabled" size="small" disabled />
       </div>
     </Fragment>
   </Story>
@@ -306,22 +307,22 @@ You can also use <b>Message Colors</b> on labels to place these buttons also in 
   <Story name="Outline Button icons">
     <Fragment>
       <div className="doc-buttons">
-        <Button text="Normal" variant="outline" icon="reload" />
+        <OutlineButton text="Normal" icon="reload" />
       </div>
       <div className="doc-buttons">
-        <Button text="Normal disabled" variant="outline" icon="reload" disabled />
+        <OutlineButton text="Normal disabled" icon="reload" disabled />
       </div>
       <div className="doc-buttons">
-        <Button text="Large" variant="outline" icon="reload" size="large" />
+        <OutlineButton text="Large" icon="reload" size="large" />
       </div>
       <div className="doc-buttons">
-        <Button text="Large disabled" variant="outline" icon="reload" size="large" disabled />
+        <OutlineButton text="Large disabled" icon="reload" size="large" disabled />
       </div>
       <div className="doc-buttons">
-        <Button text="Small" variant="outline" icon="reload" size="small" />
+        <OutlineButton text="Small" icon="reload" size="small" />
       </div>
       <div className="doc-buttons">
-        <Button text="Small disabled" variant="outline" icon="reload" size="small" disabled />
+        <OutlineButton text="Small disabled" icon="reload" size="small" disabled />
       </div>
     </Fragment>
   </Story>
@@ -337,10 +338,10 @@ On <b>dialogs</b>, the secondary action for <b>destructive</b> or <b>warning</b>
   <Story name="Outline Button Skins">
     <Fragment>
       <div className="doc-buttons doc-buttons--light">
-        <Button text="Light" variant="outline" skin="light" />
+        <OutlineButton text="Light" skin="light" />
       </div>
       <div className="doc-buttons">
-        <Button text="Dark" variant="outline" skin="dark" />
+        <OutlineButton text="Dark" skin="dark" />
       </div>
     </Fragment>
   </Story>
@@ -352,10 +353,10 @@ On <b>dialogs</b>, the secondary action for <b>destructive</b> or <b>warning</b>
   <Story name="Outline button skin with icon">
     <Fragment>
       <div className="doc-buttons doc-buttons--light">
-        <Button text="Light" variant="outline" icon="reload" skin="light" />
+        <OutlineButton text="Light" icon="reload" skin="light" />
       </div>
       <div className="doc-buttons">
-        <Button text="Dark" variant="outline" icon="reload" skin="dark" />
+        <OutlineButton text="Dark" icon="reload" skin="dark" />
       </div>
     </Fragment>
   </Story>
