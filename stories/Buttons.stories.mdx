@@ -1,10 +1,9 @@
 import { Fragment } from 'react';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
-import Button from '../labsystem/src/Button';
-import OutlineButton from '../labsystem/src/Buttons/OutlineButton';
-import TextButton from '../labsystem/src/Buttons/TextButton';
-import DefaultButton from '../labsystem/src/Buttons/DefaultButton';
+import Button from '../labsystem/src/Button/Button';
+import OutlineButton from '../labsystem/src/Button/OutlineButton';
+import TextButton from '../labsystem/src/Button/TextButton';
 
 <Meta title="Components/Button" component={Button} />
 
@@ -58,8 +57,8 @@ import DefaultButton from '../labsystem/src/Buttons/DefaultButton';
       <tbody>
         <tr>
           <td>
-            <div class="doc-buttons"><DefaultButton text="Default" /></div>
-            <div class="doc-buttons"><DefaultButton text="Default" /></div>
+            <div class="doc-buttons"><Button text="Default" /></div>
+            <div class="doc-buttons"><Button text="Default" /></div>
           </td>
           <td><p><strong>Default:</strong> Primary call to action or trigger on the page or modal. Use it to highlight the strongest call to action on a page. Default buttons should only appear once per screen area. Not every screen requires a default button.</p></td>
         </tr>
@@ -91,7 +90,7 @@ import DefaultButton from '../labsystem/src/Buttons/DefaultButton';
       <tbody>
         <tr>
           <td>
-            <div class="doc-buttons"><DefaultButton text="Small" size="small" /></div>
+            <div class="doc-buttons"><Button text="Small" size="small" /></div>
           </td>
           <td>
             <p><strong>Small:</strong> Use it when there is not enough vertical space.<br/>
@@ -101,7 +100,7 @@ import DefaultButton from '../labsystem/src/Buttons/DefaultButton';
         </tr>
         <tr>
           <td>
-            <div class="doc-buttons"><DefaultButton text="Normal" /></div>
+            <div class="doc-buttons"><Button text="Normal" /></div>
           </td>
           <td>
             <p><strong>Normal:</strong> For use in day-to-day situations.<br/>
@@ -110,7 +109,7 @@ import DefaultButton from '../labsystem/src/Buttons/DefaultButton';
         </tr>
         <tr>
           <td>
-            <div class="doc-buttons"><DefaultButton text="Large" size="large" /></div>
+            <div class="doc-buttons"><Button text="Large" size="large" /></div>
           </td>
           <td>
             <p><strong>Large:</strong> Use large buttons on modals, dialogs and touch applications.<br/>
@@ -161,22 +160,22 @@ import DefaultButton from '../labsystem/src/Buttons/DefaultButton';
   <Story name="Default Button">
     <Fragment>
       <div className="doc-buttons">
-      <DefaultButton text="Normal" />
+      <Button text="Normal" />
       </div>
       <div className="doc-buttons">
-      <DefaultButton text="Normal disabled" disabled />
+      <Button text="Normal disabled" disabled />
       </div>
       <div className="doc-buttons">
-        <DefaultButton text="Large" size="large" />
+        <Button text="Large" size="large" />
       </div>
       <div className="doc-buttons">
-        <DefaultButton text="Large disabled" size="large" disabled />
+        <Button text="Large disabled" size="large" disabled />
       </div>
       <div className="doc-buttons">
-        <DefaultButton text="Small" size="small" />
+        <Button text="Small" size="small" />
       </div>
       <div className="doc-buttons">
-        <DefaultButton text="Small disabled" size="small" disabled />
+        <Button text="Small disabled" size="small" disabled />
       </div>
     </Fragment>
   </Story>
@@ -188,22 +187,22 @@ import DefaultButton from '../labsystem/src/Buttons/DefaultButton';
   <Story name="Default Button icons">
     <Fragment>
       <div className="doc-buttons">
-        <DefaultButton text="Normal" icon="reload" />
+        <Button text="Normal" icon="reload" />
       </div>
       <div className="doc-buttons">
-        <DefaultButton text="Normal disabled" icon="reload" disabled />
+        <Button text="Normal disabled" icon="reload" disabled />
       </div>
       <div className="doc-buttons">
-        <DefaultButton text="Large" icon="reload" size="large" />
+        <Button text="Large" icon="reload" size="large" />
       </div>
       <div className="doc-buttons">
-        <DefaultButton text="Large disabled" icon="reload" size="large" disabled />
+        <Button text="Large disabled" icon="reload" size="large" disabled />
       </div>
       <div className="doc-buttons">
-        <DefaultButton text="Small" icon="reload" size="small" />
+        <Button text="Small" icon="reload" size="small" />
       </div>
       <div className="doc-buttons">
-        <DefaultButton text="Small disabled" icon="reload" size="small" disabled />
+        <Button text="Small disabled" icon="reload" size="small" disabled />
       </div>
     </Fragment>
   </Story>
@@ -219,26 +218,26 @@ You can also use <b>Message Colors</b> on labels to place these buttons also in 
   <Story name="Default Button Skins">
     <Fragment>
       <div className="doc-buttons">
-        <DefaultButton text="Dark" skin="dark" />
+        <Button text="Dark" skin="dark" />
       </div>
       <div className="doc-buttons">
-        <DefaultButton text="Warning" skin="warning" />
+        <Button text="Warning" skin="warning" />
       </div>
       <div className="doc-buttons">
-        <DefaultButton text="Destructive" skin="destructive" />
+        <Button text="Destructive" skin="destructive" />
       </div>
       <br />
       <div className="doc-buttons doc-buttons--light">
-        <DefaultButton text="Light" skin="light" />
+        <Button text="Light" skin="light" />
       </div>
       <div className="doc-buttons doc-buttons--warning">
-        <DefaultButton text="Warning" skin="warning-invert" />
+        <Button text="Warning" skin="warning-invert" />
       </div>
       <div className="doc-buttons doc-buttons--destructive">
-        <DefaultButton text="Destructive" skin="destructive-invert" />
+        <Button text="Destructive" skin="destructive-invert" />
       </div>
       <div className="doc-buttons doc-buttons--confirmation">
-        <DefaultButton text="Confirmation" skin="confirmation-invert" />
+        <Button text="Confirmation" skin="confirmation-invert" />
       </div>
     </Fragment>
   </Story>
@@ -250,26 +249,26 @@ You can also use <b>Message Colors</b> on labels to place these buttons also in 
   <Story name="Default Button Skins icons">
     <Fragment>
       <div className="doc-buttons">
-        <DefaultButton text="Dark" icon="reload" skin="dark" />
+        <Button text="Dark" icon="reload" skin="dark" />
       </div>
       <div className="doc-buttons">
-        <DefaultButton text="Warning" skin="warning" icon="reload"  />
+        <Button text="Warning" skin="warning" icon="reload"  />
       </div>
       <div className="doc-buttons">
-        <DefaultButton text="Destructive" skin="destructive" icon="reload" />
+        <Button text="Destructive" skin="destructive" icon="reload" />
       </div>
       <br />
       <div className="doc-buttons doc-buttons--light">
-        <DefaultButton text="Light" icon="reload" skin="light" />
+        <Button text="Light" icon="reload" skin="light" />
       </div>
       <div className="doc-buttons doc-buttons--warning">
-        <DefaultButton text="Warning" icon="reload" skin="warning-invert" />
+        <Button text="Warning" icon="reload" skin="warning-invert" />
       </div>
       <div className="doc-buttons doc-buttons--destructive">
-        <DefaultButton text="Destructive" icon="reload" skin="destructive-invert" />
+        <Button text="Destructive" icon="reload" skin="destructive-invert" />
       </div>
       <div className="doc-buttons doc-buttons--confirmation">
-        <DefaultButton text="Confirmation" icon="reload" skin="confirmation-invert" />
+        <Button text="Confirmation" icon="reload" skin="confirmation-invert" />
       </div>
     </Fragment>
   </Story>
@@ -412,7 +411,7 @@ On <b>dialogs</b>, the secondary action for <b>destructive</b> or <b>warning</b>
         <TextButton text="Small" icon="reload" size="small" />
       </div>
       <div className="doc-buttons">
-        <DefaultButton text="Small disabled" icon="reload" size="small" disabled />
+        <Button text="Small disabled" icon="reload" size="small" disabled />
       </div>
     </Fragment>
   </Story>
