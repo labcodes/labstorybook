@@ -64,6 +64,10 @@ $input-border-disabled: $mineral-30;
   border: none;
   outline: none;
   flex: 1;
+
+  // because browsers have different defaults for an input's min-width
+  // we are forcing it to be zero, so that the input fills the available space
+  min-width: 0;
   
   &:invalid {
     background-color: $input-background-invalid;
@@ -171,8 +175,6 @@ $input-border-disabled: $mineral-30;
   }
 
   .lab-input__prefix {
-    width: 100%;
-    max-width: 100%;
     opacity: 0;
     transition: $duration-slow all;
   }
