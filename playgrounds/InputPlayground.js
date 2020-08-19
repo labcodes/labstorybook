@@ -50,6 +50,9 @@ export default class InputPlayground extends React.Component {
       required,
       isValid,
     } = this.state;
+
+    const iconOptions = ["","arrow-down","arrow-left","arrow-right","arrow-top","calendar","coin","collapse-closed","collapse-open","check","dropdown-closed","dropdown-open","edit","eye-closed","eye-opened","track","key","logout","lupe","minus","plus","reload","remove","sort","star","trash","upload","arrow-fill-right","arrow-fill-left","chevron-right","chevron-left","menu-expand","menu-collapse","menu-default","external","wallet","workspace"];
+
     return (
       <div className="columns lab-playground">
         <div className="column lab-playground__component">
@@ -102,18 +105,16 @@ export default class InputPlayground extends React.Component {
                 onChange={this.handlePropChangeText}
               />
             </label>
-          </span>
+          </span><br />
           <span className="lab-playground__item">
             <label htmlFor="icon">
               icon
               <br />
-              <input
-                id="icon"
-                type="text"
-                label="icon"
-                value={icon}
-                onChange={this.handlePropChangeText}
-              />
+              <select name="icons" id="icon" onChange={this.handlePropChangeText}>
+                {iconOptions.map(
+                  (item, index) => {return (<option value={item} key={`icon-${index}`}>{item}</option>)}
+                )}
+              </select>
             </label>
           </span>
           <span className="lab-playground__item">
