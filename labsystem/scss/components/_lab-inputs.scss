@@ -257,6 +257,12 @@ $input-border-disabled: $mineral-30;
   }
 }
 
+// When there is no function associated to the Icon
+.lab-input__icon--disabled:focus {
+  cursor: default;
+  box-shadow: none;
+}
+
 // Required icon
 // The icon color change according to it's input state.
 .lab-input__required-icon {

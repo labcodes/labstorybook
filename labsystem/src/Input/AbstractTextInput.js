@@ -182,9 +182,13 @@ export default class AbstractTextInput extends React.Component {
 
 function TrailingIcon(props) {
   const { icon, iconColor, onIconClick } = props;
+  let className = "lab-input__icon";
+  if (!onIconClick) {
+    className += " lab-input__icon--disabled";
+  }
   if (icon) {
     return (
-      <button type="button" className="lab-input__icon" onClick={onIconClick}>
+      <button type="button" className={className} onClick={onIconClick}>
         <Icon type={icon} color={iconColor} />
       </button>
     );
