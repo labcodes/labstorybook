@@ -7,7 +7,6 @@ export default class PasswordInput extends React.Component {
   static propTypes = {
     id: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
-    theme: PropTypes.string,
     className: PropTypes.string,
     disabled: PropTypes.bool,
     defaultValue: PropTypes.string,
@@ -22,7 +21,6 @@ export default class PasswordInput extends React.Component {
   };
 
   static defaultProps = {
-    theme: undefined,
     className: undefined,
     disabled: false,
     defaultValue: undefined,
