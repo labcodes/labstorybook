@@ -17,14 +17,14 @@ import Button from '../labsystem/src/Button';
 
 ## General Usage
 
-<p>Buttons can be composed of just a label or an icon + label</p>
-<p>Each primary call-to-action trigger on a dialog or page should be represented by the default (filled) button, and every secondary or related action, the ghost (outlined) button. In some cases, if you face the need of placing a tertiary action, choose the text button.</p>
+<p>Buttons can be composed of just a label or of an icon plus a label.</p>
+<p>Primary calls to action on a dialog or on a page should be represented by a default (filled) button. Secondary or related actions should be represented by a ghost (outlined) button. A text button is recommend for tertiary actions.</p>
 
 <h4>Button positioning and order</h4>
-<p>Default buttons always appear on the right on modals, dialogs, forms and most UI parts. Ghost and text buttons appear and pile to the left of the default button.</p>
+<p>Default buttons always appear on the right of modals, dialogs, forms and most of UI parts. Ghost and text buttons appear and pile to the left of the default button.</p>
 <ul>
-  <li>Use full-width buttons for dialogs and side panels</li>
-  <li>Use right-aligned buttons primarily and if the main response advances the user through a screenflow (from left to the right)</li>
+  <li>Use full-width buttons for dialogs and side panels.</li>
+  <li>Use right-aligned buttons primarily and if the main response advances the user through a screenflow (from left to the right).</li>
   <li>Use left-aligned buttons to place actions at bottom of lists, comparative collums, tabled layouts, multiple content collumned layouts.</li>
 </ul>
 
@@ -39,74 +39,82 @@ import Button from '../labsystem/src/Button';
   <li>Always use the same color value as the label within a button. Icon follows label with equal emphasys.</li>
   <li>Use icon in buttons to give more significancy to any action, function or indicate triggers as "open external link".</li>
 </ul>
-<p><span class="u-color-pink60">You can use an only icon button on extreme situations. Remember that, in these cases, the label is represented by the pictogram itself, so, its drawing must be clear and communicate in one glance what action it triggers.</span></p>
+<p><span class="u-color-pink60">An only icon button is represented by a pictogram. Use it on extreme situations. Make sure the drawing is clear and communicate in one glance what action it triggers.</span></p>
 
 ## Variations
 
 <div class="columns">
   <div class="column">
     <table className="doc-btn-table">
-      <tr>
-        <th><h4>Variant</h4></th>
-        <th><h4>Purpose</h4></th>
-      </tr>
-      <tr>
-        <td>
-          <div class="doc-buttons"><Button text="Default" /></div>
-          <div class="doc-buttons"><Button text="Default" /></div>
-        </td>
-        <td><p><strong>Default:</strong> Primary call to action or trigger on the page or modal. Use it to highlight the strongest call to action on a page. Default buttons should only appear once per screen area. Not every screen requires a default button.</p></td>
-      </tr>
-      <tr>
-        <td>
-          <div className="doc-buttons"><Button text="Outline" variant="outline" /></div>
-          <div className="doc-buttons"><Button text="Outline" variant="outline" icon="reload" /></div>
-        </td>
-        <td><p><strong>Outline:</strong> Secondary actions or triggers on each page. Prefer this one to the default one, specially on a page with lots of buttons.</p></td>
-      </tr>
-      <tr>
-        <td>
-          <div className="doc-buttons"><Button text="Text" variant="text" /></div>
-          <div className="doc-buttons"><Button text="Text" variant="text" icon="reload" /></div>
-        </td>
-        <td><p><strong>Text:</strong> Tertiary or less important actions or triggers. Use it to connect internal pages or trigger internal functions of a component.</p></td>
-      </tr>
+      <thead>
+        <tr>
+          <th><h4>Variant</h4></th>
+          <th><h4>Purpose</h4></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="doc-buttons"><Button text="Default" /></div>
+            <div class="doc-buttons"><Button text="Default" /></div>
+          </td>
+          <td><p><strong>Default:</strong> Primary call to action or trigger on the page or modal. Use it to highlight the strongest call to action on a page. Default buttons should only appear once per screen area. Not every screen requires a default button.</p></td>
+        </tr>
+        <tr>
+          <td>
+            <div className="doc-buttons"><Button text="Outline" variant="outline" /></div>
+            <div className="doc-buttons"><Button text="Outline" variant="outline" icon="reload" /></div>
+          </td>
+          <td><p><strong>Outline:</strong> Secondary actions or triggers on each page. Prefer this one to the default one, specially on a page with lots of buttons.</p></td>
+        </tr>
+        <tr>
+          <td>
+            <div className="doc-buttons"><Button text="Text" variant="text" /></div>
+            <div className="doc-buttons"><Button text="Text" variant="text" icon="reload" /></div>
+          </td>
+          <td><p><strong>Text:</strong> Tertiary or less important actions or triggers. Use it to connect internal pages or to trigger internal functions of a component.</p></td>
+        </tr>
+      </tbody>
     </table>
   </div>
     <div class="column">
     <table className="doc-btn-table">
-      <tr>
-        <th><h4>Size</h4></th>
-        <th><h4>Purpose</h4></th>
-      </tr>
-      <tr>
-        <td>
-          <div class="doc-buttons"><Button text="Small" size="small" /></div>
-        </td>
-        <td>
-          <p><strong>Small:</strong> Use it when there is not enough vertical space.<br/>
-          <strong><span class="u-color-red60">Never use it on touch applications.</span></strong><br/>
-          <strong>Height:</strong> 32px</p>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <div class="doc-buttons"><Button text="Normal" /></div>
-        </td>
-        <td>
-          <p><strong>Normal:</strong> For use in day-to-day situations.<br/>
-          <strong>Height:</strong> 40px</p>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <div class="doc-buttons"><Button text="Large" size="large" /></div>
-        </td>
-        <td>
-          <p><strong>Large:</strong> Use large buttons on modals, dialogs and touch applications.<br/>
-          <strong>Height:</strong> 48px</p>
-        </td>
-      </tr>
+      <thead>
+        <tr>
+          <th><h4>Size</h4></th>
+          <th><h4>Purpose</h4></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="doc-buttons"><Button text="Small" size="small" /></div>
+          </td>
+          <td>
+            <p><strong>Small:</strong> Use it when there is not enough vertical space.<br/>
+            <strong><span class="u-color-red60">Never use it on touch applications.</span></strong><br/>
+            <strong>Height:</strong> 32px</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="doc-buttons"><Button text="Normal" /></div>
+          </td>
+          <td>
+            <p><strong>Normal:</strong> For use in day-to-day situations.<br/>
+            <strong>Height:</strong> 40px</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="doc-buttons"><Button text="Large" size="large" /></div>
+          </td>
+          <td>
+            <p><strong>Large:</strong> Use large buttons on modals, dialogs and touch applications.<br/>
+            <strong>Height:</strong> 48px</p>
+          </td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </div>
@@ -133,7 +141,7 @@ import Button from '../labsystem/src/Button';
   <div class="column">
     <h5>Borders</h5><br/><br/>
     <img src="docs/buttons/btn-borders.svg" alt="Button borders scheme"/><br/><br/>
-    <p>All the buttons have a rounded corner radius of 4px on it's base background or border. Base and Focus borders should have 2px and Hover border, 6px.</p>
+    <p>All the buttons have a rounded corner radius of 4px on it's base background or border. Base and Focus borders should have 2px, and Hover borders should have 6px.</p>
   </div>
   <div class="column">
     <h5>Paddings & Spacings</h5><br/><br/>
