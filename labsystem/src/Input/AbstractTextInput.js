@@ -123,9 +123,9 @@ export default class AbstractTextInput extends React.Component {
     return suffix ? <div className="lab-input__suffix">{suffix}</div> : "";
   };
 
-  handleOnChange = () => {
-    const { onChange, isValid } = this.props;
-    const inputElement = this.inputRef.current;
+  handleOnChange = (e) => {
+    const { onChange, isValid, customErrorMsg } = this.props;
+    const inputElement = e.target;
     const inputElementValue = inputElement.value;
     const inputElementIsValid = inputElement.validity.valid;
 
