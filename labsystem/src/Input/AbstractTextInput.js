@@ -1,3 +1,4 @@
+/* eslint-disable react/no-did-update-set-state */
 import React from "react";
 import PropTypes from "prop-types";
 import { isUndefined } from "lodash";
