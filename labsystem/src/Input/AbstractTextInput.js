@@ -59,13 +59,20 @@ export default class AbstractTextInput extends React.Component {
   }
 
   componentDidMount() {
-    const { customErrorMsg, defaultValue } = this.props;
+    const { customErrorMsg, defaultValue, value } = this.props;
+    const { isValid } = this.props;
     let { localIsValid } = this.state;
 
-    if (defaultValue) {
+    if (defaultValue && isUndefined(isValid)) {
       localIsValid = this.inputRef.current.validity.valid;
       this.setState(() => ({ localIsValid }));
     }
+
+    if (value && isUndefined(defaultValue) && isUndefined(isValid)) {
+      localIsValid = this.inputRef.current.validity.valid;
+      this.setState(() => ({ localIsValid }));
+    }
+
     if (!localIsValid) {
       const inputElement = this.inputRef.current;
       inputElement.setCustomValidity(customErrorMsg);
