@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button renders as expected when passing a dark skin 1`] = `
+<button
+  className="btn btn--default btn--dark btn--normal"
+  disabled={false}
+  onClick={[Function]}
+  type="button"
+>
+  
+  Test Default Dark Button
+</button>
+`;
+
+exports[`Button renders as expected when passing disabled as true 1`] = `
+<button
+  className="btn btn--default btn--undefined btn--normal"
+  disabled={true}
+  onClick={[Function]}
+  type="button"
+>
+  
+  Test Default Disabled Button
+</button>
+`;
+
+exports[`Button renders with base props 1`] = `
+<button
+  className="btn btn--default btn--undefined btn--normal"
+  disabled={false}
+  onClick={[Function]}
+  type="button"
+>
+  
+  Test Default Button
+</button>
+`;
+
+exports[`OutlineButton renders as expected when passing a dark skin 1`] = `
+<button
+  className="btn btn--outline btn--dark btn--normal"
+  disabled={false}
+  onClick={[Function]}
+  type="button"
+>
+  
+  Test Outline Dark Button
+</button>
+`;
+
+exports[`OutlineButton renders as expected when passing disabled as true 1`] = `
+<button
+  className="btn btn--outline btn--undefined btn--normal"
+  disabled={true}
+  onClick={[Function]}
+  type="button"
+>
+  
+  Test Outline Disabled Button
+</button>
+`;
+
+exports[`OutlineButton renders with base props 1`] = `
+<button
+  className="btn btn--outline btn--undefined btn--normal"
+  disabled={false}
+  onClick={[Function]}
+  type="button"
+>
+  
+  Test Outline Button
+</button>
+`;
+
+exports[`TextButton renders as expected when passing a dark skin 1`] = `
+<button
+  className="btn btn--outline btn--dark btn--normal"
+  disabled={false}
+  onClick={[Function]}
+  type="button"
+>
+  
+  Test Text Dark Button
+</button>
+`;
+
+exports[`TextButton renders as expected when passing disabled as true 1`] = `
+<button
+  className="btn btn--text btn--undefined btn--normal"
+  disabled={true}
+  onClick={[Function]}
+  type="button"
+>
+  
+  Test Text Disabled Button
+</button>
+`;
+
+exports[`TextButton renders with base props 1`] = `
+<button
+  className="btn btn--text btn--undefined btn--normal"
+  disabled={false}
+  onClick={[Function]}
+  type="button"
+>
+  
+  Test Text Button
+</button>
+`;

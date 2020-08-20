@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { isUndefined } from "lodash";
 import Icon from "../Icon";
 
 export default class AbstractButton extends React.Component {
@@ -19,6 +20,7 @@ export default class AbstractButton extends React.Component {
     icon: PropTypes.string,
     size: PropTypes.oneOf(["normal", "small", "large"]),
     disabled: PropTypes.bool,
+    handleClick: PropTypes.func,
   };
 
   static defaultProps = {
@@ -28,6 +30,7 @@ export default class AbstractButton extends React.Component {
     icon: undefined,
     size: "normal",
     disabled: false,
+    handleClick: undefined,
   };
 
   icon = () => {
@@ -44,6 +47,15 @@ export default class AbstractButton extends React.Component {
     );
   };
 
+  handleOnClick = (e) => {
+    const { handleClick } = this.props;
+    if (!isUndefined(handleClick)) {
+      handleClick(e);
+    }
+
+    this.setState((state) => ({ localValue: !state.localValue }));
+  };
+
   render() {
     const { type, text, variant, skin, size, disabled } = this.props;
     return (
@@ -52,6 +64,7 @@ export default class AbstractButton extends React.Component {
         type={type}
         className={`btn btn--${variant} btn--${skin} btn--${size}`}
         disabled={disabled}
+        onClick={this.handleOnClick}
       >
         {this.icon()}
         {text}

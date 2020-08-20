@@ -17,6 +17,7 @@ export default class Button extends React.Component {
     icon: PropTypes.string,
     size: PropTypes.oneOf(["normal", "small", "large"]),
     disabled: PropTypes.bool,
+    handleClick: PropTypes.func,
   };
 
   static defaultProps = {
@@ -24,6 +25,7 @@ export default class Button extends React.Component {
     icon: undefined,
     size: "normal",
     disabled: false,
+    handleClick: undefined,
   };
 
   render() {
