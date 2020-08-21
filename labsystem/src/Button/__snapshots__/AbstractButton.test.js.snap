@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AbstractButton renders with base props for default variant 1`] = `
+<button
+  className="btn btn--default btn--undefined btn--normal"
+  disabled={false}
+  onClick={[Function]}
+  type="button"
+>
+  
+  Test Default Button
+</button>
+`;
+
+exports[`AbstractButton renders with base props for outline variant 1`] = `
+<button
+  className="btn btn--outline btn--undefined btn--normal"
+  disabled={false}
+  onClick={[Function]}
+  type="button"
+>
+  
+  Test Default Button
+</button>
+`;
+
+exports[`AbstractButton renders with base props for text variant 1`] = `
+<button
+  className="btn btn--text btn--undefined btn--normal"
+  disabled={false}
+  onClick={[Function]}
+  type="button"
+>
+  
+  Test Default Button
+</button>
+`;

@@ -52,8 +52,6 @@ export default class AbstractButton extends React.Component {
     if (!isUndefined(handleClick)) {
       handleClick(e);
     }
-
-    this.setState((state) => ({ localValue: !state.localValue }));
   };
 
   render() {
