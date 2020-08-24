@@ -8,13 +8,13 @@ export default class InputPlayground extends React.Component {
     this.state = {
       testValue: "",
       label: "Label example",
-      className: '',
-      icon: '',
-      iconColor: 'mineral70',
-      helpMessage: '',
-      prefix: '',
-      suffix: '',
-      customErrorMsg: 'custom error',
+      className: "",
+      icon: "",
+      iconColor: "mineral70",
+      helpMessage: "",
+      prefix: "",
+      suffix: "",
+      customErrorMsg: "custom error",
       disabled: false,
       required: false,
       isValid: true,
@@ -51,7 +51,45 @@ export default class InputPlayground extends React.Component {
       isValid,
     } = this.state;
 
-    const iconOptions = ["","arrow-down","arrow-left","arrow-right","arrow-top","calendar","coin","collapse-closed","collapse-open","check","dropdown-closed","dropdown-open","edit","eye-closed","eye-opened","track","key","logout","lupe","minus","plus","reload","remove","sort","star","trash","upload","arrow-fill-right","arrow-fill-left","chevron-right","chevron-left","menu-expand","menu-collapse","menu-default","external","wallet","workspace"];
+    const iconOptions = [
+      "",
+      "arrow-down",
+      "arrow-left",
+      "arrow-right",
+      "arrow-top",
+      "calendar",
+      "coin",
+      "collapse-closed",
+      "collapse-open",
+      "check",
+      "dropdown-closed",
+      "dropdown-open",
+      "edit",
+      "eye-closed",
+      "eye-opened",
+      "track",
+      "key",
+      "logout",
+      "lupe",
+      "minus",
+      "plus",
+      "reload",
+      "remove",
+      "sort",
+      "star",
+      "trash",
+      "upload",
+      "arrow-fill-right",
+      "arrow-fill-left",
+      "chevron-right",
+      "chevron-left",
+      "menu-expand",
+      "menu-collapse",
+      "menu-default",
+      "external",
+      "wallet",
+      "workspace",
+    ];
 
     return (
       <div className="columns lab-playground">
@@ -105,15 +143,22 @@ export default class InputPlayground extends React.Component {
                 onChange={this.handlePropChangeText}
               />
             </label>
-          </span><br />
+          </span>
+          <br />
           <span className="lab-playground__item">
             <label htmlFor="icon">
               icon
               <br />
-              <select name="icons" id="icon" onChange={this.handlePropChangeText}>
-                {iconOptions.map(
-                  (item, index) => {return (<option value={item} key={`icon-${index}`}>{item}</option>)}
-                )}
+              <select
+                name="icons"
+                id="icon"
+                onChange={this.handlePropChangeText}
+              >
+                {iconOptions.map((item, index) => (
+                  <option value={item} key={`icon-${index}`}>
+                    {item}
+                  </option>
+                ))}
               </select>
             </label>
           </span>
