@@ -44,13 +44,11 @@ export default class Tag extends React.Component {
   };
 
   thumb = () => {
-    const { thumbSrc, thumbAlt } = this.props;
+    const { thumbSrc } = this.props;
     let returnThumb;
 
     if (thumbSrc) {
-      returnThumb = (
-        <img className="lab-tag__thumb" src={thumbSrc}/>
-      );
+      returnThumb = <img className="lab-tag__thumb" src={thumbSrc} alt="" />;
     }
 
     return returnThumb;
@@ -101,8 +99,13 @@ export default class Tag extends React.Component {
     } = this.props;
     return (
       <span
-        className={ `lab-tag` +
-          `${type === "togglable" ? ` lab-tag__togglable lab-tag__pale` : ` lab-tag__${skin}`}` +
+        className={
+          `lab-tag` +
+          `${
+            type === "togglable"
+              ? ` lab-tag__togglable lab-tag__pale`
+              : ` lab-tag__${skin}`
+          }` +
           `${removable ? ` lab-tag--has-right-icon` : ""}` +
           `${dropdown ? ` lab-tag--has-right-icon` : ""}` +
           `${disabled ? " lab-tag--disabled" : ""}` +
