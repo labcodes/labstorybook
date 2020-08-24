@@ -1,0 +1,91 @@
+import { Fragment } from 'react';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+
+import Radio from '../labsystem/src/Radio';
+import RadioPlayground from '../playgrounds/RadioPlayground';
+
+
+<Meta title="Components/Radio" />
+
+<div class="docs-title">
+  <div>
+    <h1 class="docs-title__text">Radio</h1>
+  </div>
+</div>
+
+<div class="docs-content">
+    <p>Radio is a type of selector that is used when we have a list of options, and only one option can be selected.
+    </p>
+
+<h4>Anatomy</h4>
+<div class="columns">
+    <div class="column">
+        <img src="docs/radio/radio-anatomy.png" />
+    </div>
+    <div class="column">
+        <br />
+        <br />
+        <ol>
+         <li>Radio border</li>
+         <li>Radio selection indicator</li>
+         <li>Hover stroke</li>
+         <li>Base container stroke</li>
+         <li>Focus stroke</li>
+        </ol>
+    </div>
+</div>
+
+### Interactive demo
+  This demo lets you preview the radio component, its variations, and configuration options.
+  <Preview>
+    <Story name="InteractiveDemo">
+      <Fragment>
+        <RadioPlayground />
+      </Fragment>
+    </Story>
+  </Preview>
+
+
+#### Radio
+
+
+<Preview>
+  <Story name="Radio">
+    <Fragment>
+        <Radio id="radio-1" label="Idle" name="radio"/>
+        <br />
+        <Radio id="radio-2" label="Idle" name="radio" />
+        <br />
+        <Radio id="radio-3" label="Disabled" name="radio" disabled/>
+         <br />
+        <Radio id="radio-4" label="Disabled" name="radio-disabled" checked disabled/>
+    </Fragment>
+  </Story>
+</Preview>
+
+#### Behavior
+1. Choose an option
+2. Click on it and the chosen option will be selected
+3. If another option is selected, the previous one will be deselected
+<br />
+<br />
+
+#### Styles
+Checkboxes can also be used in the purple theme
+<Preview>
+  <Story name="Styles">
+  <Fragment>
+    <Radio className="lab-radio--purple" id="radio-5" label="Idle" name="radio2"/>
+    <br />
+    <Radio className="lab-radio--purple" id="radio-6" label="Idle" name="radio2" />
+  </Fragment>
+  </Story>
+</Preview>
+
+## Prop API docs
+
+  Here's the list of props based on the component's prop types definitions.
+  ### Radio
+  <Props of={Radio} />
+
+</div>
