@@ -188,9 +188,9 @@ It’s a text field input + fixed suffix.
   <Story name="Email Input Component">
   <Fragment>
     <div className="stories-half_width-wrapper">
-      <TextInput id="text-input-component" label="Text Input Component" /><br />
-      <EmailInput id="email-input-component" label="Email Input Component" /><br />
-      <PasswordInput id="password-input-component" label="Password Input Component" />
+      <TextInput id="text-input-component" label="Text Input Component" defaultValue="text example" /><br />
+      <EmailInput id="email-input-component" label="Email Input Component" defaultValue="email@example.com" /><br />
+      <PasswordInput id="password-input-component" label="Password Input Component" defaultValue="passwordExample"/>
     </div>
   </Fragment>
   </Story>
@@ -199,6 +199,7 @@ It’s a text field input + fixed suffix.
 #### Theming
 
 For text inputs, you can also use purple theme. Error state remain with the same style in any theme.
+The theme must be selected by changing the value of the `$input-theme` variable in the `scss/variables/_settings.scss`.
 <Preview>
   <Story name="Styles">
   <Fragment>
