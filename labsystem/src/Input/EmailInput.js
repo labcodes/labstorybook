@@ -9,7 +9,7 @@ export default class EmailInput extends React.Component {
     label: PropTypes.string.isRequired,
     disabled: PropTypes.bool,
     defaultValue: PropTypes.string,
-    value: PropTypes.string, // avaliar depois como resolver//
+    value: PropTypes.string,
     icon: PropTypes.string,
     iconColor: PropTypes.string,
     required: PropTypes.bool,
@@ -25,7 +25,7 @@ export default class EmailInput extends React.Component {
   static defaultProps = {
     disabled: false,
     defaultValue: undefined,
-    value: undefined, // avaliar depois como resolver//
+    value: undefined,
     icon: undefined,
     iconColor: "mineral70",
     required: false,
