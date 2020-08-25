@@ -4,7 +4,7 @@
 }
 
 // Input purple
-.lab-input--purple {
+.lab-input--stories-force-purple {
   .lab-input__field {
     &:not(:placeholder-shown) ~ .lab-input__borders {
       border-color: $purple-60;
@@ -54,7 +54,7 @@
   }
 
   //Help Message
-  + .lab-input__message {
+  & .lab-input__message {
     color: $purple-60;
   }
 
