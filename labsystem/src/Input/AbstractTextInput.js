@@ -6,7 +6,6 @@ import Icon from "../Icon";
 
 export default class AbstractTextInput extends React.Component {
   static propTypes = {
-    className: PropTypes.string,
     id: PropTypes.string.isRequired,
     type: PropTypes.string,
     label: PropTypes.string.isRequired,
@@ -26,7 +25,6 @@ export default class AbstractTextInput extends React.Component {
   };
 
   static defaultProps = {
-    className: undefined,
     type: "text",
     disabled: false,
     defaultValue: undefined,
@@ -158,7 +156,7 @@ export default class AbstractTextInput extends React.Component {
       customErrorMsg,
     } = this.props;
 
-    let { className } = this.props;
+    let className;
 
     const { localValue, localIsValid } = this.state;
     if (disabled) {

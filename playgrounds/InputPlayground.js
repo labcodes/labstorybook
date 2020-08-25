@@ -99,7 +99,6 @@ export default class InputPlayground extends React.Component {
             value={testValue}
             id="testInput"
             label={label}
-            className={className}
             icon={icon}
             iconColor={iconColor}
             helpMessage={helpMessage}
@@ -127,19 +126,6 @@ export default class InputPlayground extends React.Component {
                 type="text"
                 label="Label"
                 value={label}
-                onChange={this.handlePropChangeText}
-              />
-            </label>
-          </span>
-          <span className="lab-playground__item">
-            <label htmlFor="className">
-              className
-              <br />
-              <input
-                id="className"
-                type="text"
-                label="className"
-                value={className}
                 onChange={this.handlePropChangeText}
               />
             </label>
