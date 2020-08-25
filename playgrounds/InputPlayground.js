@@ -1,14 +1,17 @@
 import React from "react";
 
 import TextInput from "../labsystem/src/Input/TextInput";
+import EmailInput from "../labsystem/src/Input/EmailInput";
+import PasswordInput from "../labsystem/src/Input/PasswordInput";
 
 export default class InputPlayground extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      testValue: "",
+      textValue: "",
+      emailValue: "",
+      passwordValue: "",
       label: "Label example",
-      className: "",
       icon: "",
       iconColor: "mineral70",
       helpMessage: "",
@@ -31,15 +34,12 @@ export default class InputPlayground extends React.Component {
     this.setState({ [id]: checked });
   };
 
-  handleOnChange = (newValue) => {
-    this.setState({ testValue: newValue });
-  };
-
   render() {
     const {
-      testValue,
+      textValue,
+      emailValue,
+      passwordValue,
       label,
-      className,
       disabled,
       icon,
       iconColor,
@@ -96,8 +96,8 @@ export default class InputPlayground extends React.Component {
         <div className="column lab-playground__component">
           <h4>TextInput</h4>
           <TextInput
-            value={testValue}
-            id="testInput"
+            value={textValue}
+            id="textValue"
             label={label}
             icon={icon}
             iconColor={iconColor}
@@ -107,12 +107,52 @@ export default class InputPlayground extends React.Component {
             customErrorMsg={customErrorMsg}
             required={required}
             isValid={isValid}
-            onChange={this.handleOnChange}
+            onChange={this.handlePropChangeText}
             {...(disabled ? { disabled } : undefined)}
           />
           <p>
-            <strong>Input value: </strong>
-            {testValue}
+            <strong>TextInput value: </strong>
+            {textValue}
+          </p>
+
+          <h4>EmailInput</h4>
+          <EmailInput
+            value={emailValue}
+            id="emailValue"
+            label={label}
+            icon={icon}
+            iconColor={iconColor}
+            helpMessage={helpMessage}
+            prefix={prefix}
+            suffix={suffix}
+            customErrorMsg={customErrorMsg}
+            required={required}
+            isValid={isValid}
+            onChange={this.handlePropChangeText}
+            {...(disabled ? { disabled } : undefined)}
+          />
+          <p>
+            <strong>EmailInput value: </strong>
+            {emailValue}
+          </p>
+
+          <h4>PasswordInput</h4>
+          <PasswordInput
+            value={passwordValue}
+            id="passwordValue"
+            label={label}
+            helpMessage={helpMessage}
+            prefix={prefix}
+            suffix={suffix}
+            customErrorMsg={customErrorMsg}
+            required={required}
+            isValid={isValid}
+            onChange={this.handlePropChangeText}
+            {...(disabled ? { disabled } : undefined)}
+          />
+          <p>
+            <strong>PasswordInput value: </strong>
+            {passwordValue}
           </p>
         </div>
         <div className="column lab-playground__configs">
