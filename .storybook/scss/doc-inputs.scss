@@ -7,7 +7,7 @@
 .lab-input--purple {
   .lab-input__field {
     &:not(:placeholder-shown) ~ .lab-input__borders {
-      border-color: $purple-60;;
+      border-color: $purple-60;
     }
 
     &:not(:placeholder-shown):hover ~ .lab-input__borders {
