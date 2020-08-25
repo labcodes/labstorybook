@@ -163,6 +163,8 @@ export default class AbstractTextInput extends React.Component {
     const { localValue, localIsValid } = this.state;
     if (disabled) {
       className += " lab-input--disabled";
+    } else if (!localIsValid) {
+      className += " lab-input--invalid";
     }
 
     return (

@@ -51,6 +51,11 @@ $input-border-disabled: $mineral-30;
   border-radius: $radius-02
 }
 
+.lab-input--invalid {
+  background-color: $input-background-invalid;
+  border-radius: $radius-02;
+}
+
 //Input tag
 .lab-input__field {
   // width: 100%;
