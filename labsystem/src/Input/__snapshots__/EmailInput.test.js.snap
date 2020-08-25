@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmailInput renders with base props 1`] = `
+<div
+  className="lab-input "
+>
+  <input
+    autoComplete="off"
+    className="lab-input__field "
+    id="testInput"
+    onChange={[Function]}
+    placeholder=" "
+    type="email"
+  />
+  <div
+    className="lab-input__borders"
+  />
+  
+  
+  <div
+    className="lab-input__label-wrapper"
+  >
+    
+    <label
+      className="lab-input__label"
+      htmlFor="testInput"
+    >
+      Test Input
+    </label>
+  </div>
+  
+</div>
+`;
