@@ -129,7 +129,7 @@ export default class AbstractTextInput extends React.Component {
     const inputElementIsValid = inputElement.validity.valid;
 
     if (!isUndefined(onChange)) {
-      onChange(inputElementValue);
+      onChange(e);
     }
     this.setState({ localValue: inputElementValue });
     if (isUndefined(isValid)) {
