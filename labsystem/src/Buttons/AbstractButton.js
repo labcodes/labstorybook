@@ -61,8 +61,8 @@ export default class AbstractButton extends React.Component {
         // eslint-disable-next-line react/button-has-type
         type={type}
         className={`btn btn--${variant} btn--${skin} btn--${size}`}
-        disabled={disabled}
         onClick={this.handleOnClick}
+        disabled={disabled || undefined}
       >
         {this.icon()}
         {text}
