@@ -12,6 +12,20 @@ exports[`TextButton renders as expected when passing a dark skin 1`] = `
 </button>
 `;
 
+exports[`TextButton renders as expected when passing a plus icon 1`] = `
+<button
+  className="btn btn--text btn--undefined btn--normal"
+  disabled={false}
+  onClick={[Function]}
+  type="button"
+>
+  <span
+    className="lab-icon lab-icon--plus lab-icon--white lab-icon--petit lab-icon--btn__icon"
+  />
+  Test Text Small Button
+</button>
+`;
+
 exports[`TextButton renders as expected when passing a small size 1`] = `
 <button
   className="btn btn--text btn--undefined btn--small"
