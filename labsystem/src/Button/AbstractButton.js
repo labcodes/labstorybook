@@ -20,7 +20,7 @@ export default class AbstractButton extends React.Component {
     icon: PropTypes.string,
     size: PropTypes.oneOf(["normal", "small", "large"]),
     disabled: PropTypes.bool,
-    handleClick: PropTypes.func,
+    onClick: PropTypes.func,
   };
 
   static defaultProps = {
@@ -30,7 +30,7 @@ export default class AbstractButton extends React.Component {
     icon: undefined,
     size: "normal",
     disabled: false,
-    handleClick: undefined,
+    onClick: undefined,
   };
 
   icon = () => {
@@ -48,9 +48,9 @@ export default class AbstractButton extends React.Component {
   };
 
   handleOnClick = (e) => {
-    const { handleClick } = this.props;
-    if (!isUndefined(handleClick)) {
-      handleClick(e);
+    const { onClick } = this.props;
+    if (!isUndefined(onClick)) {
+      onClick(e);
     }
   };
 
