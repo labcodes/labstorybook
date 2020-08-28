@@ -74,31 +74,59 @@ This demo lets you preview the tooltip component, its variations, and configurat
 <Preview>
   <Story name="Tooltip">
     <Fragment>
-      <Tooltip id="tooltip-1" name="tooltip" text="Black tooltip" />
+      <Tooltip id="tooltip-1" text="Black tooltip" />
       <br />
-      <Tooltip id="tooltip-3" name="tooltip" text="Teal tooltip" />
       <br />
-      <Tooltip id="tooltip-4" name="tooltip" text="Purple tooltip" />
+      <Tooltip id="tooltip-2" text="Teal tooltip" />
+      <br />
+      <br />
+      <Tooltip id="tooltip-3" text="Purple tooltip" />
     </Fragment>
   </Story>
 </Preview>
 
 #### Behavior
 
-1. Choose an option
-2. Click on it and the chosen option will be selected
-3. Once the first option was selected, another one can be chosen
-   <br />
-   <br />
+A tooltip is displayed upon hovering over it (desktop). It is not displayed on mobile.
+Continuously display the tooltip as long as the user hovers over the element. 
 
-#### Styles
+<div class="columns">
+    <div class="column">
+        <div class="columns">
+            <div class="column">
+                <img src="docs/tooltip/examples/edge do.png" />
+                <img src="docs/tooltip/examples/edge dont.png" />
+            </div>
+            <div class="column">
+                <img src="docs/tooltip/examples/sidebar do.png" />
+                <img src="docs/tooltip/examples/sidebar dont.png" />
+            </div>
+        </div>
+    </div>
+    <div class="column">
+        <ol>
+         <li>It appears above and in the center of click targets* and stay in place while cursor moves within the target </li>
+         <ol type="a">
+             <li>Tooltip disappears when cursor moves out of the target</li>
+             <li>Tooltip remains while cursor moves within the target</li>
+        </ol>
+         <li>On sidebars, it should display either from the left or the right of click targets</li>
+         <li>Over 150ms, tooltips fade in and scale up using the deceleration curve. They fade out over 75ms.</li>
+        </ol>
+        <br />
+        <p class="li--red"><em>* When close to screen limits, keep the position of the tooltip visible with margins of 12px for all sides.</em></p>
+    </div>
+</div>
+
+
+#### Positioning
 
 Tooltips can also be used in the purple theme
 
 <Preview>
   <Story name="Styles">
     <Fragment>
-      <Tooltip className="lab-tooltip--purple" id="tooltip-5" name="tooltip2" />
+      <Tooltip className="lab-tooltip" id="tooltip-4" text="tooltip" />
     </Fragment>
   </Story>
 </Preview>
@@ -108,8 +136,6 @@ Tooltips can also be used in the purple theme
 Here's the list of props based on the component's prop types definitions.
 
 ### Tooltip
-
-{" "}
 
 <Props of={Tooltip} />
 
