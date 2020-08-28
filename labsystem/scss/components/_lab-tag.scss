@@ -16,7 +16,13 @@ $tag-focus-hover-bg-color: $tag-hover-color;
 $tag-vivid-color: map-get($tag-theme, "60");
 $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
 
-/* variations */
+/*
+* We have 4 tags: simple tag, togglable tag, removable tag and dropdown tag.
+* All of them must havee the "lab-tag" class. It is responsible for the tag structure.
+* Tags also have 2 skins: pale and vivid.
+*/
+
+// BASE TAG STRUCTURE
 .lab-tag {
   height: 24px;
   margin: $spacing-01; //think if this should be here or not
@@ -34,47 +40,21 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
   align-items: center;
   vertical-align: middle;
   -webkit-font-smoothing: antialiased;
-  
+
   &:focus {
     box-shadow: 0 0 0 2px $tag-focus-shadow-color;
   }
-
-//disabled for all variations
-  &.lab-tag--disabled {
-    background-color: $mineral-10;
-    color: $mineral-40;
-    border-color: $mineral-10;
-    pointer-events: none;
-
-    .lab-tag__thumb {
-      opacity: 0.5;
-    }
-
-    .lab-tag__left-icon,
-    .lab-tag__right-icon {
-      .lab-icon {
-        background-color: $mineral-30;
-      }
-    }
-  }
 }
 
-//togglable, removable & dropdown
-.lab-tag__togglable, .lab-tag--has-right-icon {
-  @extend .lab-tag;
-  cursor: pointer;
-
-  &:hover {
-    box-shadow: 0 0 0 4px $tag-hover-shadow-color;
-  }
-
-  &:focus:hover {
-    box-shadow: 0 0 0 2px $tag-focus-shadow-color, 0 0 0 4px $tag-hover-shadow-color;
-    border-color: $tag-focus-hover-bg-color;
-  }
+// ELEMENTS
+/*
+* Thumbnail
+* Can be used on all tags
+*/
+.lab-tag--has-thumb {
+  padding-left: 0;
 }
 
-/* Elements */
 .lab-tag__thumb {
   position: relative;
   left: -$tag-border;
@@ -84,58 +64,123 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
   margin-right: calc(#{$spacing-02} - #{$tag-border});
 }
 
-.lab-tag__left-icon {
+/* 
+* Left icon
+* Can be used onn all tags.
+* It can be a custom iconn or a check icon for the selected togglable tag.
+* TODO: trocar o nome dessa classe no futuro. Sugestão .lab-tag__left-icon
+*/
+.lab-tag--has-left-icon {
+  padding-left: $spacing-01;
+}
+
+.lab-icon--left-icon,
+.lab-icon--check-icon {
   display: flex;
   margin-right: $spacing-01;
 }
 
-.lab-tag__right-icon {
+/* 
+* Right icon
+* Is only used on a dropdown tag and removable tag.
+* On the Dropdown tag the right icon is a dropdown icon. It rotates when dropdownn is opened.
+* On the Removable tag the right icon is a close icon. It has a wrapper around it.
+* TODO: trocar o nome dessa classe no futuro. Sugestão .lab-tag__left-icon
+*/
+
+.lab-tag__dropdown-icon-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.lab-tag__remove-icon-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: $spacing-02;
   width: 16px;
   height: 16px;
-
-  &--remove {
-    background-color: white;
-    border-radius: 8px;
-  }
-
-  &--dropdown {
-    padding-right: $spacing-02;
-  }
+  background-color: white;
+  border-radius: 8px;
+  transition: all $duration-base;
 }
 
-/* Tag with elements */
-.lab-tag--has-thumb {
-  padding-left: 0;
+// TAG VARIANTS 
+/*
+* Variants are togglable, removable or dropdown.
+*/
+.lab-tag--togglable,
+.lab-tag--removable,
+.lab-tag--dropdown {
+  cursor: pointer;
 }
 
-.lab-tag--has-left-icon {
-  padding-left: $spacing-01;
-}
-
-.lab-tag--has-right-icon { //entender como fazer pra posicionar isso
+.lab-tag--removable,
+.lab-tag--dropdown {
   padding-right: calc(#{$spacing-01} - #{$tag-border});
 }
 
-/* color styles */
-.lab-tag__pale {
+// SKINS
+/*
+* Skin can be vivid or pale. Default value is pale
+*/
+%lab-tag--vivid-and-selected {
+  border-color: $tag-vivid-color;
+  background-color: $tag-vivid-color;
+  color: white;
+
+  .lab-icon--left-icon,
+  .lab-icon--check-icon,
+  .lab-icon--dropdown-icon {
+    background-color: $white;
+  }
+
+  .lab-icon--remove-icon {
+    background-color: $tag-vivid-color
+  }
+
+  &.lab-tag--togglable,
+  &.lab-tag--removable,
+  &.lab-tag--dropdown {
+    &:hover {
+      background-color: $tag-vivid-hover-color;
+      border-color: $tag-vivid-hover-color;
+      box-shadow: 0 0 0 4px $tag-hover-shadow-color;
+    }
+
+    &:focus:hover {
+      box-shadow: 0 0 0 2px $tag-focus-shadow-color, 0 0 0 4px $tag-hover-shadow-color;
+    }
+  }
+}
+
+.lab-tag--pale {
   background-color: $tag-pale-color;
   border-color: $tag-pale-color;
   color: $tag-text-color;
 
-  .lab-icon {
+  .lab-icon--left-icon,
+  .lab-icon--check-icon,
+  .lab-icon--dropdown-icon,
+  .lab-icon--remove-icon {
     background-color: $tag-text-color;
   }
 
-  &.lab-tag__togglable:hover, &.lab-tag--has-right-icon:hover {
-    background-color: $tag-hover-color;
-    border-color: $tag-hover-color;
+  &.lab-tag--togglable,
+  &.lab-tag--removable,
+  &.lab-tag--dropdown {
+    &:hover {
+      box-shadow: 0 0 0 4px $tag-hover-shadow-color;
+      border-color: $tag-hover-color;
+      background-color: $tag-hover-color;
 
-    .lab-tag__right-icon--remove {
-      background-color: $tag-pale-color;
+      .lab-tag__remove-icon-wrapper {
+        background-color: $tag-pale-color;
+      }
+    }
+
+    &:focus:hover {
+      box-shadow: 0 0 0 2px $tag-focus-shadow-color, 0 0 0 4px $tag-hover-shadow-color;
     }
   }
 
@@ -143,256 +188,383 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
     background-color: white;
     color: $tag-text-color;
 
-    &:focus:hover {
-      border-color: $tag-pale-color;
+    .lab-tag__remove-icon-wrapper {
+      background-color: $tag-pale-color;
     }
 
     .lab-tag__thumb {
       border: 2px solid $tag-pale-color;
     }
 
-    .lab-tag__right-icon--remove {
-      background-color: $tag-pale-color;
-    }
-
-    &.lab-tag--disabled {
-      color: $mineral-40;
-
-      .lab-tag__right-icon--remove {
-        background-color: $mineral-10;
-      }
+    &:focus:hover {
+      border-color: $tag-pale-color;
     }
   }
 }
 
-.lab-tag__vivid {
-  border-color: $tag-vivid-color;
-  background-color: $tag-vivid-color;
-  color: white;
-
-  .lab-icon {
-    background-color: $white;
-  }
-
-  .lab-tag__right-icon--remove .lab-icon {
-    background-color: $tag-vivid-color
-  }
-
-  &.lab-tag__togglable:hover, &.lab-tag--has-right-icon:hover {
-    background-color: $tag-vivid-hover-color;
-    border-color: $tag-vivid-hover-color;
-  }
+.lab-tag--vivid {
+  @extend %lab-tag--vivid-and-selected;
 
   &.lab-tag--outline {
     background-color: white;
     border-color: $tag-vivid-color;
     color: $tag-text-color;
 
-    .lab-icon {
+    .lab-icon--left-icon,
+    .lab-icon--check-icon,
+    .lab-icon--dropdown-icon,
+    .lab-icon--remove-icon {
       background-color: $tag-text-color;
     }
 
-    .lab-tag__thumb {
-      border: 2px solid $tag-text-color;
-    }
-
-    .lab-tag__right-icon--remove {
+    .lab-tag__remove-icon-wrapper {
       background-color: $tag-pale-color;
     }
 
-    &.lab-tag__togglable:hover, &.lab-tag--has-right-icon:hover {
-      background-color: white;
-      border-color: $tag-text-color;
-      color: $tag-text-color;
-      box-shadow: 0 0 0 4px $tag-hover-shadow-color;
+    .lab-tag__thumb {
+      border: 2px solid $tag-vivid-color;
+    }
 
-      .lab-icon {
-        background-color: $tag-vivid-color;
+    &.lab-tag--togglable,
+    &.lab-tag--removable,
+    &.lab-tag--dropdown {
+      &:hover {
+        background-color: white;
+        border-color: $tag-text-color;
+        color: $tag-text-color;
+        box-shadow: 0 0 0 4px $tag-hover-shadow-color;
+
+        .lab-icon {
+          background-color: $tag-vivid-color;
+        }
+      }
+
+      &:focus:hover {
+        box-shadow: 0 0 0 2px $tag-focus-shadow-color,
+                    0 0 0 4px $tag-hover-shadow-color;
       }
     }
 
     &:focus {
-      border-color: $tag-hover-shadow-color;
       box-shadow: 0 0 0 2px $tag-focus-shadow-color;
-    }
-
-    &.lab-tag__togglable:focus:hover, &.lab-tag--has-right-icon:focus:hover {
-      border-color: $tag-hover-shadow-color;
-      box-shadow: 0 0 0 2px $tag-focus-shadow-color,
-                  0 0 0 4px $tag-hover-shadow-color;
-    }
-
-    &.lab-tag--disabled {
-      color: $mineral-40;
-      border-color: $mineral-20;
     }
   }
 }
 
+// STATES
+// Togglable selected. Exists only for togglable tag and has the same colors as vivid skin.
+.lab-tag--selected {
+  padding-left: $spacing-01;
+}
+.lab-tag--pale {
+  &.lab-tag--selected {
+    @extend %lab-tag--vivid-and-selected;
+  }
+  &.lab-tag--selected.lab-tag--outline {
+    background-color: $tag-pale-color;
 
-/* Get skin colors from theme */
+    .lab-icon--check-icon {
+      background-color: $tag-text-color;
+    }
+
+    &:hover {
+      background-color: $tag-pale-color;
+    }
+
+    &:focus:hover {
+      box-shadow: 0 0 0 2px $tag-vivid-color,
+                  0 0 0 4px $tag-hover-shadow-color;
+    }
+  }
+}
+
+// Dropdown opened
+.lag-tag--dropdown-opened {
+  .lab-tag__dropdown-icon-wrapper {
+    transform: rotate(180deg);
+  }
+}
+
+// Disabled. All tags all have this base styles.
+.lab-tag--disabled {
+  background-color: $mineral-10 !important;
+  color: $mineral-40 !important;
+  border-color: $mineral-10 !important;
+  pointer-events: none !important;
+
+  .lab-tag__thumb {
+    opacity: 0.5 !important;
+  }
+
+  .lab-icon--left-icon,
+  .lab-icon--check-icon,
+  .lab-icon--dropdown-icon,
+  .lab-icon--remove-icon {
+    background-color: $mineral-30 !important;
+  }
+
+  &.lab-tag--outline {
+    background-color: white !important;
+    color: $mineral-40 !important;
+
+    .lab-tag__remove-icon-wrapper {
+      background-color: $mineral-10 !important;
+    }
+  }
+}
+
+// COLORS
+/*
+* These maps generate classes based on main colors palettes. They change tags color scheme.
+* For pale skin classes are: "lab-tag-teal-pale", "lab-tag-purple-pale", "lab-tag-mineral-pale".
+* For vivid skin classes are: "lab-tag-teal-vivid", "lab-tag-purple-vivid", "lab-tag-mineral-vivid".
+*/
 @each $name, $palette in $tag-main-colors {
-  // pale FILL
   .lab-tag--#{$name}-pale {
     background-color: map-get($palette, "20");
     border-color: map-get($palette, "20");
     color: map-get($palette, "70");
 
-    .lab-icon {
+    .lab-icon--left-icon,
+    .lab-icon--check-icon,
+    .lab-icon--dropdown-icon,
+    .lab-icon--remove-icon {
       background-color: map-get($palette, "70");
     }
 
-    &.lab-tag__togglable:hover, &.lab-tag--has-right-icon:hover {
-      background-color: white;
-      border-color: white;
-      box-shadow: 0 0 0 4px map-get($palette, "20");
+    &.lab-tag--togglable,
+    &.lab-tag--removable,
+    &.lab-tag--dropdown {
+      &:hover {
+        background-color: white;
+        border-color: white;
+        box-shadow: 0 0 0 4px map-get($palette, "20");
 
-      .lab-tag__right-icon--remove {
-        background-color: map-get($palette, "20");
+        .lab-tag__remove-icon-wrapper {
+          background-color: map-get($palette, "20");
+        }
       }
-    }
-
-    &.lab-tag__togglable:focus:hover, &.lab-tag--has-right-icon:focus:hover {
-      border-color: map-get($palette, "20");
-      box-shadow: 0 0 0 2px map-get($palette, "40"),
-                  0 0 0 4px map-get($palette, "20");
-    }
-
-    &:focus {
-      box-shadow: 0 0 0 2px map-get($palette, "30");
-    }
-
-    // pale OUTLINE
-    &.lab-tag--outline {
-      background-color: white;
-      color: map-get($palette, "60");
 
       &:focus:hover {
-        border-color: map-get($palette, "20");
+        box-shadow: 0 0 0 2px map-get($palette, "30"),
+                    0 0 0 4px map-get($palette, "20");
       }
 
+      &:focus {
+        box-shadow: 0 0 0 2px map-get($palette, "30");
+      }
+    }
+
+    &.lab-tag--selected {
+      background-color: map-get($palette, "60");
+      border-color: map-get($palette, "60");
+      color: white;
+
+      .lab-icon--check-icon {
+        background-color: white;
+      }
+      &:hover {
+        background-color: mix(map-get($palette, "60"), black, 50%);
+        border-color: mix(map-get($palette, "60"), black, 50%);
+        box-shadow: 0 0 0 4px map-get($palette, "20");
+      }
+    }
+
+    &.lab-tag--outline {
+      background-color: white;
+      color: map-get($palette, "70");
+
+      .lab-tag__remove-icon-wrapper {
+        background-color: map-get($palette, "20");
+      }
       .lab-tag__thumb {
         border: 2px solid map-get($palette, "20");
       }
-
-      .lab-tag__right-icon--remove {
-        background-color: map-get($palette, "20");
+      &:focus:hover {
+        border-color: map-get($palette, "20");
       }
+      &.lab-tag--selected {
+        background-color: map-get($palette, "20");
 
-      &.lab-tag--disabled {
-        color: $mineral-40;
+        .lab-icon--check-icon {
+          background-color: map-get($palette, "70");
+        }
+        &:focus:hover {
+          box-shadow: 0 0 0 2px $tag-vivid-color,
+                      0 0 0 4px $tag-hover-shadow-color;
+        }
       }
     }
   }
 
-// vivid FILL
   .lab-tag--#{$name}-vivid {
     border-color: map-get($palette, "60");
     background-color: map-get($palette, "60");
     color: white;
 
-    .lab-icon {
+    .lab-icon--left-icon,
+    .lab-icon--check-icon,
+    .lab-icon--dropdown-icon {
       background-color: white;
     }
 
-    .lab-tag__right-icon--remove .lab-icon {
-      background-color: $tag-vivid-color;
+    .lab-icon--remove-icon {
+      background-color: map-get($palette, "60");
       @if $name == "mineral" { background-color: map-get($palette, "70"); }
     }
 
-    &.lab-tag__togglable:hover, &.lab-tag--has-right-icon:hover {
-      background-color: mix(map-get($palette, "60"), black, 50%);
-      border-color: mix(map-get($palette, "60"), black, 50%);
-      box-shadow: 0 0 0 4px map-get($palette, "20");
-    }
+    &.lab-tag--togglable,
+    &.lab-tag--removable,
+    &.lab-tag--dropdown {
+      &:hover {
+        background-color: mix(map-get($palette, "60"), black, 50%);
+        border-color: mix(map-get($palette, "60"), black, 50%);
+        box-shadow: 0 0 0 4px map-get($palette, "20");
+      }
 
-    &.lab-tag__togglable:focus:hover, &.lab-tag--has-right-icon:focus:hover {
-      box-shadow: 0 0 0 2px map-get($palette, "30"), 0 0 0 4px map-get($palette, "20");
-      border-color: $tag-focus-hover-bg-color;
+      &:focus:hover {
+        box-shadow: 0 0 0 2px map-get($palette, "30"), 0 0 0 4px map-get($palette, "20");
+      }
     }
 
     &:focus {
       box-shadow: 0 0 0 2px map-get($palette, "30");
     }
 
-    // vivid OUTLINE
     &.lab-tag--outline {
       background-color: white;
-      color: map-get($palette, "60");
+      color: map-get($palette, "70");
       border-color: map-get($palette, "60");
 
-      .lab-icon {
-        background-color: map-get($palette, "60");
+      .lab-icon--left-icon,
+      .lab-icon--check-icon,
+      .lab-icon--dropdown-icon,
+      .lab-icon--remove-icon {
+        background-color: map-get($palette, "70");
       }
 
-      .lab-tag__thumb {
-        border: 2px solid map-get($palette, "40");
-      }
-
-      .lab-tag__right-icon--remove {
+      .lab-tag__remove-icon-wrapper {
         background-color: map-get($palette, "20");
       }
 
-      &.lab-tag__togglable:hover, &.lab-tag--has-right-icon:hover {
-        background-color: white;
-        color: map-get($palette, "60");
-        border-color: map-get($palette, "40");
-        box-shadow: 0 0 0 4px map-get($palette, "20");
+      .lab-tag__thumb {
+        border: 2px solid map-get($palette, "60");
       }
 
-      &.lab-tag__togglable:focus:hover, &.lab-tag--has-right-icon:focus:hover {
-        border-color: map-get($palette, "40");
-        box-shadow: 0 0 0 2px map-get($palette, "30"),
-                    0 0 0 4px map-get($palette, "20");
-      }
+      &.lab-tag--togglable,
+      &.lab-tag--removable,
+      &.lab-tag--dropdown {
+        &:hover {
+          background-color: white;
+          color: map-get($palette, "70");
+          border-color: map-get($palette, "60");
+          box-shadow: 0 0 0 4px map-get($palette, "20");
 
-      &.lab-tag--disabled {
-        color: $mineral-40;
-        border-color: $mineral-20;
+          .lab-icon--left-icon,
+          .lab-icon--check-icon,
+          .lab-icon--dropdown-icon,
+          .lab-icon--remove-icon {
+            background-color: map-get($palette, "70");
+          }
+        }
+
+        &:focus:hover {
+          border-color: map-get($palette, "40");
+          box-shadow: 0 0 0 2px map-get($palette, "30"),
+                      0 0 0 4px map-get($palette, "20");
+        }
       }
     }
   }
 }
 
-/* Get skin colors from messages & support color stacks */
-// pale FILL
+/*
+* These maps generate classes based on message and support colors palettes. They change tags color scheme.
+* For pale skin classes are: "lab-tag-green-pale", "lab-tag-red-pale", "lab-tag-yellow-pale",
+* "lab-tag-cyan-pale", "lab-orange-red-pale", "lab-tag-pink-pale".
+* For vivid skin classes are: "lab-tag-green-vivid", "lab-tag-red-vivid", "lab-tag-yellow-vivid".
+* "lab-tag-cyan-vivid", "lab-tag-orange-vivid", "lab-tag-pink-vivid".
+*/
+
 @each $name, $palette in $tag-all-colors {
   .lab-tag--#{$name}-pale {
     background-color: map-get($palette, "20");
     color: $black-75;
     border-color: map-get($palette, "20");
 
-    .lab-icon {
+    .lab-icon--left-icon,
+    .lab-icon--check-icon,
+    .lab-icon--dropdown-icon,
+    .lab-icon--remove-icon {
       background-color: $black-75;
     }
 
-    &.lab-tag__togglable:hover, &.lab-tag--has-right-icon:hover {
-      background-color: white;
-      border-color: white;
-      box-shadow: 0 0 0 4px map-get($palette, "20");
+    &.lab-tag--togglable,
+    &.lab-tag--removable,
+    &.lab-tag--dropdown {
+      &:hover {
+        background-color: white;
+        border-color: white;
+        box-shadow: 0 0 0 4px map-get($palette, "20");
 
-      .lab-tag__right-icon--remove {
-        background-color: map-get($palette, "20");
+        .lab-tag__remove-icon-wrapper {
+          background-color: map-get($palette, "20");
+        }
+      }
+      &:focus {
+        box-shadow: 0 0 0 2px map-get($palette, "60");
+      }
+      &:focus:hover {
+        box-shadow: 0 0 0 2px map-get($palette, "60"), 0 0 0 4px map-get($palette, "20");
       }
     }
 
-    &:focus {
-      box-shadow: 0 0 0 2px map-get($palette, "60");
+    &.lab-tag--selected {
+      background-color: map-get($palette, "60");
+      border-color: map-get($palette, "60");
+      color: white;
+      @if $name == "yellow" { color: $mustard-70; }
+
+      .lab-icon--check-icon {
+        background-color: white;
+        @if $name == "yellow" { background-color: $mustard-70; }
+      }
+
+      &:hover {
+        background-color: mix(map-get($palette, "60"), black, 50%);
+        border-color: mix(map-get($palette, "60"), black, 50%);
+        box-shadow: 0 0 0 4px map-get($palette, "60");
+        color: white;
+
+        .lab-icon--check-icon {
+          background-color: white;
+        }
+      }
+
+      &:focus:hover {
+        box-shadow: 0 0 0 2px map-get($palette, "20"), 0 0 0 4px map-get($palette, "60");
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 2px map-get($palette, "20");
+      }
     }
 
-    &:focus:hover {
-      box-shadow: 0 0 0 2px map-get($palette, "60"), 0 0 0 4px map-get($palette, "20");
-    }
-
-    // pale OUTLINE
     &.lab-tag--outline {
       background-color: white;
       color: map-get($palette, "60");
       @if $name == "yellow" { color: $mustard-70; }
 
-      .lab-icon {
+      .lab-icon--left-icon,
+      .lab-icon--check-icon,
+      .lab-icon--dropdown-icon,
+      .lab-icon--remove-icon {
         background-color: map-get($palette, "60");
         @if $name == "yellow" { background-color: $mustard-70; }
+      }
+
+      .lab-tag__remove-icon-wrapper {
+        background-color: map-get($palette, "20");
       }
 
       .lab-tag__thumb {
@@ -403,12 +575,16 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
         border-color: map-get($palette, "20");
       }
 
-      .lab-tag__right-icon--remove {
+      &.lab-tag--selected {
         background-color: map-get($palette, "20");
-      }
+        border-color: map-get($palette, "60");
+        color: mix(map-get($palette, "60"), black, 70%);
+        @if $name == "yellow" { color: $mustard-70; }
 
-      &.lab-tag--disabled {
-        color: $mineral-40;
+        .lab-icon--check-icon {
+          background-color: mix(map-get($palette, "60"), black, 70%);
+          @if $name == "yellow" { background-color: $mustard-70; }
+        }
       }
     }
   }
@@ -418,53 +594,56 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
     border-color: map-get($palette, "60");
     color: white;
     @if $name == "yellow" { color: $black-75; }
-    
-    &.lab-tag__togglable:hover, &.lab-tag--has-right-icon:hover {
-      background-color: mix(map-get($palette, "60"), black, 50%);
-      border-color: mix(map-get($palette, "60"), black, 50%);
-      box-shadow: 0 0 0 4px map-get($palette, "60");
-      color: white;
 
-      .lab-icon--dropdown-closed, .lab-icon--dropdown-open {
-        @if $name == "yellow" { background-color: white; }
-      }
-    }
-
-    &:focus {
-      box-shadow: 0 0 0 2px map-get($palette, "60");
-      border-color: map-get($palette, "20");
-    }
-
-    &:focus:hover {
-      box-shadow: 0 0 0 2px map-get($palette, "20"), 0 0 0 4px map-get($palette, "60");
-      border-color: mix(map-get($palette, "60"), black, 50%);
-    }
-
-    &:focus:hover {
-      border-color: map-get($palette, "60");
-    }
-
-    .lab-icon {
+    .lab-icon--left-icon,
+    .lab-icon--check-icon,
+    .lab-icon--dropdown-icon {
       background-color: white;
       @if $name == "yellow" { background-color: $black-75; }
     }
 
-    .lab-tag__right-icon--remove .lab-icon {
+    .lab-icon--remove-icon {
       background-color: $black-75;
     }
-  // vivid OUTLINE
+    
+    &.lab-tag--togglable,
+    &.lab-tag--removable,
+    &.lab-tag--dropdown {
+      &:hover {
+        background-color: mix(map-get($palette, "60"), black, 50%);
+        border-color: mix(map-get($palette, "60"), black, 50%);
+        box-shadow: 0 0 0 4px map-get($palette, "60");
+        color: white;
+
+        .lab-icon--dropdown-closed, .lab-icon--dropdown-open {
+          @if $name == "yellow" { background-color: white; }
+        }
+      }
+
+      &:focus:hover {
+        box-shadow: 0 0 0 2px map-get($palette, "20"), 0 0 0 4px map-get($palette, "60");
+      }
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px map-get($palette, "20");
+    }
+
     &.lab-tag--outline {
       background-color: white;
       border-color: map-get($palette, "60");
       color: map-get($palette, "60");
       @if $name == "yellow" { color: $mustard-70; }
 
-      .lab-icon {
+      .lab-icon--left-icon,
+      .lab-icon--check-icon,
+      .lab-icon--dropdown-icon,
+      .lab-icon--remove-icon {
         background-color: map-get($palette, "60");
         @if $name == "yellow" { background-color: $mustard-70; }
       }
 
-      .lab-tag__right-icon--remove {
+      .lab-tag__remove-icon-wrapper {
         background-color: map-get($palette, "20");
       }
 
@@ -472,33 +651,35 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
         border: 2px solid map-get($palette, "60");
       }
 
-      &.lab-tag__togglable:hover, &.lab-tag--has-right-icon:hover {
-        background-color: white;
-        border-color: map-get($palette, "60");
-        color: map-get($palette, "60");
-        box-shadow: 0 0 0 4px map-get($palette, "20");
-        @if $name == "yellow" { color: $mustard-70; }
+      &.lab-tag--togglable,
+      &.lab-tag--removable,
+      &.lab-tag--dropdown {
+        &:hover {
+          background-color: white;
+          border-color: map-get($palette, "60");
+          color: map-get($palette, "60");
+          box-shadow: 0 0 0 4px map-get($palette, "60");
+          @if $name == "yellow" { color: $mustard-70; }
 
-        .lab-icon {
-          background-color: map-get($palette, "60");
-          @if $name == "yellow" { background-color: $mustard-70; }
+          .lab-icon--left-icon,
+          .lab-icon--check-icon,
+          .lab-icon--dropdown-icon,
+          .lab-icon--remove-icon {
+            background-color: map-get($palette, "60");
+            @if $name == "yellow" { background-color: $mustard-70; }
+          }
+        }
+
+        &:focus:hover {
+          border-color: map-get($palette, "60");
+          box-shadow: 0 0 0 2px map-get($palette, "20"),
+                      0 0 0 4px map-get($palette, "60");
         }
       }
 
       &:focus {
-        border-color: map-get($palette, "20");
-        box-shadow: 0 0 0 2px map-get($palette, "60");
-      }
-
-      &.lab-tag__togglable:focus:hover, &.lab-tag--has-right-icon:focus:hover {
-        border-color: map-get($palette, "20");
-        box-shadow: 0 0 0 2px map-get($palette, "60"),
-                    0 0 0 4px map-get($palette, "20");
-      }
-
-      &.lab-tag--disabled {
-        color: $mineral-40;
-        border-color: $mineral-20;
+        border-color: map-get($palette, "60");
+        box-shadow: 0 0 0 2px map-get($palette, "20");
       }
     }
   }

@@ -9,38 +9,25 @@ export default class Tag extends React.Component {
     dropdown: PropTypes.string,
     removable: PropTypes.string,
     disabled: PropTypes.string,
-    icon: PropTypes.string,
     thumbSrc: PropTypes.string,
+    icon: PropTypes.string,
     outline: PropTypes.string,
     skin: PropTypes.string,
     color: PropTypes.string,
+    selected: PropTypes.string,
   };
 
   static defaultProps = {
     type: undefined,
-    icon: undefined,
+    dropdown: undefined,
+    removable: undefined,
     thumbSrc: undefined,
+    icon: undefined,
     outline: undefined,
     skin: "pale",
     color: "",
-    removable: undefined,
-    dropdown: undefined,
     disabled: undefined,
-  };
-
-  icon = () => {
-    const { icon } = this.props;
-    let returnIcon;
-
-    if (icon) {
-      returnIcon = (
-        <span className="lab-tag__left-icon">
-          <Icon type={icon} color="black75" size="petit" />
-        </span>
-      );
-    }
-
-    return returnIcon;
+    selected: undefined,
   };
 
   thumb = () => {
@@ -54,14 +41,50 @@ export default class Tag extends React.Component {
     return returnThumb;
   };
 
+  icon = () => {
+    const { icon } = this.props;
+    let returnIcon;
+
+    if (icon) {
+      returnIcon = (
+        <Icon type={icon} color="black75" size="petit" className="left-icon" />
+      );
+    }
+
+    return returnIcon;
+  };
+
+  selected = () => {
+    const { selected } = this.props;
+    let selectedIcon;
+
+    if (selected) {
+      selectedIcon = (
+        <Icon
+          type="check"
+          color="black75"
+          size="petit"
+          className="check-icon"
+        />
+      );
+    }
+
+    return selectedIcon;
+  };
+
   dropdownIcon = () => {
     const { dropdown } = this.props;
     let returnDropdownIcon;
 
     if (dropdown) {
       returnDropdownIcon = (
-        <span className="lab-tag__right-icon lab-tag__right-icon--dropdown">
-          <Icon type="dropdown-closed" color="black75" size="petit" />
+        <span className="lab-tag__dropdown-icon-wrapper">
+          <Icon
+            type="dropdown-closed"
+            color="black75"
+            size="petit"
+            className="dropdown-icon"
+          />
         </span>
       );
     }
@@ -75,8 +98,13 @@ export default class Tag extends React.Component {
 
     if (removable) {
       returnRemoveIcon = (
-        <span className="lab-tag__right-icon lab-tag__right-icon--remove">
-          <Icon type="remove" color="black75" size="petit" />
+        <span className="lab-tag__remove-icon-wrapper">
+          <Icon
+            type="remove"
+            color="black75"
+            size="petit"
+            className="remove-icon"
+          />
         </span>
       );
     }
@@ -96,27 +124,26 @@ export default class Tag extends React.Component {
       outline,
       skin,
       color,
+      selected,
     } = this.props;
     return (
       <span
         className={
           `lab-tag` +
-          `${
-            type === "togglable"
-              ? ` lab-tag__togglable lab-tag__pale`
-              : ` lab-tag__${skin}`
-          }` +
-          `${removable ? ` lab-tag--has-right-icon` : ""}` +
-          `${dropdown ? ` lab-tag--has-right-icon` : ""}` +
-          `${disabled ? " lab-tag--disabled" : ""}` +
+          `${type === "togglable" ? ` lab-tag--togglable` : ``}` +
+          `${removable ? ` lab-tag--removable` : ""}` +
+          `${dropdown ? ` lab-tag--dropdown` : ""}` +
+          `${disabled ? ` lab-tag--disabled` : ""}` +
           `${outline ? ` lab-tag--outline` : ""}` +
-          `${color ? ` lab-tag--${color}-${skin}` : ""}` +
+          `${color ? ` lab-tag--${color}-${skin}` : ` lab-tag--${skin}`}` +
           `${icon ? ` lab-tag--has-left-icon` : ""}` +
+          `${selected ? ` lab-tag--selected` : ""}` +
           `${thumbSrc ? ` lab-tag--has-thumb` : ""}`
         }
       >
         {this.thumb()}
         {this.icon()}
+        {this.selected()}
         {text}
         {this.dropdownIcon()}
         {this.removeIcon()}
