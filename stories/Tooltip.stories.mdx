@@ -1,0 +1,116 @@
+import { Fragment } from "react";
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+
+import Tooltip from "../labsystem/src/Tooltip";
+// import TooltipPlayground from '../playgrounds/TooltipPlayground';
+
+<Meta title="Components/Tooltip" />
+
+<div class="docs-title">
+  <div>
+    <h1 class="docs-title__text">Tooltip</h1>
+  </div>
+</div>
+
+<div class="docs-content">
+  <p>Tooltips display support text when users hover over, focus on, or tap an element.</p>
+
+
+<div class="columns">
+  <div class="column">
+    <ol>
+      <li>Describes differences between similar elements</li>
+      <li>Distinguishes actions with related iconography</li>
+      <li>Provides advanced tips such as keyboard shortcuts</li>
+      <li>Displays full information of ellipse texts</li>
+    </ol>
+  </div>
+  <div class="column">
+    <ol>
+      <li class="li--red">Don’t use tooltips to restate visible UI text</li>
+      <li class="li--red">Don't use tooltips to display hidden actions</li>
+      <li class="li--red">Don’t display rich text and imagery on tooltips</li>
+    </ol>
+  </div>
+</div>
+
+<h4>Anatomy</h4>
+<div class="columns">
+    <div class="column">
+        <img src="docs/tooltip/tooltip-anatomy.png" />
+    </div>
+    <div class="column">
+        <br />
+        <br />
+        <ol>
+         <li>Text</li>
+         <li>Border (2px)</li>
+         <li>Background</li>
+        </ol>
+    </div>
+</div>
+
+<div>
+  <ul>
+    <li class="li--red">No more than 12 words or 65 characters per line</li>
+    <li class="li--red">No more than 3 lines of text</li>
+  </ul>
+</div>
+
+
+### Interactive demo
+
+This demo lets you preview the tooltip component, its variations, and configuration options.
+
+
+<Preview>
+  <Story name="InteractiveDemo">
+    <Fragment>{/* <TooltipPlayground /> */}</Fragment>
+  </Story>
+</Preview>
+
+#### Tooltip
+
+<Preview>
+  <Story name="Tooltip">
+    <Fragment>
+      <Tooltip id="tooltip-1" name="tooltip" text="Black tooltip" />
+      <br />
+      <Tooltip id="tooltip-3" name="tooltip" text="Teal tooltip" />
+      <br />
+      <Tooltip id="tooltip-4" name="tooltip" text="Purple tooltip" />
+    </Fragment>
+  </Story>
+</Preview>
+
+#### Behavior
+
+1. Choose an option
+2. Click on it and the chosen option will be selected
+3. Once the first option was selected, another one can be chosen
+   <br />
+   <br />
+
+#### Styles
+
+Tooltips can also be used in the purple theme
+
+<Preview>
+  <Story name="Styles">
+    <Fragment>
+      <Tooltip className="lab-tooltip--purple" id="tooltip-5" name="tooltip2" />
+    </Fragment>
+  </Story>
+</Preview>
+
+## Prop API docs
+
+Here's the list of props based on the component's prop types definitions.
+
+### Tooltip
+
+{" "}
+
+<Props of={Tooltip} />
+
+</div>
