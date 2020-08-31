@@ -17,6 +17,11 @@ import CheckboxPlayground from '../playgrounds/CheckboxPlayground';
   They should be used when we have a list of options that can be multiple selected.
   </p>
 
+  ##### Acessibility
+  Striving to keep our forms accessible, we recommend to use this type of component by using the `fieldset` tag to nest a group of 
+  selectors and the `legend` tag to identify the heading of the group.
+  These elements works indicating to screen readers that a group of form fields relate to each other.
+
 <h4>Anatomy</h4>
 <div class="columns">
     <div class="column">
@@ -35,7 +40,7 @@ import CheckboxPlayground from '../playgrounds/CheckboxPlayground';
     </div>
 </div>
 
-### Interactive demo
+#### Interactive demo
   This demo lets you preview the checkbox component, its variations, and configuration options.
   <Preview>
     <Story name="InteractiveDemo">
@@ -51,13 +56,15 @@ import CheckboxPlayground from '../playgrounds/CheckboxPlayground';
 <Preview>
   <Story name="Checkbox">
     <Fragment>
-         <Checkbox id="checkbox-1" label="Idle" name="checkbox" defaultChecked />
-         <br />
-         <Checkbox id="checkbox-2" label="Indeterminate" name="checkbox" indeterminate defaultChecked />
-         <br />
-         <Checkbox id="checkbox-3" label="Disabled Checked" name="checkbox" checked disabled/>
-        <br />
-         <Checkbox id="checkbox-4" label="Disabled Idle" name="checkbox" disabled />
+        <fieldset>
+          <Checkbox id="checkbox-1" label="Idle" name="checkbox" defaultChecked />
+          <br />
+          <Checkbox id="checkbox-2" label="Indeterminate" name="checkbox" indeterminate defaultChecked />
+          <br />
+          <Checkbox id="checkbox-3" label="Disabled Checked" name="checkbox" checked disabled/>
+          <br />
+          <Checkbox id="checkbox-4" label="Disabled Idle" name="checkbox" disabled />
+        </fieldset>
     </Fragment>
   </Story>
 </Preview>
@@ -74,9 +81,11 @@ Checkboxes can also be used in the purple theme
 <Preview>
   <Story name="Styles">
   <Fragment>
-    <Checkbox className='lab-checkbox--purple' id="checkbox-5" label="Idle" name="checkbox2" />
-    <br />
-    <Checkbox className='lab-checkbox--purple' id="checkbox-6" label="Indeterminate" name="checkbox2" indeterminate />
+    <fieldset>
+      <Checkbox className='lab-checkbox--purple' id="checkbox-5" label="Idle" name="checkbox2" />
+      <br />
+      <Checkbox className='lab-checkbox--purple' id="checkbox-6" label="Indeterminate" name="checkbox2" indeterminate />
+    </fieldset>
   </Fragment>
   </Story>
 </Preview>
