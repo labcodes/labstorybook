@@ -66,9 +66,8 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
 
 /* 
 * Left icon
-* Can be used onn all tags.
-* It can be a custom iconn or a check icon for the selected togglable tag.
-* TODO: trocar o nome dessa classe no futuro. Sugestão .lab-tag__left-icon
+* Can be used on all tags.
+* It can be a custom icon or a check icon for the selected togglable tag.
 */
 .lab-tag--has-left-icon {
   padding-left: $spacing-01;
@@ -84,8 +83,7 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
 * Right icon
 * Is only used on a dropdown tag and removable tag.
 * On the Dropdown tag the right icon is a dropdown icon. It rotates when dropdownn is opened.
-* On the Removable tag the right icon is a close icon. It has a wrapper around it.
-* TODO: trocar o nome dessa classe no futuro. Sugestão .lab-tag__left-icon
+* On the Removable tag the right icon is a close icon. It has a wrapper around it.s
 */
 
 .lab-tag__dropdown-icon-wrapper {

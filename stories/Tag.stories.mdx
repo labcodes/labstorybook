@@ -25,7 +25,7 @@ import Tag from '../labsystem/src/Tag';
   <div class="columns">
     <div class="column">
       <p>A tag is a compact component that represents an input entity, element attribute or action. It is used to bring attention to a relevant information in a compact and discrete format.</p> 
-      <p><strong>We have tags of 4 types with 2 different styles* of multiple colors of 2 distinct shades.</strong></p>
+      <p><strong>There are 4 types of tags. Tags can have 2 different styles of multiple colors. Each style might have 2 distinct shades.</strong></p>
     </div>
     <div class="column">
       <p><em>* Even though all types can be used accross the application, <strong>only one style can be used within the same context.</strong> Accross the application, use styles wisely in order to preserve consistancy and avoid user confusion.</em></p>
@@ -101,10 +101,11 @@ import Tag from '../labsystem/src/Tag';
 </div>
 
 ## Style
-Tags has two styles settings, use `outline` to use borders instead of a filled background, and `skin="vivid"` to display more vivid colors.
+
+Tags have two styles settings. Use `outline` to use borders instead of a filled background. Use `skin="vivid"` to display more vivid colors.
 
 ##### Default tag style
-If no color setting is used, the tag will display with a mineral fill background using `skin="pale"`.
+If no color setting is used, the tag will be display with a mineral fill background using `skin="pale"`.
 
 <Preview>
   <Story name="Fill sample">
@@ -193,7 +194,7 @@ All disabled styles remain the same regardless of any property other than `outli
 The `color` prop can be set to any tag.
 
 ##### Theme
-Tag's default color is `mineral` but it can also be set to teal or purple from theme settings or by the user using `color="teal"` or `color="purple"`.
+Tag's default color is `mineral` but it can also be set to teal or purple from the theme settings or by the user with `color="teal"` or `color="purple"`.
 
 All disabled styles remains unchanged regardless of any value used.
 
@@ -495,11 +496,3 @@ All disabled styles remains unchanged regardless of any value used.
 Here's the list of props based on the component's prop types definitions.
 ### Tag
 <Props of={Tag} />
-
-
-### TODO
-
-- Estados selecionado/idle pra togglables (single e multi)
-- tooltip pra removable togglables e pra texto longo elipsado
-- ajustar uso do vivid pra ficar parecido com o uso de `outline`
-- criar estado ativo do togglable
