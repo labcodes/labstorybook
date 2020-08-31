@@ -4,18 +4,35 @@ import PropTypes from "prop-types";
 export default class NarrowSidebar extends React.Component {
   static propTypes = {
     children: PropTypes.element,
-    skin: PropTypes.oneOf(["light", "dark"]),
-    color: PropTypes.oneOf(["mineral", "teal", "purple", "coral"]),
+    vivid: PropTypes.bool,
+    color: PropTypes.string,
   };
 
+  
   static defaultProps = {
     children: undefined,
-    skin: undefined,
-    color: undefined,
+    vivid: false,
+    color: "",
   };
 
+
+
   render() {
-    const { children } = this.props;
-    return <div className="lab-narrow-sidebar">{children}</div>;
+    const { 
+      children,
+      vivid,
+      color,
+     } = this.props;
+    return (
+      <div 
+        
+        className={
+          `lab-narrow-sidebar`+
+          `${vivid ? ` lab-narrow-sidebar--vivid lab-narrow-sidebar--vivid--${color}` : ` ""`}`
+        }
+      >
+        {children}
+      </div>
+    );  
   }
 }

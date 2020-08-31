@@ -1,3 +1,14 @@
+@use 'sass:map';
+
+// Light
+$item-focus-color: map-get($narrow-sidebar-theme, "30");
+$item-pressed-color: map-get($narrow-sidebar-theme, "20");
+$item-hover-color: map-get($narrow-sidebar-theme, "10");
+$item-active-color: map-get($narrow-sidebar-theme, "70");
+
+
+
+
 .lab-narrow-sidebar {
   width: 128px;
   height: 100vh;
@@ -38,7 +49,7 @@
   flex-direction: column;
   padding: 4px 0;
   flex-grow: 1;
-  box-shadow: inset 0px -2px 2px -1px $mineral-10;
+  box-shadow: inset 0px -2px 2px -1px $black-20;
   overflow: auto;
 }
 
@@ -64,7 +75,7 @@
     &:before {
       content: " ";
       display: block;
-      border: 2px solid $teal-30;
+      border: 2px solid $item-focus-color;
       position: absolute;
       top: 6px;
       left: 6px;
@@ -75,20 +86,20 @@
   }
 
   &:hover {
-    background-color:$teal-10;
+    background-color:$item-hover-color;
   } 
 
   &:active {
-    background-color:$teal-30;
+    background-color:$item-focus-color;
   }
 
   &--active {
-    background-color:$teal-20;
+    background-color:$item-pressed-color;
     font-weight: $weight-semibold;
-    color: $teal-70;
+    color: $item-active-color;
 
     .lab-icon--nome-da-classe {
-      background-color: $teal-70;
+      background-color: $item-active-color;
     }
   }
 
@@ -135,29 +146,153 @@
   }
 
   &__button:focus {
-    border: 2px solid $teal-30;
+    border: 2px solid $item-focus-color;
     outline: none;
   }
 
   &__button:hover {
-    background-color: $teal-10;
+    background-color: $item-hover-color;
   }
 
   &__button:active {
-    background-color: $teal-30;
+    background-color: $item-focus-color;
     
   }
 
   &__button--active {
-    background-color: $teal-20;
-    color: $teal-70;
+    background-color: $item-pressed-color;
+    color: $item-active-color;
     font-weight: $weight-semibold;
 
     .lab-icon--nome-da-classe {
-      background-color: $teal-70;
+      background-color: $item-active-color;
     }
 
   }
 
 }
 
+
+// Vivid Skin
+.lab-narrow-sidebar--vivid{
+  border: none;
+  .lab-narrow-sidebar__item {
+    color: $white;
+
+    &:focus {
+      &:before {
+        border-color: $white-50;
+      }
+    }
+  
+    &:hover {
+      background-color:$white-20;
+    } 
+  
+    &:active {
+      background-color:$white-75;
+    }
+  
+    &--active {
+      background-color:$white;
+    }
+
+    .lab-icon--nome-da-classe {
+      background-color: $white;
+    }
+  }
+
+  .lab-narrow-sidebar__footer__button {
+    color: $white;
+
+    .lab-icon--nome-da-classe {
+      background-color: $white;
+    }
+
+    &:focus {
+      border-color: $white-50;
+    }
+  
+    &:hover {
+      background-color: $white-20;
+    }
+  
+    &:active {
+      background-color: $white-75;      
+    }
+  
+    .lab-narrow-sidebar__footer__button--active {
+      background-color: $white;
+    }
+  }
+  
+}
+
+// Vivid Teal
+.lab-narrow-sidebar--vivid--teal {
+  background: $teal-60;
+
+  .lab-narrow-sidebar__item--active,
+  .lab-narrow-sidebar__item:active {
+    color: $teal-60; 
+
+    .lab-icon--nome-da-classe {
+      background-color: $teal-60;
+    }
+  }
+
+  .lab-narrow-sidebar__footer__button--active,
+  .lab-narrow-sidebar__footer__button:active  {
+    color: $teal-60; 
+
+    .lab-icon--nome-da-classe {
+      background-color: $teal-60;
+    }    
+  }
+}
+
+// Vivid Purple
+.lab-narrow-sidebar--vivid--purple {
+  background: $purple-60;
+
+  .lab-narrow-sidebar__item--active,
+  .lab-narrow-sidebar__item:active {
+    color: $purple-60; 
+
+    .lab-icon--nome-da-classe {
+      background-color: $purple-60;
+    }
+  }
+
+  .lab-narrow-sidebar__footer__button--active,
+  .lab-narrow-sidebar__footer__button:active  {
+    color: $purple-60; 
+
+    .lab-icon--nome-da-classe {
+      background-color: $purple-60;
+    }    
+  }
+}
+
+// Vivid Purple
+.lab-narrow-sidebar--vivid--purple {
+  background: $purple-60;
+
+  .lab-narrow-sidebar__item--active,
+  .lab-narrow-sidebar__item:active {
+    color: $purple-60; 
+
+    .lab-icon--nome-da-classe {
+      background-color: $purple-60;
+    }
+  }
+
+  .lab-narrow-sidebar__footer__button--active,
+  .lab-narrow-sidebar__footer__button:active  {
+    color: $purple-60; 
+
+    .lab-icon--nome-da-classe {
+      background-color: $purple-60;
+    }    
+  }
+}
