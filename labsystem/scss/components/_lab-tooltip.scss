@@ -1,14 +1,27 @@
 .lab-tooltip {
     padding: $spacing-01 $spacing-03;
-    background: $black-75;
-    border: 2px solid $mineral-80;
     box-sizing: border-box;
     border-radius: $spacing-01;
     margin: 0 $spacing-02;
-    display: inline-block;
+    display: inline-flex;
     font-style: normal;
     font-weight: bold;
     font-size: $font-size-2;
     line-height: $font-size-3;
+    text-align: center;
+
+    /* Default color: black */
+    border: 2px solid $mineral-80;
+    background: $black-75;
     color: $white;
+
+    &.lab-tooltip--teal {
+        background: $teal-70;
+        border-color: $teal-80;
+    }
+
+    &.lab-tooltip--purple {
+        background: $purple-70;
+        border-color: $purple-80;
+    }
 }
