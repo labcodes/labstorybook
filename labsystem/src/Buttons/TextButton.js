@@ -10,6 +10,7 @@ export default class TextButton extends React.Component {
     size: PropTypes.oneOf(["normal", "small", "large"]),
     disabled: PropTypes.bool,
     onClick: PropTypes.func,
+    fullWidth: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -18,6 +19,7 @@ export default class TextButton extends React.Component {
     size: "normal",
     disabled: false,
     onClick: undefined,
+    fullWidth: false,
   };
 
   render() {

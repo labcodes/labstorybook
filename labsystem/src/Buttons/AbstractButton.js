@@ -21,6 +21,7 @@ export default class AbstractButton extends React.Component {
     size: PropTypes.oneOf(["normal", "small", "large"]),
     disabled: PropTypes.bool,
     onClick: PropTypes.func,
+    fullWidth: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -31,6 +32,7 @@ export default class AbstractButton extends React.Component {
     size: "normal",
     disabled: false,
     onClick: undefined,
+    fullWidth: false,
   };
 
   icon = () => {
@@ -55,7 +57,7 @@ export default class AbstractButton extends React.Component {
   };
 
   render() {
-    const { type, text, variant, skin, size, disabled } = this.props;
+    const { type, text, variant, skin, size, disabled, fullWidth } = this.props;
     return (
       <button
         // eslint-disable-next-line react/button-has-type
@@ -63,7 +65,8 @@ export default class AbstractButton extends React.Component {
         className={
           `btn` +
           ` btn--${variant} btn--${size}` +
-          `${skin ? ` btn--${skin}` : ""}`
+          `${skin ? ` btn--${skin}` : ""}` +
+          `${fullWidth ? ` btn--block` : ""}`
         }
         onClick={this.handleOnClick}
         disabled={disabled || undefined}
