@@ -13,7 +13,7 @@ exports[`OutlineButton renders as expected when passing a large size 1`] = `
 
 exports[`OutlineButton renders as expected when passing a light skin 1`] = `
 <button
-  className="btn btn--outline btn--light btn--normal"
+  className="btn btn--outline btn--normal btn--light"
   onClick={[Function]}
   type="button"
 >

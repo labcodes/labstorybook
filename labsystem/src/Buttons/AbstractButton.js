@@ -56,12 +56,15 @@ export default class AbstractButton extends React.Component {
 
   render() {
     const { type, text, variant, skin, size, disabled } = this.props;
-    const classNameSkin = `${skin ? ` btn--${skin} ` : " "}`;
     return (
       <button
         // eslint-disable-next-line react/button-has-type
         type={type}
-        className={`btn btn--${variant}${classNameSkin}btn--${size}`}
+        className={
+          `btn` +
+          ` btn--${variant} btn--${size}` +
+          `${skin ? ` btn--${skin}` : ""}`
+        }
         onClick={this.handleOnClick}
         disabled={disabled || undefined}
       >

@@ -2,7 +2,7 @@
 
 exports[`TextButton renders as expected when passing a dark skin 1`] = `
 <button
-  className="btn btn--text btn--dark btn--normal"
+  className="btn btn--text btn--normal btn--dark"
   onClick={[Function]}
   type="button"
 >

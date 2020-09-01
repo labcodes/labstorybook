@@ -26,7 +26,7 @@ exports[`Button renders as expected when passing a wallet icon 1`] = `
 
 exports[`Button renders as expected when passing a warning skin 1`] = `
 <button
-  className="btn btn--default btn--warning btn--normal"
+  className="btn btn--default btn--normal btn--warning"
   onClick={[Function]}
   type="button"
 >
