@@ -5,6 +5,21 @@ export default class Tooltip extends React.Component {
   static propTypes = {
     id: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired,
+    placement: PropTypes.oneOf([
+      "top-start",
+      "top",
+      "top-end",
+      "right-start",
+      "right",
+      "right-end",
+      "bottom-start",
+      "left-start",
+      "left",
+      "left-end",
+      "bottom",
+      "bottom-end",
+    ]).isRequired,
     color: PropTypes.string,
   };
 
@@ -13,12 +28,18 @@ export default class Tooltip extends React.Component {
   };
 
   render() {
-    const { id, text, color } = this.props;
+    const { id, text, color, children, placement } = this.props;
 
     return (
-      <div className={`lab-tooltip lab-tooltip--${color}`} id={id}>
-        {text}
-      </div>
+      <span className="lab-tooltip">
+        {children}
+        <span
+          className={`lab-tooltip__text lab-tooltip--${color} lab-tooltip--${placement}`}
+          id={id}
+        >
+          {text}
+        </span>
+      </span>
     );
   }
 }

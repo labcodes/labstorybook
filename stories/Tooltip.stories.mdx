@@ -63,24 +63,27 @@ import Tooltip from "../labsystem/src/Tooltip";
 This demo lets you preview the tooltip component, its variations, and configuration options.
 
 
-<Preview>
-  <Story name="InteractiveDemo">
-    <Fragment>{/* <TooltipPlayground /> */}</Fragment>
-  </Story>
-</Preview>
 
 #### Tooltip
 
 <Preview>
   <Story name="Tooltip">
     <Fragment>
-      <Tooltip id="tooltip-1" text="Black tooltip" />
       <br />
       <br />
-      <Tooltip id="tooltip-2" text="Teal tooltip" color="teal" />
+      <Tooltip id="tooltip-1" text="Black tooltip" placement="right">
+        <a href="#" >Hover to see - Black</a>
+      </Tooltip>
       <br />
       <br />
-      <Tooltip id="tooltip-3" text="Purple tooltip" color="purple" />
+      <Tooltip id="tooltip-2" text="Teal tooltip" color="teal" placement="right" >
+        <a href="#" >Hover to see - Teal</a>
+      </Tooltip>
+      <br />
+      <br />
+      <Tooltip id="tooltip-3" text="Purple tooltip" color="purple" placement="right" >
+        <a href="#" >Hover to see - Purple</a>
+      </Tooltip>
     </Fragment>
   </Story>
 </Preview>
@@ -119,14 +122,47 @@ Continuously display the tooltip as long as the user hovers over the element.
 </div>
 
 
-#### Positioning
+#### Placement
 
 Tooltips can also be used in the purple theme
 
 <Preview>
-  <Story name="Styles">
+  <Story name="Placement">
     <Fragment>
-      <Tooltip className="lab-tooltip" id="tooltip-4" text="tooltip" />
+      <Tooltip id="tooltip-top-start" text="top-start" placement="top-start"><button type="button">top-start</button></Tooltip>
+      <br />
+      <br />
+      <Tooltip id="tooltip-top" text="top" placement="top"><button type="button">top</button></Tooltip>
+      <br />
+      <br />
+      <Tooltip id="tooltip-top-end" text="top-end" placement="top-end"><button type="button">top-end</button></Tooltip>
+      <br />
+      <br />
+      <Tooltip id="tooltip-right-start" text="right-start" placement="right-start"><button type="button">right-start</button></Tooltip>
+      <br />
+      <br />
+      <Tooltip id="tooltip-right" text="right" placement="right"><button type="button">right</button></Tooltip>
+      <br />
+      <br />
+      <Tooltip id="tooltip-right-end" text="right-end" placement="right-end"><button type="button">right-end</button></Tooltip>
+      <br />
+      <br />
+      <Tooltip id="tooltip-left-start" text="left-start" placement="left-start"><button type="button">left-start</button></Tooltip>
+      <br />
+      <br />
+      <Tooltip id="tooltip-left" text="left" placement="left"><button type="button">left</button></Tooltip>
+      <br />
+      <br />
+      <Tooltip id="tooltip-left-end" text="left-end" placement="left-end"><button type="button">left-end</button></Tooltip>
+      <br />
+      <br />
+      <Tooltip id="tooltip-bottom-start" text="bottom-start" placement="bottom-start"><button type="button">bottom-start</button></Tooltip>
+      <br />
+      <br />
+      <Tooltip id="tooltip-bottom" text="bottom" placement="bottom"><button type="button">bottom</button></Tooltip>
+      <br />
+      <br />
+      <Tooltip id="tooltip-bottom-end" text="bottom-end" placement="bottom-end"><button type="button">bottom-end</button></Tooltip>
     </Fragment>
   </Story>
 </Preview>
