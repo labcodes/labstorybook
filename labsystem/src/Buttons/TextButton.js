@@ -23,7 +23,18 @@ export default class TextButton extends React.Component {
   };
 
   render() {
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    return <AbstractButton variant="text" {...this.props} />;
+    const { text, skin, icon, size, disabled, onClick, fullWidth } = this.props;
+    return (
+      <AbstractButton
+        variant="text"
+        text={text}
+        skin={skin}
+        icon={icon}
+        size={size}
+        disabled={disabled}
+        onClick={onClick}
+        fullWidth={fullWidth}
+      />
+    );
   }
 }

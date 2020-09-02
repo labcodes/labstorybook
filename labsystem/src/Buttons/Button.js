@@ -31,7 +31,18 @@ export default class Button extends React.Component {
   };
 
   render() {
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    return <AbstractButton variant="default" {...this.props} />;
+    const { text, skin, icon, size, disabled, onClick, fullWidth } = this.props;
+    return (
+      <AbstractButton
+        variant="default"
+        text={text}
+        skin={skin}
+        icon={icon}
+        size={size}
+        disabled={disabled}
+        onClick={onClick}
+        fullWidth={fullWidth}
+      />
+    );
   }
 }
