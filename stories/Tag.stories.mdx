@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
-import { Tag } from '../labsystem/src/Tags';
+import { Tag, SimpleTag } from '../labsystem/src/Tags';
 
 <Meta title="Components / Tag" component={Tag} />
 
@@ -71,9 +71,9 @@ import { Tag } from '../labsystem/src/Tags';
       <div class="column">
         <h3>Simple tag</h3>
         <p>Used to indicate represent categories like status, type, etc. <strong>No actions are allowed for this type</strong>, focus is the only state styled. Supports the left element <code>icon</code> or <code>thumb</code> but doesn't support a right one.</p>
-        <Tag text="Simple tag" />
-        <Tag text="Simple tag" icon="calendar" />
-        <Tag text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
+        <SimpleTag text="Simple tag" />
+        <SimpleTag text="Simple tag" icon="calendar" />
+        <SimpleTag text="Simple tag" thumbSrc="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4" />
       </div>
       <div class="column">
         <h3>Dropdown tag</h3>
