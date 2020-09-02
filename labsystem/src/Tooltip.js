@@ -24,7 +24,7 @@ export default class Tooltip extends React.Component {
   };
 
   static defaultProps = {
-    color: undefined,
+    color: "black",
   };
 
   render() {
