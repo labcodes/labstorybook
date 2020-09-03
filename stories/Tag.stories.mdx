@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
 import { Tag, SimpleTag } from '../labsystem/src/Tags';
+import TagPlayground from '../playgrounds/TagPlayground';
 
 <Meta title="Components / Tag" component={Tag} />
 
@@ -19,6 +20,15 @@ import { Tag, SimpleTag } from '../labsystem/src/Tags';
   <input className="simple-tab" type="radio" name="colors-tab" id="tab2" />
   <label htmlFor="tab2">Accessibility</label>
 </nav>
+
+### Playground
+  <Preview>
+    <Story name="InteractiveDemo">
+      <Fragment>
+        <TagPlayground />
+      </Fragment>
+    </Story>
+  </Preview>
 
 <div class="simple-tab__content content1">
   <h2>General usage</h2>
