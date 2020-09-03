@@ -5,19 +5,19 @@ import { Tag, SimpleTag } from '../labsystem/src/Tags';
 
 <Meta title="Components / Tag" component={Tag} />
 
-<header class="docs-title docs-title--with-tab">
+<header className="docs-title docs-title--with-tab">
   <div>
     <h1 class="docs-title__text">Tag</h1>
   </div>
 </header>
 
-<nav class="docs-content">
+<nav className="docs-content">
   <div class="simple-tab-wrapper"></div>
-  <input class="simple-tab" type="radio" name="colors-tab" id="tab1" checked/>
-  <label for="tab1">Design</label>
+  <input className="simple-tab" type="radio" name="colors-tab" id="tab1" defaultChecked/>
+  <label htmlFor="tab1">Design</label>
 
-  <input class="simple-tab" type="radio" name="colors-tab" id="tab2" />
-  <label for="tab2">Accessibility</label>
+  <input className="simple-tab" type="radio" name="colors-tab" id="tab2" />
+  <label htmlFor="tab2">Accessibility</label>
 </nav>
 
 <div class="simple-tab__content content1">
