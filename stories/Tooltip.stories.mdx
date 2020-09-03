@@ -129,40 +129,44 @@ Tooltips can also be used in the purple theme
 <Preview>
   <Story name="Placement">
     <Fragment>
-      <Tooltip id="tooltip-top-start" text="top-start" placement="top-start"><button type="button">top-start</button></Tooltip>
-      <br />
-      <br />
-      <Tooltip id="tooltip-top" text="top" placement="top"><button type="button">top</button></Tooltip>
-      <br />
-      <br />
-      <Tooltip id="tooltip-top-end" text="top-end" placement="top-end"><button type="button">top-end</button></Tooltip>
-      <br />
-      <br />
-      <Tooltip id="tooltip-right-start" text="right-start" placement="right-start"><button type="button">right-start</button></Tooltip>
-      <br />
-      <br />
-      <Tooltip id="tooltip-right" text="right" placement="right"><button type="button">right</button></Tooltip>
-      <br />
-      <br />
-      <Tooltip id="tooltip-right-end" text="right-end" placement="right-end"><button type="button">right-end</button></Tooltip>
-      <br />
-      <br />
-      <Tooltip id="tooltip-left-start" text="left-start" placement="left-start"><button type="button">left-start</button></Tooltip>
-      <br />
-      <br />
-      <Tooltip id="tooltip-left" text="left" placement="left"><button type="button">left</button></Tooltip>
-      <br />
-      <br />
-      <Tooltip id="tooltip-left-end" text="left-end" placement="left-end"><button type="button">left-end</button></Tooltip>
-      <br />
-      <br />
-      <Tooltip id="tooltip-bottom-start" text="bottom-start" placement="bottom-start"><button type="button">bottom-start</button></Tooltip>
-      <br />
-      <br />
-      <Tooltip id="tooltip-bottom" text="bottom" placement="bottom"><button type="button">bottom</button></Tooltip>
-      <br />
-      <br />
-      <Tooltip id="tooltip-bottom-end" text="bottom-end" placement="bottom-end"><button type="button">bottom-end</button></Tooltip>
+      <div className="columns docs-tooltip">
+          <div className="column">
+            <Tooltip id="tooltip-top-start" text="top-start" placement="top-start"><button className="docs-tooltip__button" type="button">top-start</button></Tooltip>
+          </div>
+          <div className="column">
+            <Tooltip id="tooltip-top" text="top" placement="top"><button className="docs-tooltip__button" type="button">top</button></Tooltip>
+          </div>
+          <div className="column">
+            <Tooltip id="tooltip-top-end" text="top-end" placement="top-end"><button className="docs-tooltip__button" type="button">top-end</button></Tooltip>
+          </div>
+      </div>
+      <div className="columns middle docs-tooltip">
+          <div className="column left">
+            <Tooltip id="tooltip-left-start" text="left-start" placement="left-start"><button className="docs-tooltip__button" type="button">left-start</button></Tooltip>
+            <br />
+            <Tooltip id="tooltip-left" text="left" placement="left" ><button className="docs-tooltip__button" type="button">left</button></Tooltip>
+            <br />
+            <Tooltip id="tooltip-left-end" text="left-end" placement="left-end" ><button className="docs-tooltip__button" type="button">left-end</button></Tooltip>
+          </div>
+          <div className="column right">
+            <Tooltip id="tooltip-right-start" text="right-start" placement="right-start"><button className="docs-tooltip__button" type="button">right-start</button></Tooltip>
+            <br />
+            <Tooltip id="tooltip-right" text="right" placement="right"><button className="docs-tooltip__button flex-end" type="button">right</button></Tooltip>
+            <br />
+            <Tooltip id="tooltip-right-end" text="right-end" placement="right-end"><button className="docs-tooltip__button" type="button">right-end</button></Tooltip>
+          </div>
+      </div>
+      <div className="columns docs-tooltip">
+          <div className="column">
+            <Tooltip id="tooltip-bottom-start" text="bottom-start" placement="bottom-start"><button className="docs-tooltip__button" type="button">bottom-start</button></Tooltip>
+          </div>
+          <div className="column">
+            <Tooltip id="tooltip-bottom" text="bottom" placement="bottom"><button className="docs-tooltip__button" type="button">bottom</button></Tooltip>
+          </div>
+          <div className="column">
+            <Tooltip id="tooltip-bottom-end" text="bottom-end" placement="bottom-end"><button className="docs-tooltip__button" type="button">bottom-end</button></Tooltip>
+          </div>
+      </div>
     </Fragment>
   </Story>
 </Preview>
