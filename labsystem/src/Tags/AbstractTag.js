@@ -6,28 +6,28 @@ export default class Tag extends React.Component {
   static propTypes = {
     text: PropTypes.string.isRequired,
     type: PropTypes.string,
-    dropdown: PropTypes.string,
-    removable: PropTypes.string,
-    disabled: PropTypes.string,
+    dropdown: PropTypes.bool,
+    removable: PropTypes.bool,
+    disabled: PropTypes.bool,
     thumbSrc: PropTypes.string,
     icon: PropTypes.string,
-    outline: PropTypes.string,
+    outline: PropTypes.bool,
     skin: PropTypes.string,
     color: PropTypes.string,
-    selected: PropTypes.string,
+    selected: PropTypes.bool,
   };
 
   static defaultProps = {
     type: undefined,
-    dropdown: undefined,
-    removable: undefined,
-    thumbSrc: undefined,
-    icon: undefined,
-    outline: undefined,
+    dropdown: false,
+    removable: false,
+    thumbSrc: "",
+    icon: "",
+    outline: false,
     skin: "pale",
     color: "",
-    disabled: undefined,
-    selected: undefined,
+    disabled: false,
+    selected: false,
   };
 
   thumb = () => {
