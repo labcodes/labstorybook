@@ -228,71 +228,50 @@ $item-active-color: map-get($narrow-sidebar-theme, "70");
   
 }
 
-// Vivid Teal
-.lab-narrow-sidebar--vivid--teal {
-  background: $teal-60;
+// Vivid narrow sidebar mixin
+
+@mixin narrow-sidebar-skin-vivid($color) {
+  background: $color;
 
   .lab-narrow-sidebar__item--active,
   .lab-narrow-sidebar__item:active {
-    color: $teal-60; 
+    color: $color; 
+
+    &:focus {
+      &:before {
+        border-color: $color;
+      }
+    }
 
     .lab-icon--nome-da-classe {
-      background-color: $teal-60;
+      background-color: $color;
     }
   }
 
   .lab-narrow-sidebar__footer__button--active,
   .lab-narrow-sidebar__footer__button:active  {
-    color: $teal-60; 
-
+    color: $color; 
+    
     .lab-icon--nome-da-classe {
-      background-color: $teal-60;
+      background-color: $color;
     }    
   }
 }
 
-// Vivid Purple
-.lab-narrow-sidebar--vivid--purple {
-  background: $purple-60;
-
-  .lab-narrow-sidebar__item--active,
-  .lab-narrow-sidebar__item:active {
-    color: $purple-60; 
-
-    .lab-icon--nome-da-classe {
-      background-color: $purple-60;
-    }
-  }
-
-  .lab-narrow-sidebar__footer__button--active,
-  .lab-narrow-sidebar__footer__button:active  {
-    color: $purple-60; 
-
-    .lab-icon--nome-da-classe {
-      background-color: $purple-60;
-    }    
+/*
+* This will generate the classes:
+* `.lab-narrow-sidebar--vivid-coral,
+* `.lab-narrow-sidebar--vivid-teal,
+* `.lab-narrow-sidebar--vivid-purple,
+* `.lab-narrow-sidebar--vivid-mineral,
+*/
+@each $name, $palette in $sidebar-colors {
+  .lab-narrow-sidebar--vivid--#{$name} {
+     @if $name == "mineral" {
+        @include narrow-sidebar-skin-vivid(map-get($palette, "90"));
+     } @else {
+        @include narrow-sidebar-skin-vivid(map-get($palette, "60")); 
+     }
   }
 }
 
-// Vivid Purple
-.lab-narrow-sidebar--vivid--purple {
-  background: $purple-60;
-
-  .lab-narrow-sidebar__item--active,
-  .lab-narrow-sidebar__item:active {
-    color: $purple-60; 
-
-    .lab-icon--nome-da-classe {
-      background-color: $purple-60;
-    }
-  }
-
-  .lab-narrow-sidebar__footer__button--active,
-  .lab-narrow-sidebar__footer__button:active  {
-    color: $purple-60; 
-
-    .lab-icon--nome-da-classe {
-      background-color: $purple-60;
-    }    
-  }
-}
