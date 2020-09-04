@@ -1,7 +1,7 @@
 import React from "react";
-import { ToggableTag } from "../../labsystem/src/Tags";
+import { TogglableTag } from "../../labsystem/src/Tags";
 
-export default class ToggableTagPlayground extends React.Component {
+export default class TogglableTagPlayground extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,9 +21,9 @@ export default class ToggableTagPlayground extends React.Component {
         <div className="columns lab-playground">
           <div className="column lab-playground__component">
             <h4>
-              <strong>ToggableTag</strong>
+              <strong>TogglableTag</strong>
             </h4>
-            <ToggableTag text={tagText} type="togglable" />
+            <TogglableTag text={tagText} type="togglable" />
           </div>
           <div className="column lab-playground__configs">
             <h4>Configurations</h4>
