@@ -1,6 +1,11 @@
 import React from "react";
 import { SimpleTag } from "../labsystem/src/Tags";
-import { iconOptions, thumbSrcOptions } from "./assets";
+import {
+  iconOptions,
+  thumbSrcOptions,
+  skinOptions,
+  colorOptions,
+} from "./assets";
 
 export default class TagPlayground extends React.Component {
   constructor(props) {
@@ -12,6 +17,8 @@ export default class TagPlayground extends React.Component {
       isIconInputDisabled: false,
       isThumbInputDisabled: false,
       tagOutline: false,
+      tagColor: "",
+      tagSkin: "pale",
     };
   }
 
@@ -49,6 +56,8 @@ export default class TagPlayground extends React.Component {
       isIconInputDisabled,
       isThumbInputDisabled,
       tagOutline,
+      tagColor,
+      tagSkin,
     } = this.state;
     return (
       <React.Fragment>
@@ -62,6 +71,8 @@ export default class TagPlayground extends React.Component {
               icon={tagIcon}
               thumbSrc={tagThumbSrc}
               outline={tagOutline}
+              color={tagColor}
+              skin={tagSkin}
             />
           </div>
           <div className="column lab-playground__configs">
@@ -109,6 +120,28 @@ export default class TagPlayground extends React.Component {
                 checked={tagOutline}
                 onChange={this.handleBoolPropChange}
               />
+            </span>
+            <br />
+            <span className="lab-playground__item">
+              <strong>Color: </strong>
+              <select id="tagColor" onChange={this.handleTextPropChange}>
+                {colorOptions.map((item) => (
+                  <option value={item} key={`color-${item}`}>
+                    {item}
+                  </option>
+                ))}
+              </select>
+            </span>
+            <br />
+            <span className="lab-playground__item">
+              <strong>Skin: </strong>
+              <select id="tagSkin" onChange={this.handleTextPropChange}>
+                {skinOptions.map((item) => (
+                  <option value={item} key={`skin-${item}`}>
+                    {item}
+                  </option>
+                ))}
+              </select>
             </span>
           </div>
         </div>
