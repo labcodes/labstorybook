@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
 import { Tag, SimpleTag, ToggableTag } from '../labsystem/src/Tags';
-import TagPlayground from '../playgrounds/TagPlayground';
+import { SimpleTagPlayground, ToggableTagPlayground } from '../playgrounds/TagPlaygrounds';
 
 <Meta title="Components / Tag" component={Tag} />
 
@@ -25,7 +25,9 @@ import TagPlayground from '../playgrounds/TagPlayground';
   <Preview>
     <Story name="InteractiveDemo">
       <Fragment>
-        <TagPlayground />
+        <SimpleTagPlayground />
+        <br />
+        <ToggableTagPlayground />
       </Fragment>
     </Story>
   </Preview>

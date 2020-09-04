@@ -1,13 +1,13 @@
 import React from "react";
-import { SimpleTag } from "../labsystem/src/Tags";
+import { SimpleTag } from "../../labsystem/src/Tags";
 import {
   iconOptions,
   thumbSrcOptions,
   skinOptions,
   colorOptions,
-} from "./assets";
+} from "../assets";
 
-export default class TagPlayground extends React.Component {
+export default class SimpleTagPlayground extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
