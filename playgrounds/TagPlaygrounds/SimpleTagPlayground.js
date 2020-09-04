@@ -11,14 +11,14 @@ export default class SimpleTagPlayground extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tagText: "",
-      tagIcon: "",
-      tagThumbSrc: "",
+      simpleTagText: "",
+      simpleTagIcon: "",
+      simpleTagThumbSrc: "",
       isIconInputDisabled: false,
       isThumbInputDisabled: false,
-      tagOutline: false,
-      tagColor: "",
-      tagSkin: "pale",
+      simpleTagOutline: false,
+      simpleTagColor: "",
+      simpleTagSkin: "pale",
     };
   }
 
@@ -26,15 +26,15 @@ export default class SimpleTagPlayground extends React.Component {
     const { id, value } = e.target;
     this.setState({ [id]: value });
 
-    // Ensure either a `tagIcon` or a `tagThumbSrc` gets enabled at the same time
-    if (id === "tagIcon") {
+    // Ensure either a `thumb` or an `icon` gets enabled at the same time
+    if (id === "simpleTagIcon") {
       if (value === "") {
         this.setState({ isThumbInputDisabled: false });
       } else {
         this.setState({ isThumbInputDisabled: true });
       }
     }
-    if (id === "tagThumbSrc") {
+    if (id === "simpleTagThumbSrc") {
       if (value === "") {
         this.setState({ isIconInputDisabled: false });
       } else {
@@ -50,14 +50,14 @@ export default class SimpleTagPlayground extends React.Component {
 
   render() {
     const {
-      tagText,
-      tagIcon,
-      tagThumbSrc,
+      simpleTagText,
+      simpleTagIcon,
+      simpleTagThumbSrc,
       isIconInputDisabled,
       isThumbInputDisabled,
-      tagOutline,
-      tagColor,
-      tagSkin,
+      simpleTagOutline,
+      simpleTagColor,
+      simpleTagSkin,
     } = this.state;
     return (
       <React.Fragment>
@@ -67,25 +67,25 @@ export default class SimpleTagPlayground extends React.Component {
               <strong>SimpleTag</strong>
             </h4>
             <SimpleTag
-              text={tagText}
-              icon={tagIcon}
-              thumbSrc={tagThumbSrc}
-              outline={tagOutline}
-              color={tagColor}
-              skin={tagSkin}
+              text={simpleTagText}
+              icon={simpleTagIcon}
+              thumbSrc={simpleTagThumbSrc}
+              outline={simpleTagOutline}
+              color={simpleTagColor}
+              skin={simpleTagSkin}
             />
           </div>
           <div className="column lab-playground__configs">
             <h4>Configurations</h4>
             <span className="lab-playground__item">
               <strong>Text: </strong>
-              <input id="tagText" onChange={this.handleTextPropChange} />
+              <input id="simpleTagText" onChange={this.handleTextPropChange} />
             </span>
             <br />
             <span className="lab-playground__item">
               <strong>Icon: </strong>
               <select
-                id="tagIcon"
+                id="simpleTagIcon"
                 onChange={this.handleTextPropChange}
                 disabled={isIconInputDisabled}
               >
@@ -100,7 +100,7 @@ export default class SimpleTagPlayground extends React.Component {
             <span className="lab-playground__item">
               <strong>Thumb Source: </strong>
               <select
-                id="tagThumbSrc"
+                id="simpleTagThumbSrc"
                 onChange={this.handleTextPropChange}
                 disabled={isThumbInputDisabled}
               >
@@ -115,16 +115,16 @@ export default class SimpleTagPlayground extends React.Component {
             <span className="lab-playground__item">
               <strong>Outline: </strong>
               <input
-                id="tagOutline"
+                id="simpleTagOutline"
                 type="checkbox"
-                checked={tagOutline}
+                checked={simpleTagOutline}
                 onChange={this.handleBoolPropChange}
               />
             </span>
             <br />
             <span className="lab-playground__item">
               <strong>Color: </strong>
-              <select id="tagColor" onChange={this.handleTextPropChange}>
+              <select id="simpleTagColor" onChange={this.handleTextPropChange}>
                 {colorOptions.map((item) => (
                   <option value={item} key={`color-${item}`}>
                     {item}
@@ -135,7 +135,7 @@ export default class SimpleTagPlayground extends React.Component {
             <br />
             <span className="lab-playground__item">
               <strong>Skin: </strong>
-              <select id="tagSkin" onChange={this.handleTextPropChange}>
+              <select id="simpleTagSkin" onChange={this.handleTextPropChange}>
                 {skinOptions.map((item) => (
                   <option value={item} key={`skin-${item}`}>
                     {item}
