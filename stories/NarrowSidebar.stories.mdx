@@ -6,35 +6,38 @@ import Header from '../labsystem/src/Sidebar/Header';
 import Body from '../labsystem/src/Sidebar/Body';
 import Footer from '../labsystem/src/Sidebar/Footer';
 import FooterButton from '../labsystem/src/Sidebar/FooterButton';
+import UserAvatar from '../labsystem/src/Sidebar/UserAvatar';
+import Logotype from '../labsystem/src/Sidebar/Logotype';
+import Collapse from '../labsystem/src/Sidebar/CollapseButton';
 import Item from '../labsystem/src/Sidebar/Item';
 import Icon from '../labsystem/src/Icon';
 
 <Meta title="Components/Narrow Sidebar" component={NarrowSidebar} />
 
-## Sample Toggle
-Toggle can be used as shown in the example below:
+<!-- ## Sample Toggle
+Toggle can be used as shown in the example below: -->
 
-<Preview>
-  <Story name="Narrow Sidebar">
-    <NarrowSidebar  >
-      <Header altText="Labcodes" className="with-scroll" />
-      <Body>
-        <Item icon="calendar" iconColor="mineral60" label="Teste" />
-        <Item icon="coin" iconColor="mineral60" label="Teste" />
-        <Item icon="wallet" iconColor="mineral60" label="Teste" />
-        <Item icon="wallet" iconColor="mineral60" label="Teste" />
-        <Item icon="wallet" iconColor="mineral60" label="Teste" />
-        <Item icon="wallet" iconColor="mineral60" label="Teste" />
-        <Item icon="wallet" iconColor="mineral60" label="Teste" />
-        <Item icon="wallet" iconColor="mineral60" label="Teste" />
-        <Item icon="wallet" iconColor="mineral60" label="Teste" />
-        <Item icon="wallet" iconColor="mineral60" label="Teste" />
-      </Body>
-      <Footer>
-        <div className="lab-narrow-sidebar__footer__avatar"/>
-        <FooterButton icon="key" label="Password"/>
-        <FooterButton icon="logout" label="Logout" />
-      </Footer>
-    </NarrowSidebar>
-  </Story>
-</Preview>
+
+<NarrowSidebar color="purple" vivid>
+  <Header >
+    <Logotype altText="User photo" />
+    <Collapse />
+  </Header>
+  <Body withScroll >
+    <Item icon="calendar" iconColor="mineral60" label="Teste" />
+    <Item icon="coin" iconColor="mineral60" label="Teste" />
+    <Item icon="wallet" iconColor="mineral60" label="Teste" />
+    <Item icon="wallet" iconColor="mineral60" label="Teste" />
+    <Item icon="wallet" iconColor="mineral60" label="Teste" />
+    <Item icon="wallet" iconColor="mineral60" label="Teste" />
+    <Item icon="wallet" iconColor="mineral60" label="Teste" />
+    <Item icon="wallet" iconColor="mineral60" label="Teste" />
+    <Item icon="wallet" iconColor="mineral60" label="Teste" />
+    <Item icon="wallet" iconColor="mineral60" label="Teste" />
+  </Body>
+  <Footer>
+    <UserAvatar altText="User photo" caption="Cool guy"/>
+    <FooterButton icon="key" label="Password"/>
+    <FooterButton icon="logout" label="Logout" />
+  </Footer>
+</NarrowSidebar>
