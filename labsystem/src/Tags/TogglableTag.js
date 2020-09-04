@@ -7,8 +7,21 @@ export default class TogglableTag extends React.Component {
     text: PropTypes.string.isRequired,
   };
 
+  onClick = () => {
+    const { text } = this.props;
+    // eslint-disable-next-line no-alert
+    alert(text);
+  };
+
   render() {
     const { text } = this.props;
-    return <AbstractTag togglable text={text} {...this.props} />;
+    return (
+      <AbstractTag
+        togglable
+        text={text}
+        onClick={this.onClick}
+        {...this.props}
+      />
+    );
   }
 }

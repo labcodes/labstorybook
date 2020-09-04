@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { isUndefined } from "lodash";
 import Icon from "../Icon";
 
 export default class Tag extends React.Component {
@@ -15,6 +16,7 @@ export default class Tag extends React.Component {
     skin: PropTypes.string,
     color: PropTypes.string,
     selected: PropTypes.bool,
+    onClick: PropTypes.func,
   };
 
   static defaultProps = {
@@ -28,88 +30,63 @@ export default class Tag extends React.Component {
     color: "",
     disabled: false,
     selected: false,
+    onClick: undefined,
   };
 
   thumb = () => {
     const { thumbSrc } = this.props;
-    let returnThumb;
-
-    if (thumbSrc) {
-      returnThumb = <img className="lab-tag__thumb" src={thumbSrc} alt="" />;
-    }
-
-    return returnThumb;
+    return thumbSrc ? (
+      <img className="lab-tag__thumb" src={thumbSrc} alt="" />
+    ) : undefined;
   };
 
   icon = () => {
     const { icon } = this.props;
-    let returnIcon;
-
-    if (icon) {
-      returnIcon = (
-        <Icon type={icon} color="black75" size="petit" className="left-icon" />
-      );
-    }
-
-    return returnIcon;
+    return icon ? (
+      <Icon type={icon} color="black75" size="petit" className="left-icon" />
+    ) : undefined;
   };
 
   selected = () => {
     const { selected } = this.props;
-    let selectedIcon;
-
-    if (selected) {
-      selectedIcon = (
-        <Icon
-          type="check"
-          color="black75"
-          size="petit"
-          className="check-icon"
-        />
-      );
-    }
-
-    return selectedIcon;
+    return selected ? (
+      <Icon type="check" color="black75" size="petit" className="check-icon" />
+    ) : undefined;
   };
 
   dropdownIcon = () => {
     const { dropdown } = this.props;
-    let returnDropdownIcon;
+    return dropdown ? (
+      <span className="lab-tag__dropdown-icon-wrapper">
+        <Icon
+          type="dropdown-closed"
+          color="black75"
+          size="petit"
+          className="dropdown-icon"
+        />
+      </span>
+    ) : undefined;
+  };
 
-    if (dropdown) {
-      returnDropdownIcon = (
-        <span className="lab-tag__dropdown-icon-wrapper">
-          <Icon
-            type="dropdown-closed"
-            color="black75"
-            size="petit"
-            className="dropdown-icon"
-          />
-        </span>
-      );
+  handleOnClick = (e) => {
+    const { onClick } = this.props;
+    if (!isUndefined(onClick)) {
+      onClick(e);
     }
-
-    return returnDropdownIcon;
   };
 
   removeIcon = () => {
     const { removable } = this.props;
-    let returnRemoveIcon;
-
-    if (removable) {
-      returnRemoveIcon = (
-        <span className="lab-tag__remove-icon-wrapper">
-          <Icon
-            type="remove"
-            color="black75"
-            size="petit"
-            className="remove-icon"
-          />
-        </span>
-      );
-    }
-
-    return returnRemoveIcon;
+    return removable ? (
+      <span className="lab-tag__remove-icon-wrapper">
+        <Icon
+          type="remove"
+          color="black75"
+          size="petit"
+          className="remove-icon"
+        />
+      </span>
+    ) : undefined;
   };
 
   render() {
@@ -140,6 +117,9 @@ export default class Tag extends React.Component {
           `${selected ? ` lab-tag--selected` : ""}` +
           `${thumbSrc ? ` lab-tag--has-thumb` : ""}`
         }
+        onClick={this.handleOnClick}
+        onKeyDown={this.handleOnClick}
+        role="presentation"
       >
         {this.thumb()}
         {this.icon()}
