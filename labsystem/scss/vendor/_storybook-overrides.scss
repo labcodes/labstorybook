@@ -1,26 +1,84 @@
-@import url("https://use.typekit.net/boj8rad.css");
-@import url('https://fonts.googleapis.com/css?family=Mukta+Vaani:300,400,500,700&display=swap');
-
 .sb-show-main {
   margin: 0 !important;
   padding: 0 !important;
 }
 
-h1 {
-  color: $coral !important;
-  font-family: $font-primary !important;
-  font-weight: 900
+h1.sbdocs-h1,
+h2.sbdocs-h2,
+h3.sbdocs-h3,
+h4.sbdocs-h4,
+h5.sbdocs-h5,
+h6.sbdocs-h6 {
+  margin-block-start: $spacing-06 !important;
+  margin-block-end: $spacing-05;
+  font-family: $font-primary;
+  font-weight: $title-weight;
+  line-height: 1.1;
+  color: $black-75;
+  text-rendering: $render-mode;
+  letter-spacing: $letter-spacing;
+  border: none;
+
+  strong {
+    font-weight: $title-strong-weight;
+  }
 }
 
-h2, h3, h4, h5 {
-  color: $mineral-60 !important;
-  font-family: $font-secondary !important;
-  font-weight: 600
+h1.sbdocs-h1 {
+  margin-block-start: $spacing-08 !important;
+  margin-block-end: $spacing-06;
+  font-size: $font-size-10;
 }
 
-p, li {
-  color: $black-75 !important;
-  font-family: $font-secondary !important;
-  font-size: 18px !important;
-  font-weight: 500 !important;
+h2.sbdocs-h2 {
+  margin-block-start: $spacing-08 !important;
+  font-size: $font-size-9;
+}
+
+h3.sbdocs-h3 {
+  font-size: $font-size-8;
+  line-height: 1.125;
+}
+
+h4.sbdocs-h4 {
+  margin-block-end: $spacing-04;
+  font-size: $font-size-7;
+  line-height: 1.14;
+}
+
+h5.sbdocs-h5 {
+  margin-block-start: $spacing-05 !important;
+  margin-block-end: $spacing-04;
+  font-size: $font-size-6;
+  font-weight: $weight-semibold;
+  line-height: 1.16;
+}
+
+h6.sbdocs-h6 {
+  margin-block-end: $spacing-04;
+  font-size: $font-size-4;
+  font-weight: $weight-semibold;
+}
+
+p.sbdocs-p,
+li.sbdocs-li {
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  font-family: $font-primary;
+  font-size: $paragraph-defaul-size;
+  font-weight: $paragraph-weight;
+  line-height: 1.5rem;
+  color: $black-75;
+  text-rendering: $render-mode;
+  letter-spacing: $letter-spacing;
+
+  strong {
+    font-weight: $title-strong-weight;
+  }
+}
+
+.sbdocs-content {
+  max-width: $content-max-width !important;
 }

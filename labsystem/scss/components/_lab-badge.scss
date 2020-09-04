@@ -1,27 +1,63 @@
 $icon-size: 1.5rem !default;
 
 .lab-badge {
-  &.teal {
-    background-image: url('~labsystem/static/icons/badges-teal.svg');
-  }
-  &.mineral70 {
-    background-image: url('~labsystem/static/icons/badges-mineral70.svg');
-  }
-  &.mineral20 {
-    background-image: url('~labsystem/static/icons/badges-disabled.svg');
-  }
-  background-repeat: no-repeat;
-
+  -webkit-mask-image: url('~labsystem/static/icons/main-badges.svg');
+  mask-image: url('~labsystem/static/icons/main-badges.svg');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
   height: $icon-size;
   width: $icon-size;
   font-size: $icon-size;
   line-height: 1;
   display: inline-block;
+  flex-shrink: 0;
 
-  &.harvest { background-position: left 0 top 0; }
-  &.star { background-position: left 0 top $icon-size*-1; }
-  &.ponto { background-position: left $icon-size*-1 top 0; }
-  &.floating-add { background-position: left $icon-size*-1 top $icon-size*-1; }
-  &.meta { background-position: left $icon-size*-2 top 0; }
+    /* Color modifiers.
+   * Create classes '.lab-icon--white' and '.lab-icon--black' directly.
+   * Iterates over $all-colors map to also create classes like '.lab-icon--white'.
+   * Each ones sets a different background color. */
+   &--black { background-color: $black; }
+   &--white { background-color: $white; }
+
+   @each $key, $palette in $all-colors {
+     @each $color-palette, $color in $palette {
+       &--#{$key}#{$color-palette} {
+           background-color: $color;
+       }
+     }
+   }
+
+  /* Type modifiers */
+  &--harvest { @include icon-position(0, 0); }
+  &--star { @include icon-position(0, 1); }
+  &--ponto { @include icon-position(1, 0); }
+  &--floating-add { @include icon-position(1, 1); }
+  &--meta { @include icon-position(2, 0); }
+
+}
+
+.lab-badge__wrapper {
+  height: $icon-size;
+  width: $icon-size;
+  display: inline-block;
+  border-radius: 0.25rem;
+  margin: 0.125rem;
+  flex-shrink: 0;
+
+
+    /* Color modifiers.
+   * Create classes '.lab-icon--white' and '.lab-icon--black' directly.
+   * Iterates over $all-colors map to also create classes like '.lab-icon--white'.
+   * Each ones sets a different background color. */
+   &--black { background-color: $black; }
+   &--white { background-color: $white; }
+
+  @each $key, $palette in $all-colors {
+    @each $color-palette, $color in $palette {
+      &--#{$key}#{$color-palette} {
+          background-color: $color;
+      }
+    }
+  }
 
 }

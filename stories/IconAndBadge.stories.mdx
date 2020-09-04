@@ -4,213 +4,174 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Icon from '../labsystem/src/Icon';
 import Badge from '../labsystem/src/Badge';
 
-<Meta title="Components | Icons & Badges" component={Icon} />
+<Meta title="Components/Icons & Badges" component={Icon} />
 
-# Icons & Badges
+<div class="docs-title">
+  <div>
+    <h1 class="docs-title__text">Icons & Badges</h1>
+  </div>
+</div>
+
+<div class="docs-content">
 
 The `Icon` and `Badge` components have similar behavior.
 
 Both receive two inputs as props, where `type` indicates which symbol to show, while `color` defines its color.
+`Badge` receives an extra prop `wrapperColor`, since the background color is different from the symbol color.
+Also, the `size` option is available only for `Icon`
 
 ## Sample Icons
 Icons can be used as shown in the examples below:
 
-### Arrow Left - Teal
+### Arrow Left - Sizes
 
 <Preview>
-  <Story name="Sample Icon - Teal">
-    <Icon type='arrow-left' color="teal" />
-  </Story>
-</Preview>
-
-### Arrow Left - Mineral 70
-
-<Preview>
-  <Story name="Sample Icon - Mineral 70">
-    <Icon type='arrow-left' color="mineral70" />
-  </Story>
-</Preview>
-
-### Arrow Left - Mineral 20
-
-<Preview>
-  <Story name="Sample Icon - Mineral 20">
-    <Icon type='arrow-left' color="mineral20" />
+  <Story name="Sample Icon - Sizes">
+    <Icon type='arrow-left' color="teal40" />
+    <Icon type='arrow-left' color="teal40" size="petit" />
+    <Icon type='arrow-left' color="teal40" size="small" />
   </Story>
 </Preview>
 
 ## Sample Badges
 Badges can be used as shown in the examples below:
 
-### Harvest - Teal
+### Harvest - Wrapper Colors
 
 <Preview>
-  <Story name="Sample Badge - Teal">
-    <Badge type='harvest' color="teal" />
-  </Story>
-</Preview>
-
-### Harvest - Mineral 70
-
-<Preview>
-  <Story name="Sample Badge - Mineral 70">
-    <Badge type='harvest' color="mineral70" />
-  </Story>
-</Preview>
-
-### Harvest - Mineral 20
-
-<Preview>
-  <Story name="Sample Badge - Mineral 20">
-    <Badge type='harvest' color="mineral20" />
+  <Story name="Sample Badge - Wrapper Colors">
+    <Badge type='harvest' wrapperColor="teal40" color="white" />
+    <Badge type='harvest' wrapperColor="purple40" color="white" />
+    <Badge type='harvest' wrapperColor="white" color="black" />
   </Story>
 </Preview>
 
 ## Icon Colors
-
-All the available Icons and its colors are shown below:
-
+All the available Icons are shown below. You can use them with all the colors available on the design system.
 
 ### Icon - Teal
 <Preview>
   <Story name="Icon Teal">
     <Fragment>
-      <Icon type='arrow-left' color="teal"/>
-      <Icon type='dropdown-closed' color="teal"/>
-      <Icon type='remove' color="teal"/>
-      <Icon type='eye-opened' color="teal"/>
-      <Icon type='logout' color="teal"/>
-      <Icon type='edit' color="teal"/>
+      <Icon type='arrow-left' color="teal40"/>
+      <Icon type='dropdown-closed' color="teal40"/>
+      <Icon type='remove' color="teal40"/>
+      <Icon type='eye-opened' color="teal40"/>
+      <Icon type='logout' color="teal40"/>
+      <Icon type='edit' color="teal40"/>
+      <Icon type='arrow-fill-right' color="teal40"/>
       <br />
-      <Icon type='arrow-right' color="teal"/>
-      <Icon type='dropdown-open' color="teal"/>
-      <Icon type='plus' color="teal"/>
-      <Icon type='eye-closed' color="teal"/>
-      <Icon type='track' color="teal"/>
-      <Icon type='key' color="teal"/>
+      <Icon type='arrow-right' color="teal40"/>
+      <Icon type='dropdown-open' color="teal40"/>
+      <Icon type='plus' color="teal40"/>
+      <Icon type='eye-closed' color="teal40"/>
+      <Icon type='track' color="teal40"/>
+      <Icon type='key' color="teal40"/>
+      <Icon type='arrow-fill-left' color="teal40"/>
       <br />
-      <Icon type='arrow-top' color="teal"/>
-      <Icon type='collapse-closed' color="teal"/>
-      <Icon type='minus' color="teal"/>
-      <Icon type='lupe' color="teal"/>
-      <Icon type='calendar' color="teal"/>
-      <Icon type='upload' color="teal"/>
+      <Icon type='arrow-top' color="teal40"/>
+      <Icon type='collapse-closed' color="teal40"/>
+      <Icon type='minus' color="teal40"/>
+      <Icon type='lupe' color="teal40"/>
+      <Icon type='calendar' color="teal40"/>
+      <Icon type='upload' color="teal40"/>
+      <Icon type='chevron-right' color="teal40"/>
       <br />
-      <Icon type='arrow-down' color="teal"/>
-      <Icon type='collapse-open' color="teal"/>
-      <Icon type='check' color="teal"/>
-      <Icon type='trash' color="teal"/>
-      <Icon type='coin' color="teal"/>
-      <Icon type='reload' color="teal"/>
+      <Icon type='arrow-down' color="teal40"/>
+      <Icon type='collapse-open' color="teal40"/>
+      <Icon type='check' color="teal40"/>
+      <Icon type='trash' color="teal40"/>
+      <Icon type='coin' color="teal40"/>
+      <Icon type='reload' color="teal40"/>
+      <Icon type='chevron-left' color="teal40"/>
       <br />
-      <Icon type='sort' color="teal" />
+      <Icon type='sort' color="teal40" />
+      <Icon type='menu-expand' color="teal40" />
+      <Icon type='menu-collapse' color="teal40" />
+      <Icon type='menu-default' color="teal40" />
+      <Icon type='external' color="teal40" />
+      <Icon type='wallet' color="teal40" />
+      <Icon type='workspace' color="teal40" />
     </Fragment>
   </Story>
 </Preview>
 
-### Icon - Mineral 70
+### Icon - Purple
 <Preview>
   <Story name="Icon Mineral 70">
     <Fragment>
-      <Icon type='arrow-left' color="mineral70"/>
-      <Icon type='dropdown-closed' color="mineral70"/>
-      <Icon type='remove' color="mineral70"/>
-      <Icon type='eye-opened' color="mineral70"/>
-      <Icon type='logout' color="mineral70"/>
-      <Icon type='edit' color="mineral70"/>
+      <Icon type='arrow-left' color="purple60"/>
+      <Icon type='dropdown-closed' color="purple60"/>
+      <Icon type='remove' color="purple60"/>
+      <Icon type='eye-opened' color="purple60"/>
+      <Icon type='logout' color="purple60"/>
+      <Icon type='edit' color="purple60"/>
+      <Icon type='arrow-fill-right' color="purple60"/>
       <br />
-      <Icon type='arrow-right' color="mineral70"/>
-      <Icon type='dropdown-open' color="mineral70"/>
-      <Icon type='plus' color="mineral70"/>
-      <Icon type='eye-closed' color="mineral70"/>
-      <Icon type='track' color="mineral70"/>
-      <Icon type='key' color="mineral70"/>
+      <Icon type='arrow-right' color="purple60"/>
+      <Icon type='dropdown-open' color="purple60"/>
+      <Icon type='plus' color="purple60"/>
+      <Icon type='eye-closed' color="purple60"/>
+      <Icon type='track' color="purple60"/>
+      <Icon type='key' color="purple60"/>
+      <Icon type='arrow-fill-left' color="purple60"/>
       <br />
-      <Icon type='arrow-top' color="mineral70"/>
-      <Icon type='collapse-closed' color="mineral70"/>
-      <Icon type='minus' color="mineral70"/>
-      <Icon type='lupe' color="mineral70"/>
-      <Icon type='calendar' color="mineral70"/>
-      <Icon type='upload' color="mineral70"/>
+      <Icon type='arrow-top' color="purple60"/>
+      <Icon type='collapse-closed' color="purple60"/>
+      <Icon type='minus' color="purple60"/>
+      <Icon type='lupe' color="purple60"/>
+      <Icon type='calendar' color="purple60"/>
+      <Icon type='upload' color="purple60"/>
+      <Icon type='chevron-right' color="purple60"/>
       <br />
-      <Icon type='arrow-down' color="mineral70"/>
-      <Icon type='collapse-open' color="mineral70"/>
-      <Icon type='check' color="mineral70"/>
-      <Icon type='trash' color="mineral70"/>
-      <Icon type='coin' color="mineral70"/>
-      <Icon type='reload' color="mineral70"/>
+      <Icon type='arrow-down' color="purple60"/>
+      <Icon type='collapse-open' color="purple60"/>
+      <Icon type='check' color="purple60"/>
+      <Icon type='trash' color="purple60"/>
+      <Icon type='coin' color="purple60"/>
+      <Icon type='reload' color="purple60"/>
+      <Icon type='chevron-left' color="purple60"/>
       <br />
-      <Icon type='sort' color="mineral70" />
-    </Fragment>
-  </Story>
-</Preview>
-
-### Icon - Mineral 20
-<Preview>
-  <Story name="Icon Mineral 20">
-    <Fragment>
-      <Icon type='arrow-left' color="mineral20"/>
-      <Icon type='dropdown-closed' color="mineral20"/>
-      <Icon type='remove' color="mineral20"/>
-      <Icon type='eye-opened' color="mineral20"/>
-      <Icon type='logout' color="mineral20"/>
-      <Icon type='edit' color="mineral20"/>
-      <br />
-      <Icon type='arrow-right' color="mineral20"/>
-      <Icon type='dropdown-open' color="mineral20"/>
-      <Icon type='plus' color="mineral20"/>
-      <Icon type='eye-closed' color="mineral20"/>
-      <Icon type='track' color="mineral20"/>
-      <Icon type='key' color="mineral20"/>
-      <br />
-      <Icon type='arrow-top' color="mineral20"/>
-      <Icon type='collapse-closed' color="mineral20"/>
-      <Icon type='minus' color="mineral20"/>
-      <Icon type='lupe' color="mineral20"/>
-      <Icon type='calendar' color="mineral20"/>
-      <Icon type='upload' color="mineral20"/>
-      <br />
-      <Icon type='arrow-down' color="mineral20"/>
-      <Icon type='collapse-open' color="mineral20"/>
-      <Icon type='check' color="mineral20"/>
-      <Icon type='trash' color="mineral20"/>
-      <Icon type='coin' color="mineral20"/>
-      <Icon type='reload' color="mineral20"/>
-      <br />
-      <Icon type='sort' color="mineral20" />
+      <Icon type='sort' color="purple60" />
+      <Icon type='menu-expand' color="purple60" />
+      <Icon type='menu-collapse' color="purple60" />
+      <Icon type='menu-default' color="purple60" />
+      <Icon type='external' color="purple60" />
+      <Icon type='wallet' color="purple60" />
+      <Icon type='workspace' color="purple60" />
     </Fragment>
   </Story>
 </Preview>
 
 ## Badge Colors
 
-All the available Badges and its colors are shown below:
+All the available Badges are shown below. You can use all the colors available on the design system for the props `color` and `wrapperColor`.
 
 
 ### Badge - Teal
 <Preview>
   <Story name="Badge Teal">
     <Fragment>
-      <Badge type='harvest' color="teal"/>
-      <Badge type='ponto' color="teal"/>
-      <Badge type='meta' color="teal"/>
+      <Badge type='harvest' wrapperColor="teal40" color="white"/>
+      <Badge type='ponto' wrapperColor="teal40" color="white"/>
+      <Badge type='meta' wrapperColor="teal40" color="white"/>
       <br />
-      <Badge type='star' color="teal"/>
-      <Badge type='floating-add' color="teal"/>
+      <Badge type='star' wrapperColor="teal40" color="white"/>
+      <Badge type='floating-add' wrapperColor="teal40" color="white"/>
     </Fragment>
   </Story>
 </Preview>
 
-### Badge - Mineral 70
+### Badge - Purple
 <Preview>
   <Story name="Badge Mineral 70">
     <Fragment>
-      <Badge type='harvest' color="mineral70"/>
-      <Badge type='ponto' color="mineral70"/>
-      <Badge type='meta' color="mineral70"/>
+      <Badge type='harvest' wrapperColor="purple60" color="white"/>
+      <Badge type='ponto' wrapperColor="purple60" color="white"/>
+      <Badge type='meta' wrapperColor="purple60" color="white"/>
       <br />
-      <Badge type='star' color="mineral70"/>
-      <Badge type='floating-add' color="mineral70"/>
+      <Badge type='star' wrapperColor="purple60" color="white"/>
+      <Badge type='floating-add' wrapperColor="purple60" color="white"/>
     </Fragment>
   </Story>
 </Preview>
@@ -219,12 +180,12 @@ All the available Badges and its colors are shown below:
 <Preview>
   <Story name="Badge Mineral 20">
     <Fragment>
-      <Badge type='harvest' color="mineral20"/>
-      <Badge type='ponto' color="mineral20"/>
-      <Badge type='meta' color="mineral20"/>
+      <Badge type='harvest' color="mineral30" wrapperColor="mineral10" />
+      <Badge type='ponto' color="mineral30" wrapperColor="mineral10" />
+      <Badge type='meta' color="mineral30" wrapperColor="mineral10" />
       <br />
-      <Badge type='star' color="mineral20"/>
-      <Badge type='floating-add' color="mineral20"/>
+      <Badge type='star' color="mineral30" wrapperColor="mineral10" />
+      <Badge type='floating-add' color="mineral30" wrapperColor="mineral10" />
     </Fragment>
   </Story>
 </Preview>
@@ -237,3 +198,5 @@ Here's the list of props based on the component's prop types definitions.
 
 ### Badge
 <Props of={Badge} />
+
+</div>

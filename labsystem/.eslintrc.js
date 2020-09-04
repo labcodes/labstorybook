@@ -16,6 +16,7 @@ module.exports = {
 
     'react/forbid-prop-types': 'off',
     'react/jsx-filename-extension': 'off',
+    'react/jsx-fragments': 0,
     'react/jsx-one-expression-per-line': 'off',
     'react/prefer-stateless-function': 'off',
     'react/state-in-constructor': 'off',

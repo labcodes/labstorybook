@@ -1,0 +1,37 @@
+//Purple Theme
+// Checkbox checked
+.lab-checkbox--purple:checked + .lab-checkbox__label,
+.lab-checkbox--purple:indeterminate + .lab-checkbox__label {
+  .lab-checkbox__box {
+    background-color: $purple-60;
+    border: 2px solid $purple-60;
+
+    .lab-checkbox__icon {
+      display: inline-block;
+    }
+  }
+}
+
+.lab-checkbox--purple:checked:hover + .lab-checkbox__label,
+.lab-checkbox--purple:indeterminate:hover + .lab-checkbox__label {
+  .lab-checkbox__box {
+    outline: none;
+    box-shadow: 0 0 0 6px $purple-10;
+  }
+} 
+
+.lab-checkbox--purple:checked:focus + .lab-checkbox__label,
+.lab-checkbox--purple:indeterminate:focus + .lab-checkbox__label {
+  .lab-checkbox__box {
+    outline: none;
+    box-shadow: 0 0 0 2px $purple-30;
+  }
+} 
+
+.lab-checkbox--purple:checked:hover:focus + .lab-checkbox__label,
+.lab-checkbox--purple:indeterminate:hover:focus + .lab-checkbox__label {
+  .lab-checkbox__box {
+    outline: none;
+    box-shadow: 0 0 0 2px $purple-30, 0 0 0 6px $purple-10;
+  }
+} 
