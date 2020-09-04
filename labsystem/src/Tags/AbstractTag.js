@@ -5,7 +5,7 @@ import Icon from "../Icon";
 export default class Tag extends React.Component {
   static propTypes = {
     text: PropTypes.string.isRequired,
-    type: PropTypes.string,
+    togglable: PropTypes.bool,
     dropdown: PropTypes.bool,
     removable: PropTypes.bool,
     disabled: PropTypes.bool,
@@ -18,7 +18,7 @@ export default class Tag extends React.Component {
   };
 
   static defaultProps = {
-    type: undefined,
+    togglable: false,
     dropdown: false,
     removable: false,
     thumbSrc: "",
@@ -115,7 +115,7 @@ export default class Tag extends React.Component {
   render() {
     const {
       text,
-      type,
+      togglable,
       dropdown,
       removable,
       disabled,
@@ -130,7 +130,7 @@ export default class Tag extends React.Component {
       <span
         className={
           `lab-tag` +
-          `${type === "togglable" ? ` lab-tag--togglable` : ``}` +
+          `${togglable ? ` lab-tag--togglable` : ``}` +
           `${removable ? ` lab-tag--removable` : ""}` +
           `${dropdown ? ` lab-tag--dropdown` : ""}` +
           `${disabled ? ` lab-tag--disabled` : ""}` +
