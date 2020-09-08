@@ -27,12 +27,6 @@ $item-active-color: map-get($narrow-sidebar-theme, "70");
 
 }
 
-@media (min-width: 900px) {
-  .lab-narrow-sidebar {
-    height: 100vh;
-  }  
-}
-
 
 //Header
 .lab-narrow-sidebar__header {
@@ -85,28 +79,7 @@ $item-active-color: map-get($narrow-sidebar-theme, "70");
   }
 }
 
-@media (min-width: 900px) {
-  .lab-narrow-sidebar__avatar-text,
-  .lab-narrow-sidebar__avatar-caption {
-    display:none;
-  } 
 
-  .lab-narrow-sidebar__avatar,
-  .lab-narrow-sidebar__avatar-photo {
-    margin: 0 0px 4px 0;
-  }
-}
-
-@media (min-width: 900px) {
-  .lab-narrow-sidebar {
-    width: 128px;
-  }
-
-  .lab-narrow-sidebar__header {
-    justify-content: center;
-    padding: 30px 0;
-  }
-}
 
 
 .lab-narrow-sidebar__collapse {
@@ -117,11 +90,9 @@ $item-active-color: map-get($narrow-sidebar-theme, "70");
   background-color: transparent;
   border: 2px solid transparent;
   border-radius: 4px;
-}
 
-@media (min-width: 900px) {
-  .lab-narrow-sidebar__collapse {
-    display: none;
+  &:focus {
+    border-color: $item-focus-color;
   }
 }
 
@@ -140,11 +111,6 @@ $item-active-color: map-get($narrow-sidebar-theme, "70");
    }
 }
 
-@media (min-width: 900px) {
-  .lab-narrow-sidebar__body {
-     overflow: auto;
-  }
-}
 
 
 .lab-narrow-sidebar__item {
@@ -177,6 +143,7 @@ $item-active-color: map-get($narrow-sidebar-theme, "70");
       display: block;
       border: 2px solid $item-focus-color;
       position: absolute;
+      margin-right: 8px;
       top: 6px;
       left: 6px;
       right: 6px;
@@ -204,22 +171,7 @@ $item-active-color: map-get($narrow-sidebar-theme, "70");
   }
 }
 
-@media (min-width: 900px) {
-  .lab-narrow-sidebar__item {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    text-align: center;
-    font-size: $font-size-1;
-    padding: 16px;
-    margin:0;
-    border-radius: 0px;
 
-    .lab-icon--sidebar-item {
-      margin:0;
-    }
-  }
-}
 
 //Footer
 .lab-narrow-sidebar__footer {
@@ -280,23 +232,7 @@ $item-active-color: map-get($narrow-sidebar-theme, "70");
   }
 }
 
-@media (min-width: 900px) {
-  .lab-narrow-sidebar__footer {
-    align-items: center;
 
-      &__button {
-        padding: 4px;
-        width:80%;
-        margin-left: 0px;
-        align-items: center;
-        font-size: $font-size-1;
-        
-        .lab-icon--sidebar-item {
-          margin-right: 4px;
-        } 
-      }
-  }
-}
 
 
 // Vivid Skin
@@ -365,6 +301,10 @@ $item-active-color: map-get($narrow-sidebar-theme, "70");
 
   .lab-narrow-sidebar__collapse{
 
+    &:focus{
+      border-color: $item-focus-color;
+    }
+
     .lab-icon--sidebar-item{
       background-color: $white;
     }
@@ -419,3 +359,71 @@ $item-active-color: map-get($narrow-sidebar-theme, "70");
   }
 }
 
+//For Tablet and Desktop
+
+@media (min-width: 900px) {
+  .lab-narrow-sidebar {
+    height: 100vh;
+    width: 128px;
+    
+    &__footer {
+      align-items: center;
+    
+      &__button {
+        padding: 4px;
+        width:76%;
+        margin-left: 0px;
+        align-items: center;
+        font-size: $font-size-1;
+        
+        .lab-icon--sidebar-item {
+          margin-right: 4px;
+        } 
+      }
+    }
+
+    &__header {
+      justify-content: center;
+      padding: 30px 0;
+    }
+    
+    &__collapse {
+      display: none;
+    }
+    
+    &__body {
+      overflow: auto;
+    }
+    
+    &__item {
+      display: flex;
+      flex-direction: column; 
+      align-items: center;
+      text-align: center;
+      font-size: $font-size-1;
+      padding: 16px;
+      margin:0;
+      border-radius: 0px;
+    
+      .lab-icon--sidebar-item {
+        margin:0;
+      }
+    }
+    
+    &__avatar-text,
+    &__avatar-caption {
+      display:none;
+    } 
+    
+    &__avatar,
+    &__avatar-photo {
+      margin: 0 0px 4px 0;
+    }
+
+    .lab-narrow-sidebar__item:focus {
+      &:before {
+        margin-right: 0px;
+      }  
+    }
+  }
+}
