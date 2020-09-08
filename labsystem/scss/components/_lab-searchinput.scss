@@ -18,7 +18,7 @@ $input-internal-spacing: 2px;
 }
 
 .search-input__field {
-    display: inline-block;
+    display: flex;
     min-width: 260px;
     height: 40px;
     padding: 0;
@@ -35,6 +35,7 @@ $input-internal-spacing: 2px;
 
     &::placeholder {
         color: $black-50;
+        opacity: 1;
     }
     
     &:not(:placeholder-shown){

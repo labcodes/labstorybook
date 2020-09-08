@@ -1,7 +1,7 @@
 import React from "react";
-import Icon from "./Icon";
+import Icon from "../Icon";
 import PropTypes from "prop-types";
-import Input from "./Input";
+import AbstractTextInput from "./AbstractTextInput";
 
 
 
@@ -50,20 +50,12 @@ export default class InlineSearch extends React.Component {
       const { inputValue } = this.state;
 
       return (
-          <div className="search-input" >
+          <div className={`search-input__field ${className || ""}`} >
             <span className="search-icon">
               <Icon type='lupe' color='mineral70' />
             </span>
-            {/* <input
-              value={value}
-              className={`search-input__field`}
-              type="text"
-              placeholder={placeholder}
-              disabled={disabled}
-              onChange={this.handleOnChange}
-              {...rest}
-            /> */}
-            <Input className="inline-search-input" value={this.state.value} placeholder="Search input" onChange={this.handleOnChange} />
+            <AbstractTextInput className="inline-search-input" value={this.state.value} placeholder="Search input" onChange={this.handleOnChange} />
+
             <button className="remove-icon" onClick={this.handleButtonClick}>
               <Icon type='remove' color='mineral20' />
             </button>

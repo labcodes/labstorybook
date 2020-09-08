@@ -1,7 +1,7 @@
 import React from "react";
-import Icon from "./Icon";
+import Icon from "../Icon";
 import PropTypes from "prop-types";
-import Input from "./Input";
+import AbstractTextInput from "./AbstractTextInput";
 
 
 export default class DefaultSearch extends React.Component {
@@ -36,15 +36,8 @@ export default class DefaultSearch extends React.Component {
     } = this.props;
 
     return (
-        <div className="search-input">
-          {/* <input
-            className={`search-input__field ${className || ""}`}
-            type="text"
-            placeholder={placeholder}
-            disabled={disabled}
-            {...rest}
-          /> */}
-          <Input className="search-input__field" placeholder="Search input" disabled={disabled} />
+        <div className={`search-input__field ${className || ""}`} >
+          <AbstractTextInput className="search-input__field" placeholder="Search input" disabled={disabled} />
           <span className= "search-separator" />
           <button type="button" className="searchButton" disabled={disabled}>
               <Icon type='lupe' color='mineral70' />
