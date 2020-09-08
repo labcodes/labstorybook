@@ -47,12 +47,38 @@ export default class PasswordInput extends React.Component {
   render() {
     const { showPassword } = this.state;
 
+    const {
+      id,
+      label,
+      defaultValue,
+      value,
+      required,
+      helpMessage,
+      prefix,
+      suffix,
+      isValid,
+      customErrorMsg,
+      onChange,
+      disabled,
+    } = this.props;
+
     return (
       <AbstractTextInput
         type={showPassword ? "text" : "password"}
         icon={showPassword ? "eye-opened" : "eye-closed"}
         onIconClick={this.toggleTrailingIcon}
-        {...this.props}
+        id={id}
+        label={label}
+        defaultValue={defaultValue}
+        value={value}
+        required={required}
+        helpMessage={helpMessage}
+        prefix={prefix}
+        suffix={suffix}
+        isValid={isValid}
+        customErrorMsg={customErrorMsg}
+        onChange={onChange}
+        {...(disabled ? { disabled } : undefined)}
       />
     );
   }

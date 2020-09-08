@@ -41,6 +41,43 @@ export default class TextInput extends React.Component {
   };
 
   render() {
-    return <AbstractTextInput type="text" {...this.props} />;
+    const {
+      id,
+      label,
+      defaultValue,
+      value,
+      icon,
+      iconColor,
+      required,
+      helpMessage,
+      prefix,
+      suffix,
+      isValid,
+      customErrorMsg,
+      onChange,
+      onIconClick,
+      disabled,
+    } = this.props;
+
+    return (
+      <AbstractTextInput
+        type="text"
+        id={id}
+        label={label}
+        defaultValue={defaultValue}
+        value={value}
+        icon={icon}
+        iconColor={iconColor}
+        required={required}
+        helpMessage={helpMessage}
+        prefix={prefix}
+        suffix={suffix}
+        isValid={isValid}
+        customErrorMsg={customErrorMsg}
+        onChange={onChange}
+        onIconClick={onIconClick}
+        {...(disabled ? { disabled } : undefined)}
+      />
+    );
   }
 }
