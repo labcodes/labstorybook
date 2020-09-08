@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextInput renders with base props AbstractTextInput with type text 1`] = `
+<div
+  className="lab-input "
+>
+  <input
+    autoComplete="off"
+    className="lab-input__field "
+    id="testInput"
+    onChange={[Function]}
+    placeholder=" "
+    type="text"
+  />
+  <div
+    className="lab-input__borders"
+  />
+  
+  
+  <div
+    className="lab-input__label-wrapper"
+  >
+    
+    <label
+      className="lab-input__label"
+      htmlFor="testInput"
+    >
+      Test Input
+    </label>
+  </div>
+  
+</div>
+`;
