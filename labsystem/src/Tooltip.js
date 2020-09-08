@@ -19,11 +19,12 @@ export default class Tooltip extends React.Component {
       "left-end",
       "bottom",
       "bottom-end",
-    ]).isRequired,
+    ]),
     color: PropTypes.string,
   };
 
   static defaultProps = {
+    placement: "top",
     color: "black",
   };
 
