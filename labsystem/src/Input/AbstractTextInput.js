@@ -9,6 +9,7 @@ export default class AbstractTextInput extends React.Component {
     id: PropTypes.string.isRequired,
     type: PropTypes.string,
     label: PropTypes.string.isRequired,
+    className: PropTypes.string,
     disabled: PropTypes.bool,
     defaultValue: PropTypes.string,
     value: PropTypes.string,
@@ -26,6 +27,7 @@ export default class AbstractTextInput extends React.Component {
 
   static defaultProps = {
     type: "text",
+    className: undefined,
     disabled: false,
     defaultValue: undefined,
     value: undefined,
@@ -156,7 +158,7 @@ export default class AbstractTextInput extends React.Component {
       customErrorMsg,
     } = this.props;
 
-    let className;
+    let { className } = this.props;
 
     const { localValue, localIsValid } = this.state;
     if (disabled) {

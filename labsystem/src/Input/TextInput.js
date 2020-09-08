@@ -7,7 +7,6 @@ export default class TextInput extends React.Component {
   static propTypes = {
     id: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
-    className: PropTypes.string,
     disabled: PropTypes.bool,
     defaultValue: PropTypes.string,
     value: PropTypes.string,
@@ -24,7 +23,6 @@ export default class TextInput extends React.Component {
   };
 
   static defaultProps = {
-    className: undefined,
     disabled: false,
     defaultValue: undefined,
     value: undefined,
