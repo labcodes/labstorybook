@@ -1,22 +1,47 @@
 import React from "react";
 import { RemovableTag } from "../../labsystem/src/Tags";
-import { colorOptions, skinOptions } from "../assets";
+import {
+  iconOptions,
+  thumbSrcOptions,
+  skinOptions,
+  colorOptions,
+} from "../assets";
 
 export default class RemovableTagPlayground extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       removableTagText: "",
+      removableTagIcon: "",
+      removableTagThumbSrc: "",
       removableTagOutline: false,
       removableTagColor: "",
       removableTagSkin: "pale",
       removableTagDisabled: false,
+      isIconInputDisabled: false,
+      isThumbInputDisabled: false,
     };
   }
 
   handleTextPropChange = (e) => {
     const { id, value } = e.target;
     this.setState({ [id]: value });
+
+    // Ensure either a `thumb` or an `icon` gets enabled at the same time
+    if (id === "removableTagIcon") {
+      if (value === "") {
+        this.setState({ isThumbInputDisabled: false });
+      } else {
+        this.setState({ isThumbInputDisabled: true });
+      }
+    }
+    if (id === "removableTagThumbSrc") {
+      if (value === "") {
+        this.setState({ isIconInputDisabled: false });
+      } else {
+        this.setState({ isIconInputDisabled: true });
+      }
+    }
   };
 
   handleBoolPropChange = (e) => {
@@ -27,10 +52,14 @@ export default class RemovableTagPlayground extends React.Component {
   render() {
     const {
       removableTagText,
+      removableTagIcon,
+      removableTagThumbSrc,
       removableTagOutline,
       removableTagColor,
       removableTagSkin,
       removableTagDisabled,
+      isIconInputDisabled,
+      isThumbInputDisabled,
     } = this.state;
     return (
       <React.Fragment>
@@ -41,6 +70,8 @@ export default class RemovableTagPlayground extends React.Component {
             </h4>
             <RemovableTag
               text={removableTagText}
+              thumbSrc={removableTagThumbSrc}
+              icon={removableTagIcon}
               outline={removableTagOutline}
               color={removableTagColor}
               skin={removableTagSkin}
@@ -55,6 +86,36 @@ export default class RemovableTagPlayground extends React.Component {
                 id="removableTagText"
                 onChange={this.handleTextPropChange}
               />
+            </span>
+            <br />
+            <span className="lab-playground__item">
+              <strong>Icon: </strong>
+              <select
+                id="removableTagIcon"
+                onChange={this.handleTextPropChange}
+                disabled={isIconInputDisabled}
+              >
+                {iconOptions.map((item) => (
+                  <option value={item} key={`icon-${item}`}>
+                    {item}
+                  </option>
+                ))}
+              </select>
+            </span>
+            <br />
+            <span className="lab-playground__item">
+              <strong>Thumb Source: </strong>
+              <select
+                id="removableTagThumbSrc"
+                onChange={this.handleTextPropChange}
+                disabled={isThumbInputDisabled}
+              >
+                {thumbSrcOptions.map((item, index) => (
+                  <option value={item} key={`thumb-${item}`}>
+                    {index}
+                  </option>
+                ))}
+              </select>
             </span>
             <br />
             <span className="lab-playground__item">

@@ -14,12 +14,12 @@ export default class SimpleTagPlayground extends React.Component {
       simpleTagText: "",
       simpleTagIcon: "",
       simpleTagThumbSrc: "",
-      isIconInputDisabled: false,
-      isThumbInputDisabled: false,
       simpleTagOutline: false,
       simpleTagColor: "",
       simpleTagSkin: "pale",
       simpleTagDisabled: false,
+      isIconInputDisabled: false,
+      isThumbInputDisabled: false,
     };
   }
 
