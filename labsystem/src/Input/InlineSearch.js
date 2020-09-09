@@ -26,18 +26,6 @@ export default class InlineSearch extends React.Component {
     state = {
       inputValue: '',
     }
-
-    handleOnChange = (evt) => {
-      this.setState({ value: evt.target.value })
-    }
-
-    handleOnChange = (newValue) => {
-      this.setState({ value: newValue })
-    }
-    
-    handleButtonClick = (evt) => {
-      this.setState({ inputValue: ''})
-    };
   
     render() {
       const {
@@ -50,14 +38,13 @@ export default class InlineSearch extends React.Component {
       const { inputValue } = this.state;
 
       return (
-          <div className={`search-input__field ${className || ""}`} >
+          <div className="search-input">
             <span className="search-icon">
               <Icon type='lupe' color='mineral70' />
             </span>
-            <AbstractTextInput className="inline-search-input" value={this.state.value} placeholder="Search input" onChange={this.handleOnChange} />
-
+            <AbstractTextInput className="inline-search-input" placeholder="Search input" />
             <button className="remove-icon" onClick={this.handleButtonClick}>
-              <Icon type='remove' color='mineral20' />
+              <Icon type='remove' color='mineral40' />
             </button>
           </div>
       );

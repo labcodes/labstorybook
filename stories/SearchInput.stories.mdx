@@ -6,18 +6,23 @@ import InlineSearch from '../labsystem/src/Input/InlineSearch';
 
 <Meta title="Components/Search Inputs" component={SearchInput} />
 
+<div class="docs-title">
+  <div>
+    <h1 class="docs-title__text">Search Inputs</h1>
+  </div>
+</div>
 
-# General usage
+<div class="docs-content">
 
 The search input should be used for searching contents within a website or an app. We can have 2 types of search inputs.
 
-## Anatomy
+### Anatomy
 
-### Field elements
+##### Field elements
 ![input anatomy](docs/anatomy.png)
 
 
-## Standard Search
+### Standard Search
 
 Similar to the datepicker. It's a standard input linked to a search button. It should be used when the design needs more 
 emphasis in the search funcionality. This search suggest results in an autocomplete dropdown and, for more detailed answers, 
@@ -26,16 +31,16 @@ it can take the user to another page.
 <Preview>
   <Story name="Standard Search">
     <Fragment>
-        <h3>Default</h3>
+        <h5>Default</h5>
        <SearchInput placeholder= "Search"/>
         <br />
-        <h3> Disabled</h3>
+        <h5> Disabled</h5>
         <SearchInput placeholder= "Search" disabled/>
     </Fragment>
   </Story>
 </Preview>
 
-## Inline Search
+### Inline Search
 
 Similar to the text+trailing icon input. It should be used when the design needs a more compact and clean 
 component. This search works filtering the results and showing them simultaneously as the user types.
@@ -43,9 +48,12 @@ component. This search works filtering the results and showing them simultaneous
 <Preview>
   <Story name="Inline Search">
     <Fragment>
-        <h3>Default</h3>
-        <InlineSearch className="inline-search-input" placeholder="Search" />
+        <h5>Default</h5>
+        <InlineSearch placeholder="Search" />
+        <h5>Disabled</h5>
         <InlineSearch placeholder="Search" disabled />
     </Fragment>
   </Story>
 </Preview>
+
+</div>

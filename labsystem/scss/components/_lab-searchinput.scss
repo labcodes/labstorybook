@@ -10,68 +10,69 @@ $input-internal-spacing: 2px;
 
 .search-input {
     position: relative;
-    width: fit-content;
-    width: -moz-fit-content;
+    width: 320px;
+    // width: -moz-fit-content;
     margin-top: $spacing-03;
     box-sizing: border-box;
-
-}
-
-.search-input__field {
-    display: flex;
-    min-width: 260px;
-    height: 40px;
-    padding: 0;
-    margin: 0;
-    font-family: $font-secondary;
-    font-weight: 500;
-    font-size: 16px;
-    color: $black-75;
-    text-indent: $spacing-03;
-    text-overflow: clip;
-    border: $border-01 $mineral-40;
     border-radius: $radius-02;
-    outline: none;
+    z-index: 99;
 
-    &::placeholder {
-        color: $black-50;
-        opacity: 1;
-    }
-    
-    &:not(:placeholder-shown){
-        border: 2px solid $teal-40;
-    }
-
-    &:not(:placeholder-shown):hover{
-        border: 2px solid $teal-60;
-        box-shadow: 0 0 0 6px $teal-10;
-    }
-
-    &:focus {
-        border: 2px solid $teal-70;
-        outline: none;
-        box-shadow: 0 0 0 2px $teal-30;
-    }
-
-    &:hover{
-        box-shadow: 0 0 0 6px $mineral-10; ;
-    }
-
-    &:hover:focus {
-        border: 2px solid $teal-80;
-        box-shadow: 0 0 0 2px $teal-30, 0 0 0 6px $teal-10;
-    }
-
-    &:disabled, &:disabled:hover {
-        border: 2px solid $mineral-20;
-        background-color: $mineral-10;
-        box-shadow: none;
-    }
-
-    &:disabled::placeholder{
-        color: $mineral-40;
-    }
 }
+// .search-input__field {
+//     width: 100%;
+//     height: 40px;
+//     padding: 0;
+//     margin: 0;
+//     font-family: $font-primary;
+//     font-weight: 500;
+//     font-size: 16px;
+//     color: $black-75;
+//     text-indent: $spacing-03;
+//     text-overflow: clip;
+//     border: $border-01 $mineral-40;
+//     border-radius: $radius-02;
+//     outline: none;
+
+//     &::placeholder {
+//         color: $black-50;
+//         opacity: 1;
+//     }
+    
+//     &:not(:placeholder-shown){
+//         border: 2px solid $teal-40;
+//     }
+
+//     &:not(:placeholder-shown):hover{
+//         border: 2px solid $teal-60;
+//         box-shadow: 0 0 0 6px $teal-10;
+//     }
+
+//     &:focus {
+//         border: 2px solid $teal-70;
+//         outline: none;
+//         box-shadow: 0 0 0 2px $teal-30;
+//     }
+
+//     &:hover{
+//         box-shadow: 0 0 0 6px $mineral-10; ;
+//     }
+
+//     &:hover:focus {
+//         border: 2px solid $teal-80;
+//         box-shadow: 0 0 0 2px $teal-30, 0 0 0 6px $teal-10;
+//     }
+
+//     &:disabled, &:disabled:hover {
+//         border: 2px solid $mineral-20;
+//         background-color: $mineral-10;
+//         box-shadow: none;
+//     }
+
+//     &:disabled::placeholder{
+//         color: $mineral-40;
+//     }
+// }
+
 
 .searchButton {
     position: absolute;
@@ -88,45 +89,43 @@ $input-internal-spacing: 2px;
     outline: none;
     cursor: pointer;
 
-    .search-input__field:focus ~ & {
-        background-color: $teal-70;
-    }
-
-    .search-input__field:focus:hover ~ & {
-        background-color: $teal-80;
-        
-    }
-
-    .search-input__field:not(:placeholder-shown) ~ & {
-        background-color: $teal-40;
-        
-    }
-
-    .search-input__field:not(:placeholder-shown):focus ~ & {
+    .search-input:focus > & {
         background-color: $teal-70;
         
     }
 
-    .search-input__field:not(:placeholder-shown):hover ~ & {
-        background-color: $teal-60;
+
+    // .lab-input__field:not(:placeholder-shown) ~ & {
+    //     background-color: $teal-40;
         
-    }
+    // }
 
-    .search-input__field:not(:placeholder-shown):focus:hover ~ & {
-        background-color: $teal-80;
+    // .lab-input:not(:placeholder-shown):focus ~ & {
+    //     background-color: $teal-70;
         
-    }
+    // }
 
-    .search-input__field:not(:placeholder-shown)~ &:focus {
-        background-color: $teal-70;
-        border: 1px solid $teal-10;
-        border-radius: 3px;
-        transition-duration: 0.05s;
-    }
-    .search-input__field:not(:placeholder-shown)~ &:active {
-        background-color: $teal-80;               
-    }
+    // .lab-input:not(:placeholder-shown):hover ~ & {
+    //     background-color: $teal-60;
+        
+    // }
 
+    // .lab-input__field:not(:placeholder-shown):focus:hover ~ & {
+    //     background-color: $teal-80;
+        
+    // }
+
+    // .lab-input__field:not(:placeholder-shown)~ &:focus {
+    //     background-color: $teal-70;
+    //     border: 1px solid $teal-10;
+    //     border-radius: 3px;
+    //     transition-duration: 0.05s;
+    // }
+    // .lab-input__field:not(:placeholder-shown)~ &:active {
+    //     background-color: $teal-80;               
+    // }
+
+    .search-input__field:hover ~ &:disabled,
     &:disabled {
         background-color: $mineral-20;  
         border: none;
@@ -139,10 +138,7 @@ $input-internal-spacing: 2px;
         border-radius: 3px;
                     
     }
-
-    
 }
-
 
 
 .search-separator {
@@ -156,7 +152,7 @@ $input-internal-spacing: 2px;
     border-radius: $radius-02;
     z-index: 1;
 
-    .search-input__field:disabled~ & {
+    .lab-input--disabled~ & {
         background-color:$mineral-10;               
     }
 }
@@ -207,6 +203,6 @@ $input-internal-spacing: 2px;
 }
 
 .inline-search-input{
-    padding-left: $spacing-06;
+    padding-left: $spacing-08;
     padding-right: $spacing-07; 
 }
