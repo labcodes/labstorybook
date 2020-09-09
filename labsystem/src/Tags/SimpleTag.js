@@ -11,6 +11,7 @@ export default class SimpleTag extends React.Component {
     outline: PropTypes.bool,
     skin: PropTypes.string,
     color: PropTypes.string,
+    disabled: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -19,6 +20,7 @@ export default class SimpleTag extends React.Component {
     outline: false,
     skin: "pale",
     color: "",
+    disabled: false,
   };
 
   constructor(props) {
@@ -40,7 +42,7 @@ export default class SimpleTag extends React.Component {
   }
 
   render() {
-    const { text, thumbSrc, icon, outline, skin, color } = this.props;
+    const { text, thumbSrc, icon, outline, skin, color, disabled } = this.props;
     return (
       <AbstractTag
         text={text}
@@ -49,6 +51,7 @@ export default class SimpleTag extends React.Component {
         outline={outline}
         skin={skin}
         color={color}
+        disabled={disabled}
       />
     );
   }
