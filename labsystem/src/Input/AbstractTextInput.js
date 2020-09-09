@@ -23,8 +23,8 @@ export default class AbstractTextInput extends React.Component {
     customErrorMsg: PropTypes.string,
     onChange: PropTypes.func,
     onIconClick: PropTypes.func,
-    className: PropTypes.string,
     placeholder: PropTypes.string,
+    children: PropTypes.element,
   };
 
   static defaultProps = {
@@ -43,8 +43,8 @@ export default class AbstractTextInput extends React.Component {
     customErrorMsg: undefined,
     onChange: undefined,
     onIconClick: undefined,
-    className: undefined, 
     placeholder: " ", // acrescentei pra poder colocar placeholder no search// 
+    children: undefined,
   };
 
   constructor(props) {
@@ -161,6 +161,7 @@ export default class AbstractTextInput extends React.Component {
       onIconClick,
       customErrorMsg,
       placeholder,
+      children,
     } = this.props;
 
     let { className } = this.props;
@@ -206,6 +207,7 @@ export default class AbstractTextInput extends React.Component {
             onIconClick={onIconClick}
           />
           {this.requiredIcon()}
+          {children}
         </div>
         <TextInputMessage
           helpMessage={helpMessage}
