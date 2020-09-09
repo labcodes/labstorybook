@@ -6,34 +6,40 @@ export default class TogglableTag extends React.Component {
   static propTypes = {
     text: PropTypes.string.isRequired,
     color: PropTypes.string,
+    outline: PropTypes.bool,
+    disabled: PropTypes.bool,
   };
 
   static defaultProps = {
     color: "",
+    outline: false,
+    disabled: false,
   };
 
   constructor(props) {
     super(props);
     this.state = {
-      isOn: true,
+      selected: false,
     };
   }
 
   onClick = () => {
-    const { isOn } = this.state;
-    this.setState({ isOn: !isOn });
+    const { selected } = this.state;
+    this.setState({ selected: !selected });
   };
 
   render() {
-    const { text, color } = this.props;
-    const { isOn } = this.state;
+    const { text, color, outline, disabled } = this.props;
+    const { selected } = this.state;
     return (
       <AbstractTag
         togglable
         text={text}
         color={color}
+        outline={outline}
+        disabled={disabled}
         onClick={this.onClick}
-        skin={isOn ? "pale" : "vivid"}
+        skin={selected ? "vivid" : "pale"}
       />
     );
   }

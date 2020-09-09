@@ -8,6 +8,7 @@ export default class TogglableTagPlayground extends React.Component {
     this.state = {
       togglableTagText: "",
       togglableTagColor: "",
+      togglableTagDisabled: false,
     };
   }
 
@@ -16,8 +17,18 @@ export default class TogglableTagPlayground extends React.Component {
     this.setState({ [id]: value });
   };
 
+  handleBoolPropChange = (e) => {
+    const { id, checked } = e.target;
+    this.setState({ [id]: checked });
+  };
+
   render() {
-    const { togglableTagText, togglableTagColor } = this.state;
+    const {
+      togglableTagText,
+      togglableTagColor,
+      togglableTagDisabled,
+    } = this.state;
+
     return (
       <React.Fragment>
         <div className="columns lab-playground">
@@ -25,7 +36,11 @@ export default class TogglableTagPlayground extends React.Component {
             <h4>
               <strong>TogglableTag</strong>
             </h4>
-            <TogglableTag text={togglableTagText} color={togglableTagColor} />
+            <TogglableTag
+              text={togglableTagText}
+              color={togglableTagColor}
+              disabled={togglableTagDisabled}
+            />
           </div>
           <div className="column lab-playground__configs">
             <h4>Configurations</h4>
@@ -49,6 +64,16 @@ export default class TogglableTagPlayground extends React.Component {
                   </option>
                 ))}
               </select>
+            </span>
+            <br />
+            <span className="lab-playground__item">
+              <strong>Disabled: </strong>
+              <input
+                id="togglableTagDisabled"
+                type="checkbox"
+                checked={togglableTagDisabled}
+                onChange={this.handleBoolPropChange}
+              />
             </span>
           </div>
         </div>
