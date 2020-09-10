@@ -41,15 +41,13 @@ $remove-icon-focus: map-get($search-theme, "30");
     width: 40px;
     height: 36px;
     padding: 0px;
-    border: none;
-    background-repeat: no-repeat;
-    background-position: center;
     background-color: $search-button-idle;
+    border: none;
     outline: none;
     cursor: pointer;
 
     .lab-icon {
-        margin-left:8px;
+        margin-left:$spacing-02;
     }
 
     .lab-input__field:focus ~ &,
@@ -70,7 +68,7 @@ $remove-icon-focus: map-get($search-theme, "30");
     .lab-input__field:not(:placeholder-shown)~ &:focus {
         background-color: $search-button-focus;
         border: 1px solid $search-button-hover;
-        border-radius: 3px;
+        border-radius: $radius-02;
         transition-duration: 0.05s;
     }
 
@@ -84,21 +82,19 @@ $remove-icon-focus: map-get($search-theme, "30");
     &:active {
         background-color: $search-button-active;
         border: 1px solid $search-button-hover;
-        border-radius: 3px;          
+        border-radius: $radius-02;          
     }
 }
-
 
 .search-separator {
     position: absolute;
     top: 2px;
     right: 38px;
     bottom: 3px;
-    background-color: $white;
     width: 8px;
     height: 36px;
+    background-color: $white;
     border-radius: $radius-02;
-    z-index: 1;
 
     .lab-input__field:disabled~ & {
         background-color:$search-separator-disabled;               
@@ -108,34 +104,38 @@ $remove-icon-focus: map-get($search-theme, "30");
 
 // Inline 
 
+.search-input--inline{
+    position: relative;
+    width: 320px;
+    margin-top: $spacing-03;
+    box-sizing: border-box;
+    border-radius: $radius-02;
 
+    .lab-input > .lab-input__field{
+        padding-left: $spacing-09;
+    } 
 
-.search-icon {
-    position: absolute;
-    top: 8px;
-    left: $spacing-02;
-    z-index: 1;
-    width: 24px;
-    height: 24px;
-    padding: 0px;
-    border: none;
-    background-color: transparent;
-
-    &~ .search-input__field {
-        padding-left: $spacing-06;
-        padding-right: $spacing-07;
+    .lab-input__icon:focus {
+        @include border-shadow(focus, $input-shadow-filled-focus);
     }
-}
+
+    .lab-input__icon {
+        cursor: pointer;
+    }
+
+    .lab-input__field:disabled ~ .lab-input__icon:focus {
+        cursor: default;
+        box-shadow: none;
+    }
+ }
 
 .lab-icon--inline-search-lupe {
-    background-color: $mineral-40;
     position: absolute;
     top: 8px;
     left: $spacing-02;
     z-index: 1;
     width: 24px;
     height: 24px;
-    padding: 0px;
     border: none;
 
     &~ .search-input__field {
@@ -164,37 +164,5 @@ $remove-icon-focus: map-get($search-theme, "30");
     }
 }
 
-.remove-icon {
-    position: absolute;
-    top: 8px;
-    right: $spacing-02;
-    z-index: 1;
-    width: 24px;
-    height: 24px;
-    padding: 0px;
-    border: none;
-    background-color: transparent;
-    outline: none;
-    opacity: 1;
-    border-radius: 4px;
-    cursor: pointer;
 
-    .lab-input__field:not(:placeholder-shown) ~ & {
-        opacity:1;
-    }
 
-    &:focus {
-        &:focus {
-            @include border-shadow(focus, $remove-icon-focus);
-          }
-    }
-
-    &:disabled {
-        pointer-events: none;
-    }
-}
-
-.inline-search-input{
-    padding-left: $spacing-08;
-    padding-right: $spacing-07; 
-}

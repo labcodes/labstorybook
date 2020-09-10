@@ -4,18 +4,18 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import StandardSearch from '../labsystem/src/Search/StandardSearch';
 import InlineSearch from '../labsystem/src/Search/InlineSearch';
 
-<Meta title="Components/Search Inputs" component={StandardSearch} />
+<Meta title="Components/Search" component={StandardSearch} />
 
 <div class="docs-title">
   <div>
-    <h1 class="docs-title__text">Search Inputs</h1>
+    <h1 class="docs-title__text">Search</h1>
   </div>
 </div>
 
 <div class="docs-content">
 
-The search input should be used for searching contents within a website or an app. We can have 2 types
-of search inputs: Default and Inline.
+The search component should be used for searching contents within a website or an app. We can have 2 types
+of search components: Standard and Inline.
 
 ### Anatomy
 
@@ -50,9 +50,9 @@ component. This search works filtering the results and showing them simultaneous
   <Story name="Inline Search">
     <Fragment>
         <h6>Default</h6>
-        <InlineSearch placeholder="Search" />
+        <InlineSearch />
         <h6>Disabled</h6>
-        <InlineSearch placeholder="Search" disabled />
+        <InlineSearch disabled />
     </Fragment>
   </Story>
 </Preview>
@@ -81,5 +81,20 @@ component. This search works filtering the results and showing them simultaneous
     </ol>
   </div>
 </div>
+
+#### Theming
+
+For Search component, you can also use purple theme. Error state remain with the same style in any theme.
+The theme must be selected by changing the value of the `$input-theme` variable in the `scss/variables/_settings.scss`.
+<Preview>
+  <Story name="Styles">
+  <Fragment>
+      <h6>Standard Default</h6>
+      <StandardSearch className="search--stories-force-purple lab-input--stories-force-purple" />
+      <h6>Inline Default</h6>
+      <InlineSearch className="search--inline--stories-force-purple lab-input--stories-force-purple" />
+  </Fragment>
+  </Story>
+</Preview>
 
 </div>

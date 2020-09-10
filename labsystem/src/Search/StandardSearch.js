@@ -8,21 +8,24 @@ export default class StandardSearch extends React.Component {
   static propTypes = {
     placeholder: PropTypes.string,
     disabled: PropTypes.bool,
+    className: PropTypes.string,
   };
 
   static defaultProps = {
     placeholder: "Search",
     disabled: false,
+    className: undefined,
   };
 
   render() {
     const {
       disabled,
       placeholder,
+      className,
     } = this.props;
 
     return (
-      <div className="search-input">
+      <div className={`search-input ${className || ""}`}>
         <AbstractSearch placeholder={placeholder} disabled={disabled}>
           <button type="button" className="searchButton" disabled={disabled}>
             <Icon type="lupe" color="white" />
