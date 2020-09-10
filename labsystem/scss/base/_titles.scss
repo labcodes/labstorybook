@@ -66,6 +66,11 @@ h5 {
 h6 {
   font-size: $font-size-4;
   font-weight: $weight-semibold;
+
+}
+
+h6:first-of-type{
+  margin-top:0;
 }
 
 p {
