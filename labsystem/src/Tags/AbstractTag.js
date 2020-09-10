@@ -103,6 +103,7 @@ export default class Tag extends React.Component {
       color,
       selected,
     } = this.props;
+
     return (
       <span
         className={
