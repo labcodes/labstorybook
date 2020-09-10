@@ -1,0 +1,19 @@
+@use 'sass:map';
+
+$background: rgba(249, 195, 195, 0.2);
+
+.lab-alert {
+  display: inline-flex;
+  padding: $spacing-03 $spacing-04;
+  color: $mineral-70;
+  font-family: $font-primary;
+  line-height: 20px;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 2px solid $red-60;
+  background-color: $background;
+  text-decoration: none;
+  transition: all $duration-base;
+  -webkit-font-smoothing: antialiased;
+}
