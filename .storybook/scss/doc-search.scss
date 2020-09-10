@@ -24,32 +24,32 @@
 }
 
 
-Inline 
+//Inline 
 
-.search--inline--stories-force-purple {
-    .lab-input__icon:focus {
-        box-shadow:  $purple-30;
-    }
-}
-.lab-icon--inline-search-lupe {
+.search--inline--stories-force-purple  {
+  .lab-input__icon:focus {
+      box-shadow: 0 0 0 2px $purple-30;
+  }
 
-    .lab-input__field:focus ~ & {
-        background-color: $purple-70;
-    }
+  
+  .lab-input__field:focus ~ .lab-icon--inline-search-lupe {
+      background-color: $purple-70;
+  }
 
-    .lab-input__field:not(:placeholder-shown) ~ & {
-        background-color: $purple-60;
-    }
+  .lab-input__field:not(:placeholder-shown) ~ .lab-icon--inline-search-lupe {
+      background-color: $purple-60;
+  }
 
-    .lab-input__field:not(:placeholder-shown):focus ~ & {
-        background-color: $purple-70;
-    }
+  .lab-input__field:not(:placeholder-shown):focus ~ .lab-icon--inline-search-lupe {
+      background-color: $purple-70;
+  }
 
-    .lab-input__field:not(:placeholder-shown):hover ~ & {
-        background-color: $purple-60;
-    }
+  .lab-input__field:not(:placeholder-shown):hover ~ .lab-icon--inline-search-lupe {
+      background-color: $purple-60;
+  }
 
-    .lab-input__field:not(:placeholder-shown):focus:hover ~ & {
-        background-color: $purple-80;
-    }
+  .lab-input__field:not(:placeholder-shown):focus:hover ~ .lab-icon--inline-search-lupe {
+      background-color: $purple-80;
+  }
+    
 }
