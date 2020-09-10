@@ -1,10 +1,10 @@
 import { Fragment } from 'react';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
-import SearchInput from '../labsystem/src/Input/SearchInput';
-import InlineSearch from '../labsystem/src/Input/InlineSearch';
+import StandardSearch from '../labsystem/src/Search/StandardSearch';
+import InlineSearch from '../labsystem/src/Search/InlineSearch';
 
-<Meta title="Components/Search Inputs" component={SearchInput} />
+<Meta title="Components/Search Inputs" component={StandardSearch} />
 
 <div class="docs-title">
   <div>
@@ -14,7 +14,7 @@ import InlineSearch from '../labsystem/src/Input/InlineSearch';
 
 <div class="docs-content">
 
-The search input should be used for searching contents within a website or an app. We can have 2 types 
+The search input should be used for searching contents within a website or an app. We can have 2 types
 of search inputs: Default and Inline.
 
 ### Anatomy
@@ -25,25 +25,25 @@ of search inputs: Default and Inline.
 
 ### Standard Search
 
-Similar to the datepicker. It's a standard input linked to a search button. It should be used when the design needs more 
-emphasis in the search funcionality. This search suggest results in an autocomplete dropdown and, for more detailed answers, 
-it can take the user to another page. 
+Similar to the datepicker. It's a standard input linked to a search button. It should be used when the design needs more
+emphasis in the search funcionality. This search suggest results in an autocomplete dropdown and, for more detailed answers,
+it can take the user to another page.
 
 <Preview>
   <Story name="Standard Search">
     <Fragment>
         <h6>Default</h6>
-       <SearchInput placeholder= "Search"/>
+       <StandardSearch />
         <br />
         <h6> Disabled</h6>
-        <SearchInput placeholder= "Search" disabled/>
+        <StandardSearch disabled/>
     </Fragment>
   </Story>
 </Preview>
 
 ### Inline Search
 
-Similar to the text+trailing icon input. It should be used when the design needs a more compact and clean 
+Similar to the text+trailing icon input. It should be used when the design needs a more compact and clean
 component. This search works filtering the results and showing them simultaneously as the user types.
 
 <Preview>

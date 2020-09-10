@@ -32,6 +32,8 @@ $remove-icon-focus: map-get($search-theme, "30");
 }
 
 .searchButton {
+    display: flex;
+    align-items: center;
     position: absolute;
     top: 2px;
     right: 2px;
@@ -45,6 +47,10 @@ $remove-icon-focus: map-get($search-theme, "30");
     background-color: $search-button-idle;
     outline: none;
     cursor: pointer;
+
+    .lab-icon {
+        margin-left:8px;
+    }
 
     .lab-input__field:focus ~ &,
     .lab-input__field:not(:placeholder-shown):focus ~ & {
