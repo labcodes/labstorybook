@@ -32,3 +32,30 @@ $alerts-line-height: 20px;
     border: 2px solid $yellow-60;
   }
 }
+
+.lab-banner {
+  display: flex;
+  padding: $spacing-03 0;
+  font-family: $font-primary;
+  font-size: $alerts-font-size;
+  line-height: $alerts-line-height;
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+  color: $white;
+  
+  &__info {
+    @extend .lab-banner;
+    background-color: rgba($mineral-20, .2);
+  }
+
+  &__error {
+    @extend .lab-banner;
+    background-color: rgba($red-20, .2);
+  }
+
+  &__warn {
+    @extend .lab-banner;
+    background-color: rgba($yellow-20, .2);
+    color: $black-75;
+  }
+}
