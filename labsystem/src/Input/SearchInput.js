@@ -41,8 +41,8 @@ export default class DefaultSearch extends React.Component {
             <button type="button" className="searchButton" disabled={disabled} >
                 <Icon type='lupe' color='white' />
             </button>
+            <span className= "search-separator" />
           </AbstractTextInput>
-          <span className= "search-separator" />
         </div>
     );
   }

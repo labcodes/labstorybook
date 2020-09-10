@@ -39,11 +39,10 @@ export default class InlineSearch extends React.Component {
 
       return (
           <div className="search-input">
-            <span className="search-icon">
-              <Icon type='lupe' color='mineral70' />
-            </span>
-            <AbstractTextInput className="inline-search-input" placeholder="Search input" />
-            <button className="remove-icon" onClick={this.handleButtonClick}>
+            <AbstractTextInput className="inline-search-input" placeholder="Search input" disabled={disabled}>
+              <Icon className="inline-search-lupe" type='lupe' color='mineral40' />
+            </AbstractTextInput>
+            <button className="remove-icon" onClick={this.handleButtonClick} disabled={disabled}>
               <Icon type='remove' color='mineral40' />
             </button>
           </div>
