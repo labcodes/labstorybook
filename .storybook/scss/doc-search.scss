@@ -1,0 +1,55 @@
+.search--stories-force-purple {
+  .lab-input__field:focus ~ .searchButton,
+  .lab-input__field:not(:placeholder-shown):focus ~ .searchButton {
+    background-color: $purple-70;
+  }
+  
+  .lab-input__field:not(:placeholder-shown) ~ .searchButton,
+  .lab-input__field:not(:placeholder-shown):hover ~ .searchButton {
+    background-color: $purple-60;
+  }
+  
+  .lab-input__field:not(:placeholder-shown):focus:hover ~ .searchButton {
+    background-color: $purple-80;
+  }
+  
+  .lab-input__field:not(:placeholder-shown)~ .searchButton:focus {
+    background-color: $purple-70;
+    border-color: $purple-10;
+    
+  }
+  .searchButton:active {
+    border-color: 1px solid $purple-10;      
+  }  
+}
+
+
+Inline 
+
+.search--inline--stories-force-purple {
+    .lab-input__icon:focus {
+        box-shadow:  $purple-30;
+    }
+}
+.lab-icon--inline-search-lupe {
+
+    .lab-input__field:focus ~ & {
+        background-color: $purple-70;
+    }
+
+    .lab-input__field:not(:placeholder-shown) ~ & {
+        background-color: $purple-60;
+    }
+
+    .lab-input__field:not(:placeholder-shown):focus ~ & {
+        background-color: $purple-70;
+    }
+
+    .lab-input__field:not(:placeholder-shown):hover ~ & {
+        background-color: $purple-60;
+    }
+
+    .lab-input__field:not(:placeholder-shown):focus:hover ~ & {
+        background-color: $purple-80;
+    }
+}
