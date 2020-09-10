@@ -43,6 +43,7 @@ export default class TogglableTag extends React.Component {
         disabled={disabled}
         onClick={this.onClick}
         skin={isSelected ? "vivid" : "pale"}
+        icon={isSelected ? "check" : ""}
       />
     );
   }
