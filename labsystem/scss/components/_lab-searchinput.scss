@@ -1,4 +1,3 @@
-// Wrapper div around input element. All inputs must have it.
 $border-01: 2px solid;
 $hover-shadow: 0 0 0 6px;
 $focus-shadow: 0 0 0 2px;
@@ -8,71 +7,29 @@ $radius-02: 4px;
 
 $input-internal-spacing: 2px;
 
+$search-button-idle-filled: map-get($search-theme, "60");
+$search-button-active-filled: map-get($search-theme, "70");
+$search-button-focus: map-get($search-theme, "70");
+$search-button-hover: map-get($search-theme, "10");
+$search-button-focus-hover: map-get($search-theme, "80");
+
+$search-button-idle: $mineral-40;
+$search-button-disabled: $mineral-20;
+$search-button-active: $mineral-70;
+$search-separator-disabled: $mineral-10;
+
+$remove-icon-focus: map-get($search-theme, "30");
+
+
+// Wrapper div around input element. All inputs must have it.
 .search-input {
     position: relative;
     width: 320px;
-    // width: -moz-fit-content;
     margin-top: $spacing-03;
     box-sizing: border-box;
     border-radius: $radius-02;
     z-index: 99;
-
 }
-// .search-input__field {
-//     width: 100%;
-//     height: 40px;
-//     padding: 0;
-//     margin: 0;
-//     font-family: $font-primary;
-//     font-weight: 500;
-//     font-size: 16px;
-//     color: $black-75;
-//     text-indent: $spacing-03;
-//     text-overflow: clip;
-//     border: $border-01 $mineral-40;
-//     border-radius: $radius-02;
-//     outline: none;
-
-//     &::placeholder {
-//         color: $black-50;
-//         opacity: 1;
-//     }
-    
-//     &:not(:placeholder-shown){
-//         border: 2px solid $teal-40;
-//     }
-
-//     &:not(:placeholder-shown):hover{
-//         border: 2px solid $teal-60;
-//         box-shadow: 0 0 0 6px $teal-10;
-//     }
-
-//     &:focus {
-//         border: 2px solid $teal-70;
-//         outline: none;
-//         box-shadow: 0 0 0 2px $teal-30;
-//     }
-
-//     &:hover{
-//         box-shadow: 0 0 0 6px $mineral-10; ;
-//     }
-
-//     &:hover:focus {
-//         border: 2px solid $teal-80;
-//         box-shadow: 0 0 0 2px $teal-30, 0 0 0 6px $teal-10;
-//     }
-
-//     &:disabled, &:disabled:hover {
-//         border: 2px solid $mineral-20;
-//         background-color: $mineral-10;
-//         box-shadow: none;
-//     }
-
-//     &:disabled::placeholder{
-//         color: $mineral-40;
-//     }
-// }
-
 
 .searchButton {
     position: absolute;
@@ -85,50 +42,42 @@ $input-internal-spacing: 2px;
     border: none;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: $mineral-40;
+    background-color: $search-button-idle;
     outline: none;
     cursor: pointer;
 
-    .lab-input__field:focus ~ & {
-        background-color: $teal-70;
-    }
-
-    .lab-input__field:not(:placeholder-shown) ~ & {
-        background-color: $teal-40;  
-    }
-
+    .lab-input__field:focus ~ &,
     .lab-input__field:not(:placeholder-shown):focus ~ & {
-        background-color: $teal-70;
+        background-color: $search-button-focus;
     }
 
+    .lab-input__field:not(:placeholder-shown) ~ &,
     .lab-input__field:not(:placeholder-shown):hover ~ & {
-        background-color: $teal-60;
+        background-color: $search-button-idle-filled;
     }
+
 
     .lab-input__field:not(:placeholder-shown):focus:hover ~ & {
-        background-color: $teal-80;
+        background-color: $search-button-focus-hover;
     }
 
     .lab-input__field:not(:placeholder-shown)~ &:focus {
-        background-color: $teal-70;
-        border: 1px solid $teal-10;
+        background-color: $search-button-focus;
+        border: 1px solid $search-button-hover;
         border-radius: 3px;
         transition-duration: 0.05s;
-    }
-    .lab-input__field:not(:placeholder-shown)~ &:active {
-        background-color: $teal-80;               
     }
 
     .lab-input__field:hover ~ &:disabled,
     &:disabled {
-        background-color: $mineral-20;  
+        background-color: $search-button-disabled;  
         border: none;
         pointer-events: none;        
     }
 
     &:active {
-        background-color: $mineral-70;
-        border: 1px solid $teal-10;
+        background-color: $search-button-active;
+        border: 1px solid $search-button-hover;
         border-radius: 3px;          
     }
 }
@@ -140,13 +89,13 @@ $input-internal-spacing: 2px;
     right: 38px;
     bottom: 3px;
     background-color: $white;
-    width: 36px;
+    width: 8px;
     height: 36px;
     border-radius: $radius-02;
     z-index: 1;
 
-    .lab-input--disabled~ & {
-        background-color:$mineral-10;               
+    .lab-input__field:disabled~ & {
+        background-color:$search-separator-disabled;               
     }
 }
 
@@ -172,6 +121,43 @@ $input-internal-spacing: 2px;
     }
 }
 
+.lab-icon--inline-search-lupe {
+    background-color: $mineral-40;
+    position: absolute;
+    top: 8px;
+    left: $spacing-02;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+    padding: 0px;
+    border: none;
+
+    &~ .search-input__field {
+        padding-left: $spacing-06;
+        padding-right: $spacing-07;
+    }
+
+    .lab-input__field:focus ~ & {
+        background-color: $search-button-focus;
+    }
+
+    .lab-input__field:not(:placeholder-shown) ~ & {
+        background-color: $search-button-idle-filled;  
+    }
+
+    .lab-input__field:not(:placeholder-shown):focus ~ & {
+        background-color: $search-button-focus;
+    }
+
+    .lab-input__field:not(:placeholder-shown):hover ~ & {
+        background-color: $search-button-idle-filled;
+    }
+
+    .lab-input__field:not(:placeholder-shown):focus:hover ~ & {
+        background-color: $search-button-focus-hover;
+    }
+}
+
 .remove-icon {
     position: absolute;
     top: 8px;
@@ -184,15 +170,22 @@ $input-internal-spacing: 2px;
     background-color: transparent;
     outline: none;
     opacity: 1;
+    border-radius: 4px;
     cursor: pointer;
 
-    // .search-input__field:not(:placeholder-shown) ~ & {
-    //     opacity:1;
-    // }
+    .lab-input__field:not(:placeholder-shown) ~ & {
+        opacity:1;
+    }
 
-    // &:active {
-    //     opacity:1;
-    // }
+    &:focus {
+        &:focus {
+            @include border-shadow(focus, $remove-icon-focus);
+          }
+    }
+
+    &:disabled {
+        pointer-events: none;
+    }
 }
 
 .inline-search-input{
