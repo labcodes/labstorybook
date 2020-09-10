@@ -1,19 +1,34 @@
 @use 'sass:map';
 
-$background: rgba(249, 195, 195, 0.2);
+$alerts-font-size: 16px;
+$alerts-line-height: 20px;
 
 .lab-alert {
   display: inline-flex;
   padding: $spacing-03 $spacing-04;
-  color: $mineral-70;
   font-family: $font-primary;
-  line-height: 20px;
+  font-size: $alerts-font-size;
+  line-height: $alerts-line-height;
   font-weight: 600;
-  font-size: 16px;
-  border-radius: 12px;
-  border: 2px solid $red-60;
-  background-color: $background;
-  text-decoration: none;
-  transition: all $duration-base;
   -webkit-font-smoothing: antialiased;
+  color: $mineral-70;
+  border-radius: 12px;
+  
+  &__info {
+    @extend .lab-alert;
+    background-color: rgba($mineral-20, .2);
+    border: 2px solid $mineral-40;
+  }
+
+  &__error {
+    @extend .lab-alert;
+    background-color: rgba($red-20, .2);
+    border: 2px solid $red-60;
+  }
+
+  &__warn {
+    @extend .lab-alert;
+    background-color: rgba($yellow-20, .2);
+    border: 2px solid $yellow-60;
+  }
 }
