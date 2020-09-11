@@ -50,7 +50,7 @@ export default class AbstractTextInput extends React.Component {
     if (!isUndefined(defaultValue) && !isUndefined(value)) {
       // eslint-disable-next-line no-console
       console.warn(
-        `You are setting both value and defaultValue for input ${id} at the same time. We always initialize value, if it is truish. Make sure this is the behaviour you want.`
+        `You are setting both value and defaultValue for input ${id} at the same time. We always initialize value, if it is truthy. Make sure this is the behaviour you want.`
       );
     }
     this.state = {

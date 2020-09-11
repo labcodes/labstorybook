@@ -121,11 +121,17 @@ describe("AbstractTextInput", () => {
 
   it("changes localValue state when input changes", async () => {
     const component = mount(
-      <AbstractTextInput id="testInput" label="Test Input" name="testName" />
+      <AbstractTextInput
+        id="testInput"
+        label="Test Input"
+        name="testName"
+        value="truthy value"
+        onChange={() => {}}
+      />
     );
 
     const inputElement = component.find("input");
-    expect(inputElement.render().attr("value")).toBe("");
+    expect(inputElement.render().attr("value")).toBe("truthy value");
 
     component
       .find("input")
