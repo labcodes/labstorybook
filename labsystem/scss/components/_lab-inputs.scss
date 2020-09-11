@@ -125,6 +125,7 @@ $input-border-disabled: $mineral-30;
   color: $black-75;
   border: none;
   outline: none;
+  box-shadow: none;
   flex: 1;
 
   // because browsers have different defaults for an input's min-width
