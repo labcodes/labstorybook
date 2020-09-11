@@ -47,7 +47,7 @@ export default class TogglableTagPlayground extends React.Component {
               text={togglableTagText}
               color={togglableTagColor}
               disabled={togglableTagDisabled}
-              selected={togglableTagIsOn}
+              isOn={togglableTagIsOn}
               onClick={this.handleClick}
             />
           </div>

@@ -50,31 +50,28 @@ describe("TogglableTag", () => {
     expect(mountedComponent.find("Tag").prop("color")).toEqual("yellow");
   });
 
-  it("renders with a pale skin if unselected", async () => {
+  it("renders with a pale skin if not isOn", async () => {
     const renderedComponent = renderer
       .create(
-        <TogglableTag text="Test render pale TogglableTag" selected={false} />
+        <TogglableTag text="Test render pale TogglableTag" isOn={false} />
       )
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
     const mountedComponent = mount(
-      <TogglableTag text="Test mount pale TogglableTag" selected={false} />
+      <TogglableTag text="Test mount pale TogglableTag" isOn={false} />
     );
     expect(mountedComponent.find("Tag").prop("skin")).toEqual("pale");
-    expect(mountedComponent.find("Tag").prop("selected")).toEqual(false);
   });
 
-  it("renders with a vivid skin and a checked icon if selected", async () => {
+  it("renders with a vivid skin and a checked icon if isOn", async () => {
     const renderedComponent = renderer
-      .create(
-        <TogglableTag text="Test render selected TogglableTag" selected />
-      )
+      .create(<TogglableTag text="Test render isOn TogglableTag" isOn />)
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
     const mountedComponent = mount(
-      <TogglableTag text="Test mount selected TogglableTag" selected />
+      <TogglableTag text="Test mount isOn TogglableTag" isOn />
     );
     expect(mountedComponent.find("Tag").prop("skin")).toEqual("vivid");
     expect(mountedComponent.find("Tag").prop("icon")).toEqual("check");

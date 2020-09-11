@@ -33,7 +33,7 @@ exports[`TogglableTag renders as expected with outline as true 1`] = `
 </span>
 `;
 
-exports[`TogglableTag renders with a pale skin if unselected 1`] = `
+exports[`TogglableTag renders with a pale skin if not isOn 1`] = `
 <span
   className="lab-tag lab-tag--togglable lab-tag--pale"
   onClick={[Function]}
@@ -44,7 +44,7 @@ exports[`TogglableTag renders with a pale skin if unselected 1`] = `
 </span>
 `;
 
-exports[`TogglableTag renders with a vivid skin and a checked icon if selected 1`] = `
+exports[`TogglableTag renders with a vivid skin and a checked icon if isOn 1`] = `
 <span
   className="lab-tag lab-tag--togglable lab-tag--vivid lab-tag--has-left-icon"
   onClick={[Function]}
@@ -54,7 +54,7 @@ exports[`TogglableTag renders with a vivid skin and a checked icon if selected 1
   <span
     className="lab-icon lab-icon--check lab-icon--black75 lab-icon--petit lab-icon--left-icon"
   />
-  Test render selected TogglableTag
+  Test render isOn TogglableTag
 </span>
 `;
 
