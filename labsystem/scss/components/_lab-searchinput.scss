@@ -1,11 +1,3 @@
-$border-01: 2px solid;
-$hover-shadow: 0 0 0 6px;
-$focus-shadow: 0 0 0 2px;
-
-$radius-01: 2px;
-$radius-02: 4px;
-
-$input-internal-spacing: 2px;
 
 $search-button-idle-filled: map-get($search-theme, "60");
 $search-button-active-filled: map-get($search-theme, "70");
@@ -20,24 +12,25 @@ $search-separator-disabled: $mineral-10;
 
 $remove-icon-focus: map-get($search-theme, "30");
 
+//Standard Search
 
-// Wrapper div around input element. All inputs must have it.
+// Wrapper div around Standard search
 .search-input {
     position: relative;
+    z-index: 99;
     width: 320px;
     margin-top: $spacing-03;
     box-sizing: border-box;
     border-radius: $radius-02;
-    z-index: 99;
 }
 
-.searchButton {
-    display: flex;
-    align-items: center;
+.search-button {
     position: absolute;
     top: 2px;
     right: 2px;
     bottom: 2px;
+    display: flex;
+    align-items: center;
     width: 40px;
     height: 36px;
     padding: 0px;
@@ -104,6 +97,7 @@ $remove-icon-focus: map-get($search-theme, "30");
 
 // Inline 
 
+// Wrapper div around Inline search
 .search-input--inline{
     position: relative;
     width: 320px;
