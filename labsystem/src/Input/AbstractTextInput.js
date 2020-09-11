@@ -255,7 +255,7 @@ function TextInputMessage(props) {
     );
   }
 
-  if (!localIsValid && helpMessage && !localValue && !localValue.length) {
+  if (!localIsValid && helpMessage && !localValue) {
     message = (
       <div className="lab-input__message lab-input__message--error">
         {helpMessage}
