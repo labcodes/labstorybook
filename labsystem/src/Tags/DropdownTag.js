@@ -10,6 +10,7 @@ export default class DropdownTag extends React.Component {
     skin: PropTypes.string,
     outline: PropTypes.bool,
     disabled: PropTypes.bool,
+    onClick: PropTypes.func,
   };
 
   static defaultProps = {
@@ -18,10 +19,11 @@ export default class DropdownTag extends React.Component {
     skin: "pale",
     outline: false,
     disabled: false,
+    onClick: () => {},
   };
 
   render() {
-    const { text, icon, color, skin, outline, disabled } = this.props;
+    const { text, icon, color, skin, outline, disabled, onClick } = this.props;
     return (
       <AbstractTag
         dropdown
@@ -31,6 +33,7 @@ export default class DropdownTag extends React.Component {
         skin={skin}
         outline={outline}
         disabled={disabled}
+        onClick={onClick}
       />
     );
   }

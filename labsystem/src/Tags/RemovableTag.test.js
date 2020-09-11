@@ -54,7 +54,7 @@ describe("RemovableTag", () => {
     expect(mountedComponent.find("Tag").prop("color")).toEqual("green");
   });
 
-  it("call prop.onClick when clicked", async () => {
+  it("calls prop.onClick when clicked", async () => {
     const mockOnClick = jest.fn();
     const shallowedRemovableTag = shallow(
       <RemovableTag text="Test click on RemovableTag" onClick={mockOnClick} />
