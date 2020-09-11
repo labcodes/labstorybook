@@ -176,8 +176,8 @@ $input-border-disabled: $mineral-30;
     outline: none;
   }
 
-  // Input filled focus hover
-  .lab-input__field:not(:placeholder-shown):hover:focus + & {
+  // Input focus hover
+  .lab-input__field:hover:focus + & {
     border: 2px solid $input-border-filled-focus-hover;
     @include border-shadow(focus-hover, $input-shadow-filled-focus, $input-shadow-filled-hover);
   }
