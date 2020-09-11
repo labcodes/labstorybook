@@ -224,6 +224,8 @@ describe("AbstractTextInput", () => {
       />
     );
 
-    expect(mountedComponent.find("span.lab-input__required-icon")).toHaveLength(1);
+    expect(mountedComponent.find("span.lab-input__required-icon")).toHaveLength(
+      1
+    );
   });
 });
