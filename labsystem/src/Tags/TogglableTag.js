@@ -9,6 +9,7 @@ export default class TogglableTag extends React.Component {
     outline: PropTypes.bool,
     disabled: PropTypes.bool,
     selected: PropTypes.bool,
+    onClick: PropTypes.func,
   };
 
   static defaultProps = {
@@ -16,24 +17,11 @@ export default class TogglableTag extends React.Component {
     outline: false,
     disabled: false,
     selected: false,
-  };
-
-  constructor(props) {
-    super(props);
-    const { selected } = this.props;
-    this.state = {
-      isSelected: selected,
-    };
-  }
-
-  onClick = () => {
-    const { isSelected } = this.state;
-    this.setState({ isSelected: !isSelected });
+    onClick: () => {},
   };
 
   render() {
-    const { text, color, outline, disabled } = this.props;
-    const { isSelected } = this.state;
+    const { text, color, outline, disabled, selected, onClick } = this.props;
     return (
       <AbstractTag
         togglable
@@ -41,9 +29,9 @@ export default class TogglableTag extends React.Component {
         color={color}
         outline={outline}
         disabled={disabled}
-        onClick={this.onClick}
-        skin={isSelected ? "vivid" : "pale"}
-        icon={isSelected ? "check" : ""}
+        onClick={onClick}
+        skin={selected ? "vivid" : "pale"}
+        icon={selected ? "check" : ""}
       />
     );
   }

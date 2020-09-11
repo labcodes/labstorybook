@@ -9,6 +9,7 @@ export default class TogglableTagPlayground extends React.Component {
       togglableTagText: "",
       togglableTagColor: "",
       togglableTagDisabled: false,
+      togglableTagIsOn: false,
     };
   }
 
@@ -22,11 +23,17 @@ export default class TogglableTagPlayground extends React.Component {
     this.setState({ [id]: checked });
   };
 
+  handleClick = () => {
+    const { togglableTagIsOn } = this.state;
+    this.setState({ togglableTagIsOn: !togglableTagIsOn });
+  };
+
   render() {
     const {
       togglableTagText,
       togglableTagColor,
       togglableTagDisabled,
+      togglableTagIsOn,
     } = this.state;
 
     return (
@@ -40,6 +47,8 @@ export default class TogglableTagPlayground extends React.Component {
               text={togglableTagText}
               color={togglableTagColor}
               disabled={togglableTagDisabled}
+              selected={togglableTagIsOn}
+              onClick={this.handleClick}
             />
           </div>
           <div className="column lab-playground__configs">
