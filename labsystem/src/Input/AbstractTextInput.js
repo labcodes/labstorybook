@@ -190,6 +190,7 @@ export default class AbstractTextInput extends React.Component {
           {this.prefixArea()}
           {this.suffixArea()}
           <div className="lab-input__label-wrapper">
+            {/* The following duplicated prefixArea is necessary to allow the label to be positioned correctly */}
             {this.prefixArea()}
             <label className="lab-input__label" htmlFor={id}>
               {label}
