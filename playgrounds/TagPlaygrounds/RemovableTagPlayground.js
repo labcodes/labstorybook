@@ -18,6 +18,7 @@ export default class RemovableTagPlayground extends React.Component {
       removableTagColor: "",
       removableTagSkin: "pale",
       removableTagDisabled: false,
+      removableTagIsOn: true,
       isIconInputDisabled: false,
       isThumbInputDisabled: false,
     };
@@ -49,6 +50,15 @@ export default class RemovableTagPlayground extends React.Component {
     this.setState({ [id]: checked });
   };
 
+  handleClick = () => {
+    const { removableTagIsOn } = this.state;
+    this.setState({ removableTagIsOn: !removableTagIsOn });
+  };
+
+  handleRestoreRemovableTag = () => {
+    this.setState({ removableTagIsOn: true });
+  };
+
   render() {
     const {
       removableTagText,
@@ -58,6 +68,7 @@ export default class RemovableTagPlayground extends React.Component {
       removableTagColor,
       removableTagSkin,
       removableTagDisabled,
+      removableTagIsOn,
       isIconInputDisabled,
       isThumbInputDisabled,
     } = this.state;
@@ -68,15 +79,20 @@ export default class RemovableTagPlayground extends React.Component {
             <h4>
               <strong>RemovableTag</strong>
             </h4>
-            <RemovableTag
-              text={removableTagText}
-              thumbSrc={removableTagThumbSrc}
-              icon={removableTagIcon}
-              outline={removableTagOutline}
-              color={removableTagColor}
-              skin={removableTagSkin}
-              disabled={removableTagDisabled}
-            />
+            {removableTagIsOn ? (
+              <RemovableTag
+                text={removableTagText}
+                thumbSrc={removableTagThumbSrc}
+                icon={removableTagIcon}
+                outline={removableTagOutline}
+                color={removableTagColor}
+                skin={removableTagSkin}
+                disabled={removableTagDisabled}
+                onClick={this.handleClick}
+              />
+            ) : (
+              ""
+            )}
           </div>
           <div className="column lab-playground__configs">
             <h4>Configurations</h4>
@@ -164,6 +180,12 @@ export default class RemovableTagPlayground extends React.Component {
                 checked={removableTagDisabled}
                 onChange={this.handleBoolPropChange}
               />
+            </span>
+            <br />
+            <span className="lab-playground__item">
+              <button type="button" onClick={this.handleRestoreRemovableTag}>
+                <strong>Restore</strong>
+              </button>
             </span>
           </div>
         </div>
