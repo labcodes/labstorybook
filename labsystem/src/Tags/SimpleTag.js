@@ -37,7 +37,7 @@ export default class SimpleTag extends React.Component {
       "`SimpleTag` can't be initialized with both `thumb` and `icon` props.";
     const { thumbSrc, icon } = this.props;
     if (!isEmpty(thumbSrc) && !isEmpty(icon)) {
-      throw Error(errorMessage);
+      throw new Error(errorMessage);
     }
   }
 
