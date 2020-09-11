@@ -76,7 +76,7 @@ describe("AbstractTextInput", () => {
         isValid={false}
       />
     );
-    expect(component.state().localIsValid).toBe(false);
+    expect(component.find(".lab-input--invalid")).toHaveLength(1);
   });
 
   it("sets localIsValid to false if defaultValue is invalid", async () => {
@@ -88,7 +88,7 @@ describe("AbstractTextInput", () => {
         defaultValue="default value"
       />
     );
-    expect(component.state().localIsValid).toBe(false);
+    expect(component.find(".lab-input--invalid")).toHaveLength(1);
   });
 
   it("sets localIsValid to false if value is invalid", async () => {
@@ -100,7 +100,7 @@ describe("AbstractTextInput", () => {
         value="test value"
       />
     );
-    expect(component.state().localIsValid).toBe(false);
+    expect(component.find(".lab-input--invalid")).toHaveLength(1);
   });
 
   it("sets localIsValid to true if value is valid and change it if value validity changes", async () => {
@@ -112,11 +112,57 @@ describe("AbstractTextInput", () => {
         value="testvalue@g.com"
       />
     );
-    expect(component.state().localIsValid).toBe(true);
+    expect(component.find(".lab-input--invalid")).toHaveLength(0);
 
     component.setProps({ value: "value changed" });
+    component.update();
 
-    expect(component.state().localIsValid).toBe(false);
+    expect(component.find(".lab-input--invalid")).toHaveLength(1);
+  });
+
+  it("shows help text", async () => {
+    const component = mount(
+      <AbstractTextInput
+        id="testInput"
+        label="Test Input"
+        type="email"
+        value="testvalue@g.com"
+        helpMessage="help message"
+        required
+      />
+    );
+
+    expect(component.find(".lab-input__message--required").text()).toBe(
+      "help message"
+    );
+
+    component.setProps({ value: "" });
+    component.update();
+
+    expect(component.find(".lab-input__message--error").text()).toBe(
+      "help message"
+    );
+  });
+
+  it("shows custom error message when input is invalid", async () => {
+    const component = mount(
+      <AbstractTextInput
+        id="testInput"
+        label="Test Input"
+        type="email"
+        value="testvalue@g.com"
+        customErrorMsg="error message"
+      />
+    );
+
+    expect(component.find(".lab-input__message--error")).toHaveLength(0);
+
+    component.setProps({ value: "value changed" });
+    component.update();
+
+    expect(component.find(".lab-input__message--error").text()).toBe(
+      "error message"
+    );
   });
 
   it("changes localValue state when input changes", async () => {

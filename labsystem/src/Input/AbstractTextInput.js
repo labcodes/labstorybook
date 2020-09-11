@@ -27,7 +27,7 @@ export default class AbstractTextInput extends React.Component {
 
   static defaultProps = {
     type: "text",
-    className: undefined,
+    className: "",
     disabled: false,
     defaultValue: undefined,
     value: undefined,
@@ -254,14 +254,14 @@ function TextInputMessage(props) {
       </div>
     );
   }
-  if (!localIsValid && helpMessage && !localValue) {
+
+  if (!localIsValid && helpMessage && !localValue && !localValue.length) {
     message = (
       <div className="lab-input__message lab-input__message--error">
         {helpMessage}
       </div>
     );
-  }
-  if (!localIsValid) {
+  } else if (!localIsValid) {
     message = (
       <div className="lab-input__message lab-input__message--error">
         {customErrorMsg}
