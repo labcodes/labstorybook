@@ -5,6 +5,11 @@ import renderer from "react-test-renderer";
 import AbstractTextInput from "./AbstractTextInput";
 
 describe("AbstractTextInput", () => {
+  const originalWarn = console.warn;
+  afterEach(() => {
+    console.warn = originalWarn;
+  });
+
   it("renders with base props", async () => {
     const renderedComponent = renderer
       .create(<AbstractTextInput id="testInput" label="Test Input" />)
@@ -24,7 +29,9 @@ describe("AbstractTextInput", () => {
     expect(renderedComponent.find("input[disabled]")).toHaveLength(1);
   });
 
-  it("sets state with defaultValue if it is passed by props", async () => {
+  it("raises console.warn and sets state with value when passing value and defaultValue by props at the same time", async () => {
+    console.warn = jest.fn();
+
     const component = mount(
       <AbstractTextInput
         id="testInput"
@@ -33,7 +40,31 @@ describe("AbstractTextInput", () => {
         value="test value"
       />
     );
-    expect(component.state().localValue).toBe("default value");
+
+    expect(console.warn).toBeCalled();
+    const inputElement = component.find("input");
+    expect(inputElement.render().attr("value")).toBe("test value");
+  });
+
+  it("sets state with value if it is passed by props", async () => {
+    const component = mount(
+      <AbstractTextInput id="testInput" label="Test Input" value="test value" />
+    );
+
+    const inputElement = component.find("input");
+    expect(inputElement.render().attr("value")).toBe("test value");
+  });
+
+  it("sets state with defaultValue if it is passed by props and value is not passed by props", async () => {
+    const component = mount(
+      <AbstractTextInput
+        id="testInput"
+        label="Test Input"
+        defaultValue="default value"
+      />
+    );
+    const inputElement = component.find("input");
+    expect(inputElement.render().attr("value")).toBe("default value");
   });
 
   it("sets state with isValid if it is passed by props", async () => {
@@ -93,13 +124,100 @@ describe("AbstractTextInput", () => {
       <AbstractTextInput id="testInput" label="Test Input" name="testName" />
     );
 
-    expect(component.state().localValue).toBe(undefined);
+    const inputElement = component.find("input");
+    expect(inputElement.render().attr("value")).toBe("");
+
     component
       .find("input")
       .at(0)
       .simulate("change", {
         target: { value: "My new value", validity: { valid: true } },
       });
-    expect(component.state().localValue).toBe("My new value");
+
+    expect(inputElement.render().attr("value")).toBe("My new value");
+  });
+
+  it("renders prefix when it is passed by props", async () => {
+    const renderedComponent = renderer
+      .create(
+        <AbstractTextInput id="testInput" label="Test Input" prefix="R$" />
+      )
+      .toJSON();
+
+    expect(renderedComponent).toMatchSnapshot();
+
+    const mountedComponent = mount(
+      <AbstractTextInput
+        id="testInput"
+        label="Test Input"
+        name="testName"
+        prefix="R$"
+      />
+    );
+
+    expect(mountedComponent.find("span.lab-input__prefix")).toHaveLength(2);
+  });
+
+  it("renders suffix when it is passed by props", async () => {
+    const renderedComponent = renderer
+      .create(
+        <AbstractTextInput id="testInput" label="Test Input" suffix=".com" />
+      )
+      .toJSON();
+
+    expect(renderedComponent).toMatchSnapshot();
+
+    const mountedComponent = mount(
+      <AbstractTextInput
+        id="testInput"
+        label="Test Input"
+        name="testName"
+        suffix=".com"
+      />
+    );
+
+    expect(mountedComponent.find("div.lab-input__suffix")).toHaveLength(1);
+  });
+
+  it("renders icon when it is passed by props", async () => {
+    const renderedComponent = renderer
+      .create(
+        <AbstractTextInput id="testInput" label="Test Input" icon="star" />
+      )
+      .toJSON();
+
+    expect(renderedComponent).toMatchSnapshot();
+
+    const mountedComponent = mount(
+      <AbstractTextInput
+        id="testInput"
+        label="Test Input"
+        name="testName"
+        icon="star"
+      />
+    );
+
+    expect(mountedComponent.find("span.lab-icon")).toHaveLength(1);
+  });
+
+  it("renders required icon when it is passed by props", async () => {
+    const renderedComponent = renderer
+      .create(
+        <AbstractTextInput id="testInput" label="Test Input" icon="star" />
+      )
+      .toJSON();
+
+    expect(renderedComponent).toMatchSnapshot();
+
+    const mountedComponent = mount(
+      <AbstractTextInput
+        id="testInput"
+        label="Test Input"
+        name="testName"
+        required
+      />
+    );
+
+    expect(mountedComponent.find("span.lab-input__required-icon")).toHaveLength(1);
   });
 });
