@@ -148,6 +148,7 @@ export default class AbstractTextInput extends React.Component {
       type,
       label,
       disabled,
+      required,
       icon,
       iconColor,
       helpMessage,
@@ -182,6 +183,7 @@ export default class AbstractTextInput extends React.Component {
             ref={this.inputRef}
             onChange={this.handleOnChange}
             autoComplete="off"
+            {...(required ? { required } : undefined)}
             {...(disabled ? { disabled } : undefined)}
           />
           <div className="lab-input__borders" />
