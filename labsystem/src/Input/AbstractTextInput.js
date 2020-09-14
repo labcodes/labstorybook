@@ -29,7 +29,7 @@ export default class AbstractTextInput extends React.Component {
 
   static defaultProps = {
     type: "text",
-    className: undefined,
+    className: "",
     disabled: false,
     defaultValue: undefined,
     value: undefined,
@@ -54,11 +54,11 @@ export default class AbstractTextInput extends React.Component {
     if (!isUndefined(defaultValue) && !isUndefined(value)) {
       // eslint-disable-next-line no-console
       console.warn(
-        `You are setting both value and defaultValue for input ${id} at the same time. We always initialize the toggle with defaultValue. Make sure this is the behaviour you want.`
+        `You are setting both value and defaultValue for input ${id} at the same time. We always initialize value, if it is truthy. Make sure this is the behaviour you want.`
       );
     }
     this.state = {
-      localValue: defaultValue,
+      localValue: value || defaultValue,
       localIsValid: !isUndefined(isValid) ? isValid : true,
     };
   }
@@ -68,12 +68,12 @@ export default class AbstractTextInput extends React.Component {
     const { isValid } = this.props;
     let { localIsValid } = this.state;
 
-    if (defaultValue && isUndefined(isValid)) {
+    if (defaultValue && !value && isUndefined(isValid)) {
       localIsValid = this.inputRef.current.validity.valid;
       this.setState(() => ({ localIsValid }));
     }
 
-    if (value && isUndefined(defaultValue) && isUndefined(isValid)) {
+    if (value && isUndefined(isValid)) {
       localIsValid = this.inputRef.current.validity.valid;
       this.setState(() => ({ localIsValid }));
     }
@@ -99,11 +99,11 @@ export default class AbstractTextInput extends React.Component {
     }
 
     if (value !== prevProps.value) {
-      this.setState({ localValue: value });
-
-      if (isUndefined(isValid)) {
-        this.setState({ localIsValid: inputElement.validity.valid });
-      }
+      this.setState({ localValue: value }, () => {
+        if (isUndefined(isValid)) {
+          this.setState({ localIsValid: inputElement.validity.valid });
+        }
+      });
     }
   }
 
@@ -152,7 +152,7 @@ export default class AbstractTextInput extends React.Component {
       type,
       label,
       disabled,
-      value,
+      required,
       icon,
       iconColor,
       helpMessage,
@@ -184,11 +184,12 @@ export default class AbstractTextInput extends React.Component {
             }
             id={id}
             type={type}
-            defaultValue={localValue}
-            value={value}
+            placeholder=" "
+            value={localValue}
             ref={this.inputRef}
             onChange={this.handleOnChange}
             autoComplete="off"
+            {...(required ? { required } : undefined)}
             {...(disabled ? { disabled } : undefined)}
             {...(placeholder ? { placeholder } : "" )}
           />
@@ -196,6 +197,7 @@ export default class AbstractTextInput extends React.Component {
           {this.prefixArea()}
           {this.suffixArea()}
           <div className="lab-input__label-wrapper">
+            {/* The following duplicated prefixArea is necessary to allow the label to be positioned correctly */}
             {this.prefixArea()}
             <label className="lab-input__label" htmlFor={id}>
               {label}
@@ -260,14 +262,14 @@ function TextInputMessage(props) {
       </div>
     );
   }
+
   if (!localIsValid && helpMessage && !localValue) {
     message = (
       <div className="lab-input__message lab-input__message--error">
         {helpMessage}
       </div>
     );
-  }
-  if (!localIsValid) {
+  } else if (!localIsValid) {
     message = (
       <div className="lab-input__message lab-input__message--error">
         {customErrorMsg}
