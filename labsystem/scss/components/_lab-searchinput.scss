@@ -45,7 +45,7 @@ $remove-icon-focus: map-get($search-theme, "30");
     cursor: pointer;
 
     .lab-icon {
-        margin-left:$spacing-02;
+        margin-left:10px;
     }
 
     .lab-input__field:focus ~ &,
