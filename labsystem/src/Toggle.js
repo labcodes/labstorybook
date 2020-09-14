@@ -62,8 +62,8 @@ export default class Toggle extends React.Component {
           id={name}
           className="toggle__input"
           checked={isChecked}
-          disabled={disabled}
           onChange={this.handleOnChange}
+          {...(disabled ? { disabled } : undefined)}
         />
         <span className="toggle__slider" />
       </label>
