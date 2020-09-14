@@ -13,17 +13,16 @@ $item-active-color: map-get($narrow-sidebar-theme, "70");
 .lab-narrow-sidebar {
   width: 80%;
   display: flex;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x:hidden;
   height: 100vh;
   top: 0;
   position: fixed; //don't work with stories
   left: 0;
   align-items: stretch;
   flex-direction: column;
-  background-color: white;
-  border: 2px solid $mineral-20;
-  box-sizing: border-box;
   border-top-right-radius: $radius-default;
+  background-color: white;
 }
 
 .lab-narrow-sidebar__content {
@@ -35,9 +34,13 @@ $item-active-color: map-get($narrow-sidebar-theme, "70");
 .lab-narrow-sidebar__header {
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  width: calc(80% - 2px);
   padding: 16px 28px;
   flex-grow: 0;
   z-index: 1;
+  border-top-right-radius: $radius-default;
+  background-color: $white;
 }
 
 .lab-narrow-sidebar__logo {
@@ -52,6 +55,7 @@ $item-active-color: map-get($narrow-sidebar-theme, "70");
   display: flex;
   align-items: center;
   margin-left: 28px;
+  margin-bottom: 12px;
   
   
   &-photo {
@@ -108,12 +112,9 @@ $item-active-color: map-get($narrow-sidebar-theme, "70");
   width: 100%;
   flex-direction: column;
   padding: 4px 0;
+  margin-top: 80px;
   
-  &--with-scroll {
-     box-shadow: inset 0px -2px 2px -1px $black-35;
-   }
 }
-
 
 
 .lab-narrow-sidebar__item {
@@ -235,8 +236,93 @@ $item-active-color: map-get($narrow-sidebar-theme, "70");
   }
 }
 
+//With Scroll
+.lab-narrow-sidebar--with-scroll {
+  .lab-narrow-sidebar__body{
+    box-shadow: 1px 1px 2px $black-20;  
+  }
 
+  .lab-narrow-sidebar__header{
+    box-shadow: inset 0px -1px 2px $black-20;  
+  }
+} 
 
+//For Tablet and Desktop
+
+@media (min-width: 900px) {
+  .lab-narrow-sidebar {
+    width: 128px;
+    border: 2px solid $mineral-20;
+    box-sizing: border-box;
+    
+    &__footer {
+      align-items: center;
+    
+      &__button {
+        padding: 4px;
+        width:76%;
+        margin-left: 0px;
+        align-items: center;
+        font-size: $font-size-1;
+        
+        .lab-icon--sidebar-item {
+          margin-right: 4px;
+        } 
+      }
+    }
+
+    &__header {
+      justify-content: center;
+      position: relative;
+      width: 128px;
+      padding: 30px 0;
+    }
+    
+    &__collapse {
+      display: none;
+    }
+    
+    &__body {
+      overflow: auto;
+      margin-top: 0;
+    }
+    
+    &__item {
+      display: flex;
+      flex-direction: column; 
+      align-items: center;
+      text-align: center;
+      font-size: $font-size-1;
+      padding: 16px;
+      margin:0;
+      border-radius: 0px;
+    
+      .lab-icon--sidebar-item {
+        margin:0;
+      }
+    }
+    
+    &__avatar-text,
+    &__avatar-caption {
+      display:none;
+    } 
+    
+    &__avatar,
+    &__avatar-photo {
+      margin: 0 0px 4px 0;
+    }
+
+    .lab-narrow-sidebar__item:focus {
+      &:before {
+        margin-right: 0px;
+      }  
+    }
+  }
+
+  .lab-narrow-sidebar__content {
+    overflow-y:hidden;
+  }
+}
 
 // Vivid Skin
 .lab-narrow-sidebar--vivid{
@@ -325,6 +411,10 @@ $item-active-color: map-get($narrow-sidebar-theme, "70");
 @mixin narrow-sidebar-skin-vivid($color) {
   background: $color;
 
+  .lab-narrow-sidebar__header{
+    background-color: $color;
+  }
+
   .lab-narrow-sidebar__item--active,
   .lab-narrow-sidebar__item:active {
     color: $color; 
@@ -371,77 +461,5 @@ $item-active-color: map-get($narrow-sidebar-theme, "70");
      } @else {
         @include narrow-sidebar-skin-vivid(map-get($palette, "60")); 
      }
-  }
-}
-
-//For Tablet and Desktop
-
-@media (min-width: 900px) {
-  .lab-narrow-sidebar {
-    width: 128px;
-    
-    &__footer {
-      align-items: center;
-    
-      &__button {
-        padding: 4px;
-        width:76%;
-        margin-left: 0px;
-        align-items: center;
-        font-size: $font-size-1;
-        
-        .lab-icon--sidebar-item {
-          margin-right: 4px;
-        } 
-      }
-    }
-
-    &__header {
-      justify-content: center;
-      padding: 30px 0;
-    }
-    
-    &__collapse {
-      display: none;
-    }
-    
-    &__body {
-      overflow: auto;
-    }
-    
-    &__item {
-      display: flex;
-      flex-direction: column; 
-      align-items: center;
-      text-align: center;
-      font-size: $font-size-1;
-      padding: 16px;
-      margin:0;
-      border-radius: 0px;
-    
-      .lab-icon--sidebar-item {
-        margin:0;
-      }
-    }
-    
-    &__avatar-text,
-    &__avatar-caption {
-      display:none;
-    } 
-    
-    &__avatar,
-    &__avatar-photo {
-      margin: 0 0px 4px 0;
-    }
-
-    .lab-narrow-sidebar__item:focus {
-      &:before {
-        margin-right: 0px;
-      }  
-    }
-  }
-
-  .lab-narrow-sidebar__content {
-    overflow-y:hidden;
   }
 }
