@@ -22,6 +22,7 @@ $text-bg-active: map-get($button-theme, "20");
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   font-family: $font-primary;
   font-size: $btn-font-size;
   font-weight: 600;
@@ -78,6 +79,10 @@ $text-bg-active: map-get($button-theme, "20");
 .btn--large {
   height: 48px;
   padding: 0 16px;
+}
+
+.btn--block {
+  width: 100%;
 }
 
 // Button variant modifiers

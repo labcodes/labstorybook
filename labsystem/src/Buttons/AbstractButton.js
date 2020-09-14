@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Icon from "./Icon";
-// import { isUndefined } from "loadash";
+import { isUndefined } from "lodash";
+import Icon from "../Icon";
 
-export default class Button extends React.Component {
+export default class AbstractButton extends React.Component {
   static propTypes = {
     type: PropTypes.oneOf(["button", "submit", "reset"]),
     text: PropTypes.string.isRequired,
@@ -20,6 +20,8 @@ export default class Button extends React.Component {
     icon: PropTypes.string,
     size: PropTypes.oneOf(["normal", "small", "large"]),
     disabled: PropTypes.bool,
+    onClick: PropTypes.func,
+    fullWidth: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -29,6 +31,8 @@ export default class Button extends React.Component {
     icon: undefined,
     size: "normal",
     disabled: false,
+    onClick: undefined,
+    fullWidth: false,
   };
 
   icon = () => {
@@ -45,14 +49,27 @@ export default class Button extends React.Component {
     );
   };
 
+  handleOnClick = (e) => {
+    const { onClick } = this.props;
+    if (!isUndefined(onClick)) {
+      onClick(e);
+    }
+  };
+
   render() {
-    const { type, text, variant, skin, size, disabled } = this.props;
+    const { type, text, variant, skin, size, disabled, fullWidth } = this.props;
     return (
       <button
         // eslint-disable-next-line react/button-has-type
         type={type}
-        className={`btn btn--${variant} btn--${skin} btn--${size}`}
-        disabled={disabled}
+        className={
+          `btn` +
+          ` btn--${variant} btn--${size}` +
+          `${skin ? ` btn--${skin}` : ""}` +
+          `${fullWidth ? ` btn--block` : ""}`
+        }
+        onClick={this.handleOnClick}
+        disabled={disabled || undefined}
       >
         {this.icon()}
         {text}
