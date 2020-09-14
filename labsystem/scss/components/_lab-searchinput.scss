@@ -22,7 +22,12 @@ $remove-icon-focus: map-get($search-theme, "30");
     margin-top: $spacing-03;
     box-sizing: border-box;
     border-radius: $radius-02;
+    
+    .lab-input__field {
+        padding-right: $spacing-08;
+    }
 }
+
 
 .search-button {
     position: absolute;
