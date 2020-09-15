@@ -5,7 +5,6 @@ Array [
   <input
     checked={true}
     className="lab-radio lab-radio--purple"
-    disabled={false}
     id="test-radio"
     name="test-radio"
     onChange={[Function]}
@@ -51,7 +50,6 @@ exports[`Radio renders with base props 1`] = `
 Array [
   <input
     className="lab-radio "
-    disabled={false}
     id="test-radio"
     name="test-radio-group"
     onChange={[Function]}
