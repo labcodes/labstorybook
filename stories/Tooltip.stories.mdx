@@ -181,6 +181,24 @@ Tooltips placement relative to the target is defined by the user through props, 
   </Story>
 </Preview>
 
+#### Long texts
+
+Tooltip text should not be longer than 180 characters and 3 lines. A warn will be thrown in the console if the 180 chars limit is crossed.
+
+<Preview>
+  <Story name="LongText">
+    <Fragment>
+      <Tooltip
+        id="tooltip-long-text"
+        text="Lorem ipsum dolor sit amet, has integre virtute consequat at. Sit quodsi gloriatur efficiantur in, quas inermis menandri ex vix. Sit quodsi gloriatur efficiantur in, quas inermis."
+        placement="right">
+          <button className="docs-tooltip__button" type="button">Long text</button>
+      </Tooltip>
+    </Fragment>
+  </Story>
+</Preview>
+
+
 ## Prop API docs
 
 Here's the list of props based on the component's prop types definitions.
