@@ -37,6 +37,7 @@ $icon-size: 1.5rem !default;
   &--arrow-top { @include icon-position(0, 2); }
   &--arrow-down { @include icon-position(0, 3); }
   &--sort { @include icon-position(0, 4); }
+  &--star { @include icon-position(0, 5); }
 
   &--dropdown-closed { @include icon-position(1, 0); }
   &--dropdown-open { @include icon-position(1, 1); }
@@ -73,4 +74,6 @@ $icon-size: 1.5rem !default;
   &--chevron-right { @include icon-position(6, 2); }
   &--chevron-left { @include icon-position(6, 3); }
   &--workspace { @include icon-position(6, 4); }
+
+  
 }

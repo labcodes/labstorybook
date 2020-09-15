@@ -27,6 +27,7 @@ export default class Icon extends React.Component {
       "reload",
       "remove",
       "sort",
+      "star",
       "trash",
       "upload",
       "arrow-fill-right",
