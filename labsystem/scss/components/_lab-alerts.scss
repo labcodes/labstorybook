@@ -36,7 +36,6 @@ $alerts-line-height: 20px;
     border-radius: 12px;
     width: fit-content;
     flex-wrap: unset;
-    justify-content: space-between;
   }
 }
 
@@ -60,8 +59,6 @@ $alerts-line-height: 20px;
 
   @include from($tablet) {
     width: auto;
-    flex-grow: 1;
-    flex-shrink: 1;
   }
 }
 
@@ -115,11 +112,6 @@ $alerts-line-height: 20px;
 
 .lab-banner__message {
   @extend .lab-alert__message;
-
-  @include from($tablet) {
-    flex-grow: unset;
-    flex-shrink: unset;
-  }
 }
 
 .lab-banner__button {
