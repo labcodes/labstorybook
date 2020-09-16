@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
 import Alert from '../labsystem/src/Alert';
+import Banner from '../labsystem/src/Banner';
 
 <Meta title="Components/System Messages" />
 
@@ -18,6 +19,14 @@ import Alert from '../labsystem/src/Alert';
       <Alert type="info" text="Good news! Now you can add your expenses to your monthly spreadsheet." buttonText="Dismiss" icon="coin" />
       <Alert type="warn" text="You need to be signed in to use this feature." icon="calendar" buttonText="Login" />
       <Alert type="error" text="Enter the required fields do proceed." icon="key" />
+    </Story>
+  </Preview>
+
+  <Preview>
+    <Story name="Banner Sample">
+      <Banner type="info" text="Scheduled maintenance in our servers tomorrow 5 Mar @ 10AM." buttonText="Dismiss" icon="calendar" />
+      <Banner type="warn" text="We couldn't renew your plan. Please check your billing info." icon="coin" buttonText="Go to billing" />
+      <Banner type="error" text="Looks like we're having trouble retrieving some information. Please refresh the page." icon="reload" buttonText="Refresh" />
     </Story>
   </Preview>
 
