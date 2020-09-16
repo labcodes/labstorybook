@@ -8,11 +8,12 @@ export default class Alert extends React.Component {
     text: PropTypes.string.isRequired,
     type: PropTypes.oneOf(["info", "warn", "error"]),
     icon: PropTypes.string.isRequired,
-    buttonText: PropTypes.string.isRequired,
+    buttonText: PropTypes.string,
   };
 
   static defaultProps = {
     type: "info",
+    buttonText: "",
   };
 
   icon = () => {
