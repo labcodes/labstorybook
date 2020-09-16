@@ -3,6 +3,7 @@
 $alerts-font-size: 16px;
 $alerts-line-height: 20px;
 
+// Alert component
 .lab-alert {
   display: flex;
   flex-wrap: wrap;
@@ -10,11 +11,6 @@ $alerts-line-height: 20px;
   justify-content: flex-end;
   margin: $spacing-01;
   padding: $spacing-03 $spacing-04;
-  font-family: $font-primary;
-  font-size: $alerts-font-size;
-  line-height: $alerts-line-height;
-  font-weight: 600;
-  -webkit-font-smoothing: antialiased;
   color: $mineral-70;
   border-radius: 8px;
 
@@ -39,6 +35,7 @@ $alerts-line-height: 20px;
   @include from($tablet) {
     border-radius: 12px;
     width: fit-content;
+    flex-wrap: unset;
     justify-content: space-between;
   }
 }
@@ -55,6 +52,11 @@ $alerts-line-height: 20px;
 
 .lab-alert__message {
   width: 100%;
+  font-family: $font-primary;
+  font-size: $alerts-font-size;
+  line-height: $alerts-line-height;
+  font-weight: $weight-bold;
+  -webkit-font-smoothing: antialiased;
 
   @include from($tablet) {
     width: auto;
@@ -68,46 +70,56 @@ $alerts-line-height: 20px;
 
   @include from($tablet) {
     margin-left: $spacing-04;
-    align-self: flex-end;
   }
 }
 
-
+// Banner component
 .lab-banner {
   display: flex;
-  padding: $spacing-03 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   align-items: center;
-  font-family: $font-primary;
-  font-size: $alerts-font-size;
-  line-height: $alerts-line-height;
-  font-weight: 600;
-  -webkit-font-smoothing: antialiased;
+  padding: $spacing-03;
   color: $white;
 
   &__info {
     @extend .lab-banner;
-    background-color: rgba($mineral-20, .2);
+    background-color: $mineral-60;
   }
 
   &__error {
     @extend .lab-banner;
-    background-color: rgba($red-20, .2);
+    background-color: $red-60;
   }
 
   &__warn {
     @extend .lab-banner;
-    background-color: rgba($yellow-20, .2);
+    background-color: $yellow-60;
     color: $black-75;
+
+    .lab-icon--banner-icon {
+      background-color: $black-75;
+    }
+  }
+
+  @include from($tablet) {
+    justify-content: center;
+    flex-wrap: unset;
   }
 }
 
 // Elements
 .lab-icon--banner-icon {
-  @extend .lab-alert__button;
+  @extend .lab-icon--alert-icon;
 }
 
 .lab-banner__message {
-  @extend .lab-alert__button;
+  @extend .lab-alert__message;
+
+  @include from($tablet) {
+    flex-grow: unset;
+    flex-shrink: unset;
+  }
 }
 
 .lab-banner__button {
