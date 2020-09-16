@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Icon from "../Icon";
 
 export default class NarrowSidebar extends React.Component {
   static propTypes = {
@@ -27,8 +28,7 @@ export default class NarrowSidebar extends React.Component {
       withScroll,
      } = this.props;
     return (
-      <div 
-        
+      <div  
         className={
           `lab-narrow-sidebar`+
           `${vivid ? ` lab-narrow-sidebar--vivid lab-narrow-sidebar--vivid--${color}` : ` ""`}`+
@@ -36,6 +36,11 @@ export default class NarrowSidebar extends React.Component {
         }
       >
         {children}
+        <div className="lab-narrow-sidebar__trigger">
+          <button className="sidebar-trigger">
+            <Icon  type="menu-expand" color="white" />
+          </button>
+        </div>
       </div>
     );  
   }
