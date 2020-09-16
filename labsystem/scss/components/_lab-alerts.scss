@@ -1,6 +1,6 @@
 @use 'sass:map';
 
-$alerts-font-size: 16px;
+$alerts-font-size: $font-size-3;
 $alerts-line-height: 20px;
 
 // Alert component
