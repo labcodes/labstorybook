@@ -37,7 +37,7 @@ export default class Alert extends React.Component {
     return (
       <div className={`lab-alert__${type}`}>
         {this.icon()}
-        {text}
+        <span className="lab-alert__message">{text}</span>
         {this.button()}
       </div>
     );

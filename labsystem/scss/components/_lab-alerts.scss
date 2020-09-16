@@ -7,7 +7,7 @@ $alerts-line-height: 20px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  width: fit-content;
+  justify-content: flex-end;
   margin: $spacing-01;
   padding: $spacing-03 $spacing-04;
   font-family: $font-primary;
@@ -16,7 +16,7 @@ $alerts-line-height: 20px;
   font-weight: 600;
   -webkit-font-smoothing: antialiased;
   color: $mineral-70;
-  border-radius: 12px;
+  border-radius: 8px;
 
   &__info {
     @extend .lab-alert;
@@ -35,7 +35,43 @@ $alerts-line-height: 20px;
     background-color: rgba($yellow-20, .2);
     border: 2px solid $yellow-60;
   }
+
+  @include from($tablet) {
+    border-radius: 12px;
+    width: fit-content;
+    justify-content: space-between;
+  }
 }
+
+// Elements
+.lab-icon--alert-icon {
+  margin-right: $spacing-04;
+  display: none;
+
+  @include from($tablet) {
+    display: inline-block;
+  }
+}
+
+.lab-alert__message {
+  width: 100%;
+
+  @include from($tablet) {
+    width: auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+}
+
+.lab-alert__button {
+  margin-top: $spacing-01;
+
+  @include from($tablet) {
+    margin-left: $spacing-04;
+    align-self: flex-end;
+  }
+}
+
 
 .lab-banner {
   display: flex;
@@ -66,10 +102,14 @@ $alerts-line-height: 20px;
 }
 
 // Elements
-.lab-icon--alert-icon {
-  margin-right: $spacing-04;
+.lab-icon--banner-icon {
+  @extend .lab-alert__button;
 }
 
-.lab-alert__button {
-  margin-left: $spacing-04;
+.lab-banner__message {
+  @extend .lab-alert__button;
+}
+
+.lab-banner__button {
+  @extend .lab-alert__button;
 }
