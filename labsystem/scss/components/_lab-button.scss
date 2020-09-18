@@ -231,6 +231,10 @@ $text-bg-active: map-get($button-theme, "20");
     &:active {
       color: $white;
       background: mix($yellow-60, black, 50%);
+
+      .lab-icon--btn__icon {
+        background-color: white;
+      }
     }
 
     &:focus:hover {
