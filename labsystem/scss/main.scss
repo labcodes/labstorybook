@@ -7,12 +7,12 @@
 // Helpers
 @import "utilities/all";
 
-// Components
-@import "components/all";
-
 // Bulma Grid
 @import "~bulma/sass/utilities/all";
 @import "~bulma/sass/grid/all";
+
+// Components
+@import "components/all";
 
 // Storybook
 @import "vendor/storybook-overrides";

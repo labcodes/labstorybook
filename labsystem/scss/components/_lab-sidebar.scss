@@ -15,9 +15,8 @@ $narrow-trigger-bg: map-get($narrow-sidebar-theme, "60");
   top:0;
   background-color: $narrow-trigger-bg;
   width: 100%;
-  height: 64px;  
+  height: 76px;  
   border-bottom: 1px solid transparent;
-  z-index: 0;
 }
 
 .sidebar-trigger {
@@ -52,14 +51,44 @@ $narrow-trigger-bg: map-get($narrow-sidebar-theme, "60");
   height: 100vh;
   top: 0;
   position: fixed; //don't work with stories
-  left: 0;
   align-items: stretch;
   flex-direction: column;
   border-top-right-radius: $radius-default;
   background-color: white;
-  box-shadow: 0 0 200px $black;
+  transition: ease left .6s;
+  
+  &--on {
+    left: 0;
+  }
+  
+  &--off {
+    left: -300px;
+  }
 }
 
+.lab-narrow__overlay {
+  content: "";
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: $black-50;
+  pointer-events: none;
+  transition: ease all .2s;
+
+  &--on {
+    opacity: 1;
+  }
+
+  &--off {
+    opacity: 0;
+  }
+
+  @include from($tablet) {
+    display: none;
+  }
+}
 
 .lab-narrow-sidebar__content {
   overflow-y:auto;
@@ -149,7 +178,7 @@ $narrow-trigger-bg: map-get($narrow-sidebar-theme, "60");
   width: 100%;
   flex-direction: column;
   padding: 4px 0;
-  margin-top: 80px;
+  margin-top: 76px;
   
 }
 

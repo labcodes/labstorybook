@@ -10,7 +10,6 @@ export default class NarrowSidebar extends React.Component {
     withScroll: PropTypes.bool,
   };
 
-  
   static defaultProps = {
     children: undefined,
     vivid: false,
@@ -18,30 +17,53 @@ export default class NarrowSidebar extends React.Component {
     withScroll: false,
   };
 
+  constructor(props) {
+    super(props);
+    this.state = { isToggleOn: true };
 
+    // This binding is necessary to make `this` work in the callback
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn,
+    }));
+  }
 
   render() {
-    const { 
-      children,
-      vivid,
-      color,
-      withScroll,
-     } = this.props;
+    const { children, vivid, color, withScroll } = this.props;
     return (
-      <div  
-        className={
-          `lab-narrow-sidebar`+
-          `${vivid ? ` lab-narrow-sidebar--vivid lab-narrow-sidebar--vivid--${color}` : ` ""`}`+
-          `${withScroll ? ` lab-narrow-sidebar--with-scroll` : ` ""`}`
-        }
-      >
-        {children}
+      <React.Fragment>
         <div className="lab-narrow-sidebar__trigger">
-          <button className="sidebar-trigger">
-            <Icon  type="menu-expand" color="white" />
+          <button type="button" className="sidebar-trigger">
+            <Icon type="menu-expand" color="white" />
           </button>
         </div>
-      </div>
-    );  
+        <div className={
+            `lab-narrow__overlay ` +
+            `${
+              this.state.isToggleOn
+                ? `lab-narrow__overlay--on`
+                : `lab-narrow__overlay--off`
+            }`
+          }
+        />
+
+        <div
+          className={
+            `lab-narrow-sidebar`+
+            `${vivid ? ` lab-narrow-sidebar--vivid lab-narrow-sidebar--vivid--${color}` : ` ""`}`+
+            `${withScroll ? ` lab-narrow-sidebar--with-scroll` : `""`}`+
+            `${this.state.isToggleOn ? ` lab-narrow-sidebar--on` : ` lab-narrow-sidebar--off`}`
+          }
+        >
+          {children}
+          <button onClick={this.handleClick}>
+            {this.state.isToggleOn ? 'ON' : 'OFF'}
+          </button>
+        </div>
+      </React.Fragment>
+    );
   }
 }
