@@ -1,10 +1,11 @@
-.lab-tooltip {
-    position: relative;
-    display: inline-block;
-}
+@use 'sass:map';
 
-.lab-tooltip * {
-    cursor: pointer;
+$tooltip-background-color: map-get($tooltip-theme, "70");
+$tooltip-border-color: map-get($tooltip-theme, "80");
+
+.lab-tooltip {
+  position: relative;
+  display: inline-block;
 }
 
 .lab-tooltip:hover,
@@ -38,16 +39,16 @@
     text-align: center;
 
     /* Default color: black */
-    border: 2px solid $mineral-80;
-    background: $mineral-90;
+    border: 2px solid $mineral-90;
+    background: $mineral-80;
     color: $white;
 
 
     /* Color modifiers */
 
-    &.lab-tooltip--teal {
-        background: $teal-70;
-        border-color: $teal-80;
+    &.lab-tooltip--theme-color {
+        background: $tooltip-background-color;
+        border-color: $tooltip-border-color;
     }
 
     &.lab-tooltip--purple {

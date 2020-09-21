@@ -20,12 +20,12 @@ export default class Tooltip extends React.Component {
       "bottom",
       "bottom-end",
     ]),
-    color: PropTypes.string,
+    useThemeColor: PropTypes.bool,
   };
 
   static defaultProps = {
     placement: "top",
-    color: "black",
+    useThemeColor: false,
   };
 
   constructor(props) {
@@ -36,13 +36,15 @@ export default class Tooltip extends React.Component {
   }
 
   render() {
-    const { id, text, color, children, placement } = this.props;
+    const { id, text, useThemeColor, children, placement } = this.props;
 
     return (
       <span className="lab-tooltip">
         {children}
         <span
-          className={`lab-tooltip__text lab-tooltip--${color} lab-tooltip--${placement}`}
+          className={`lab-tooltip__text lab-tooltip--${placement}${
+            useThemeColor ? " lab-tooltip--theme-color" : ""
+          }`}
           id={id}
         >
           {text}
