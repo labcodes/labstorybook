@@ -9,13 +9,11 @@ $tooltip-border-color: map-get($tooltip-theme, "80");
 }
 
 .lab-tooltip:hover,
-.lab-tooltip:focus {
-
-    & .lab-tooltip__text {
-        display: inline-flex;
-        align-items: center;
-        align-content: center;
-    }
+.lab-tooltip:focus-within {
+  & .lab-tooltip__text {
+      display: inline-flex;
+      align-content: center;
+  }
 }
 
 .lab-tooltip__text {
