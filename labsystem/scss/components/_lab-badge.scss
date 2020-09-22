@@ -1,4 +1,6 @@
 $icon-size: 1.5rem !default;
+$badge-bg-color: map-get($icon-theme, "60") !default;
+$badge-color: white !default;
 
 .lab-badge {
   -webkit-mask-image: url('~labsystem/static/icons/main-badges.svg');
@@ -11,6 +13,7 @@ $icon-size: 1.5rem !default;
   line-height: 1;
   display: inline-block;
   flex-shrink: 0;
+  background-color: $badge-color;
 
     /* Color modifiers.
    * Create classes '.lab-icon--white' and '.lab-icon--black' directly.
@@ -43,7 +46,7 @@ $icon-size: 1.5rem !default;
   border-radius: 0.25rem;
   margin: 0.125rem;
   flex-shrink: 0;
-
+  background-color: $badge-bg-color;
 
     /* Color modifiers.
    * Create classes '.lab-icon--white' and '.lab-icon--black' directly.

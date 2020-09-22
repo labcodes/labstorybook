@@ -1,4 +1,5 @@
 $icon-size: 1.5rem !default;
+$icon-bg-color: map-get($icon-theme, "70") !default;
 
 .lab-icon {
   -webkit-mask-image: url('~labsystem/static/icons/main-icons.svg');
@@ -11,6 +12,7 @@ $icon-size: 1.5rem !default;
   line-height: 1;
   display: inline-block;
   flex-shrink: 0;
+  background-color: $icon-bg-color;
 
   /* Color modifiers. 
    * Create classes '.lab-icon--white' and '.lab-icon--black' directly.

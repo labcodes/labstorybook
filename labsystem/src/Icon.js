@@ -58,12 +58,13 @@ export default class Icon extends React.Component {
       "purple-40",
       "purple-60",
       "purple-70",
-    ]).isRequired,
+    ]),
     size: PropTypes.oneOf(["small", "petit"]),
     className: PropTypes.string,
   };
 
   static defaultProps = {
+    color: undefined,
     size: undefined,
     className: undefined,
   };

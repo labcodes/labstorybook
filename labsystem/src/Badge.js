@@ -23,7 +23,7 @@ export default class Badge extends React.Component {
       "purple-40",
       "purple-60",
       "purple-70",
-    ]).isRequired,
+    ]),
     wrapperColor: PropTypes.oneOf([
       "white",
       "black",
@@ -42,12 +42,14 @@ export default class Badge extends React.Component {
       "purple-40",
       "purple-60",
       "purple-70",
-    ]).isRequired,
+    ]),
     className: PropTypes.string,
   };
 
   static defaultProps = {
     className: undefined,
+    color: undefined,
+    wrapperColor: undefined,
   };
 
   render() {
