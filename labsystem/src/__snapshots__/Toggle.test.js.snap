@@ -58,7 +58,6 @@ exports[`Toggle renders with base props 1`] = `
   <input
     checked={false}
     className="toggle__input"
-    disabled={false}
     id="test-toggle"
     onChange={[Function]}
     type="checkbox"

@@ -1,7 +1,13 @@
-
-// Default themes
-$toggle-theme: $toggle-teal-theme !default;
 $content-max-width: 900px;
 
+// Themes
+$default-theme: $teal-palette !default;
+$secondary-theme: $purple-palette !default;
+
+// Component's themes
+$toggle-theme: $toggle-teal-theme !default;
+$button-theme: $default-theme !default;
+$link-theme: $default-theme !default;
+$input-theme: $teal-palette !default;
 $checkbox-theme: $teal-palette !default;
 $radio-theme: $teal-palette !default;

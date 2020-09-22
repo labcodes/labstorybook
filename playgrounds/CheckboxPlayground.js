@@ -44,7 +44,7 @@ export default class CheckboxPlayground extends React.Component {
               name="checkbox-playground-group"
               theme={theme}
               label={label}
-              disabled={disabled}
+              {...(disabled ? { disabled } : undefined)}
               checked={checked}
               indeterminate={indeterminate}
               className={className}
