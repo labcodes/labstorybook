@@ -11,6 +11,7 @@ exports[`TextInput renders with base props AbstractTextInput with type text 1`] 
     onChange={[Function]}
     placeholder=" "
     type="text"
+    value=""
   />
   <div
     className="lab-input__borders"

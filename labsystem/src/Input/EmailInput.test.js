@@ -170,7 +170,11 @@ describe("EmailInput", () => {
       .find("input")
       .at(0)
       .simulate("change", {
-        target: { value: "My new value", validity: { valid: true } },
+        target: {
+          value: "My new value",
+          validity: { valid: true },
+          setCustomValidity: jest.fn(),
+        },
       });
 
     expect(inputElement.render().attr("value")).toBe("My new value");
