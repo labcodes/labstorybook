@@ -66,6 +66,7 @@ $alerts-line-height: 20px;
   margin-top: $spacing-01;
 
   @include from($tablet) {
+    margin-top: unset;
     margin-left: $spacing-04;
   }
 }
