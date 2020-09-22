@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Icon from "./Icon";
-// import Icon from "./Button";
+import TextButton from "./Buttons/TextButton";
 
 export default class Alert extends React.Component {
   static propTypes = {
@@ -26,9 +26,16 @@ export default class Alert extends React.Component {
   button = () => {
     const { buttonText } = this.props;
     return buttonText ? (
-      <button type="button" className="lab-alert__button">
-        {buttonText}
-      </button>
+      <TextButton
+        className="lab-alert__button"
+        disabled={false}
+        fullWidth={false}
+        icon={undefined}
+        onClick={undefined}
+        size="normal"
+        skin="dark"
+        text={buttonText}
+      />
     ) : undefined;
   };
 
