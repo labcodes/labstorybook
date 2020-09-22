@@ -1,6 +1,6 @@
 /* eslint-disable react/require-default-props */
 import React from "react";
-import PropTypes, { string, number, bool } from "prop-types";
+import PropTypes from "prop-types";
 import { isUndefined } from "lodash";
 
 // Radio //
@@ -10,7 +10,6 @@ export default class Radio extends React.Component {
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
-    value: PropTypes.oneOfType([string, number, bool]).isRequired,
     disabled: PropTypes.bool,
     checked: PropTypes.bool,
     defaultChecked: PropTypes.bool,
@@ -66,7 +65,7 @@ export default class Radio extends React.Component {
   };
 
   render() {
-    const { className, id, label, disabled, checked, name, value } = this.props;
+    const { className, id, label, disabled, checked, name } = this.props;
 
     return (
       <React.Fragment>
@@ -78,7 +77,6 @@ export default class Radio extends React.Component {
           checked={checked}
           name={name}
           onChange={this.handleOnChange}
-          {...(value ? { value } : undefined)}
         />
         <label className="lab-radio__label" htmlFor={id}>
           <span className="lab-radio__container" />
