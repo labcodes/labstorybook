@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Icon from "./Icon";
-// import Icon from "./Button";
+import TextButton from "./Buttons/TextButton";
 
 export default class Banner extends React.Component {
   static propTypes = {
@@ -24,12 +24,24 @@ export default class Banner extends React.Component {
   };
 
   button = () => {
-    const { buttonText } = this.props;
-    return buttonText ? (
-      <button type="button" className="lab-banner__button">
-        {buttonText}
-      </button>
-    ) : undefined;
+    const { buttonText, type } = this.props;
+    if (buttonText) {
+      return type == "warn" ? (
+        <TextButton
+          className="lab-alert__button"
+          size="normal"
+          skin="dark"
+          text={buttonText}
+        />
+      ) : (
+        <TextButton
+          className="lab-alert__button"
+          size="normal"
+          skin="light"
+          text={buttonText}
+        />
+      );
+    }
   };
 
   render() {
