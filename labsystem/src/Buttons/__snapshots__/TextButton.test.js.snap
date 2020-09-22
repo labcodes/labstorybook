@@ -18,7 +18,7 @@ exports[`TextButton renders as expected when passing a plus icon 1`] = `
   type="button"
 >
   <span
-    className="lab-icon lab-icon--plus lab-icon--white lab-icon--petit lab-icon--btn__icon"
+    className="lab-icon lab-icon--plus lab-icon--white lab-icon--petit btn__icon"
   />
   Test Text Small Button
 </button>

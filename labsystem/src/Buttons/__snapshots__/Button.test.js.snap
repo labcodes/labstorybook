@@ -18,7 +18,7 @@ exports[`Button renders as expected when passing a wallet icon 1`] = `
   type="button"
 >
   <span
-    className="lab-icon lab-icon--wallet lab-icon--white lab-icon--petit lab-icon--btn__icon"
+    className="lab-icon lab-icon--wallet lab-icon--white lab-icon--petit btn__icon"
   />
   Test Default Wallet Button
 </button>

@@ -75,7 +75,7 @@ export default class Icon extends React.Component {
         className={
           `lab-icon lab-icon--${type} lab-icon--${color}` +
           `${size ? ` lab-icon--${size}` : ""}` +
-          `${className ? ` lab-icon--${className}` : ""}`
+          `${className ? ` ${className}` : ""}`
         }
       />
     );

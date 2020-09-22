@@ -60,7 +60,7 @@ $text-bg-active: map-get($button-theme, "20");
 // Button icon is scaled to 16x16px but it still occupies 24x24px, having a "native" margin of 4px.
 // We apply negative margin-left to remove this space and adds margin-right to match the expected 
 // 8px spacing between icon and text on button.
-.lab-icon--btn__icon {
+.btn__icon {
   margin-right: 4px;
   margin-left: -4px;
 }
@@ -129,7 +129,7 @@ $text-bg-active: map-get($button-theme, "20");
     background-color: $mineral-20;
     border-color: $mineral-20;
 
-    .lab-icon--btn__icon {
+    .btn__icon {
       background-color: $mineral-40;
     }
   }
@@ -173,7 +173,7 @@ $text-bg-active: map-get($button-theme, "20");
     background-color: $white;
     border-color: $white;
 
-    .lab-icon--btn__icon {
+    .btn__icon {
       background-color: $mineral-90
     }
 
@@ -212,7 +212,7 @@ $text-bg-active: map-get($button-theme, "20");
     background-color: $yellow-60;
     border-color: $yellow-60;
 
-    .lab-icon--btn__icon {
+    .btn__icon {
       background-color: $black-75;
     }
 
@@ -232,7 +232,7 @@ $text-bg-active: map-get($button-theme, "20");
       color: $white;
       background: mix($yellow-60, black, 50%);
 
-      .lab-icon--btn__icon {
+      .btn__icon {
         background-color: white;
       }
     }
@@ -254,7 +254,7 @@ $text-bg-active: map-get($button-theme, "20");
     background-color: $mineral-90;
     border-color: $mineral-90;
 
-    .lab-icon--btn__icon {
+    .btn__icon {
       background-color: $yellow-60;
     }
 
@@ -326,7 +326,7 @@ $text-bg-active: map-get($button-theme, "20");
     background-color: $white;
     border-color: $white;
 
-    .lab-icon--btn__icon {
+    .btn__icon {
       background-color: $red-60;
     }
 
@@ -365,7 +365,7 @@ $text-bg-active: map-get($button-theme, "20");
     background-color: $white;
     border-color: $white;
 
-    .lab-icon--btn__icon {
+    .btn__icon {
       background-color: $green-60;
     }
 
@@ -404,7 +404,7 @@ $text-bg-active: map-get($button-theme, "20");
   color: $btn-main-color;
   background-color: transparent;
 
-  .lab-icon--btn__icon {
+  .btn__icon {
     background-color: $btn-main-color;
   }
 
@@ -439,7 +439,7 @@ $text-bg-active: map-get($button-theme, "20");
     color: $mineral-30;
     border-color: $mineral-20;
 
-    .lab-icon--btn__icon {
+    .btn__icon {
       background-color: $mineral-30;
     }
   }
@@ -448,7 +448,7 @@ $text-bg-active: map-get($button-theme, "20");
     color: $white-50;
     border-color: $white-20;
 
-    .lab-icon--btn__icon {
+    .btn__icon {
       background-color: $white-50;
     }
   }
@@ -458,7 +458,7 @@ $text-bg-active: map-get($button-theme, "20");
     background-color: transparent;
     border-color: $mineral-90;
 
-    .lab-icon--btn__icon {
+    .btn__icon {
       background-color: $mineral-90;
     }
 
@@ -499,7 +499,7 @@ $text-bg-active: map-get($button-theme, "20");
     background-color: transparent;
     border-color: $white;
 
-    .lab-icon--btn__icon {
+    .btn__icon {
       background-color: $white;
     }
 
@@ -543,7 +543,7 @@ $text-bg-active: map-get($button-theme, "20");
   background-color: transparent;
   border-color: transparent;
 
-  .lab-icon--btn__icon {
+  .btn__icon {
     background-color: $btn-main-color;
   }
 
@@ -575,7 +575,7 @@ $text-bg-active: map-get($button-theme, "20");
   &.btn--light:disabled {
     color: $mineral-30;
 
-    .lab-icon--btn__icon {
+    .btn__icon {
       background-color: $mineral-30;
     }
   }
@@ -583,7 +583,7 @@ $text-bg-active: map-get($button-theme, "20");
   &.btn--light:disabled {
     color: $white-50;
 
-    .lab-icon--btn__icon {
+    .btn__icon {
       background-color: $white-50;
     }
   }
@@ -591,7 +591,7 @@ $text-bg-active: map-get($button-theme, "20");
   &.btn--light {
     color: $white;
 
-    .lab-icon--btn__icon {
+    .btn__icon {
       background-color: $white;
     }
 
@@ -612,7 +612,7 @@ $text-bg-active: map-get($button-theme, "20");
   &.btn--dark {
     color: $mineral-80;
 
-    .lab-icon--btn__icon {
+    .btn__icon {
       background-color: $mineral-80;
     }
 
