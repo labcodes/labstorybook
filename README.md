@@ -16,6 +16,10 @@ After installing the dependencies, you may run the project with `yarn start` or 
 
 If you want to deploy it, we have everything set up to deploy it to github pages. Just run `yarn deploy` or `npm run deploy` and a compiled version will be pushed to the `gh-pages` branch of your origin repository, which is all that's needed for you to be able to access it via the `https://your-github-username.github.io/your-repository-name`.
 
+## Testing
+
+To execute the test suit go to the `labsystem` directory, then run `npm test`.
+
 ### ESLint
 
 We use ESLint to validate our code before pushing it to our repository. We recommend that you install any ESLint plugins to your preferred code editor, so that it highlights all the errors before you save the files. On VSCode, we use this one: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
