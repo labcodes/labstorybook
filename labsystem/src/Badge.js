@@ -7,6 +7,7 @@ export default class Badge extends React.Component {
       .isRequired,
     color: PropTypes.oneOf([
       "white",
+      "black",
       "black-75",
       "mineral-10",
       "mineral-20",
@@ -25,6 +26,7 @@ export default class Badge extends React.Component {
     ]).isRequired,
     wrapperColor: PropTypes.oneOf([
       "white",
+      "black",
       "black-75",
       "mineral-10",
       "mineral-20",
