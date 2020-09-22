@@ -3,48 +3,48 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
 <Meta title="Base/Colors" />
 
-<div class="docs-title docs-title--with-tab">
+<div className="docs-title docs-title--with-tab">
   <div>
-    <h1 class="docs-title__text">Colors</h1>
+    <h1 className="docs-title__text">Colors</h1>
   </div>
 </div>
 
-<div class="docs-content">
-  <div class="simple-tab-wrapper"></div>
-  <input class="simple-tab" type="radio" name="colors-tab" id="tab1" checked/>
-  <label for="tab1">Design</label>
+<div className="docs-content">
+  <div className="simple-tab-wrapper"></div>
+  <input className="simple-tab" type="radio" name="colors-tab" id="tab1" defaultChecked/>
+  <label htmlFor="tab1">Design</label>
 
-  <input class="simple-tab" type="radio" name="colors-tab" id="tab2" />
-  <label for="tab2">Accessibility</label>
+  <input className="simple-tab" type="radio" name="colors-tab" id="tab2" />
+  <label htmlFor="tab2">Accessibility</label>
 
-  <input class="simple-tab" type="radio" name="colors-tab" id="tab3" />
-  <label for="tab3">Code</label>
+  <input className="simple-tab" type="radio" name="colors-tab" id="tab3" />
+  <label htmlFor="tab3">Code</label>
 
-  <div class="simple-tab__content content1">
+  <div className="simple-tab__content content1">
     <h2>Brand Color</h2>
-    <div class="columns">
-      <div class="column">
+    <div className="columns">
+      <div className="column">
         <img src="docs/colors/brand-stack.svg" alt="Brand color stack" />
       </div>
-      <div class="column">
+      <div className="column">
         <p><strong>Teal</strong></p>
         <p>Main color of branding, communication and product.</p>
         <p>The centerpoint of Labcodes color palette to preserve its identity in a constant evolving world. Represents the diversity, uniquiness and vibrancy of our organization.</p>
       </div>
     </div>
     <h2>The Complete Palette</h2>
-    <div class="columns">
-      <div class="column">
-        <p>We have a palette composed of two main colors, the ones present in our logo, <span class="u-color-teal-40">teal</span> and <span class="u-color-coral-40">coral</span>, both complementary to each other, one support and one additional color to make the way we show things more colorful, plural and interesting: <span class="u-color-purple-60">purple</span> and <span class="u-color-mustard-40">mustard</span>, respectively, and also complementary.</p>
-        <p>The mineral stack, composes our neutral color base for use as texts and backgrounds. <span class="u-color-mineral-80">Mineral</span> is a cool gray color shade that pairs perfectly with all of our color stacks. Mineral also includes pure white and black.</p>
+    <div className="columns">
+      <div className="column">
+        <p>We have a palette composed of two main colors, the ones present in our logo, <span className="u-color-teal-40">teal</span> and <span className="u-color-coral-40">coral</span>, both complementary to each other, one support and one additional color to make the way we show things more colorful, plural and interesting: <span className="u-color-purple-60">purple</span> and <span className="u-color-mustard-40">mustard</span>, respectively, and also complementary.</p>
+        <p>The mineral stack, composes our neutral color base for use as texts and backgrounds. <span className="u-color-mineral-80">Mineral</span> is a cool gray color shade that pairs perfectly with all of our color stacks. Mineral also includes pure white and black.</p>
       </div>
-      <div class="column">
+      <div className="column">
         <img src="docs/colors/color-stacks.svg" alt="All color stacks"/>
       </div>
     </div>
     <h3>Color Pairing</h3>
-    <div class="columns">
-      <div class="column">
+    <div className="columns">
+      <div className="column">
         <p>If the difference between two values is 50 or greater, the colors are accessible and can be used overlapping each other (text over bg, e.g.)</p>
         <p>If the difference value is 30, large text can be used, but it may fail accessibility standards. A double check is recommended.</p>
         <ul>
@@ -53,482 +53,518 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
           <li>Visual information used to indicate states and boundaries of UI components also 3:1.</li>
         </ul>
       </div>
-      <div class="column">
+      <div className="column">
         <img src="docs/colors/color-pairing.svg" alt="All stacks color pairing" />
       </div>
     </div>
     <h3>Color Families</h3>
-    <p>The color palette has been organized into 2 distinct families, both containing the Labcodes <span class="u-color-teal-40">teal</span> stack.</p>
+    <p>The color palette has been organized into 2 distinct families, both containing the Labcodes <span className="u-color-teal-40">teal</span> stack.</p>
     <h4>Mkt Family</h4>
-    <div class="columns">
-      <div class="column">
+    <div className="columns">
+      <div className="column">
         <p>The Mkt, or Marketing family brings together all color stacks for use in institutional digital or printed/physical pieces, for example: sketchbooks, social media, website, banners, furniture, etc.</p>
-        <p>The main colors to use are <span class="u-color-teal-40">teal</span> and <span class="u-color-coral-40">coral</span>, but remember our brand color is <span class="u-color-teal-40">teal</span>. Both colors should preferably be applied in their default tones <code>-40</code>. If their use is not possible due to contrast issues, for example, use a darker shade like <code>-60</code>.</p>
-        <p><span class="u-color-purple-60">Purple</span> is set to be used as a secondary color for mixing with <span class="u-color-teal-40">teal</span> and <span class="u-color-coral-40">coral</span>.</p>
-        <p><span class="u-color-mustard-40">Yellow</span> is the additional color, for use mostly in the lighter shades (less or equal to <code>-40</code>), in pair with <span class="u-color-teal-40">teal</span>, <span class="u-color-coral-40">coral</span> or <span class="u-color-purple-60">purple</span>.</p>
+        <p>The main colors to use are <span className="u-color-teal-40">teal</span> and <span className="u-color-coral-40">coral</span>, but remember our brand color is <span className="u-color-teal-40">teal</span>. Both colors should preferably be applied in their default tones <code>-40</code>. If their use is not possible due to contrast issues, for example, use a darker shade like <code>-60</code>.</p>
+        <p><span className="u-color-purple-60">Purple</span> is set to be used as a secondary color for mixing with <span className="u-color-teal-40">teal</span> and <span className="u-color-coral-40">coral</span>.</p>
+        <p><span className="u-color-mustard-40">Yellow</span> is the additional color, for use mostly in the lighter shades (less or equal to <code>-40</code>), in pair with <span className="u-color-teal-40">teal</span>, <span className="u-color-coral-40">coral</span> or <span className="u-color-purple-60">purple</span>.</p>
       </div>
-      <div class="column">
+      <div className="column">
         <img src="docs/colors/mkt-family.svg" alt="All stacks color pairing" />
       </div>
     </div>
     <h4>App Family</h4>
-    <div class="columns">
-      <div class="column">
-        <p>The App, or Application family unites the brand color <span class="u-color-teal-40">teal</span> with support color <span class="u-color-purple-60">purple</span> and <span class="u-color-mineral-80">mineral</span> neutrals. The color system for digital products is derived from the complete color palette. On default light and dark themes, <span class="u-color-mineral-80">mineral</span> is meant to be the dominant stack, making use of subtle shade variations to help organize content into distinct areas.</p>
-        <p>The <span class="u-color-teal-40">teal</span> stack is set to be the primary action and highlight color and <span class="u-color-purple-60">purple</span> as secondary highlight and also action.</p>
+    <div className="columns">
+      <div className="column">
+        <p>The App, or Application family unites the brand color <span className="u-color-teal-40">teal</span> with support color <span className="u-color-purple-60">purple</span> and <span className="u-color-mineral-80">mineral</span> neutrals. The color system for digital products is derived from the complete color palette. On default light and dark themes, <span className="u-color-mineral-80">mineral</span> is meant to be the dominant stack, making use of subtle shade variations to help organize content into distinct areas.</p>
+        <p>The <span className="u-color-teal-40">teal</span> stack is set to be the primary action and highlight color and <span className="u-color-purple-60">purple</span> as secondary highlight and also action.</p>
         <p>In addition for on-screen messages and special UI features and support, there are specific dual-tone color stacks.</p>
       </div>
-      <div class="column">
+      <div className="column">
         <img src="docs/colors/app-family.svg" alt="All stacks color pairing" />
       </div>
     </div>
     <h4>Light and Dark Themes</h4>
-    <div class="columns">
-      <div class="column">
+    <div className="columns">
+      <div className="column">
         <p>Mineral light and dark themes work as an organizational scheme for color, with each theme instance able to function independently on the primary background color choice. Mineral Light can be used with <code>>$mineral-10</code> or <code>$white</code> backgrounds, while Mineral Dark apps can be designed using <code>$mineral-90</code> or <code>$black</code> backgrounds.</p>
       </div>
-      <div class="column">
+      <div className="column">
         <img src="docs/colors/light-dark-themes.svg" alt="All stacks color pairing" />
       </div>
     </div>
   </div>
 
-  <div class="simple-tab__content content2">Work in progress</div>
+  <div className="simple-tab__content content2">Work in progress</div>
 
-  <div class="simple-tab__content content3">
+  <div className="simple-tab__content content3">
     <p>We use color tokens and themes to manage color. Tokens define color hex, and themes specify the roles that those colors have in the UI.</p>
     <p>We are still implementing themes, so for now we will only display our color tokens</p>
     <h2>Main colors</h2>
     <p>The color system for digital products is derived from the complete color palette. Our main palette unites the brand color teal with support color purple and mineral neutrals</p>
     <p>The teal stack is set to be the primary action and highlight color and purple as secondary highlight and also action.</p>
-    <div class="columns">
-      <div class="column">
+    <div className="columns">
+      <div className="column">
         <h3>Teal</h3>
         <table>
-          <tr>
-            <th>Token</th>
-            <th>Hex</th>
-            <th>Color</th>
-          </tr>
-          <tr>
-            <td><code>$teal-10</code></td>
-            <td><code>#DEF7F7</code></td>
-            <td><div class="doc-color-swatch u-bg-teal-10"></div></td>
-          </tr>
-          <tr>
-            <td><code>$teal-20</code></td>
-            <td><code>#A8F0F0</code></td>
-            <td><div class="doc-color-swatch u-bg-teal-20"></div></td>
-          </tr>
-          <tr>
-            <td><code>$teal-30</code></td>
-            <td><code>#54DEDC</code></td>
-            <td><div class="doc-color-swatch u-bg-teal-30"></div></td>
-          </tr>
-          <tr>
-            <td><code>$teal-40</code></td>
-            <td><code>#009699</code></td>
-            <td><div class="doc-color-swatch u-bg-teal-40"></div></td>
-          </tr>
-          <tr>
-            <td><code>$teal-60</code></td>
-            <td><code>#007B7D</code></td>
-            <td><div class="doc-color-swatch u-bg-teal-60"></div></td>
-          </tr>
-          <tr>
-            <td><code>$teal-70</code></td>
-            <td><code>#005F61</code></td>
-            <td><div class="doc-color-swatch u-bg-teal-70"></div></td>
-          </tr>
-          <tr>
-            <td><code>$teal-80</code></td>
-            <td><code>#004748</code></td>
-            <td><div class="doc-color-swatch u-bg-teal-80"></div></td>
-          </tr>
-          <tr>
-            <td><code>$teal</code></td>
-            <td><code>$teal-40</code></td>
-            <td><div class="doc-color-swatch u-bg-teal-40"></div></td>
-          </tr>
-        </table>
-      </div>
-      <div class="column">
-        <h3>Purple</h3>
-          <table>
+          <thead>
             <tr>
               <th>Token</th>
               <th>Hex</th>
               <th>Color</th>
             </tr>
+          </thead>
+          <tbody>
             <tr>
-              <td><code>$purple-10</code></td>
-              <td><code>#F7F0FF</code></td>
-              <td><div class="doc-color-swatch u-bg-purple-10"></div></td>
+              <td><code>$teal-10</code></td>
+              <td><code>#DEF7F7</code></td>
+              <td><div className="doc-color-swatch u-bg-teal-10"></div></td>
             </tr>
             <tr>
-              <td><code>$purple-20</code></td>
-              <td><code>#E3D1FA</code></td>
-              <td><div class="doc-color-swatch u-bg-purple-20"></div></td>
+              <td><code>$teal-20</code></td>
+              <td><code>#A8F0F0</code></td>
+              <td><div className="doc-color-swatch u-bg-teal-20"></div></td>
             </tr>
             <tr>
-              <td><code>$purple-30</code></td>
-              <td><code>#C7A3F5</code></td>
-              <td><div class="doc-color-swatch u-bg-purple-30"></div></td>
+              <td><code>$teal-30</code></td>
+              <td><code>#54DEDC</code></td>
+              <td><div className="doc-color-swatch u-bg-teal-30"></div></td>
             </tr>
             <tr>
-              <td><code>$purple-40</code></td>
-              <td><code>#935FD3</code></td>
-              <td><div class="doc-color-swatch u-bg-purple-40"></div></td>
+              <td><code>$teal-40</code></td>
+              <td><code>#009699</code></td>
+              <td><div className="doc-color-swatch u-bg-teal-40"></div></td>
             </tr>
             <tr>
-              <td><code>$purple-60</code></td>
-              <td><code>#5A3489</code></td>
-              <td><div class="doc-color-swatch u-bg-purple-60"></div></td>
+              <td><code>$teal-60</code></td>
+              <td><code>#007B7D</code></td>
+              <td><div className="doc-color-swatch u-bg-teal-60"></div></td>
             </tr>
             <tr>
-              <td><code>$purple-70</code></td>
-              <td><code>#3D235C</code></td>
-              <td><div class="doc-color-swatch u-bg-purple-70"></div></td>
+              <td><code>$teal-70</code></td>
+              <td><code>#005F61</code></td>
+              <td><div className="doc-color-swatch u-bg-teal-70"></div></td>
             </tr>
             <tr>
-              <td><code>$purple-80</code></td>
-              <td><code>#201230</code></td>
-              <td><div class="doc-color-swatch u-bg-purple-80"></div></td>
+              <td><code>$teal-80</code></td>
+              <td><code>#004748</code></td>
+              <td><div className="doc-color-swatch u-bg-teal-80"></div></td>
             </tr>
             <tr>
-              <td><code>$purple:</code></td>
-              <td><code>$purple-60</code></td>
-              <td><div class="doc-color-swatch u-bg-purple-60"></div></td>
+              <td><code>$teal</code></td>
+              <td><code>$teal-40</code></td>
+              <td><div className="doc-color-swatch u-bg-teal-40"></div></td>
             </tr>
+          </tbody>
+        </table>
+      </div>
+      <div className="column">
+        <h3>Purple</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Token</th>
+                <th>Hex</th>
+                <th>Color</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>$purple-10</code></td>
+                <td><code>#F7F0FF</code></td>
+                <td><div className="doc-color-swatch u-bg-purple-10"></div></td>
+              </tr>
+              <tr>
+                <td><code>$purple-20</code></td>
+                <td><code>#E3D1FA</code></td>
+                <td><div className="doc-color-swatch u-bg-purple-20"></div></td>
+              </tr>
+              <tr>
+                <td><code>$purple-30</code></td>
+                <td><code>#C7A3F5</code></td>
+                <td><div className="doc-color-swatch u-bg-purple-30"></div></td>
+              </tr>
+              <tr>
+                <td><code>$purple-40</code></td>
+                <td><code>#935FD3</code></td>
+                <td><div className="doc-color-swatch u-bg-purple-40"></div></td>
+              </tr>
+              <tr>
+                <td><code>$purple-60</code></td>
+                <td><code>#5A3489</code></td>
+                <td><div className="doc-color-swatch u-bg-purple-60"></div></td>
+              </tr>
+              <tr>
+                <td><code>$purple-70</code></td>
+                <td><code>#3D235C</code></td>
+                <td><div className="doc-color-swatch u-bg-purple-70"></div></td>
+              </tr>
+              <tr>
+                <td><code>$purple-80</code></td>
+                <td><code>#201230</code></td>
+                <td><div className="doc-color-swatch u-bg-purple-80"></div></td>
+              </tr>
+              <tr>
+                <td><code>$purple:</code></td>
+                <td><code>$purple-60</code></td>
+                <td><div className="doc-color-swatch u-bg-purple-60"></div></td>
+              </tr>
+            </tbody>
           </table>
       </div>
     </div>
     <h2>Additional colors</h2>
-    <div class="columns">
-      <div class="column">
+    <div className="columns">
+      <div className="column">
         <h3>Mustard</h3>
         <table>
-          <tr>
-            <th>Token</th>
-            <th>Hex</th>
-            <th>Color</th>
-          </tr>
-          <tr>
-            <td><code>$mustard-10</code></td>
-            <td><code>#FDF8ED</code></td>
-            <td><div class="doc-color-swatch u-bg-mustard-10"></div></td>
-          </tr>
-          <tr>
-            <td><code>$mustard-20</code></td>
-            <td><code>#FCE9CF</code></td>
-            <td><div class="doc-color-swatch u-bg-mustard-20"></div></td>
-          </tr>
-          <tr>
-            <td><code>$mustard-30</code></td>
-            <td><code>#FFC978</code></td>
-            <td><div class="doc-color-swatch u-bg-mustard-30"></div></td>
-          </tr>
-          <tr>
-            <td><code>$mustard-40</code></td>
-            <td><code>#E9A449</code></td>
-            <td><div class="doc-color-swatch u-bg-mustard-40"></div></td>
-          </tr>
-          <tr>
-            <td><code>$mustard-60</code></td>
-            <td><code>#935E25</code></td>
-            <td><div class="doc-color-swatch u-bg-mustard-60"></div></td>
-          </tr>
-          <tr>
-            <td><code>$mustard-70</code></td>
-            <td><code>#663F19</code></td>
-            <td><div class="doc-color-swatch u-bg-mustard-70"></div></td>
-          </tr>
-          <tr>
-            <td><code>$mustard-80</code></td>
-            <td><code>#38210A</code></td>
-            <td><div class="doc-color-swatch u-bg-mustard-80"></div></td>
-          </tr>
-          <tr>
-            <td><code>$mustard</code></td>
-            <td><code>$mustard-40</code></td>
-            <td><div class="doc-color-swatch u-bg-mustard-40"></div></td>
-          </tr>
-        </table>
-      </div>
-      <div class="column">
-        <h3>Coral</h3>
-          <table>
+          <thead>
             <tr>
               <th>Token</th>
               <th>Hex</th>
               <th>Color</th>
             </tr>
+          </thead>
+          <tbody>
             <tr>
-              <td><code>$coral-10</code></td>
-              <td><code>#FFF1F0</code></td>
-              <td><div class="doc-color-swatch u-bg-coral-10"></div></td>
+              <td><code>$mustard-10</code></td>
+              <td><code>#FDF8ED</code></td>
+              <td><div className="doc-color-swatch u-bg-mustard-10"></div></td>
             </tr>
             <tr>
-              <td><code>$coral-20</code></td>
-              <td><code>#FCD4D0</code></td>
-              <td><div class="doc-color-swatch u-bg-coral-20"></div></td>
+              <td><code>$mustard-20</code></td>
+              <td><code>#FCE9CF</code></td>
+              <td><div className="doc-color-swatch u-bg-mustard-20"></div></td>
             </tr>
             <tr>
-              <td><code>$coral-30</code></td>
-              <td><code>#FFACA4</code></td>
-              <td><div class="doc-color-swatch u-bg-coral-30"></div></td>
+              <td><code>$mustard-30</code></td>
+              <td><code>#FFC978</code></td>
+              <td><div className="doc-color-swatch u-bg-mustard-30"></div></td>
             </tr>
             <tr>
-              <td><code>$coral-40</code></td>
-              <td><code>#EC6056</code></td>
-              <td><div class="doc-color-swatch u-bg-coral-40"></div></td>
+              <td><code>$mustard-40</code></td>
+              <td><code>#E9A449</code></td>
+              <td><div className="doc-color-swatch u-bg-mustard-40"></div></td>
             </tr>
             <tr>
-              <td><code>$coral-60</code></td>
-              <td><code>#BC442F</code></td>
-              <td><div class="doc-color-swatch u-bg-coral-60"></div></td>
+              <td><code>$mustard-60</code></td>
+              <td><code>#935E25</code></td>
+              <td><div className="doc-color-swatch u-bg-mustard-60"></div></td>
             </tr>
             <tr>
-              <td><code>$coral-70</code></td>
-              <td><code>#A2331C</code></td>
-              <td><div class="doc-color-swatch u-bg-coral-70"></div></td>
+              <td><code>$mustard-70</code></td>
+              <td><code>#663F19</code></td>
+              <td><div className="doc-color-swatch u-bg-mustard-70"></div></td>
             </tr>
             <tr>
-              <td><code>$coral-80</code></td>
-              <td><code>#751F0E</code></td>
-              <td><div class="doc-color-swatch u-bg-coral-80"></div></td>
+              <td><code>$mustard-80</code></td>
+              <td><code>#38210A</code></td>
+              <td><div className="doc-color-swatch u-bg-mustard-80"></div></td>
             </tr>
             <tr>
-              <td><code>$coral:</code></td>
-              <td><code>$coral-40</code></td>
-              <td><div class="doc-color-swatch u-bg-coral-40"></div></td>
+              <td><code>$mustard</code></td>
+              <td><code>$mustard-40</code></td>
+              <td><div className="doc-color-swatch u-bg-mustard-40"></div></td>
             </tr>
+          </tbody>
+        </table>
+      </div>
+      <div className="column">
+        <h3>Coral</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Token</th>
+                <th>Hex</th>
+                <th>Color</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>$coral-10</code></td>
+                <td><code>#FFF1F0</code></td>
+                <td><div className="doc-color-swatch u-bg-coral-10"></div></td>
+              </tr>
+              <tr>
+                <td><code>$coral-20</code></td>
+                <td><code>#FCD4D0</code></td>
+                <td><div className="doc-color-swatch u-bg-coral-20"></div></td>
+              </tr>
+              <tr>
+                <td><code>$coral-30</code></td>
+                <td><code>#FFACA4</code></td>
+                <td><div className="doc-color-swatch u-bg-coral-30"></div></td>
+              </tr>
+              <tr>
+                <td><code>$coral-40</code></td>
+                <td><code>#EC6056</code></td>
+                <td><div className="doc-color-swatch u-bg-coral-40"></div></td>
+              </tr>
+              <tr>
+                <td><code>$coral-60</code></td>
+                <td><code>#BC442F</code></td>
+                <td><div className="doc-color-swatch u-bg-coral-60"></div></td>
+              </tr>
+              <tr>
+                <td><code>$coral-70</code></td>
+                <td><code>#A2331C</code></td>
+                <td><div className="doc-color-swatch u-bg-coral-70"></div></td>
+              </tr>
+              <tr>
+                <td><code>$coral-80</code></td>
+                <td><code>#751F0E</code></td>
+                <td><div className="doc-color-swatch u-bg-coral-80"></div></td>
+              </tr>
+              <tr>
+                <td><code>$coral:</code></td>
+                <td><code>$coral-40</code></td>
+                <td><div className="doc-color-swatch u-bg-coral-40"></div></td>
+              </tr>
+            </tbody>
           </table>
       </div>
     </div>
     <h2>Text Colors</h2>
     <p>For text colors, we prefer using `rgba` so we can have text with opacity.</p>
-    <div class="columns">
-      <div class="column">
+    <div className="columns">
+      <div className="column">
         <h3>Opacity Black</h3>
         <table>
-          <tr>
-            <th>Token</th>
-            <th>Hex</th>
-            <th>Color</th>
-          </tr>
-          <tr>
-            <td><code>$black-87</code></td>
-            <td><code>rgba(0, 0, 0, .87)</code></td>
-            <td><div class="doc-color-swatch u-bg-black-87"></div></td>
-          </tr>
-          <tr>
-            <td><code>$black-75</code></td>
-            <td><code>rgba(0, 0, 0, .75)</code></td>
-            <td><div class="doc-color-swatch u-bg-black-75"></div></td>
-          </tr>
-          <tr>
-            <td><code>$black-50</code></td>
-            <td><code>rgba(0, 0, 0, .5)</code></td>
-            <td><div class="doc-color-swatch u-bg-black-50"></div></td>
-          </tr>
-          <tr>
-            <td><code>$black-35</code></td>
-            <td><code>rgba(0, 0, 0, .35)</code></td>
-            <td><div class="doc-color-swatch u-bg-black-35"></div></td>
-          </tr>
-          <tr>
-            <td><code>$black-20</code></td>
-            <td><code>rgba(0, 0, 0, .2)</code></td>
-            <td><div class="doc-color-swatch u-bg-black-20"></div></td>
-          </tr>
-          <tr>
-            <td><code>$black-10</code></td>
-            <td><code>rgba(0, 0, 0, .1)</code></td>
-            <td><div class="doc-color-swatch u-bg-black-10"></div></td>
-          </tr>
+          <thead>
+            <tr>
+              <th>Token</th>
+              <th>Hex</th>
+              <th>Color</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>$black-87</code></td>
+              <td><code>rgba(0, 0, 0, .87)</code></td>
+              <td><div className="doc-color-swatch u-bg-black-87"></div></td>
+            </tr>
+            <tr>
+              <td><code>$black-75</code></td>
+              <td><code>rgba(0, 0, 0, .75)</code></td>
+              <td><div className="doc-color-swatch u-bg-black-75"></div></td>
+            </tr>
+            <tr>
+              <td><code>$black-50</code></td>
+              <td><code>rgba(0, 0, 0, .5)</code></td>
+              <td><div className="doc-color-swatch u-bg-black-50"></div></td>
+            </tr>
+            <tr>
+              <td><code>$black-35</code></td>
+              <td><code>rgba(0, 0, 0, .35)</code></td>
+              <td><div className="doc-color-swatch u-bg-black-35"></div></td>
+            </tr>
+            <tr>
+              <td><code>$black-20</code></td>
+              <td><code>rgba(0, 0, 0, .2)</code></td>
+              <td><div className="doc-color-swatch u-bg-black-20"></div></td>
+            </tr>
+            <tr>
+              <td><code>$black-10</code></td>
+              <td><code>rgba(0, 0, 0, .1)</code></td>
+              <td><div className="doc-color-swatch u-bg-black-10"></div></td>
+            </tr>
+          </tbody>
         </table>
       </div>
-      <div class="column">
+      <div className="column">
         <h3>Opacity White</h3>
         <table>
-          <tr>
-            <th>Token</th>
-            <th>Hex</th>
-            <th>Color</th>
-          </tr>
-          <tr>
-            <td><code>$white-87</code></td>
-            <td><code>rgba(255, 255, 255, .87)</code></td>
-            <td class="u-bg-mineral-40"><div class="doc-color-swatch u-bg-white-87"></div></td>
-          </tr>
-          <tr>
-            <td><code>$white-75</code></td>
-            <td><code>rgba(255, 255, 255, .75)</code></td>
-            <td class="u-bg-mineral-40"><div class="doc-color-swatch u-bg-white-75"></div></td>
-          </tr>
-          <tr>
-            <td><code>$white-50</code></td>
-            <td><code>rgba(255, 255, 255, .5)</code></td>
-            <td class="u-bg-mineral-40"><div class="doc-color-swatch u-bg-white-50"></div></td>
-          </tr>
-          <tr>
-            <td><code>$white-35</code></td>
-            <td><code>rgba(255, 255, 255, .35)</code></td>
-            <td class="u-bg-mineral-40"><div class="doc-color-swatch u-bg-white-35"></div></td>
-          </tr>
-          <tr>
-            <td><code>$white-20</code></td>
-            <td><code>rgba(255, 255, 255, .2)</code></td>
-            <td class="u-bg-mineral-40"><div class="doc-color-swatch u-bg-white-20"></div></td>
-          </tr>
-          <tr>
-            <td><code>$white-10</code></td>
-            <td><code>rgba(255, 255, 255, .1)</code></td>
-            <td class="u-bg-mineral-40"><div class="doc-color-swatch u-bg-white-10"></div></td>
-          </tr>
+          <thead>
+            <tr>
+              <th>Token</th>
+              <th>Hex</th>
+              <th>Color</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>$white-87</code></td>
+              <td><code>rgba(255, 255, 255, .87)</code></td>
+              <td className="u-bg-mineral-40"><div className="doc-color-swatch u-bg-white-87"></div></td>
+            </tr>
+            <tr>
+              <td><code>$white-75</code></td>
+              <td><code>rgba(255, 255, 255, .75)</code></td>
+              <td className="u-bg-mineral-40"><div className="doc-color-swatch u-bg-white-75"></div></td>
+            </tr>
+            <tr>
+              <td><code>$white-50</code></td>
+              <td><code>rgba(255, 255, 255, .5)</code></td>
+              <td className="u-bg-mineral-40"><div className="doc-color-swatch u-bg-white-50"></div></td>
+            </tr>
+            <tr>
+              <td><code>$white-35</code></td>
+              <td><code>rgba(255, 255, 255, .35)</code></td>
+              <td className="u-bg-mineral-40"><div className="doc-color-swatch u-bg-white-35"></div></td>
+            </tr>
+            <tr>
+              <td><code>$white-20</code></td>
+              <td><code>rgba(255, 255, 255, .2)</code></td>
+              <td className="u-bg-mineral-40"><div className="doc-color-swatch u-bg-white-20"></div></td>
+            </tr>
+            <tr>
+              <td><code>$white-10</code></td>
+              <td><code>rgba(255, 255, 255, .1)</code></td>
+              <td className="u-bg-mineral-40"><div className="doc-color-swatch u-bg-white-10"></div></td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
     <h2>Minerals</h2>
     <table>
-      <tr>
-        <th>Token</th>
-        <th>Hex</th>
-        <th>Color</th>
-      </tr>
-      <tr>
-        <td><code>$white</code></td>
-        <td><code>#FFFFFF</code></td>
-        <td><div class="doc-color-swatch u-bg-white"></div></td>
-      </tr>
-      <tr>
-        <td><code>$mineral-10</code></td>
-        <td><code>#E8EFF3</code></td>
-        <td><div class="doc-color-swatch u-bg-mineral-10"></div></td>
-      </tr>
-      <tr>
-        <td><code>$mineral-20</code></td>
-        <td><code>#CDDBE4</code></td>
-        <td><div class="doc-color-swatch u-bg-mineral-20"></div></td>
-      </tr>
-      <tr>
-        <td><code>$mineral-30</code></td>
-        <td><code>#97AEBE</code></td>
-        <td><div class="doc-color-swatch u-bg-mineral-30"></div></td>
-      </tr>
-      <tr>
-        <td><code>$mineral-40</code></td>
-        <td><code>#8095A3</code></td>
-        <td><div class="doc-color-swatch u-bg-mineral-40"></div></td>
-      </tr>
-      <tr>
-        <td><code>$mineral-60</code></td>
-        <td><code>#576975</code></td>
-        <td><div class="doc-color-swatch u-bg-mineral-60"></div></td>
-      </tr>
-      <tr>
-        <td><code>$mineral-70</code></td>
-        <td><code>#414F58</code></td>
-        <td><div class="doc-color-swatch u-bg-mineral-70"></div></td>
-      </tr>
-      <tr>
-        <td><code>$mineral-80</code></td>
-        <td><code>#2E3942</code></td>
-        <td><div class="doc-color-swatch u-bg-mineral-80"></div></td>
-      </tr>
-      <tr>
-        <td><code>$mineral-90</code></td>
-        <td><code>#1B2327</code></td>
-        <td><div class="doc-color-swatch u-bg-mineral-90"></div></td>
-      </tr>
-      <tr>
-        <td><code>$black</code></td>
-        <td><code>#000000</code></td>
-        <td><div class="doc-color-swatch u-bg-black"></div></td>
-      </tr>
+      <thead>
+        <tr>
+          <th>Token</th>
+          <th>Hex</th>
+          <th>Color</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>$white</code></td>
+          <td><code>#FFFFFF</code></td>
+          <td><div className="doc-color-swatch u-bg-white"></div></td>
+        </tr>
+        <tr>
+          <td><code>$mineral-10</code></td>
+          <td><code>#E8EFF3</code></td>
+          <td><div className="doc-color-swatch u-bg-mineral-10"></div></td>
+        </tr>
+        <tr>
+          <td><code>$mineral-20</code></td>
+          <td><code>#CDDBE4</code></td>
+          <td><div className="doc-color-swatch u-bg-mineral-20"></div></td>
+        </tr>
+        <tr>
+          <td><code>$mineral-30</code></td>
+          <td><code>#97AEBE</code></td>
+          <td><div className="doc-color-swatch u-bg-mineral-30"></div></td>
+        </tr>
+        <tr>
+          <td><code>$mineral-40</code></td>
+          <td><code>#8095A3</code></td>
+          <td><div className="doc-color-swatch u-bg-mineral-40"></div></td>
+        </tr>
+        <tr>
+          <td><code>$mineral-60</code></td>
+          <td><code>#576975</code></td>
+          <td><div className="doc-color-swatch u-bg-mineral-60"></div></td>
+        </tr>
+        <tr>
+          <td><code>$mineral-70</code></td>
+          <td><code>#414F58</code></td>
+          <td><div className="doc-color-swatch u-bg-mineral-70"></div></td>
+        </tr>
+        <tr>
+          <td><code>$mineral-80</code></td>
+          <td><code>#2E3942</code></td>
+          <td><div className="doc-color-swatch u-bg-mineral-80"></div></td>
+        </tr>
+        <tr>
+          <td><code>$mineral-90</code></td>
+          <td><code>#1B2327</code></td>
+          <td><div className="doc-color-swatch u-bg-mineral-90"></div></td>
+        </tr>
+        <tr>
+          <td><code>$black</code></td>
+          <td><code>#000000</code></td>
+          <td><div className="doc-color-swatch u-bg-black"></div></td>
+        </tr>
+      </tbody>
     </table>
     <h2>Message and Support</h2>
     <p>In addition for on-screen messages and special UI features and support, there are specific dual-tone color stacks.</p>
-    <div class="columns">
-      <div class="column">
+    <div className="columns">
+      <div className="column">
         <h3>Message</h3>
         <table>
-          <tr>
-            <th>Token</th>
-            <th>Hex</th>
-            <th>Color</th>
-          </tr>
-          <tr>
-            <td><code>$green-20</code></td>
-            <td><code>#AEEAC9</code></td>
-            <td><div class="doc-color-swatch u-bg-green-20"></div></td>
-          </tr>
-          <tr>
-            <td><code>$green-60</code></td>
-            <td><code>#16884B</code></td>
-            <td><div class="doc-color-swatch u-bg-green-60"></div></td>
-          </tr>
-          <tr>
-            <td><code>$red-20</code></td>
-            <td><code>#F9C3C3</code></td>
-            <td><div class="doc-color-swatch u-bg-red-20"></div></td>
-          </tr>
-          <tr>
-            <td><code>$red-60</code></td>
-            <td><code>#C22929</code></td>
-            <td><div class="doc-color-swatch u-bg-red-60"></div></td>
-          </tr>
-          <tr>
-            <td><code>$yellow-20</code></td>
-            <td><code>#FFEA99</code></td>
-            <td><div class="doc-color-swatch u-bg-yellow-20"></div></td>
-          </tr>
-          <tr>
-            <td><code>$yellow-60</code></td>
-            <td><code>#F1BC04</code></td>
-            <td><div class="doc-color-swatch u-bg-yellow-60"></div></td>
-          </tr>
+          <thead>
+            <tr>
+              <th>Token</th>
+              <th>Hex</th>
+              <th>Color</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>$green-20</code></td>
+              <td><code>#AEEAC9</code></td>
+              <td><div className="doc-color-swatch u-bg-green-20"></div></td>
+            </tr>
+            <tr>
+              <td><code>$green-60</code></td>
+              <td><code>#16884B</code></td>
+              <td><div className="doc-color-swatch u-bg-green-60"></div></td>
+            </tr>
+            <tr>
+              <td><code>$red-20</code></td>
+              <td><code>#F9C3C3</code></td>
+              <td><div className="doc-color-swatch u-bg-red-20"></div></td>
+            </tr>
+            <tr>
+              <td><code>$red-60</code></td>
+              <td><code>#C22929</code></td>
+              <td><div className="doc-color-swatch u-bg-red-60"></div></td>
+            </tr>
+            <tr>
+              <td><code>$yellow-20</code></td>
+              <td><code>#FFEA99</code></td>
+              <td><div className="doc-color-swatch u-bg-yellow-20"></div></td>
+            </tr>
+            <tr>
+              <td><code>$yellow-60</code></td>
+              <td><code>#F1BC04</code></td>
+              <td><div className="doc-color-swatch u-bg-yellow-60"></div></td>
+            </tr>
+          </tbody>
         </table>
       </div>
-      <div class="column">
+      <div className="column">
         <h3>Support</h3>
         <table>
-          <tr>
-            <th>Token</th>
-            <th>Hex</th>
-            <th>Color</th>
-          </tr>
-          <tr>
-            <td><code>$cyan-20</code></td>
-            <td><code>#A4D0F4</code></td>
-            <td><div class="doc-color-swatch u-bg-cyan-20"></div></td>
-          </tr>
-          <tr>
-            <td><code>$cyan-60</code></td>
-            <td><code>#0077CC</code></td>
-            <td><div class="doc-color-swatch u-bg-cyan-60"></div></td>
-          </tr>
-          <tr>
-            <td><code>$pink-20</code></td>
-            <td><code>#F8B9D6</code></td>
-            <td><div class="doc-color-swatch u-bg-pink-20"></div></td>
-          </tr>
-          <tr>
-            <td><code>$pink-60</code></td>
-            <td><code>#CC005C</code></td>
-            <td><div class="doc-color-swatch u-bg-pink-60"></div></td>
-          </tr>
-          <tr>
-            <td><code>$orange-20</code></td>
-            <td><code>#FFC499</code></td>
-            <td><div class="doc-color-swatch u-bg-orange-20"></div></td>
-          </tr>
-          <tr>
-            <td><code>$orange-60</code></td>
-            <td><code>#D16900</code></td>
-            <td><div class="doc-color-swatch u-bg-orange-60"></div></td>
-          </tr>
+          <thead>
+            <tr>
+              <th>Token</th>
+              <th>Hex</th>
+              <th>Color</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>$cyan-20</code></td>
+              <td><code>#A4D0F4</code></td>
+              <td><div className="doc-color-swatch u-bg-cyan-20"></div></td>
+            </tr>
+            <tr>
+              <td><code>$cyan-60</code></td>
+              <td><code>#0077CC</code></td>
+              <td><div className="doc-color-swatch u-bg-cyan-60"></div></td>
+            </tr>
+            <tr>
+              <td><code>$pink-20</code></td>
+              <td><code>#F8B9D6</code></td>
+              <td><div className="doc-color-swatch u-bg-pink-20"></div></td>
+            </tr>
+            <tr>
+              <td><code>$pink-60</code></td>
+              <td><code>#CC005C</code></td>
+              <td><div className="doc-color-swatch u-bg-pink-60"></div></td>
+            </tr>
+            <tr>
+              <td><code>$orange-20</code></td>
+              <td><code>#FFC499</code></td>
+              <td><div className="doc-color-swatch u-bg-orange-20"></div></td>
+            </tr>
+            <tr>
+              <td><code>$orange-60</code></td>
+              <td><code>#D16900</code></td>
+              <td><div className="doc-color-swatch u-bg-orange-60"></div></td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
