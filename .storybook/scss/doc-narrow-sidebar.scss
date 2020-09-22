@@ -1,0 +1,27 @@
+.lab-narrow-sidebar--stories{
+  .lab-narrow-sidebar {
+    position: relative;
+    border: 2px solid $mineral-20;
+  }
+
+  .lab-narrow-sidebar__header {
+    position: relative;
+    width: 100%;
+  }
+
+  .lab-narrow-sidebar__body{
+    margin-top:0;
+  }
+      
+  .lab-narrow-sidebar__trigger {
+    position: relative;
+  }
+
+  .lab-narrow-sidebar__trigger-button {
+    display: inline;;
+  }
+
+  .lab-narrow__overlay {
+    display: none;
+  }
+}

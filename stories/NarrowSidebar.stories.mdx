@@ -36,27 +36,34 @@ Toggle can be used as shown in the example below:Toggle can be used as shown in 
 Toggle can be used as shown in the example below:## Sample Toggle
 Toggle can be used as shown in the example below:
 
-
-<NarrowSidebar withScroll>
-  <Header >
-    <Logotype altText="User photo" />
-    <Collapse />
-  </Header>
-  <Body  >
-    <Item icon="calendar" iconColor="mineral60" label="Teste" />
-    <Item icon="coin" iconColor="mineral60" label="Teste" />
-    <Item icon="wallet" iconColor="mineral60" label="Teste" />
-    <Item icon="wallet" iconColor="mineral60" label="Teste" />
-    <Item icon="wallet" iconColor="mineral60" label="Teste" />
-    <Item icon="wallet" iconColor="mineral60" label="Teste" />
-    <Item icon="wallet" iconColor="mineral60" label="Teste" />
-    <Item icon="wallet" iconColor="mineral60" label="Teste" />
-    <Item icon="wallet" iconColor="mineral60" label="Teste" />
-    <Item icon="wallet" iconColor="mineral60" label="Teste" />
-  </Body>
-  <Footer>
-    <UserAvatar altText="User photo" caption="Cool guy"/>
-    <FooterButton icon="key" label="Password"/>
-    <FooterButton icon="logout" label="Logout" />
-  </Footer>
-</NarrowSidebar>
+  <Preview>
+    <Story name="InteractiveDemo">
+    <Fragment>
+      <div className="lab-narrow-sidebar--stories">
+        <NarrowSidebar withScroll>
+          <Header >
+            <Logotype altText="User photo" />
+            <Collapse />
+          </Header>
+          <Body  >
+            <Item icon="calendar" iconColor="mineral60" label="Teste" />
+            <Item icon="coin" iconColor="mineral60" label="Teste" />
+            <Item icon="wallet" iconColor="mineral60" label="Teste" />
+            <Item icon="wallet" iconColor="mineral60" label="Teste" />
+            <Item icon="wallet" iconColor="mineral60" label="Teste" />
+            <Item icon="wallet" iconColor="mineral60" label="Teste" />
+            <Item icon="wallet" iconColor="mineral60" label="Teste" />
+            <Item icon="wallet" iconColor="mineral60" label="Teste" />
+            <Item icon="wallet" iconColor="mineral60" label="Teste" />
+            <Item icon="wallet" iconColor="mineral60" label="Teste" />
+          </Body>
+          <Footer>
+            <UserAvatar altText="User photo" caption="Cool guy"/>
+            <FooterButton icon="key" label="Password"/>
+            <FooterButton icon="logout" label="Logout" />
+          </Footer>
+        </NarrowSidebar>
+      </div>
+  </Fragment>
+  </Story>
+</Preview>

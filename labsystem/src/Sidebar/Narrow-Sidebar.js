@@ -36,7 +36,7 @@ export default class NarrowSidebar extends React.Component {
     return (
       <React.Fragment>
         <div className="lab-narrow-sidebar__trigger">
-          <button type="button" className="sidebar-trigger">
+          <button type="button" className="lab-narrow-sidebar__trigger-button">
             <Icon type="menu-expand" color="white" />
           </button>
         </div>
@@ -59,9 +59,6 @@ export default class NarrowSidebar extends React.Component {
           }
         >
           {children}
-          <button onClick={this.handleClick}>
-            {this.state.isToggleOn ? 'ON' : 'OFF'}
-          </button>
         </div>
       </React.Fragment>
     );

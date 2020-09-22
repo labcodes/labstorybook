@@ -19,12 +19,12 @@ $narrow-trigger-bg: map-get($narrow-sidebar-theme, "60");
   border-bottom: 1px solid transparent;
 }
 
-.sidebar-trigger {
+.lab-narrow-sidebar__trigger-button {
   display: flex;
   align-items: center;
   width: 40px;
   height: 40px;
-  margin: 12px 0 12px 12px;
+  margin: 18px 0 18px 12px;
   background-color:transparent;
   border: 2px solid transparent;
   border-radius: 4px;
@@ -50,7 +50,7 @@ $narrow-trigger-bg: map-get($narrow-sidebar-theme, "60");
   overflow-x:hidden;
   height: 100vh;
   top: 0;
-  position: fixed; //don't work with stories
+  position: fixed; 
   align-items: stretch;
   flex-direction: column;
   border-top-right-radius: $radius-default;
