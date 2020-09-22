@@ -13,7 +13,7 @@ export default class InputPlayground extends React.Component {
       passwordValue: "",
       label: "Label example",
       icon: "",
-      iconColor: "mineral70",
+      iconColor: "mineral-70",
       helpMessage: "",
       prefix: "",
       suffix: "",
