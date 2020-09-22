@@ -19,7 +19,7 @@ $text-bg-hover: map-get($button-theme, "10");
 $text-color-active: map-get($button-theme, "70");
 $text-bg-active: map-get($button-theme, "20");
 
-.btn {
+.lab-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -60,33 +60,33 @@ $text-bg-active: map-get($button-theme, "20");
 // Button icon is scaled to 16x16px but it still occupies 24x24px, having a "native" margin of 4px.
 // We apply negative margin-left to remove this space and adds margin-right to match the expected 
 // 8px spacing between icon and text on button.
-.btn__icon {
+.lab-btn__icon {
   margin-right: 4px;
   margin-left: -4px;
 }
 
 // Button sizes modifiers
-.btn--normal {
+.lab-btn--normal {
   height: 40px;
   padding: 0 16px;
 }
 
-.btn--small {
+.lab-btn--small {
   height: 32px;
   padding: 0 16px;
 }
 
-.btn--large {
+.lab-btn--large {
   height: 48px;
   padding: 0 16px;
 }
 
-.btn--block {
+.lab-btn--block {
   width: 100%;
 }
 
 // Button variant modifiers
-.btn--default {
+.lab-btn--default {
   color: white;
   background-color: $btn-main-color;
   border-color: $btn-main-color;
@@ -118,23 +118,23 @@ $text-bg-active: map-get($button-theme, "20");
   }
 
   &:disabled,
-  &.btn--dark:disabled,
-  &.btn--light:disabled,
-  &.btn--warning:disabled,
-  &.btn--warning-invert:disabled,
-  &.btn--destructive:disabled,
-  &.btn--destructive-invert:disabled,
-  &.btn--confirmation-invert:disabled {
+  &.lab-btn--dark:disabled,
+  &.lab-btn--light:disabled,
+  &.lab-btn--warning:disabled,
+  &.lab-btn--warning-invert:disabled,
+  &.lab-btn--destructive:disabled,
+  &.lab-btn--destructive-invert:disabled,
+  &.lab-btn--confirmation-invert:disabled {
     color: $mineral-40;
     background-color: $mineral-20;
     border-color: $mineral-20;
 
-    .btn__icon {
+    .lab-btn__icon {
       background-color: $mineral-40;
     }
   }
 
-  &.btn--dark {
+  &.lab-btn--dark {
     color: $white;
     background-color: $mineral-90;
     border-color: $mineral-90;
@@ -168,12 +168,12 @@ $text-bg-active: map-get($button-theme, "20");
     }
   }
 
-  &.btn--light {
+  &.lab-btn--light {
     color: $mineral-90;
     background-color: $white;
     border-color: $white;
 
-    .btn__icon {
+    .lab-btn__icon {
       background-color: $mineral-90
     }
 
@@ -207,12 +207,12 @@ $text-bg-active: map-get($button-theme, "20");
     }
   }
 
-  &.btn--warning {
+  &.lab-btn--warning {
     color: $black-75;
     background-color: $yellow-60;
     border-color: $yellow-60;
 
-    .btn__icon {
+    .lab-btn__icon {
       background-color: $black-75;
     }
 
@@ -232,7 +232,7 @@ $text-bg-active: map-get($button-theme, "20");
       color: $white;
       background: mix($yellow-60, black, 50%);
 
-      .btn__icon {
+      .lab-btn__icon {
         background-color: white;
       }
     }
@@ -249,12 +249,12 @@ $text-bg-active: map-get($button-theme, "20");
     }
   }
 
-  &.btn--warning-invert {
+  &.lab-btn--warning-invert {
     color: $yellow-60;
     background-color: $mineral-90;
     border-color: $mineral-90;
 
-    .btn__icon {
+    .lab-btn__icon {
       background-color: $yellow-60;
     }
 
@@ -288,7 +288,7 @@ $text-bg-active: map-get($button-theme, "20");
     }
   }
 
-  &.btn--destructive {
+  &.lab-btn--destructive {
     color: $white;
     background-color: $red-60;
     border-color: $red-60;
@@ -321,12 +321,12 @@ $text-bg-active: map-get($button-theme, "20");
     }
   }
 
-  &.btn--destructive-invert {
+  &.lab-btn--destructive-invert {
     color: $red-60;
     background-color: $white;
     border-color: $white;
 
-    .btn__icon {
+    .lab-btn__icon {
       background-color: $red-60;
     }
 
@@ -360,12 +360,12 @@ $text-bg-active: map-get($button-theme, "20");
     }
   }
 
-  &.btn--confirmation-invert {
+  &.lab-btn--confirmation-invert {
     color: $green-60;
     background-color: $white;
     border-color: $white;
 
-    .btn__icon {
+    .lab-btn__icon {
       background-color: $green-60;
     }
 
@@ -400,11 +400,11 @@ $text-bg-active: map-get($button-theme, "20");
   }
 }
 
-.btn--outline {
+.lab-btn--outline {
   color: $btn-main-color;
   background-color: transparent;
 
-  .btn__icon {
+  .lab-btn__icon {
     background-color: $btn-main-color;
   }
 
@@ -435,30 +435,30 @@ $text-bg-active: map-get($button-theme, "20");
   }
 
   &:disabled,
-  &.btn--dark:disabled {
+  &.lab-btn--dark:disabled {
     color: $mineral-30;
     border-color: $mineral-20;
 
-    .btn__icon {
+    .lab-btn__icon {
       background-color: $mineral-30;
     }
   }
 
-  &.btn--light:disabled {
+  &.lab-btn--light:disabled {
     color: $white-50;
     border-color: $white-20;
 
-    .btn__icon {
+    .lab-btn__icon {
       background-color: $white-50;
     }
   }
 
-  &.btn--dark {
+  &.lab-btn--dark {
     color: $mineral-90;
     background-color: transparent;
     border-color: $mineral-90;
 
-    .btn__icon {
+    .lab-btn__icon {
       background-color: $mineral-90;
     }
 
@@ -494,12 +494,12 @@ $text-bg-active: map-get($button-theme, "20");
     }
   }
 
-  &.btn--light {
+  &.lab-btn--light {
     color: $white;
     background-color: transparent;
     border-color: $white;
 
-    .btn__icon {
+    .lab-btn__icon {
       background-color: $white;
     }
 
@@ -536,14 +536,14 @@ $text-bg-active: map-get($button-theme, "20");
   }
 }
 
-.btn--text {
+.lab-btn--text {
   color: $btn-main-color;
   text-transform: uppercase;
   letter-spacing: 1%;
   background-color: transparent;
   border-color: transparent;
 
-  .btn__icon {
+  .lab-btn__icon {
     background-color: $btn-main-color;
   }
 
@@ -572,26 +572,26 @@ $text-bg-active: map-get($button-theme, "20");
   }
 
   &:disabled,
-  &.btn--light:disabled {
+  &.lab-btn--light:disabled {
     color: $mineral-30;
 
-    .btn__icon {
+    .lab-btn__icon {
       background-color: $mineral-30;
     }
   }
 
-  &.btn--light:disabled {
+  &.lab-btn--light:disabled {
     color: $white-50;
 
-    .btn__icon {
+    .lab-btn__icon {
       background-color: $white-50;
     }
   }
 
-  &.btn--light {
+  &.lab-btn--light {
     color: $white;
 
-    .btn__icon {
+    .lab-btn__icon {
       background-color: $white;
     }
 
@@ -609,10 +609,10 @@ $text-bg-active: map-get($button-theme, "20");
     }
   }
 
-  &.btn--dark {
+  &.lab-btn--dark {
     color: $mineral-80;
 
-    .btn__icon {
+    .lab-btn__icon {
       background-color: $mineral-80;
     }
 

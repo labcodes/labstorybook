@@ -43,7 +43,7 @@ export default class AbstractButton extends React.Component {
     Icon color changes according to button type and exception on _buttons.scss
     */
     return icon ? (
-      <Icon type={icon} color="white" size="petit" className="btn__icon" />
+      <Icon type={icon} color="white" size="petit" className="lab-btn__icon" />
     ) : (
       ""
     );
@@ -63,10 +63,10 @@ export default class AbstractButton extends React.Component {
         // eslint-disable-next-line react/button-has-type
         type={type}
         className={
-          `btn` +
-          ` btn--${variant} btn--${size}` +
-          `${skin ? ` btn--${skin}` : ""}` +
-          `${fullWidth ? ` btn--block` : ""}`
+          `lab-btn` +
+          ` lab-btn--${variant} lab-btn--${size}` +
+          `${skin ? ` lab-btn--${skin}` : ""}` +
+          `${fullWidth ? ` lab-btn--block` : ""}`
         }
         onClick={this.handleOnClick}
         disabled={disabled || undefined}
