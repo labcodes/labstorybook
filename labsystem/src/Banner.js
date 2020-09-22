@@ -27,19 +27,9 @@ export default class Banner extends React.Component {
     const { buttonText, type } = this.props;
     if (buttonText) {
       return type == "warn" ? (
-        <TextButton
-          className="lab-alert__button"
-          size="normal"
-          skin="dark"
-          text={buttonText}
-        />
+        <TextButton size="normal" skin="dark" text={buttonText} />
       ) : (
-        <TextButton
-          className="lab-alert__button"
-          size="normal"
-          skin="light"
-          text={buttonText}
-        />
+        <TextButton size="normal" skin="light" text={buttonText} />
       );
     }
   };
@@ -50,7 +40,7 @@ export default class Banner extends React.Component {
       <div className={`lab-banner__${type}`}>
         {this.icon()}
         <span className="lab-banner__message">{text}</span>
-        {this.button()}
+        <span className="lab-alert__button">{this.button()}</span>
       </div>
     );
   }

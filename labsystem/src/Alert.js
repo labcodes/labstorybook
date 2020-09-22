@@ -26,16 +26,7 @@ export default class Alert extends React.Component {
   button = () => {
     const { buttonText } = this.props;
     return buttonText ? (
-      <TextButton
-        className="lab-alert__button"
-        disabled={false}
-        fullWidth={false}
-        icon={undefined}
-        onClick={undefined}
-        size="normal"
-        skin="dark"
-        text={buttonText}
-      />
+      <TextButton size="normal" skin="dark" text={buttonText} />
     ) : undefined;
   };
 
@@ -45,7 +36,7 @@ export default class Alert extends React.Component {
       <div className={`lab-alert__${type}`}>
         {this.icon()}
         <span className="lab-alert__message">{text}</span>
-        {this.button()}
+        <span className="lab-alert__button">{this.button()}</span>
       </div>
     );
   }
