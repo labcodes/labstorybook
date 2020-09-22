@@ -21,7 +21,7 @@ $icon-size: 1.5rem !default;
 
   @each $key, $palette in $all-colors {
     @each $color-palette, $color in $palette {
-      &--#{$key}#{$color-palette} {
+      &--#{$key}-#{$color-palette} {
           background-color: $color;
       }
     }
