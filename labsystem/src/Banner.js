@@ -26,7 +26,7 @@ export default class Banner extends React.Component {
   button = () => {
     const { buttonText, type } = this.props;
     if (buttonText) {
-      return type == "warn" ? (
+      return type === "warn" ? (
         <TextButton size="normal" skin="dark" text={buttonText} />
       ) : (
         <TextButton size="normal" skin="light" text={buttonText} />
