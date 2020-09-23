@@ -29,7 +29,7 @@ export default class AbstractTextInput extends React.Component {
     type: "text",
     className: "",
     disabled: false,
-    defaultValue: undefined,
+    defaultValue: "",
     value: undefined,
     icon: undefined,
     iconColor: undefined,

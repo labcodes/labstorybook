@@ -4,7 +4,7 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import TextInput from '../labsystem/src/Input/TextInput';
 import EmailInput from '../labsystem/src/Input/EmailInput';
 import PasswordInput from '../labsystem/src/Input/PasswordInput';
-import InputPlayground from '../playgrounds/InputPlayground';
+import TextInputPlayground from '../playgrounds/TextInputPlayground';
 
 <Meta title="Components/Text Input" component={TextInput} />
 
@@ -54,7 +54,7 @@ We can have 3 types of text inputs.
   <Story name="Input Playground">
   <Fragment>
     <div>
-      <InputPlayground />
+      <TextInputPlayground />
     </div>
   </Fragment>
   </Story>
@@ -90,9 +90,9 @@ It’s a default input that is required to be filled. It has a helper message to
     <Fragment>
       <div className="stories-half_width-wrapper">
         <h6>Required Default</h6>
-        <TextInput type="text" id="required" label= "Label" helpMessage="Help message" required />
+        <TextInput type="text" id="required" label="Label" helpMessage="Help message" required />
         <h6>Required Error</h6>
-        <TextInput type="email" id="required2" label= "Required" isValid={false} helpMessage="Help message" customErrorMsg="teste" required />
+        <TextInput type="email" id="required2" label="Required" isValid={false} helpMessage="Help message" customErrorMsg="teste" required />
       </div>
     </Fragment>
   </Story>
@@ -207,7 +207,7 @@ The theme must be selected by changing the value of the `$input-theme` variable 
       <h6>Default</h6>
         <TextInput defaultValue="Purple" id="purple1" label="Label" />
       <h6>Required Default</h6>
-        <TextInput id="purple2" label= "Label" defaultValue="Purple"
+        <TextInput id="purple2" label="Label" defaultValue="Purple"
         helpMessage="Help message" required />
       <h6>Prefix Default</h6>
         <TextInput defaultValue="Purple"

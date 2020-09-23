@@ -96,7 +96,7 @@ export default class InputPlayground extends React.Component {
         <div className="column lab-playground__component">
           <h4>TextInput</h4>
           <TextInput
-            value={textValue}
+            defaultValue={textValue}
             id="textValue"
             label={label}
             icon={icon}
@@ -117,7 +117,7 @@ export default class InputPlayground extends React.Component {
 
           <h4>EmailInput</h4>
           <EmailInput
-            value={emailValue}
+            defaultValue={emailValue}
             id="emailValue"
             label={label}
             icon={icon}
@@ -138,7 +138,7 @@ export default class InputPlayground extends React.Component {
 
           <h4>PasswordInput</h4>
           <PasswordInput
-            value={passwordValue}
+            defaultValue={passwordValue}
             id="passwordValue"
             label={label}
             helpMessage={helpMessage}
@@ -180,8 +180,8 @@ export default class InputPlayground extends React.Component {
                 id="icon"
                 onChange={this.handlePropChangeText}
               >
-                {iconOptions.map((item, index) => (
-                  <option value={item} key={`icon-${index}`}>
+                {iconOptions.map((item) => (
+                  <option value={item} key={item}>
                     {item}
                   </option>
                 ))}
