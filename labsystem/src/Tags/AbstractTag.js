@@ -7,21 +7,21 @@ export default class AbstractTag extends React.Component {
   static propTypes = {
     text: PropTypes.string.isRequired,
     togglable: PropTypes.bool,
-    dropdown: PropTypes.bool,
+    isDropdown: PropTypes.bool,
     removable: PropTypes.bool,
     disabled: PropTypes.bool,
+    outline: PropTypes.bool,
+    selected: PropTypes.bool,
     thumbSrc: PropTypes.string,
     icon: PropTypes.string,
-    outline: PropTypes.bool,
     skin: PropTypes.string,
     color: PropTypes.string,
-    selected: PropTypes.bool,
     onClick: PropTypes.func,
   };
 
   static defaultProps = {
     togglable: false,
-    dropdown: false,
+    isDropdown: false,
     removable: false,
     thumbSrc: "",
     icon: "",
@@ -55,8 +55,8 @@ export default class AbstractTag extends React.Component {
   };
 
   dropdownIcon = () => {
-    const { dropdown } = this.props;
-    return dropdown ? (
+    const { isDropdown } = this.props;
+    return isDropdown ? (
       <span className="lab-tag__dropdown-icon-wrapper">
         <Icon
           type="dropdown-closed"
@@ -93,7 +93,7 @@ export default class AbstractTag extends React.Component {
     const {
       text,
       togglable,
-      dropdown,
+      isDropdown,
       removable,
       disabled,
       icon,
@@ -110,7 +110,7 @@ export default class AbstractTag extends React.Component {
           `lab-tag` +
           `${togglable ? ` lab-tag--togglable` : ``}` +
           `${removable ? ` lab-tag--removable` : ""}` +
-          `${dropdown ? ` lab-tag--dropdown` : ""}` +
+          `${isDropdown ? ` lab-tag--dropdown` : ""}` +
           `${disabled ? ` lab-tag--disabled` : ""}` +
           `${outline ? ` lab-tag--outline` : ""}` +
           `${color ? ` lab-tag--${color}-${skin}` : ` lab-tag--${skin}`}` +

@@ -26,7 +26,7 @@ export default class DropdownTag extends React.Component {
     const { text, icon, color, skin, outline, disabled, onClick } = this.props;
     return (
       <AbstractTag
-        dropdown
+        isDropdown
         text={text}
         icon={icon}
         color={color}

@@ -27,7 +27,7 @@ describe("AbstractTag", () => {
 
   it("renders with base props for 'dropdown' type", async () => {
     const renderedComponent = renderer
-      .create(<AbstractTag dropdown text="Test DropdownTag" />)
+      .create(<AbstractTag isDropdown text="Test DropdownTag" />)
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
   });
