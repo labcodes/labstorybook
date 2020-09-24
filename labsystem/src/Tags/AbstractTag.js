@@ -11,7 +11,7 @@ export default class AbstractTag extends React.Component {
     isRemovable: PropTypes.bool,
     isDisabled: PropTypes.bool,
     isOutline: PropTypes.bool,
-    selected: PropTypes.bool,
+    isOn: PropTypes.bool,
     thumbSrc: PropTypes.string,
     icon: PropTypes.string,
     skin: PropTypes.string,
@@ -29,7 +29,7 @@ export default class AbstractTag extends React.Component {
     skin: "pale",
     color: "",
     isDisabled: false,
-    selected: false,
+    isOn: false,
     onClick: undefined,
   };
 
@@ -48,8 +48,8 @@ export default class AbstractTag extends React.Component {
   };
 
   selected = () => {
-    const { selected } = this.props;
-    return selected ? (
+    const { isOn } = this.props;
+    return isOn ? (
       <Icon type="check" color="black75" size="petit" className="check-icon" />
     ) : undefined;
   };
@@ -101,7 +101,7 @@ export default class AbstractTag extends React.Component {
       isOutline,
       skin,
       color,
-      selected,
+      isOn,
     } = this.props;
 
     return (
@@ -115,7 +115,7 @@ export default class AbstractTag extends React.Component {
           `${isOutline ? ` lab-tag--outline` : ""}` +
           `${color ? ` lab-tag--${color}-${skin}` : ` lab-tag--${skin}`}` +
           `${icon ? ` lab-tag--has-left-icon` : ""}` +
-          `${selected ? ` lab-tag--selected` : ""}` +
+          `${isOn ? ` lab-tag--selected` : ""}` +
           `${thumbSrc ? ` lab-tag--has-thumb` : ""}`
         }
         onClick={this.handleOnClick}
