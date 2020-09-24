@@ -29,7 +29,7 @@ export default class AbstractTextInput extends React.Component {
     type: "text",
     className: "",
     disabled: false,
-    defaultValue: "",
+    defaultValue: undefined,
     value: undefined,
     icon: undefined,
     iconColor: undefined,
@@ -54,7 +54,7 @@ export default class AbstractTextInput extends React.Component {
       );
     }
     this.state = {
-      localValue: value || defaultValue,
+      localValue: value || defaultValue || "",
       localIsValid: !isUndefined(isValid) ? isValid : true,
     };
   }
