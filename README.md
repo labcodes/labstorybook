@@ -20,15 +20,6 @@ If you want to deploy it, we have everything set up to deploy it to github pages
 
 To execute the test suit go to the `labsystem` directory, then run `npm test`.
 
-### ESLint
-
-We use ESLint to validate our code before pushing it to our repository. We recommend that you install any ESLint plugins to your preferred code editor, so that it highlights all the errors before you save the files. On VSCode, we use this one: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
-
-### Licensing
-
-This project is a fork from [lucianoratamero/storybook-ghpages-template](https://github.com/lucianoratamero/storybook-ghpages-template), licensed under the MIT License.
-
-
 ### Creating new components
 
 If you want to use this Design System to develop your own custom components, check out the template files at `/labsystem/samples`. This is how you can start:
@@ -36,3 +27,11 @@ If you want to use this Design System to develop your own custom components, che
 - Copy `SampleComponent.js` to `/labsystem/src` and rename it (and the class name as well);
 - Copy `_sample-component.scss` to `/labsystem/scss/components` and rename it;
 - Copy `SampleComponent.stories.mdx` to `/stories`, rename it, and fill up its content.
+
+### ESLint
+
+We use ESLint to validate our code before pushing it to our repository. We recommend that you install any ESLint plugins to your preferred code editor, so that it highlights all the errors before you save the files. On VSCode, we use this one: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+
+### Licensing
+
+This project is a fork from [lucianoratamero/storybook-ghpages-template](https://github.com/lucianoratamero/storybook-ghpages-template), licensed under the MIT License.
