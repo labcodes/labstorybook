@@ -58,37 +58,16 @@ import Tooltip from "../labsystem/src/Tooltip";
 </div>
 
 
-### Interactive demo
-
-This demo lets you preview the tooltip component, its variations, and configuration options.
-
-
-
 #### Colors
 
-The default color is black, but Tooltip can also be used with the theme color - Teal or Purple.
+The tooltips color is defined in the `scss/variables/_settings.scss` file, and can be Black, Teal or Purple. Avoid using Purple tooltips if the project theme is Teal, and vice versa.
 
-<Preview>
-  <Story name="Tooltip">
-    <Fragment>
-      <br />
-      <br />
-      <Tooltip id="tooltip-1" text="Black tooltip" placement="right">
-        <button>Hover to see - Black</button>
-      </Tooltip>
-      <br />
-      <br />
-      <Tooltip id="tooltip-2" text="Teal tooltip" useThemeColor placement="right" >
-        <button>Hover to see - Teal</button>
-      </Tooltip>
-    </Fragment>
-  </Story>
-</Preview>
+<img src="docs/tooltip/examples/colors.png" />
 
 #### Behavior
 
 A tooltip is displayed upon hovering over it (desktop). It is not displayed on mobile.
-Continuously display the tooltip as long as the user hovers over the element. 
+Continuously display the tooltip as long as the user hovers over the element.
 
 <div class="columns">
     <div class="column">

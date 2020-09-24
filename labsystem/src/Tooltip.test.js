@@ -36,21 +36,6 @@ describe("Tooltip", () => {
     expect(console.warn).toBeCalled();
   });
 
-  it("renders with theme color only if useThemeColor is passed by props", async () => {
-    const component = shallow(
-      <Tooltip id="testColorTheme" text="This doesn't use theme color">
-        <button type="button">Display with theme color</button>
-      </Tooltip>
-    );
-
-    expect(component.find(".lab-tooltip--theme-color")).toHaveLength(0);
-    component.setProps({
-      useThemeColor: true,
-      text: "Now it uses theme color",
-    });
-    expect(component.find(".lab-tooltip--theme-color")).toHaveLength(1);
-  });
-
   it("renders with placement top by default", async () => {
     const component = shallow(
       <Tooltip id="testDefaultPlacement" text="This uses theme color">

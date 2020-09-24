@@ -3,6 +3,12 @@
 $tooltip-background-color: map-get($tooltip-theme, "70");
 $tooltip-border-color: map-get($tooltip-theme, "80");
 
+@if $tooltip-theme == $neutral-palette {
+  $tooltip-background-color: map-get($tooltip-theme, "80");
+  $tooltip-border-color: map-get($tooltip-theme, "90");
+}
+
+
 .lab-tooltip {
   position: relative;
   display: inline-block;
@@ -36,23 +42,10 @@ $tooltip-border-color: map-get($tooltip-theme, "80");
     line-height: $font-size-3;
     text-align: center;
 
-    /* Default color: black */
-    border: 2px solid $mineral-90;
-    background: $mineral-80;
+    /* Using theme color defined in _settings.scss */
+    border: 2px solid $tooltip-border-color;
+    background: $tooltip-background-color;
     color: $white;
-
-
-    /* Color modifiers */
-
-    &.lab-tooltip--theme-color {
-        background: $tooltip-background-color;
-        border-color: $tooltip-border-color;
-    }
-
-    &.lab-tooltip--purple {
-        background: $purple-70;
-        border-color: $purple-80;
-    }
 
 
     /* Placement modifiers */
