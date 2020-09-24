@@ -31,8 +31,10 @@ import Banner from '../labsystem/src/Banner';
       <p class="doc-em-block">You must always tell the user what <strong>action</strong> is needed to take place so the issue presented is solved.</p>
     </div>
   </div>
-  <h2>Anatomy</h2>
-  <div class="doc-anatomy-container">
+  
+  ## Anatomy
+
+  <div class="doc-anatomy-block">
     <div class="columns is-vcentered">
       <div class="column">
       <h3>Alert</h3>
@@ -79,21 +81,82 @@ import Banner from '../labsystem/src/Banner';
       <p class="doc-em-block"><strong>For example:</strong> a small mobile viewport has its margins value set at 16px, so, the banner's horizontal paddings are exaclty 16px.</p>
     </div>
   </div>
+  <div>
+    <h2>Variations and Screen Sizes</h2>
+    <h3>Tablet and desktop</h3>
+    <p>On bigger screens the inside elements pile on side of each other.</p>
+    <img src="docs/system-messages/view.png" />
+    <h3>Mobile</h3>
+    <p>On smaller screens the action button is placed on the bottom right of the component and the use of icons is forbidden.</p>
+    <img src="docs/system-messages/view-mobile.png" />
+  </div>
+  
+  ## Messaging 
+
+  <div class="columns">
+    <div class="column">
+      <p>Messages for alerts tell the user about important system or feature-related issues or status. It’s initiated by the system and it’s not a result of the user’s actions.</p>
+      <p class="doc-em-block"><strong>For tablet-up</strong> alerts never write a message that uses more than <strong>2 lines</strong>. <br />
+      <strong>For mobile</strong>, never more than <strong>3 lines</strong>. <br />
+      Remember that banners are resizable, and, with that, message's size shifts up and down. Pay attention to the space the message element occupies to never exceed the limits above.</p>
+    </div>
+    <div class="column">
+      <h3>Writing messages</h3>
+      <p>The alert message should be short and include: a description of the issue, what is affected and what to do to fix the situation.</p>
+      <p><strong>Content:</strong> never put the blame on the user for causing any issue, but let  them know exactly what's happening by being clear and conversational.</p>
+      <p><strong>Lenght:</strong> try to be concise and use the least number of words possible.</p>
+    </div>
+  </div>
+
+  ## Type
+
+  ### Information
+
+  Use to show administrative related, maintenance and informative status about system or function specific.
 
   <Preview>
-    <Story name="Alert Sample">
+    <Story name="Info Sample">
+      <Banner type="info" text="Scheduled maintenance in our servers tomorrow 5 Mar @ 10AM." buttonText="Dismiss" icon="calendar" />
       <Alert type="info" text="Good news! Now you can add your expenses to your monthly spreadsheet." buttonText="Dismiss" icon="coin" />
+    </Story>
+  </Preview>
+
+  ### Warning
+
+  Use to antecipate possible errors, significant changes on the system, indicate system's status or setting that interferes in user actions.
+
+  <Preview>
+    <Story name="Warn Sample">
+      <Banner type="warn" text="We couldn't renew your plan. Please check your billing info." icon="coin" buttonText="Go to billing" />
       <Alert type="warn" text="You need to be signed in to use this feature." icon="calendar" buttonText="Login" />
+    </Story>
+  </Preview>
+
+  <p class="doc-em-block">Have empathy to comunicate what you need. Inform but it is not necessary to alarm. Be sure to do not talk about something that has already happened before (repeated warnings are an error).</p>
+
+  ### Error
+
+  It appears when something goes wrong within the system. It also can represent the next step after a sequence of warnings. Explain the problem and provide the user with a next step or an alternative.
+
+  <Preview>
+    <Story name="Error Sample">
+      <Banner type="error" text="Looks like we're having trouble retrieving some information. Please refresh the page." icon="reload" buttonText="Refresh" />
       <Alert type="error" text="Enter the required fields do proceed." icon="key" />
     </Story>
   </Preview>
 
-  <Preview>
-    <Story name="Banner Sample">
-      <Banner type="info" text="Scheduled maintenance in our servers tomorrow 5 Mar @ 10AM." buttonText="Dismiss" icon="calendar" />
-      <Banner type="warn" text="We couldn't renew your plan. Please check your billing info." icon="coin" buttonText="Go to billing" />
-      <Banner type="error" text="Looks like we're having trouble retrieving some information. Please refresh the page." icon="reload" buttonText="Refresh" />
-    </Story>
-  </Preview>
+  <p class="doc-em-block">Let the user know exactly what's causing the error by being clear and conversational like how you might explain a technical error to your non-technical friends. You can also suggest actions via text in the message element.</p>
 
+  ## Behavior
+
+  <div class="columns">
+    <div class="column">
+      <p><strong>Banners:</strong> As a system wide communication component, they appear at the very top of the app pushing down all the content by animation (3ms), staying fixed on this position even if the user scrolls the page.</p>
+      <p><strong> Inline Alerts:</strong> These appear inside a frame or div of a specific set of components or function/feature, the closest to where the message is related, with a slide animation (3ms). The position (top, bottom, left of right) is free for the designer to choose and depends on the project settings and white space availability.</p>
+    </div>
+    <div class="column">
+      <h3>Focus & Piling/Stacking</h3>
+      <p><strong>Piling:</strong> It is not possible to pile banners. Inline alerts can be pilled up to 3 components, but avoid doing so.</p>
+    </div>
+  </div>
 </div>
