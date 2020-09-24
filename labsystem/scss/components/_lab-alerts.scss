@@ -50,7 +50,8 @@ $alerts-line-height: 20px;
 }
 
 .lab-alert__message {
-  width: 100%;
+  flex-grow: 1;
+  flex-shrink: 1;
   font-family: $font-primary;
   font-size: $alerts-font-size;
   line-height: $alerts-line-height;
@@ -58,6 +59,7 @@ $alerts-line-height: 20px;
   -webkit-font-smoothing: antialiased;
 
   @include from($tablet) {
+    flex-grow: unset;
     width: auto;
   }
 }
