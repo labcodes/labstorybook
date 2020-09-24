@@ -56,7 +56,7 @@ export default class RemovableTag extends React.Component {
     } = this.props;
     return (
       <AbstractTag
-        removable
+        isRemovable
         text={text}
         thumbSrc={thumbSrc}
         icon={icon}

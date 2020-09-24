@@ -13,7 +13,7 @@ describe("AbstractTag", () => {
 
   it("renders with base props for 'removable' type", async () => {
     const renderedComponent = renderer
-      .create(<AbstractTag removable text="Test RemovableTag" />)
+      .create(<AbstractTag isRemovable text="Test RemovableTag" />)
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
   });
