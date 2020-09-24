@@ -18,10 +18,10 @@ describe("SimpleTag", () => {
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
-    const mountedComponent = mount(
-      <SimpleTag text="Test mount disabled SimpleTag" isDisabled />
-    );
-    expect(mountedComponent.find("SimpleTag").prop("isDisabled")).toEqual(true);
+    const wrapper = shallow(
+      <SimpleTag text="Test disabled SimpleTag" isDisabled />
+    ).html();
+    expect(wrapper).toContain("lab-tag--disabled");
   });
 
   it("renders as expected with outline as true", async () => {
@@ -30,10 +30,10 @@ describe("SimpleTag", () => {
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
-    const mountedComponent = mount(
-      <SimpleTag text="Test mount outline SimpleTag" isOutline />
-    );
-    expect(mountedComponent.find("SimpleTag").prop("isOutline")).toEqual(true);
+    const wrapper = shallow(
+      <SimpleTag text="Test outline SimpleTag" isOutline />
+    ).html();
+    expect(wrapper).toContain("lab-tag--outline");
   });
 
   it("renders as expected with a vivid skin", async () => {
@@ -42,10 +42,10 @@ describe("SimpleTag", () => {
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
-    const mountedComponent = mount(
-      <SimpleTag text="Test mount vivid SimpleTag" skin="vivid" />
-    );
-    expect(mountedComponent.find("SimpleTag").prop("skin")).toEqual("vivid");
+    const wrapper = shallow(
+      <SimpleTag text="Test vivid SimpleTag" skin="vivid" />
+    ).html();
+    expect(wrapper).toContain("lab-tag--vivid");
   });
 
   it("renders as expected with a purple color", async () => {
@@ -53,6 +53,11 @@ describe("SimpleTag", () => {
       .create(<SimpleTag text="Test render purple SimpleTag" color="purple" />)
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
+
+    const wrapper = shallow(
+      <SimpleTag text="Test vivid SimpleTag" skin="vivid" />
+    ).html();
+    expect(wrapper).toContain("lab-tag--vivid");
   });
 
   it("renders as expected with a lupe icon", async () => {
@@ -63,10 +68,10 @@ describe("SimpleTag", () => {
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
-    const mountedComponent = mount(
-      <SimpleTag text="Test mount SimpleTag with lupe icon" icon="lupe" />
-    );
-    expect(mountedComponent.find("SimpleTag").prop("icon")).toEqual("lupe");
+    const wrapper = shallow(
+      <SimpleTag text="Test SimpleTag with lupe icon" icon="lupe" />
+    ).html();
+    expect(wrapper).toContain("lab-icon--lupe");
   });
 
   const thumbSrcSample =

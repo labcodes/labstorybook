@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import { mount, shallow } from "enzyme";
+import { shallow } from "enzyme";
 
 import RemovableTag from "./RemovableTag";
 
@@ -20,12 +20,10 @@ describe("RemovableTag", () => {
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
-    const mountedComponent = mount(
+    const wrapper = shallow(
       <RemovableTag text="Test mount disabled RemovableTag" isDisabled />
-    );
-    expect(mountedComponent.find("AbstractTag").prop("isDisabled")).toEqual(
-      true
-    );
+    ).html();
+    expect(wrapper).toContain("lab-tag--disabled");
   });
 
   it("renders as outline", async () => {
@@ -36,12 +34,10 @@ describe("RemovableTag", () => {
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
-    const mountedComponent = mount(
+    const wrapper = shallow(
       <RemovableTag text="Test mount outline RemovableTag" isOutline />
-    );
-    expect(mountedComponent.find("AbstractTag").prop("isOutline")).toEqual(
-      true
-    );
+    ).html();
+    expect(wrapper).toContain("lab-tag--outline");
   });
 
   it("renders with a green color", async () => {
@@ -52,10 +48,10 @@ describe("RemovableTag", () => {
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
-    const mountedComponent = mount(
+    const wrapper = shallow(
       <RemovableTag text="Test mount green RemovableTag" color="green" />
-    );
-    expect(mountedComponent.find("AbstractTag").prop("color")).toEqual("green");
+    ).html();
+    expect(wrapper).toContain("lab-tag--green");
   });
 
   it("calls prop.onClick when clicked", async () => {

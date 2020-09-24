@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import { mount, shallow } from "enzyme";
+import { shallow } from "enzyme";
 
 import DropdownTag from "./DropdownTag";
 
@@ -20,12 +20,10 @@ describe("DropdownTag", () => {
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
-    const mountedComponent = mount(
-      <DropdownTag text="Test mount a disabled DropdownTag" isDisabled />
-    );
-    expect(mountedComponent.find("AbstractTag").prop("isDisabled")).toEqual(
-      true
-    );
+    const wrapper = shallow(
+      <DropdownTag text="Test disabled DropdownTag" isDisabled />
+    ).html();
+    expect(wrapper).toContain("lab-tag--disabled");
   });
 
   it("render as outline", async () => {
@@ -34,12 +32,10 @@ describe("DropdownTag", () => {
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
-    const mountedComponent = mount(
-      <DropdownTag text="Test mount an outline DropdownTag" isOutline />
-    );
-    expect(mountedComponent.find("AbstractTag").prop("isOutline")).toEqual(
-      true
-    );
+    const wrapper = shallow(
+      <DropdownTag text="Test outline DropdownTag" isOutline />
+    ).html();
+    expect(wrapper).toContain("lab-tag--outline");
   });
 
   it("renders with a pink color", async () => {
@@ -48,10 +44,10 @@ describe("DropdownTag", () => {
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
-    const mountedComponent = mount(
-      <DropdownTag text="Test mount pink DropdownTag" color="pink" />
-    );
-    expect(mountedComponent.find("AbstractTag").prop("color")).toEqual("pink");
+    const wrapper = shallow(
+      <DropdownTag text="Test pink DropdownTag" color="pink" />
+    ).html();
+    expect(wrapper).toContain("lab-tag--pink");
   });
 
   it("calls prop.onClick when clicked", async () => {

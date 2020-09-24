@@ -20,12 +20,10 @@ describe("TogglableTag", () => {
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
-    const mountedComponent = mount(
-      <TogglableTag text="Test mount disabled TogglableTag" isDisabled />
-    );
-    expect(mountedComponent.find("AbstractTag").prop("isDisabled")).toEqual(
-      true
-    );
+    const wrapper = shallow(
+      <TogglableTag text="Test disabled TogglableTag" isDisabled />
+    ).html();
+    expect(wrapper).toContain("lab-tag--disabled");
   });
 
   it("renders as expected with outline as true", async () => {
@@ -36,12 +34,10 @@ describe("TogglableTag", () => {
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
-    const mountedComponent = mount(
-      <TogglableTag text="Test mount outline TogglableTag" isOutline />
-    );
-    expect(mountedComponent.find("AbstractTag").prop("isOutline")).toEqual(
-      true
-    );
+    const wrapper = shallow(
+      <TogglableTag text="Test outline TogglableTag" isOutline />
+    ).html();
+    expect(wrapper).toContain("lab-tag--outline");
   });
 
   it("renders as expected with a yellow color", async () => {
@@ -52,12 +48,10 @@ describe("TogglableTag", () => {
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
-    const mountedComponent = mount(
-      <TogglableTag text="Test mount yellow TogglableTag" color="yellow" />
-    );
-    expect(mountedComponent.find("AbstractTag").prop("color")).toEqual(
-      "yellow"
-    );
+    const wrapper = shallow(
+      <TogglableTag text="Test yellow TogglableTag" color="yellow" />
+    ).html();
+    expect(wrapper).toContain("lab-tag--yellow");
   });
 
   it("renders with a pale skin if not isOn", async () => {
@@ -68,10 +62,10 @@ describe("TogglableTag", () => {
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
-    const mountedComponent = mount(
-      <TogglableTag text="Test mount pale TogglableTag" isOn={false} />
-    );
-    expect(mountedComponent.find("AbstractTag").prop("skin")).toEqual("pale");
+    const wrapper = shallow(
+      <TogglableTag text="Test pale TogglableTag" isOn={false} />
+    ).html();
+    expect(wrapper).toContain("lab-tag--pale");
   });
 
   it("renders with a vivid skin and a checked icon if isOn", async () => {
@@ -80,11 +74,11 @@ describe("TogglableTag", () => {
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
-    const mountedComponent = mount(
-      <TogglableTag text="Test mount isOn TogglableTag" isOn />
-    );
-    expect(mountedComponent.find("AbstractTag").prop("skin")).toEqual("vivid");
-    expect(mountedComponent.find("AbstractTag").prop("icon")).toEqual("check");
+    const wrapper = shallow(
+      <TogglableTag text="Test isOn TogglableTag" isOn />
+    ).html();
+    expect(wrapper).toContain("lab-tag--vivid");
+    expect(wrapper).toContain("lab-icon--check");
   });
 
   it("calls prop.onClick when clicked", async () => {
