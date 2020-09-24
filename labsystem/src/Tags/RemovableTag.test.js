@@ -23,7 +23,7 @@ describe("RemovableTag", () => {
     const mountedComponent = mount(
       <RemovableTag text="Test mount disabled RemovableTag" disabled />
     );
-    expect(mountedComponent.find("Tag").prop("disabled")).toEqual(true);
+    expect(mountedComponent.find("AbstractTag").prop("disabled")).toEqual(true);
   });
 
   it("renders as outline", async () => {
@@ -37,7 +37,7 @@ describe("RemovableTag", () => {
     const mountedComponent = mount(
       <RemovableTag text="Test mount outline RemovableTag" outline />
     );
-    expect(mountedComponent.find("Tag").prop("outline")).toEqual(true);
+    expect(mountedComponent.find("AbstractTag").prop("outline")).toEqual(true);
   });
 
   it("renders with a green color", async () => {
@@ -51,7 +51,7 @@ describe("RemovableTag", () => {
     const mountedComponent = mount(
       <RemovableTag text="Test mount green RemovableTag" color="green" />
     );
-    expect(mountedComponent.find("Tag").prop("color")).toEqual("green");
+    expect(mountedComponent.find("AbstractTag").prop("color")).toEqual("green");
   });
 
   it("calls prop.onClick when clicked", async () => {

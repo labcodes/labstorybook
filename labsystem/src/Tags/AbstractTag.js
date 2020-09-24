@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { isUndefined } from "lodash";
 import Icon from "../Icon";
 
-export default class Tag extends React.Component {
+export default class AbstractTag extends React.Component {
   static propTypes = {
     text: PropTypes.string.isRequired,
     togglable: PropTypes.bool,

@@ -21,7 +21,7 @@ describe("TogglableTag", () => {
     const mountedComponent = mount(
       <TogglableTag text="Test mount disabled TogglableTag" disabled />
     );
-    expect(mountedComponent.find("Tag").prop("disabled")).toEqual(true);
+    expect(mountedComponent.find("AbstractTag").prop("disabled")).toEqual(true);
   });
 
   it("renders as expected with outline as true", async () => {
@@ -33,7 +33,7 @@ describe("TogglableTag", () => {
     const mountedComponent = mount(
       <TogglableTag text="Test mount outline TogglableTag" outline />
     );
-    expect(mountedComponent.find("Tag").prop("outline")).toEqual(true);
+    expect(mountedComponent.find("AbstractTag").prop("outline")).toEqual(true);
   });
 
   it("renders as expected with a yellow color", async () => {
@@ -47,7 +47,7 @@ describe("TogglableTag", () => {
     const mountedComponent = mount(
       <TogglableTag text="Test mount yellow TogglableTag" color="yellow" />
     );
-    expect(mountedComponent.find("Tag").prop("color")).toEqual("yellow");
+    expect(mountedComponent.find("AbstractTag").prop("color")).toEqual("yellow");
   });
 
   it("renders with a pale skin if not isOn", async () => {
@@ -61,7 +61,7 @@ describe("TogglableTag", () => {
     const mountedComponent = mount(
       <TogglableTag text="Test mount pale TogglableTag" isOn={false} />
     );
-    expect(mountedComponent.find("Tag").prop("skin")).toEqual("pale");
+    expect(mountedComponent.find("AbstractTag").prop("skin")).toEqual("pale");
   });
 
   it("renders with a vivid skin and a checked icon if isOn", async () => {
@@ -73,8 +73,8 @@ describe("TogglableTag", () => {
     const mountedComponent = mount(
       <TogglableTag text="Test mount isOn TogglableTag" isOn />
     );
-    expect(mountedComponent.find("Tag").prop("skin")).toEqual("vivid");
-    expect(mountedComponent.find("Tag").prop("icon")).toEqual("check");
+    expect(mountedComponent.find("AbstractTag").prop("skin")).toEqual("vivid");
+    expect(mountedComponent.find("AbstractTag").prop("icon")).toEqual("check");
   });
 
   it("calls prop.onClick when clicked", async () => {

@@ -21,7 +21,7 @@ describe("DropdownTag", () => {
     const mountedComponent = mount(
       <DropdownTag text="Test mount a disabled DropdownTag" disabled />
     );
-    expect(mountedComponent.find("Tag").prop("disabled")).toEqual(true);
+    expect(mountedComponent.find("AbstractTag").prop("disabled")).toEqual(true);
   });
 
   it("render as outline", async () => {
@@ -33,7 +33,7 @@ describe("DropdownTag", () => {
     const mountedComponent = mount(
       <DropdownTag text="Test mount an outline DropdownTag" outline />
     );
-    expect(mountedComponent.find("Tag").prop("outline")).toEqual(true);
+    expect(mountedComponent.find("AbstractTag").prop("outline")).toEqual(true);
   });
 
   it("renders with a pink color", async () => {
@@ -45,7 +45,7 @@ describe("DropdownTag", () => {
     const mountedComponent = mount(
       <DropdownTag text="Test mount pink DropdownTag" color="pink" />
     );
-    expect(mountedComponent.find("Tag").prop("color")).toEqual("pink");
+    expect(mountedComponent.find("AbstractTag").prop("color")).toEqual("pink");
   });
 
   it("calls prop.onClick when clicked", async () => {
