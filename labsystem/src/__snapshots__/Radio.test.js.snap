@@ -9,6 +9,7 @@ Array [
     name="test-radio"
     onChange={[Function]}
     type="radio"
+    value="radio1"
   />,
   <label
     className="lab-radio__label"
@@ -31,6 +32,7 @@ Array [
     name="test-radio"
     onChange={[Function]}
     type="radio"
+    value="radio1"
   />,
   <label
     className="lab-radio__label"
@@ -52,6 +54,7 @@ Array [
     name="test-radio-group"
     onChange={[Function]}
     type="radio"
+    value="radio1"
   />,
   <label
     className="lab-radio__label"
