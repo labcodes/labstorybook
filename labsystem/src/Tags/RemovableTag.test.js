@@ -15,29 +15,33 @@ describe("RemovableTag", () => {
   it("renders as disabled", async () => {
     const renderedComponent = renderer
       .create(
-        <RemovableTag text="Test render a disabled RemovableTag" disabled />
+        <RemovableTag text="Test render a disabled RemovableTag" isDisabled />
       )
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
     const mountedComponent = mount(
-      <RemovableTag text="Test mount disabled RemovableTag" disabled />
+      <RemovableTag text="Test mount disabled RemovableTag" isDisabled />
     );
-    expect(mountedComponent.find("AbstractTag").prop("disabled")).toEqual(true);
+    expect(mountedComponent.find("AbstractTag").prop("isDisabled")).toEqual(
+      true
+    );
   });
 
   it("renders as outline", async () => {
     const renderedComponent = renderer
       .create(
-        <RemovableTag text="Test render an outline RemovableTag" outline />
+        <RemovableTag text="Test render an outline RemovableTag" isOutline />
       )
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
     const mountedComponent = mount(
-      <RemovableTag text="Test mount outline RemovableTag" outline />
+      <RemovableTag text="Test mount outline RemovableTag" isOutline />
     );
-    expect(mountedComponent.find("AbstractTag").prop("outline")).toEqual(true);
+    expect(mountedComponent.find("AbstractTag").prop("isOutline")).toEqual(
+      true
+    );
   });
 
   it("renders with a green color", async () => {

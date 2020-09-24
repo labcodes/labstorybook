@@ -8,19 +8,19 @@ export default class SimpleTag extends React.Component {
     text: PropTypes.string.isRequired,
     thumbSrc: PropTypes.string,
     icon: PropTypes.string,
-    outline: PropTypes.bool,
+    isOutline: PropTypes.bool,
     skin: PropTypes.string,
     color: PropTypes.string,
-    disabled: PropTypes.bool,
+    isDisabled: PropTypes.bool,
   };
 
   static defaultProps = {
     thumbSrc: "",
     icon: "",
-    outline: false,
+    isOutline: false,
     skin: "pale",
     color: "",
-    disabled: false,
+    isDisabled: false,
   };
 
   constructor(props) {
@@ -42,16 +42,24 @@ export default class SimpleTag extends React.Component {
   }
 
   render() {
-    const { text, thumbSrc, icon, outline, skin, color, disabled } = this.props;
+    const {
+      text,
+      thumbSrc,
+      icon,
+      isOutline,
+      skin,
+      color,
+      isDisabled,
+    } = this.props;
     return (
       <AbstractTag
         text={text}
         thumbSrc={thumbSrc}
         icon={icon}
-        outline={outline}
+        isOutline={isOutline}
         skin={skin}
         color={color}
-        disabled={disabled}
+        isDisabled={isDisabled}
       />
     );
   }

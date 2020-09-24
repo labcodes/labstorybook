@@ -14,26 +14,32 @@ describe("DropdownTag", () => {
 
   it("renders as disabled", async () => {
     const renderedComponent = renderer
-      .create(<DropdownTag text="Test render disabled DropdownTag" disabled />)
+      .create(
+        <DropdownTag text="Test render disabled DropdownTag" isDisabled />
+      )
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
     const mountedComponent = mount(
-      <DropdownTag text="Test mount a disabled DropdownTag" disabled />
+      <DropdownTag text="Test mount a disabled DropdownTag" isDisabled />
     );
-    expect(mountedComponent.find("AbstractTag").prop("disabled")).toEqual(true);
+    expect(mountedComponent.find("AbstractTag").prop("isDisabled")).toEqual(
+      true
+    );
   });
 
   it("render as outline", async () => {
     const renderedComponent = renderer
-      .create(<DropdownTag text="Test render outline DropdownTag" outline />)
+      .create(<DropdownTag text="Test render outline DropdownTag" isOutline />)
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
     const mountedComponent = mount(
-      <DropdownTag text="Test mount an outline DropdownTag" outline />
+      <DropdownTag text="Test mount an outline DropdownTag" isOutline />
     );
-    expect(mountedComponent.find("AbstractTag").prop("outline")).toEqual(true);
+    expect(mountedComponent.find("AbstractTag").prop("isOutline")).toEqual(
+      true
+    );
   });
 
   it("renders with a pink color", async () => {

@@ -14,10 +14,10 @@ export default class SimpleTagPlayground extends React.Component {
       simpleTagText: "",
       simpleTagIcon: "",
       simpleTagThumbSrc: "",
-      simpleTagOutline: false,
+      simpleTagIsOutline: false,
       simpleTagColor: "",
       simpleTagSkin: "pale",
-      simpleTagDisabled: false,
+      simpleTagIsDisabled: false,
       isIconInputDisabled: false,
       isThumbInputDisabled: false,
     };
@@ -56,10 +56,10 @@ export default class SimpleTagPlayground extends React.Component {
       simpleTagThumbSrc,
       isIconInputDisabled,
       isThumbInputDisabled,
-      simpleTagOutline,
+      simpleTagIsOutline,
       simpleTagColor,
       simpleTagSkin,
-      simpleTagDisabled,
+      simpleTagIsDisabled,
     } = this.state;
     return (
       <React.Fragment>
@@ -72,10 +72,10 @@ export default class SimpleTagPlayground extends React.Component {
               text={simpleTagText}
               icon={simpleTagIcon}
               thumbSrc={simpleTagThumbSrc}
-              outline={simpleTagOutline}
+              isOutline={simpleTagIsOutline}
               color={simpleTagColor}
               skin={simpleTagSkin}
-              disabled={simpleTagDisabled}
+              isDisabled={simpleTagIsDisabled}
             />
           </div>
           <div className="column lab-playground__configs">
@@ -118,9 +118,9 @@ export default class SimpleTagPlayground extends React.Component {
             <span className="lab-playground__item">
               <strong>Outline: </strong>
               <input
-                id="simpleTagOutline"
+                id="simpleTagIsOutline"
                 type="checkbox"
-                checked={simpleTagOutline}
+                checked={simpleTagIsOutline}
                 onChange={this.handleBoolPropChange}
               />
             </span>
@@ -150,9 +150,9 @@ export default class SimpleTagPlayground extends React.Component {
             <span className="lab-playground__item">
               <strong>Disabled: </strong>
               <input
-                id="simpleTagDisabled"
+                id="simpleTagIsDisabled"
                 type="checkbox"
-                checked={simpleTagDisabled}
+                checked={simpleTagIsDisabled}
                 onChange={this.handleBoolPropChange}
               />
             </span>

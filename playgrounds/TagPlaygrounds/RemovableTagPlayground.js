@@ -14,10 +14,10 @@ export default class RemovableTagPlayground extends React.Component {
       removableTagText: "",
       removableTagIcon: "",
       removableTagThumbSrc: "",
-      removableTagOutline: false,
+      removableTagIsOutline: false,
       removableTagColor: "",
       removableTagSkin: "pale",
-      removableTagDisabled: false,
+      removableTagIsDisabled: false,
       removableTagIsOn: true,
       isIconInputDisabled: false,
       isThumbInputDisabled: false,
@@ -64,10 +64,10 @@ export default class RemovableTagPlayground extends React.Component {
       removableTagText,
       removableTagIcon,
       removableTagThumbSrc,
-      removableTagOutline,
+      removableTagIsOutline,
       removableTagColor,
       removableTagSkin,
-      removableTagDisabled,
+      removableTagIsDisabled,
       removableTagIsOn,
       isIconInputDisabled,
       isThumbInputDisabled,
@@ -84,10 +84,10 @@ export default class RemovableTagPlayground extends React.Component {
                 text={removableTagText}
                 thumbSrc={removableTagThumbSrc}
                 icon={removableTagIcon}
-                outline={removableTagOutline}
+                isOutline={removableTagIsOutline}
                 color={removableTagColor}
                 skin={removableTagSkin}
-                disabled={removableTagDisabled}
+                isDisabled={removableTagIsDisabled}
                 onClick={this.handleClick}
               />
             ) : (
@@ -137,9 +137,9 @@ export default class RemovableTagPlayground extends React.Component {
             <span className="lab-playground__item">
               <strong>Outline: </strong>
               <input
-                id="removableTagOutline"
+                id="removableTagIsOutline"
                 type="checkbox"
-                checked={removableTagOutline}
+                checked={removableTagIsOutline}
                 onChange={this.handleBoolPropChange}
               />
             </span>
@@ -175,9 +175,9 @@ export default class RemovableTagPlayground extends React.Component {
             <span className="lab-playground__item">
               <strong>Disabled: </strong>
               <input
-                id="removableTagDisabled"
+                id="removableTagIsDisabled"
                 type="checkbox"
-                checked={removableTagDisabled}
+                checked={removableTagIsDisabled}
                 onChange={this.handleBoolPropChange}
               />
             </span>

@@ -14,26 +14,26 @@ describe("SimpleTag", () => {
 
   it("renders as expected with disabled as true", async () => {
     const renderedComponent = renderer
-      .create(<SimpleTag text="Test render disabled SimpleTag" disabled />)
+      .create(<SimpleTag text="Test render disabled SimpleTag" isDisabled />)
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
     const mountedComponent = mount(
-      <SimpleTag text="Test mount disabled SimpleTag" disabled />
+      <SimpleTag text="Test mount disabled SimpleTag" isDisabled />
     );
-    expect(mountedComponent.find("SimpleTag").prop("disabled")).toEqual(true);
+    expect(mountedComponent.find("SimpleTag").prop("isDisabled")).toEqual(true);
   });
 
   it("renders as expected with outline as true", async () => {
     const renderedComponent = renderer
-      .create(<SimpleTag text="Test render outline SimpleTag" outline />)
+      .create(<SimpleTag text="Test render outline SimpleTag" isOutline />)
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
     const mountedComponent = mount(
-      <SimpleTag text="Test mount outline SimpleTag" outline />
+      <SimpleTag text="Test mount outline SimpleTag" isOutline />
     );
-    expect(mountedComponent.find("SimpleTag").prop("outline")).toEqual(true);
+    expect(mountedComponent.find("SimpleTag").prop("isOutline")).toEqual(true);
   });
 
   it("renders as expected with a vivid skin", async () => {

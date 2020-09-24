@@ -8,7 +8,7 @@ export default class TogglableTagPlayground extends React.Component {
     this.state = {
       togglableTagText: "",
       togglableTagColor: "",
-      togglableTagDisabled: false,
+      togglableTagIsDisabled: false,
       togglableTagIsOn: false,
     };
   }
@@ -32,7 +32,7 @@ export default class TogglableTagPlayground extends React.Component {
     const {
       togglableTagText,
       togglableTagColor,
-      togglableTagDisabled,
+      togglableTagIsDisabled,
       togglableTagIsOn,
     } = this.state;
 
@@ -46,7 +46,7 @@ export default class TogglableTagPlayground extends React.Component {
             <TogglableTag
               text={togglableTagText}
               color={togglableTagColor}
-              disabled={togglableTagDisabled}
+              isDisabled={togglableTagIsDisabled}
               isOn={togglableTagIsOn}
               onClick={this.handleClick}
             />
@@ -78,9 +78,9 @@ export default class TogglableTagPlayground extends React.Component {
             <span className="lab-playground__item">
               <strong>Disabled: </strong>
               <input
-                id="togglableTagDisabled"
+                id="togglableTagIsDisabled"
                 type="checkbox"
-                checked={togglableTagDisabled}
+                checked={togglableTagIsDisabled}
                 onChange={this.handleBoolPropChange}
               />
             </span>

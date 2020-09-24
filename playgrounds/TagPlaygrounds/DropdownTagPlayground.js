@@ -7,8 +7,8 @@ export default class DropdownTagPlayground extends React.Component {
     super(props);
     this.state = {
       dropdownTagText: "",
-      dropdownTagOutline: false,
-      dropdownTagDisabled: false,
+      dropdownTagIsOutline: false,
+      dropdownTagIsDisabled: false,
       dropdownTagColor: "",
       dropdownTagSkin: "pale",
       dropdownTagIcon: "",
@@ -28,8 +28,8 @@ export default class DropdownTagPlayground extends React.Component {
   render() {
     const {
       dropdownTagText,
-      dropdownTagOutline,
-      dropdownTagDisabled,
+      dropdownTagIsOutline,
+      dropdownTagIsDisabled,
       dropdownTagColor,
       dropdownTagSkin,
       dropdownTagIcon,
@@ -44,8 +44,8 @@ export default class DropdownTagPlayground extends React.Component {
             <DropdownTag
               text={dropdownTagText}
               icon={dropdownTagIcon}
-              outline={dropdownTagOutline}
-              disabled={dropdownTagDisabled}
+              isOutline={dropdownTagIsOutline}
+              isDisabled={dropdownTagIsDisabled}
               color={dropdownTagColor}
               skin={dropdownTagSkin}
             />
@@ -99,9 +99,9 @@ export default class DropdownTagPlayground extends React.Component {
             <span className="lab-playground__item">
               <strong>Outline: </strong>
               <input
-                id="dropdownTagOutline"
+                id="dropdownTagIsOutline"
                 type="checkbox"
-                checked={dropdownTagOutline}
+                checked={dropdownTagIsOutline}
                 onChange={this.handleBoolPropChange}
               />
             </span>
@@ -109,9 +109,9 @@ export default class DropdownTagPlayground extends React.Component {
             <span className="lab-playground__item">
               <strong>Disabled: </strong>
               <input
-                id="dropdownTagDisabled"
+                id="dropdownTagIsDisabled"
                 type="checkbox"
-                checked={dropdownTagDisabled}
+                checked={dropdownTagIsDisabled}
                 onChange={this.handleBoolPropChange}
               />
             </span>

@@ -172,11 +172,11 @@ Using `skin="vivid"` will display a tag with more vivid colors either for fill o
       <DropdownTag skin="vivid" text="Dropdown" />
       <RemovableTag skin="vivid" text="Removable" />
       <br />
-      <SimpleTag outline skin="vivid" text="Simple tag" />
-      <SimpleTag outline skin="vivid" text="Simple tag" icon={iconOptions[2]} />
-      <SimpleTag outline skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
-      <DropdownTag outline skin="vivid" text="Dropdown" />
-      <RemovableTag outline skin="vivid" text="Removable" />
+      <SimpleTag isOutline skin="vivid" text="Simple tag" />
+      <SimpleTag isOutline skin="vivid" text="Simple tag" icon={iconOptions[2]} />
+      <SimpleTag isOutline skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
+      <DropdownTag isOutline skin="vivid" text="Dropdown" />
+      <RemovableTag isOutline skin="vivid" text="Removable" />
     </Fragment>
   </Story>
 </Preview>
@@ -191,10 +191,10 @@ All disabled styles remain the same regardless of any property other than `outli
 <Preview>
   <Story name="Disabled sample">
     <Fragment>
-      <TogglableTag disabled text="Togglable" />
-      <TogglableTag disabled text="Togg. isOn" skin="vivid" color="mineral" icon="check" isOn />
-      <DropdownTag disabled text="Dropdown" />
-      <RemovableTag disabled text="Removable" />
+      <TogglableTag isDisabled text="Togglable" />
+      <TogglableTag isDisabled text="Togg. isOn" skin="vivid" color="mineral" icon="check" isOn />
+      <DropdownTag isDisabled text="Dropdown" />
+      <RemovableTag isDisabled text="Removable" />
     </Fragment>
   </Story>
 </Preview>
@@ -204,10 +204,10 @@ All disabled styles remain the same regardless of any property other than `outli
 <Preview>
   <Story name="Disabled outline sample">
     <Fragment>
-      <TogglableTag disabled outline text="Togglable" />
-      <TogglableTag disabled outline text="Togg. isOn" skin="vivid" color="mineral" icon="check" isOn />
-      <DropdownTag disabled outline text="Dropdown" />
-      <RemovableTag disabled outline text="Removable" />
+      <TogglableTag isDisabled isOutline text="Togglable" />
+      <TogglableTag isDisabled isOutline text="Togg. isOn" skin="vivid" color="mineral" icon="check" isOn />
+      <DropdownTag isDisabled isOutline text="Dropdown" />
+      <RemovableTag isDisabled isOutline text="Removable" />
     </Fragment>
   </Story>
 </Preview>
@@ -239,19 +239,19 @@ All disabled styles remains unchanged regardless of any value used.
       <SimpleTag color="teal" skin="vivid" text="Simple tag" icon={iconOptions[3]} />
       <SimpleTag color="teal" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
       <br />
-      <TogglableTag outline color="teal" text="Togglable not isOn" />
-      <DropdownTag outline color="teal" text="Dropdown" icon={iconOptions[3]}/>
-      <RemovableTag outline color="teal" text="Removable" />
-      <SimpleTag outline color="teal" text="Simple tag" />
-      <SimpleTag outline color="teal" text="Simple tag" icon={iconOptions[3]} />
-      <SimpleTag outline color="teal" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
+      <TogglableTag isOutline color="teal" text="Togglable not isOn" />
+      <DropdownTag isOutline color="teal" text="Dropdown" icon={iconOptions[3]}/>
+      <RemovableTag isOutline color="teal" text="Removable" />
+      <SimpleTag isOutline color="teal" text="Simple tag" />
+      <SimpleTag isOutline color="teal" text="Simple tag" icon={iconOptions[3]} />
+      <SimpleTag isOutline color="teal" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
       <br /> 
-      <TogglableTag outline color="teal" text="Togglable isOn" isOn/>
-      <DropdownTag outline color="teal" skin="vivid" text="Dropdown" icon={iconOptions[3]}/>
-      <RemovableTag outline color="teal" skin="vivid" text="Removable" />
-      <SimpleTag outline color="teal" skin="vivid" text="Simple tag" />
-      <SimpleTag outline color="teal" skin="vivid" text="Simple tag" icon={iconOptions[3]} />
-      <SimpleTag outline color="teal" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
+      <TogglableTag isOutline color="teal" text="Togglable isOn" isOn/>
+      <DropdownTag isOutline color="teal" skin="vivid" text="Dropdown" icon={iconOptions[3]}/>
+      <RemovableTag isOutline color="teal" skin="vivid" text="Removable" />
+      <SimpleTag isOutline color="teal" skin="vivid" text="Simple tag" />
+      <SimpleTag isOutline color="teal" skin="vivid" text="Simple tag" icon={iconOptions[3]} />
+      <SimpleTag isOutline color="teal" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
     </Fragment>
   </Story>
 </Preview>
@@ -275,19 +275,19 @@ All disabled styles remains unchanged regardless of any value used.
       <SimpleTag color="purple" skin="vivid" text="Simple tag" icon={iconOptions[4]} />
       <SimpleTag color="purple" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
       <br />
-      <TogglableTag outline color="purple" text="Togglable not isOn" />
-      <DropdownTag outline color="purple" text="Dropdown" icon={iconOptions[4]} />
-      <RemovableTag outline color="purple" text="Removable" />
-      <SimpleTag outline color="purple" text="Simple tag" />
-      <SimpleTag outline color="purple" text="Simple tag" icon={iconOptions[4]} />
-      <SimpleTag outline color="purple" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
+      <TogglableTag isOutline color="purple" text="Togglable not isOn" />
+      <DropdownTag isOutline color="purple" text="Dropdown" icon={iconOptions[4]} />
+      <RemovableTag isOutline color="purple" text="Removable" />
+      <SimpleTag isOutline color="purple" text="Simple tag" />
+      <SimpleTag isOutline color="purple" text="Simple tag" icon={iconOptions[4]} />
+      <SimpleTag isOutline color="purple" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
       <br /> 
-      <TogglableTag outline color="purple" text="Togglable isOn" isOn />
-      <DropdownTag outline color="purple" skin="vivid" text="Dropdown" icon={iconOptions[4]} />
-      <RemovableTag outline color="purple" skin="vivid" text="Removable" />
-      <SimpleTag outline color="purple" skin="vivid" text="Simple tag" />
-      <SimpleTag outline color="purple" skin="vivid" text="Simple tag" icon={iconOptions[4]} />
-      <SimpleTag outline color="purple" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
+      <TogglableTag isOutline color="purple" text="Togglable isOn" isOn />
+      <DropdownTag isOutline color="purple" skin="vivid" text="Dropdown" icon={iconOptions[4]} />
+      <RemovableTag isOutline color="purple" skin="vivid" text="Removable" />
+      <SimpleTag isOutline color="purple" skin="vivid" text="Simple tag" />
+      <SimpleTag isOutline color="purple" skin="vivid" text="Simple tag" icon={iconOptions[4]} />
+      <SimpleTag isOutline color="purple" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
     </Fragment>
   </Story>
 </Preview>
@@ -316,19 +316,19 @@ All disabled styles remains unchanged regardless of any value used.
       <SimpleTag color="green" skin="vivid" text="Simple tag" icon={iconOptions[5]} />
       <SimpleTag color="green" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
       <br />
-      <TogglableTag outline color="green" text="Togglable not isOn" />
-      <DropdownTag outline color="green" text="Dropdown" icon={iconOptions[5]} />
-      <RemovableTag outline color="green" text="Removable" />
-      <SimpleTag outline color="green" text="Simple tag" />
-      <SimpleTag outline color="green" text="Simple tag" icon={iconOptions[5]} />
-      <SimpleTag outline color="green" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
+      <TogglableTag isOutline color="green" text="Togglable not isOn" />
+      <DropdownTag isOutline color="green" text="Dropdown" icon={iconOptions[5]} />
+      <RemovableTag isOutline color="green" text="Removable" />
+      <SimpleTag isOutline color="green" text="Simple tag" />
+      <SimpleTag isOutline color="green" text="Simple tag" icon={iconOptions[5]} />
+      <SimpleTag isOutline color="green" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
       <br /> 
-      <TogglableTag outline color="green" text="Togglable isOn" isOn />
-      <DropdownTag outline color="green" skin="vivid" text="Dropdown" icon={iconOptions[5]} />
-      <RemovableTag outline color="green" skin="vivid" text="Removable" />
-      <SimpleTag outline color="green" skin="vivid" text="Simple tag" />
-      <SimpleTag outline color="green" skin="vivid" text="Simple tag" icon={iconOptions[5]} />
-      <SimpleTag outline color="green" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
+      <TogglableTag isOutline color="green" text="Togglable isOn" isOn />
+      <DropdownTag isOutline color="green" skin="vivid" text="Dropdown" icon={iconOptions[5]} />
+      <RemovableTag isOutline color="green" skin="vivid" text="Removable" />
+      <SimpleTag isOutline color="green" skin="vivid" text="Simple tag" />
+      <SimpleTag isOutline color="green" skin="vivid" text="Simple tag" icon={iconOptions[5]} />
+      <SimpleTag isOutline color="green" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
     </Fragment>
   </Story>
 </Preview>
@@ -352,19 +352,19 @@ All disabled styles remains unchanged regardless of any value used.
       <SimpleTag color="red" skin="vivid" text="Simple tag" icon={iconOptions[6]} />
       <SimpleTag color="red" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
       <br />
-      <TogglableTag outline color="red" text="Togglable not isOn" />
-      <DropdownTag outline color="red" text="Dropdown" icon={iconOptions[6]} />
-      <RemovableTag outline color="red" text="Removable" />
-      <SimpleTag outline color="red" text="Simple tag" />
-      <SimpleTag outline color="red" text="Simple tag" icon={iconOptions[6]} />
-      <SimpleTag outline color="red" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
+      <TogglableTag isOutline color="red" text="Togglable not isOn" />
+      <DropdownTag isOutline color="red" text="Dropdown" icon={iconOptions[6]} />
+      <RemovableTag isOutline color="red" text="Removable" />
+      <SimpleTag isOutline color="red" text="Simple tag" />
+      <SimpleTag isOutline color="red" text="Simple tag" icon={iconOptions[6]} />
+      <SimpleTag isOutline color="red" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
       <br /> 
-      <TogglableTag outline color="red" text="Togglable isOn" isOn />
-      <DropdownTag outline color="red" skin="vivid" text="Dropdown" icon={iconOptions[6]} />
-      <RemovableTag outline color="red" skin="vivid" text="Removable" />
-      <SimpleTag outline color="red" skin="vivid" text="Simple tag" />
-      <SimpleTag outline color="red" skin="vivid" text="Simple tag" icon={iconOptions[6]} />
-      <SimpleTag outline color="red" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
+      <TogglableTag isOutline color="red" text="Togglable isOn" isOn />
+      <DropdownTag isOutline color="red" skin="vivid" text="Dropdown" icon={iconOptions[6]} />
+      <RemovableTag isOutline color="red" skin="vivid" text="Removable" />
+      <SimpleTag isOutline color="red" skin="vivid" text="Simple tag" />
+      <SimpleTag isOutline color="red" skin="vivid" text="Simple tag" icon={iconOptions[6]} />
+      <SimpleTag isOutline color="red" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
     </Fragment>
   </Story>
 </Preview>
@@ -388,19 +388,19 @@ All disabled styles remains unchanged regardless of any value used.
       <SimpleTag color="yellow" skin="vivid" text="Simple tag" icon={iconOptions[7]} />
       <SimpleTag color="yellow" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
       <br />
-      <TogglableTag outline color="yellow" text="Togglable not isOn" />
-      <DropdownTag outline color="yellow" text="Dropdown" icon={iconOptions[7]} />
-      <RemovableTag outline color="yellow" text="Removable" />
-      <SimpleTag outline color="yellow" text="Simple tag" />
-      <SimpleTag outline color="yellow" text="Simple tag" icon={iconOptions[7]} />
-      <SimpleTag outline color="yellow" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
+      <TogglableTag isOutline color="yellow" text="Togglable not isOn" />
+      <DropdownTag isOutline color="yellow" text="Dropdown" icon={iconOptions[7]} />
+      <RemovableTag isOutline color="yellow" text="Removable" />
+      <SimpleTag isOutline color="yellow" text="Simple tag" />
+      <SimpleTag isOutline color="yellow" text="Simple tag" icon={iconOptions[7]} />
+      <SimpleTag isOutline color="yellow" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
       <br /> 
-      <TogglableTag outline color="yellow" text="Togglable isOn" isOn />
-      <DropdownTag outline color="yellow" skin="vivid" text="Dropdown" icon={iconOptions[7]} />
-      <RemovableTag outline color="yellow" skin="vivid" text="Removable" />
-      <SimpleTag outline color="yellow" skin="vivid" text="Simple tag" />
-      <SimpleTag outline color="yellow" skin="vivid" text="Simple tag" icon={iconOptions[7]} />
-      <SimpleTag outline color="yellow" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
+      <TogglableTag isOutline color="yellow" text="Togglable isOn" isOn />
+      <DropdownTag isOutline color="yellow" skin="vivid" text="Dropdown" icon={iconOptions[7]} />
+      <RemovableTag isOutline color="yellow" skin="vivid" text="Removable" />
+      <SimpleTag isOutline color="yellow" skin="vivid" text="Simple tag" />
+      <SimpleTag isOutline color="yellow" skin="vivid" text="Simple tag" icon={iconOptions[7]} />
+      <SimpleTag isOutline color="yellow" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
     </Fragment>
   </Story>
 </Preview>
@@ -424,19 +424,19 @@ All disabled styles remains unchanged regardless of any value used.
       <SimpleTag color="cyan" skin="vivid" text="Simple tag" icon={iconOptions[8]} />
       <SimpleTag color="cyan" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
       <br />
-      <TogglableTag outline color="cyan" text="Togglable not isOn" />
-      <DropdownTag outline color="cyan" text="Dropdown" icon={iconOptions[8]} />
-      <RemovableTag outline color="cyan" text="Removable" />
-      <SimpleTag outline color="cyan" text="Simple tag" />
-      <SimpleTag outline color="cyan" text="Simple tag" icon={iconOptions[8]} />
-      <SimpleTag outline color="cyan" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
+      <TogglableTag isOutline color="cyan" text="Togglable not isOn" />
+      <DropdownTag isOutline color="cyan" text="Dropdown" icon={iconOptions[8]} />
+      <RemovableTag isOutline color="cyan" text="Removable" />
+      <SimpleTag isOutline color="cyan" text="Simple tag" />
+      <SimpleTag isOutline color="cyan" text="Simple tag" icon={iconOptions[8]} />
+      <SimpleTag isOutline color="cyan" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
       <br /> 
-      <TogglableTag outline color="cyan" text="Togglable isOn" isOn />
-      <DropdownTag outline color="cyan" skin="vivid" text="Dropdown" icon={iconOptions[8]} />
-      <RemovableTag outline color="cyan" skin="vivid" text="Removable" />
-      <SimpleTag outline color="cyan" skin="vivid" text="Simple tag" />
-      <SimpleTag outline color="cyan" skin="vivid" text="Simple tag" icon={iconOptions[8]} />
-      <SimpleTag outline color="cyan" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
+      <TogglableTag isOutline color="cyan" text="Togglable isOn" isOn />
+      <DropdownTag isOutline color="cyan" skin="vivid" text="Dropdown" icon={iconOptions[8]} />
+      <RemovableTag isOutline color="cyan" skin="vivid" text="Removable" />
+      <SimpleTag isOutline color="cyan" skin="vivid" text="Simple tag" />
+      <SimpleTag isOutline color="cyan" skin="vivid" text="Simple tag" icon={iconOptions[8]} />
+      <SimpleTag isOutline color="cyan" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
     </Fragment>
   </Story>
 </Preview>
@@ -460,19 +460,19 @@ All disabled styles remains unchanged regardless of any value used.
       <SimpleTag color="orange" skin="vivid" text="Simple tag" icon={iconOptions[9]} />
       <SimpleTag color="orange" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
       <br />
-      <TogglableTag outline color="orange" text="Togglable not isOn" />
-      <DropdownTag outline color="orange" text="Dropdown" icon={iconOptions[9]} />
-      <RemovableTag outline color="orange" text="Removable" />
-      <SimpleTag outline color="orange" text="Simple tag" />
-      <SimpleTag outline color="orange" text="Simple tag" icon={iconOptions[9]} />
-      <SimpleTag outline color="orange" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
+      <TogglableTag isOutline color="orange" text="Togglable not isOn" />
+      <DropdownTag isOutline color="orange" text="Dropdown" icon={iconOptions[9]} />
+      <RemovableTag isOutline color="orange" text="Removable" />
+      <SimpleTag isOutline color="orange" text="Simple tag" />
+      <SimpleTag isOutline color="orange" text="Simple tag" icon={iconOptions[9]} />
+      <SimpleTag isOutline color="orange" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
       <br /> 
-      <TogglableTag outline color="orange" text="Togglable isOn" isOn />
-      <DropdownTag outline color="orange" skin="vivid" text="Dropdown" icon={iconOptions[9]} />
-      <RemovableTag outline color="orange" skin="vivid" text="Removable" />
-      <SimpleTag outline color="orange" skin="vivid" text="Simple tag" />
-      <SimpleTag outline color="orange" skin="vivid" text="Simple tag" icon={iconOptions[9]} />
-      <SimpleTag outline color="orange" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
+      <TogglableTag isOutline color="orange" text="Togglable isOn" isOn />
+      <DropdownTag isOutline color="orange" skin="vivid" text="Dropdown" icon={iconOptions[9]} />
+      <RemovableTag isOutline color="orange" skin="vivid" text="Removable" />
+      <SimpleTag isOutline color="orange" skin="vivid" text="Simple tag" />
+      <SimpleTag isOutline color="orange" skin="vivid" text="Simple tag" icon={iconOptions[9]} />
+      <SimpleTag isOutline color="orange" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
     </Fragment>
   </Story>
 </Preview>
@@ -496,19 +496,19 @@ All disabled styles remains unchanged regardless of any value used.
       <SimpleTag color="pink" skin="vivid" text="Simple tag" icon={iconOptions[10]} />
       <SimpleTag color="pink" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
       <br />
-      <TogglableTag outline color="pink" text="Togglable not isOn" />
-      <DropdownTag outline color="pink" text="Dropdown" icon={iconOptions[10]} />
-      <RemovableTag outline color="pink" text="Removable" />
-      <SimpleTag outline color="pink" text="Simple tag" />
-      <SimpleTag outline color="pink" text="Simple tag" icon={iconOptions[10]} />
-      <SimpleTag outline color="pink" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
+      <TogglableTag isOutline color="pink" text="Togglable not isOn" />
+      <DropdownTag isOutline color="pink" text="Dropdown" icon={iconOptions[10]} />
+      <RemovableTag isOutline color="pink" text="Removable" />
+      <SimpleTag isOutline color="pink" text="Simple tag" />
+      <SimpleTag isOutline color="pink" text="Simple tag" icon={iconOptions[10]} />
+      <SimpleTag isOutline color="pink" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
       <br /> 
-      <TogglableTag outline color="pink" text="Togglable isOn" isOn />
-      <DropdownTag outline color="pink" skin="vivid" text="Dropdown" icon={iconOptions[10]} />
-      <RemovableTag outline color="pink" skin="vivid" text="Removable" />
-      <SimpleTag outline color="pink" skin="vivid" text="Simple tag" />
-      <SimpleTag outline color="pink" skin="vivid" text="Simple tag" icon={iconOptions[10]} />
-      <SimpleTag outline color="pink" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
+      <TogglableTag isOutline color="pink" text="Togglable isOn" isOn />
+      <DropdownTag isOutline color="pink" skin="vivid" text="Dropdown" icon={iconOptions[10]} />
+      <RemovableTag isOutline color="pink" skin="vivid" text="Removable" />
+      <SimpleTag isOutline color="pink" skin="vivid" text="Simple tag" />
+      <SimpleTag isOutline color="pink" skin="vivid" text="Simple tag" icon={iconOptions[10]} />
+      <SimpleTag isOutline color="pink" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
     </Fragment>
   </Story>
 </Preview>

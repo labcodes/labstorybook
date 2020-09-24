@@ -10,8 +10,8 @@ export default class RemovableTag extends React.Component {
     icon: PropTypes.string,
     color: PropTypes.string,
     skin: PropTypes.string,
-    outline: PropTypes.bool,
-    disabled: PropTypes.bool,
+    isOutline: PropTypes.bool,
+    isDisabled: PropTypes.bool,
     onClick: PropTypes.func,
   };
 
@@ -20,8 +20,8 @@ export default class RemovableTag extends React.Component {
     icon: "",
     color: "",
     skin: "pale",
-    outline: false,
-    disabled: false,
+    isOutline: false,
+    isDisabled: false,
     onClick: () => {},
   };
 
@@ -50,8 +50,8 @@ export default class RemovableTag extends React.Component {
       icon,
       color,
       skin,
-      outline,
-      disabled,
+      isOutline,
+      isDisabled,
       onClick,
     } = this.props;
     return (
@@ -62,8 +62,8 @@ export default class RemovableTag extends React.Component {
         icon={icon}
         color={color}
         skin={skin}
-        outline={outline}
-        disabled={disabled}
+        isOutline={isOutline}
+        isDisabled={isDisabled}
         onClick={onClick}
       />
     );

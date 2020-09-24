@@ -8,8 +8,8 @@ export default class DropdownTag extends React.Component {
     icon: PropTypes.string,
     color: PropTypes.string,
     skin: PropTypes.string,
-    outline: PropTypes.bool,
-    disabled: PropTypes.bool,
+    isOutline: PropTypes.bool,
+    isDisabled: PropTypes.bool,
     onClick: PropTypes.func,
   };
 
@@ -17,13 +17,21 @@ export default class DropdownTag extends React.Component {
     icon: "",
     color: "",
     skin: "pale",
-    outline: false,
-    disabled: false,
+    isOutline: false,
+    isDisabled: false,
     onClick: () => {},
   };
 
   render() {
-    const { text, icon, color, skin, outline, disabled, onClick } = this.props;
+    const {
+      text,
+      icon,
+      color,
+      skin,
+      isOutline,
+      isDisabled,
+      onClick,
+    } = this.props;
     return (
       <AbstractTag
         isDropdown
@@ -31,8 +39,8 @@ export default class DropdownTag extends React.Component {
         icon={icon}
         color={color}
         skin={skin}
-        outline={outline}
-        disabled={disabled}
+        isOutline={isOutline}
+        isDisabled={isDisabled}
         onClick={onClick}
       />
     );

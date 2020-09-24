@@ -14,26 +14,34 @@ describe("TogglableTag", () => {
 
   it("renders as expected with disabled as true", async () => {
     const renderedComponent = renderer
-      .create(<TogglableTag text="Test nount disabled TogglableTag" disabled />)
+      .create(
+        <TogglableTag text="Test nount disabled TogglableTag" isDisabled />
+      )
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
     const mountedComponent = mount(
-      <TogglableTag text="Test mount disabled TogglableTag" disabled />
+      <TogglableTag text="Test mount disabled TogglableTag" isDisabled />
     );
-    expect(mountedComponent.find("AbstractTag").prop("disabled")).toEqual(true);
+    expect(mountedComponent.find("AbstractTag").prop("isDisabled")).toEqual(
+      true
+    );
   });
 
   it("renders as expected with outline as true", async () => {
     const renderedComponent = renderer
-      .create(<TogglableTag text="Test render outline TogglableTag" outline />)
+      .create(
+        <TogglableTag text="Test render outline TogglableTag" isOutline />
+      )
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
     const mountedComponent = mount(
-      <TogglableTag text="Test mount outline TogglableTag" outline />
+      <TogglableTag text="Test mount outline TogglableTag" isOutline />
     );
-    expect(mountedComponent.find("AbstractTag").prop("outline")).toEqual(true);
+    expect(mountedComponent.find("AbstractTag").prop("isOutline")).toEqual(
+      true
+    );
   });
 
   it("renders as expected with a yellow color", async () => {
@@ -47,7 +55,9 @@ describe("TogglableTag", () => {
     const mountedComponent = mount(
       <TogglableTag text="Test mount yellow TogglableTag" color="yellow" />
     );
-    expect(mountedComponent.find("AbstractTag").prop("color")).toEqual("yellow");
+    expect(mountedComponent.find("AbstractTag").prop("color")).toEqual(
+      "yellow"
+    );
   });
 
   it("renders with a pale skin if not isOn", async () => {
