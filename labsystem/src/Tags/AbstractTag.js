@@ -6,7 +6,7 @@ import Icon from "../Icon";
 export default class AbstractTag extends React.Component {
   static propTypes = {
     text: PropTypes.string.isRequired,
-    togglable: PropTypes.bool,
+    isTogglable: PropTypes.bool,
     isDropdown: PropTypes.bool,
     removable: PropTypes.bool,
     disabled: PropTypes.bool,
@@ -20,7 +20,7 @@ export default class AbstractTag extends React.Component {
   };
 
   static defaultProps = {
-    togglable: false,
+    isTogglable: false,
     isDropdown: false,
     removable: false,
     thumbSrc: "",
@@ -92,7 +92,7 @@ export default class AbstractTag extends React.Component {
   render() {
     const {
       text,
-      togglable,
+      isTogglable,
       isDropdown,
       removable,
       disabled,
@@ -108,7 +108,7 @@ export default class AbstractTag extends React.Component {
       <span
         className={
           `lab-tag` +
-          `${togglable ? ` lab-tag--togglable` : ``}` +
+          `${isTogglable ? ` lab-tag--togglable` : ``}` +
           `${removable ? ` lab-tag--removable` : ""}` +
           `${isDropdown ? ` lab-tag--dropdown` : ""}` +
           `${disabled ? ` lab-tag--disabled` : ""}` +

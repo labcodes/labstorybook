@@ -20,7 +20,7 @@ describe("AbstractTag", () => {
 
   it("renders with base props for 'togglable' type", async () => {
     const renderedComponent = renderer
-      .create(<AbstractTag togglable text="Test TogglableTag" />)
+      .create(<AbstractTag isTogglable text="Test TogglableTag" />)
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
   });
