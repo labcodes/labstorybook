@@ -64,15 +64,13 @@ describe("RemovableTag", () => {
     expect(mockOnClick.mock.calls.length).toEqual(1);
   });
 
-  const thumbSrcSample =
-    "https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4";
   it("does not render if passing both `thumb` and `icon`", async () => {
     expect(() => {
       shallow(
         <RemovableTag
           text="Test to not render RemovableTag with thumb and icon"
           icon="calendar"
-          thumbSrc={thumbSrcSample}
+          thumbSrc="fake-thumb"
         />
       );
     }).toThrow(

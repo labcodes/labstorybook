@@ -35,7 +35,7 @@ exports[`SimpleTag renders as expected with a thumb 1`] = `
   <img
     alt=""
     className="lab-tag__thumb"
-    src="https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4"
+    src="fake-thumb"
   />
   Test render SimpleTag with thumb
 </span>

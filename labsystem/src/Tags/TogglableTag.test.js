@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import { mount, shallow } from "enzyme";
+import { shallow } from "enzyme";
 
 import TogglableTag from "./TogglableTag";
 

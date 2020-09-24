@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import { mount, shallow } from "enzyme";
+import { shallow } from "enzyme";
 
 import SimpleTag from "./SimpleTag";
 
@@ -74,28 +74,21 @@ describe("SimpleTag", () => {
     expect(wrapper).toContain("lab-icon--lupe");
   });
 
-  const thumbSrcSample =
-    "https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4";
   it("renders as expected with a thumb", async () => {
     const renderedComponent = renderer
       .create(
         <SimpleTag
           text="Test render SimpleTag with thumb"
-          thumbSrc={thumbSrcSample}
+          thumbSrc="fake-thumb"
         />
       )
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
-    const mountedComponent = mount(
-      <SimpleTag
-        text="Test mount SimpleTag with thumb"
-        thumbSrc={thumbSrcSample}
-      />
-    );
-    expect(mountedComponent.find("SimpleTag").prop("thumbSrc")).toEqual(
-      thumbSrcSample
-    );
+    const wrapper = shallow(
+      <SimpleTag text="Test mount SimpleTag with thumb" thumbSrc="fake-thumb" />
+    ).html();
+    expect(wrapper).toContain(`src="fake-thumb"`);
   });
 
   it("does not render if passing both `thumb` and `icon` props", async () => {
@@ -104,7 +97,7 @@ describe("SimpleTag", () => {
         <SimpleTag
           text="Test to not render SimpleTag with with thumb and icon"
           icon="lupe"
-          thumbSrc={thumbSrcSample}
+          thumbSrc="fake-thumb"
         />
       );
     }).toThrow(
