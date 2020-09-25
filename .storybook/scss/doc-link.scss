@@ -1,0 +1,13 @@
+.doc-link--purple {
+  &::before {
+    background: $purple-30;
+  }
+
+  &:focus::before {
+    @include border-shadow(focus, $purple-30);
+  }
+
+  &:focus:hover::before {
+    @include border-shadow(focus, $purple-10);
+  }
+}

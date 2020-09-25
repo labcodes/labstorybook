@@ -1,15 +1,19 @@
+// Bulma Grid
+@import "~bulma/sass/utilities/all";
+@import "~bulma/sass/grid/all";
+
 // Variables
 @import "variables/all";
-
-// Base elements
-@import "base/all";
 
 // Helpers
 @import "utilities/all";
 
-// Bulma Grid
-@import "~bulma/sass/utilities/all";
-@import "~bulma/sass/grid/all";
+// Base elements
+@import "base/all";
+
+// Components
+@import "components/all";
+
 
 // Components
 @import "components/all";

@@ -18,6 +18,7 @@ module.exports = {
     'react/jsx-filename-extension': 'off',
     'react/jsx-fragments': 0,
     'react/jsx-one-expression-per-line': 'off',
+    'react/jsx-props-no-spreading': 0,
     'react/prefer-stateless-function': 'off',
     'react/state-in-constructor': 'off',
     'react/static-property-placement': 'off',
