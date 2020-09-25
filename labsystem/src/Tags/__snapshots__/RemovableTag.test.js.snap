@@ -7,7 +7,7 @@ exports[`RemovableTag renders as disabled 1`] = `
   onKeyDown={[Function]}
   role="presentation"
 >
-  Test render a disabled RemovableTag
+  Test render disabled RemovableTag
   <span
     className="lab-tag__remove-icon-wrapper"
   >
@@ -25,7 +25,7 @@ exports[`RemovableTag renders as outline 1`] = `
   onKeyDown={[Function]}
   role="presentation"
 >
-  Test render an outline RemovableTag
+  Test render outline RemovableTag
   <span
     className="lab-tag__remove-icon-wrapper"
   >
@@ -61,7 +61,7 @@ exports[`RemovableTag renders with base props 1`] = `
   onKeyDown={[Function]}
   role="presentation"
 >
-  Test RemovableTag
+  Test render RemovableTag
   <span
     className="lab-tag__remove-icon-wrapper"
   >

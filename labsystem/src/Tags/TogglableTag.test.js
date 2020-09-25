@@ -7,9 +7,12 @@ import TogglableTag from "./TogglableTag";
 describe("TogglableTag", () => {
   it("renders with base props", async () => {
     const renderedComponent = renderer
-      .create(<TogglableTag text="Test TogglableTag" />)
+      .create(<TogglableTag text="Test render TogglableTag" />)
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
+
+    const wrapper = shallow(<TogglableTag text="Test TogglableTag" />).html();
+    expect(wrapper).toContain("lab-tag--togglable");
   });
 
   it("renders as expected with disabled as true", async () => {

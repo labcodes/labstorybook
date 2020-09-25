@@ -7,21 +7,24 @@ import RemovableTag from "./RemovableTag";
 describe("RemovableTag", () => {
   it("renders with base props", async () => {
     const renderedComponent = renderer
-      .create(<RemovableTag text="Test RemovableTag" />)
+      .create(<RemovableTag text="Test render RemovableTag" />)
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
+
+    const wrapper = shallow(<RemovableTag text="Test RemovableTag" />).html();
+    expect(wrapper).toContain("lab-tag--removable");
   });
 
   it("renders as disabled", async () => {
     const renderedComponent = renderer
       .create(
-        <RemovableTag text="Test render a disabled RemovableTag" isDisabled />
+        <RemovableTag text="Test render disabled RemovableTag" isDisabled />
       )
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
     const wrapper = shallow(
-      <RemovableTag text="Test mount disabled RemovableTag" isDisabled />
+      <RemovableTag text="Test disabled RemovableTag" isDisabled />
     ).html();
     expect(wrapper).toContain("lab-tag--disabled");
   });
@@ -29,13 +32,13 @@ describe("RemovableTag", () => {
   it("renders as outline", async () => {
     const renderedComponent = renderer
       .create(
-        <RemovableTag text="Test render an outline RemovableTag" isOutline />
+        <RemovableTag text="Test render outline RemovableTag" isOutline />
       )
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
     const wrapper = shallow(
-      <RemovableTag text="Test mount outline RemovableTag" isOutline />
+      <RemovableTag text="Test outline RemovableTag" isOutline />
     ).html();
     expect(wrapper).toContain("lab-tag--outline");
   });
@@ -49,7 +52,7 @@ describe("RemovableTag", () => {
     expect(renderedComponent).toMatchSnapshot();
 
     const wrapper = shallow(
-      <RemovableTag text="Test mount green RemovableTag" color="green" />
+      <RemovableTag text="Test green RemovableTag" color="green" />
     ).html();
     expect(wrapper).toContain("lab-tag--green");
   });

@@ -7,7 +7,7 @@ import SimpleTag from "./SimpleTag";
 describe("SimpleTag", () => {
   it("renders with base props", async () => {
     const renderedComponent = renderer
-      .create(<SimpleTag text="Test SimpleTag" />)
+      .create(<SimpleTag text="Test render SimpleTag" />)
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
   });
@@ -86,7 +86,7 @@ describe("SimpleTag", () => {
     expect(renderedComponent).toMatchSnapshot();
 
     const wrapper = shallow(
-      <SimpleTag text="Test mount SimpleTag with thumb" thumbSrc="fake-thumb" />
+      <SimpleTag text="Test SimpleTag with thumb" thumbSrc="fake-thumb" />
     ).html();
     expect(wrapper).toContain(`src="fake-thumb"`);
   });

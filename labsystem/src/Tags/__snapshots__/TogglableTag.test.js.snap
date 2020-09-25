@@ -65,6 +65,6 @@ exports[`TogglableTag renders with base props 1`] = `
   onKeyDown={[Function]}
   role="presentation"
 >
-  Test TogglableTag
+  Test render TogglableTag
 </span>
 `;

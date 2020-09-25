@@ -61,7 +61,7 @@ exports[`DropdownTag renders with base props 1`] = `
   onKeyDown={[Function]}
   role="presentation"
 >
-  Test DropdownTag
+  Test render DropdownTag
   <span
     className="lab-tag__dropdown-icon-wrapper"
   >

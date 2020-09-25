@@ -7,9 +7,13 @@ import DropdownTag from "./DropdownTag";
 describe("DropdownTag", () => {
   it("renders with base props", async () => {
     const renderedComponent = renderer
-      .create(<DropdownTag text="Test DropdownTag" />)
+      .create(<DropdownTag text="Test render DropdownTag" />)
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
+
+    const wrapper = shallow(<DropdownTag text="Test DropdownTag" />).html();
+    expect(wrapper).toContain("lab-tag--dropdown");
+    expect(wrapper).toContain("lab-icon--dropdown");
   });
 
   it("renders as disabled", async () => {
