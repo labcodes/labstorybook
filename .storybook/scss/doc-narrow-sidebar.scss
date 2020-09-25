@@ -1,7 +1,18 @@
 .lab-narrow-sidebar--stories{
+  @media (min-width: 900px) {
+    display: inline-flex;
+    margin-right: 80px;
+  }
+ 
   .lab-narrow-sidebar {
+    display: flex;
     position: relative;
     border: 2px solid $mineral-20;
+
+  }
+
+  .lab-narrow-sidebar--vivid{
+    border:transparent;
   }
 
   .lab-narrow-sidebar__header {
@@ -24,4 +35,172 @@
   .lab-narrow__overlay {
     display: none;
   }
+}
+
+//Purple Theming
+.lab-narrow-sidebar--stories--purple{
+  
+  .lab-narrow-sidebar__collapse {
+    &:focus {
+      border-color: $purple-30;
+    }
+  
+    &:active {
+      background-color: $purple-30;
+    }
+  }
+
+  .lab-narrow-sidebar__trigger{
+    &-button:focus {
+      border-color: $purple-30;
+    }
+  
+    &-button:active {
+      background-color: $purple-30;
+    }
+  }
+
+  .lab-narrow-sidebar__item{
+    &:focus{
+      &:before{
+        border-color: $purple-30;
+      }
+    }
+
+    
+    &:hover {
+      background-color: $purple-10;
+    } 
+    
+    &:active {
+      background-color: $purple-30;
+    }
+
+    &--active {
+      background-color: $purple-20;
+      color: $purple-70;
+
+  
+      .lab-icon--sidebar-item {
+        background-color: $purple-70;
+      }
+    }
+  }
+
+  .lab-narrow-sidebar__footer{
+    &__button{
+      color: $purple-60;
+
+      .lab-icon--sidebar-item {
+        background-color: $purple-60;
+      }
+    }
+
+    &__button:focus {
+      border-color: $purple-30;
+    }
+
+    &__button:hover {
+      background-color: $purple-10;
+    }
+  
+    &__button:active {
+      background-color: $purple-30;
+      
+    }
+  
+    &__button--active {
+      background-color: $purple-70;
+      color: $purple-20;
+  
+      .lab-icon--sidebar-item {
+        background-color: $purple-70;
+      }
+    }
+  }
+
+}
+
+//Mineral Theming
+.lab-narrow-sidebar--stories--mineral{
+  
+  .lab-narrow-sidebar__collapse {
+    &:focus {
+      border-color: $mineral-30;
+    }
+  
+    &:active {
+      background-color: $mineral-30;
+    }
+  }
+
+  .lab-narrow-sidebar__trigger{
+    &-button:focus {
+      border-color: $mineral-30;
+    }
+  
+    &-button:active {
+      background-color: $mineral-30;
+    }
+  }
+
+  .lab-narrow-sidebar__item{
+    &:focus{
+      &:before{
+        border-color: $mineral-30;
+      }
+    }
+
+    
+    &:hover {
+      background-color: $mineral-10;
+    } 
+    
+    &:active {
+      background-color: $mineral-30;
+    }
+
+    &--active {
+      background-color: $mineral-20;
+      color: $mineral-70;
+
+  
+      .lab-icon--sidebar-item {
+        background-color: $mineral-70;
+      }
+    }
+  }
+
+  .lab-narrow-sidebar__footer{
+    &__button{
+      color: $mineral-60;
+
+      .lab-icon--sidebar-item {
+        background-color: $mineral-60;
+      }
+    }
+
+    &__button:focus {
+      border-color: $mineral-30;
+    }
+
+    &__button:hover {
+      background-color: $mineral-10;
+    }
+  
+    &__button:active {
+      background-color: $mineral-30;
+      
+    }
+  
+    &__button--active {
+      background-color: $mineral-70;
+      color: $mineral-20;
+  
+      .lab-icon--sidebar-item {
+        background-color: $mineral-70;
+      }
+    }
+  }
+
 }
