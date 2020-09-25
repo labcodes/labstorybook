@@ -9,39 +9,6 @@ $narrow-trigger-bg: map-get($narrow-sidebar-theme, "60");
 
 
 
-.lab-narrow-sidebar__trigger {
-  position:fixed;
-  right: 0;
-  top:0;
-  background-color: $narrow-trigger-bg;
-  width: 100%;
-  height: 76px;  
-  border-bottom: 1px solid transparent;
-}
-
-.lab-narrow-sidebar__trigger-button {
-  display: flex;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  margin: 18px 0 18px 12px;
-  background-color:transparent;
-  border: 2px solid transparent;
-  border-radius: 4px;
-
-  &:focus {
-    border-color: $item-focus-color;
-    outline: none;
-  }
-
-  &:active {
-    background-color: $item-focus-color;
-    .lab-icon {
-      background-color: $item-active-color;
-    }
-  }
-
-}
 
 .lab-narrow-sidebar {
   width: 80%;
@@ -64,7 +31,13 @@ $narrow-trigger-bg: map-get($narrow-sidebar-theme, "60");
   &--off {
     left: -300px;
   }
-}
+
+  @include from($tablet){
+    width: 128px;
+    border: 2px solid $mineral-20;
+    box-sizing: border-box;
+  }
+} 
 
 .lab-narrow__overlay {
   content: "";
@@ -90,10 +63,6 @@ $narrow-trigger-bg: map-get($narrow-sidebar-theme, "60");
   }
 }
 
-.lab-narrow-sidebar__content {
-  overflow-y:auto;
-  height: 100%;
-}
 
 //Header
 .lab-narrow-sidebar__header {
@@ -107,6 +76,13 @@ $narrow-trigger-bg: map-get($narrow-sidebar-theme, "60");
   border-top-right-radius: $radius-default;
   background-color: $white;
   box-sizing: border-box;
+
+  @include from ($tablet){
+    justify-content: center;
+    position: relative;
+    width: 128px;
+    padding: 30px 0;
+  }
 }
 
 .lab-narrow-sidebar__logo {
@@ -116,12 +92,15 @@ $narrow-trigger-bg: map-get($narrow-sidebar-theme, "60");
   background-color: $mineral-20;
 }
 
-
 .lab-narrow-sidebar__avatar {
   display: flex;
   align-items: center;
   margin-left: 28px;
   margin-bottom: 12px;
+
+  @include from($tablet){
+    margin: 0 0px 8px 0;
+  }
   
   
   &-photo {
@@ -130,6 +109,10 @@ $narrow-trigger-bg: map-get($narrow-sidebar-theme, "60");
     border-radius: 100%;
     margin: 12px 8px 12px 0;
     background-color: $mineral-20;
+
+    @include from($tablet){
+      margin: 0 0px 8px 0;
+    }
   }
 
   &-text{
@@ -139,6 +122,10 @@ $narrow-trigger-bg: map-get($narrow-sidebar-theme, "60");
     font-weight: $weight-bold;
     font-family: $font-primary;
     font-size: $font-size-3; 
+
+    @include from($tablet){
+      display:none;
+    }
   }
 
   &-caption {
@@ -146,11 +133,12 @@ $narrow-trigger-bg: map-get($narrow-sidebar-theme, "60");
     font-family: $font-primary;
     color: $black-50;
     font-weight: $weight-medium;
+
+    @include from($tablet){
+      display:none;
+    }
   }
 }
-
-
-
 
 .lab-narrow-sidebar__collapse {
   background-color: transparent;
@@ -169,7 +157,50 @@ $narrow-trigger-bg: map-get($narrow-sidebar-theme, "60");
   &:active {
     background-color: $item-focus-color;
   }
+
+  @include from($tablet){
+    display: none;
+  }
 }
+//Trigger for mobile
+.lab-narrow-sidebar__trigger {
+  position:fixed;
+  right: 0;
+  top:0;
+  background-color: $narrow-trigger-bg;
+  width: 100%;
+  height: 76px;  
+  border-bottom: 1px solid transparent;
+
+  @include from($tablet){
+    display: none;
+  }
+  
+  &-button {
+    display: flex;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin: 18px 0 18px 12px;
+    background-color:transparent;
+    border: 2px solid transparent;
+    border-radius: 4px;
+  
+    &:focus {
+      border-color: $item-focus-color;
+      outline: none;
+    }
+  
+    &:active {
+      background-color: $item-focus-color;
+      .lab-icon {
+        background-color: $item-active-color;
+      }
+    }
+  
+  }
+}
+
 
 //Body
 .lab-narrow-sidebar__body {
@@ -179,9 +210,13 @@ $narrow-trigger-bg: map-get($narrow-sidebar-theme, "60");
   flex-direction: column;
   padding: 4px 0;
   margin-top: 76px;
+
+  @include from ($tablet){
+    overflow: auto;
+    margin-top: 0;
+  }
   
 }
-
 
 .lab-narrow-sidebar__item {
   position: relative;
@@ -194,15 +229,28 @@ $narrow-trigger-bg: map-get($narrow-sidebar-theme, "60");
   cursor: pointer;
   border: none;
   background-color: transparent;
-  //add for mobile//
   padding: 16px 20px;
   margin-left: 28px;
   margin-right: -8px;
   border-radius: 12px;
 
+  @include from($tablet){
+      display: flex;
+      flex-direction: column; 
+      align-items: center;
+      text-align: center;
+      font-size: $font-size-1;
+      padding: 16px;
+      margin:0;
+      border-radius: 0px;
+  }
+
   .lab-icon--sidebar-item {
-     //add for mobile//
     margin-right: 8px;
+
+    @include from($tablet){
+      margin:0;
+    }
   }
 
   &:focus {
@@ -219,6 +267,10 @@ $narrow-trigger-bg: map-get($narrow-sidebar-theme, "60");
       right: 6px;
       bottom: 6px;
       border-radius: 8px;
+
+      @include from($tablet){
+        margin-right: 0px;
+      }
     }
   }
 
@@ -252,6 +304,9 @@ $narrow-trigger-bg: map-get($narrow-sidebar-theme, "60");
   // align-items: center;
   flex-grow: 0;
   
+  @include from($tablet){
+    align-items: center;
+  }
   
   &__button {
     display: flex;
@@ -261,19 +316,30 @@ $narrow-trigger-bg: map-get($narrow-sidebar-theme, "60");
     text-align: center;
     font-family: $font-primary;
     font-weight: $weight-medium;
-    color: $teal-60;
+    color: $narrow-trigger-bg;
     background-color: transparent;
     border: 2px solid transparent;
     border-radius: 4px;
-    //Add for mobile
     padding: 4px 12px ;
     margin-left: 28px;
     border-radius: 8px;
     font-size: $font-size-4;
 
+    @include from($tablet){
+      padding: 4px;
+      width:76%;
+      margin-left: 0px;
+      align-items: center;
+      font-size: $font-size-1;
+    }
+
     .lab-icon--sidebar-item {
-      background-color: $teal-60;
+      background-color: $narrow-trigger-bg;
       margin-right: 8px;
+
+      @include from($tablet){
+        margin-right: 4px;
+      }
     }
   }
 
@@ -313,86 +379,6 @@ $narrow-trigger-bg: map-get($narrow-sidebar-theme, "60");
   }
 } 
 
-//For Tablet and Desktop
-
-@media (min-width: 900px) {
-  .lab-narrow-sidebar {
-    width: 128px;
-    border: 2px solid $mineral-20;
-    box-sizing: border-box;
-    
-    &__footer {
-      align-items: center;
-    
-      &__button {
-        padding: 4px;
-        width:76%;
-        margin-left: 0px;
-        align-items: center;
-        font-size: $font-size-1;
-        
-        .lab-icon--sidebar-item {
-          margin-right: 4px;
-        } 
-      }
-    }
-
-    &__header {
-      justify-content: center;
-      position: relative;
-      width: 128px;
-      padding: 30px 0;
-    }
-    
-    &__collapse {
-      display: none;
-    }
-    
-    &__body {
-      overflow: auto;
-      margin-top: 0;
-    }
-    
-    &__item {
-      display: flex;
-      flex-direction: column; 
-      align-items: center;
-      text-align: center;
-      font-size: $font-size-1;
-      padding: 16px;
-      margin:0;
-      border-radius: 0px;
-    
-      .lab-icon--sidebar-item {
-        margin:0;
-      }
-    }
-    
-    &__avatar-text,
-    &__avatar-caption {
-      display:none;
-    } 
-    
-    &__avatar,
-    &__avatar-photo {
-      margin: 0 0px 8px 0;
-    }
-
-    .lab-narrow-sidebar__item:focus {
-      &:before {
-        margin-right: 0px;
-      }  
-    }
-  }
-
-  .lab-narrow-sidebar__content {
-    overflow-y:hidden;
-  }
-
-  .lab-narrow-sidebar__trigger{
-    display: none;
-  }
-}
 
 // Vivid Skin
 .lab-narrow-sidebar--vivid{
@@ -458,7 +444,8 @@ $narrow-trigger-bg: map-get($narrow-sidebar-theme, "60");
     }
   }
 
-  .lab-narrow-sidebar__collapse{
+  .lab-narrow-sidebar__collapse,
+  .lab-narrow-sidebar__trigger-button{
 
     &:focus{
       border-color: $white-50;
@@ -477,13 +464,6 @@ $narrow-trigger-bg: map-get($narrow-sidebar-theme, "60");
   .lab-narrow-sidebar__trigger {
     background-color: $white;
   }
-
-  .sidebar-trigger:active {
-    .lab-icon {
-      background-color: $white;
-    }
-  }
-  
   
 }
 
@@ -519,30 +499,24 @@ $narrow-trigger-bg: map-get($narrow-sidebar-theme, "60");
       background-color: $color;
     }    
   }
-
-  .lab-narrow-sidebar__collapse:active {
-    .lab-icon--sidebar-item {
-      background-color: $color;
+ 
+  .lab-narrow-sidebar__collapse{
+    &:active{
+      .lab-icon--sidebar-item {
+        background-color: $color;
+      }
     }
   }  
 
-  .lab-narrow-sidebar__trigger {
-    border-color: $color;
-  }
-
-  .sidebar-trigger {
-    .lab-icon {
-      background-color: $color;
-    }
-
-    &:focus {
-      border-color: $color;
-    }
   
-    &:active {
-      background-color: $color;
+  .lab-narrow-sidebar__trigger {
+    &-button:active{
+      .lab-icon{
+        background-color:$color;
+      }
     }
-  } 
+  }
+  
 }
 
 /*

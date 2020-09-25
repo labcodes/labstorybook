@@ -1,0 +1,172 @@
+import { Fragment } from 'react';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+
+import NarrowSidebar from '../labsystem/src/Sidebar/Narrow-Sidebar';
+import Header from '../labsystem/src/Sidebar/Header';
+import Body from '../labsystem/src/Sidebar/Body';
+import Footer from '../labsystem/src/Sidebar/Footer';
+import FooterButton from '../labsystem/src/Sidebar/FooterButton';
+import UserAvatar from '../labsystem/src/Sidebar/UserAvatar';
+import Logotype from '../labsystem/src/Sidebar/Logotype';
+import Collapse from '../labsystem/src/Sidebar/CollapseButton';
+import Item from '../labsystem/src/Sidebar/Item';
+import Icon from '../labsystem/src/Icon';
+
+<Meta title="Navigation/Narrow Sidebar/Style and Colors" component={NarrowSidebar} />
+
+<div class="docs-title">
+  <div>
+    <h1 class="docs-title__text">Narrow Sidebar</h1>
+  </div>
+</div>
+
+<div class="docs-content">
+
+<h2>Style and Colors</h2>
+<div class="columns">
+      <div class="column">
+        <h4>Stroke and Fill</h4>
+        <tbody> 
+          <tr>
+            <td>
+            <img src="docs/narrow-sidebar/stroke-fill-nside.png" />
+            </td>
+            <td>
+            <img src="docs/narrow-sidebar/exception-nside.png" />
+            </td>
+          </tr>
+        </tbody>
+              <p>
+              Coral shades must not be used for elements, only for dark sidebar background.
+              </p>
+    </div>
+      <div class="column">
+        <h4>Action area exceptions </h4>
+        <p>
+        Buttons at dark sidebars must adopt the exceptions guidelines (as seen at the page  
+        <a href="https://labstorybook-master.netlify.app/?path=/docs/components-button--default-button"> Button</a>)
+        </p>
+         <img src="docs/narrow-sidebar/colors-nside.png" />
+    </div>
+</div>
+
+<h2>Color Combination</h2>   
+<p>
+<strong>Pale Narrow Sidebar </strong> may be used over any page background color, but the elements should consider the UI theme 
+(if the app uses a teal theme, it must use the elements following this color scheme). For dark styles, make sure to have 
+at least a difference of 20 between sidebar and page's background color values.
+</p>
+<img src="docs/narrow-sidebar/combinations-nside.png" />
+<br /><br /><br />
+<hr />
+<h4>Vivid Sidebar</h4>
+
+  <Preview>
+    <Story name="Sidebar">
+      <Fragment>
+          <div className="lab-narrow-sidebar--stories">
+          <NarrowSidebar withScroll color="mineral" vivid >
+            <Header >
+              <Logotype altText="User photo" />
+              <Collapse />
+            </Header>
+            <Body  >
+              <Item icon="calendar" label="Teste" />
+              <Item icon="coin" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+            </Body>
+            <Footer>
+              <UserAvatar altText="User photo" caption="Cool guy"/>
+              <FooterButton icon="key" label="Password"/>
+              <FooterButton icon="logout" label="Logout" />
+            </Footer>
+          </NarrowSidebar>
+        </div>
+        <div className="lab-narrow-sidebar--stories">
+          <NarrowSidebar withScroll color="teal" vivid >
+            <Header >
+              <Logotype altText="User photo" />
+              <Collapse />
+            </Header>
+            <Body  >
+              <Item icon="calendar" label="Teste" />
+              <Item icon="coin" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+            </Body>
+            <Footer>
+              <UserAvatar altText="User photo" caption="Cool guy"/>
+              <FooterButton icon="key" label="Password"/>
+              <FooterButton icon="logout" label="Logout" />
+            </Footer>
+          </NarrowSidebar>
+        </div>
+        <div className="lab-narrow-sidebar--stories">
+          <NarrowSidebar withScroll color="coral" vivid >
+            <Header >
+              <Logotype altText="User photo" />
+              <Collapse />
+            </Header>
+            <Body  >
+              <Item icon="calendar" label="Teste" />
+              <Item icon="coin" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+            </Body>
+            <Footer>
+              <UserAvatar altText="User photo" caption="Cool guy"/>
+              <FooterButton icon="key" label="Password"/>
+              <FooterButton icon="logout" label="Logout" />
+            </Footer>
+          </NarrowSidebar>
+        </div>
+        <div className="lab-narrow-sidebar--stories">
+          <NarrowSidebar withScroll color="purple" vivid >
+            <Header >
+              <Logotype altText="User photo" />
+              <Collapse />
+            </Header>
+            <Body  >
+              <Item icon="calendar" label="Teste" />
+              <Item icon="coin" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+            </Body>
+            <Footer>
+              <UserAvatar altText="User photo" caption="Cool guy"/>
+              <FooterButton icon="key" label="Password"/>
+              <FooterButton icon="logout" label="Logout" />
+            </Footer>
+          </NarrowSidebar>
+        </div>
+      </Fragment>
+    </Story>
+  </Preview>
+
+
+</div>

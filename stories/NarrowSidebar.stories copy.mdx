@@ -1,0 +1,277 @@
+import { Fragment } from 'react';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+
+import NarrowSidebar from '../labsystem/src/Sidebar/Narrow-Sidebar';
+import Header from '../labsystem/src/Sidebar/Header';
+import Body from '../labsystem/src/Sidebar/Body';
+import Footer from '../labsystem/src/Sidebar/Footer';
+import FooterButton from '../labsystem/src/Sidebar/FooterButton';
+import UserAvatar from '../labsystem/src/Sidebar/UserAvatar';
+import Logotype from '../labsystem/src/Sidebar/Logotype';
+import Collapse from '../labsystem/src/Sidebar/CollapseButton';
+import Item from '../labsystem/src/Sidebar/Item';
+import Icon from '../labsystem/src/Icon';
+
+<Meta title="Navigation/Narrow Sidebar/Overview" component={NarrowSidebar} />
+
+<div class="docs-title docs-title--with-tab">
+  <div>
+    <h1 class="docs-title__text">Narrow Sidebar</h1>
+  </div>
+</div>
+
+<div class="docs-content">
+  <div class="simple-tab-wrapper"></div>
+  <input class="simple-tab" type="radio" name="type-tab" id="tab1" checked/>
+  <label for="tab1">Overview</label>
+
+  <input class="simple-tab" type="radio" name="type-tab" id="tab2" />
+  <label for="tab2">Style and Colors</label>
+
+  <div class="simple-tab__content content1">
+
+  Narrow-sidebars are components that lets users navigate within content of a product. 
+  It must be displayed fixed at the left side of the screen and can't be expanded.
+  This component should be used only in a small amount of content situation.
+<br />
+<hr />
+
+<h3>Anatomy</h3>
+  <p>
+    The Narrow Sidebar is divided in 3 parts. 
+    <br />
+    First, we have the <strong>header</strong> area. Here you may use to style with your logo or user avatar 
+    <br />
+    Below the header is the <strong>body</strong>, 
+    which should be top aligned. It can have up to 6 items without scrolling. 
+    If more items are necessary, this container can have a scrolling behavior. 
+    <br/>
+    Last, the bottom area should be used as a <strong>footer</strong> utility content. This container can have action buttons or 
+    additional secondary information/links. Here, the content will vary according to the application needs.
+  </p>
+<div class="columns">
+      <div class="column">
+         <img src="docs/narrow-sidebar/header-nside.png" />
+      <h6>Header (mandatory) </h6>
+      <p>
+        You must choose at least one of the above options to use in your Narrow Sidebar.
+      </p>
+      <br />
+      <img src="docs/narrow-sidebar/obs-nside.png" />
+    </div>
+      <div class="column">
+         <img src="docs/narrow-sidebar/body-nside.png" />
+      <h6>Body </h6>
+      <p>
+        Body can be designed following these components above. 
+        The labels can only have 15 characters, so if more text is necessary here, 
+        you should use the Standard Sidebar*.
+      </p>
+    </div>
+      <div class="column">
+         <img src="docs/narrow-sidebar/footer-nside.png" />
+      <h6>Footer </h6>
+      <p>
+        Using the footer is optional, and you can use one of the following layouts.
+      </p>
+    </div>
+</div>
+<h5>Size and Responsiveness</h5>
+<div class="columns">
+    <div class="column">
+      <img src="docs/narrow-sidebar/mobile-nside.png" />
+    </div>
+    <div class="column">
+      <img src="docs/narrow-sidebar/mobile-nside-02.png" />
+    </div>
+      <div class="column">
+      <p>
+        On mobile, the Narrow Sidebar must have 80% of the screen width and cannot collapse. 
+        The height should be 100% of the viewport. What happens in mobile is that the component stays hidden and appears 
+        if the user triggers the action to open it.
+        <br /><br />
+        When the sidebar is hidden, the open navigation trigger, 
+        an icon button, which is positioned on a topbar component.
+        <br /><br />
+        When the sidebar is open, it looks almost like mobile Standard Sidebar*,  with the difference that the body 
+        only can have items, with no multilevel sections.
+      </p>
+    </div>
+</div>
+<hr />
+
+<h3>Behavior</h3>
+<div class="columns">
+    <div class="column">
+      <h6> DESKTOP </h6>
+        <p>
+        The Narrow Sidebar must always be fixed at the left side of the screen. 
+        As this component is not expandable, it does not have any animation, besides the ones that are already defined by 
+        the body's items states.
+      </p>
+  </div>
+  <div class="column">
+      <h6> MOBILE </h6>
+        <p>
+        Mobile Narrow Sidebar has an animation to hide and reveal the component.
+        When the topbar button is trigerred, the side navigation stays temporary visible and slides over the content. 
+        The Narrow Sidebar disappears again if user clicks on the header "collapse button" or if he clicks outside the component.
+      </p>
+  </div>
+</div>
+
+<h4>Tab order</h4>
+<div class="columns">
+  <div class="column">
+        <p>
+        The tab navigation should start being withheld by the sidebar. After focus the first element, the navigation 
+        should happen with the use of the keybord arrows. If the user presses tab again, the focus goes to footer area. 
+        The third tab should take the focus to the main content region, going out of the sidebar. If the side navigation 
+        is collapsed, the first tab should expand it, showing that the focus is temporarily stuck in that component.
+      </p>
+  </div>
+    <div class="column">
+    <img src="docs/narrow-sidebar/tab-order-nside.png" />
+  </div>
+  </div>
+</div>
+
+<div class="simple-tab__content content2">
+<div class="columns">
+      <div class="column">
+        <h4>Stroke and Fill</h4>
+        <tbody> 
+          <tr>
+            <td>
+            <img src="docs/narrow-sidebar/stroke-fill-nside.png" />
+            </td>
+            <td>
+            <img src="docs/narrow-sidebar/exception-nside.png" />
+            </td>
+          </tr>
+        </tbody>
+              <p>
+              Coral shades must not be used for elements, only for dark sidebar background.
+              </p>
+    </div>
+      <div class="column">
+        <h4>Action area exceptions </h4>
+        <p>
+        Buttons at dark sidebars must adopt the exceptions guidelines (as seen at the page  
+        <a href="https://labstorybook-master.netlify.app/?path=/docs/components-button--default-button"> Button</a>)
+        </p>
+         <img src="docs/narrow-sidebar/colors-nside.png" />
+    </div>
+</div>
+
+<h4>Vivid Sidebar</h4>
+
+  <Preview>
+    <Story name="Sidebar">
+      <Fragment>
+          <div className="lab-narrow-sidebar--stories">
+          <NarrowSidebar withScroll color="mineral" vivid >
+            <Header >
+              <Logotype altText="User photo" />
+              <Collapse />
+            </Header>
+            <Body  >
+              <Item icon="calendar" label="Teste" />
+              <Item icon="coin" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+            </Body>
+            <Footer>
+              <UserAvatar altText="User photo" caption="Cool guy"/>
+              <FooterButton icon="key" label="Password"/>
+              <FooterButton icon="logout" label="Logout" />
+            </Footer>
+          </NarrowSidebar>
+        </div>
+        <div className="lab-narrow-sidebar--stories">
+          <NarrowSidebar withScroll color="teal" vivid >
+            <Header >
+              <Logotype altText="User photo" />
+              <Collapse />
+            </Header>
+            <Body  >
+              <Item icon="calendar" label="Teste" />
+              <Item icon="coin" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+            </Body>
+            <Footer>
+              <UserAvatar altText="User photo" caption="Cool guy"/>
+              <FooterButton icon="key" label="Password"/>
+              <FooterButton icon="logout" label="Logout" />
+            </Footer>
+          </NarrowSidebar>
+        </div>
+        <div className="lab-narrow-sidebar--stories">
+          <NarrowSidebar withScroll color="coral" vivid >
+            <Header >
+              <Logotype altText="User photo" />
+              <Collapse />
+            </Header>
+            <Body  >
+              <Item icon="calendar" label="Teste" />
+              <Item icon="coin" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+            </Body>
+            <Footer>
+              <UserAvatar altText="User photo" caption="Cool guy"/>
+              <FooterButton icon="key" label="Password"/>
+              <FooterButton icon="logout" label="Logout" />
+            </Footer>
+          </NarrowSidebar>
+        </div>
+        <div className="lab-narrow-sidebar--stories">
+          <NarrowSidebar withScroll color="purple" vivid >
+            <Header >
+              <Logotype altText="User photo" />
+              <Collapse />
+            </Header>
+            <Body  >
+              <Item icon="calendar" label="Teste" />
+              <Item icon="coin" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+              <Item icon="wallet" label="Teste" />
+            </Body>
+            <Footer>
+              <UserAvatar altText="User photo" caption="Cool guy"/>
+              <FooterButton icon="key" label="Password"/>
+              <FooterButton icon="logout" label="Logout" />
+            </Footer>
+          </NarrowSidebar>
+        </div>
+      </Fragment>
+    </Story>
+  </Preview>
+
+</div>
+</div>
