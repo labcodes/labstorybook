@@ -9,7 +9,7 @@ export default class AbstractTag extends React.Component {
     isTogglable: PropTypes.bool,
     isDropdown: PropTypes.bool,
     isRemovable: PropTypes.bool,
-    isDisabled: PropTypes.bool,
+    disabled: PropTypes.bool,
     isOutline: PropTypes.bool,
     isOn: PropTypes.bool,
     thumbSrc: PropTypes.string,
@@ -28,7 +28,7 @@ export default class AbstractTag extends React.Component {
     isOutline: false,
     skin: "pale",
     color: "",
-    isDisabled: false,
+    disabled: false,
     isOn: false,
     onClick: undefined,
   };
@@ -95,7 +95,7 @@ export default class AbstractTag extends React.Component {
       isTogglable,
       isDropdown,
       isRemovable,
-      isDisabled,
+      disabled,
       icon,
       thumbSrc,
       isOutline,
@@ -111,7 +111,7 @@ export default class AbstractTag extends React.Component {
           `${isTogglable ? ` lab-tag--togglable` : ``}` +
           `${isRemovable ? ` lab-tag--removable` : ""}` +
           `${isDropdown ? ` lab-tag--dropdown` : ""}` +
-          `${isDisabled ? ` lab-tag--disabled` : ""}` +
+          `${disabled ? ` lab-tag--disabled` : ""}` +
           `${isOutline ? ` lab-tag--outline` : ""}` +
           `${color ? ` lab-tag--${color}-${skin}` : ` lab-tag--${skin}`}` +
           `${icon ? ` lab-tag--has-left-icon` : ""}` +

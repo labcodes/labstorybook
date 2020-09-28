@@ -18,13 +18,13 @@ describe("RemovableTag", () => {
   it("renders as disabled", async () => {
     const renderedComponent = renderer
       .create(
-        <RemovableTag text="Test render disabled RemovableTag" isDisabled />
+        <RemovableTag text="Test render disabled RemovableTag" disabled />
       )
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
     const wrapper = shallow(
-      <RemovableTag text="Test disabled RemovableTag" isDisabled />
+      <RemovableTag text="Test disabled RemovableTag" disabled />
     ).html();
     expect(wrapper).toContain("lab-tag--disabled");
   });

@@ -17,14 +17,12 @@ describe("TogglableTag", () => {
 
   it("renders as expected with disabled as true", async () => {
     const renderedComponent = renderer
-      .create(
-        <TogglableTag text="Test nount disabled TogglableTag" isDisabled />
-      )
+      .create(<TogglableTag text="Test nount disabled TogglableTag" disabled />)
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
     const wrapper = shallow(
-      <TogglableTag text="Test disabled TogglableTag" isDisabled />
+      <TogglableTag text="Test disabled TogglableTag" disabled />
     ).html();
     expect(wrapper).toContain("lab-tag--disabled");
   });

@@ -18,14 +18,12 @@ describe("DropdownTag", () => {
 
   it("renders as disabled", async () => {
     const renderedComponent = renderer
-      .create(
-        <DropdownTag text="Test render disabled DropdownTag" isDisabled />
-      )
+      .create(<DropdownTag text="Test render disabled DropdownTag" disabled />)
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
     const wrapper = shallow(
-      <DropdownTag text="Test disabled DropdownTag" isDisabled />
+      <DropdownTag text="Test disabled DropdownTag" disabled />
     ).html();
     expect(wrapper).toContain("lab-tag--disabled");
   });

@@ -8,7 +8,7 @@ export default class DropdownTagPlayground extends React.Component {
     this.state = {
       dropdownTagText: "",
       dropdownTagIsOutline: false,
-      dropdownTagIsDisabled: false,
+      dropdownTagDisabled: false,
       dropdownTagColor: "",
       dropdownTagSkin: "pale",
       dropdownTagIcon: "",
@@ -29,7 +29,7 @@ export default class DropdownTagPlayground extends React.Component {
     const {
       dropdownTagText,
       dropdownTagIsOutline,
-      dropdownTagIsDisabled,
+      dropdownTagDisabled,
       dropdownTagColor,
       dropdownTagSkin,
       dropdownTagIcon,
@@ -45,7 +45,7 @@ export default class DropdownTagPlayground extends React.Component {
               text={dropdownTagText}
               icon={dropdownTagIcon}
               isOutline={dropdownTagIsOutline}
-              isDisabled={dropdownTagIsDisabled}
+              disabled={dropdownTagDisabled}
               color={dropdownTagColor}
               skin={dropdownTagSkin}
             />
@@ -109,9 +109,9 @@ export default class DropdownTagPlayground extends React.Component {
             <span className="lab-playground__item">
               <strong>Disabled: </strong>
               <input
-                id="dropdownTagIsDisabled"
+                id="dropdownTagDisabled"
                 type="checkbox"
-                checked={dropdownTagIsDisabled}
+                checked={dropdownTagDisabled}
                 onChange={this.handleBoolPropChange}
               />
             </span>

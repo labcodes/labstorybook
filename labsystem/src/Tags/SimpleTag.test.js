@@ -14,12 +14,12 @@ describe("SimpleTag", () => {
 
   it("renders as expected with disabled as true", async () => {
     const renderedComponent = renderer
-      .create(<SimpleTag text="Test render disabled SimpleTag" isDisabled />)
+      .create(<SimpleTag text="Test render disabled SimpleTag" disabled />)
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
 
     const wrapper = shallow(
-      <SimpleTag text="Test disabled SimpleTag" isDisabled />
+      <SimpleTag text="Test disabled SimpleTag" disabled />
     ).html();
     expect(wrapper).toContain("lab-tag--disabled");
   });

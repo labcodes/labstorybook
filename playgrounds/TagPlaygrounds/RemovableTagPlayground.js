@@ -17,7 +17,7 @@ export default class RemovableTagPlayground extends React.Component {
       removableTagIsOutline: false,
       removableTagColor: "",
       removableTagSkin: "pale",
-      removableTagIsDisabled: false,
+      removableTagDisabled: false,
       removableTagIsOn: true,
       isIconInputDisabled: false,
       isThumbInputDisabled: false,
@@ -67,7 +67,7 @@ export default class RemovableTagPlayground extends React.Component {
       removableTagIsOutline,
       removableTagColor,
       removableTagSkin,
-      removableTagIsDisabled,
+      removableTagDisabled,
       removableTagIsOn,
       isIconInputDisabled,
       isThumbInputDisabled,
@@ -87,7 +87,7 @@ export default class RemovableTagPlayground extends React.Component {
                 isOutline={removableTagIsOutline}
                 color={removableTagColor}
                 skin={removableTagSkin}
-                isDisabled={removableTagIsDisabled}
+                disabled={removableTagDisabled}
                 onClick={this.handleClick}
               />
             ) : (
@@ -175,9 +175,9 @@ export default class RemovableTagPlayground extends React.Component {
             <span className="lab-playground__item">
               <strong>Disabled: </strong>
               <input
-                id="removableTagIsDisabled"
+                id="removableTagDisabled"
                 type="checkbox"
-                checked={removableTagIsDisabled}
+                checked={removableTagDisabled}
                 onChange={this.handleBoolPropChange}
               />
             </span>

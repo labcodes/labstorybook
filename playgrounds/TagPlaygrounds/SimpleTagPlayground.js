@@ -17,7 +17,7 @@ export default class SimpleTagPlayground extends React.Component {
       simpleTagIsOutline: false,
       simpleTagColor: "",
       simpleTagSkin: "pale",
-      simpleTagIsDisabled: false,
+      simpleTagDisabled: false,
       isIconInputDisabled: false,
       isThumbInputDisabled: false,
     };
@@ -59,7 +59,7 @@ export default class SimpleTagPlayground extends React.Component {
       simpleTagIsOutline,
       simpleTagColor,
       simpleTagSkin,
-      simpleTagIsDisabled,
+      simpleTagDisabled,
     } = this.state;
     return (
       <React.Fragment>
@@ -75,7 +75,7 @@ export default class SimpleTagPlayground extends React.Component {
               isOutline={simpleTagIsOutline}
               color={simpleTagColor}
               skin={simpleTagSkin}
-              isDisabled={simpleTagIsDisabled}
+              disabled={simpleTagDisabled}
             />
           </div>
           <div className="column lab-playground__configs">
@@ -150,9 +150,9 @@ export default class SimpleTagPlayground extends React.Component {
             <span className="lab-playground__item">
               <strong>Disabled: </strong>
               <input
-                id="simpleTagIsDisabled"
+                id="simpleTagDisabled"
                 type="checkbox"
-                checked={simpleTagIsDisabled}
+                checked={simpleTagDisabled}
                 onChange={this.handleBoolPropChange}
               />
             </span>
