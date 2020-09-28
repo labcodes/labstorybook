@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import AbstractTag from "./AbstractTag";
+import Icon from "../Icon";
 
 export default class DropdownTag extends React.Component {
   static propTypes = {
@@ -22,6 +23,17 @@ export default class DropdownTag extends React.Component {
     onClick: () => {},
   };
 
+  dropdownIcon = () => (
+    <span className="lab-tag__dropdown-icon-wrapper">
+      <Icon
+        type="dropdown-closed"
+        color="black75"
+        size="petit"
+        className="dropdown-icon"
+      />
+    </span>
+  );
+
   render() {
     const {
       text,
@@ -42,6 +54,7 @@ export default class DropdownTag extends React.Component {
         isOutline={isOutline}
         disabled={disabled}
         onClick={onClick}
+        renderSuffix={this.dropdownIcon()}
       />
     );
   }

@@ -17,7 +17,7 @@ export default class AbstractTag extends React.Component {
     skin: PropTypes.string,
     color: PropTypes.string,
     onClick: PropTypes.func,
-    renderSuffix: PropTypes.func,
+    renderSuffix: PropTypes.object,
   };
 
   static defaultProps = {
@@ -53,20 +53,6 @@ export default class AbstractTag extends React.Component {
     const { isOn } = this.props;
     return isOn ? (
       <Icon type="check" color="black75" size="petit" className="check-icon" />
-    ) : undefined;
-  };
-
-  dropdownIcon = () => {
-    const { isDropdown } = this.props;
-    return isDropdown ? (
-      <span className="lab-tag__dropdown-icon-wrapper">
-        <Icon
-          type="dropdown-closed"
-          color="black75"
-          size="petit"
-          className="dropdown-icon"
-        />
-      </span>
     ) : undefined;
   };
 
@@ -115,7 +101,6 @@ export default class AbstractTag extends React.Component {
         {this.icon()}
         {this.selected()}
         {text}
-        {this.dropdownIcon()}
         {renderSuffix}
       </span>
     );
