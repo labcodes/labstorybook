@@ -5,11 +5,8 @@ import { isUndefined } from "lodash";
 export default class AbstractTag extends React.Component {
   static propTypes = {
     text: PropTypes.string.isRequired,
-    isTogglable: PropTypes.bool,
-    isDropdown: PropTypes.bool,
     disabled: PropTypes.bool,
     isOutline: PropTypes.bool,
-    isOn: PropTypes.bool,
     thumbSrc: PropTypes.string,
     icon: PropTypes.string,
     skin: PropTypes.string,
@@ -21,15 +18,12 @@ export default class AbstractTag extends React.Component {
   };
 
   static defaultProps = {
-    isTogglable: false,
-    isDropdown: false,
     thumbSrc: "",
     icon: "",
     isOutline: false,
     skin: "pale",
     color: "",
     disabled: false,
-    isOn: false,
     onClick: undefined,
     renderPrefix: undefined,
     renderSuffix: undefined,
@@ -46,15 +40,12 @@ export default class AbstractTag extends React.Component {
   render() {
     const {
       text,
-      isTogglable,
-      isDropdown,
       disabled,
       icon,
       thumbSrc,
       isOutline,
       skin,
       color,
-      isOn,
       renderPrefix,
       renderSuffix,
       className,
@@ -64,13 +55,10 @@ export default class AbstractTag extends React.Component {
       <span
         className={
           `lab-tag ${className}` +
-          `${isTogglable ? ` lab-tag--togglable` : ""}` +
-          `${isDropdown ? ` lab-tag--dropdown` : ""}` +
           `${disabled ? ` lab-tag--disabled` : ""}` +
           `${isOutline ? ` lab-tag--outline` : ""}` +
           `${color ? ` lab-tag--${color}-${skin}` : ` lab-tag--${skin}`}` +
           `${icon ? ` lab-tag--has-left-icon` : ""}` +
-          `${isOn ? ` lab-tag--selected` : ""}` +
           `${thumbSrc ? ` lab-tag--has-thumb` : ""}`
         }
         onClick={this.handleOnClick}

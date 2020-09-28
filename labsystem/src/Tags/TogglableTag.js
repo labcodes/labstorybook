@@ -32,7 +32,7 @@ export default class TogglableTag extends React.Component {
     const { text, color, isOutline, disabled, isOn, onClick } = this.props;
     return (
       <AbstractTag
-        isTogglable
+        className="lab-tag--togglable"
         text={text}
         color={color}
         isOutline={isOutline}
