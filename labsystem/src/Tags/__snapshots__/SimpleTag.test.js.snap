@@ -2,7 +2,7 @@
 
 exports[`SimpleTag renders as expected with a lupe icon 1`] = `
 <span
-  className="lab-tag lab-tag--pale lab-tag--has-left-icon"
+  className="lab-tag  lab-tag--pale lab-tag--has-left-icon"
   onClick={[Function]}
   onKeyDown={[Function]}
   role="presentation"
@@ -16,7 +16,7 @@ exports[`SimpleTag renders as expected with a lupe icon 1`] = `
 
 exports[`SimpleTag renders as expected with a purple color 1`] = `
 <span
-  className="lab-tag lab-tag--purple-pale"
+  className="lab-tag  lab-tag--purple-pale"
   onClick={[Function]}
   onKeyDown={[Function]}
   role="presentation"
@@ -27,7 +27,7 @@ exports[`SimpleTag renders as expected with a purple color 1`] = `
 
 exports[`SimpleTag renders as expected with a thumb 1`] = `
 <span
-  className="lab-tag lab-tag--pale lab-tag--has-thumb"
+  className="lab-tag  lab-tag--pale lab-tag--has-thumb"
   onClick={[Function]}
   onKeyDown={[Function]}
   role="presentation"
@@ -43,7 +43,7 @@ exports[`SimpleTag renders as expected with a thumb 1`] = `
 
 exports[`SimpleTag renders as expected with a vivid skin 1`] = `
 <span
-  className="lab-tag lab-tag--vivid"
+  className="lab-tag  lab-tag--vivid"
   onClick={[Function]}
   onKeyDown={[Function]}
   role="presentation"
@@ -54,7 +54,7 @@ exports[`SimpleTag renders as expected with a vivid skin 1`] = `
 
 exports[`SimpleTag renders as expected with disabled as true 1`] = `
 <span
-  className="lab-tag lab-tag--disabled lab-tag--pale"
+  className="lab-tag  lab-tag--disabled lab-tag--pale"
   onClick={[Function]}
   onKeyDown={[Function]}
   role="presentation"
@@ -65,7 +65,7 @@ exports[`SimpleTag renders as expected with disabled as true 1`] = `
 
 exports[`SimpleTag renders as expected with outline as true 1`] = `
 <span
-  className="lab-tag lab-tag--outline lab-tag--pale"
+  className="lab-tag  lab-tag--outline lab-tag--pale"
   onClick={[Function]}
   onKeyDown={[Function]}
   role="presentation"
@@ -76,7 +76,7 @@ exports[`SimpleTag renders as expected with outline as true 1`] = `
 
 exports[`SimpleTag renders with base props 1`] = `
 <span
-  className="lab-tag lab-tag--pale"
+  className="lab-tag  lab-tag--pale"
   onClick={[Function]}
   onKeyDown={[Function]}
   role="presentation"

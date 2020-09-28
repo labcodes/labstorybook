@@ -2,7 +2,7 @@
 
 exports[`AbstractTag renders with base props for 'dropdown' type 1`] = `
 <span
-  className="lab-tag lab-tag--dropdown lab-tag--pale"
+  className="lab-tag  lab-tag--pale"
   onClick={[Function]}
   onKeyDown={[Function]}
   role="presentation"
@@ -13,7 +13,7 @@ exports[`AbstractTag renders with base props for 'dropdown' type 1`] = `
 
 exports[`AbstractTag renders with base props for 'removable' type 1`] = `
 <span
-  className="lab-tag lab-tag--removable lab-tag--pale"
+  className="lab-tag  lab-tag--pale"
   onClick={[Function]}
   onKeyDown={[Function]}
   role="presentation"
@@ -24,7 +24,7 @@ exports[`AbstractTag renders with base props for 'removable' type 1`] = `
 
 exports[`AbstractTag renders with base props for 'simple' type 1`] = `
 <span
-  className="lab-tag lab-tag--pale"
+  className="lab-tag  lab-tag--pale"
   onClick={[Function]}
   onKeyDown={[Function]}
   role="presentation"
@@ -35,7 +35,7 @@ exports[`AbstractTag renders with base props for 'simple' type 1`] = `
 
 exports[`AbstractTag renders with base props for 'togglable' type 1`] = `
 <span
-  className="lab-tag lab-tag--togglable lab-tag--pale"
+  className="lab-tag  lab-tag--pale"
   onClick={[Function]}
   onKeyDown={[Function]}
   role="presentation"
