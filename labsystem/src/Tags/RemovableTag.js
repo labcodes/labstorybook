@@ -91,6 +91,7 @@ export default class RemovableTag extends React.Component {
         isOutline={isOutline}
         disabled={disabled}
         onClick={onClick}
+        className="lab-tag--removable"
         renderPrefix={this.thumb() || this.icon()}
         renderSuffix={this.removeIcon()}
       />

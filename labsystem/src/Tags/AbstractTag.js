@@ -7,7 +7,6 @@ export default class AbstractTag extends React.Component {
     text: PropTypes.string.isRequired,
     isTogglable: PropTypes.bool,
     isDropdown: PropTypes.bool,
-    isRemovable: PropTypes.bool,
     disabled: PropTypes.bool,
     isOutline: PropTypes.bool,
     isOn: PropTypes.bool,
@@ -18,12 +17,12 @@ export default class AbstractTag extends React.Component {
     onClick: PropTypes.func,
     renderPrefix: PropTypes.object,
     renderSuffix: PropTypes.object,
+    className: PropTypes.string,
   };
 
   static defaultProps = {
     isTogglable: false,
     isDropdown: false,
-    isRemovable: false,
     thumbSrc: "",
     icon: "",
     isOutline: false,
@@ -34,6 +33,7 @@ export default class AbstractTag extends React.Component {
     onClick: undefined,
     renderPrefix: undefined,
     renderSuffix: undefined,
+    className: "",
   };
 
   handleOnClick = (e) => {
@@ -48,7 +48,6 @@ export default class AbstractTag extends React.Component {
       text,
       isTogglable,
       isDropdown,
-      isRemovable,
       disabled,
       icon,
       thumbSrc,
@@ -58,14 +57,14 @@ export default class AbstractTag extends React.Component {
       isOn,
       renderPrefix,
       renderSuffix,
+      className,
     } = this.props;
 
     return (
       <span
         className={
-          `lab-tag` +
+          `lab-tag ${className}` +
           `${isTogglable ? ` lab-tag--togglable` : ""}` +
-          `${isRemovable ? ` lab-tag--removable` : ""}` +
           `${isDropdown ? ` lab-tag--dropdown` : ""}` +
           `${disabled ? ` lab-tag--disabled` : ""}` +
           `${isOutline ? ` lab-tag--outline` : ""}` +
