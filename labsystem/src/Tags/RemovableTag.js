@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { isEmpty } from "lodash";
 import AbstractTag from "./AbstractTag";
+import Icon from "../Icon";
 
 export default class RemovableTag extends React.Component {
   static propTypes = {
@@ -34,6 +35,17 @@ export default class RemovableTag extends React.Component {
     this.checkThumbAndIcon();
   }
 
+  removeIcon = () => (
+    <span className="lab-tag__remove-icon-wrapper">
+      <Icon
+        type="remove"
+        color="black75"
+        size="petit"
+        className="remove-icon"
+      />
+    </span>
+  );
+
   checkThumbAndIcon() {
     const errorMessage =
       "`RemovableTag` can't be initialized with both `thumb` and `icon` props.";
@@ -65,6 +77,7 @@ export default class RemovableTag extends React.Component {
         isOutline={isOutline}
         disabled={disabled}
         onClick={onClick}
+        renderSuffix={this.removeIcon()}
       />
     );
   }

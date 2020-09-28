@@ -17,6 +17,7 @@ export default class AbstractTag extends React.Component {
     skin: PropTypes.string,
     color: PropTypes.string,
     onClick: PropTypes.func,
+    renderSuffix: PropTypes.func,
   };
 
   static defaultProps = {
@@ -31,6 +32,7 @@ export default class AbstractTag extends React.Component {
     disabled: false,
     isOn: false,
     onClick: undefined,
+    renderSuffix: undefined,
   };
 
   thumb = () => {
@@ -75,20 +77,6 @@ export default class AbstractTag extends React.Component {
     }
   };
 
-  removeIcon = () => {
-    const { isRemovable } = this.props;
-    return isRemovable ? (
-      <span className="lab-tag__remove-icon-wrapper">
-        <Icon
-          type="remove"
-          color="black75"
-          size="petit"
-          className="remove-icon"
-        />
-      </span>
-    ) : undefined;
-  };
-
   render() {
     const {
       text,
@@ -102,13 +90,14 @@ export default class AbstractTag extends React.Component {
       skin,
       color,
       isOn,
+      renderSuffix,
     } = this.props;
 
     return (
       <span
         className={
           `lab-tag` +
-          `${isTogglable ? ` lab-tag--togglable` : ``}` +
+          `${isTogglable ? ` lab-tag--togglable` : ""}` +
           `${isRemovable ? ` lab-tag--removable` : ""}` +
           `${isDropdown ? ` lab-tag--dropdown` : ""}` +
           `${disabled ? ` lab-tag--disabled` : ""}` +
@@ -127,7 +116,7 @@ export default class AbstractTag extends React.Component {
         {this.selected()}
         {text}
         {this.dropdownIcon()}
-        {this.removeIcon()}
+        {renderSuffix}
       </span>
     );
   }
