@@ -46,6 +46,20 @@ export default class RemovableTag extends React.Component {
     </span>
   );
 
+  thumb = () => {
+    const { thumbSrc } = this.props;
+    return thumbSrc ? (
+      <img className="lab-tag__thumb" src={thumbSrc} alt="" />
+    ) : undefined;
+  };
+
+  icon = () => {
+    const { icon } = this.props;
+    return icon ? (
+      <Icon type={icon} color="black75" size="petit" className="left-icon" />
+    ) : undefined;
+  };
+
   checkThumbAndIcon() {
     const errorMessage =
       "`RemovableTag` can't be initialized with both `thumb` and `icon` props.";
@@ -77,6 +91,7 @@ export default class RemovableTag extends React.Component {
         isOutline={isOutline}
         disabled={disabled}
         onClick={onClick}
+        renderPrefix={this.thumb() || this.icon()}
         renderSuffix={this.removeIcon()}
       />
     );

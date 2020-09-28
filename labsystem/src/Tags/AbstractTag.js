@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { isUndefined } from "lodash";
-import Icon from "../Icon";
 
 export default class AbstractTag extends React.Component {
   static propTypes = {
@@ -17,6 +16,7 @@ export default class AbstractTag extends React.Component {
     skin: PropTypes.string,
     color: PropTypes.string,
     onClick: PropTypes.func,
+    renderPrefix: PropTypes.object,
     renderSuffix: PropTypes.object,
   };
 
@@ -32,28 +32,8 @@ export default class AbstractTag extends React.Component {
     disabled: false,
     isOn: false,
     onClick: undefined,
+    renderPrefix: undefined,
     renderSuffix: undefined,
-  };
-
-  thumb = () => {
-    const { thumbSrc } = this.props;
-    return thumbSrc ? (
-      <img className="lab-tag__thumb" src={thumbSrc} alt="" />
-    ) : undefined;
-  };
-
-  icon = () => {
-    const { icon } = this.props;
-    return icon ? (
-      <Icon type={icon} color="black75" size="petit" className="left-icon" />
-    ) : undefined;
-  };
-
-  selected = () => {
-    const { isOn } = this.props;
-    return isOn ? (
-      <Icon type="check" color="black75" size="petit" className="check-icon" />
-    ) : undefined;
   };
 
   handleOnClick = (e) => {
@@ -76,6 +56,7 @@ export default class AbstractTag extends React.Component {
       skin,
       color,
       isOn,
+      renderPrefix,
       renderSuffix,
     } = this.props;
 
@@ -97,9 +78,7 @@ export default class AbstractTag extends React.Component {
         onKeyDown={this.handleOnClick}
         role="presentation"
       >
-        {this.thumb()}
-        {this.icon()}
-        {this.selected()}
+        {renderPrefix}
         {text}
         {renderSuffix}
       </span>

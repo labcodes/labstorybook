@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { isEmpty } from "lodash";
 import AbstractTag from "./AbstractTag";
+import Icon from "../Icon";
 
 export default class SimpleTag extends React.Component {
   static propTypes = {
@@ -32,6 +33,20 @@ export default class SimpleTag extends React.Component {
     this.checkThumbAndIcon();
   }
 
+  thumb = () => {
+    const { thumbSrc } = this.props;
+    return thumbSrc ? (
+      <img className="lab-tag__thumb" src={thumbSrc} alt="" />
+    ) : undefined;
+  };
+
+  icon = () => {
+    const { icon } = this.props;
+    return icon ? (
+      <Icon type={icon} color="black75" size="petit" className="left-icon" />
+    ) : undefined;
+  };
+
   checkThumbAndIcon() {
     const errorMessage =
       "`SimpleTag` can't be initialized with both `thumb` and `icon` props.";
@@ -60,6 +75,7 @@ export default class SimpleTag extends React.Component {
         skin={skin}
         color={color}
         disabled={disabled}
+        renderPrefix={this.icon() || this.thumb()}
       />
     );
   }

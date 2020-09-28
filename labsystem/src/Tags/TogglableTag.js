@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import AbstractTag from "./AbstractTag";
+import Icon from "../Icon";
 
 export default class TogglableTag extends React.Component {
   static propTypes = {
@@ -20,6 +21,13 @@ export default class TogglableTag extends React.Component {
     onClick: () => {},
   };
 
+  selected = () => {
+    const { isOn } = this.props;
+    return isOn ? (
+      <Icon type="check" color="black75" size="petit" className="check-icon" />
+    ) : undefined;
+  };
+
   render() {
     const { text, color, isOutline, disabled, isOn, onClick } = this.props;
     return (
@@ -32,6 +40,7 @@ export default class TogglableTag extends React.Component {
         onClick={onClick}
         skin={isOn ? "vivid" : "pale"}
         icon={isOn ? "check" : ""}
+        renderPrefix={this.selected()}
       />
     );
   }

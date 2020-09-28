@@ -8,13 +8,6 @@ exports[`AbstractTag renders with base props for 'dropdown' type 1`] = `
   role="presentation"
 >
   Test DropdownTag
-  <span
-    className="lab-tag__dropdown-icon-wrapper"
-  >
-    <span
-      className="lab-icon lab-icon--dropdown-closed lab-icon--black75 lab-icon--petit lab-icon--dropdown-icon"
-    />
-  </span>
 </span>
 `;
 
@@ -26,13 +19,6 @@ exports[`AbstractTag renders with base props for 'removable' type 1`] = `
   role="presentation"
 >
   Test RemovableTag
-  <span
-    className="lab-tag__remove-icon-wrapper"
-  >
-    <span
-      className="lab-icon lab-icon--remove lab-icon--black75 lab-icon--petit lab-icon--remove-icon"
-    />
-  </span>
 </span>
 `;
 

@@ -23,6 +23,13 @@ export default class DropdownTag extends React.Component {
     onClick: () => {},
   };
 
+  icon = () => {
+    const { icon } = this.props;
+    return icon ? (
+      <Icon type={icon} color="black75" size="petit" className="left-icon" />
+    ) : undefined;
+  };
+
   dropdownIcon = () => (
     <span className="lab-tag__dropdown-icon-wrapper">
       <Icon
@@ -54,6 +61,7 @@ export default class DropdownTag extends React.Component {
         isOutline={isOutline}
         disabled={disabled}
         onClick={onClick}
+        renderPrefix={this.icon()}
         renderSuffix={this.dropdownIcon()}
       />
     );
