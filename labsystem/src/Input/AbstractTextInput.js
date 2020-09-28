@@ -54,7 +54,7 @@ export default class AbstractTextInput extends React.Component {
       );
     }
     this.state = {
-      localValue: value || defaultValue,
+      localValue: value || defaultValue || "",
       localIsValid: !isUndefined(isValid) ? isValid : true,
     };
   }
@@ -125,21 +125,29 @@ export default class AbstractTextInput extends React.Component {
   };
 
   handleOnChange = (e) => {
-    const { onChange, isValid, customErrorMsg } = this.props;
+    const { onChange, isValid, customErrorMsg, required } = this.props;
     const inputElement = e.target;
     const inputElementValue = inputElement.value;
     const inputElementIsValid = inputElement.validity.valid;
 
+    // First we reset the custom validity
+    inputElement.setCustomValidity("");
+
     if (!isUndefined(onChange)) {
       onChange(e);
     }
-    this.setState({ localValue: inputElementValue });
-    if (isUndefined(isValid)) {
-      this.setState({ localIsValid: inputElementIsValid });
-    } else if (!isValid) {
-      inputElement.setCustomValidity(customErrorMsg);
-      this.setState({ localIsValid: isValid });
-    }
+
+    // Then we set the state with the new value
+    this.setState({ localValue: inputElementValue }, () => {
+      if (isUndefined(isValid) || (isValid && required)) {
+        // Finally, if the user doesn't force the 'isValid', we use browser's validation from the input
+        this.setState({ localIsValid: inputElementIsValid });
+      } else if (!isValid) {
+        // We only set the customErrorMsg again if the input is forced invalid
+        inputElement.setCustomValidity(customErrorMsg);
+        this.setState({ localIsValid: isValid });
+      }
+    });
   };
 
   render() {

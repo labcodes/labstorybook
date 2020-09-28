@@ -127,7 +127,6 @@ export default class InputPlayground extends React.Component {
             suffix={suffix}
             customErrorMsg={customErrorMsg}
             required={required}
-            isValid={isValid}
             onChange={this.handlePropChangeText}
             {...(disabled ? { disabled } : undefined)}
           />
