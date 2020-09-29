@@ -2,7 +2,8 @@ import { Fragment } from "react";
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 
 import Tooltip from "../labsystem/src/Tooltip";
-// import TooltipPlayground from '../playgrounds/TooltipPlayground';
+import OutlineButton from "../labsystem/src/Buttons/OutlineButton";
+import Icon from "../labsystem/src/Icon";
 
 <Meta title="Components/Tooltip" />
 
@@ -34,7 +35,7 @@ import Tooltip from "../labsystem/src/Tooltip";
   </div>
 </div>
 
-<h4>Anatomy</h4>
+<h2>Anatomy</h2>
 <div class="columns">
     <div class="column">
         <img src="docs/tooltip/tooltip-anatomy.png" />
@@ -58,13 +59,13 @@ import Tooltip from "../labsystem/src/Tooltip";
 </div>
 
 
-#### Colors
+## Colors
 
 The tooltips color is defined in the `scss/variables/_settings.scss` file, and can be Black, Teal or Purple. Avoid using Purple tooltips if the project theme is Teal, and vice versa.
 
 <img src="docs/tooltip/examples/colors.png" />
 
-#### Behavior
+## Behavior
 
 A tooltip is displayed upon hovering over it (desktop). It is not displayed on mobile.
 Continuously display the tooltip as long as the user hovers over the element.
@@ -98,7 +99,7 @@ Continuously display the tooltip as long as the user hovers over the element.
 </div>
 
 
-#### Placement
+## Placement
 
 Tooltips placement relative to the target is defined by the user through props, and can have one of the 12 following values:
 
@@ -107,55 +108,127 @@ Tooltips placement relative to the target is defined by the user through props, 
     <Fragment>
       <div className="columns docs-tooltip">
           <div className="column">
-            <Tooltip id="tooltip-top-start" text="top-start" placement="top-start"><button className="docs-tooltip__button" type="button">top-start</button></Tooltip>
+            <Tooltip id="tooltip-top-start" text="top-start" placement="top-start">
+              <OutlineButton
+                onClick={undefined}
+                size="large"
+                text="top-start"
+              />
+            </Tooltip>
           </div>
           <div className="column">
-            <Tooltip id="tooltip-top" text="top" placement="top"><button className="docs-tooltip__button" type="button">top</button></Tooltip>
+            <Tooltip id="tooltip-top" text="top" placement="top">
+              <OutlineButton
+                onClick={undefined}
+                size="large"
+                text="top"
+              />
+            </Tooltip>
           </div>
           <div className="column">
-            <Tooltip id="tooltip-top-end" text="top-end" placement="top-end"><button className="docs-tooltip__button" type="button">top-end</button></Tooltip>
+            <Tooltip id="tooltip-top-end" text="top-end" placement="top-end">
+              <OutlineButton
+                onClick={undefined}
+                size="large"
+                text="top-end"
+              />
+            </Tooltip>
           </div>
       </div>
       <div className="columns space-between docs-tooltip">
         <div className="column left">
-          <Tooltip id="tooltip-left-start" text="left-start" placement="left-start"><button className="docs-tooltip__button" type="button">left-start</button></Tooltip>
+          <Tooltip id="tooltip-left-start" text="left-start" placement="left-start">
+            <OutlineButton
+                onClick={undefined}
+                size="large"
+                text="left-start"
+              />
+          </Tooltip>
         </div>
         <div className="column right">
-          <Tooltip id="tooltip-right-start" text="right-start" placement="right-start"><button className="docs-tooltip__button" type="button">right-start</button></Tooltip>
+          <Tooltip id="tooltip-right-start" text="right-start" placement="right-start">
+            <OutlineButton
+                onClick={undefined}
+                size="large"
+                text="top-start"
+              />
+          </Tooltip>
         </div>
       </div>
       <div className="columns space-between docs-tooltip">
         <div className="column left">
-          <Tooltip id="tooltip-left" text="left" placement="left" ><button className="docs-tooltip__button" type="button">left</button></Tooltip>
+          <Tooltip id="tooltip-left" text="left" placement="left" >
+            <OutlineButton
+                onClick={undefined}
+                size="large"
+                text="top-start"
+              />
+          </Tooltip>
         </div>
         <div className="column right">
-          <Tooltip id="tooltip-right" text="right" placement="right"><button className="docs-tooltip__button flex-end" type="button">right</button></Tooltip>
+          <Tooltip id="tooltip-right" text="right" placement="right">
+            <OutlineButton
+                onClick={undefined}
+                size="large"
+                text="right"
+              />
+          </Tooltip>
         </div>
       </div>
       <div className="columns space-between docs-tooltip">
         <div className="column left">
-          <Tooltip id="tooltip-left-end" text="left-end" placement="left-end" ><button className="docs-tooltip__button" type="button">left-end</button></Tooltip>
+          <Tooltip id="tooltip-left-end" text="left-end" placement="left-end" >
+            <OutlineButton
+                onClick={undefined}
+                size="large"
+                text="left-end"
+              />
+          </Tooltip>
         </div>
         <div className="column right">
-          <Tooltip id="tooltip-right-end" text="right-end" placement="right-end"><button className="docs-tooltip__button" type="button">right-end</button></Tooltip>
+          <Tooltip id="tooltip-right-end" text="right-end" placement="right-end">
+            <OutlineButton
+                onClick={undefined}
+                size="large"
+                text="right-end"
+              />
+          </Tooltip>
         </div>
       </div>
       <div className="columns docs-tooltip">
           <div className="column">
-            <Tooltip id="tooltip-bottom-start" text="bottom-start" placement="bottom-start"><button className="docs-tooltip__button" type="button">bottom-start</button></Tooltip>
+            <Tooltip id="tooltip-bottom-start" text="bottom-start" placement="bottom-start">
+              <OutlineButton
+                onClick={undefined}
+                size="large"
+                text="bottom-start"
+              />
+            </Tooltip>
           </div>
           <div className="column">
-            <Tooltip id="tooltip-bottom" text="bottom" placement="bottom"><button className="docs-tooltip__button" type="button">bottom</button></Tooltip>
+            <Tooltip id="tooltip-bottom" text="bottom" placement="bottom">
+              <OutlineButton
+                onClick={undefined}
+                size="large"
+                text="bottom"
+              />
+            </Tooltip>
           </div>
           <div className="column">
-            <Tooltip id="tooltip-bottom-end" text="bottom-end" placement="bottom-end"><button className="docs-tooltip__button" type="button">bottom-end</button></Tooltip>
+            <Tooltip id="tooltip-bottom-end" text="bottom-end" placement="bottom-end">
+              <OutlineButton
+                onClick={undefined}
+                size="large"
+                text="bottom-end"
+              />
+            </Tooltip>
           </div>
       </div>
     </Fragment>
   </Story>
 </Preview>
 
-#### Long texts
+## Long texts
 
 Tooltip text should not be longer than 180 characters and 3 lines. A warn will be thrown in the console if the 180 chars limit is crossed.
 
@@ -166,12 +239,35 @@ Tooltip text should not be longer than 180 characters and 3 lines. A warn will b
         id="tooltip-long-text"
         text="Lorem ipsum dolor sit amet, has integre virtute consequat at. Sit quodsi gloriatur efficiantur in, quas inermis menandri ex vix. Sit quodsi gloriatur efficiantur in, quas inermis."
         placement="right">
-          <button className="docs-tooltip__button" type="button">Long text</button>
+          <OutlineButton
+            onClick={undefined}
+            size="normal"
+            text="bottom"
+          />
       </Tooltip>
     </Fragment>
   </Story>
 </Preview>
 
+## Icon
+
+Tooltip can also be triggered by an Icon or other elements.
+
+<Preview>
+  <Story name="Icon">
+    <Fragment>
+      <Tooltip
+        id="tooltip-icon"
+        text="Tooltip triggered by an Icon"
+        placement="right">
+          <Icon
+            type="key"
+            color="teal60"
+          />
+      </Tooltip>
+    </Fragment>
+  </Story>
+</Preview>
 
 ## Prop API docs
 
