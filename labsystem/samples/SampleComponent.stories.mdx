@@ -1,0 +1,36 @@
+import { Fragment } from 'react';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+
+import { SampleComponent } from '../labsystem/samples/SampleComponent';
+
+<Meta title="Components/Sample" component={SampleComponent} />
+
+<div class="docs-title">
+  <div>
+    <h1 class="docs-title__text">Buttons</h1>
+  </div>
+</div>
+
+<div class="docs-content">
+  <p>This is the story of SampleComponent.</p>
+
+  ## General Usage
+
+  <p>Feel free to edit it.</p>
+
+  <Preview>
+    <Story name="Sample Component">
+      <Fragment>
+        <div>
+          <SampleComponent />
+        </div>
+      </Fragment>
+    </Story>
+  </Preview>
+
+## Prop API docs
+Here's the list of props based on the component's prop types definitions.
+
+<Props of={SampleComponent} />
+
+</div>
