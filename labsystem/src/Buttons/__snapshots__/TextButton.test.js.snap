@@ -2,7 +2,7 @@
 
 exports[`TextButton renders as expected when passing a dark skin 1`] = `
 <button
-  className="btn btn--text btn--normal btn--dark"
+  className="lab-btn lab-btn--text lab-btn--normal lab-btn--dark"
   onClick={[Function]}
   type="button"
 >
@@ -13,12 +13,12 @@ exports[`TextButton renders as expected when passing a dark skin 1`] = `
 
 exports[`TextButton renders as expected when passing a plus icon 1`] = `
 <button
-  className="btn btn--text btn--normal"
+  className="lab-btn lab-btn--text lab-btn--normal"
   onClick={[Function]}
   type="button"
 >
   <span
-    className="lab-icon lab-icon--plus lab-icon--white lab-icon--petit lab-icon--btn__icon"
+    className="lab-icon lab-icon--plus lab-icon--white lab-icon--petit lab-btn__icon"
   />
   Test Text Small Button
 </button>
@@ -26,7 +26,7 @@ exports[`TextButton renders as expected when passing a plus icon 1`] = `
 
 exports[`TextButton renders as expected when passing a small size 1`] = `
 <button
-  className="btn btn--text btn--small"
+  className="lab-btn lab-btn--text lab-btn--small"
   onClick={[Function]}
   type="button"
 >
@@ -37,7 +37,7 @@ exports[`TextButton renders as expected when passing a small size 1`] = `
 
 exports[`TextButton renders as expected when passing disabled as true 1`] = `
 <button
-  className="btn btn--text btn--normal"
+  className="lab-btn lab-btn--text lab-btn--normal"
   disabled={true}
   onClick={[Function]}
   type="button"
@@ -49,7 +49,7 @@ exports[`TextButton renders as expected when passing disabled as true 1`] = `
 
 exports[`TextButton renders with base props 1`] = `
 <button
-  className="btn btn--text btn--normal"
+  className="lab-btn lab-btn--text lab-btn--normal"
   onClick={[Function]}
   type="button"
 >
