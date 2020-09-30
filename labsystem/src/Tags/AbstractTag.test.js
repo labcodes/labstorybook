@@ -13,21 +13,27 @@ describe("AbstractTag", () => {
 
   it("renders with base props for 'removable' type", async () => {
     const renderedComponent = renderer
-      .create(<AbstractTag isRemovable text="Test RemovableTag" />)
+      .create(
+        <AbstractTag className="lab-tag--removable" text="Test RemovableTag" />
+      )
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
   });
 
   it("renders with base props for 'togglable' type", async () => {
     const renderedComponent = renderer
-      .create(<AbstractTag isTogglable text="Test TogglableTag" />)
+      .create(
+        <AbstractTag className="lab-tag--togglable" text="Test TogglableTag" />
+      )
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
   });
 
   it("renders with base props for 'dropdown' type", async () => {
     const renderedComponent = renderer
-      .create(<AbstractTag isDropdown text="Test DropdownTag" />)
+      .create(
+        <AbstractTag className="lab-tag--dropdown" text="Test DropdownTag" />
+      )
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
   });
