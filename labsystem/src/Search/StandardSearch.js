@@ -18,17 +18,13 @@ export default class StandardSearch extends React.Component {
   };
 
   render() {
-    const {
-      disabled,
-      placeholder,
-      className,
-    } = this.props;
+    const { disabled, placeholder, className } = this.props;
 
     return (
       <div className={`search-input ${className || ""}`}>
         <AbstractSearch placeholder={placeholder} disabled={disabled}>
           <button type="button" className="search-button" disabled={disabled}>
-            <Icon type="lupe" color="white" />
+            <Icon className="search-input__icon" type="lupe" color="white" />
           </button>
           <span className="search-separator" />
         </AbstractSearch>

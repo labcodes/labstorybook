@@ -27,7 +27,11 @@ export default class StandardSearch extends React.Component {
           disabled={disabled}
           icon="remove"
         >
-          <Icon className="inline-search-lupe" type="lupe" color="mineral40" />
+          <Icon
+            className="search-input__icon-lupe"
+            type="lupe"
+            color="mineral-40"
+          />
         </AbstractSearch>
       </div>
     );

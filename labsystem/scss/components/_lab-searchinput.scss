@@ -44,8 +44,8 @@ $remove-icon-focus: map-get($search-theme, "30");
     outline: none;
     cursor: pointer;
 
-    .lab-icon {
-        margin-left:10px;
+    .search-input__icon {
+        margin-left: 10px;
     }
 
     .lab-input__field:focus ~ &,
@@ -129,7 +129,7 @@ $remove-icon-focus: map-get($search-theme, "30");
     }
  }
 
-.lab-icon--inline-search-lupe {
+.search-input__icon-lupe {
     position: absolute;
     top: 8px;
     left: $spacing-02;

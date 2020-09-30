@@ -125,6 +125,6 @@ TrailingIcon.propTypes = {
 
 TrailingIcon.defaultProps = {
   icon: undefined,
-  iconColor: "mineral40",
+  iconColor: "mineral-40",
   onIconClick: undefined,
 };
