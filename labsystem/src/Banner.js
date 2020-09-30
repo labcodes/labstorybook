@@ -32,6 +32,7 @@ export default class Banner extends React.Component {
         <TextButton size="normal" skin="light" text={buttonText} />
       );
     }
+    return null;
   };
 
   render() {
