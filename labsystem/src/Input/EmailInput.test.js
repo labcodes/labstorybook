@@ -67,18 +67,6 @@ describe("EmailInput", () => {
     expect(inputElement.render().attr("value")).toBe("default value");
   });
 
-  it("sets state with isValid if it is passed by props", async () => {
-    const component = mount(
-      <EmailInput
-        id="testInput"
-        label="Test Input"
-        defaultValue="default value"
-        isValid={false}
-      />
-    );
-    expect(component.find(".lab-input--invalid")).toHaveLength(1);
-  });
-
   it("sets localIsValid to false if defaultValue is invalid", async () => {
     const component = mount(
       <EmailInput
@@ -170,7 +158,11 @@ describe("EmailInput", () => {
       .find("input")
       .at(0)
       .simulate("change", {
-        target: { value: "My new value", validity: { valid: true } },
+        target: {
+          value: "My new value",
+          validity: { valid: true },
+          setCustomValidity: jest.fn(),
+        },
       });
 
     expect(inputElement.render().attr("value")).toBe("My new value");
