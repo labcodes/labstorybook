@@ -84,7 +84,7 @@ export default class AbstractSearch extends React.Component {
         <input
           className="lab-input__field"
           id={id}
-          type="text"
+          type="search"
           value={localValue}
           onChange={this.handleOnChange}
           autoComplete="off"

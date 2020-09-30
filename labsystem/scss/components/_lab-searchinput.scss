@@ -16,6 +16,7 @@ $remove-icon-focus: map-get($search-theme, "30");
 
 // Wrapper div around Standard search
 .search-input {
+    @include remove-delete-icon-search-input;
     position: relative;
     z-index: 99;
     width: 320px;
@@ -27,7 +28,6 @@ $remove-icon-focus: map-get($search-theme, "30");
         padding-right: $spacing-08;
     }
 }
-
 
 .search-button {
     position: absolute;
@@ -103,7 +103,8 @@ $remove-icon-focus: map-get($search-theme, "30");
 // Inline 
 
 // Wrapper div around Inline search
-.search-input--inline{
+.search-input--inline {
+    @include remove-delete-icon-search-input;
     position: relative;
     width: 320px;
     margin-top: $spacing-03;
