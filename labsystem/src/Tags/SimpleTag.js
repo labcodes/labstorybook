@@ -69,8 +69,9 @@ export default class SimpleTag extends React.Component {
     return (
       <AbstractTag
         text={text}
-        thumbSrc={thumbSrc}
-        icon={icon}
+        className={`${icon ? ` lab-tag--has-left-icon` : ""}${
+          thumbSrc ? ` lab-tag--has-thumb` : ""
+        }`}
         isOutline={isOutline}
         skin={skin}
         color={color}
