@@ -7,7 +7,6 @@ export default class AbstractTag extends React.Component {
     text: PropTypes.string.isRequired,
     disabled: PropTypes.bool,
     isOutline: PropTypes.bool,
-    isOn: PropTypes.bool,
     thumbSrc: PropTypes.string,
     icon: PropTypes.string,
     skin: PropTypes.string,
@@ -25,7 +24,6 @@ export default class AbstractTag extends React.Component {
     skin: "pale",
     color: "",
     disabled: false,
-    isOn: false,
     onClick: undefined,
     renderPrefix: undefined,
     renderSuffix: undefined,
@@ -48,7 +46,6 @@ export default class AbstractTag extends React.Component {
       isOutline,
       skin,
       color,
-      isOn,
       renderPrefix,
       renderSuffix,
       className,
@@ -61,7 +58,6 @@ export default class AbstractTag extends React.Component {
           `${disabled ? ` lab-tag--disabled` : ""}` +
           `${isOutline ? ` lab-tag--outline` : ""}` +
           `${color ? ` lab-tag--${color}-${skin}` : ` lab-tag--${skin}`}` +
-          `${isOn ? ` lab-tag--selected` : ""}` +
           `${icon ? ` lab-tag--has-left-icon` : ""}` +
           `${thumbSrc ? ` lab-tag--has-thumb` : ""}`
         }
