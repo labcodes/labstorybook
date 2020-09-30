@@ -51,21 +51,21 @@ export default class Toggle extends React.Component {
     return (
       <label
         className={`
-          toggle
-          ${theme ? `toggle--${theme}` : ""}
-          ${disabled ? " toggle--disabled" : ""}
+          lab-toggle
+          ${theme ? `lab-toggle--${theme}` : ""}
+          ${disabled ? " lab-toggle--disabled" : ""}
         `}
         htmlFor={name}
       >
         <input
           type="checkbox"
           id={name}
-          className="toggle__input"
+          className="lab-toggle__input"
           checked={isChecked}
           onChange={this.handleOnChange}
           {...(disabled ? { disabled } : undefined)}
         />
-        <span className="toggle__slider" />
+        <span className="lab-toggle__slider" />
       </label>
     );
   }

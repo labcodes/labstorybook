@@ -69,7 +69,7 @@ export default class Checkbox extends React.Component {
       type = "minus";
     }
     if (disabled) {
-      color = "mineral40";
+      color = "mineral-40";
     }
 
     return <Icon type={type} color={color} size="small" />;

@@ -2,7 +2,7 @@
 
 exports[`AbstractButton renders with base props for default variant 1`] = `
 <button
-  className="btn btn--default btn--normal"
+  className="lab-btn lab-btn--default lab-btn--normal"
   onClick={[Function]}
   type="button"
 >
@@ -13,7 +13,7 @@ exports[`AbstractButton renders with base props for default variant 1`] = `
 
 exports[`AbstractButton renders with base props for outline variant 1`] = `
 <button
-  className="btn btn--outline btn--normal"
+  className="lab-btn lab-btn--outline lab-btn--normal"
   onClick={[Function]}
   type="button"
 >
@@ -24,7 +24,7 @@ exports[`AbstractButton renders with base props for outline variant 1`] = `
 
 exports[`AbstractButton renders with base props for text variant 1`] = `
 <button
-  className="btn btn--text btn--normal"
+  className="lab-btn lab-btn--text lab-btn--normal"
   onClick={[Function]}
   type="button"
 >

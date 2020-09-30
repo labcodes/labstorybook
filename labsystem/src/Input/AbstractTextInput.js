@@ -32,7 +32,7 @@ export default class AbstractTextInput extends React.Component {
     defaultValue: undefined,
     value: undefined,
     icon: undefined,
-    iconColor: "mineral70",
+    iconColor: undefined,
     required: false,
     helpMessage: undefined,
     prefix: undefined,
@@ -230,10 +230,17 @@ function TrailingIcon(props) {
   if (!onIconClick) {
     className += " lab-input__icon--disabled";
   }
-  if (icon) {
+  if (icon && iconColor) {
     return (
       <button type="button" className={className} onClick={onIconClick}>
         <Icon type={icon} color={iconColor} />
+      </button>
+    );
+  }
+  if (icon) {
+    return (
+      <button type="button" className={className} onClick={onIconClick}>
+        <Icon type={icon} />
       </button>
     );
   }
@@ -248,7 +255,7 @@ TrailingIcon.propTypes = {
 
 TrailingIcon.defaultProps = {
   icon: undefined,
-  iconColor: "mineral70",
+  iconColor: undefined,
   onIconClick: undefined,
 };
 
