@@ -3,7 +3,7 @@
 $tooltip-background-color: map-get($tooltip-theme, "70");
 $tooltip-border-color: map-get($tooltip-theme, "80");
 
-@if $tooltip-theme == $neutral-palette {
+@if $tooltip-theme == $mineral-palette {
   $tooltip-background-color: map-get($tooltip-theme, "80");
   $tooltip-border-color: map-get($tooltip-theme, "90");
 }
