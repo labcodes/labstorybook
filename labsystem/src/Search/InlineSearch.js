@@ -21,14 +21,14 @@ export default class StandardSearch extends React.Component {
     const { disabled, placeholder, className } = this.props;
 
     return (
-      <div className={`lab-search-input--inline ${className || ""}`}>
+      <div className={`lab-inline-search ${className || ""}`}>
         <AbstractSearch
           placeholder={placeholder}
           disabled={disabled}
           icon="remove"
         >
           <Icon
-            className="search-input__icon-lupe"
+            className="lab-inline-search__icon"
             type="lupe"
             color="mineral-40"
           />

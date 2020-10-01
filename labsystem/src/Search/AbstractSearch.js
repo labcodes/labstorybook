@@ -15,7 +15,7 @@ export default class AbstractSearch extends React.Component {
     onChange: PropTypes.func,
     onIconClick: PropTypes.func,
     placeholder: PropTypes.string,
-    children: PropTypes.element,
+    chxildren: PropTypes.element,
   };
 
   static defaultProps = {
@@ -81,9 +81,9 @@ export default class AbstractSearch extends React.Component {
     }
 
     return (
-      <div className={`lab-input ${className || ""}`}>
+      <div className={`lab-search__wrapper ${className || ""}`}>
         <input
-          className="lab-input__field"
+          className="lab-search__field"
           id={id}
           type="search"
           value={localValue}
@@ -92,7 +92,7 @@ export default class AbstractSearch extends React.Component {
           {...(disabled ? { disabled } : undefined)}
           {...(placeholder ? { placeholder } : "")}
         />
-        <div className="lab-input__borders" />
+        <div className="lab-search__borders" />
         <TrailingIcon icon={icon} onIconClick={onIconClick} />
         {children}
       </div>
@@ -104,7 +104,7 @@ export default class AbstractSearch extends React.Component {
 
 function TrailingIcon(props) {
   const { icon, iconColor, onIconClick } = props;
-  let className = "lab-input__icon";
+  let className = "lab-search__remove-icon";
   if (!onIconClick) {
     className += " lab-input__icon--disabled";
   }
