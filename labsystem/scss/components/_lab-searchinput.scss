@@ -24,7 +24,22 @@ $remove-icon-focus: map-get($search-theme, "30");
     border-radius: $radius-02;
     
     .lab-input__field {
-        padding-right: $spacing-08;
+        padding-right: $spacing-01;
+    }
+
+    .lab-input__icon {
+        margin-right: $spacing-09;
+        opacity:0;
+        cursor: none;
+
+        &:focus {
+            @include border-shadow(focus, $input-shadow-filled-focus);
+        }
+    }
+    
+    .lab-input__field:not(:placeholder-shown) ~ .lab-input__icon {
+        opacity:1;
+        cursor: pointer;
     }
 }
 
@@ -121,7 +136,13 @@ $remove-icon-focus: map-get($search-theme, "30");
     }
 
     .lab-input__icon {
+        cursor: none;
+        opacity:0;
+    }
+
+    .lab-input__field:not(:placeholder-shown) ~ .lab-input__icon {
         cursor: pointer;
+        opacity: 1;
     }
 
     .lab-input__field:disabled ~ .lab-input__icon:focus {
