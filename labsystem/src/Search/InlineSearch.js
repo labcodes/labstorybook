@@ -21,7 +21,7 @@ export default class StandardSearch extends React.Component {
     const { disabled, placeholder, className } = this.props;
 
     return (
-      <div className={`search-input--inline ${className || ""}`}>
+      <div className={`lab-search-input--inline ${className || ""}`}>
         <AbstractSearch
           placeholder={placeholder}
           disabled={disabled}
