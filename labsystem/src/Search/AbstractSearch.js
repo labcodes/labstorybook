@@ -6,7 +6,7 @@ import Icon from "../Icon";
 
 export default class AbstractSearch extends React.Component {
   static propTypes = {
-    id: PropTypes.string.isRequired,
+    id: PropTypes.string,
     defaultValue: PropTypes.string,
     className: PropTypes.string,
     disabled: PropTypes.bool,
@@ -19,6 +19,7 @@ export default class AbstractSearch extends React.Component {
   };
 
   static defaultProps = {
+    id: undefined,
     defaultValue: undefined,
     className: undefined,
     disabled: false,
