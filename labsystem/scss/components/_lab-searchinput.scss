@@ -1,6 +1,6 @@
 
 $search-button-idle-filled: map-get($search-theme, "60");
-$search-button-active-filled: map-get($search-theme, "70");
+$search-button-active-filled: map-get($search-theme, "80");
 $search-button-focus: map-get($search-theme, "70");
 $search-button-hover: map-get($search-theme, "10");
 $search-button-focus-hover: map-get($search-theme, "80");
@@ -65,8 +65,7 @@ $remove-icon-focus: map-get($search-theme, "30");
 
     .lab-input__field:not(:placeholder-shown)~ &:focus {
         background-color: $search-button-focus;
-        border: 1px solid $search-button-hover;
-        border-radius: $radius-02;
+        box-shadow:0px 0px 1px 1px $white inset; 
         transition-duration: 0.05s;
     }
 
@@ -79,8 +78,11 @@ $remove-icon-focus: map-get($search-theme, "30");
 
     &:active {
         background-color: $search-button-active;
-        border: 1px solid $search-button-hover;
-        border-radius: $radius-02;          
+        box-shadow:0px 0px 1px 1px $white inset;      
+    }
+
+    .lab-input__field:not(:placeholder-shown) ~ &:active {
+        background-color: $search-button-active-filled;
     }
 }
 

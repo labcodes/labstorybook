@@ -20,7 +20,11 @@
   }
   .search-button:active {
     border-color: 1px solid $purple-10;      
-  }  
+  } 
+   
+  .lab-input__field:not(:placeholder-shown) ~ .search-button:active {
+    background-color: $purple-80;
+}
 }
 
 
