@@ -28,10 +28,10 @@ export default class StandardSearch extends React.Component {
       <div className={`lab-search-input ${className || ""}`}>
         <AbstractSearch placeholder={placeholder} disabled={disabled} icon="remove">
           <React.Fragment>
-            <button type="button" className="search-button" disabled={disabled}>
-              <Icon type="lupe" color="white" />
+            <button type="button" className="lab-search-input__button" disabled={disabled}>
+              <Icon className="search-input__icon" type="lupe" color="white" />
             </button>
-            <span className="search-separator" />
+            <span className="lab-search-input__separator" />
           </React.Fragment>
         </AbstractSearch>
       </div>

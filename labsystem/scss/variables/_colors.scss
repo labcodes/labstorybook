@@ -56,7 +56,7 @@ $white-35: rgba(255, 255, 255, .35);
 $white-20: rgba(255, 255, 255, .2);
 $white-10: rgba(255, 255, 255, .1);
 
-// Neutrals
+// Minerals
 $white: #FFFFFF;
 $mineral-10: #E8EFF3;
 $mineral-20: #CDDBE4;
@@ -154,7 +154,7 @@ $white-palette: (
   "10": $white-10,
 );
 
-$neutral-palette: (
+$mineral-palette: (
   "10": $mineral-10,
   "20": $mineral-20,
   "30": $mineral-30,
@@ -200,7 +200,7 @@ $all-colors: (
   "coral": $coral-palette,
   "purple": $purple-palette,
   "mustard": $mustard-palette,
-  "mineral": $neutral-palette,
+  "mineral": $mineral-palette,
   "black": $black-palette,
   "white": $white-palette,
   "green": map-get($messages-palette, "green"),

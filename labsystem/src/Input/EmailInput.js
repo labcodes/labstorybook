@@ -16,7 +16,6 @@ export default class EmailInput extends React.Component {
     helpMessage: PropTypes.string,
     prefix: PropTypes.string,
     suffix: PropTypes.string,
-    isValid: PropTypes.bool,
     customErrorMsg: PropTypes.string,
     onChange: PropTypes.func,
     onIconClick: PropTypes.func,
@@ -27,12 +26,11 @@ export default class EmailInput extends React.Component {
     defaultValue: undefined,
     value: undefined,
     icon: undefined,
-    iconColor: "mineral70",
+    iconColor: "mineral-70",
     required: false,
     helpMessage: undefined,
     prefix: undefined,
     suffix: undefined,
-    isValid: undefined,
     customErrorMsg: undefined,
     onChange: undefined,
     onIconClick: undefined,
@@ -50,7 +48,6 @@ export default class EmailInput extends React.Component {
       helpMessage,
       prefix,
       suffix,
-      isValid,
       customErrorMsg,
       onChange,
       onIconClick,
@@ -70,7 +67,6 @@ export default class EmailInput extends React.Component {
         helpMessage={helpMessage}
         prefix={prefix}
         suffix={suffix}
-        isValid={isValid}
         customErrorMsg={customErrorMsg}
         onChange={onChange}
         onIconClick={onIconClick}

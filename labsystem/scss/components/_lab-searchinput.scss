@@ -16,6 +16,7 @@ $remove-icon-focus: map-get($search-theme, "30");
 
 // Wrapper div around Standard search
 .lab-search-input {
+    @include remove-delete-icon-search-input;
     position: relative;
     z-index: 99;
     width: 320px;
@@ -43,8 +44,7 @@ $remove-icon-focus: map-get($search-theme, "30");
     }
 }
 
-
-.search-button {
+.lab-search-input__button {
     position: absolute;
     top: 2px;
     right: 2px;
@@ -59,8 +59,8 @@ $remove-icon-focus: map-get($search-theme, "30");
     outline: none;
     cursor: pointer;
 
-    .lab-icon {
-        margin-left:10px;
+    .search-input__icon {
+        margin-left: 10px;
     }
 
     .lab-input__field:focus ~ &,
@@ -101,7 +101,7 @@ $remove-icon-focus: map-get($search-theme, "30");
     }
 }
 
-.search-separator {
+.lab-search-input__separator {
     position: absolute;
     top: 2px;
     right: 38px;
@@ -121,6 +121,7 @@ $remove-icon-focus: map-get($search-theme, "30");
 
 // Wrapper div around Inline search
 .lab-search-input--inline{
+    @include remove-delete-icon-search-input;
     position: relative;
     width: 320px;
     margin-top: $spacing-03;
@@ -151,7 +152,7 @@ $remove-icon-focus: map-get($search-theme, "30");
     }
  }
 
-.lab-icon--inline-search-lupe {
+.search-input__icon-lupe {
     position: absolute;
     top: 8px;
     left: $spacing-02;

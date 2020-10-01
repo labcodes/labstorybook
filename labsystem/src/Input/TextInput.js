@@ -27,7 +27,7 @@ export default class TextInput extends React.Component {
     defaultValue: undefined,
     value: undefined,
     icon: undefined,
-    iconColor: "mineral70",
+    iconColor: "mineral-70",
     required: false,
     helpMessage: undefined,
     prefix: undefined,
