@@ -1,34 +1,21 @@
-<script lang="ts">
-  export let name: string;
+<script>
+  import Toggle from "./Toggle.svelte";
+  let toggleValue = true;
 </script>
 
 <main>
-  <h1>Hello {name}!</h1>
-  <p>
-    Visit the
-    <a href="https://svelte.dev/tutorial">Svelte tutorial</a>
-    to learn how to build Svelte apps.
-  </p>
+  <h1>Toggle:</h1>
+  <Toggle
+    name="sample-toggle"
+    bind:value={toggleValue}
+    on:change={(e) => console.log('Toggle changed:', e)} />
+  <Toggle
+    name="sample-toggle"
+    disabled
+    bind:value={toggleValue}
+    on:change={(e) => console.log('Toggle changed:', e)} />
 </main>
 
-<style lang="scss">
-  main {
-    text-align: center;
-    padding: 1em;
-    max-width: 240px;
-    margin: 0 auto;
-
-    h1 {
-      color: #ff3e00;
-      text-transform: uppercase;
-      font-size: 4em;
-      font-weight: 100;
-    }
-  }
-
-  @media (min-width: 640px) {
-    main {
-      max-width: none;
-    }
-  }
+<style lang="scss" global>
+  @import "../scss/main";
 </style>
