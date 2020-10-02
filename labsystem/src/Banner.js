@@ -19,7 +19,7 @@ export default class Banner extends React.Component {
   icon = () => {
     const { icon } = this.props;
     return icon ? (
-      <Icon type={icon} color="white" className="lab-icon--banner-icon" />
+      <Icon type={icon} color="white" className="lab-banner__icon" />
     ) : undefined;
   };
 

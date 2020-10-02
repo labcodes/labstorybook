@@ -40,7 +40,7 @@ $alerts-line-height: 20px;
 }
 
 // Elements
-.lab-icon--alert-icon {
+.lab-alert__icon {
   margin-right: $spacing-04;
   display: none;
 
@@ -97,7 +97,7 @@ $alerts-line-height: 20px;
     background-color: $yellow-60;
     color: $black-75;
 
-    .lab-icon--banner-icon {
+    .lab-banner__icon {
       background-color: $black-75;
     }
   }
@@ -109,8 +109,8 @@ $alerts-line-height: 20px;
 }
 
 // Elements
-.lab-icon--banner-icon {
-  @extend .lab-icon--alert-icon;
+.lab-banner__icon {
+  @extend .lab-alert__icon;
 }
 
 .lab-banner__message {
