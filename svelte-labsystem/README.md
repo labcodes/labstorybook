@@ -10,11 +10,11 @@ The components are pretty much the same as the React implementation, which means
 
 | Component | Status |
 | --- | --- |
-| Icon  | ❌ |
-| Badge | ❌ |
+| Icon  | ✅ |
+| Badge | ✅ |
 | Checkbox | ❌ |
 | Radio | ❌ |
-| Toggle | ❌ |
+| Toggle | ✅ |
 | Button | ❌ |
 | OutlineButton | ❌ |
 | TextButton | ❌ |
