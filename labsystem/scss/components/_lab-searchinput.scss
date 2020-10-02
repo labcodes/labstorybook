@@ -86,6 +86,10 @@ $remove-icon-focus: map-get($search-theme, "30");
         margin-left: 10px;
     }
 
+    .lab-search__field:not(:placeholder-shown) ~ &:hover {
+        background-color: $search-button-active-filled;
+    }
+
     .lab-search__field:focus ~ &,
     .lab-search__field:not(:placeholder-shown):focus ~ & {
         background-color: $search-button-focus;
