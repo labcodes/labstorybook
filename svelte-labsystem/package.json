@@ -29,8 +29,10 @@
     "bulma": "^0.9.1",
     "sirv-cli": "^1.0.0"
   },
+  "svelte": "src/index.js",
   "files": [
     "src/*.svelte",
-    "src/index.js"
+    "src/index.js",
+    "@types"
   ]
 }
