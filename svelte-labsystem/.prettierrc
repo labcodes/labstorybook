@@ -1,0 +1,8 @@
+{
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "plugins": [
+    "svelte"
+  ],
+  "svelteSortOrder": "scripts-markup-styles"
+}
