@@ -1,0 +1,122 @@
+@use 'sass:map';
+
+$alerts-font-size: $font-size-3;
+$alerts-line-height: 20px;
+
+// Alert component
+.lab-alert {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  margin: $spacing-01;
+  padding: $spacing-03 $spacing-04;
+  color: $mineral-70;
+  border-radius: 8px;
+
+  &__info {
+    @extend .lab-alert;
+    background-color: rgba($mineral-20, .2);
+    border: 2px solid $mineral-40;
+  }
+
+  &__error {
+    @extend .lab-alert;
+    background-color: rgba($red-20, .2);
+    border: 2px solid $red-60;
+  }
+
+  &__warn {
+    @extend .lab-alert;
+    background-color: rgba($yellow-20, .2);
+    border: 2px solid $yellow-60;
+  }
+
+  @include from($tablet) {
+    border-radius: 12px;
+    width: fit-content;
+    flex-wrap: unset;
+  }
+}
+
+// Elements
+.lab-icon--alert-icon {
+  margin-right: $spacing-04;
+  display: none;
+
+  @include from($tablet) {
+    display: inline-block;
+  }
+}
+
+.lab-alert__message {
+  flex-grow: 1;
+  flex-shrink: 1;
+  font-family: $font-primary;
+  font-size: $alerts-font-size;
+  line-height: $alerts-line-height;
+  font-weight: $weight-bold;
+  -webkit-font-smoothing: antialiased;
+
+  @include from($tablet) {
+    flex-grow: unset;
+    width: auto;
+  }
+}
+
+.lab-alert__button {
+  margin-top: $spacing-01;
+
+  @include from($tablet) {
+    margin-top: unset;
+    margin-left: $spacing-04;
+  }
+}
+
+// Banner component
+.lab-banner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  padding: $spacing-03;
+  color: $white;
+
+  &__info {
+    @extend .lab-banner;
+    background-color: $mineral-60;
+  }
+
+  &__error {
+    @extend .lab-banner;
+    background-color: $red-60;
+  }
+
+  &__warn {
+    @extend .lab-banner;
+    background-color: $yellow-60;
+    color: $black-75;
+
+    .lab-icon--banner-icon {
+      background-color: $black-75;
+    }
+  }
+
+  @include from($tablet) {
+    justify-content: center;
+    flex-wrap: unset;
+  }
+}
+
+// Elements
+.lab-icon--banner-icon {
+  @extend .lab-icon--alert-icon;
+}
+
+.lab-banner__message {
+  @extend .lab-alert__message;
+}
+
+.lab-banner__button {
+  @extend .lab-alert__button;
+}
