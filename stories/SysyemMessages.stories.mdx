@@ -37,10 +37,8 @@ import Banner from '../labsystem/src/Banner';
   <div class="doc-anatomy-block">
     <div class="columns is-vcentered">
       <div class="column">
-      <h3>Alert</h3>
-      <img src="docs/system-messages/alert-anatomy.png" />
-      <h3>Banner</h3>
-      <img src="docs/system-messages/banner-anatomy.png" />
+        <h3>Alert</h3>
+        <img src="docs/system-messages/alert-anatomy.png" />
       </div>
       <div class="column">
         <ol>
@@ -55,30 +53,36 @@ import Banner from '../labsystem/src/Banner';
           <br/> Mobile - 8px</p>
       </div>
     </div>
+    <div class="column">
+      <h3>Banner</h3>
+      <img src="docs/system-messages/banner-anatomy.png" />
+    </div>
     <div class="columns">
       <div class="column is-half">
         <h3>Padding and Spacing</h3>
         <p><strong>Banners:</strong> As they fill the screen width completely, there are some spacing rules that need to be know before using these components. Both tablet-up and mobile variations have 3 types and rules for spacing: vertical, horizontal, and inner.</p>
         <p><strong class="doc-pink">Inner spacing (between elemens):</strong> fixed. On tablet-up: 16px / On mobile: 4px</p>
         <p><strong class="doc-orange">Vertical padding (top and bottom):</strong> fixed value of 12px</p>
-        <p><strong class="doc-cyan">Horizontal padding (left and right):</strong></p>
       </div>
     </div>
-    <div class="columns is-vcentered is-multiline">
-      <div class="column is-half">
+    <div class="columns is-multiline">
+      <div class="column">
+        <p><strong class="doc-cyan">Horizontal padding (left and right):</strong></p>
         <p><strong>Tablet-up:</strong> as inner elements are centered, the value is dynamic, but the minimum is equal the margin size of the used viewport grid.</p>
       </div>
-      <div class="column is-half">
+      <div class="column">
+        <p class="doc-em-block"><strong>For example:</strong> a tablet landscape viewport has its margins value set at 24px, that said, the banner's horizontal margins can use dynamic values due to message and button text size variations, but never less than 24px.</p>
+      </div>
+      <div class="column is-narrow">
         <img src="docs/system-messages/padding.png" />
       </div>
-      <p class="doc-em-block"><strong>For example:</strong> a tablet landscape viewport has its margins value set at 24px, that said, the banner's horizontal margins can use dynamic values due to message and button text size variations, but never less than 24px.</p>
-      <div class="column is-half">
-        <p><strong>Mobile:</strong> the horizontal padding value is fixed and equal the margin size of the used viewport grid.</p>
-      </div>
-      <div class="column is-half">
+      <p><strong>Mobile:</strong> the horizontal padding value is fixed and equal the margin size of the used viewport grid.</p>
+      <div class="column is-narrow">
         <img src="docs/system-messages/padding-mobile.png" />
+      </div> 
+      <div class="column">
+        <p class="doc-em-block"><strong>For example:</strong> a small mobile viewport has its margins value set at 16px, so, the banner's horizontal paddings are exaclty 16px.</p>
       </div>
-      <p class="doc-em-block"><strong>For example:</strong> a small mobile viewport has its margins value set at 16px, so, the banner's horizontal paddings are exaclty 16px.</p>
     </div>
   </div>
   <div>
@@ -96,18 +100,19 @@ import Banner from '../labsystem/src/Banner';
   <div class="columns">
     <div class="column">
       <p>Messages for alerts tell the user about important system or feature-related issues or status. It’s initiated by the system and it’s not a result of the user’s actions.</p>
-      <p class="doc-em-block"><strong>For tablet-up</strong> alerts never write a message that uses more than <strong>2 lines</strong>.
-      <br />
-      <strong>For mobile</strong>, never more than <strong>3 lines</strong>.
-      <br />
-      <br />
-      Remember that banners are resizable, and, with that, message's size shifts up and down. Pay attention to the space the message element occupies to never exceed the limits above.</p>
     </div>
     <div class="column">
       <h3>Writing messages</h3>
       <p>The alert message should be short and include: a description of the issue, what is affected and what to do to fix the situation.</p>
       <p><strong>Content:</strong> never put the blame on the user for causing any issue, but let  them know exactly what's happening by being clear and conversational.</p>
       <p><strong>Lenght:</strong> try to be concise and use the least number of words possible.</p>
+      <p class="doc-em-block"><strong>For tablet-up</strong> alerts never write a message that uses more than <strong>2 lines</strong>.
+        <br />
+        <strong>For mobile</strong>, never more than <strong>3 lines</strong>.
+        <br />
+        <br />
+        Remember that banners are resizable, and, with that, message's size shifts up and down. Pay attention to the space the message element occupies to never exceed the limits above.
+      </p>
     </div>
   </div>
 
@@ -120,6 +125,7 @@ import Banner from '../labsystem/src/Banner';
   <Preview>
     <Story name="Info Sample">
       <Banner type="info" text="Scheduled maintenance in our servers tomorrow 5 Mar @ 10AM." buttonText="Dismiss" icon="calendar" />
+      <br />
       <Alert type="info" text="Good news! Now you can add your expenses to your monthly spreadsheet." buttonText="Dismiss" icon="coin" />
     </Story>
   </Preview>
@@ -131,6 +137,7 @@ import Banner from '../labsystem/src/Banner';
   <Preview>
     <Story name="Warn Sample">
       <Banner type="warn" text="We couldn't renew your plan. Please check your billing info." icon="coin" buttonText="Go to billing" />
+      <br />
       <Alert type="warn" text="You need to be signed in to use this feature." icon="calendar" buttonText="Login" />
     </Story>
   </Preview>
@@ -144,6 +151,7 @@ import Banner from '../labsystem/src/Banner';
   <Preview>
     <Story name="Error Sample">
       <Banner type="error" text="Looks like we're having trouble retrieving some information. Please refresh the page." icon="reload" buttonText="Refresh" />
+      <br />
       <Alert type="error" text="Enter the required fields do proceed." icon="key" />
     </Story>
   </Preview>
