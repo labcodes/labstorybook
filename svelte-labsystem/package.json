@@ -26,6 +26,7 @@
     "typescript": "^3.9.3"
   },
   "dependencies": {
+    "bulma": "^0.9.1",
     "sirv-cli": "^1.0.0"
   },
   "files": [
