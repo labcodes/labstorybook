@@ -1,7 +1,5 @@
 <script>
-  import Toggle from "./Toggle.svelte";
-  import Icon from "./Icon.svelte";
-  import Badge from "./Badge.svelte";
+  import { Toggle, Icon, Badge, Tooltip } from "./index";
 
   let toggleValue = true;
 </script>
@@ -68,8 +66,114 @@
   <Icon type="external" color="teal-40" />
   <Icon type="wallet" color="teal-40" />
   <Icon type="workspace" color="teal-40" />
+
+  <h2>Tooltip</h2>
+  <div class="columns docs-tooltip">
+    <div class="column">
+      <Tooltip id="tooltip-top-start" text="top-start" placement="top-start">
+        <button type="button"> top-start </button>
+      </Tooltip>
+    </div>
+    <div class="column">
+      <Tooltip id="tooltip-top" text="top" placement="top">
+        <button type="button"> top </button>
+      </Tooltip>
+    </div>
+    <div class="column">
+      <Tooltip id="tooltip-top-end" text="top-end" placement="top-end">
+        <button type="button"> top-end </button>
+      </Tooltip>
+    </div>
+  </div>
+  <div class="columns space-between docs-tooltip">
+    <div class="column left">
+      <Tooltip id="tooltip-left-start" text="left-start" placement="left-start">
+        <button type="button"> left-start </button>
+      </Tooltip>
+    </div>
+    <div class="column right">
+      <Tooltip
+        id="tooltip-right-start"
+        text="right-start"
+        placement="right-start">
+        <button type="button"> right-start </button>
+      </Tooltip>
+    </div>
+  </div>
+  <div class="columns space-between docs-tooltip">
+    <div class="column left">
+      <Tooltip id="tooltip-left" text="left" placement="left">
+        <button type="button"> left </button>
+      </Tooltip>
+    </div>
+    <div class="column right">
+      <Tooltip id="tooltip-right" text="right" placement="right">
+        <button type="button"> right </button>
+      </Tooltip>
+    </div>
+  </div>
+  <div class="columns space-between docs-tooltip">
+    <div class="column left">
+      <Tooltip id="tooltip-left-end" text="left-end" placement="left-end">
+        <button type="button"> left-end </button>
+      </Tooltip>
+    </div>
+    <div class="column right">
+      <Tooltip id="tooltip-right-end" text="right-end" placement="right-end">
+        <button type="button"> right-end </button>
+      </Tooltip>
+    </div>
+  </div>
+  <div class="columns docs-tooltip">
+    <div class="column">
+      <Tooltip
+        id="tooltip-bottom-start"
+        text="bottom-start"
+        placement="bottom-start">
+        <button type="button"> bottom-start </button>
+      </Tooltip>
+    </div>
+    <div class="column">
+      <Tooltip id="tooltip-bottom" text="bottom" placement="bottom">
+        <button type="button"> bottom </button>
+      </Tooltip>
+    </div>
+    <div class="column">
+      <Tooltip id="tooltip-bottom-end" text="bottom-end" placement="bottom-end">
+        <button type="button"> bottom-end </button>
+      </Tooltip>
+    </div>
+  </div>
 </main>
 
 <style lang="scss" global>
   @import "scss/main";
+
+  .docs-tooltip {
+    &.columns {
+      justify-content: center;
+      width: 60%;
+      margin: 0px auto;
+      text-align: center;
+    }
+
+    &.space-between {
+      justify-content: space-between;
+      width: 80%;
+    }
+
+    .left {
+      align-self: flex-start;
+      text-align: left;
+    }
+
+    .right {
+      align-self: flex-end;
+      text-align: right;
+    }
+  }
+
+  .li--red {
+    color: $red-60 !important;
+  }
 </style>
