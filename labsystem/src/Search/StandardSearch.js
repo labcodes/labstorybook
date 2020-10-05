@@ -18,18 +18,26 @@ export default class StandardSearch extends React.Component {
   };
 
   render() {
-    const {
-      disabled,
-      placeholder,
-      className,
-    } = this.props;
+    const { disabled, placeholder, className } = this.props;
 
     return (
       <div className={`lab-standard-search ${className || ""}`}>
-        <AbstractSearch placeholder={placeholder} disabled={disabled} icon="remove">
+        <AbstractSearch
+          placeholder={placeholder}
+          disabled={disabled}
+          icon="remove"
+        >
           <React.Fragment>
-            <button type="button" className="lab-standard-search__button" disabled={disabled}>
-              <Icon className="lab-standard-search__icon" type="lupe" color="white" />
+            <button
+              type="button"
+              className="lab-standard-search__button"
+              disabled={disabled}
+            >
+              <Icon
+                className="lab-standard-search__icon"
+                type="lupe"
+                color="white"
+              />
             </button>
             <span className="lab-standard-search__separator" />
           </React.Fragment>
