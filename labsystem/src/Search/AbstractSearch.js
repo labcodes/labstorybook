@@ -41,7 +41,7 @@ export default class AbstractSearch extends React.Component {
       );
     }
     this.state = {
-      localValue: !isUndefined(value) ? value : defaultValue,
+      localValue: value || defaultValue || "",
     };
   }
 
