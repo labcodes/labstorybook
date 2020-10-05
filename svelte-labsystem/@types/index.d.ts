@@ -3,6 +3,7 @@ import Icon from './Icon';
 import Badge from './Badge';
 import Tooltip from './Tooltip';
 import Checkbox from './Checkbox';
+import Radio from './Radio';
 
 export {
   Toggle,
@@ -10,4 +11,5 @@ export {
   Badge,
   Tooltip,
   Checkbox,
+  Radio,
 }
