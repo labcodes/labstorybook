@@ -6,15 +6,29 @@ import Icon from "../Icon";
 
 export default class StandardSearch extends React.Component {
   static propTypes = {
-    placeholder: PropTypes.string,
-    disabled: PropTypes.bool,
+    id: PropTypes.string,
+    defaultValue: PropTypes.string,
     className: PropTypes.string,
+    disabled: PropTypes.bool,
+    value: PropTypes.string,
+    icon: PropTypes.string,
+    onChange: PropTypes.func,
+    onIconClick: PropTypes.func,
+    placeholder: PropTypes.string,
+    children: PropTypes.element,
   };
 
   static defaultProps = {
-    placeholder: "Search",
-    disabled: false,
+    id: undefined,
+    defaultValue: undefined,
     className: undefined,
+    disabled: false,
+    value: undefined,
+    icon: undefined,
+    onChange: undefined,
+    onIconClick: undefined,
+    children: undefined,
+    placeholder: "Search",
   };
 
   render() {
