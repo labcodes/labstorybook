@@ -1,5 +1,5 @@
 <script>
-  import { Toggle, Icon, Badge, Tooltip } from "./index";
+  import { Toggle, Icon, Badge, Tooltip, Checkbox } from "./index";
 
   let toggleValue = true;
 </script>
@@ -67,7 +67,7 @@
   <Icon type="wallet" color="teal-40" />
   <Icon type="workspace" color="teal-40" />
 
-  <h2>Tooltip</h2>
+  <h2>Tooltip:</h2>
   <div class="columns docs-tooltip">
     <div class="column">
       <Tooltip id="tooltip-top-start" text="top-start" placement="top-start">
@@ -144,6 +144,27 @@
       </Tooltip>
     </div>
   </div>
+
+  <h2>Checkbox:</h2>
+  <fieldset>
+    <Checkbox id="checkbox-1" label="Idle" name="checkbox" checked />
+    <br />
+    <Checkbox
+      id="checkbox-2"
+      label="Indeterminate"
+      name="checkbox"
+      indeterminate
+      checked />
+    <br />
+    <Checkbox
+      id="checkbox-3"
+      label="Disabled Checked"
+      name="checkbox"
+      checked
+      disabled />
+    <br />
+    <Checkbox id="checkbox-4" label="Disabled Idle" name="checkbox" disabled />
+  </fieldset>
 </main>
 
 <style lang="scss" global>

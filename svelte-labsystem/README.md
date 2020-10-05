@@ -12,7 +12,7 @@ The components are pretty much the same as the React implementation, which means
 | --- | --- |
 | Icon  | ✅ |
 | Badge | ✅ |
-| Checkbox | ❌ |
+| Checkbox | ✅ |
 | Radio | ❌ |
 | Toggle | ✅ |
 | Button | ❌ |
@@ -21,3 +21,4 @@ The components are pretty much the same as the React implementation, which means
 | EmailInput | ❌ |
 | PasswordInput | ❌ |
 | TextInput | ❌ |
+| Tooltip | ✅ |
