@@ -2,7 +2,7 @@
   "tabWidth": 2,
   "trailingComma": "es5",
   "plugins": [
-    "svelte"
+    "./node_modules/prettier-plugin-svelte/"
   ],
   "svelteSortOrder": "scripts-markup-styles"
 }
