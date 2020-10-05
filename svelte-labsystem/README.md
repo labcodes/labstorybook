@@ -13,7 +13,7 @@ The components are pretty much the same as the React implementation, which means
 | Icon  | ✅ |
 | Badge | ✅ |
 | Checkbox | ✅ |
-| Radio | ❌ |
+| Radio | ✅ |
 | Toggle | ✅ |
 | Button | ❌ |
 | OutlineButton | ❌ |

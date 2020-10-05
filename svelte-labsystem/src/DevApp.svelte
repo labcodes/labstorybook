@@ -1,7 +1,8 @@
 <script>
-  import { Toggle, Icon, Badge, Tooltip, Checkbox } from "./index";
+  import { Toggle, Icon, Badge, Tooltip, Checkbox, Radio } from "./index";
 
   let toggleValue = true;
+  let radioButtonsTestValue = "test-value";
 </script>
 
 <main>
@@ -164,6 +165,31 @@
       disabled />
     <br />
     <Checkbox id="checkbox-4" label="Disabled Idle" name="checkbox" disabled />
+  </fieldset>
+
+  <h2>Radio:</h2>
+  <fieldset>
+    <Radio
+      id="radio-1"
+      label="Selected by default"
+      name="radio-group"
+      value="test-value"
+      bind:group={radioButtonsTestValue} />
+    <br />
+    <Radio
+      id="radio-2"
+      label="Idle"
+      name="radio-group"
+      value="test-value-2"
+      bind:group={radioButtonsTestValue} />
+    <br />
+    <Radio
+      id="radio-3"
+      label="Disabled - Checked if first is selected"
+      name="radio-group-2"
+      disabled
+      bind:group={radioButtonsTestValue}
+      value="test-value" />
   </fieldset>
 </main>
 
