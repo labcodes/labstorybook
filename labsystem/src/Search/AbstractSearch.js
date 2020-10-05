@@ -15,7 +15,7 @@ export default class AbstractSearch extends React.Component {
     onChange: PropTypes.func,
     onIconClick: PropTypes.func,
     placeholder: PropTypes.string,
-    chxildren: PropTypes.element,
+    children: PropTypes.element,
   };
 
   static defaultProps = {
