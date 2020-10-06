@@ -13,6 +13,7 @@ export default class AbstractSearch extends React.Component {
     value: PropTypes.string,
     icon: PropTypes.string,
     onChange: PropTypes.func,
+    onSearch: PropTypes.func,
     onIconClick: PropTypes.func,
     placeholder: PropTypes.string,
     type: PropTypes.oneOf(["standard", "inline"]).isRequired,
@@ -26,6 +27,7 @@ export default class AbstractSearch extends React.Component {
     value: undefined,
     icon: undefined,
     onChange: undefined,
+    onSearch: undefined,
     onIconClick: undefined,
     placeholder: " ", // acrescentei pra poder colocar placeholder no search//
   };
@@ -62,6 +64,17 @@ export default class AbstractSearch extends React.Component {
     }
   };
 
+  handleOnSearch = () => {
+    const { onSearch } = this.props;
+    const { localValue } = this.state;
+
+    if (!isUndefined(onSearch)) {
+      onSearch(localValue);
+    }
+
+    console.log('Search!', localValue);
+  };
+
   render() {
     const { id, disabled, icon, onIconClick, placeholder, type } = this.props;
 
@@ -93,6 +106,7 @@ export default class AbstractSearch extends React.Component {
           <TrailingIcon icon={icon} onIconClick={onIconClick} />
           {type === "standard" ? (
             <StandardSearchIcon
+              handleOnSearch={this.handleOnSearch}
               {...(disabled ? { disabled } : undefined)}
             />
           ) : (
@@ -142,6 +156,7 @@ function StandardSearchIcon(props) {
         type="button"
         className="lab-standard-search__button"
         disabled={disabled}
+        onClick={handleOnSearch}
       >
         <Icon className="lab-standard-search__icon" type="lupe" color="white" />
       </button>
