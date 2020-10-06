@@ -2,7 +2,7 @@
 
 exports[`Button renders as expected when passing a small size 1`] = `
 <button
-  className="btn btn--default btn--small"
+  className="lab-btn lab-btn--default lab-btn--small"
   onClick={[Function]}
   type="button"
 >
@@ -13,12 +13,12 @@ exports[`Button renders as expected when passing a small size 1`] = `
 
 exports[`Button renders as expected when passing a wallet icon 1`] = `
 <button
-  className="btn btn--default btn--normal"
+  className="lab-btn lab-btn--default lab-btn--normal"
   onClick={[Function]}
   type="button"
 >
   <span
-    className="lab-icon lab-icon--wallet lab-icon--white lab-icon--petit lab-icon--btn__icon"
+    className="lab-icon lab-icon--wallet lab-icon--white lab-icon--petit lab-btn__icon"
   />
   Test Default Wallet Button
 </button>
@@ -26,7 +26,7 @@ exports[`Button renders as expected when passing a wallet icon 1`] = `
 
 exports[`Button renders as expected when passing a warning skin 1`] = `
 <button
-  className="btn btn--default btn--normal btn--warning"
+  className="lab-btn lab-btn--default lab-btn--normal lab-btn--warning"
   onClick={[Function]}
   type="button"
 >
@@ -37,7 +37,7 @@ exports[`Button renders as expected when passing a warning skin 1`] = `
 
 exports[`Button renders as expected when passing disabled as true 1`] = `
 <button
-  className="btn btn--default btn--normal"
+  className="lab-btn lab-btn--default lab-btn--normal"
   disabled={true}
   onClick={[Function]}
   type="button"
@@ -49,7 +49,7 @@ exports[`Button renders as expected when passing disabled as true 1`] = `
 
 exports[`Button renders with base props 1`] = `
 <button
-  className="btn btn--default btn--normal"
+  className="lab-btn lab-btn--default lab-btn--normal"
   onClick={[Function]}
   type="button"
 >

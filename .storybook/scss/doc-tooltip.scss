@@ -1,0 +1,27 @@
+.docs-tooltip {
+  &.columns {
+    justify-content: center;
+    width: 60%;
+    margin: 0px auto;
+    text-align: center;
+  }
+
+  &.space-between {
+    justify-content: space-between;
+    width: 80%;
+  }
+
+  .left {
+    align-self: flex-start;
+    text-align: left;
+  }
+
+  .right {
+    align-self: flex-end;
+    text-align: right;
+  }
+}
+
+.li--red {
+  color: $red-60 !important;
+}

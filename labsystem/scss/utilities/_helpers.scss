@@ -4,11 +4,11 @@
 .u-{
   @each $key, $palette in $all-colors {
       @each $color-palette, $color in $palette {
-        &color-#{$key}#{$color-palette} {
+        &color-#{$key}-#{$color-palette} {
             color: $color;
         }
 
-        &bg-#{$key}#{$color-palette} {
+        &bg-#{$key}-#{$color-palette} {
             background-color: $color;
         }
       }

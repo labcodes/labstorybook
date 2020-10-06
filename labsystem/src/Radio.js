@@ -77,8 +77,8 @@ export default class Radio extends React.Component {
           {...(disabled ? { disabled } : undefined)}
           checked={checked}
           name={name}
+          value={value}
           onChange={this.handleOnChange}
-          {...(value ? { value } : undefined)}
         />
         <label className="lab-radio__label" htmlFor={id}>
           <span className="lab-radio__container" />

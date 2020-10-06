@@ -4,7 +4,7 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import TextInput from '../labsystem/src/Input/TextInput';
 import EmailInput from '../labsystem/src/Input/EmailInput';
 import PasswordInput from '../labsystem/src/Input/PasswordInput';
-import InputPlayground from '../playgrounds/InputPlayground';
+import TextInputPlayground from '../playgrounds/TextInputPlayground';
 
 <Meta title="Components/Text Input" component={TextInput} />
 
@@ -54,7 +54,7 @@ We can have 3 types of text inputs.
   <Story name="Input Playground">
   <Fragment>
     <div>
-      <InputPlayground />
+      <TextInputPlayground />
     </div>
   </Fragment>
   </Story>
@@ -73,9 +73,9 @@ It’s a standard text input. Can be used for enter a id, phone number, street a
         <h6>Default</h6>
         <TextInput id="id" label="Label" />
         <h6>Trailing icon</h6>
-        <TextInput className="lab-input__field--icon" id="id2" label="Label" icon="eye-opened" iconColor="mineral70" />
+        <TextInput className="lab-input__field--icon" id="id2" label="Label" icon="eye-opened" iconColor="mineral-70" />
         <h6>Error</h6>
-        <TextInput type="email" id="error" label="Name" defaultValue="Teste" customErrorMsg="Error message" />
+        <EmailInput id="error" label="Name" defaultValue="Teste" customErrorMsg="Error message" />
       </div>
     </Fragment>
   </Story>
@@ -90,9 +90,9 @@ It’s a default input that is required to be filled. It has a helper message to
     <Fragment>
       <div className="stories-half_width-wrapper">
         <h6>Required Default</h6>
-        <TextInput type="text" id="required" label= "Label" helpMessage="Help message" required />
+        <TextInput type="text" id="required" label="Label" helpMessage="Help message" required />
         <h6>Required Error</h6>
-        <TextInput type="email" id="required2" label= "Required" isValid={false} helpMessage="Help message" customErrorMsg="teste" required />
+        <TextInput type="email" id="required2" label="Required" isValid={false} helpMessage="Help message" customErrorMsg="teste" required />
       </div>
     </Fragment>
   </Story>
@@ -107,7 +107,7 @@ It’s a text field input + fixed prefix.
     <Fragment>
       <div className="stories-half_width-wrapper">
         <h6>Prefix Disabled</h6>
-        <TextInput id="prefix" label="Label" prefix="CAD" disabled />
+        <TextInput id="prefix-disabled" label="Label" prefix="CAD" disabled />
         <br />
         <h6>Prefix Default</h6>
         <TextInput id="help" label="Label" prefix="R$"/>
@@ -136,10 +136,10 @@ It’s a text field input + fixed suffix.
     <Fragment>
       <div className="stories-half_width-wrapper">
         <h6>Suffix Disabled</h6>
-        <TextInput id="suffix" label="Label" suffix=".com" disabled />
+        <TextInput id="suffix-disabled" label="Label" suffix=".com" disabled />
         <br/>
         <h6>Suffix Default</h6>
-        <TextInput id="address" label="Label" suffix=".com" />
+        <TextInput id="suffix-address" label="Label" suffix=".com" />
         <br />
         <h6>Suffix Error</h6>
         <TextInput
@@ -207,7 +207,7 @@ The theme must be selected by changing the value of the `$input-theme` variable 
       <h6>Default</h6>
         <TextInput defaultValue="Purple" id="purple1" label="Label" />
       <h6>Required Default</h6>
-        <TextInput id="purple2" label= "Label" defaultValue="Purple"
+        <TextInput id="purple2" label="Label" defaultValue="Purple"
         helpMessage="Help message" required />
       <h6>Prefix Default</h6>
         <TextInput defaultValue="Purple"
@@ -215,7 +215,7 @@ The theme must be selected by changing the value of the `$input-theme` variable 
       <br />
       <h6>Suffix Default</h6>
         <TextInput defaultValue="Purple"
-        id="address" label="Label" suffix=".com" />
+        id="suffix-address-purple" label="Label" suffix=".com" />
       <br />
     </div>
   </Fragment>

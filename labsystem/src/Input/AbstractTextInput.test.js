@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from "react";
 import { mount } from "enzyme";
 import renderer from "react-test-renderer";
@@ -118,6 +119,11 @@ describe("AbstractTextInput", () => {
     component.update();
 
     expect(component.find(".lab-input--invalid")).toHaveLength(1);
+
+    component.setProps({ value: "valid@value.com" });
+    component.update();
+
+    expect(component.find(".lab-input--invalid")).toHaveLength(0);
   });
 
   it("shows help text", async () => {
@@ -183,10 +189,54 @@ describe("AbstractTextInput", () => {
       .find("input")
       .at(0)
       .simulate("change", {
-        target: { value: "My new value", validity: { valid: true } },
+        target: {
+          value: "My new value",
+          validity: { valid: true },
+          setCustomValidity: jest.fn(),
+        },
       });
 
     expect(inputElement.render().attr("value")).toBe("My new value");
+  });
+
+  it("sets input as invalid if it is required and is not filled, even if isValid is passed by props as true", async () => {
+    const component = mount(
+      <AbstractTextInput
+        id="testInput"
+        label="Test Input"
+        name="testName"
+        isValid
+        required
+      />
+    );
+
+    expect(component.find(".lab-input--invalid")).toHaveLength(0);
+
+    component
+      .find("input")
+      .at(0)
+      .simulate("change", {
+        target: {
+          value: "My new value",
+          validity: { valid: true },
+          setCustomValidity: jest.fn(),
+        },
+      });
+
+    expect(component.find(".lab-input--invalid")).toHaveLength(0);
+
+    component
+      .find("input")
+      .at(0)
+      .simulate("change", {
+        target: {
+          value: "",
+          validity: { valid: false },
+          setCustomValidity: jest.fn(),
+        },
+      });
+
+    expect(component.find(".lab-input--invalid")).toHaveLength(1);
   });
 
   it("renders prefix when it is passed by props", async () => {
