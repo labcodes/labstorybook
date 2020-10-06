@@ -9,11 +9,21 @@
     Button,
     OutlineButton,
     TextButton,
+    TextInput,
+    EmailInput,
   } from "./index";
+  import PasswordInput from "./Input/PasswordInput.svelte";
 
   let toggleValue = true;
   let radioButtonsTestValue = "test-value";
 </script>
+
+<svelte:head>
+  <link href="https://use.typekit.net/boj8rad.css" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,500;0,600;1,500;1,600&display=swap"
+    rel="stylesheet" />
+</svelte:head>
 
 <main>
   <h1>Component samples</h1>
@@ -211,6 +221,37 @@
 
   <TextButton text="Default" />
   <TextButton text="Default" icon="arrow-down" />
+
+  <h2>TextInput:</h2>
+  <h6>Disabled</h6>
+  <TextInput id="disabled" label="Disabled" disabled />
+  <h6>Default</h6>
+  <TextInput id="id" label="Label" />
+  <h6>Trailing icon</h6>
+  <TextInput
+    id="id2"
+    label="Label"
+    icon="eye-opened"
+    iconColor="mineral-70" />
+  <h6>Prefixed</h6>
+  <TextInput id="prefixed" label="Amount" prefix="R$" />
+  <h6>Suffixed</h6>
+  <TextInput id="duffixed" label="Amount" suffix=".00" />
+  <h6>Required Default</h6>
+  <TextInput id="required" label="Label" helpMessage="Help message" required />
+  <h6>Forced Error - Prop isValid === false</h6>
+  <TextInput
+    id="required2"
+    label="Required"
+    isValid={false}
+    helpMessage="Help message"
+    customErrorMsg="Custom Error Message"
+    required />
+  <h6>Password Input</h6>
+  <PasswordInput
+    id="password-input-component"
+    label="Password Input Component"
+    value="passwordExample" />
 </main>
 
 <style lang="scss" global>

@@ -10,15 +10,15 @@ The components are pretty much the same as the React implementation, which means
 
 | Component | Status |
 | --- | --- |
-| Icon  | ✅ |
+| Icon | ✅ |
 | Badge | ✅ |
 | Checkbox | ✅ |
 | Radio | ✅ |
 | Toggle | ✅ |
-| Button | ❌ |
-| OutlineButton | ❌ |
-| TextButton | ❌ |
-| EmailInput | ❌ |
-| PasswordInput | ❌ |
-| TextInput | ❌ |
+| Button | ✅ |
+| OutlineButton | ✅ |
+| TextButton | ✅ |
+| EmailInput | ✅ |
+| PasswordInput | ✅ |
+| TextInput | ✅ |
 | Tooltip | ✅ |
