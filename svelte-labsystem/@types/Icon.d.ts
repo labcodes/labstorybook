@@ -1,4 +1,4 @@
-import { LocalSvelteComponent } from "./shared";
+import { IconTypes, LocalSvelteComponent } from "./shared";
 
 export interface IIconProps {
   color?: "white"
@@ -17,42 +17,7 @@ export interface IIconProps {
   | "purple-40"
   | "purple-60"
   | "purple-70",
-  type?: "arrow-down"
-  | "arrow-left"
-  | "arrow-right"
-  | "arrow-top"
-  | "calendar"
-  | "coin"
-  | "collapse-closed"
-  | "collapse-open"
-  | "check"
-  | "dropdown-closed"
-  | "dropdown-open"
-  | "edit"
-  | "eye-closed"
-  | "eye-opened"
-  | "track"
-  | "key"
-  | "logout"
-  | "lupe"
-  | "minus"
-  | "plus"
-  | "reload"
-  | "remove"
-  | "sort"
-  | "star"
-  | "trash"
-  | "upload"
-  | "arrow-fill-right"
-  | "arrow-fill-left"
-  | "chevron-right"
-  | "chevron-left"
-  | "menu-expand"
-  | "menu-collapse"
-  | "menu-default"
-  | "external"
-  | "wallet"
-  | "workspace",
+  type?: IconTypes,
   size?: "small" | "petit",
 }
 
