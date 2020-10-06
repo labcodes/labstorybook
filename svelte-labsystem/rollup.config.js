@@ -5,6 +5,7 @@ import livereload from "rollup-plugin-livereload";
 import { terser } from "rollup-plugin-terser";
 import sveltePreprocess from "svelte-preprocess";
 import typescript from "@rollup/plugin-typescript";
+import gzipPlugin from 'rollup-plugin-gzip'
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -79,6 +80,7 @@ export default {
     // If we're building for production (npm run build
     // instead of npm run dev), minify
     production && terser(),
+    production && gzipPlugin(),
   ],
   watch: {
     clearScreen: false,
