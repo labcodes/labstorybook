@@ -14,7 +14,7 @@ export default class AbstractSearch extends React.Component {
     icon: PropTypes.string,
     onChange: PropTypes.func,
     onSearch: PropTypes.func,
-    onIconClick: PropTypes.func,
+    onClear: PropTypes.func,
     placeholder: PropTypes.string,
     type: PropTypes.oneOf(["standard", "inline"]).isRequired,
   };
@@ -28,12 +28,14 @@ export default class AbstractSearch extends React.Component {
     icon: undefined,
     onChange: undefined,
     onSearch: undefined,
-    onIconClick: undefined,
+    onClear: undefined,
     placeholder: " ", // acrescentei pra poder colocar placeholder no search//
   };
 
   constructor(props) {
     super(props);
+    this.searchRef = React.createRef();
+
     const { defaultValue, value, id } = props;
     if (!isUndefined(defaultValue) && !isUndefined(value)) {
       // eslint-disable-next-line no-console
@@ -75,14 +77,25 @@ export default class AbstractSearch extends React.Component {
 
   handleKeyPress = (e) => {
     const { onSearch } = this.props;
-
     if (e.keyCode === 13 && !isUndefined(onSearch)) {
       onSearch(e.target.value);
     }
   };
 
+  handleOnClear = () => {
+    const { value, onClear } = this.props;
+
+    if (isUndefined(value)) {
+      this.setState({ localValue: "" });
+    }
+
+    if (!isUndefined(onClear)) {
+      onClear();
+    }
+  };
+
   render() {
-    const { id, disabled, icon, onIconClick, placeholder, type } = this.props;
+    const { id, disabled, icon, placeholder, type } = this.props;
 
     let { className } = this.props;
 
@@ -103,6 +116,7 @@ export default class AbstractSearch extends React.Component {
             id={id}
             type="search"
             value={localValue}
+            ref={this.searchRef}
             onChange={this.handleOnChange}
             autoComplete="off"
             onKeyDown={this.handleKeyPress}
@@ -110,7 +124,7 @@ export default class AbstractSearch extends React.Component {
             {...(placeholder ? { placeholder } : "")}
           />
           <div className="lab-search__borders" />
-          <TrailingIcon icon={icon} onIconClick={onIconClick} />
+          <TrailingIcon icon={icon} onClear={this.handleOnClear} />
           {type === "standard" ? (
             <StandardSearchIcon
               handleOnSearch={this.handleOnSearch}
@@ -128,14 +142,14 @@ export default class AbstractSearch extends React.Component {
 // ----- Auxiliary components ----- //
 
 function TrailingIcon(props) {
-  const { icon, iconColor, onIconClick } = props;
+  const { icon, iconColor, onClear } = props;
   let className = "lab-search__remove-icon";
-  if (!onIconClick) {
+  if (!onClear) {
     className += " lab-input__icon--disabled";
   }
   if (icon) {
     return (
-      <button type="button" className={className} onClick={onIconClick}>
+      <button type="button" className={className} onClick={onClear}>
         <Icon type={icon} color={iconColor} />
       </button>
     );
@@ -146,13 +160,13 @@ function TrailingIcon(props) {
 TrailingIcon.propTypes = {
   icon: PropTypes.string,
   iconColor: PropTypes.string,
-  onIconClick: PropTypes.func,
+  onClear: PropTypes.func,
 };
 
 TrailingIcon.defaultProps = {
   icon: undefined,
   iconColor: "mineral-40",
-  onIconClick: undefined,
+  onClear: undefined,
 };
 
 function StandardSearchIcon(props) {

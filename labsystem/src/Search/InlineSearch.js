@@ -13,7 +13,7 @@ export default class InlineSearch extends React.Component {
     icon: PropTypes.string,
     onChange: PropTypes.func,
     onSearch: PropTypes.func,
-    onIconClick: PropTypes.func,
+    onClear: PropTypes.func,
     placeholder: PropTypes.string,
     children: PropTypes.element,
   };
@@ -27,7 +27,7 @@ export default class InlineSearch extends React.Component {
     icon: undefined,
     onChange: undefined,
     onSearch: undefined,
-    onIconClick: undefined,
+    onClear: undefined,
     children: undefined,
     placeholder: "Search",
   };
@@ -41,7 +41,7 @@ export default class InlineSearch extends React.Component {
       value,
       onChange,
       onSearch,
-      onIconClick,
+      onClear,
       placeholder,
     } = this.props;
 
@@ -56,7 +56,7 @@ export default class InlineSearch extends React.Component {
           icon="remove"
           onChange={onChange}
           onSearch={onSearch}
-          onIconClick={onIconClick}
+          onClear={onClear}
           placeholder={placeholder}
           {...(disabled ? { disabled } : undefined)}
         />
