@@ -8,7 +8,7 @@
 <label
   class={`lab-toggle${color ? ` lab-toggle--${color}` : ''}`}
   class:lab-toggle--disabled={disabled}
-  htmlFor={name}>
+  for={name}>
   <input
     type="checkbox"
     id={name}
