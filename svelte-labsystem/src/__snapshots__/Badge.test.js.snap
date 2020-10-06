@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge renders with base props 1`] = `
+<body>
+  <div>
+    <div
+      class="lab-badge__wrapper lab-badge__wrapper--undefined"
+    >
+      <span
+        class="lab-badge lab-badge--undefined lab-badge--undefined"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Badge renders with specific props 1`] = `
+<body>
+  <div>
+    <div
+      class="lab-badge__wrapper lab-badge__wrapper--mineral-70"
+    >
+      <span
+        class="lab-badge lab-badge--teal-30 lab-badge--harvest lab-badge--test"
+      />
+    </div>
+  </div>
+</body>
+`;
