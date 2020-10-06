@@ -30,6 +30,7 @@
     "bulma": "^0.9.1"
   },
   "svelte": "src/index.js",
+  "types": "@types/index.d.ts",
   "files": [
     "src/*.svelte",
     "src/index.js",
