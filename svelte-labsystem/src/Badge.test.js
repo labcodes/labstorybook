@@ -9,12 +9,10 @@ describe("Badge", () => {
 
   it("renders with specific props", async () => {
     const { container } = render(Badge, {
-      props: {
-        class: "test",
-        color: "teal-30",
-        type: "harvest",
-        wrapperColor: "mineral-70",
-      },
+      class: "test",
+      color: "teal-30",
+      type: "harvest",
+      wrapperColor: "mineral-70",
     });
 
     expect(container).toMatchSnapshot();

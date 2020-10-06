@@ -9,12 +9,10 @@ describe("Icon", () => {
 
   it("renders with specific props", async () => {
     const { container } = render(Icon, {
-      props: {
-        class: "test",
-        color: "teal-30",
-        type: "edit",
-        size: "large",
-      },
+      class: "test",
+      color: "teal-30",
+      type: "edit",
+      size: "large",
     });
 
     expect(container).toMatchSnapshot();
