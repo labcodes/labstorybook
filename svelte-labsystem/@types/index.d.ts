@@ -5,6 +5,7 @@ import Tooltip from './Tooltip';
 import Checkbox from './Checkbox';
 import Radio from './Radio';
 import Button from './Button';
+import OutlineButton from './OutlineButton';
 
 export {
   Toggle,
@@ -14,4 +15,5 @@ export {
   Checkbox,
   Radio,
   Button,
+  OutlineButton,
 }

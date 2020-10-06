@@ -7,6 +7,7 @@
     Checkbox,
     Radio,
     Button,
+    OutlineButton,
   } from "./index";
 
   let toggleValue = true;
@@ -203,6 +204,9 @@
   <h2>Button:</h2>
   <Button text="Default" />
   <Button text="Default" icon="arrow-down" />
+
+  <OutlineButton text="Default" />
+  <OutlineButton text="Default" icon="arrow-down" />
 </main>
 
 <style lang="scss" global>
