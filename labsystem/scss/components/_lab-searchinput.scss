@@ -24,9 +24,8 @@ $remove-icon-focus: map-get($search-theme, "30");
 }
 
 .lab-search__remove-icon {
-    @extend .lab-input__icon; 
-    opacity: 0;
-    cursor: none;
+    @extend .lab-input__icon;
+    display: none;
 
     &:focus {
         @include border-shadow(focus, $input-shadow-filled-focus);
@@ -36,10 +35,11 @@ $remove-icon-focus: map-get($search-theme, "30");
 .lab-search__field {
     @extend .lab-input__field;
     padding-right: $spacing-01;
-    
+
     &:not(:placeholder-shown) ~ .lab-search__remove-icon {
         opacity: 1;
         cursor: pointer;
+        display: unset;
     }
 
     &:disabled ~ .lab-search__remove-icon:focus {
