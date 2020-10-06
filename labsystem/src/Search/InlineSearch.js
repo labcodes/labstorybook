@@ -2,9 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import AbstractSearch from "./AbstractSearch";
-import Icon from "../Icon";
 
-export default class StandardSearch extends React.Component {
+export default class InlineSearch extends React.Component {
   static propTypes = {
     id: PropTypes.string,
     defaultValue: PropTypes.string,
@@ -32,21 +31,31 @@ export default class StandardSearch extends React.Component {
   };
 
   render() {
-    const { disabled, placeholder, className } = this.props;
+    const {
+      id,
+      defaultValue,
+      className,
+      disabled,
+      value,
+      onChange,
+      onIconClick,
+      placeholder,
+    } = this.props;
 
     return (
       <div className={`lab-inline-search ${className || ""}`}>
         <AbstractSearch
-          placeholder={placeholder}
-          disabled={disabled}
+          type="inline"
+          id={id}
+          defaultValue={defaultValue}
+          className={className}
+          value={value}
           icon="remove"
-        >
-          <Icon
-            className="lab-inline-search__icon"
-            type="lupe"
-            color="mineral-40"
-          />
-        </AbstractSearch>
+          onChange={onChange}
+          onIconClick={onIconClick}
+          placeholder={placeholder}
+          {...(disabled ? { disabled } : undefined)}
+        />
       </div>
     );
   }

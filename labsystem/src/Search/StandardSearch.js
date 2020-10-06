@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import AbstractSearch from "./AbstractSearch";
-import Icon from "../Icon";
 
 export default class StandardSearch extends React.Component {
   static propTypes = {
@@ -32,30 +31,31 @@ export default class StandardSearch extends React.Component {
   };
 
   render() {
-    const { disabled, placeholder, className } = this.props;
+    const {
+      id,
+      defaultValue,
+      className,
+      disabled,
+      value,
+      onChange,
+      onIconClick,
+      placeholder,
+    } = this.props;
 
     return (
       <div className={`lab-standard-search ${className || ""}`}>
         <AbstractSearch
-          placeholder={placeholder}
-          disabled={disabled}
+          type="standard"
+          id={id}
+          defaultValue={defaultValue}
+          className={className}
+          value={value}
           icon="remove"
-        >
-          <React.Fragment>
-            <button
-              type="button"
-              className="lab-standard-search__button"
-              disabled={disabled}
-            >
-              <Icon
-                className="lab-standard-search__icon"
-                type="lupe"
-                color="white"
-              />
-            </button>
-            <span className="lab-standard-search__separator" />
-          </React.Fragment>
-        </AbstractSearch>
+          onChange={onChange}
+          onIconClick={onIconClick}
+          placeholder={placeholder}
+          {...(disabled ? { disabled } : undefined)}
+        />
       </div>
     );
   }

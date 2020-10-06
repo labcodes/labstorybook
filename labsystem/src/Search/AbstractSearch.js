@@ -15,7 +15,7 @@ export default class AbstractSearch extends React.Component {
     onChange: PropTypes.func,
     onIconClick: PropTypes.func,
     placeholder: PropTypes.string,
-    children: PropTypes.element,
+    type: PropTypes.oneOf(["standard", "inline"]).isRequired,
   };
 
   static defaultProps = {
@@ -27,7 +27,6 @@ export default class AbstractSearch extends React.Component {
     icon: undefined,
     onChange: undefined,
     onIconClick: undefined,
-    children: undefined,
     placeholder: " ", // acrescentei pra poder colocar placeholder no search//
   };
 
@@ -64,14 +63,7 @@ export default class AbstractSearch extends React.Component {
   };
 
   render() {
-    const {
-      id,
-      disabled,
-      icon,
-      onIconClick,
-      placeholder,
-      children,
-    } = this.props;
+    const { id, disabled, icon, onIconClick, placeholder, type } = this.props;
 
     let { className } = this.props;
 
@@ -81,20 +73,32 @@ export default class AbstractSearch extends React.Component {
     }
 
     return (
-      <div className={`lab-search__wrapper ${className || ""}`}>
-        <input
-          className="lab-search__field"
-          id={id}
-          type="search"
-          value={localValue}
-          onChange={this.handleOnChange}
-          autoComplete="off"
-          {...(disabled ? { disabled } : undefined)}
-          {...(placeholder ? { placeholder } : "")}
-        />
-        <div className="lab-search__borders" />
-        <TrailingIcon icon={icon} onIconClick={onIconClick} />
-        {children}
+      <div
+        className={
+          type === "standard" ? "lab-standard-search" : "lab-inline-search"
+        }
+      >
+        <div className={`lab-search__wrapper ${className || ""}`}>
+          <input
+            className="lab-search__field"
+            id={id}
+            type="search"
+            value={localValue}
+            onChange={this.handleOnChange}
+            autoComplete="off"
+            {...(disabled ? { disabled } : undefined)}
+            {...(placeholder ? { placeholder } : "")}
+          />
+          <div className="lab-search__borders" />
+          <TrailingIcon icon={icon} onIconClick={onIconClick} />
+          {type === "standard" ? (
+            <StandardSearchIcon
+              {...(disabled ? { disabled } : undefined)}
+            />
+          ) : (
+            <InlineSearchIcon />
+          )}
+        </div>
       </div>
     );
   }
@@ -129,3 +133,35 @@ TrailingIcon.defaultProps = {
   iconColor: "mineral-40",
   onIconClick: undefined,
 };
+
+function StandardSearchIcon(props) {
+  const { disabled, handleOnSearch } = props;
+  return (
+    <React.Fragment>
+      <button
+        type="button"
+        className="lab-standard-search__button"
+        disabled={disabled}
+      >
+        <Icon className="lab-standard-search__icon" type="lupe" color="white" />
+      </button>
+      <span className="lab-standard-search__separator" />
+    </React.Fragment>
+  );
+}
+
+StandardSearchIcon.propTypes = {
+  disabled: PropTypes.bool,
+  handleOnSearch: PropTypes.func,
+};
+
+StandardSearchIcon.defaultProps = {
+  disabled: false,
+  handleOnSearch: undefined,
+};
+
+function InlineSearchIcon() {
+  return (
+    <Icon className="lab-inline-search__icon" type="lupe" color="mineral-40" />
+  );
+}
