@@ -73,6 +73,14 @@ export default class AbstractSearch extends React.Component {
     }
   };
 
+  handleKeyPress = (e) => {
+    const { onSearch } = this.props;
+
+    if (e.keyCode === 13 && !isUndefined(onSearch)) {
+      onSearch(e.target.value);
+    }
+  };
+
   render() {
     const { id, disabled, icon, onIconClick, placeholder, type } = this.props;
 
@@ -97,6 +105,7 @@ export default class AbstractSearch extends React.Component {
             value={localValue}
             onChange={this.handleOnChange}
             autoComplete="off"
+            onKeyDown={this.handleKeyPress}
             {...(disabled ? { disabled } : undefined)}
             {...(placeholder ? { placeholder } : "")}
           />
