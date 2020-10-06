@@ -20,6 +20,7 @@
   {name}
   {value}
   {disabled}
+  {indeterminate}
   bind:checked
   on:change />
 
