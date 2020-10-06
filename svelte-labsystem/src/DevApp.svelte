@@ -8,6 +8,7 @@
     Radio,
     Button,
     OutlineButton,
+    TextButton,
   } from "./index";
 
   let toggleValue = true;
@@ -207,6 +208,9 @@
 
   <OutlineButton text="Default" />
   <OutlineButton text="Default" icon="arrow-down" />
+
+  <TextButton text="Default" />
+  <TextButton text="Default" icon="arrow-down" />
 </main>
 
 <style lang="scss" global>
