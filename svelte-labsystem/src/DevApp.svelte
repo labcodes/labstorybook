@@ -1,5 +1,13 @@
 <script>
-  import { Toggle, Icon, Badge, Tooltip, Checkbox, Radio } from "./index";
+  import {
+    Toggle,
+    Icon,
+    Badge,
+    Tooltip,
+    Checkbox,
+    Radio,
+    Button,
+  } from "./index";
 
   let toggleValue = true;
   let radioButtonsTestValue = "test-value";
@@ -191,6 +199,10 @@
       bind:group={radioButtonsTestValue}
       value="test-value" />
   </fieldset>
+
+  <h2>Button:</h2>
+  <Button text="Default" />
+  <Button text="Default" icon="arrow-down" />
 </main>
 
 <style lang="scss" global>
