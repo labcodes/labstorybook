@@ -10,5 +10,5 @@ export interface IOutlineButtonProps {
   fullWidth?: boolean,
 }
 
-declare class OutlineButton extends LocalSvelteComponent<IOutlineButtonProps> {}
+declare class OutlineButton extends LocalSvelteComponent<IOutlineButtonProps> { }
 export default OutlineButton;

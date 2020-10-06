@@ -5,6 +5,23 @@ type LocalSvelteProps = {
   [key: string]: any;
 };
 
+export type IconColors = "white"
+| "black-75"
+| "mineral-10"
+| "mineral-20"
+| "mineral-30"
+| "mineral-40"
+| "mineral-60"
+| "mineral-70"
+| "mineral-80"
+| "mineral-90"
+| "teal-40"
+| "teal-60"
+| "teal-70"
+| "purple-40"
+| "purple-60"
+| "purple-70";
+
 export type IconTypes = "arrow-down"
 | "arrow-left"
 | "arrow-right"
@@ -41,6 +58,25 @@ export type IconTypes = "arrow-down"
 | "external"
 | "wallet"
 | "workspace";
+
+export interface IBaseTextInputProps {
+  id: string,
+  label: string,
+  disabled?: boolean,
+  value?: boolean,
+  icon?: IconTypes,
+  required?: boolean,
+  helpMessage?: string,
+  prefix?: string,
+  suffix?: string,
+  isValid?: boolean,
+  customErrorMsg?: string,
+}
+
+export interface ITextEmailInputProps {
+  iconColor?: IconColors,
+  onIconClick?: Function,
+}
 
 /**
  * Local svelte class for adding typescript definitions for svelte components

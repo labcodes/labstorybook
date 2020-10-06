@@ -7,6 +7,9 @@ import Radio from './Radio';
 import Button from './Button';
 import OutlineButton from './OutlineButton';
 import TextButton from './TextButton';
+import TextInput from './TextInput';
+import EmailInput from './EmailInput';
+import PasswordInput from './PasswordInput';
 
 export {
   Toggle,
@@ -18,4 +21,7 @@ export {
   Button,
   OutlineButton,
   TextButton,
+  TextInput,
+  EmailInput,
+  PasswordInput,
 }

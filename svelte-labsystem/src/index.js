@@ -5,6 +5,11 @@ export { default as Badge } from "./Badge.svelte";
 export { default as Tooltip } from "./Tooltip.svelte";
 export { default as Checkbox } from "./Checkbox.svelte";
 export { default as Radio } from "./Radio.svelte";
+
 export { default as Button } from "./Button/Button.svelte";
 export { default as OutlineButton } from "./Button/OutlineButton.svelte";
 export { default as TextButton } from "./Button/TextButton.svelte";
+
+export { default as TextInput } from "./Input/TextInput.svelte";
+export { default as EmailInput } from "./Input/EmailInput.svelte";
+export { default as PasswordInput } from "./Input/PasswordInput.svelte";
