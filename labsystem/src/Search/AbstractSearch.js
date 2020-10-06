@@ -71,8 +71,6 @@ export default class AbstractSearch extends React.Component {
     if (!isUndefined(onSearch)) {
       onSearch(localValue);
     }
-
-    console.log('Search!', localValue);
   };
 
   render() {

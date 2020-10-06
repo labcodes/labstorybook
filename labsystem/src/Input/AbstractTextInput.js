@@ -43,7 +43,7 @@ export default class AbstractTextInput extends React.Component {
     customErrorMsg: undefined,
     onChange: undefined,
     onIconClick: undefined,
-    placeholder: " ", // acrescentei pra poder colocar placeholder no search// 
+    placeholder: " ", // acrescentei pra poder colocar placeholder no search//
     children: undefined,
   };
 
@@ -199,7 +199,7 @@ export default class AbstractTextInput extends React.Component {
             autoComplete="off"
             {...(required ? { required } : undefined)}
             {...(disabled ? { disabled } : undefined)}
-            {...(placeholder ? { placeholder } : "" )}
+            {...(placeholder ? { placeholder } : "")}
           />
           <div className="lab-input__borders" />
           {this.prefixArea()}
