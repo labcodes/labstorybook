@@ -144,6 +144,7 @@ $input-border-disabled: $mineral-30;
 
 // Changes borders and shadows according to input's states
 .lab-input__borders {
+  box-sizing: border-box;
   position: absolute;
   top: 0;
   right: 0;
