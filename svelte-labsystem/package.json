@@ -5,13 +5,20 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public",
-    "validate": "svelte-check"
+    "validate": "svelte-check",
+    "test": "jest src",
+    "test:u": "jest src -u",
+    "test:watch": "npm run test -- --watch"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^14.0.0",
     "@rollup/plugin-node-resolve": "^8.0.0",
     "@rollup/plugin-typescript": "^6.0.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/svelte": "^3.0.0",
     "@tsconfig/svelte": "^1.0.0",
+    "babel-jest": "^26.5.2",
+    "jest": "^26.5.2",
     "node-sass": "^4.14.1",
     "prettier": "^2.1.2",
     "prettier-plugin-svelte": "^1.4.0",
@@ -23,6 +30,7 @@
     "sirv-cli": "^1.0.0",
     "svelte": "^3.0.0",
     "svelte-check": "^1.0.0",
+    "svelte-jester": "^1.1.5",
     "svelte-preprocess": "^4.3.2",
     "tslib": "^2.0.0",
     "typescript": "^3.9.3"
@@ -32,6 +40,16 @@
   },
   "svelte": "src/index.js",
   "types": "@types/index.d.ts",
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.svelte$": "svelte-jester"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "svelte"
+    ]
+  },
   "files": [
     "src/*.svelte",
     "src/index.js",
