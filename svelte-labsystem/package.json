@@ -41,6 +41,9 @@
   "svelte": "src/index.js",
   "types": "@types/index.d.ts",
   "jest": {
+    "setupFiles": [
+      "./throwOnPropWarnings"
+    ],
     "transform": {
       "^.+\\.js$": "babel-jest",
       "^.+\\.svelte$": "svelte-jester"
