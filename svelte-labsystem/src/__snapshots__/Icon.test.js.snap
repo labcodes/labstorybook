@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon renders with base props 1`] = `
+<body>
+  <div>
+    <span
+      class="lab-icon lab-icon--undefined lab-icon--undefined "
+    />
+  </div>
+</body>
+`;
+
+exports[`Icon renders with specific props 1`] = `
+<body>
+  <div>
+    <span
+      class="lab-icon lab-icon--edit lab-icon--teal-30 lab-icon--large test"
+    />
+  </div>
+</body>
+`;
