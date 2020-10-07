@@ -30,6 +30,7 @@
     "sirv-cli": "^1.0.0",
     "svelte": "^3.0.0",
     "svelte-check": "^1.0.0",
+    "svelte-htm": "^1.1.1",
     "svelte-jester": "^1.1.5",
     "svelte-preprocess": "^4.3.2",
     "tslib": "^2.0.0",
