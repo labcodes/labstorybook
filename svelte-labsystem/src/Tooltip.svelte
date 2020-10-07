@@ -5,7 +5,7 @@
 
   $: if (text && text.length > 180) {
     console.warn(
-      `Tooltip with id='${props.id}' has ${props.text.length} characters. It shouldn't be longer than 180 characters`
+      `Tooltip with id='${id}' has ${text.length} characters. It shouldn't be longer than 180 characters`
     );
   }
 </script>
