@@ -41,11 +41,20 @@
     ) {
       showInvalidErrors = false;
     }
+    localIsValid = checkValidity();
   });
 
   const checkValidity = () => {
     if (!isUndefined(isValid)) {
       showInvalidErrors = true;
+
+      if (inputElement) {
+        inputElement.setCustomValidity("");
+        if (!isValid) {
+          inputElement.setCustomValidity(customErrorMsg);
+        }
+      }
+
       return isValid;
     } else if (inputElement) {
       return inputElement.validity.valid;

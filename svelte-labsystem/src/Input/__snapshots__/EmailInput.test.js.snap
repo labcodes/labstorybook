@@ -1,0 +1,301 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmailInput renders icon 1`] = `
+<body>
+  <div>
+    <div
+      class="lab-input"
+    >
+      <input
+        autocomplete="off"
+        class="lab-input__field"
+        id="testInput"
+        placeholder=" "
+        type="email"
+      />
+       
+      <div
+        class="lab-input__borders"
+      />
+       
+      
+       
+      
+       
+      <div
+        class="lab-input__label-wrapper"
+      >
+        
+         
+        <label
+          class="lab-input__label"
+          for="testInput"
+        >
+          Test Input
+        </label>
+      </div>
+       
+      <button
+        class="lab-input__icon"
+        type="button"
+      >
+        <span
+          class="lab-icon lab-icon--star lab-icon--undefined "
+        />
+      </button>
+      
+       
+    </div>
+     
+    
+  </div>
+</body>
+`;
+
+exports[`EmailInput renders prefix 1`] = `
+<body>
+  <div>
+    <div
+      class="lab-input"
+    >
+      <input
+        autocomplete="off"
+        class="lab-input__field lab-input__field--prefixed"
+        id="testInput"
+        placeholder=" "
+        type="email"
+      />
+       
+      <div
+        class="lab-input__borders"
+      />
+       
+      <span
+        class="lab-input__prefix"
+      >
+        R$
+      </span>
+      
+       
+      
+       
+      <div
+        class="lab-input__label-wrapper"
+      >
+        <span
+          class="lab-input__prefix"
+        >
+          R$
+        </span>
+        
+         
+        <label
+          class="lab-input__label"
+          for="testInput"
+        >
+          Test Input
+        </label>
+      </div>
+       
+      
+       
+    </div>
+     
+    
+  </div>
+</body>
+`;
+
+exports[`EmailInput renders required icon 1`] = `
+<body>
+  <div>
+    <div
+      class="lab-input"
+    >
+      <input
+        autocomplete="off"
+        class="lab-input__field"
+        id="testInput"
+        placeholder=" "
+        required=""
+        type="email"
+      />
+       
+      <div
+        class="lab-input__borders"
+      />
+       
+      
+       
+      
+       
+      <div
+        class="lab-input__label-wrapper"
+      >
+        
+         
+        <label
+          class="lab-input__label"
+          for="testInput"
+        >
+          Test Input
+        </label>
+      </div>
+       
+      
+       
+      <span
+        class="lab-input__required-icon"
+      >
+        <span
+          class="lab-icon lab-icon--star lab-icon--white "
+        />
+      </span>
+    </div>
+     
+    
+  </div>
+</body>
+`;
+
+exports[`EmailInput renders suffix 1`] = `
+<body>
+  <div>
+    <div
+      class="lab-input"
+    >
+      <input
+        autocomplete="off"
+        class="lab-input__field lab-input__field--suffixed"
+        id="testInput"
+        placeholder=" "
+        type="email"
+      />
+       
+      <div
+        class="lab-input__borders"
+      />
+       
+      
+       
+      <span
+        class="lab-input__suffix"
+      >
+        .com
+      </span>
+      
+       
+      <div
+        class="lab-input__label-wrapper"
+      >
+        
+         
+        <label
+          class="lab-input__label"
+          for="testInput"
+        >
+          Test Input
+        </label>
+      </div>
+       
+      
+       
+    </div>
+     
+    
+  </div>
+</body>
+`;
+
+exports[`EmailInput renders with base props and type=email 1`] = `
+<body>
+  <div>
+    <div
+      class="lab-input"
+    >
+      <input
+        autocomplete="off"
+        class="lab-input__field"
+        id="test"
+        placeholder=" "
+        type="email"
+      />
+       
+      <div
+        class="lab-input__borders"
+      />
+       
+      
+       
+      
+       
+      <div
+        class="lab-input__label-wrapper"
+      >
+        
+         
+        <label
+          class="lab-input__label"
+          for="test"
+        >
+          Some text/
+        </label>
+      </div>
+       
+      
+       
+    </div>
+     
+    
+  </div>
+</body>
+`;
+
+exports[`EmailInput sets state with isValid if it is passed by props 1`] = `
+<body>
+  <div>
+    <div
+      class="lab-input lab-input--invalid"
+    >
+      <input
+        autocomplete="off"
+        class="lab-input__field"
+        id="test"
+        placeholder=" "
+        type="email"
+      />
+       
+      <div
+        class="lab-input__borders"
+      />
+       
+      
+       
+      
+       
+      <div
+        class="lab-input__label-wrapper"
+      >
+        
+         
+        <label
+          class="lab-input__label"
+          for="test"
+        >
+          Some text
+        </label>
+      </div>
+       
+      
+       
+    </div>
+     
+    <div
+      class="lab-input__message lab-input__message--error"
+    >
+      undefined
+    </div>
+    
+  </div>
+</body>
+`;
