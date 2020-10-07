@@ -55,8 +55,9 @@
     ]
   },
   "files": [
-    "src/*.svelte",
-    "src/index.js",
-    "@types"
+    "src/**/*.svelte",
+    "src/**/*.d.ts",
+    "scss/",
+    "src/index.js"
   ]
 }
