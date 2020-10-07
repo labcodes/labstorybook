@@ -3,7 +3,7 @@
   "version": "0.0.1-alpha",
   "scripts": {
     "build": "rollup -c",
-    "dev": "rollup -c -w",
+    "dev": "rm -r ./public/build/ && rollup -c -w",
     "start": "sirv public",
     "validate": "svelte-check",
     "test": "jest src",
