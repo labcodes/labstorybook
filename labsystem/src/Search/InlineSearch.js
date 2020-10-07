@@ -10,7 +10,6 @@ export default class InlineSearch extends React.Component {
     className: PropTypes.string,
     disabled: PropTypes.bool,
     value: PropTypes.string,
-    icon: PropTypes.string,
     onChange: PropTypes.func,
     onSearch: PropTypes.func,
     onClear: PropTypes.func,
@@ -24,7 +23,6 @@ export default class InlineSearch extends React.Component {
     className: undefined,
     disabled: false,
     value: undefined,
-    icon: undefined,
     onChange: undefined,
     onSearch: undefined,
     onClear: undefined,
@@ -53,7 +51,6 @@ export default class InlineSearch extends React.Component {
           defaultValue={defaultValue}
           className={className}
           value={value}
-          icon="remove"
           onChange={onChange}
           onSearch={onSearch}
           onClear={onClear}

@@ -11,7 +11,6 @@ export default class AbstractSearch extends React.Component {
     className: PropTypes.string,
     disabled: PropTypes.bool,
     value: PropTypes.string,
-    icon: PropTypes.string,
     onChange: PropTypes.func,
     onSearch: PropTypes.func,
     onClear: PropTypes.func,
@@ -25,7 +24,6 @@ export default class AbstractSearch extends React.Component {
     className: undefined,
     disabled: false,
     value: undefined,
-    icon: undefined,
     onChange: undefined,
     onSearch: undefined,
     onClear: undefined,
@@ -95,7 +93,7 @@ export default class AbstractSearch extends React.Component {
   };
 
   render() {
-    const { id, disabled, icon, placeholder, type } = this.props;
+    const { id, disabled, placeholder, type } = this.props;
 
     let { className } = this.props;
 
@@ -124,7 +122,7 @@ export default class AbstractSearch extends React.Component {
             {...(placeholder ? { placeholder } : "")}
           />
           <div className="lab-search__borders" />
-          <TrailingIcon icon={icon} onClear={this.handleOnClear} />
+          <TrailingIcon onClear={this.handleOnClear} />
           {type === "standard" ? (
             <StandardSearchIcon
               handleOnSearch={this.handleOnSearch}
@@ -142,30 +140,24 @@ export default class AbstractSearch extends React.Component {
 // ----- Auxiliary components ----- //
 
 function TrailingIcon(props) {
-  const { icon, iconColor, onClear } = props;
+  const { onClear } = props;
   let className = "lab-search__remove-icon";
   if (!onClear) {
     className += " lab-input__icon--disabled";
   }
-  if (icon) {
-    return (
-      <button type="button" className={className} onClick={onClear}>
-        <Icon type={icon} color={iconColor} />
-      </button>
-    );
-  }
-  return null;
+
+  return (
+    <button type="button" className={className} onClick={onClear}>
+      <Icon type="remove" color="mineral-40" />
+    </button>
+  );
 }
 
 TrailingIcon.propTypes = {
-  icon: PropTypes.string,
-  iconColor: PropTypes.string,
   onClear: PropTypes.func,
 };
 
 TrailingIcon.defaultProps = {
-  icon: undefined,
-  iconColor: "mineral-40",
   onClear: undefined,
 };
 
