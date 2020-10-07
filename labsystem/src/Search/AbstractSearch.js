@@ -8,7 +8,6 @@ export default class AbstractSearch extends React.Component {
   static propTypes = {
     id: PropTypes.string,
     defaultValue: PropTypes.string,
-    className: PropTypes.string,
     disabled: PropTypes.bool,
     value: PropTypes.string,
     onChange: PropTypes.func,
@@ -21,7 +20,6 @@ export default class AbstractSearch extends React.Component {
   static defaultProps = {
     id: undefined,
     defaultValue: undefined,
-    className: undefined,
     disabled: false,
     value: undefined,
     onChange: undefined,
@@ -95,12 +93,7 @@ export default class AbstractSearch extends React.Component {
   render() {
     const { id, disabled, placeholder, type } = this.props;
 
-    let { className } = this.props;
-
     const { localValue } = this.state;
-    if (disabled) {
-      className += " lab-input--disabled";
-    }
 
     return (
       <div
@@ -108,7 +101,11 @@ export default class AbstractSearch extends React.Component {
           type === "standard" ? "lab-standard-search" : "lab-inline-search"
         }
       >
-        <div className={`lab-search__wrapper ${className || ""}`}>
+        <div
+          className={`lab-search__wrapper ${
+            disabled ? "lab-input--disabled" : ""
+          }`}
+        >
           <input
             className="lab-search__field"
             id={id}
