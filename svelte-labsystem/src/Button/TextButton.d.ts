@@ -1,4 +1,4 @@
-import { IconTypes, LocalSvelteComponent } from "./shared";
+import { IconTypes, LocalSvelteComponent } from "../shared";
 
 export interface ITextButtonProps {
   text: string,

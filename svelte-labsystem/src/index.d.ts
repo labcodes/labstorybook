@@ -4,12 +4,12 @@ import Badge from './Badge';
 import Tooltip from './Tooltip';
 import Checkbox from './Checkbox';
 import Radio from './Radio';
-import Button from './Button';
-import OutlineButton from './OutlineButton';
-import TextButton from './TextButton';
-import TextInput from './TextInput';
-import EmailInput from './EmailInput';
-import PasswordInput from './PasswordInput';
+import Button from './Button/Button';
+import OutlineButton from './Button/OutlineButton';
+import TextButton from './Button/TextButton';
+import TextInput from './Input/TextInput';
+import EmailInput from './Input/EmailInput';
+import PasswordInput from './Input/PasswordInput';
 
 export {
   Toggle,
