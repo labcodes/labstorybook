@@ -32,7 +32,7 @@ exports[`InlineSearch renders with base props 1`] = `
         />
       </button>
       <span
-        className="lab-icon lab-icon--lupe lab-icon--mineral-40 lab-inline-search__icon"
+        className="lab-icon lab-icon--lupe lab-icon--mineral-40 lab-inline-search__icon "
       />
     </div>
   </div>

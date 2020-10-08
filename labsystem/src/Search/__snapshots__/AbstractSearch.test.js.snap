@@ -30,7 +30,6 @@ exports[`AbstractSearch renders with base props 1`] = `
     </button>
     <button
       className="lab-standard-search__button"
-      disabled={false}
       onClick={[Function]}
       type="button"
     >
