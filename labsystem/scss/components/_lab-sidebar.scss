@@ -247,7 +247,7 @@ $radius-default: 60px;
       border-radius: 0px;
   }
 
-  .lab-icon--sidebar-item {
+  .sidebar-item {
     margin-right: 8px;
 
     @include from($tablet){
@@ -289,7 +289,7 @@ $radius-default: 60px;
     font-weight: $weight-semibold;
     color: $item-active-color;
 
-    .lab-icon--sidebar-item {
+    .sidebar-item {
       background-color: $item-active-color;
     }
   }
@@ -335,7 +335,7 @@ $radius-default: 60px;
       font-size: $font-size-1;
     }
 
-    .lab-icon--sidebar-item {
+    .sidebar-item {
       background-color: $narrow-trigger-bg;
       margin-right: 8px;
 
@@ -364,7 +364,7 @@ $radius-default: 60px;
     color: $item-active-color;
     font-weight: $weight-semibold;
 
-    .lab-icon--sidebar-item {
+    .sidebar-item {
       background-color: $item-active-color;
     }
   }
@@ -406,7 +406,7 @@ $radius-default: 60px;
       background-color:$white;
     }
 
-    .lab-icon--sidebar-item {
+    .sidebar-item {
       background-color: $white;
     }
   }
@@ -414,7 +414,7 @@ $radius-default: 60px;
   .lab-narrow-sidebar__footer__button {
     color: $white;
 
-    .lab-icon--sidebar-item {
+    .sidebar-item {
       background-color: $white;
     }
 
@@ -458,7 +458,7 @@ $radius-default: 60px;
       background-color: $white-75;
     }
 
-    .lab-icon--sidebar-item{
+    .sidebar-item{
       background-color: $white;
     }
   }
@@ -488,7 +488,7 @@ $radius-default: 60px;
       }
     }
 
-    .lab-icon--sidebar-item {
+    .sidebar-item {
       background-color: $color;
     }
   }
@@ -497,14 +497,14 @@ $radius-default: 60px;
   .lab-narrow-sidebar__footer__button:active  {
     color: $color; 
     
-    .lab-icon--sidebar-item {
+    .sidebar-item {
       background-color: $color;
     }    
   }
  
   .lab-narrow-sidebar__collapse{
     &:active{
-      .lab-icon--sidebar-item {
+      .sidebar-item {
         background-color: $color;
       }
     }
