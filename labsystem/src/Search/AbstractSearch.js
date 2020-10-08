@@ -103,7 +103,7 @@ export default class AbstractSearch extends React.Component {
       >
         <div
           className={`lab-search__wrapper ${
-            disabled ? "lab-input--disabled" : ""
+            disabled ? "lab-search--disabled" : ""
           }`}
         >
           <input
@@ -118,15 +118,19 @@ export default class AbstractSearch extends React.Component {
             {...(disabled ? { disabled } : undefined)}
             {...(placeholder ? { placeholder } : "")}
           />
+
           <div className="lab-search__borders" />
-          <TrailingIcon onClear={this.handleOnClear} />
+          <TrailingIcon
+            onClear={this.handleOnClear}
+            {...(disabled ? { disabled } : undefined)}
+          />
           {type === "standard" ? (
             <StandardSearchIcon
               handleOnSearch={this.handleOnSearch}
               {...(disabled ? { disabled } : undefined)}
             />
           ) : (
-            <InlineSearchIcon />
+            <InlineSearchIcon {...(disabled ? { disabled } : undefined)} />
           )}
         </div>
       </div>
@@ -137,14 +141,19 @@ export default class AbstractSearch extends React.Component {
 // ----- Auxiliary components ----- //
 
 function TrailingIcon(props) {
-  const { onClear } = props;
+  const { onClear, disabled } = props;
   let className = "lab-search__remove-icon";
   if (!onClear) {
-    className += " lab-input__icon--disabled";
+    className += " lab-input__icon--disabled"; // check this out
   }
 
   return (
-    <button type="button" className={className} onClick={onClear}>
+    <button
+      type="button"
+      className={className}
+      onClick={onClear}
+      {...(disabled ? { disabled } : undefined)}
+    >
       <Icon type="remove" color="mineral-40" />
     </button>
   );
@@ -152,10 +161,12 @@ function TrailingIcon(props) {
 
 TrailingIcon.propTypes = {
   onClear: PropTypes.func,
+  disabled: PropTypes.bool,
 };
 
 TrailingIcon.defaultProps = {
   onClear: undefined,
+  disabled: false,
 };
 
 function StandardSearchIcon(props) {
@@ -165,8 +176,8 @@ function StandardSearchIcon(props) {
       <button
         type="button"
         className="lab-standard-search__button"
-        disabled={disabled}
         onClick={handleOnSearch}
+        {...(disabled ? { disabled } : undefined)}
       >
         <Icon className="lab-standard-search__icon" type="lupe" color="white" />
       </button>
@@ -185,8 +196,23 @@ StandardSearchIcon.defaultProps = {
   handleOnSearch: undefined,
 };
 
-function InlineSearchIcon() {
+function InlineSearchIcon(props) {
+  const { disabled } = props;
   return (
-    <Icon className="lab-inline-search__icon" type="lupe" color="mineral-40" />
+    <Icon
+      className={`lab-inline-search__icon ${
+        disabled ? "lab-inline-search__icon--disabled" : ""
+      }`}
+      type="lupe"
+      color="mineral-40"
+    />
   );
 }
+
+InlineSearchIcon.propTypes = {
+  disabled: PropTypes.bool,
+};
+
+InlineSearchIcon.defaultProps = {
+  disabled: false,
+};
