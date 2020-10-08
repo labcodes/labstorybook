@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 export default class Footer extends React.Component {
   static propTypes = {
     children: PropTypes.element,
-    
   };
 
   static defaultProps = {
@@ -13,6 +12,6 @@ export default class Footer extends React.Component {
 
   render() {
     const { children } = this.props;
-    return <div className="lab-narrow-sidebar__footer"> {children}</div>;
+    return <div className="lab-narrow-sidebar__footer">{children}</div>;
   }
 }

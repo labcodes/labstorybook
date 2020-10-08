@@ -21,11 +21,15 @@ export default class NarrowSidebar extends React.Component {
     const { children, vivid, color, withScroll } = this.props;
     return (
       <React.Fragment>
-        <div className="lab-narrow__overlay"></div>
+        <div className="lab-narrow__overlay" />
         <div
           className={
-            `lab-narrow-sidebar__trigger`+
-            `${vivid ? ` lab-narrow-sidebar--vivid lab-narrow-sidebar--vivid--${color}` : ` ""`}`
+            `lab-narrow-sidebar__trigger` +
+            `${
+              vivid
+                ? ` lab-narrow-sidebar--vivid lab-narrow-sidebar--vivid--${color}`
+                : ` ""`
+            }`
           }
         >
           <button type="button" className="lab-narrow-sidebar__trigger-button">
@@ -34,8 +38,12 @@ export default class NarrowSidebar extends React.Component {
         </div>
         <div
           className={
-            `lab-narrow-sidebar`+
-            `${vivid ? ` lab-narrow-sidebar--vivid lab-narrow-sidebar--vivid--${color}` : ` ""`}`+
+            `lab-narrow-sidebar` +
+            `${
+              vivid
+                ? ` lab-narrow-sidebar--vivid lab-narrow-sidebar--vivid--${color}`
+                : ` ""`
+            }` +
             `${withScroll ? ` lab-narrow-sidebar--with-scroll` : ` ""`}`
           }
         >

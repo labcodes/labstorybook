@@ -15,14 +15,14 @@ export default class UserAvatar extends React.Component {
   };
 
   render() {
-    const { avatarSrc, altText, caption, } = this.props;
+    const { avatarSrc, altText, caption } = this.props;
     return (
       <div className="lab-narrow-sidebar__avatar">
         <span className="lab-narrow-sidebar__avatar-photo" />
         <div className="lab-narrow-sidebar__avatar-text">
           <span>{altText}</span>
           <span className="lab-narrow-sidebar__avatar-caption">{caption}</span>
-        </div> 
+        </div>
       </div>
     );
   }

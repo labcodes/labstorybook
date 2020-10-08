@@ -4,44 +4,30 @@ import Icon from "../Icon";
 
 export default class FooterButton extends React.Component {
   static propTypes = {
-    label:PropTypes.string,
-    className: PropTypes.string,
+    label: PropTypes.string,
     icon: PropTypes.string,
   };
 
   static defaultProps = {
     label: undefined,
-    className: undefined,
     icon: undefined,
   };
 
   buttonIcon = () => {
     const { icon } = this.props;
-    return icon ? (
-      <Icon
-        type={icon}
-        className="sidebar-item"
-      />
-    ) : (
-      ""
-    );
+    return icon ? <Icon type={icon} className="sidebar-item" /> : "";
   };
 
   render() {
-    const { 
-      className,
-      icon,
-      label,
-    ...rest
-   } = this.props;
+    const { label } = this.props;
 
-   return (
-    <React.Fragment>
-      <button className="lab-narrow-sidebar__footer__button" >
-      {this.buttonIcon()}
-      {label}
-      </button>
-    </React.Fragment>
+    return (
+      <React.Fragment>
+        <button type="button" className="lab-narrow-sidebar__footer__button">
+          {this.buttonIcon()}
+          {label}
+        </button>
+      </React.Fragment>
     );
   }
 }
