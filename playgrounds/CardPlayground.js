@@ -2,14 +2,18 @@
 import React from "react";
 import { Props } from "@storybook/addon-docs/blocks";
 
-import { OutlineCard, FilledCard } from "../labsystem/src/Card";
+import {
+  OutlineCard,
+  FilledCard,
+  OutlineFilledCard,
+} from "../labsystem/src/Card";
 
 export default class CardPlayground extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      availableComponents: { OutlineCard, FilledCard },
+      availableComponents: { OutlineCard, FilledCard, OutlineFilledCard },
       selectedColor: "mineral",
       selectedSkin: "pale",
       currentComponent: "OutlineCard",
@@ -43,7 +47,7 @@ export default class CardPlayground extends React.Component {
 
     return (
       <Component color={selectedColor} skin={selectedSkin}>
-        <h1>Test</h1>
+        <h1>{currentComponent}</h1>
       </Component>
     );
   };
@@ -112,26 +116,28 @@ export default class CardPlayground extends React.Component {
             </label>
           </span>
 
-          <span className="lab-playground__item">
-            <label htmlFor="selectedSkin">
-              Skin
-              <br />
-              <select
-                name="selectedSkin"
-                value={selectedSkin}
-                onChange={this.handleSelectChange}
-              >
-                {skin.type.value.map((option) => (
-                  <option
-                    key={this.formatPropString(option.value)}
-                    value={this.formatPropString(option.value)}
-                  >
-                    {this.formatPropString(option.value)}
-                  </option>
-                ))}
-              </select>
-            </label>
-          </span>
+          {skin ? (
+            <span className="lab-playground__item">
+              <label htmlFor="selectedSkin">
+                Skin
+                <br />
+                <select
+                  name="selectedSkin"
+                  value={selectedSkin}
+                  onChange={this.handleSelectChange}
+                >
+                  {skin.type.value.map((option) => (
+                    <option
+                      key={this.formatPropString(option.value)}
+                      value={this.formatPropString(option.value)}
+                    >
+                      {this.formatPropString(option.value)}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            </span>
+          ) : null}
         </div>
       </div>
     );
