@@ -53,7 +53,9 @@ export default class DropdownTag extends React.Component {
     } = this.props;
     return (
       <AbstractTag
-        className="lab-tag--dropdown"
+        className={`lab-tag--dropdown${`${
+          icon ? ` lab-tag--has-left-icon` : ""
+        }`}`}
         text={text}
         icon={icon}
         color={color}
