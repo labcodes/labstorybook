@@ -7,7 +7,6 @@ export default class AbstractTag extends React.Component {
     text: PropTypes.string.isRequired,
     disabled: PropTypes.bool,
     isOutline: PropTypes.bool,
-    thumbSrc: PropTypes.string,
     skin: PropTypes.string,
     color: PropTypes.string,
     onClick: PropTypes.func,
@@ -17,7 +16,6 @@ export default class AbstractTag extends React.Component {
   };
 
   static defaultProps = {
-    thumbSrc: "",
     isOutline: false,
     skin: "pale",
     color: "",
@@ -39,7 +37,6 @@ export default class AbstractTag extends React.Component {
     const {
       text,
       disabled,
-      thumbSrc,
       isOutline,
       skin,
       color,
@@ -54,8 +51,7 @@ export default class AbstractTag extends React.Component {
           `lab-tag ${className}` +
           `${disabled ? ` lab-tag--disabled` : ""}` +
           `${isOutline ? ` lab-tag--outline` : ""}` +
-          `${color ? ` lab-tag--${color}-${skin}` : ` lab-tag--${skin}`}` +
-          `${thumbSrc ? ` lab-tag--has-thumb` : ""}`
+          `${color ? ` lab-tag--${color}-${skin}` : ` lab-tag--${skin}`}`
         }
         onClick={this.handleOnClick}
         onKeyDown={this.handleOnClick}

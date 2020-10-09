@@ -84,7 +84,7 @@ export default class RemovableTag extends React.Component {
       <AbstractTag
         className={`lab-tag--removable${`${
           icon ? ` lab-tag--has-left-icon` : ""
-        }`}`}
+        }${thumbSrc ? ` lab-tag--has-thumb` : ""}`}`}
         text={text}
         thumbSrc={thumbSrc}
         icon={icon}
