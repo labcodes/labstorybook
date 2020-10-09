@@ -24,27 +24,31 @@ $remove-icon-focus: map-get($search-theme, "30");
 }
 
 .lab-search__remove-icon {
-    @extend .lab-input__icon; 
-    opacity: 0;
-    cursor: none;
+    @extend .lab-input__icon;
+    display: none;
 
     &:focus {
         @include border-shadow(focus, $input-shadow-filled-focus);
     }
 }
 
+.lab-search--disabled {
+  background-color: $mineral-10;
+  border-radius: $radius-02;
+}
+
 .lab-search__field {
     @extend .lab-input__field;
     padding-right: $spacing-01;
-    
+
     &:not(:placeholder-shown) ~ .lab-search__remove-icon {
         opacity: 1;
         cursor: pointer;
+        display: unset;
     }
 
-    &:disabled ~ .lab-search__remove-icon:focus {
-        cursor: default;
-        box-shadow: none;
+    &:disabled ~ .lab-search__remove-icon {
+        display: none;
     }
 }
 
@@ -112,10 +116,11 @@ $remove-icon-focus: map-get($search-theme, "30");
     }
 
     .lab-search__field:hover ~ &:disabled,
-    &:disabled {
-        background-color: $search-button-disabled;  
+    &:disabled,
+    .lab-search__field:not(:placeholder-shown) ~ &:disabled {
+        background-color: $search-button-disabled;
         border: none;
-        pointer-events: none;        
+        pointer-events: none;
     }
 
     &:active {
@@ -144,7 +149,7 @@ $remove-icon-focus: map-get($search-theme, "30");
 }
 
 
-// Inline 
+// Inline Search
 
 // Wrapper div around Inline search
 .lab-inline-search {
@@ -195,5 +200,8 @@ $remove-icon-focus: map-get($search-theme, "30");
     }
 }
 
-
-
+.lab-search__field:not(:placeholder-shown) ~ .lab-inline-search__icon--disabled,
+.lab-search__field:not(:placeholder-shown) ~ .lab-inline-search__icon--disabled:hover,
+.lab-search__field:not(:placeholder-shown):hover ~ .lab-inline-search__icon--disabled  {
+    background-color: $search-button-idle;
+}

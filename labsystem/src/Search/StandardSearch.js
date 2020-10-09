@@ -2,38 +2,55 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import AbstractSearch from "./AbstractSearch";
-import Icon from "../Icon";
 
 export default class StandardSearch extends React.Component {
   static propTypes = {
-    placeholder: PropTypes.string,
+    id: PropTypes.string,
+    defaultValue: PropTypes.string,
     disabled: PropTypes.bool,
-    className: PropTypes.string,
+    value: PropTypes.string,
+    onChange: PropTypes.func,
+    onSearch: PropTypes.func,
+    onClear: PropTypes.func,
+    placeholder: PropTypes.string,
   };
 
   static defaultProps = {
-    placeholder: "Search",
+    id: undefined,
+    defaultValue: undefined,
     disabled: false,
-    className: undefined,
+    value: undefined,
+    onChange: undefined,
+    onSearch: undefined,
+    onClear: undefined,
+    placeholder: "Search",
   };
 
   render() {
     const {
+      id,
+      defaultValue,
       disabled,
+      value,
+      onChange,
+      onSearch,
+      onClear,
       placeholder,
-      className,
     } = this.props;
 
     return (
-      <div className={`lab-standard-search ${className || ""}`}>
-        <AbstractSearch placeholder={placeholder} disabled={disabled} icon="remove">
-          <React.Fragment>
-            <button type="button" className="lab-standard-search__button" disabled={disabled}>
-              <Icon className="lab-standard-search__icon" type="lupe" color="white" />
-            </button>
-            <span className="lab-standard-search__separator" />
-          </React.Fragment>
-        </AbstractSearch>
+      <div className="lab-standard-search">
+        <AbstractSearch
+          type="standard"
+          id={id}
+          defaultValue={defaultValue}
+          value={value}
+          onChange={onChange}
+          onSearch={onSearch}
+          onClear={onClear}
+          placeholder={placeholder}
+          {...(disabled ? { disabled } : undefined)}
+        />
       </div>
     );
   }

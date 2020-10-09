@@ -2,37 +2,55 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import AbstractSearch from "./AbstractSearch";
-import Icon from "../Icon";
 
-export default class StandardSearch extends React.Component {
+export default class InlineSearch extends React.Component {
   static propTypes = {
-    placeholder: PropTypes.string,
+    id: PropTypes.string,
+    defaultValue: PropTypes.string,
     disabled: PropTypes.bool,
-    className: PropTypes.string,
+    value: PropTypes.string,
+    onChange: PropTypes.func,
+    onSearch: PropTypes.func,
+    onClear: PropTypes.func,
+    placeholder: PropTypes.string,
   };
 
   static defaultProps = {
-    placeholder: "Search",
+    id: undefined,
+    defaultValue: undefined,
     disabled: false,
-    className: undefined,
+    value: undefined,
+    onChange: undefined,
+    onSearch: undefined,
+    onClear: undefined,
+    placeholder: "Search",
   };
 
   render() {
-    const { disabled, placeholder, className } = this.props;
+    const {
+      id,
+      defaultValue,
+      disabled,
+      value,
+      onChange,
+      onSearch,
+      onClear,
+      placeholder,
+    } = this.props;
 
     return (
-      <div className={`lab-inline-search ${className || ""}`}>
+      <div className="lab-inline-search">
         <AbstractSearch
+          type="inline"
+          id={id}
+          defaultValue={defaultValue}
+          value={value}
+          onChange={onChange}
+          onSearch={onSearch}
+          onClear={onClear}
           placeholder={placeholder}
-          disabled={disabled}
-          icon="remove"
-        >
-          <Icon
-            className="lab-inline-search__icon"
-            type="lupe"
-            color="mineral-40"
-          />
-        </AbstractSearch>
+          {...(disabled ? { disabled } : undefined)}
+        />
       </div>
     );
   }
