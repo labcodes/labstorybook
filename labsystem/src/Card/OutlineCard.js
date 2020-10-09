@@ -4,15 +4,13 @@ import PropTypes from "prop-types";
 export default class OutlineCard extends React.Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
-    color: PropTypes.oneOf(["mineral", "teal", "purple"]),
-    skin: PropTypes.oneOf(["pale", "vivid"]),
+    color: PropTypes.oneOf(["mineral", "teal", "purple"]).isRequired,
+    skin: PropTypes.oneOf(["pale", "vivid"]).isRequired,
     isHorizontal: PropTypes.bool,
     isCompact: PropTypes.bool,
   };
 
   static defaultProps = {
-    color: "mineral",
-    skin: "pale",
     isHorizontal: false,
     isCompact: false,
   };
