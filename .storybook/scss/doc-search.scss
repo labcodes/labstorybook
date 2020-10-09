@@ -1,0 +1,59 @@
+.search--stories-force-purple {
+  .lab-input__field:focus ~ .search-button,
+  .lab-input__field:not(:placeholder-shown):focus ~ .search-button {
+    background-color: $purple-70;
+  }
+  
+  .lab-input__field:not(:placeholder-shown) ~ .search-button,
+  .lab-input__field:not(:placeholder-shown):hover ~ .search-button {
+    background-color: $purple-60;
+  }
+  
+  .lab-input__field:not(:placeholder-shown):focus:hover ~ .search-button {
+    background-color: $purple-80;
+  }
+  
+  .lab-input__field:not(:placeholder-shown)~ .search-button:focus {
+    background-color: $purple-70;
+    border-color: $purple-10;
+    
+  }
+  .search-button:active {
+    border-color: 1px solid $purple-10;      
+  } 
+   
+  .lab-input__field:not(:placeholder-shown) ~ .search-button:active {
+    background-color: $purple-80;
+}
+}
+
+
+//Inline 
+
+.search--inline--stories-force-purple  {
+  .lab-input__icon:focus {
+      box-shadow: 0 0 0 2px $purple-30;
+  }
+
+  
+  .lab-input__field:focus ~ .lab-icon--inline-search-lupe {
+      background-color: $purple-70;
+  }
+
+  .lab-input__field:not(:placeholder-shown) ~ .lab-icon--inline-search-lupe {
+      background-color: $purple-60;
+  }
+
+  .lab-input__field:not(:placeholder-shown):focus ~ .lab-icon--inline-search-lupe {
+      background-color: $purple-70;
+  }
+
+  .lab-input__field:not(:placeholder-shown):hover ~ .lab-icon--inline-search-lupe {
+      background-color: $purple-60;
+  }
+
+  .lab-input__field:not(:placeholder-shown):focus:hover ~ .lab-icon--inline-search-lupe {
+      background-color: $purple-80;
+  }
+    
+}
