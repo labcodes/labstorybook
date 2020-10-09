@@ -2,43 +2,29 @@
 import React from "react";
 import { Props } from "@storybook/addon-docs/blocks";
 
-import { OutlineCard } from "../labsystem/src/Card";
+import { OutlineCard, FilledCard } from "../labsystem/src/Card";
 
 export default class CardPlayground extends React.Component {
   constructor(props) {
     super(props);
 
-    const currentComponent = OutlineCard;
-    this.state = {};
-    this.setUpStateForComponent(currentComponent);
+    this.state = {
+      availableComponents: { OutlineCard, FilledCard },
+      selectedColor: "mineral",
+      selectedSkin: "pale",
+      currentComponent: "OutlineCard",
+    };
   }
 
   formatPropString = (string) => eval(string).replace('"', "");
 
-  setUpStateForComponent = (component) => {
-    const { currentComponent } = this.state;
-    const {
-      props: {
-        __docgenInfo: {
-          props: { color, skin },
-        },
-      },
-    } = Props(component);
-
-    if (!currentComponent) {
-      // eslint-disable-next-line react/no-direct-mutation-state
-      this.state = {
-        currentComponent: component,
-        selectedColor: this.formatPropString(color.defaultValue.value),
-        selectedSkin: this.formatPropString(skin.defaultValue.value),
-      };
-    } else {
-      this.setState({
-        currentComponent: component,
-        selectedColor: this.formatPropString(color.defaultValue.value),
-        selectedSkin: this.formatPropString(skin.defaultValue.value),
-      });
-    }
+  changeCardComponent = (e) => {
+    const { value } = e.target;
+    this.setState({
+      currentComponent: value,
+      selectedColor: "mineral",
+      selectedSkin: "pale",
+    });
   };
 
   handleSelectChange = (e) => {
@@ -46,25 +32,65 @@ export default class CardPlayground extends React.Component {
     this.setState({ [name]: value });
   };
 
+  renderCurrentComponent = () => {
+    const {
+      selectedColor,
+      selectedSkin,
+      availableComponents,
+      currentComponent,
+    } = this.state;
+    const Component = availableComponents[currentComponent];
+
+    return (
+      <Component color={selectedColor} skin={selectedSkin}>
+        <h1>Test</h1>
+      </Component>
+    );
+  };
+
   render() {
-    const { currentComponent, selectedColor, selectedSkin } = this.state;
+    const {
+      currentComponent,
+      availableComponents,
+      selectedColor,
+      selectedSkin,
+    } = this.state;
     const {
       props: {
         __docgenInfo: {
           props: { color, skin },
         },
       },
-    } = Props(currentComponent);
+    } = Props(availableComponents[currentComponent]);
 
     return (
       <div className="columns lab-playground">
         <div className="column lab-playground__component">
-          <OutlineCard skin={selectedSkin} color={selectedColor}>
-            <h1>Test</h1>
-          </OutlineCard>
+          {this.renderCurrentComponent()}
         </div>
         <div className="column lab-playground__configs">
           <h4>Configurations</h4>
+
+          <div>
+            <span className="lab-playground__item">
+              <label htmlFor="currentComponent">
+                Component
+                <br />
+                <select
+                  name="currentComponent"
+                  value={currentComponent}
+                  onChange={this.changeCardComponent}
+                >
+                  {Object.keys(availableComponents).map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            </span>
+          </div>
+
           <span className="lab-playground__item">
             <label htmlFor="selectedColor">
               Color
