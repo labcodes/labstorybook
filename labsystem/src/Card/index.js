@@ -5,3 +5,4 @@ export { default as OutlineCard } from "./OutlineCard";
 export { default as FilledCard } from "./FilledCard";
 export { default as OutlineFilledCard } from "./OutlineFilledCard";
 export { default as CardImage } from "./CardImage";
+export { default as CardHeader } from "./CardHeader";
