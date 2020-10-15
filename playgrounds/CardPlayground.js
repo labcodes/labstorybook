@@ -23,9 +23,11 @@ export default class CardPlayground extends React.Component {
       selectedSkin: "pale",
       currentComponent: "OutlineCard",
       showHeaderConfigs: false,
+      showCardBodyHTML: false,
 
       cardImageIsOverflowed: false,
       cardImageIsAboveHeader: false,
+
       cardHeaderTitle: "Title text",
       cardHeaderTitleClassName: "custom-class",
       cardHeaderSubtitle: "Subtitle text is a little longer than the title",
@@ -35,6 +37,9 @@ export default class CardPlayground extends React.Component {
       cardHeaderCategoryIcon: "star",
       cardHeaderCategoryColor: "",
       cardHeaderIsOverlay: false,
+
+      cardBodyHTML:
+        "<p>This HTML is inside the card body, below the image and header.</p>",
     };
   }
 
@@ -44,8 +49,10 @@ export default class CardPlayground extends React.Component {
       selectedSkin,
       availableComponents,
       currentComponent,
+
       cardImageIsOverflowed,
       cardImageIsAboveHeader,
+
       cardHeaderTitle,
       cardHeaderTitleClassName,
       cardHeaderSubtitle,
@@ -55,6 +62,8 @@ export default class CardPlayground extends React.Component {
       cardHeaderCategoryIcon,
       cardHeaderCategoryColor,
       cardHeaderIsOverlay,
+
+      cardBodyHTML,
     } = this.state;
     const Component = availableComponents[currentComponent];
 
@@ -90,6 +99,7 @@ export default class CardPlayground extends React.Component {
             isOverflowed={cardImageIsOverflowed}
           />
         ) : null}
+        <span dangerouslySetInnerHTML={{ __html: cardBodyHTML }} />
       </Component>
     );
   };
@@ -101,17 +111,20 @@ export default class CardPlayground extends React.Component {
       selectedColor,
       selectedSkin,
       showHeaderConfigs,
+      showCardBodyHTML,
+
       cardImageIsOverflowed,
       cardImageIsAboveHeader,
+
       cardHeaderTitle,
-      cardHeaderTitleClassName,
       cardHeaderSubtitle,
-      cardHeaderSubtitleClassName,
       cardHeaderCategoryText,
       cardHeaderCategoryLabelText,
       cardHeaderCategoryIcon,
       cardHeaderCategoryColor,
       cardHeaderIsOverlay,
+
+      cardBodyHTML,
     } = this.state;
     const {
       props: {
@@ -192,6 +205,38 @@ export default class CardPlayground extends React.Component {
               </label>
             </span>
           ) : null}
+
+          <div>
+            <span className="lab-playground__item" style={{ width: "100%" }}>
+              <label htmlFor="cardBodyHTML">
+                <span
+                  style={{ cursor: "pointer", display: "flex" }}
+                  onClick={() => this.handleToggleFor("showCardBodyHTML")}
+                >
+                  <Icon
+                    type={
+                      showCardBodyHTML ? "collapse-open" : "collapse-closed"
+                    }
+                  />
+                  Body HTML
+                </span>
+                {showCardBodyHTML ? (
+                  <React.Fragment>
+                    <textarea
+                      style={{
+                        width: "100%",
+                        minHeight: "100px",
+                        resize: "none",
+                      }}
+                      name="cardBodyHTML"
+                      value={cardBodyHTML}
+                      onChange={this.handleInputChange}
+                    />
+                  </React.Fragment>
+                ) : null}
+              </label>
+            </span>
+          </div>
 
           <h6>CardImage</h6>
           <span className="lab-playground__item">
