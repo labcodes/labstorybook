@@ -56,7 +56,12 @@ export default class RemovableTag extends React.Component {
   icon = () => {
     const { icon } = this.props;
     return icon ? (
-      <Icon type={icon} color="black-75" size="petit" className="lab-tag--left-icon" />
+      <Icon
+        type={icon}
+        color="black-75"
+        size="petit"
+        className="lab-tag--left-icon"
+      />
     ) : undefined;
   };
 
