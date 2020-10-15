@@ -19,7 +19,7 @@ export default class Alert extends React.Component {
   icon = () => {
     const { icon } = this.props;
     return icon ? (
-      <Icon type={icon} color="mineral70" className="lab-alert__icon" />
+      <Icon type={icon} color="mineral-70" className="lab-alert__icon" />
     ) : undefined;
   };
 
