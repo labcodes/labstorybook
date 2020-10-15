@@ -1,36 +1,74 @@
-.input-colors {
-    width: 140px;
-    height: 36px; 
-    padding: $spacing-01;
-    display: inline-flex;
-    font-family: $family-sans-serif;
-    color: $white;
-    align-items: center;
-    justify-content: center;
-    
-    &.base {
-      background-color: $purple-60;
+//Stories wrapper
+.stories-half_width-wrapper{
+  width: 240px;
+}
+
+// Input purple
+.lab-input--stories-force-purple {
+  .lab-input__field {
+    &:not(:placeholder-shown) ~ .lab-input__borders {
+      border-color: $purple-60;
     }
-    
-    &.hover {
-      color: $black-75;
-      background-color: $purple-10;
+
+    &:not(:placeholder-shown):hover ~ .lab-input__borders {
+      @include border-shadow(hover, $purple-10);
     }
-    
-    &.hover-border{
-      background-color: $purple-70;
+
+    &:focus ~ .lab-input__borders,
+    &:not(:placeholder-shown):focus ~ .lab-input__borders {
+      border: 2px solid $purple-70;
+      @include border-shadow(focus, $purple-30);
     }
-    
-    &.focus{
-      background-color: $purple-30;
+
+    &:not(:placeholder-shown):hover:focus ~ .lab-input__borders {
+      border: 2px solid $purple-80;
+      @include border-shadow(focus-hover, $purple-30, $purple-10);
     }
-    
-    &.focus-border{
+
+
+    &:not(:placeholder-shown) ~ .lab-input__label ~ .lab-input__borders,
+    &:focus ~ .lab-input__label ~ .lab-input__borders{
+      color: $purple-60;
+    }
+
+    //Required
+    &:focus:hover ~ .lab-input__required-icon,
+    &:not(:placeholder-shown):focus:hover ~ .lab-input__required-icon {
       background-color: $purple-80;
     }
-    
-    &.lab-input__prefix{
-      color: $black-75;
-      background-color: $purple-10;
+
+    &:focus ~ .lab-input__required-icon,
+    &:not(:placeholder-shown):focus ~ .lab-input__required-icon {
+      background-color: $purple-70;
+    }
+
+    &:not(:placeholder-shown) ~ .lab-input__required-icon {
+      background-color: $purple-60;
+    }
+
+    &:not(:placeholder-shown) ~ .lab-input__label-wrapper .lab-input__label,
+    &:focus ~ .lab-input__label-wrapper .lab-input__label,
+    &:not(:placeholder-shown) ~ .lab-input__required-icon  {
+      color: $purple-60;
     }
   }
+
+  //Help Message
+  & .lab-input__message {
+    color: $purple-60;
+  }
+
+  //Suffix
+  .lab-input__field:focus ~ .lab-input__suffix,
+  .lab-input__field:not(:placeholder-shown) ~ .lab-input__suffix {
+    background-color: $purple-10;
+  }
+
+
+  //Prefix
+  .lab-input__field:focus ~ .lab-input__prefix,
+  .lab-input__field:not(:placeholder-shown) ~ .lab-input__prefix {
+    background-color: $purple-10;
+  }
+
+}

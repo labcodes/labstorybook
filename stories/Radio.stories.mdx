@@ -17,6 +17,11 @@ import RadioPlayground from '../playgrounds/RadioPlayground';
     <p>Radio is a type of selector that is used when we have a list of options, and only one option can be selected.
     </p>
 
+##### Acessibility
+  Striving to keep our forms accessible, we recommend to use this type of component by using the `fieldset` tag to nest a group of 
+  selectors and the `legend` tag to identify the heading of the group.
+  These elements works indicating to screen readers that a group of form fields relate to each other.
+
 <h4>Anatomy</h4>
 <div class="columns">
     <div class="column">
@@ -35,7 +40,7 @@ import RadioPlayground from '../playgrounds/RadioPlayground';
     </div>
 </div>
 
-### Interactive demo
+#### Interactive demo
   This demo lets you preview the radio component, its variations, and configuration options.
   <Preview>
     <Story name="InteractiveDemo">
@@ -52,13 +57,15 @@ import RadioPlayground from '../playgrounds/RadioPlayground';
 <Preview>
   <Story name="Radio">
     <Fragment>
-        <Radio id="radio-1" label="Idle" name="radio"/>
+      <fieldset>
+        <Radio id="radio-1" label="Idle" name="radio" value="" />
         <br />
-        <Radio id="radio-2" label="Idle" name="radio" />
+        <Radio id="radio-2" label="Idle" name="radio" value="" />
         <br />
-        <Radio id="radio-3" label="Disabled" name="radio" disabled/>
-         <br />
-        <Radio id="radio-4" label="Disabled" name="radio-disabled" checked disabled/>
+        <Radio id="radio-3" label="Disabled" name="radio" disabled value="" />
+        <br />
+        <Radio id="radio-4" label="Disabled" name="radio-disabled" checked disabled value="" />
+      </fieldset>
     </Fragment>
   </Story>
 </Preview>
@@ -75,9 +82,11 @@ Checkboxes can also be used in the purple theme
 <Preview>
   <Story name="Styles">
   <Fragment>
-    <Radio className="lab-radio--purple" id="radio-5" label="Idle" name="radio2"/>
-    <br />
-    <Radio className="lab-radio--purple" id="radio-6" label="Idle" name="radio2" />
+    <fieldset>
+      <Radio className="lab-radio--purple" id="radio-5" label="Idle" name="radio2" value="" />
+      <br />
+      <Radio className="lab-radio--purple" id="radio-6" label="Idle" name="radio2" value="" />
+    </fieldset>
   </Fragment>
   </Story>
 </Preview>

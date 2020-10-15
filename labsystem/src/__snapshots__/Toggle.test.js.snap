@@ -3,22 +3,22 @@
 exports[`Toggle renders as expected when passing a different theme 1`] = `
 <label
   className="
-          toggle
-          toggle--purple
-           toggle--disabled
+          lab-toggle
+          lab-toggle--purple
+           lab-toggle--disabled
         "
   htmlFor="test-toggle"
 >
   <input
     checked={false}
-    className="toggle__input"
+    className="lab-toggle__input"
     disabled={true}
     id="test-toggle"
     onChange={[Function]}
     type="checkbox"
   />
   <span
-    className="toggle__slider"
+    className="lab-toggle__slider"
   />
 </label>
 `;
@@ -26,22 +26,22 @@ exports[`Toggle renders as expected when passing a different theme 1`] = `
 exports[`Toggle renders as expected when passing disabled as true 1`] = `
 <label
   className="
-          toggle
+          lab-toggle
           
-           toggle--disabled
+           lab-toggle--disabled
         "
   htmlFor="test-toggle"
 >
   <input
     checked={false}
-    className="toggle__input"
+    className="lab-toggle__input"
     disabled={true}
     id="test-toggle"
     onChange={[Function]}
     type="checkbox"
   />
   <span
-    className="toggle__slider"
+    className="lab-toggle__slider"
   />
 </label>
 `;
@@ -49,7 +49,7 @@ exports[`Toggle renders as expected when passing disabled as true 1`] = `
 exports[`Toggle renders with base props 1`] = `
 <label
   className="
-          toggle
+          lab-toggle
           
           
         "
@@ -57,14 +57,13 @@ exports[`Toggle renders with base props 1`] = `
 >
   <input
     checked={false}
-    className="toggle__input"
-    disabled={false}
+    className="lab-toggle__input"
     id="test-toggle"
     onChange={[Function]}
     type="checkbox"
   />
   <span
-    className="toggle__slider"
+    className="lab-toggle__slider"
   />
 </label>
 `;

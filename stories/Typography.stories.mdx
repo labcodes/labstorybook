@@ -3,21 +3,21 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
 <Meta title="Base/Typography" />
 
-<div class="docs-title docs-title--with-tab">
+<div className="docs-title docs-title--with-tab">
   <div>
-    <h1 class="docs-title__text">Typography</h1>
+    <h1 className="docs-title__text">Typography</h1>
   </div>
 </div>
 
-<div class="docs-content">
-  <div class="simple-tab-wrapper"></div>
-  <input class="simple-tab" type="radio" name="type-tab" id="tab1" checked/>
-  <label for="tab1">Overview</label>
+<div className="docs-content">
+  <div className="simple-tab-wrapper"></div>
+  <input className="simple-tab" type="radio" name="type-tab" id="tab1" defaultChecked/>
+  <label htmlFor="tab1">Overview</label>
 
-  <input class="simple-tab" type="radio" name="type-tab" id="tab2" />
-  <label for="tab2">Type system</label>
+  <input className="simple-tab" type="radio" name="type-tab" id="tab2" />
+  <label htmlFor="tab2">Type system</label>
 
-  <div class="simple-tab__content content1">
+  <div className="simple-tab__content content1">
   <p>Typography can help express clear hierarchies, organize information, and guide users through a product or experience. It has a high impact on brand recognition and user experience.</p>
 
   <p>To manage typography on our design system, we use inital variables or tokens to describe pre-set configuration of typographic elements such as font family, size, weight, line-height and others. We then use those tokens to configure titles, paragraphs and all text elements on the page.</p>
@@ -60,168 +60,176 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
   <h2 id="scale">Scale</h2>
 
   <table>
-    <tr>
-      <th>Token</th>
-      <th>rem</th>
-      <th>px</th>
-      <th>FF Meta Serif</th>
-      <th>Fright Sans</th>
-      <th>Ibm Plex Mono</th>
-    </tr>
-    <tr>
-      <td><code>$font-size-1</code></td>
-      <td>0.75</td>
-      <td>12</td>
-      <td><p className="type__text type__text--meta type__text--size-1">Serif</p></td>
-      <td><p className="type__text type__text--freight type__text--size-1">Sans Serif</p></td>
-      <td><p className="type__text type__text--ibm-plex-mono type__text--size-1">Mono</p></td>
-    </tr>
-    <tr>
-      <td><code>$font-size-2</code></td>
-      <td>0.875</td>
-      <td>14</td>
-      <td><p className="type__text type__text--meta type__text--size-2">Serif</p></td>
-      <td><p className="type__text type__text--freight type__text--size-2">Sans Serif</p></td>
-      <td><p className="type__text type__text--ibm-plex-mono type__text--size-2">Mono</p></td>
-    </tr>
-    <tr>
-      <td><code>$font-size-3</code></td>
-      <td>1</td>
-      <td>16</td>
-      <td><p className="type__text type__text--meta type__text--size-3">Serif</p></td>
-      <td><p className="type__text type__text--freight type__text--size-3">Sans Serif</p></td>
-      <td><p className="type__text type__text--ibm-plex-mono type__text--size-3">Mono</p></td>
-    </tr>
-    <tr>
-      <td><code>$font-size-4</code></td>
-      <td>1.125</td>
-      <td>18</td>
-      <td><p className="type__text type__text--meta type__text--size-4">Serif</p></td>
-      <td><p className="type__text type__text--freight type__text--size-4">Sans Serif</p></td>
-      <td><p className="type__text type__text--ibm-plex-mono type__text--size-4">Mono</p></td>
-    </tr>
-    <tr>
-      <td><code>$font-size-5</code></td>
-      <td>1.25</td>
-      <td>20</td>
-      <td><p className="type__text type__text--meta type__text--size-5">Serif</p></td>
-      <td><p className="type__text type__text--freight type__text--size-5">Sans Serif</p></td>
-      <td><p className="type__text type__text--ibm-plex-mono type__text--size-5">Mono</p></td>
-    </tr>
-    <tr>
-      <td><code>$font-size-6</code></td>
-      <td>1.5</td>
-      <td>24</td>
-      <td><p className="type__text type__text--meta type__text--size-6">Serif</p></td>
-      <td><p className="type__text type__text--freight type__text--size-6">Sans Serif</p></td>
-      <td><p className="type__text type__text--ibm-plex-mono type__text--size-6">Mono</p></td>
-    </tr>
-    <tr>
-      <td><code>$font-size-7</code></td>
-      <td>1.75</td>
-      <td>28</td>
-      <td><p className="type__text type__text--meta type__text--size-7">Serif</p></td>
-      <td><p className="type__text type__text--freight type__text--size-7">Sans Serif</p></td>
-      <td><p className="type__text type__text--ibm-plex-mono type__text--size-7">Mono</p></td>
-    </tr>
-    <tr>
-      <td><code>$font-size-8</code></td>
-      <td>2</td>
-      <td>32</td>
-      <td><p className="type__text type__text--meta type__text--size-8">Serif</p></td>
-      <td><p className="type__text type__text--freight type__text--size-8">Sans Serif</p></td>
-      <td><p className="type__text type__text--ibm-plex-mono type__text--size-8">Mono</p></td>
-    </tr>
-    <tr>
-      <td><code>$font-size-9</code></td>
-      <td>2.5</td>
-      <td>40</td>
-      <td><p className="type__text type__text--meta type__text--size-9">Serif</p></td>
-      <td><p className="type__text type__text--freight type__text--size-9">Sans Serif</p></td>
-      <td><p className="type__text type__text--ibm-plex-mono type__text--size-9">Mono</p></td>
-    </tr>
-    <tr>
-      <td><code>$font-size-10</code></td>
-      <td>3</td>
-      <td>48</td>
-      <td><p className="type__text type__text--meta type__text--size-10">Serif</p></td>
-      <td><p className="type__text type__text--freight type__text--size-10">Sans Serif</p></td>
-      <td><p className="type__text type__text--ibm-plex-mono type__text--size-10">Mono</p></td>
-    </tr>
-    <tr>
-      <td><code>$font-size-11</code></td>
-      <td>3.25</td>
-      <td>52</td>
-      <td><p className="type__text type__text--meta type__text--size-11">Serif</p></td>
-      <td><p className="type__text type__text--freight type__text--size-11">Sans Serif</p></td>
-      <td><p className="type__text type__text--ibm-plex-mono type__text--size-11">Mono</p></td>
-    </tr>
-    <tr>
-      <td><code>$font-size-12</code></td>
-      <td>3.75</td>
-      <td>60</td>
-      <td><p className="type__text type__text--meta type__text--size-12">Serif</p></td>
-      <td><p className="type__text type__text--freight type__text--size-12">Sans Serif</p></td>
-      <td><p className="type__text type__text--ibm-plex-mono type__text--size-12">Mono</p></td>
-    </tr>
+    <thead>
+      <tr>
+        <th>Token</th>
+        <th>rem</th>
+        <th>px</th>
+        <th>FF Meta Serif</th>
+        <th>Fright Sans</th>
+        <th>Ibm Plex Mono</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>$font-size-1</code></td>
+        <td>0.75</td>
+        <td>12</td>
+        <td><p className="type__text type__text--meta type__text--size-1">Serif</p></td>
+        <td><p className="type__text type__text--freight type__text--size-1">Sans Serif</p></td>
+        <td><p className="type__text type__text--ibm-plex-mono type__text--size-1">Mono</p></td>
+      </tr>
+      <tr>
+        <td><code>$font-size-2</code></td>
+        <td>0.875</td>
+        <td>14</td>
+        <td><p className="type__text type__text--meta type__text--size-2">Serif</p></td>
+        <td><p className="type__text type__text--freight type__text--size-2">Sans Serif</p></td>
+        <td><p className="type__text type__text--ibm-plex-mono type__text--size-2">Mono</p></td>
+      </tr>
+      <tr>
+        <td><code>$font-size-3</code></td>
+        <td>1</td>
+        <td>16</td>
+        <td><p className="type__text type__text--meta type__text--size-3">Serif</p></td>
+        <td><p className="type__text type__text--freight type__text--size-3">Sans Serif</p></td>
+        <td><p className="type__text type__text--ibm-plex-mono type__text--size-3">Mono</p></td>
+      </tr>
+      <tr>
+        <td><code>$font-size-4</code></td>
+        <td>1.125</td>
+        <td>18</td>
+        <td><p className="type__text type__text--meta type__text--size-4">Serif</p></td>
+        <td><p className="type__text type__text--freight type__text--size-4">Sans Serif</p></td>
+        <td><p className="type__text type__text--ibm-plex-mono type__text--size-4">Mono</p></td>
+      </tr>
+      <tr>
+        <td><code>$font-size-5</code></td>
+        <td>1.25</td>
+        <td>20</td>
+        <td><p className="type__text type__text--meta type__text--size-5">Serif</p></td>
+        <td><p className="type__text type__text--freight type__text--size-5">Sans Serif</p></td>
+        <td><p className="type__text type__text--ibm-plex-mono type__text--size-5">Mono</p></td>
+      </tr>
+      <tr>
+        <td><code>$font-size-6</code></td>
+        <td>1.5</td>
+        <td>24</td>
+        <td><p className="type__text type__text--meta type__text--size-6">Serif</p></td>
+        <td><p className="type__text type__text--freight type__text--size-6">Sans Serif</p></td>
+        <td><p className="type__text type__text--ibm-plex-mono type__text--size-6">Mono</p></td>
+      </tr>
+      <tr>
+        <td><code>$font-size-7</code></td>
+        <td>1.75</td>
+        <td>28</td>
+        <td><p className="type__text type__text--meta type__text--size-7">Serif</p></td>
+        <td><p className="type__text type__text--freight type__text--size-7">Sans Serif</p></td>
+        <td><p className="type__text type__text--ibm-plex-mono type__text--size-7">Mono</p></td>
+      </tr>
+      <tr>
+        <td><code>$font-size-8</code></td>
+        <td>2</td>
+        <td>32</td>
+        <td><p className="type__text type__text--meta type__text--size-8">Serif</p></td>
+        <td><p className="type__text type__text--freight type__text--size-8">Sans Serif</p></td>
+        <td><p className="type__text type__text--ibm-plex-mono type__text--size-8">Mono</p></td>
+      </tr>
+      <tr>
+        <td><code>$font-size-9</code></td>
+        <td>2.5</td>
+        <td>40</td>
+        <td><p className="type__text type__text--meta type__text--size-9">Serif</p></td>
+        <td><p className="type__text type__text--freight type__text--size-9">Sans Serif</p></td>
+        <td><p className="type__text type__text--ibm-plex-mono type__text--size-9">Mono</p></td>
+      </tr>
+      <tr>
+        <td><code>$font-size-10</code></td>
+        <td>3</td>
+        <td>48</td>
+        <td><p className="type__text type__text--meta type__text--size-10">Serif</p></td>
+        <td><p className="type__text type__text--freight type__text--size-10">Sans Serif</p></td>
+        <td><p className="type__text type__text--ibm-plex-mono type__text--size-10">Mono</p></td>
+      </tr>
+      <tr>
+        <td><code>$font-size-11</code></td>
+        <td>3.25</td>
+        <td>52</td>
+        <td><p className="type__text type__text--meta type__text--size-11">Serif</p></td>
+        <td><p className="type__text type__text--freight type__text--size-11">Sans Serif</p></td>
+        <td><p className="type__text type__text--ibm-plex-mono type__text--size-11">Mono</p></td>
+      </tr>
+      <tr>
+        <td><code>$font-size-12</code></td>
+        <td>3.75</td>
+        <td>60</td>
+        <td><p className="type__text type__text--meta type__text--size-12">Serif</p></td>
+        <td><p className="type__text type__text--freight type__text--size-12">Sans Serif</p></td>
+        <td><p className="type__text type__text--ibm-plex-mono type__text--size-12">Mono</p></td>
+      </tr>
+    </tbody>
   </table>
 
   <h2 id="scale">Weights</h2>
 
   <table>
-    <tr>
-      <th>Token</th>
-      <th>Value</th>
-      <th>FF Meta Serif</th>
-      <th>Fright Sans</th>
-      <th>Ibm Plex Mono</th>
-    </tr>
-    <tr>
-      <td><code>$weight-light</code></td>
-      <td>300</td>
-      <td><p className="type__text type__text--meta type__text--weight-light">Serif</p></td>
-      <td><p className="type__text type__text--freight type__text--weight-light">Sans Serif</p></td>
-      <td><p className="type__text type__text--ibm-plex-mono type__text--weight-light">-</p></td>
-    </tr>
-    <tr>
-      <td><code>$weight-normal</code></td>
-      <td>400</td>
-      <td><p className="type__text type__text--meta type__text--weight-normal">Serif</p></td>
-      <td><p className="type__text type__text--freight type__text--weight-normal">Sans Serif</p></td>
-      <td><p className="type__text type__text--ibm-plex-mono type__text--weight-normal">-</p></td>
-    </tr>
-    <tr>
-      <td><code>$weight-medium</code></td>
-      <td>500</td>
-      <td><p className="type__text type__text--meta type__text--weight-medium">Serif</p></td>
-      <td><p className="type__text type__text--freight type__text--weight-medium">Sans Serif</p></td>
-      <td><p className="type__text type__text--ibm-plex-mono type__text--weight-medium">Mono</p></td>
-    </tr>
-    <tr>
-      <td><code>$weight-semibold</code></td>
-      <td>600</td>
-      <td><p className="type__text type__text--meta type__text--weight-semibold">Serif</p></td>
-      <td><p className="type__text type__text--freight type__text--weight-semibold">Sans Serif</p></td>
-      <td><p className="type__text type__text--ibm-plex-mono type__text--weight-semibold">Mono</p></td>
-    </tr>
-    <tr>
-      <td><code>$weight-bold</code></td>
-      <td>700</td>
-      <td><p className="type__text type__text--meta type__text--weight-bold">Serif</p></td>
-      <td><p className="type__text type__text--freight type__text--weight-bold">Sans Serif</p></td>
-      <td><p className="type__text type__text--ibm-plex-mono type__text--weight-bold">-</p></td>
-    </tr>
-    <tr>
-      <td><code>$weight-black</code></td>
-      <td>900</td>
-      <td><p className="type__text type__text--meta type__text--weight-black">Serif</p></td>
-      <td><p className="type__text type__text--freight type__text--weight-black">Sans Serif</p></td>
-      <td><p className="type__text type__text--ibm-plex-mono type__text--weight-black">-</p></td>
-    </tr>
+    <thead>
+      <tr>
+        <th>Token</th>
+        <th>Value</th>
+        <th>FF Meta Serif</th>
+        <th>Fright Sans</th>
+        <th>Ibm Plex Mono</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>$weight-light</code></td>
+        <td>300</td>
+        <td><p className="type__text type__text--meta type__text--weight-light">Serif</p></td>
+        <td><p className="type__text type__text--freight type__text--weight-light">Sans Serif</p></td>
+        <td><p className="type__text type__text--ibm-plex-mono type__text--weight-light">-</p></td>
+      </tr>
+      <tr>
+        <td><code>$weight-normal</code></td>
+        <td>400</td>
+        <td><p className="type__text type__text--meta type__text--weight-normal">Serif</p></td>
+        <td><p className="type__text type__text--freight type__text--weight-normal">Sans Serif</p></td>
+        <td><p className="type__text type__text--ibm-plex-mono type__text--weight-normal">-</p></td>
+      </tr>
+      <tr>
+        <td><code>$weight-medium</code></td>
+        <td>500</td>
+        <td><p className="type__text type__text--meta type__text--weight-medium">Serif</p></td>
+        <td><p className="type__text type__text--freight type__text--weight-medium">Sans Serif</p></td>
+        <td><p className="type__text type__text--ibm-plex-mono type__text--weight-medium">Mono</p></td>
+      </tr>
+      <tr>
+        <td><code>$weight-semibold</code></td>
+        <td>600</td>
+        <td><p className="type__text type__text--meta type__text--weight-semibold">Serif</p></td>
+        <td><p className="type__text type__text--freight type__text--weight-semibold">Sans Serif</p></td>
+        <td><p className="type__text type__text--ibm-plex-mono type__text--weight-semibold">Mono</p></td>
+      </tr>
+      <tr>
+        <td><code>$weight-bold</code></td>
+        <td>700</td>
+        <td><p className="type__text type__text--meta type__text--weight-bold">Serif</p></td>
+        <td><p className="type__text type__text--freight type__text--weight-bold">Sans Serif</p></td>
+        <td><p className="type__text type__text--ibm-plex-mono type__text--weight-bold">-</p></td>
+      </tr>
+      <tr>
+        <td><code>$weight-black</code></td>
+        <td>900</td>
+        <td><p className="type__text type__text--meta type__text--weight-black">Serif</p></td>
+        <td><p className="type__text type__text--freight type__text--weight-black">Sans Serif</p></td>
+        <td><p className="type__text type__text--ibm-plex-mono type__text--weight-black">-</p></td>
+      </tr>
+    </tbody>
   </table>
   </div>
 
-  <div class="simple-tab__content content2">
+  <div className="simple-tab__content content2">
   <p>The type attributes described on the overview appears as text in titles, subtitles, paragraphs, components and the overall layout. They can be used to custom values for the typeface, font, weight, size, case and letter spacing.</p>
 
   <p>Here we describe how to apply those attributes on headlines and paragraph elements.</p>
@@ -248,62 +256,66 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
   <p>All headlines have <code>letter-spacing: 0</code>. Besides that, <code>margin-block-start</code> and <code>margin-block-end</code> are set to <code>1.5rem</code> or <code>24px</code> as default. It can be changed according to layout needs.</p>
 
   <table>
-    <tr>
-      <th>Headline</th>
-      <th>Font-family</th>
-      <th>Weight</th>
-      <th>Size</th>
-      <th>Line height</th>
-    </tr>
-    <tr>
-      <td><code>h1</code></td>
-      <td><code>$family-sans-serif</code></td>
-      <td><code>$weight-medium</code></td>
-      <td><code>3rem / 48px</code></td>
-      <td><code>1.1</code></td>
-    </tr>
-    <tr>
-      <td><code>h1 display</code></td>
-      <td><code>$family-serif</code></td>
-      <td><code>$weight-bold</code></td>
-      <td><code>3rem / 48px</code></td>
-      <td><code>1.1</code></td>
-    </tr>
-    <tr>
-      <td><code>h2</code></td>
-      <td><code>$family-sans-serif</code></td>
-      <td><code>$weight-medium</code></td>
-      <td><code>2.5rem / 40px</code></td>
-      <td><code>1.1</code></td>
-    </tr>
-    <tr>
-      <td><code>h3</code></td>
-      <td><code>$family-sans-serif</code></td>
-      <td><code>$weight-medium</code></td>
-      <td><code>2rem / 32px</code></td>
-      <td><code>1.125</code></td>
-    </tr>
-    <tr>
-      <td><code>h4</code></td>
-      <td><code>$family-sans-serif</code></td>
-      <td><code>$weight-medium</code></td>
-      <td><code>1.75rem / 28px</code></td>
-      <td><code>1.14</code></td>
-    </tr>
-    <tr>
-      <td><code>h5</code></td>
-      <td><code>$family-sans-serif</code></td>
-      <td><code>$weight-semibold</code></td>
-      <td><code>1.25rem / 20px</code></td>
-      <td><code>1.16</code></td>
-    </tr>
-    <tr>
-      <td><code>h6</code></td>
-      <td><code>$family-sans-serif</code></td>
-      <td><code>$weight-semibold</code></td>
-      <td><code>1.125rem / 18px</code></td>
-      <td><code>1.1</code></td>
-    </tr>
+    <thead>
+      <tr>
+        <th>Headline</th>
+        <th>Font-family</th>
+        <th>Weight</th>
+        <th>Size</th>
+        <th>Line height</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>h1</code></td>
+        <td><code>$family-sans-serif</code></td>
+        <td><code>$weight-medium</code></td>
+        <td><code>3rem / 48px</code></td>
+        <td><code>1.1</code></td>
+      </tr>
+      <tr>
+        <td><code>h1 display</code></td>
+        <td><code>$family-serif</code></td>
+        <td><code>$weight-bold</code></td>
+        <td><code>3rem / 48px</code></td>
+        <td><code>1.1</code></td>
+      </tr>
+      <tr>
+        <td><code>h2</code></td>
+        <td><code>$family-sans-serif</code></td>
+        <td><code>$weight-medium</code></td>
+        <td><code>2.5rem / 40px</code></td>
+        <td><code>1.1</code></td>
+      </tr>
+      <tr>
+        <td><code>h3</code></td>
+        <td><code>$family-sans-serif</code></td>
+        <td><code>$weight-medium</code></td>
+        <td><code>2rem / 32px</code></td>
+        <td><code>1.125</code></td>
+      </tr>
+      <tr>
+        <td><code>h4</code></td>
+        <td><code>$family-sans-serif</code></td>
+        <td><code>$weight-medium</code></td>
+        <td><code>1.75rem / 28px</code></td>
+        <td><code>1.14</code></td>
+      </tr>
+      <tr>
+        <td><code>h5</code></td>
+        <td><code>$family-sans-serif</code></td>
+        <td><code>$weight-semibold</code></td>
+        <td><code>1.25rem / 20px</code></td>
+        <td><code>1.16</code></td>
+      </tr>
+      <tr>
+        <td><code>h6</code></td>
+        <td><code>$family-sans-serif</code></td>
+        <td><code>$weight-semibold</code></td>
+        <td><code>1.125rem / 18px</code></td>
+        <td><code>1.1</code></td>
+      </tr>
+    </tbody>
   </table>
 
   <h2>Body</h2>
@@ -323,48 +335,52 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
   </Preview>
 
   <table>
-    <tr>
-      <th>Paragraph</th>
-      <th>Font-family</th>
-      <th>Weight</th>
-      <th>Size</th>
-      <th>Line height</th>
-    </tr>
-    <tr>
-      <td><code>default</code></td>
-      <td><code>$family-sans-serif</code></td>
-      <td><code>$weight-medium</code></td>
-      <td><code>1.125rem / 18px</code></td>
-      <td><code>1.5</code></td>
-    </tr>
-    <tr>
-      <td><code>large</code></td>
-      <td><code>$family-sans-serif</code></td>
-      <td><code>$weight-medium</code></td>
-      <td><code>1.25rem / 20px</code></td>
-      <td><code>1.5</code></td>
-    </tr>
-    <tr>
-      <td><code>small</code></td>
-      <td><code>$family-sans-serif</code></td>
-      <td><code>$weight-medium</code></td>
-      <td><code>1rem / 16px</code></td>
-      <td><code>1.5</code></td>
-    </tr>
-    <tr>
-      <td><code>petit</code></td>
-      <td><code>$family-sans-serif</code></td>
-      <td><code>$weight-medium</code></td>
-      <td><code>0.875rem / 14px</code></td>
-      <td><code>1.5</code></td>
-    </tr>
-    <tr>
-      <td><code>tiny</code></td>
-      <td><code>$family-sans-serif</code></td>
-      <td><code>$weight-medium</code></td>
-      <td><code>0.75rem / 12px</code></td>
-      <td><code>1.5</code></td>
-    </tr>
+    <thead>
+      <tr>
+        <th>Paragraph</th>
+        <th>Font-family</th>
+        <th>Weight</th>
+        <th>Size</th>
+        <th>Line height</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>default</code></td>
+        <td><code>$family-sans-serif</code></td>
+        <td><code>$weight-medium</code></td>
+        <td><code>1.125rem / 18px</code></td>
+        <td><code>1.5</code></td>
+      </tr>
+      <tr>
+        <td><code>large</code></td>
+        <td><code>$family-sans-serif</code></td>
+        <td><code>$weight-medium</code></td>
+        <td><code>1.25rem / 20px</code></td>
+        <td><code>1.5</code></td>
+      </tr>
+      <tr>
+        <td><code>small</code></td>
+        <td><code>$family-sans-serif</code></td>
+        <td><code>$weight-medium</code></td>
+        <td><code>1rem / 16px</code></td>
+        <td><code>1.5</code></td>
+      </tr>
+      <tr>
+        <td><code>petit</code></td>
+        <td><code>$family-sans-serif</code></td>
+        <td><code>$weight-medium</code></td>
+        <td><code>0.875rem / 14px</code></td>
+        <td><code>1.5</code></td>
+      </tr>
+      <tr>
+        <td><code>tiny</code></td>
+        <td><code>$family-sans-serif</code></td>
+        <td><code>$weight-medium</code></td>
+        <td><code>0.75rem / 12px</code></td>
+        <td><code>1.5</code></td>
+      </tr>
+    </tbody>
   </table>
 
   <p>Use <code>paragraph-petit</code> and <code>paragraph-tiny</code> as caption and overline text (text with a line above it) to annotate imagery or to introduce a headline. They can also be used to compose some components. On mobile, both will have <code>16px</code>.</p>

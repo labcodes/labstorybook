@@ -14,8 +14,7 @@ $radio-bg-disabled: $mineral-20;
   display: inline-block;
   width: 20px;
   height: 20px;
-  margin: 6px;
-  margin-right:$spacing-03;
+  margin: $spacing-02 $spacing-03 $spacing-02 $spacing-02;
   background: $white;
   border: 2px solid $radio-idle-color-main;
   border-radius: 100%;
@@ -35,7 +34,7 @@ $radio-bg-disabled: $mineral-20;
         font-weight: 500;
         line-height: 1.4;
         display: inline-flex;
-        align-items: center;       
+        align-items: center;
         cursor: pointer;
     }
 
@@ -57,7 +56,7 @@ $radio-bg-disabled: $mineral-20;
       }
     }
   }
-  
+
   &:hover:checked {
     + .lab-radio__label {
       .lab-radio__container  {
@@ -85,7 +84,7 @@ $radio-bg-disabled: $mineral-20;
       }
     }
   }
-  
+
   //Radio Idle
 
   &:focus {

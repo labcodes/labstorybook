@@ -69,7 +69,7 @@ export default class Checkbox extends React.Component {
       type = "minus";
     }
     if (disabled) {
-      color = "mineral40";
+      color = "mineral-40";
     }
 
     return <Icon type={type} color={color} size="small" />;
@@ -103,12 +103,11 @@ export default class Checkbox extends React.Component {
           className={`lab-checkbox ${className || ""}`}
           type="checkbox"
           id={id}
-          disabled={disabled}
           name={name}
           checked={localChecked}
           onChange={this.handleOnChange}
-          // eslint-disable-next-line react/jsx-props-no-spreading
           {...(value ? { value } : undefined)}
+          {...(disabled ? { disabled } : undefined)}
         />
         <label className="lab-checkbox__label" htmlFor={id}>
           <span className="lab-checkbox__box">

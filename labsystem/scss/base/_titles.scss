@@ -11,7 +11,7 @@ $title-margin: $spacing-06 !default;
 $paragraph-margin: $font-size-3 !default;
 $paragraph-weight: $weight-medium !default;
 $paragraph-strong-weight: $weight-bold !default;
-$paragraph-defaul-size: $font-size-4 !default;
+$paragraph-default-size: $font-size-4 !default;
 $paragraph-sizes: (
   "large": $font-size-5,
   "small": $font-size-3,
@@ -66,7 +66,12 @@ h5 {
 h6 {
   font-size: $font-size-4;
   font-weight: $weight-semibold;
+
+  &:first-of-type{
+    margin-top: 0;
+  }
 }
+
 
 p {
   margin-block-start: $paragraph-margin;
@@ -74,7 +79,7 @@ p {
   margin-inline-start: 0;
   margin-inline-end: 0;
   font-family: $family-sans-serif;
-  font-size: $font-size-4;
+  font-size: $paragraph-default-size;
   font-weight: $paragraph-weight;
   line-height: 1.5rem;
   text-rendering: $render-mode;

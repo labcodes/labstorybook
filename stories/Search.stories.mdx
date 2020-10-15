@@ -1,0 +1,101 @@
+import { Fragment } from 'react';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+
+import StandardSearch from '../labsystem/src/Search/StandardSearch';
+import InlineSearch from '../labsystem/src/Search/InlineSearch';
+
+<Meta title="Components/Search" component={StandardSearch} />
+
+<div class="docs-title">
+  <div>
+    <h1 class="docs-title__text">Search</h1>
+  </div>
+</div>
+
+<div class="docs-content">
+
+The search component should be used for searching contents within a website or an app. We can have 2 types
+of search components: Standard and Inline.
+
+## Anatomy
+
+### Field elements
+![search anatomy](docs/search/anatomy-search.png)
+
+
+## Standard Search
+
+Similar to the datepicker. It's a standard input linked to a search button. It should be used when the design needs more
+emphasis in the search funcionality. This search suggest results in an autocomplete dropdown and, for more detailed answers,
+it can take the user to another page.
+
+<Preview>
+  <Story name="Standard Search">
+    <Fragment>
+        <h3>Default</h3>
+       <StandardSearch />
+        <br />
+        <h3> Disabled</h3>
+        <StandardSearch disabled/>
+        <h3>Disabled with Default Text</h3>
+        <StandardSearch defaultValue="lala" disabled/>
+    </Fragment>
+  </Story>
+</Preview>
+
+## Inline Search
+
+Similar to the text+trailing icon input. It should be used when the design needs a more compact and clean
+component. This search works filtering the results and showing them simultaneously as the user types.
+
+<Preview>
+  <Story name="Inline Search">
+    <Fragment>
+        <h3>Default</h3>
+        <InlineSearch />
+        <h3>Disabled</h3>
+        <InlineSearch disabled />
+        <h3>Disabled with Default Text</h3>
+        <InlineSearch defaultValue="lele" disabled />
+    </Fragment>
+  </Story>
+</Preview>
+
+## Behavior
+<div class="columns">
+  <div class="column">
+    <h3>Standard Search</h3>
+    <ol>
+      <li>If the page have the search funcionality as the main purpose, the seach field should be focused by default. If not, focus to activate it. </li>
+      <li>With the field focused, type the query.</li>
+      <li>"X" icon apears at the right corner of the text input, and it can be clicked at any moment to clear whatever was typed.</li>
+      <li>An autocomplete dropdown should appear under the search input.</li>
+      <li>Click on the search button / press enter to trigger the search action or choose a result of the autocomplete dropdown and click on it.</li>
+      <li>Click outside the component if you want to unfocus the input without triggering the search action, but keeping the typed text. </li>
+    </ol>
+  </div>
+  <div class="column">
+    <h3>Inline Search</h3>
+    <ol>
+      <li>Focus the inline seach field.</li>
+      <li>Type the query.</li>
+      <li>The results should appear as the keyword is typed and should behave as a filtered search.</li>
+      <li>Click on the "X"icon to clear the input value.</li>
+      <li>Click outside the component if you want to unfocus the input.</li>
+    </ol>
+  </div>
+</div>
+
+## Theming
+
+For Search component, you can also use purple theme. Error state remain with the same style in any theme.
+The theme must be selected by changing the value of the `$input-theme` variable in the `scss/variables/_settings.scss`.
+<Preview>
+  <Story name="Styles">
+  <Fragment>
+      <img src="docs/search/search-purple.png" alt="StandardSearch and InlineSearch using purple theme"/>
+  </Fragment>
+  </Story>
+</Preview>
+
+</div>
