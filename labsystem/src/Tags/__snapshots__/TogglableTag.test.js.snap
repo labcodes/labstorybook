@@ -52,7 +52,7 @@ exports[`TogglableTag renders with a vivid skin and a checked icon if isOn 1`] =
   role="presentation"
 >
   <span
-    className="lab-icon lab-icon--check lab-icon--black75 lab-icon--petit lab-icon--check-icon"
+    className="lab-icon lab-icon--check lab-icon--black-75 lab-icon--petit lab-tag--check-icon"
   />
   Test render isOn TogglableTag
 </span>

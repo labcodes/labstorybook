@@ -8,7 +8,7 @@ exports[`SimpleTag renders as expected with a lupe icon 1`] = `
   role="presentation"
 >
   <span
-    className="lab-icon lab-icon--lupe lab-icon--black75 lab-icon--petit lab-icon--left-icon"
+    className="lab-icon lab-icon--lupe lab-icon--black-75 lab-icon--petit lab-tag--left-icon"
   />
   Test render SimpleTag with lupe icon
 </span>

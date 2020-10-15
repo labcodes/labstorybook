@@ -12,7 +12,7 @@ exports[`RemovableTag renders as disabled 1`] = `
     className="lab-tag__remove-icon-wrapper"
   >
     <span
-      className="lab-icon lab-icon--remove lab-icon--black75 lab-icon--petit lab-icon--remove-icon"
+      className="lab-icon lab-icon--remove lab-icon--black-75 lab-icon--petit lab-tag--remove-icon"
     />
   </span>
 </span>
@@ -30,7 +30,7 @@ exports[`RemovableTag renders as outline 1`] = `
     className="lab-tag__remove-icon-wrapper"
   >
     <span
-      className="lab-icon lab-icon--remove lab-icon--black75 lab-icon--petit lab-icon--remove-icon"
+      className="lab-icon lab-icon--remove lab-icon--black-75 lab-icon--petit lab-tag--remove-icon"
     />
   </span>
 </span>
@@ -48,7 +48,7 @@ exports[`RemovableTag renders with a green color 1`] = `
     className="lab-tag__remove-icon-wrapper"
   >
     <span
-      className="lab-icon lab-icon--remove lab-icon--black75 lab-icon--petit lab-icon--remove-icon"
+      className="lab-icon lab-icon--remove lab-icon--black-75 lab-icon--petit lab-tag--remove-icon"
     />
   </span>
 </span>
@@ -66,7 +66,7 @@ exports[`RemovableTag renders with base props 1`] = `
     className="lab-tag__remove-icon-wrapper"
   >
     <span
-      className="lab-icon lab-icon--remove lab-icon--black75 lab-icon--petit lab-icon--remove-icon"
+      className="lab-icon lab-icon--remove lab-icon--black-75 lab-icon--petit lab-tag--remove-icon"
     />
   </span>
 </span>
