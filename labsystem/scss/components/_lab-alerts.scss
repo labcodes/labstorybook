@@ -35,6 +35,7 @@ $alerts-line-height: 20px;
   @include from($tablet) {
     border-radius: 12px;
     width: fit-content;
+    width: -moz-fit-content;
     flex-wrap: unset;
   }
 }
