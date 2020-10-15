@@ -7,8 +7,11 @@ import {
   FilledCard,
   OutlineFilledCard,
   CardImage,
+  CardHeader,
 } from "../labsystem/src/Card";
 import Toggle from "../labsystem/src/Toggle";
+import TextInput from "../labsystem/src/Input/TextInput";
+import Icon from "../labsystem/src/Icon";
 
 export default class CardPlayground extends React.Component {
   constructor(props) {
@@ -19,7 +22,19 @@ export default class CardPlayground extends React.Component {
       selectedColor: "mineral",
       selectedSkin: "pale",
       currentComponent: "OutlineCard",
+      showHeaderConfigs: false,
+
       cardImageIsOverflowed: false,
+      cardImageIsAboveHeader: false,
+      cardHeaderTitle: "Title text",
+      cardHeaderTitleClassName: "custom-class",
+      cardHeaderSubtitle: "Subtitle text is a little longer than the title",
+      cardHeaderSubtitleClassName: "custom-class",
+      cardHeaderCategoryText: "Category",
+      cardHeaderCategoryLabelText: "Label",
+      cardHeaderCategoryIcon: "star",
+      cardHeaderCategoryColor: "",
+      cardHeaderIsOverlay: false,
     };
   }
 
@@ -30,17 +45,51 @@ export default class CardPlayground extends React.Component {
       availableComponents,
       currentComponent,
       cardImageIsOverflowed,
+      cardImageIsAboveHeader,
+      cardHeaderTitle,
+      cardHeaderTitleClassName,
+      cardHeaderSubtitle,
+      cardHeaderSubtitleClassName,
+      cardHeaderCategoryText,
+      cardHeaderCategoryLabelText,
+      cardHeaderCategoryIcon,
+      cardHeaderCategoryColor,
+      cardHeaderIsOverlay,
     } = this.state;
     const Component = availableComponents[currentComponent];
 
     return (
       <Component color={selectedColor} skin={selectedSkin}>
         <h1>{currentComponent}</h1>
-        <CardImage
-          src="/docs/card/card-image.jpg"
-          alt="Labcodes offices' view"
-          isOverflowed={cardImageIsOverflowed}
+        {cardImageIsAboveHeader ? (
+          <CardImage
+            src="/docs/card/card-image.jpg"
+            alt="Labcodes offices' view"
+            isOverflowed={cardImageIsOverflowed}
+          />
+        ) : null}
+        <CardHeader
+          title={cardHeaderTitle}
+          titleClassName={cardHeaderTitleClassName}
+          subtitle={cardHeaderSubtitle}
+          subtitleClassName={cardHeaderSubtitleClassName}
+          categoryText={cardHeaderCategoryText}
+          categoryLabelText={cardHeaderCategoryLabelText}
+          categoryIcon={
+            cardHeaderCategoryColor.length ? undefined : cardHeaderCategoryIcon
+          }
+          categoryColor={
+            cardHeaderCategoryIcon.length ? undefined : cardHeaderCategoryColor
+          }
+          isOverlay={cardHeaderIsOverlay}
         />
+        {!cardImageIsAboveHeader ? (
+          <CardImage
+            src="/docs/card/card-image.jpg"
+            alt="Labcodes offices' view"
+            isOverflowed={cardImageIsOverflowed}
+          />
+        ) : null}
       </Component>
     );
   };
@@ -51,7 +100,18 @@ export default class CardPlayground extends React.Component {
       availableComponents,
       selectedColor,
       selectedSkin,
+      showHeaderConfigs,
       cardImageIsOverflowed,
+      cardImageIsAboveHeader,
+      cardHeaderTitle,
+      cardHeaderTitleClassName,
+      cardHeaderSubtitle,
+      cardHeaderSubtitleClassName,
+      cardHeaderCategoryText,
+      cardHeaderCategoryLabelText,
+      cardHeaderCategoryIcon,
+      cardHeaderCategoryColor,
+      cardHeaderIsOverlay,
     } = this.state;
     const {
       props: {
@@ -96,7 +156,7 @@ export default class CardPlayground extends React.Component {
               <select
                 name="selectedColor"
                 value={selectedColor}
-                onChange={this.handleSelectChange}
+                onChange={this.handleInputChange}
               >
                 {color.type.value.map((option) => (
                   <option
@@ -118,7 +178,7 @@ export default class CardPlayground extends React.Component {
                 <select
                   name="selectedSkin"
                   value={selectedSkin}
-                  onChange={this.handleSelectChange}
+                  onChange={this.handleInputChange}
                 >
                   {skin.type.value.map((option) => (
                     <option
@@ -135,7 +195,7 @@ export default class CardPlayground extends React.Component {
 
           <h6>CardImage</h6>
           <span className="lab-playground__item">
-            CardImage - isOverflowed
+            isOverflowed
             <br />
             <Toggle
               name="cardImageIsOverflowed"
@@ -143,6 +203,98 @@ export default class CardPlayground extends React.Component {
               handleToggle={() => this.handleToggleFor("cardImageIsOverflowed")}
             />
           </span>
+
+          <span className="lab-playground__item">
+            Show it above the CardHeader
+            <br />
+            <Toggle
+              name="cardImageIsAboveHeader"
+              value={cardImageIsAboveHeader}
+              handleToggle={() =>
+                this.handleToggleFor("cardImageIsAboveHeader")
+              }
+            />
+          </span>
+
+          <h6
+            onClick={() => this.handleToggleFor("showHeaderConfigs")}
+            style={{ cursor: "pointer", display: "flex" }}
+          >
+            <Icon
+              type={showHeaderConfigs ? "collapse-open" : "collapse-closed"}
+            />
+            CardHeader
+          </h6>
+
+          {showHeaderConfigs ? (
+            <React.Fragment>
+              <div className="lab-playground__item">
+                <TextInput
+                  label="Title"
+                  id="cardHeaderTitle"
+                  value={cardHeaderTitle}
+                  onChange={this.handleInputChange}
+                />
+              </div>
+
+              <div className="lab-playground__item">
+                <Toggle
+                  name="cardHeaderIsOverlay"
+                  value={cardHeaderIsOverlay}
+                  handleToggle={() =>
+                    this.handleToggleFor("cardHeaderIsOverlay")
+                  }
+                />
+                isOverlay
+              </div>
+
+              <div className="lab-playground__item">
+                <TextInput
+                  label="Subtitle"
+                  id="cardHeaderSubtitle"
+                  value={cardHeaderSubtitle}
+                  onChange={this.handleInputChange}
+                />
+              </div>
+
+              <div className="lab-playground__item">
+                <TextInput
+                  label="Category Text"
+                  id="cardHeaderCategoryText"
+                  value={cardHeaderCategoryText}
+                  onChange={this.handleInputChange}
+                />
+              </div>
+
+              <div className="lab-playground__item">
+                <TextInput
+                  label="Category Label Text"
+                  id="cardHeaderCategoryLabelText"
+                  value={cardHeaderCategoryLabelText}
+                  onChange={this.handleInputChange}
+                />
+              </div>
+
+              <div className="lab-playground__item">
+                <TextInput
+                  label="Category Icon"
+                  id="cardHeaderCategoryIcon"
+                  helpMessage="Leave empty to use category color"
+                  value={cardHeaderCategoryIcon}
+                  onChange={this.handleInputChange}
+                />
+              </div>
+
+              <div className="lab-playground__item">
+                <TextInput
+                  label="Category Color"
+                  id="cardHeaderCategoryColor"
+                  value={cardHeaderCategoryColor}
+                  onChange={this.handleInputChange}
+                />
+              </div>
+            </React.Fragment>
+          ) : null}
         </div>
       </div>
     );
@@ -159,9 +311,13 @@ export default class CardPlayground extends React.Component {
     });
   };
 
-  handleSelectChange = (e) => {
-    const { name, value } = e.target;
-    this.setState({ [name]: value });
+  handleInputChange = (e) => {
+    const { name, id, value } = e.target;
+    if (name) {
+      this.setState({ [name]: value });
+    } else {
+      this.setState({ [id]: value });
+    }
   };
 
   handleToggleFor = (stateKey) =>
