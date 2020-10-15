@@ -26,7 +26,7 @@ export default class DropdownTag extends React.Component {
   icon = () => {
     const { icon } = this.props;
     return icon ? (
-      <Icon type={icon} color="black75" size="petit" className="left-icon" />
+      <Icon type={icon} color="black-75" size="petit" className="lab-tag--left-icon" />
     ) : undefined;
   };
 
@@ -34,9 +34,9 @@ export default class DropdownTag extends React.Component {
     <span className="lab-tag__dropdown-icon-wrapper">
       <Icon
         type="dropdown-closed"
-        color="black75"
+        color="black-75"
         size="petit"
-        className="dropdown-icon"
+        className="lab-tag--dropdown-icon"
       />
     </span>
   );

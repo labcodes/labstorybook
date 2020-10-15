@@ -24,7 +24,7 @@ export default class TogglableTag extends React.Component {
   selected = () => {
     const { isOn } = this.props;
     return isOn ? (
-      <Icon type="check" color="black75" size="petit" className="check-icon" />
+      <Icon type="check" color="black-75" size="petit" className="lab-tag--check-icon" />
     ) : undefined;
   };
 

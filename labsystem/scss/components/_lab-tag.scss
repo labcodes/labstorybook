@@ -73,8 +73,8 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
   padding-left: $spacing-01;
 }
 
-.lab-icon--left-icon,
-.lab-icon--check-icon {
+.lab-tag--left-icon,
+.lab-tag--check-icon {
   display: flex;
   margin-right: $spacing-01;
 }
@@ -127,13 +127,13 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
   background-color: $tag-vivid-color;
   color: white;
 
-  .lab-icon--left-icon,
-  .lab-icon--check-icon,
-  .lab-icon--dropdown-icon {
+  .lab-tag--left-icon,
+  .lab-tag--check-icon,
+  .lab-tag--dropdown-icon {
     background-color: $white;
   }
 
-  .lab-icon--remove-icon {
+  .lab-tag--remove-icon {
     background-color: $tag-vivid-color
   }
 
@@ -157,10 +157,10 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
   border-color: $tag-pale-color;
   color: $tag-text-color;
 
-  .lab-icon--left-icon,
-  .lab-icon--check-icon,
-  .lab-icon--dropdown-icon,
-  .lab-icon--remove-icon {
+  .lab-tag--left-icon,
+  .lab-tag--check-icon,
+  .lab-tag--dropdown-icon,
+  .lab-tag--remove-icon {
     background-color: $tag-text-color;
   }
 
@@ -208,10 +208,10 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
     border-color: $tag-vivid-color;
     color: $tag-text-color;
 
-    .lab-icon--left-icon,
-    .lab-icon--check-icon,
-    .lab-icon--dropdown-icon,
-    .lab-icon--remove-icon {
+    .lab-tag--left-icon,
+    .lab-tag--check-icon,
+    .lab-tag--dropdown-icon,
+    .lab-tag--remove-icon {
       background-color: $tag-text-color;
     }
 
@@ -261,7 +261,7 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
   &.lab-tag--selected.lab-tag--outline {
     background-color: $tag-pale-color;
 
-    .lab-icon--check-icon {
+    .lab-tag--check-icon {
       background-color: $tag-text-color;
     }
 
@@ -294,10 +294,10 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
     opacity: 0.5 !important;
   }
 
-  .lab-icon--left-icon,
-  .lab-icon--check-icon,
-  .lab-icon--dropdown-icon,
-  .lab-icon--remove-icon {
+  .lab-tag--left-icon,
+  .lab-tag--check-icon,
+  .lab-tag--dropdown-icon,
+  .lab-tag--remove-icon {
     background-color: $mineral-30 !important;
   }
 
@@ -323,10 +323,10 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
     border-color: map-get($palette, "20");
     color: map-get($palette, "70");
 
-    .lab-icon--left-icon,
-    .lab-icon--check-icon,
-    .lab-icon--dropdown-icon,
-    .lab-icon--remove-icon {
+    .lab-tag--left-icon,
+    .lab-tag--check-icon,
+    .lab-tag--dropdown-icon,
+    .lab-tag--remove-icon {
       background-color: map-get($palette, "70");
     }
 
@@ -358,7 +358,7 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
       border-color: map-get($palette, "60");
       color: white;
 
-      .lab-icon--check-icon {
+      .lab-tag--check-icon {
         background-color: white;
       }
       &:hover {
@@ -384,7 +384,7 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
       &.lab-tag--selected {
         background-color: map-get($palette, "20");
 
-        .lab-icon--check-icon {
+        .lab-tag--check-icon {
           background-color: map-get($palette, "70");
         }
         &:focus:hover {
@@ -400,13 +400,13 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
     background-color: map-get($palette, "60");
     color: white;
 
-    .lab-icon--left-icon,
-    .lab-icon--check-icon,
-    .lab-icon--dropdown-icon {
+    .lab-tag--left-icon,
+    .lab-tag--check-icon,
+    .lab-tag--dropdown-icon {
       background-color: white;
     }
 
-    .lab-icon--remove-icon {
+    .lab-tag--remove-icon {
       background-color: map-get($palette, "60");
       @if $name == "mineral" { background-color: map-get($palette, "70"); }
     }
@@ -434,10 +434,10 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
       color: map-get($palette, "70");
       border-color: map-get($palette, "60");
 
-      .lab-icon--left-icon,
-      .lab-icon--check-icon,
-      .lab-icon--dropdown-icon,
-      .lab-icon--remove-icon {
+      .lab-tag--left-icon,
+      .lab-tag--check-icon,
+      .lab-tag--dropdown-icon,
+      .lab-tag--remove-icon {
         background-color: map-get($palette, "70");
       }
 
@@ -458,10 +458,10 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
           border-color: map-get($palette, "60");
           box-shadow: 0 0 0 4px map-get($palette, "20");
 
-          .lab-icon--left-icon,
-          .lab-icon--check-icon,
-          .lab-icon--dropdown-icon,
-          .lab-icon--remove-icon {
+          .lab-tag--left-icon,
+          .lab-tag--check-icon,
+          .lab-tag--dropdown-icon,
+          .lab-tag--remove-icon {
             background-color: map-get($palette, "70");
           }
         }
@@ -490,10 +490,10 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
     color: $black-75;
     border-color: map-get($palette, "20");
 
-    .lab-icon--left-icon,
-    .lab-icon--check-icon,
-    .lab-icon--dropdown-icon,
-    .lab-icon--remove-icon {
+    .lab-tag--left-icon,
+    .lab-tag--check-icon,
+    .lab-tag--dropdown-icon,
+    .lab-tag--remove-icon {
       background-color: $black-75;
     }
 
@@ -523,7 +523,7 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
       color: white;
       @if $name == "yellow" { color: $mustard-70; }
 
-      .lab-icon--check-icon {
+      .lab-tag--check-icon {
         background-color: white;
         @if $name == "yellow" { background-color: $mustard-70; }
       }
@@ -534,7 +534,7 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
         box-shadow: 0 0 0 4px map-get($palette, "60");
         color: white;
 
-        .lab-icon--check-icon {
+        .lab-tag--check-icon {
           background-color: white;
         }
       }
@@ -553,10 +553,10 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
       color: map-get($palette, "60");
       @if $name == "yellow" { color: $mustard-70; }
 
-      .lab-icon--left-icon,
-      .lab-icon--check-icon,
-      .lab-icon--dropdown-icon,
-      .lab-icon--remove-icon {
+      .lab-tag--left-icon,
+      .lab-tag--check-icon,
+      .lab-tag--dropdown-icon,
+      .lab-tag--remove-icon {
         background-color: map-get($palette, "60");
         @if $name == "yellow" { background-color: $mustard-70; }
       }
@@ -579,7 +579,7 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
         color: mix(map-get($palette, "60"), black, 70%);
         @if $name == "yellow" { color: $mustard-70; }
 
-        .lab-icon--check-icon {
+        .lab-tag--check-icon {
           background-color: mix(map-get($palette, "60"), black, 70%);
           @if $name == "yellow" { background-color: $mustard-70; }
         }
@@ -593,14 +593,14 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
     color: white;
     @if $name == "yellow" { color: $black-75; }
 
-    .lab-icon--left-icon,
-    .lab-icon--check-icon,
-    .lab-icon--dropdown-icon {
+    .lab-tag--left-icon,
+    .lab-tag--check-icon,
+    .lab-tag--dropdown-icon {
       background-color: white;
       @if $name == "yellow" { background-color: $black-75; }
     }
 
-    .lab-icon--remove-icon {
+    .lab-tag--remove-icon {
       background-color: $black-75;
     }
     
@@ -633,10 +633,10 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
       color: map-get($palette, "60");
       @if $name == "yellow" { color: $mustard-70; }
 
-      .lab-icon--left-icon,
-      .lab-icon--check-icon,
-      .lab-icon--dropdown-icon,
-      .lab-icon--remove-icon {
+      .lab-tag--left-icon,
+      .lab-tag--check-icon,
+      .lab-tag--dropdown-icon,
+      .lab-tag--remove-icon {
         background-color: map-get($palette, "60");
         @if $name == "yellow" { background-color: $mustard-70; }
       }
@@ -659,10 +659,10 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
           box-shadow: 0 0 0 4px map-get($palette, "60");
           @if $name == "yellow" { color: $mustard-70; }
 
-          .lab-icon--left-icon,
-          .lab-icon--check-icon,
-          .lab-icon--dropdown-icon,
-          .lab-icon--remove-icon {
+          .lab-tag--left-icon,
+          .lab-tag--check-icon,
+          .lab-tag--dropdown-icon,
+          .lab-tag--remove-icon {
             background-color: map-get($palette, "60");
             @if $name == "yellow" { background-color: $mustard-70; }
           }
