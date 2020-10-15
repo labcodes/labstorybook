@@ -1,4 +1,4 @@
-/* eslint-disable no-eval */
+/* eslint-disable */
 import React from "react";
 import { Props } from "@storybook/addon-docs/blocks";
 
@@ -6,7 +6,9 @@ import {
   OutlineCard,
   FilledCard,
   OutlineFilledCard,
+  CardImage,
 } from "../labsystem/src/Card";
+import Toggle from "../labsystem/src/Toggle";
 
 export default class CardPlayground extends React.Component {
   constructor(props) {
@@ -17,24 +19,9 @@ export default class CardPlayground extends React.Component {
       selectedColor: "mineral",
       selectedSkin: "pale",
       currentComponent: "OutlineCard",
+      cardImageIsOverflowed: false,
     };
   }
-
-  formatPropString = (string) => eval(string).replace('"', "");
-
-  changeCardComponent = (e) => {
-    const { value } = e.target;
-    this.setState({
-      currentComponent: value,
-      selectedColor: "mineral",
-      selectedSkin: "pale",
-    });
-  };
-
-  handleSelectChange = (e) => {
-    const { name, value } = e.target;
-    this.setState({ [name]: value });
-  };
 
   renderCurrentComponent = () => {
     const {
@@ -42,12 +29,18 @@ export default class CardPlayground extends React.Component {
       selectedSkin,
       availableComponents,
       currentComponent,
+      cardImageIsOverflowed,
     } = this.state;
     const Component = availableComponents[currentComponent];
 
     return (
       <Component color={selectedColor} skin={selectedSkin}>
         <h1>{currentComponent}</h1>
+        <CardImage
+          src="/docs/card/card-image.jpg"
+          alt="Labcodes offices' view"
+          isOverflowed={cardImageIsOverflowed}
+        />
       </Component>
     );
   };
@@ -58,6 +51,7 @@ export default class CardPlayground extends React.Component {
       availableComponents,
       selectedColor,
       selectedSkin,
+      cardImageIsOverflowed,
     } = this.state;
     const {
       props: {
@@ -138,8 +132,38 @@ export default class CardPlayground extends React.Component {
               </label>
             </span>
           ) : null}
+
+          <h6>CardImage</h6>
+          <span className="lab-playground__item">
+            CardImage - isOverflowed
+            <br />
+            <Toggle
+              name="cardImageIsOverflowed"
+              value={cardImageIsOverflowed}
+              handleToggle={() => this.handleToggleFor("cardImageIsOverflowed")}
+            />
+          </span>
         </div>
       </div>
     );
   }
+
+  formatPropString = (string) => eval(string).replace('"', "");
+
+  changeCardComponent = (e) => {
+    const { value } = e.target;
+    this.setState({
+      currentComponent: value,
+      selectedColor: "mineral",
+      selectedSkin: "pale",
+    });
+  };
+
+  handleSelectChange = (e) => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  };
+
+  handleToggleFor = (stateKey) =>
+    this.setState({ [stateKey]: !this.state[stateKey] });
 }
