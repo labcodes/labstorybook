@@ -613,8 +613,10 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
         box-shadow: 0 0 0 4px map-get($palette, "60");
         color: white;
 
-        .lab-icon--dropdown-closed, .lab-icon--dropdown-open {
-          @if $name == "yellow" { background-color: white; }
+        .lab-tag--left-icon,
+        .lab-tag--check-icon,
+        .lab-tag--dropdown-icon {
+          background-color: white;
         }
       }
 
