@@ -99,7 +99,7 @@ $border-default: $border-01;
   margin-bottom: 12px;
 
   @include from($tablet){
-    margin: 0 0px 8px 0;
+    margin: 0 0 8px 0;
   }
   
   
@@ -111,7 +111,7 @@ $border-default: $border-01;
     background-color: $mineral-20;
 
     @include from($tablet){
-      margin: 0 0px 8px 0;
+      margin: 0 0 8px 0;
     }
   }
 
@@ -242,7 +242,7 @@ $border-default: $border-01;
       font-size: $font-size-1;
       padding: 16px;
       margin: 0;
-      border-radius: 0px;
+      border-radius: 0;
   }
 
   .sidebar-item {
@@ -269,7 +269,7 @@ $border-default: $border-01;
       border-radius: 8px;
 
       @include from($tablet){
-        margin-right: 0px;
+        margin-right: 0;
       }
     }
   }
@@ -374,7 +374,7 @@ $border-default: $border-01;
   }
 
   .lab-narrow-sidebar__header{
-    box-shadow: inset 0px -1px 2px $black-20;  
+    box-shadow: inset 0 -1px 2px $black-20;
   }
 } 
 
