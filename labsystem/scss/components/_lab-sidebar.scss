@@ -8,9 +8,7 @@ $item-active-color: map-get($narrow-sidebar-theme, "70");
 $narrow-trigger-bg: map-get($narrow-sidebar-theme, "60");
 
 $radius-default: 60px;
-
-
-
+$border-default: $border-01;
 
 .lab-narrow-sidebar {
   width: 80%;
@@ -36,7 +34,7 @@ $radius-default: 60px;
 
   @include from($tablet){
     width: 128px;
-    border: 2px solid $mineral-20;
+    border: $border-default $mineral-20;
     box-sizing: border-box;
   }
 } 
@@ -126,7 +124,7 @@ $radius-default: 60px;
     font-size: $font-size-3; 
 
     @include from($tablet){
-      display:none;
+      display: none;
     }
   }
 
@@ -137,7 +135,7 @@ $radius-default: 60px;
     font-weight: $weight-medium;
 
     @include from($tablet){
-      display:none;
+      display: none;
     }
   }
 }
@@ -148,7 +146,7 @@ $radius-default: 60px;
   box-sizing: border-box;
   color: $mineral-60;
   background-color: transparent;
-  border: 2px solid transparent;
+  border: $border-default transparent;
   border-radius: 4px;
 
   &:focus {
@@ -168,7 +166,7 @@ $radius-default: 60px;
 .lab-narrow-sidebar__trigger {
   position:fixed;
   right: 0;
-  top:0;
+  top: 0;
   background-color: $narrow-trigger-bg;
   width: 100%;
   height: 76px;  
@@ -184,8 +182,8 @@ $radius-default: 60px;
     width: 40px;
     height: 40px;
     margin: 18px 0 18px 12px;
-    background-color:transparent;
-    border: 2px solid transparent;
+    background-color: transparent;
+    border: $border-default transparent;
     border-radius: 4px;
   
     &:focus {
@@ -243,7 +241,7 @@ $radius-default: 60px;
       text-align: center;
       font-size: $font-size-1;
       padding: 16px;
-      margin:0;
+      margin: 0;
       border-radius: 0px;
   }
 
@@ -251,7 +249,7 @@ $radius-default: 60px;
     margin-right: 8px;
 
     @include from($tablet){
-      margin:0;
+      margin: 0;
     }
   }
 
@@ -261,7 +259,7 @@ $radius-default: 60px;
     &:before {
       content: " ";
       display: block;
-      border: 2px solid $item-focus-color;
+      border: $border-default $item-focus-color;
       position: absolute;
       margin-right: 8px;
       top: 6px;
@@ -303,7 +301,6 @@ $radius-default: 60px;
   width: 100%;
   margin: 24px 0 24px;
   flex-direction: column;
-  // align-items: center;
   flex-grow: 0;
   
   @include from($tablet){
@@ -320,33 +317,33 @@ $radius-default: 60px;
     font-weight: $weight-medium;
     color: $narrow-trigger-bg;
     background-color: transparent;
-    border: 2px solid transparent;
+    border: $border-default transparent;
     border-radius: 4px;
-    padding: 4px 12px ;
+    padding: 4px 12px;
     margin-left: 28px;
     border-radius: 8px;
     font-size: $font-size-4;
 
     @include from($tablet){
-      padding: 4px;
-      width:76%;
-      margin-left: 0px;
+      padding: $spacing-01;
+      width: 76%;
+      margin-left: 0;
       align-items: center;
       font-size: $font-size-1;
     }
 
     .sidebar-item {
       background-color: $narrow-trigger-bg;
-      margin-right: 8px;
+      margin-right: $spacing-02;
 
       @include from($tablet){
-        margin-right: 4px;
+        margin-right: $spacing-01;
       }
     }
   }
 
   &__button:focus {
-    border: 2px solid $item-focus-color;
+    border: $border-default $item-focus-color;
     outline: none;
   }
 
@@ -395,15 +392,15 @@ $radius-default: 60px;
     }
   
     &:hover {
-      background-color:$white-20;
+      background-color: $white-20;
     } 
   
     &:active {
-      background-color:$white-75;
+      background-color: $white-75;
     }
   
     &--active {
-      background-color:$white;
+      background-color: $white;
     }
 
     .sidebar-item {
@@ -514,7 +511,7 @@ $radius-default: 60px;
   .lab-narrow-sidebar__trigger {
     &-button:active{
       .lab-icon{
-        background-color:$color;
+        background-color: $color;
       }
     }
   }
