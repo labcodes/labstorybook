@@ -9,15 +9,15 @@ export default class Alert extends React.Component {
     text: PropTypes.string.isRequired,
     type: PropTypes.oneOf(["info", "warn", "error"]),
     icon: PropTypes.string.isRequired,
-    buttonInfo: PropTypes.shape({
-      buttonText: PropTypes.string,
+    buttonProps: PropTypes.shape({
+      text: PropTypes.string,
       onClick: PropTypes.func,
     }),
   };
 
   static defaultProps = {
     type: "info",
-    buttonInfo: { buttonText: "", onClick: undefined },
+    buttonProps: { text: "", onClick: undefined },
   };
 
   icon = () => {
@@ -28,16 +28,16 @@ export default class Alert extends React.Component {
   };
 
   button = () => {
-    const { buttonInfo } = this.props;
-    return buttonInfo.buttonText ? (
-      <TextButton size="normal" skin="dark" text={buttonInfo.buttonText} />
+    const { buttonProps } = this.props;
+    return buttonProps.text ? (
+      <TextButton size="normal" skin="dark" text={buttonProps.text} />
     ) : undefined;
   };
 
   handleClick = (e) => {
-    const { buttonInfo } = this.props;
-    if (!isUndefined(buttonInfo.onClick)) {
-      buttonInfo.onClick(e);
+    const { buttonProps } = this.props;
+    if (!isUndefined(buttonProps.onClick)) {
+      buttonProps.onClick(e);
     }
   };
 

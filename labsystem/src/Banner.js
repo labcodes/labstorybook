@@ -9,16 +9,16 @@ export default class Banner extends React.Component {
     text: PropTypes.string.isRequired,
     type: PropTypes.oneOf(["info", "warn", "error"]),
     icon: PropTypes.string.isRequired,
-    buttonInfo: PropTypes.shape({
-      buttonText: PropTypes.string,
+    buttonProps: PropTypes.shape({
+      text: PropTypes.string,
       onClick: PropTypes.func,
     }),
   };
 
   static defaultProps = {
     type: "info",
-    buttonInfo: {
-      buttonText: "",
+    buttonProps: {
+      text: "",
       onClick: undefined,
     },
   };
@@ -31,21 +31,21 @@ export default class Banner extends React.Component {
   };
 
   button = () => {
-    const { buttonInfo, type } = this.props;
-    if (buttonInfo.buttonText) {
+    const { buttonProps, type } = this.props;
+    if (buttonProps.text) {
       return type === "warn" ? (
-        <TextButton size="normal" skin="dark" text={buttonInfo.buttonText} />
+        <TextButton size="normal" skin="dark" text={buttonProps.text} />
       ) : (
-        <TextButton size="normal" skin="light" text={buttonInfo.buttonText} />
+        <TextButton size="normal" skin="light" text={buttonProps.text} />
       );
     }
     return null;
   };
 
   handleClick = (e) => {
-    const { buttonInfo } = this.props;
-    if (!isUndefined(buttonInfo.onClick)) {
-      buttonInfo.onClick(e);
+    const { buttonProps } = this.props;
+    if (!isUndefined(buttonProps.onClick)) {
+      buttonProps.onClick(e);
     }
   };
 
