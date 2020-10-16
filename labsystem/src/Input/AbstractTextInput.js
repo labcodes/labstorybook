@@ -23,6 +23,8 @@ export default class AbstractTextInput extends React.Component {
     customErrorMsg: PropTypes.string,
     onChange: PropTypes.func,
     onIconClick: PropTypes.func,
+    placeholder: PropTypes.string,
+    children: PropTypes.element,
   };
 
   static defaultProps = {
@@ -41,6 +43,8 @@ export default class AbstractTextInput extends React.Component {
     customErrorMsg: undefined,
     onChange: undefined,
     onIconClick: undefined,
+    placeholder: " ", // acrescentei pra poder colocar placeholder no search//
+    children: undefined,
   };
 
   constructor(props) {
@@ -164,6 +168,8 @@ export default class AbstractTextInput extends React.Component {
       suffix,
       onIconClick,
       customErrorMsg,
+      placeholder,
+      children,
     } = this.props;
 
     let { className } = this.props;
@@ -193,6 +199,7 @@ export default class AbstractTextInput extends React.Component {
             autoComplete="off"
             {...(required ? { required } : undefined)}
             {...(disabled ? { disabled } : undefined)}
+            {...(placeholder ? { placeholder } : "")}
           />
           <div className="lab-input__borders" />
           {this.prefixArea()}
@@ -210,6 +217,7 @@ export default class AbstractTextInput extends React.Component {
             onIconClick={onIconClick}
           />
           {this.requiredIcon()}
+          {children}
         </div>
         <TextInputMessage
           helpMessage={helpMessage}

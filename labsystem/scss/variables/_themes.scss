@@ -1,5 +1,4 @@
 // Toggle
-
 $toggle-teal-theme: (
   "background-color-off": $teal-10,
   "background-color-on": $teal-60,
@@ -16,6 +15,23 @@ $toggle-purple-theme: (
   "focus-border-color": $purple-30,
 );
 
+// Tags
+$tag-main-colors: (
+  "teal": $teal-palette,
+  "purple": $purple-palette,
+  "mineral": $mineral-palette,
+);
+
+$tag-all-colors: (
+  "green": map-get($messages-palette, "green"),
+  "red": map-get($messages-palette, "red"),
+  "yellow": map-get($messages-palette, "yellow"),
+  "cyan": map-get($support-palette, "cyan"),
+  "pink": map-get($support-palette, "pink"),
+  "orange": map-get($support-palette, "orange"),
+);
+
+//Sidebar
 $sidebar-colors: (
   "teal": $teal-palette,
   "coral": $coral-palette,
