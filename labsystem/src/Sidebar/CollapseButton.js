@@ -25,7 +25,7 @@ export default class Collapse extends React.Component {
   };
 
   render() {
-    const { className, icon, iconColor, ...rest } = this.props;
+    const { className, icon, iconColor } = this.props;
 
     return (
       <React.Fragment>
