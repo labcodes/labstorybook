@@ -150,25 +150,23 @@ export default class CardPlayground extends React.Component {
         <div className="column lab-playground__configs">
           <h4>Configurations</h4>
 
-          <div>
-            <span className="lab-playground__item">
-              <label htmlFor="currentComponent">
-                Component
-                <br />
-                <select
-                  name="currentComponent"
-                  value={currentComponent}
-                  onChange={this.changeCardComponent}
-                >
-                  {Object.keys(availableComponents).map((option) => (
-                    <option key={option} value={option}>
-                      {option}
-                    </option>
-                  ))}
-                </select>
-              </label>
-            </span>
-          </div>
+          <span className="lab-playground__item">
+            <label htmlFor="currentComponent">
+              Component
+              <br />
+              <select
+                name="currentComponent"
+                value={currentComponent}
+                onChange={this.changeCardComponent}
+              >
+                {Object.keys(availableComponents).map((option) => (
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </span>
 
           <span className="lab-playground__item">
             <label htmlFor="selectedColor">
@@ -214,37 +212,33 @@ export default class CardPlayground extends React.Component {
             </span>
           ) : null}
 
-          <div>
-            <span className="lab-playground__item" style={{ width: "100%" }}>
-              <label htmlFor="cardBodyHTML">
-                <span
-                  style={{ cursor: "pointer", display: "flex" }}
-                  onClick={() => this.handleToggleFor("showCardBodyHTML")}
-                >
-                  <Icon
-                    type={
-                      showCardBodyHTML ? "collapse-open" : "collapse-closed"
-                    }
+          <span className="lab-playground__item" style={{ width: "100%" }}>
+            <label htmlFor="cardBodyHTML">
+              <span
+                style={{ cursor: "pointer", display: "flex" }}
+                onClick={() => this.handleToggleFor("showCardBodyHTML")}
+              >
+                Body HTML
+                <Icon
+                  type={showCardBodyHTML ? "collapse-open" : "collapse-closed"}
+                />
+              </span>
+              {showCardBodyHTML ? (
+                <React.Fragment>
+                  <textarea
+                    style={{
+                      width: "100%",
+                      minHeight: "100px",
+                      resize: "none",
+                    }}
+                    name="cardBodyHTML"
+                    value={cardBodyHTML}
+                    onChange={this.handleInputChange}
                   />
-                  Body HTML
-                </span>
-                {showCardBodyHTML ? (
-                  <React.Fragment>
-                    <textarea
-                      style={{
-                        width: "100%",
-                        minHeight: "100px",
-                        resize: "none",
-                      }}
-                      name="cardBodyHTML"
-                      value={cardBodyHTML}
-                      onChange={this.handleInputChange}
-                    />
-                  </React.Fragment>
-                ) : null}
-              </label>
-            </span>
-          </div>
+                </React.Fragment>
+              ) : null}
+            </label>
+          </span>
 
           <h6>CardImage</h6>
           <span className="lab-playground__item">
@@ -273,10 +267,10 @@ export default class CardPlayground extends React.Component {
             onClick={() => this.handleToggleFor("showHeaderConfigs")}
             style={{ cursor: "pointer", display: "flex" }}
           >
+            CardHeader
             <Icon
               type={showHeaderConfigs ? "collapse-open" : "collapse-closed"}
             />
-            CardHeader
           </h6>
 
           {showHeaderConfigs ? (
