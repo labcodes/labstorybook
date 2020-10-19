@@ -106,7 +106,6 @@
 
     .lab-toggle__slider:before {
       border-color: map-get($map: $toggle-purple-theme, $key: "background-color-on");
-
     }
 
     .lab-toggle__input:checked + .lab-toggle__slider {
