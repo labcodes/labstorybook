@@ -74,7 +74,9 @@ export default class CardPlayground extends React.Component {
 
     return (
       <Component color={selectedColor} skin={selectedSkin}>
+        {/* Remove this h1 when implementing the UI, since it's nor part of the card */}
         <h1>{currentComponent}</h1>
+
         {cardImageIsAboveHeader ? (
           <CardImage
             src="/docs/card/card-image.jpg"
