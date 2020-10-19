@@ -9,11 +9,14 @@
     "start": "NODE_PATH=. start-storybook -s ./.storybook/static,./labsystem/static -p 8000 --ci --docs",
     "build": "NODE_PATH=. build-storybook -o dist -s ./.storybook/static,./labsystem/static --docs && gzipper --verbose ./dist",
     "build:netlify": "NODE_PATH=. cd labsystem && npm i -D && cd .. && npm run build",
-    "deploy": "NODE_PATH=. npm run build && gh-pages -d dist"
+    "deploy": "NODE_PATH=. npm run build && gh-pages -d dist",
+    "test:react": "NODE_PATH=./labsystem npx eslint ./labsystem/src -c .eslintrc.js && cd labsystem && NODE_PATH=. npm test && cd ..",
+    "test:svelte": "cd svelte-labsystem && NODE_PATH=./svelte-labsystem npm test && cd ..",
+    "test": "npm run test:react && npm run test:svelte"
   },
   "husky": {
     "hooks": {
-      "pre-push": "NODE_PATH=./labsystem npx eslint ./labsystem/src -c .eslintrc.js && cd labsystem && NODE_PATH=. npm test && cd .."
+      "pre-push": "npm test"
     }
   },
   "dependencies": {
