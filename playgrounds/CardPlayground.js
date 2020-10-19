@@ -8,6 +8,7 @@ import {
   OutlineFilledCard,
   CardImage,
   CardHeader,
+  CardDivider,
 } from "../labsystem/src/Card";
 import Toggle from "../labsystem/src/Toggle";
 import TextInput from "../labsystem/src/Input/TextInput";
@@ -40,6 +41,8 @@ export default class CardPlayground extends React.Component {
 
       cardBodyHTML:
         "<p>This HTML is inside the card body, below the image and header.</p>",
+
+      cardDividerIsOverflowed: false,
     };
   }
 
@@ -64,6 +67,8 @@ export default class CardPlayground extends React.Component {
       cardHeaderIsOverlay,
 
       cardBodyHTML,
+
+      cardDividerIsOverflowed,
     } = this.state;
     const Component = availableComponents[currentComponent];
 
@@ -100,6 +105,7 @@ export default class CardPlayground extends React.Component {
           />
         ) : null}
         <span dangerouslySetInnerHTML={{ __html: cardBodyHTML }} />
+        <CardDivider isOverflowed={cardDividerIsOverflowed} />
       </Component>
     );
   };
@@ -125,6 +131,8 @@ export default class CardPlayground extends React.Component {
       cardHeaderIsOverlay,
 
       cardBodyHTML,
+
+      cardDividerIsOverflowed,
     } = this.state;
     const {
       props: {
@@ -340,6 +348,19 @@ export default class CardPlayground extends React.Component {
               </div>
             </React.Fragment>
           ) : null}
+
+          <h6>CardDivider</h6>
+          <span className="lab-playground__item">
+            isOverflowed
+            <br />
+            <Toggle
+              name="cardDividerIsOverflowed"
+              value={cardDividerIsOverflowed}
+              handleToggle={() =>
+                this.handleToggleFor("cardDividerIsOverflowed")
+              }
+            />
+          </span>
         </div>
       </div>
     );
