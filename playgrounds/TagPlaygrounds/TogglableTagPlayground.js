@@ -54,7 +54,7 @@ export default class TogglableTagPlayground extends React.Component {
           <div className="column lab-playground__configs">
             <h4>Configurations</h4>
             <span className="lab-playground__item">
-              <strong>Text: </strong>
+              <strong>text: </strong>
               <input
                 id="togglableTagText"
                 onChange={this.handleTextPropChange}
@@ -62,7 +62,7 @@ export default class TogglableTagPlayground extends React.Component {
             </span>
             <br />
             <span className="lab-playground__item">
-              <strong>Color: </strong>
+              <strong>color: </strong>
               <select
                 id="togglableTagColor"
                 onChange={this.handleTextPropChange}
@@ -76,7 +76,7 @@ export default class TogglableTagPlayground extends React.Component {
             </span>
             <br />
             <span className="lab-playground__item">
-              <strong>Disabled: </strong>
+              <strong>disabled: </strong>
               <input
                 id="togglableTagDisabled"
                 type="checkbox"

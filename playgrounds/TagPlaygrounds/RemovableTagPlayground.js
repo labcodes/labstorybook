@@ -97,7 +97,7 @@ export default class RemovableTagPlayground extends React.Component {
           <div className="column lab-playground__configs">
             <h4>Configurations</h4>
             <span className="lab-playground__item">
-              <strong>Text: </strong>
+              <strong>text: </strong>
               <input
                 id="removableTagText"
                 onChange={this.handleTextPropChange}
@@ -105,7 +105,7 @@ export default class RemovableTagPlayground extends React.Component {
             </span>
             <br />
             <span className="lab-playground__item">
-              <strong>Icon: </strong>
+              <strong>icon: </strong>
               <select
                 id="removableTagIcon"
                 onChange={this.handleTextPropChange}
@@ -120,7 +120,7 @@ export default class RemovableTagPlayground extends React.Component {
             </span>
             <br />
             <span className="lab-playground__item">
-              <strong>Thumb Source: </strong>
+              <strong>thumbSrc: </strong>
               <select
                 id="removableTagThumbSrc"
                 onChange={this.handleTextPropChange}
@@ -135,7 +135,7 @@ export default class RemovableTagPlayground extends React.Component {
             </span>
             <br />
             <span className="lab-playground__item">
-              <strong>Outline: </strong>
+              <strong>isOutline: </strong>
               <input
                 id="removableTagIsOutline"
                 type="checkbox"
@@ -145,7 +145,7 @@ export default class RemovableTagPlayground extends React.Component {
             </span>
             <br />
             <span className="lab-playground__item">
-              <strong>Color: </strong>
+              <strong>color: </strong>
               <select
                 id="removableTagColor"
                 onChange={this.handleTextPropChange}
@@ -159,7 +159,7 @@ export default class RemovableTagPlayground extends React.Component {
             </span>
             <br />
             <span className="lab-playground__item">
-              <strong>Skin: </strong>
+              <strong>skin: </strong>
               <select
                 id="removableTagSkin"
                 onChange={this.handleTextPropChange}
@@ -173,7 +173,7 @@ export default class RemovableTagPlayground extends React.Component {
             </span>
             <br />
             <span className="lab-playground__item">
-              <strong>Disabled: </strong>
+              <strong>disabled: </strong>
               <input
                 id="removableTagDisabled"
                 type="checkbox"

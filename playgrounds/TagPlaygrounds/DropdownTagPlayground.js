@@ -53,7 +53,7 @@ export default class DropdownTagPlayground extends React.Component {
           <div className="column lab-playground__configs">
             <h4>Configurations</h4>
             <span className="lab-playground__item">
-              <strong>Text: </strong>
+              <strong>text: </strong>
               <input
                 id="dropdownTagText"
                 onChange={this.handleTextPropChange}
@@ -61,7 +61,7 @@ export default class DropdownTagPlayground extends React.Component {
             </span>
             <br />
             <span className="lab-playground__item">
-              <strong>Icon: </strong>
+              <strong>icon: </strong>
               <select id="dropdownTagIcon" onChange={this.handleTextPropChange}>
                 {iconOptions.map((item) => (
                   <option value={item} key={`icon-${item}`}>
@@ -72,7 +72,7 @@ export default class DropdownTagPlayground extends React.Component {
             </span>
             <br />
             <span className="lab-playground__item">
-              <strong>Color: </strong>
+              <strong>color: </strong>
               <select
                 id="dropdownTagColor"
                 onChange={this.handleTextPropChange}
@@ -86,7 +86,7 @@ export default class DropdownTagPlayground extends React.Component {
             </span>
             <br />
             <span className="lab-playground__item">
-              <strong>Skin: </strong>
+              <strong>skin: </strong>
               <select id="dropdownTagSkin" onChange={this.handleTextPropChange}>
                 {skinOptions.map((item) => (
                   <option value={item} key={`skin-${item}`}>
@@ -97,7 +97,7 @@ export default class DropdownTagPlayground extends React.Component {
             </span>
             <br />
             <span className="lab-playground__item">
-              <strong>Outline: </strong>
+              <strong>isOutline: </strong>
               <input
                 id="dropdownTagIsOutline"
                 type="checkbox"
@@ -107,7 +107,7 @@ export default class DropdownTagPlayground extends React.Component {
             </span>
             <br />
             <span className="lab-playground__item">
-              <strong>Disabled: </strong>
+              <strong>disabled: </strong>
               <input
                 id="dropdownTagDisabled"
                 type="checkbox"

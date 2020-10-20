@@ -81,12 +81,12 @@ export default class SimpleTagPlayground extends React.Component {
           <div className="column lab-playground__configs">
             <h4>Configurations</h4>
             <span className="lab-playground__item">
-              <strong>Text: </strong>
+              <strong>text: </strong>
               <input id="simpleTagText" onChange={this.handleTextPropChange} />
             </span>
             <br />
             <span className="lab-playground__item">
-              <strong>Icon: </strong>
+              <strong>icon: </strong>
               <select
                 id="simpleTagIcon"
                 onChange={this.handleTextPropChange}
@@ -101,7 +101,7 @@ export default class SimpleTagPlayground extends React.Component {
             </span>
             <br />
             <span className="lab-playground__item">
-              <strong>Thumb Source: </strong>
+              <strong>thumbSrc: </strong>
               <select
                 id="simpleTagThumbSrc"
                 onChange={this.handleTextPropChange}
@@ -116,7 +116,7 @@ export default class SimpleTagPlayground extends React.Component {
             </span>
             <br />
             <span className="lab-playground__item">
-              <strong>Outline: </strong>
+              <strong>isOutline: </strong>
               <input
                 id="simpleTagIsOutline"
                 type="checkbox"
@@ -126,7 +126,7 @@ export default class SimpleTagPlayground extends React.Component {
             </span>
             <br />
             <span className="lab-playground__item">
-              <strong>Color: </strong>
+              <strong>color: </strong>
               <select id="simpleTagColor" onChange={this.handleTextPropChange}>
                 {colorOptions.map((item) => (
                   <option value={item} key={`color-${item}`}>
@@ -137,7 +137,7 @@ export default class SimpleTagPlayground extends React.Component {
             </span>
             <br />
             <span className="lab-playground__item">
-              <strong>Skin: </strong>
+              <strong>skin: </strong>
               <select id="simpleTagSkin" onChange={this.handleTextPropChange}>
                 {skinOptions.map((item) => (
                   <option value={item} key={`skin-${item}`}>
@@ -148,7 +148,7 @@ export default class SimpleTagPlayground extends React.Component {
             </span>
             <br />
             <span className="lab-playground__item">
-              <strong>Disabled: </strong>
+              <strong>disabled: </strong>
               <input
                 id="simpleTagDisabled"
                 type="checkbox"
