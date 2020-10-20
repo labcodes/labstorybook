@@ -1,4 +1,5 @@
 import React from "react";
+import { isEmpty } from "lodash";
 import { SimpleTag } from "../../labsystem/src/Tags";
 import {
   iconOptions,
@@ -11,7 +12,7 @@ export default class SimpleTagPlayground extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      simpleTagText: "",
+      simpleTagText: "edit me",
       simpleTagIcon: "",
       simpleTagThumbSrc: "",
       simpleTagIsOutline: false,
@@ -25,7 +26,7 @@ export default class SimpleTagPlayground extends React.Component {
 
   handleTextPropChange = (e) => {
     const { id, value } = e.target;
-    this.setState({ [id]: value });
+    this.setState({ [id]: !isEmpty(value) ? value : "edit me" });
 
     // Ensure either a `thumb` or an `icon` gets enabled at the same time
     if (id === "simpleTagIcon") {
@@ -82,7 +83,11 @@ export default class SimpleTagPlayground extends React.Component {
             <h4>Configurations</h4>
             <span className="lab-playground__item">
               <strong>text: </strong>
-              <input id="simpleTagText" onChange={this.handleTextPropChange} />
+              <input
+                id="simpleTagText"
+                onChange={this.handleTextPropChange}
+                placeholder="Insert text"
+              />
             </span>
             <br />
             <span className="lab-playground__item">

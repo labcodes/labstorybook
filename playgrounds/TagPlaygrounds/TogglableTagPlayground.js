@@ -1,4 +1,5 @@
 import React from "react";
+import { isEmpty } from "lodash";
 import { TogglableTag } from "../../labsystem/src/Tags";
 import { colorOptions } from "../assets";
 
@@ -6,7 +7,7 @@ export default class TogglableTagPlayground extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      togglableTagText: "",
+      togglableTagText: "edit me",
       togglableTagColor: "",
       togglableTagDisabled: false,
       togglableTagIsOn: false,
@@ -15,7 +16,7 @@ export default class TogglableTagPlayground extends React.Component {
 
   handleTextPropChange = (e) => {
     const { id, value } = e.target;
-    this.setState({ [id]: value });
+    this.setState({ [id]: !isEmpty(value) ? value : "edit me" });
   };
 
   handleBoolPropChange = (e) => {
@@ -58,6 +59,7 @@ export default class TogglableTagPlayground extends React.Component {
               <input
                 id="togglableTagText"
                 onChange={this.handleTextPropChange}
+                placeholder="Insert text"
               />
             </span>
             <br />

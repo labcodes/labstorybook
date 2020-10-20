@@ -1,4 +1,5 @@
 import React from "react";
+import { isEmpty } from "lodash";
 import { RemovableTag } from "../../labsystem/src/Tags";
 import {
   iconOptions,
@@ -11,7 +12,7 @@ export default class RemovableTagPlayground extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      removableTagText: "",
+      removableTagText: "edit me",
       removableTagIcon: "",
       removableTagThumbSrc: "",
       removableTagIsOutline: false,
@@ -26,7 +27,7 @@ export default class RemovableTagPlayground extends React.Component {
 
   handleTextPropChange = (e) => {
     const { id, value } = e.target;
-    this.setState({ [id]: value });
+    this.setState({ [id]: !isEmpty(value) ? value : "edit me" });
 
     // Ensure either a `thumb` or an `icon` gets enabled at the same time
     if (id === "removableTagIcon") {
@@ -101,6 +102,7 @@ export default class RemovableTagPlayground extends React.Component {
               <input
                 id="removableTagText"
                 onChange={this.handleTextPropChange}
+                placeholder="Insert text"
               />
             </span>
             <br />

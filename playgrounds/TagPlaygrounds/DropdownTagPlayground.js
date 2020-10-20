@@ -1,4 +1,5 @@
 import React from "react";
+import { isEmpty } from "lodash";
 import { DropdownTag } from "../../labsystem/src/Tags";
 import { iconOptions, skinOptions, colorOptions } from "../assets";
 
@@ -6,7 +7,7 @@ export default class DropdownTagPlayground extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dropdownTagText: "",
+      dropdownTagText: "edit me",
       dropdownTagIsOutline: false,
       dropdownTagDisabled: false,
       dropdownTagColor: "",
@@ -17,7 +18,7 @@ export default class DropdownTagPlayground extends React.Component {
 
   handleTextPropChange = (e) => {
     const { id, value } = e.target;
-    this.setState({ [id]: value });
+    this.setState({ [id]: !isEmpty(value) ? value : "edit me" });
   };
 
   handleBoolPropChange = (e) => {
@@ -57,6 +58,7 @@ export default class DropdownTagPlayground extends React.Component {
               <input
                 id="dropdownTagText"
                 onChange={this.handleTextPropChange}
+                placeholder="Insert text"
               />
             </span>
             <br />
