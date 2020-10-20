@@ -28,27 +28,25 @@ export default class RemovableTagPlayground extends React.Component {
   handleTextPropChange = (e) => {
     const { id, value } = e.target;
     this.setState({ [id]: !isEmpty(value) ? value : "edit me" });
-
-    // Ensure either a `thumb` or an `icon` gets enabled at the same time
-    if (id === "removableTagIcon") {
-      if (value === "") {
-        this.setState({ isThumbInputDisabled: false });
-      } else {
-        this.setState({ isThumbInputDisabled: true });
-      }
-    }
-    if (id === "removableTagThumbSrc") {
-      if (value === "") {
-        this.setState({ isIconInputDisabled: false });
-      } else {
-        this.setState({ isIconInputDisabled: true });
-      }
-    }
   };
 
   handleBoolPropChange = (e) => {
     const { id, checked } = e.target;
     this.setState({ [id]: checked });
+  };
+
+  handleIconPropChange = (e) => {
+    const { id, value } = e.target;
+    this.setState({ [id]: value });
+    // Deactivate `thumb` if has an `icon`
+    this.setState({ isThumbInputDisabled: !isEmpty(value) });
+  };
+
+  handleThumbSrcPropChange = (e) => {
+    const { id, value } = e.target;
+    this.setState({ [id]: value });
+    // Deactivate `icon` if has a `thumbSrc`
+    this.setState({ isIconInputDisabled: !isEmpty(value) });
   };
 
   handleClick = () => {
@@ -110,12 +108,12 @@ export default class RemovableTagPlayground extends React.Component {
               <strong>icon: </strong>
               <select
                 id="removableTagIcon"
-                onChange={this.handleTextPropChange}
+                onChange={this.handleIconPropChange}
                 disabled={isIconInputDisabled}
               >
                 {iconOptions.map((item) => (
                   <option value={item} key={`icon-${item}`}>
-                    {item}
+                    {!isEmpty(item) ? item : "none"}
                   </option>
                 ))}
               </select>
@@ -125,12 +123,12 @@ export default class RemovableTagPlayground extends React.Component {
               <strong>thumbSrc: </strong>
               <select
                 id="removableTagThumbSrc"
-                onChange={this.handleTextPropChange}
+                onChange={this.handleThumbSrcPropChange}
                 disabled={isThumbInputDisabled}
               >
                 {thumbSrcOptions.map((item, index) => (
                   <option value={item} key={`thumb-${item}`}>
-                    {index}
+                    {!isEmpty(item) ? `Option ${index}` : "none"}
                   </option>
                 ))}
               </select>

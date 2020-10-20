@@ -26,6 +26,11 @@ export default class DropdownTagPlayground extends React.Component {
     this.setState({ [id]: checked });
   };
 
+  handleIconPropChange = (e) => {
+    const { id, value } = e.target;
+    this.setState({ [id]: value });
+  };
+
   render() {
     const {
       dropdownTagText,
@@ -64,10 +69,10 @@ export default class DropdownTagPlayground extends React.Component {
             <br />
             <span className="lab-playground__item">
               <strong>icon: </strong>
-              <select id="dropdownTagIcon" onChange={this.handleTextPropChange}>
+              <select id="dropdownTagIcon" onChange={this.handleIconPropChange}>
                 {iconOptions.map((item) => (
                   <option value={item} key={`icon-${item}`}>
-                    {item}
+                    {!isEmpty(item) ? item : "none"}
                   </option>
                 ))}
               </select>
