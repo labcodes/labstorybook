@@ -118,7 +118,6 @@ export default class RemovableTagPlayground extends React.Component {
                 ))}
               </select>
             </span>
-            <br />
             <span className="lab-playground__item">
               <strong>thumbSrc: </strong>
               <select
