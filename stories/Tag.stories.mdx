@@ -77,7 +77,7 @@ import { thumbSrcOptions, iconOptions } from "../playgrounds/assets";
     <div class="columns">
       <div class="column">
         <h3>Simple tag</h3>
-        <p>Used to represent categories like status, type, etc. <strong>No actions are allowed for this type</strong>, focus is the only state styled. Supports the left element <code>icon</code> or <code>thumb</code> but doesn't support a right one.</p>
+        <p>Used to represent categories like status, type, etc. <strong>No actions are allowed for this type</strong>, focus is the only state styled. Supports the left element <code>icon</code> or <code>thumbSrc</code> but doesn't support a right one.</p>
         <SimpleTag text="Simple tag" />
         <SimpleTag text="Simple tag" icon={iconOptions[1]}/>
         <SimpleTag text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
@@ -98,7 +98,7 @@ import { thumbSrcOptions, iconOptions } from "../playgrounds/assets";
       </div>
       <div class="column">
         <h3>Removable tag</h3>
-        <p>Used as an entity of a picked or typed item, often within a field. Supports the left element <code>icon</code> or <code>thumb</code> and has a remove button to the right.</p>
+        <p>Used as an entity of a picked or typed item, often within a field. Supports the left element <code>icon</code> or <code>thumbSrc</code> and has a remove button to the right.</p>
         <RemovableTag text="Removable" />
         <RemovableTag text="Removable" icon={iconOptions[1]} />
         <RemovableTag text="Removable" thumbSrc={thumbSrcOptions[1]} />
