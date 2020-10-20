@@ -5,14 +5,12 @@ import Icon from "../Icon";
 export default class Item extends React.Component {
   static propTypes = {
     label: PropTypes.string,
-    className: PropTypes.string,
     icon: PropTypes.string,
     iconColor: PropTypes.string,
   };
 
   static defaultProps = {
     label: undefined,
-    className: undefined,
     icon: undefined,
     iconColor: "mineral-60",
   };

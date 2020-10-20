@@ -4,13 +4,11 @@ import Icon from "../Icon";
 
 export default class Collapse extends React.Component {
   static propTypes = {
-    className: PropTypes.string,
     icon: PropTypes.string,
     iconColor: PropTypes.string,
   };
 
   static defaultProps = {
-    className: undefined,
     icon: "menu-collapse",
     iconColor: "teal-60",
   };
@@ -25,8 +23,6 @@ export default class Collapse extends React.Component {
   };
 
   render() {
-    const { className, icon, iconColor } = this.props;
-
     return (
       <React.Fragment>
         <button type="button" href="#" className="lab-narrow-sidebar__collapse">
