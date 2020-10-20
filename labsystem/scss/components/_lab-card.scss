@@ -41,3 +41,18 @@
 
 .lab-card-title {}
 .lab-card-subtitle {}
+
+.lab-card-link-action {
+  &lab-card-link-action--normal {}
+  &lab-card-link-action--small {}
+  &lab-card-link-action--large {}
+}
+
+.lab-card-double-action {
+  &lab-card-double-action--normal {}
+  &lab-card-double-action--small {}
+  &lab-card-double-action--large {}
+
+  &lab-card-double-action--horizontal {}
+  &lab-card-double-action--text {}
+}

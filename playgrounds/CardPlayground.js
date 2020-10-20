@@ -9,6 +9,8 @@ import {
   CardImage,
   CardHeader,
   CardDivider,
+  LinkAction,
+  DoubleAction,
 } from "../labsystem/src/Card";
 import Toggle from "../labsystem/src/Toggle";
 import TextInput from "../labsystem/src/Input/TextInput";
@@ -43,6 +45,12 @@ export default class CardPlayground extends React.Component {
         "<p>This HTML is inside the card body, below the image and header.</p>",
 
       cardDividerIsOverflowed: false,
+
+      availableCardActions: { LinkAction, DoubleAction },
+      currentCardAction: "LinkAction",
+      cardActionOpenNewTab: false,
+      cardActionIsHorizontal: false,
+      cardActionIsText: false,
     };
   }
 
@@ -69,6 +77,11 @@ export default class CardPlayground extends React.Component {
       cardBodyHTML,
 
       cardDividerIsOverflowed,
+
+      currentCardAction,
+      cardActionOpenNewTab,
+      cardActionIsHorizontal,
+      cardActionIsText,
     } = this.state;
     const Component = availableComponents[currentComponent];
 
@@ -107,7 +120,38 @@ export default class CardPlayground extends React.Component {
           />
         ) : null}
         <span dangerouslySetInnerHTML={{ __html: cardBodyHTML }} />
+
         <CardDivider isOverflowed={cardDividerIsOverflowed} />
+
+        {currentCardAction === "LinkAction" ? (
+          <LinkAction
+            href={`${window.location.href}&link-action=clicked`}
+            onClick={(e) => {
+              console.log("LinkAction clicked", e);
+            }}
+            text="Sample Link Action"
+            openNewTab={cardActionOpenNewTab}
+          />
+        ) : null}
+
+        {currentCardAction === "DoubleAction" ? (
+          <DoubleAction
+            actionsProps={[
+              {
+                text: "Action 1",
+                onClick: (e) => console.log("Action 1 clicked", e),
+                icon: "plus",
+              },
+              {
+                text: "Action 2",
+                onClick: (e) => console.log("Action 2 clicked", e),
+                icon: "minus",
+              },
+            ]}
+            isHorizontal={cardActionIsHorizontal}
+            isText={cardActionIsText}
+          />
+        ) : null}
       </Component>
     );
   };
@@ -135,6 +179,12 @@ export default class CardPlayground extends React.Component {
       cardBodyHTML,
 
       cardDividerIsOverflowed,
+
+      availableCardActions,
+      currentCardAction,
+      cardActionOpenNewTab,
+      cardActionIsHorizontal,
+      cardActionIsText,
     } = this.state;
     const {
       props: {
@@ -357,6 +407,71 @@ export default class CardPlayground extends React.Component {
               }
             />
           </span>
+
+          <h6>CardAction</h6>
+          <span className="lab-playground__item">
+            <label htmlFor="currentCardAction">
+              Component
+              <br />
+              <select
+                name="currentCardAction"
+                value={currentCardAction}
+                onChange={this.handleInputChange}
+              >
+                {Object.keys(availableCardActions).map((option) => (
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </span>
+
+          {currentCardAction === "LinkAction" ? (
+            <span className="lab-playground__item">
+              openNewTab
+              <br />
+              <Toggle
+                name="cardActionOpenNewTab"
+                value={cardActionOpenNewTab}
+                handleToggle={() =>
+                  this.handleToggleFor("cardActionOpenNewTab")
+                }
+              />
+            </span>
+          ) : null}
+
+          {currentCardAction === "DoubleAction" ? (
+            <React.Fragment>
+              <span
+                className="lab-playground__item"
+              >
+                isHorizontal
+                <br />
+                <Toggle
+                  name="cardActionIsHorizontal"
+                  value={cardActionIsHorizontal}
+                  handleToggle={() =>
+                    this.handleToggleFor("cardActionIsHorizontal")
+                  }
+                />
+              </span>
+              <span
+                className="lab-playground__item"
+              >
+                isText
+                <br />
+                <Toggle
+                  name="cardActionIsText"
+                  value={cardActionIsText}
+                  handleToggle={() =>
+                    this.handleToggleFor("cardActionIsText")
+                  }
+                />
+              </span>
+
+            </React.Fragment>
+          ) : null}
         </div>
       </div>
     );
