@@ -67,22 +67,22 @@ export default class CardHeader extends React.Component {
         }`}
       >
         {categoryIcon || categoryColor || categoryText || categoryLabelText ? (
-          <p className="lab-card-header__category">
+          <p className="lab-card-category">
             {categoryIcon ? <Icon type={categoryIcon} size="petit" /> : null}
             {categoryColor ? (
               <span
-                className={`lab-card-category-color lab-card-category-color--${categoryColor}`}
+                className={`lab-card-category__color lab-card-category__color--${categoryColor}`}
               />
             ) : null}
             {categoryText ? (
-              <span className="lab-card-category-text">{categoryText}</span>
+              <span className="lab-card-category__text">{categoryText}</span>
             ) : null}
             {categoryLabelText ? <SimpleTag text={categoryLabelText} /> : null}
           </p>
         ) : null}
         {title ? (
           <p
-            className={`lab-card-header__title${
+            className={`lab-card-title${
               titleClassName ? ` ${titleClassName}` : ""
             }`}
           >
@@ -91,7 +91,7 @@ export default class CardHeader extends React.Component {
         ) : null}
         {subtitle ? (
           <p
-            className={`lab-card-header__subtitle${
+            className={`lab-card-subtitle${
               subtitleClassName ? ` ${subtitleClassName}` : ""
             }`}
           >
