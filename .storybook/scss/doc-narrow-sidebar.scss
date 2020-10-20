@@ -18,11 +18,11 @@
     margin-top:0;
   }
       
-  .lab-narrow-sidebar__trigger {
+  .lab-narrow-sidebar__mobile-topbar {
     position: relative;
   }
 
-  .lab-narrow-sidebar__trigger-button {
+  .lab-narrow-sidebar__mobile-button {
     display: inline;;
   }
 
@@ -44,7 +44,7 @@
     }
   }
 
-  .lab-narrow-sidebar__trigger{
+  .lab-narrow-sidebar__mobile-topbar {
     &-button:focus {
       border-color: $purple-30;
     }
@@ -128,7 +128,7 @@
     }
   }
 
-  .lab-narrow-sidebar__trigger{
+  .lab-narrow-sidebar__mobile-topbar {
     &-button:focus {
       border-color: $mineral-30;
     }
@@ -196,5 +196,4 @@
       }
     }
   }
-
 }

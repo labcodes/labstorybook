@@ -24,7 +24,7 @@ export default class NarrowSidebar extends React.Component {
         <div className="lab-narrow__overlay" />
         <div
           className={
-            `lab-narrow-sidebar__trigger` +
+            `lab-narrow-sidebar__mobile-topbar` +
             `${
               vivid
                 ? ` lab-narrow-sidebar--vivid lab-narrow-sidebar--vivid--${color}`
@@ -32,7 +32,7 @@ export default class NarrowSidebar extends React.Component {
             }`
           }
         >
-          <button type="button" className="lab-narrow-sidebar__trigger-button">
+          <button type="button" className="lab-narrow-sidebar__mobile-button">
             <Icon type="menu-expand" color="white" />
           </button>
         </div>

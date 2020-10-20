@@ -5,7 +5,7 @@ $item-focus-color: map-get($narrow-sidebar-theme, "30");
 $item-pressed-color: map-get($narrow-sidebar-theme, "20");
 $item-hover-color: map-get($narrow-sidebar-theme, "10");
 $item-active-color: map-get($narrow-sidebar-theme, "70");
-$narrow-trigger-bg: map-get($narrow-sidebar-theme, "60");
+$narrow-mobile-topbar-bg: map-get($narrow-sidebar-theme, "60");
 
 $radius-default: 60px;
 $border-default: $border-01;
@@ -162,12 +162,13 @@ $border-default: $border-01;
     display: none;
   }
 }
-//Trigger for mobile
-.lab-narrow-sidebar__trigger {
+// Topbar that apperson only on mobile.
+// It holds the button to open the sidebar on mobile.
+.lab-narrow-sidebar__mobile-topbar {
   position:fixed;
   right: 0;
   top: 0;
-  background-color: $narrow-trigger-bg;
+  background-color: $narrow-mobile-topbar-bg;
   width: 100%;
   height: 76px;  
   border-bottom: 1px solid transparent;
@@ -315,7 +316,7 @@ $border-default: $border-01;
     text-align: center;
     font-family: $font-primary;
     font-weight: $weight-medium;
-    color: $narrow-trigger-bg;
+    color: $narrow-mobile-topbar-bg;
     background-color: transparent;
     border: $border-default transparent;
     padding: $spacing-01 $spacing-03;
@@ -332,7 +333,7 @@ $border-default: $border-01;
     }
 
     .sidebar-item {
-      background-color: $narrow-trigger-bg;
+      background-color: $narrow-mobile-topbar-bg;
       margin-right: $spacing-02;
 
       @include from($tablet){
@@ -443,7 +444,7 @@ $border-default: $border-01;
   }
 
   .lab-narrow-sidebar__collapse,
-  .lab-narrow-sidebar__trigger-button{
+  .lab-narrow-sidebar__mobile-button{
 
     &:focus{
       border-color: $white-50;
@@ -459,7 +460,7 @@ $border-default: $border-01;
     }
   }
   
-  .lab-narrow-sidebar__trigger {
+  .lab-narrow-sidebar__mobile-topbar {
     background-color: $white;
   }
   
@@ -507,7 +508,7 @@ $border-default: $border-01;
   }  
 
   
-  .lab-narrow-sidebar__trigger {
+  .lab-narrow-sidebar__mobile-topbar {
     &-button:active{
       .lab-icon{
         background-color: $color;
