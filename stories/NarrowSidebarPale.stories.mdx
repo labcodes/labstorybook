@@ -12,7 +12,7 @@ import Collapse from '../labsystem/src/Sidebar/CollapseButton';
 import Item from '../labsystem/src/Sidebar/Item';
 import Icon from '../labsystem/src/Icon';
 
-<Meta title="Components/Narrow Sidebar/Examples/Vivid" component={NarrowSidebar} />
+<Meta title="Components/Narrow Sidebar/Examples/Pale" component={NarrowSidebar} />
 
 <div class="docs-title">
   <div>
@@ -22,39 +22,14 @@ import Icon from '../labsystem/src/Icon';
 
 <div class="docs-content">
 
-<h2>Vivid Sidebar</h2>
-<p>Default narrow sidebar vivid skin that has four different colors option - teal, purple, coral and mineral. What defines what color must be chosen is the application theme.</p>
+<h2>Pale Sidebar</h2>
+<p>Default Narrow Sidebar has Pale Skin that has three different colors option - teal, purple and mineral. What defines what color must be chosen is the application theme.</p>
 
 <Preview>
   <Story name="Sidebar">
     <Fragment>
-        <div className="lab-narrow-sidebar--stories">
-        <NarrowSidebar withScroll color="mineral" vivid >
-          <Header >
-            <Logotype altText="User photo" />
-            <Collapse />
-          </Header>
-          <Body>
-            <Item icon="calendar" label="Teste" />
-            <Item icon="coin" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-          </Body>
-          <Footer>
-            <UserAvatar altText="User photo" caption="Cool guy"/>
-            <FooterButton icon="key" label="Password"/>
-            <FooterButton icon="logout" label="Logout" />
-          </Footer>
-        </NarrowSidebar>
-      </div>
       <div className="lab-narrow-sidebar--stories">
-        <NarrowSidebar withScroll color="teal" vivid >
+        <NarrowSidebar withScroll >
           <Header >
             <Logotype altText="User photo" />
             <Collapse />
@@ -78,8 +53,8 @@ import Icon from '../labsystem/src/Icon';
           </Footer>
         </NarrowSidebar>
       </div>
-      <div className="lab-narrow-sidebar--stories">
-        <NarrowSidebar withScroll color="coral" vivid >
+      <div className="lab-narrow-sidebar--stories lab-narrow-sidebar--stories--purple">
+        <NarrowSidebar withScroll  >
           <Header >
             <Logotype altText="User photo" />
             <Collapse />
@@ -103,8 +78,8 @@ import Icon from '../labsystem/src/Icon';
           </Footer>
         </NarrowSidebar>
       </div>
-      <div className="lab-narrow-sidebar--stories">
-        <NarrowSidebar withScroll color="purple" vivid >
+      <div className="lab-narrow-sidebar--stories lab-narrow-sidebar--stories--mineral">
+        <NarrowSidebar withScroll >
           <Header >
             <Logotype altText="User photo" />
             <Collapse />
