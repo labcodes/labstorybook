@@ -1,15 +1,7 @@
 import { Fragment } from 'react';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
-import NarrowSidebar from '../labsystem/src/Sidebar/Narrow-Sidebar';
-import Header from '../labsystem/src/Sidebar/Header';
-import Body from '../labsystem/src/Sidebar/Body';
-import Footer from '../labsystem/src/Sidebar/Footer';
-import FooterButton from '../labsystem/src/Sidebar/FooterButton';
-import UserAvatar from '../labsystem/src/Sidebar/UserAvatar';
-import Logotype from '../labsystem/src/Sidebar/Logotype';
-import Collapse from '../labsystem/src/Sidebar/CollapseButton';
-import Item from '../labsystem/src/Sidebar/Item';
+import NarrowSidebar from '../labsystem/src/Sidebar';
 import Icon from '../labsystem/src/Icon';
 
 <Meta title="Components/Narrow Sidebar/Examples/Vivid" component={NarrowSidebar} />
@@ -29,103 +21,103 @@ import Icon from '../labsystem/src/Icon';
   <Story name="Sidebar">
     <Fragment>
         <div className="lab-narrow-sidebar--stories">
-        <NarrowSidebar withScroll color="mineral" vivid >
-          <Header >
-            <Logotype altText="User photo" />
-            <Collapse />
-          </Header>
-          <Body>
-            <Item icon="calendar" label="Teste" />
-            <Item icon="coin" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-          </Body>
-          <Footer>
-            <UserAvatar altText="User photo" caption="Cool guy"/>
-            <FooterButton icon="key" label="Password"/>
-            <FooterButton icon="logout" label="Logout" />
-          </Footer>
+        <NarrowSidebar withScroll color="mineral" isVivid >
+          <NarrowSidebar.Header >
+            <NarrowSidebar.Logotype altText="User photo" />
+            <NarrowSidebar.Collapse />
+          </NarrowSidebar.Header>
+          <NarrowSidebar.Body>
+            <NarrowSidebar.Item icon="calendar" label="Teste" />
+            <NarrowSidebar.Item icon="coin" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+          </NarrowSidebar.Body>
+          <NarrowSidebar.Footer>
+            <NarrowSidebar.UserAvatar altText="User photo" caption="Cool guy"/>
+            <NarrowSidebar.FooterButton icon="key" label="Password"/>
+            <NarrowSidebar.FooterButton icon="logout" label="Logout" />
+          </NarrowSidebar.Footer>
         </NarrowSidebar>
       </div>
       <div className="lab-narrow-sidebar--stories">
-        <NarrowSidebar withScroll color="teal" vivid >
-          <Header >
-            <Logotype altText="User photo" />
-            <Collapse />
-          </Header>
-          <Body  >
-            <Item icon="calendar" label="Teste" />
-            <Item icon="coin" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-          </Body>
-          <Footer>
-            <UserAvatar altText="User photo" caption="Cool guy"/>
-            <FooterButton icon="key" label="Password"/>
-            <FooterButton icon="logout" label="Logout" />
-          </Footer>
+        <NarrowSidebar withScroll color="teal" isVivid >
+          <NarrowSidebar.Header >
+            <NarrowSidebar.Logotype altText="User photo" />
+            <NarrowSidebar.Collapse />
+          </NarrowSidebar.Header>
+          <NarrowSidebar.Body  >
+            <NarrowSidebar.Item icon="calendar" label="Teste" />
+            <NarrowSidebar.Item icon="coin" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+          </NarrowSidebar.Body>
+          <NarrowSidebar.Footer>
+            <NarrowSidebar.UserAvatar altText="User photo" caption="Cool guy"/>
+            <NarrowSidebar.FooterButton icon="key" label="Password"/>
+            <NarrowSidebar.FooterButton icon="logout" label="Logout" />
+          </NarrowSidebar.Footer>
         </NarrowSidebar>
       </div>
       <div className="lab-narrow-sidebar--stories">
-        <NarrowSidebar withScroll color="coral" vivid >
-          <Header >
-            <Logotype altText="User photo" />
-            <Collapse />
-          </Header>
-          <Body  >
-            <Item icon="calendar" label="Teste" />
-            <Item icon="coin" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-          </Body>
-          <Footer>
-            <UserAvatar altText="User photo" caption="Cool guy"/>
-            <FooterButton icon="key" label="Password"/>
-            <FooterButton icon="logout" label="Logout" />
-          </Footer>
+        <NarrowSidebar withScroll color="coral" isVivid >
+          <NarrowSidebar.Header >
+            <NarrowSidebar.Logotype altText="User photo" />
+            <NarrowSidebar.Collapse />
+          </NarrowSidebar.Header>
+          <NarrowSidebar.Body  >
+            <NarrowSidebar.Item icon="calendar" label="Teste" />
+            <NarrowSidebar.Item icon="coin" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+          </NarrowSidebar.Body>
+          <NarrowSidebar.Footer>
+            <NarrowSidebar.UserAvatar altText="User photo" caption="Cool guy"/>
+            <NarrowSidebar.FooterButton icon="key" label="Password"/>
+            <NarrowSidebar.FooterButton icon="logout" label="Logout" />
+          </NarrowSidebar.Footer>
         </NarrowSidebar>
       </div>
       <div className="lab-narrow-sidebar--stories">
-        <NarrowSidebar withScroll color="purple" vivid >
-          <Header >
-            <Logotype altText="User photo" />
-            <Collapse />
-          </Header>
-          <Body  >
-            <Item icon="calendar" label="Teste" />
-            <Item icon="coin" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-            <Item icon="wallet" label="Teste" />
-          </Body>
-          <Footer>
-            <UserAvatar altText="User photo" caption="Cool guy"/>
-            <FooterButton icon="key" label="Password"/>
-            <FooterButton icon="logout" label="Logout" />
-          </Footer>
+        <NarrowSidebar withScroll color="purple" isVivid >
+          <NarrowSidebar.Header >
+            <NarrowSidebar.Logotype altText="User photo" />
+            <NarrowSidebar.Collapse />
+          </NarrowSidebar.Header>
+          <NarrowSidebar.Body  >
+            <NarrowSidebar.Item icon="calendar" label="Teste" />
+            <NarrowSidebar.Item icon="coin" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+            <NarrowSidebar.Item icon="wallet" label="Teste" />
+          </NarrowSidebar.Body>
+          <NarrowSidebar.Footer>
+            <NarrowSidebar.UserAvatar altText="User photo" caption="Cool guy"/>
+            <NarrowSidebar.FooterButton icon="key" label="Password"/>
+            <NarrowSidebar.FooterButton icon="logout" label="Logout" />
+          </NarrowSidebar.Footer>
         </NarrowSidebar>
       </div>
     </Fragment>
