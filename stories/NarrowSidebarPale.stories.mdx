@@ -1,0 +1,110 @@
+import { Fragment } from 'react';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+
+import NarrowSidebar from '../labsystem/src/Sidebar/Narrow-Sidebar';
+import Header from '../labsystem/src/Sidebar/Header';
+import Body from '../labsystem/src/Sidebar/Body';
+import Footer from '../labsystem/src/Sidebar/Footer';
+import FooterButton from '../labsystem/src/Sidebar/FooterButton';
+import UserAvatar from '../labsystem/src/Sidebar/UserAvatar';
+import Logotype from '../labsystem/src/Sidebar/Logotype';
+import Collapse from '../labsystem/src/Sidebar/CollapseButton';
+import Item from '../labsystem/src/Sidebar/Item';
+import Icon from '../labsystem/src/Icon';
+
+<Meta title="Components/Narrow Sidebar/Examples/Pale" component={NarrowSidebar} />
+
+<div class="docs-title">
+  <div>
+    <h1 class="docs-title__text">Narrow Sidebar</h1>
+  </div>
+</div>
+
+<div class="docs-content">
+
+<h2>Pale Sidebar</h2>
+<p>Default Narrow Sidebar has Pale Skin that has three different colors option - teal, purple and mineral. What defines what color must be chosen is the application theme.</p>
+
+<Preview>
+  <Story name="Sidebar">
+    <Fragment>
+      <div className="lab-narrow-sidebar--stories">
+        <NarrowSidebar withScroll >
+          <Header >
+            <Logotype altText="User photo" />
+            <Collapse />
+          </Header>
+          <Body  >
+            <Item icon="calendar" label="Teste" />
+            <Item icon="coin" label="Teste" />
+            <Item icon="wallet" label="Teste" />
+            <Item icon="wallet" label="Teste" />
+            <Item icon="wallet" label="Teste" />
+            <Item icon="wallet" label="Teste" />
+            <Item icon="wallet" label="Teste" />
+            <Item icon="wallet" label="Teste" />
+            <Item icon="wallet" label="Teste" />
+            <Item icon="wallet" label="Teste" />
+          </Body>
+          <Footer>
+            <UserAvatar altText="User photo" caption="Cool guy"/>
+            <FooterButton icon="key" label="Password"/>
+            <FooterButton icon="logout" label="Logout" />
+          </Footer>
+        </NarrowSidebar>
+      </div>
+      <div className="lab-narrow-sidebar--stories lab-narrow-sidebar--stories--purple">
+        <NarrowSidebar withScroll  >
+          <Header >
+            <Logotype altText="User photo" />
+            <Collapse />
+          </Header>
+          <Body  >
+            <Item icon="calendar" label="Teste" />
+            <Item icon="coin" label="Teste" />
+            <Item icon="wallet" label="Teste" />
+            <Item icon="wallet" label="Teste" />
+            <Item icon="wallet" label="Teste" />
+            <Item icon="wallet" label="Teste" />
+            <Item icon="wallet" label="Teste" />
+            <Item icon="wallet" label="Teste" />
+            <Item icon="wallet" label="Teste" />
+            <Item icon="wallet" label="Teste" />
+          </Body>
+          <Footer>
+            <UserAvatar altText="User photo" caption="Cool guy"/>
+            <FooterButton icon="key" label="Password"/>
+            <FooterButton icon="logout" label="Logout" />
+          </Footer>
+        </NarrowSidebar>
+      </div>
+      <div className="lab-narrow-sidebar--stories lab-narrow-sidebar--stories--mineral">
+        <NarrowSidebar withScroll >
+          <Header >
+            <Logotype altText="User photo" />
+            <Collapse />
+          </Header>
+          <Body  >
+            <Item icon="calendar" label="Teste" />
+            <Item icon="coin" label="Teste" />
+            <Item icon="wallet" label="Teste" />
+            <Item icon="wallet" label="Teste" />
+            <Item icon="wallet" label="Teste" />
+            <Item icon="wallet" label="Teste" />
+            <Item icon="wallet" label="Teste" />
+            <Item icon="wallet" label="Teste" />
+            <Item icon="wallet" label="Teste" />
+            <Item icon="wallet" label="Teste" />
+          </Body>
+          <Footer>
+            <UserAvatar altText="User photo" caption="Cool guy"/>
+            <FooterButton icon="key" label="Password"/>
+            <FooterButton icon="logout" label="Logout" />
+          </Footer>
+        </NarrowSidebar>
+      </div>
+    </Fragment>
+  </Story>
+</Preview>
+
+</div>

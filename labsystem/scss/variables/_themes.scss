@@ -30,3 +30,11 @@ $tag-all-colors: (
   "pink": map-get($support-palette, "pink"),
   "orange": map-get($support-palette, "orange"),
 );
+
+//Sidebar
+$sidebar-colors: (
+  "teal": $teal-palette,
+  "coral": $coral-palette,
+  "purple": $purple-palette,
+  "mineral": $mineral-palette,
+);
