@@ -6,7 +6,8 @@ import {
   SimpleTagPlayground,
   TogglableTagPlayground,
   RemovableTagPlayground,
-  DropdownTagPlayground
+  DropdownTagPlayground,
+  TagPlayground
 } from "../playgrounds/TagPlaygrounds";
 import { thumbSrcOptions, iconOptions } from "../playgrounds/assets";
 
@@ -26,6 +27,14 @@ import { thumbSrcOptions, iconOptions } from "../playgrounds/assets";
   <input className="simple-tab" type="radio" name="colors-tab" id="tab2" />
   <label htmlFor="tab2">Accessibility</label>
 </nav>
+
+<Preview>
+  <Story name="InteractiveTagDemo">
+    <Fragment>
+      <TagPlayground />
+    </Fragment>
+  </Story>
+</Preview>
 
 <div class="simple-tab__content content1">
   <h2>General usage</h2>
