@@ -6,13 +6,13 @@ import {
   TogglableTag,
   RemovableTag,
   DropdownTag,
-} from "../../labsystem/src/Tags";
+} from "../labsystem/src/Tags";
 import {
   colorOptions,
   skinOptions,
   iconOptions,
   thumbSrcOptions,
-} from "../assets";
+} from "./assets";
 
 export default class TagPlayground extends React.Component {
   constructor(props) {
