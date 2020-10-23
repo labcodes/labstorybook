@@ -1,8 +1,10 @@
-import { Fragment } from 'react';
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Fragment } from "react";
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 
-import Alert from '../labsystem/src/Alert';
-import Banner from '../labsystem/src/Banner';
+import Alert from "../labsystem/src/Alert";
+import Banner from "../labsystem/src/Banner";
+
+import SystemMessagesPlayground from "../playgrounds/SystemMessagesPlayground.js"
 
 <Meta title="Components/System Messages" />
 
@@ -14,7 +16,7 @@ import Banner from '../labsystem/src/Banner';
 
 <div className="docs-content">
 
-## General usage
+  ## General usage
 
   <div className="columns">
     <div className="column">
@@ -85,6 +87,17 @@ import Banner from '../labsystem/src/Banner';
       </div>
     </div>
   </div>
+
+  ## Playground
+
+  <Preview>
+    <Story name="InteractiveSystemMessagesDemo">
+        <Fragment>
+          <SystemMessagesPlayground />
+        </Fragment>
+    </Story>
+  </Preview>
+
   <div>
     <h2>Variations and Screen Sizes</h2>
     <h3>Tablet and desktop</h3>
