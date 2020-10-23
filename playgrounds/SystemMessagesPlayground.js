@@ -3,6 +3,7 @@ import { isEmpty } from "lodash";
 
 import Banner from "../labsystem/src/Banner";
 import Alert from "../labsystem/src/Alert";
+import { iconOptions } from "./assets";
 
 export default class SystemMessagesPlayground extends React.Component {
   constructor(props) {
@@ -16,11 +17,17 @@ export default class SystemMessagesPlayground extends React.Component {
       currentComponent: "Banner",
 
       selectedText: "edit me",
+      selectedIcon: "arrow-down",
     };
   }
 
   renderCurrentComponent = () => {
-    const { availableComponents, currentComponent, selectedText } = this.state;
+    const {
+      availableComponents,
+      currentComponent,
+      selectedText,
+      selectedIcon,
+    } = this.state;
     const Component = availableComponents[currentComponent];
 
     return (
@@ -28,7 +35,7 @@ export default class SystemMessagesPlayground extends React.Component {
         <h4>
           <strong>{currentComponent}</strong>
         </h4>
-        <Component text={selectedText} icon="lupe" />
+        <Component text={selectedText} icon={selectedIcon} />
       </>
     );
   };
@@ -45,8 +52,13 @@ export default class SystemMessagesPlayground extends React.Component {
     this.setState({ [id]: !isEmpty(value) ? value : "edit me" });
   };
 
+  handleIconPropChange = (e) => {
+    const { id, value } = e.target;
+    this.setState({ [id]: value });
+  };
+
   render() {
-    const { availableComponents } = this.state;
+    const { availableComponents, selectedIcon } = this.state;
 
     return (
       <div className="columns lab-playground">
@@ -79,6 +91,24 @@ export default class SystemMessagesPlayground extends React.Component {
                 onChange={this.handleTextPropChange}
                 placeholder="Insert text"
               />
+            </label>
+          </span>
+          <br />
+
+          <span className="lab-playground__item">
+            <label htmlFor="selectedIcon">
+              <strong>icon: </strong>
+              <select
+                id="selectedIcon"
+                value={selectedIcon}
+                onChange={this.handleIconPropChange}
+              >
+                {iconOptions.slice(1, iconOptions.length).map((item) => (
+                  <option value={item} key={`icon-${item}`}>
+                    {!isEmpty(item) ? item : "none"}
+                  </option>
+                ))}
+              </select>
             </label>
           </span>
         </div>
