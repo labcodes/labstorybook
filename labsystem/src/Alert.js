@@ -44,7 +44,7 @@ export default class Alert extends React.Component {
   render() {
     const { text, type } = this.props;
     return (
-      <div className={`lab-alert__${type}`}>
+      <div className={`lab-alert lab-alert--${type}`}>
         {this.icon()}
         <span className="lab-alert__message">{text}</span>
         <span

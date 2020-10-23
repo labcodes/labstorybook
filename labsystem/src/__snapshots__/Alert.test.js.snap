@@ -2,7 +2,7 @@
 
 exports[`Alert renders with base props 1`] = `
 <div
-  className="lab-alert__error"
+  className="lab-alert lab-alert--error"
 >
   <span
     className="lab-icon lab-icon--lupe lab-icon--mineral-70 lab-alert__icon"
@@ -22,7 +22,7 @@ exports[`Alert renders with base props 1`] = `
 
 exports[`Alert renders with button 1`] = `
 <div
-  className="lab-alert__warn"
+  className="lab-alert lab-alert--warn"
 >
   <span
     className="lab-icon lab-icon--wallet lab-icon--mineral-70 lab-alert__icon"

@@ -52,7 +52,7 @@ export default class Banner extends React.Component {
   render() {
     const { text, type } = this.props;
     return (
-      <div className={`lab-banner__${type}`}>
+      <div className={`lab-banner lab-banner--${type}`}>
         {this.icon()}
         <span className="lab-banner__message">{text}</span>
         <span
