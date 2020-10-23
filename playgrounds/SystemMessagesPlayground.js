@@ -1,4 +1,5 @@
 import React from "react";
+import { isEmpty } from "lodash";
 
 import Banner from "../labsystem/src/Banner";
 import Alert from "../labsystem/src/Alert";
@@ -13,11 +14,13 @@ export default class SystemMessagesPlayground extends React.Component {
         Alert,
       },
       currentComponent: "Banner",
+
+      selectedText: "edit me",
     };
   }
 
   renderCurrentComponent = () => {
-    const { availableComponents, currentComponent } = this.state;
+    const { availableComponents, currentComponent, selectedText } = this.state;
     const Component = availableComponents[currentComponent];
 
     return (
@@ -25,7 +28,7 @@ export default class SystemMessagesPlayground extends React.Component {
         <h4>
           <strong>{currentComponent}</strong>
         </h4>
-        <Component text={`${currentComponent} Component`} icon="lupe" />
+        <Component text={selectedText} icon="lupe" />
       </>
     );
   };
@@ -35,6 +38,11 @@ export default class SystemMessagesPlayground extends React.Component {
     this.setState({
       currentComponent: value,
     });
+  };
+
+  handleTextPropChange = (e) => {
+    const { id, value } = e.target;
+    this.setState({ [id]: !isEmpty(value) ? value : "edit me" });
   };
 
   render() {
@@ -59,6 +67,18 @@ export default class SystemMessagesPlayground extends React.Component {
                   </option>
                 ))}
               </select>
+            </label>
+          </span>
+          <br />
+
+          <span className="lab-playground__item">
+            <label htmlFor="selectedText">
+              <strong>text: </strong>
+              <input
+                id="selectedText"
+                onChange={this.handleTextPropChange}
+                placeholder="Insert text"
+              />
             </label>
           </span>
         </div>
