@@ -82,6 +82,11 @@ $alerts-line-height: 20px;
   align-items: center;
   padding: $spacing-03;
   color: $white;
+  position: sticky;
+  position: -webkit-sticky;
+
+  top: 0;
+  z-index: 1;
 
   &--info {
     @extend .lab-banner;
