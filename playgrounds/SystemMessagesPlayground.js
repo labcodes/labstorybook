@@ -1,5 +1,5 @@
 import React from "react";
-import { isEmpty } from "lodash";
+import { isEmpty, upperCase } from "lodash";
 
 import Banner from "../labsystem/src/Banner";
 import Alert from "../labsystem/src/Alert";
@@ -18,6 +18,7 @@ export default class SystemMessagesPlayground extends React.Component {
 
       selectedText: "edit me",
       selectedIcon: "arrow-down",
+      selectedButtonText: "",
     };
   }
 
@@ -27,6 +28,7 @@ export default class SystemMessagesPlayground extends React.Component {
       currentComponent,
       selectedText,
       selectedIcon,
+      selectedButtonText,
     } = this.state;
     const Component = availableComponents[currentComponent];
 
@@ -35,7 +37,16 @@ export default class SystemMessagesPlayground extends React.Component {
         <h4>
           <strong>{currentComponent}</strong>
         </h4>
-        <Component text={selectedText} icon={selectedIcon} />
+        <Component
+          text={selectedText}
+          icon={selectedIcon}
+          buttonProps={{
+            text: selectedButtonText,
+            onClick: () => {
+              alert(`Button to ${selectedButtonText} was clicked!`);
+            },
+          }}
+        />
       </>
     );
   };
@@ -50,6 +61,11 @@ export default class SystemMessagesPlayground extends React.Component {
   handleTextPropChange = (e) => {
     const { id, value } = e.target;
     this.setState({ [id]: !isEmpty(value) ? value : "edit me" });
+  };
+
+  handleButtonTextPropChange = (e) => {
+    const { id, value } = e.target;
+    this.setState({ [id]: upperCase(value) });
   };
 
   handleIconPropChange = (e) => {
@@ -109,6 +125,18 @@ export default class SystemMessagesPlayground extends React.Component {
                   </option>
                 ))}
               </select>
+            </label>
+          </span>
+          <br />
+
+          <span className="lab-playground__item">
+            <label htmlFor="selectedButtonText">
+              <strong>buttonText: </strong>
+              <input
+                id="selectedButtonText"
+                onChange={this.handleButtonTextPropChange}
+                placeholder="Inser text"
+              />
             </label>
           </span>
         </div>
