@@ -5,20 +5,20 @@ import Icon from "../Icon";
 export default class NarrowSidebar extends React.Component {
   static propTypes = {
     children: PropTypes.element,
-    vivid: PropTypes.bool,
+    isVivid: PropTypes.bool,
     color: PropTypes.string,
     withScroll: PropTypes.bool,
   };
 
   static defaultProps = {
     children: undefined,
-    vivid: false,
+    isVivid: false,
     color: "",
     withScroll: false,
   };
 
   render() {
-    const { children, vivid, color, withScroll } = this.props;
+    const { children, isVivid, color, withScroll } = this.props;
     return (
       <React.Fragment>
         <div className="lab-narrow__overlay" />
@@ -26,7 +26,7 @@ export default class NarrowSidebar extends React.Component {
           className={
             `lab-narrow-sidebar__mobile-topbar` +
             `${
-              vivid
+              isVivid
                 ? ` lab-narrow-sidebar--vivid lab-narrow-sidebar--vivid--${color}`
                 : ` ""`
             }`
@@ -40,7 +40,7 @@ export default class NarrowSidebar extends React.Component {
           className={
             `lab-narrow-sidebar` +
             `${
-              vivid
+              isVivid
                 ? ` lab-narrow-sidebar--vivid lab-narrow-sidebar--vivid--${color}`
                 : ` ""`
             }` +
