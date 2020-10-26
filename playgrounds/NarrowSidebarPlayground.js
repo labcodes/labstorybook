@@ -15,8 +15,6 @@ export default class NarrowSidebarPlayground extends React.Component {
       withScroll: true,
       logoSrc: "",
       logoAltText: "",
-      collapseIcon: "menu-collapse",
-      collapseIconColor: "teal-60",
       itemIcon: "calendar",
       itemLabel: "Test",
       sidebarItems: [<NarrowSidebar.Item icon="coin" label="Teste" />],
@@ -80,8 +78,6 @@ export default class NarrowSidebarPlayground extends React.Component {
       withScroll,
       logoSrc,
       logoAltText,
-      collapseIcon,
-      collapseIconColor,
       itemIcon,
       itemLabel,
       sidebarItems,
@@ -106,10 +102,7 @@ export default class NarrowSidebarPlayground extends React.Component {
           >
             <NarrowSidebar.Header>
               <NarrowSidebar.Logotype altText={logoAltText} logoSrc={logoSrc} />
-              <NarrowSidebar.Collapse
-                icon={collapseIcon}
-                iconColor={collapseIconColor}
-              />
+              <NarrowSidebar.Collapse />
             </NarrowSidebar.Header>
             <NarrowSidebar.Body withScroll={withScroll}>
               {sidebarItems.map((item) => item)}
@@ -188,22 +181,6 @@ export default class NarrowSidebarPlayground extends React.Component {
                   id="logoAltText"
                   label="logoAltText"
                   value={logoAltText}
-                  onChange={this.handlePropChangeText}
-                />
-              </span>
-              <span className="lab-playground__item">
-                <TextInput
-                  id="collapseIcon"
-                  label="collapseIcon"
-                  value={collapseIcon}
-                  onChange={this.handlePropChangeText}
-                />
-              </span>
-              <span className="lab-playground__item">
-                <TextInput
-                  id="collapseIconColor"
-                  label="collapseIconColor"
-                  value={collapseIconColor}
                   onChange={this.handlePropChangeText}
                 />
               </span>
