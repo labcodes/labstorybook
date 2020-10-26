@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 
 import NarrowSidebar from "../labsystem/src/Sidebar/NarrowSidebar";
@@ -58,7 +59,12 @@ export default class NarrowSidebarPlayground extends React.Component {
   addNewFooterButton = () => {
     const { footerButtonIcon, footerButtonLabel, footerButtons } = this.state;
 
-    footerButtons.push(<NarrowSidebar.FooterButton icon={footerButtonIcon} label={footerButtonLabel} />);
+    footerButtons.push(
+      <NarrowSidebar.FooterButton
+        icon={footerButtonIcon}
+        label={footerButtonLabel}
+      />
+    );
     this.setState({ footerButtons });
   };
 
