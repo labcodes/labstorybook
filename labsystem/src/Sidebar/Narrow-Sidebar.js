@@ -42,7 +42,7 @@ export default class NarrowSidebar extends React.Component {
             `${
               isVivid
                 ? ` lab-narrow-sidebar--vivid lab-narrow-sidebar--vivid--${color}`
-                : ` ""`
+                : ""
             }` +
             `${withScroll ? ` lab-narrow-sidebar--with-scroll` : ` ""`}`
           }
