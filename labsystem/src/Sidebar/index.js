@@ -1,4 +1,4 @@
-import NarrowSidebar from "./Narrow-Sidebar";
+import NarrowSidebar from "./NarrowSidebar";
 import Header from "./Header";
 import Body from "./Body";
 import Footer from "./Footer";
