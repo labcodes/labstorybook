@@ -4,6 +4,7 @@ import NarrowSidebar from "../labsystem/src/Sidebar/NarrowSidebar";
 import TextInput from "../labsystem/src/Input/TextInput";
 import Toggle from "../labsystem/src/Toggle";
 import OutlineButton from "../labsystem/src/Buttons/OutlineButton";
+import Icon from "../labsystem/src/Icon";
 
 export default class NarrowSidebarPlayground extends React.Component {
   constructor(props) {
@@ -21,10 +22,15 @@ export default class NarrowSidebarPlayground extends React.Component {
       sidebarItems: [<NarrowSidebar.Item icon="coin" label="Teste" />],
       footerButtonIcon: "key",
       footerButtonLabel: "Password",
-      footerButtons: [<NarrowSidebar.FooterButton icon="key" label="Password" />],
+      footerButtons: [
+        <NarrowSidebar.FooterButton icon="key" label="Password" />,
+      ],
       avatarAltText: "",
       avatarSrc: "",
       avatarCaption: "",
+      showHeaderConfigs: false,
+      showBodyConfigs: false,
+      showFooterConfigs: false,
     };
   }
 
@@ -64,6 +70,9 @@ export default class NarrowSidebarPlayground extends React.Component {
     this.setState({ footerButtons });
   };
 
+  handleToggleFor = (stateKey) =>
+    this.setState({ [stateKey]: !this.state[stateKey] });
+
   render() {
     const {
       color,
@@ -82,6 +91,9 @@ export default class NarrowSidebarPlayground extends React.Component {
       avatarAltText,
       avatarCaption,
       avatarSrc,
+      showHeaderConfigs,
+      showBodyConfigs,
+      showFooterConfigs,
     } = this.state;
     return (
       <div className="columns lab-playground lab-narrow-sidebar--stories">
@@ -150,128 +162,168 @@ export default class NarrowSidebarPlayground extends React.Component {
               />
             </label>
           </span>
-
-          <p>
+          <p
+            onClick={() => this.handleToggleFor("showHeaderConfigs")}
+            onKeyPress={() => this.handleToggleFor("showHeaderConfigs")}
+            style={{ cursor: "pointer", display: "flex" }}
+            role="button"
+          >
             <strong>Header</strong>
+            <Icon
+              type={showHeaderConfigs ? "collapse-open" : "collapse-closed"}
+            />
           </p>
-          <span className="lab-playground__item">
-            <TextInput
-              id="logoSrc"
-              label="logoSrc"
-              value={logoSrc}
-              onChange={this.handlePropChangeText}
-            />
-          </span>
-          <span className="lab-playground__item">
-            <TextInput
-              id="logoAltText"
-              label="logoAltText"
-              value={logoAltText}
-              onChange={this.handlePropChangeText}
-            />
-          </span>
-          <span className="lab-playground__item">
-            <TextInput
-              id="collapseIcon"
-              label="collapseIcon"
-              value={collapseIcon}
-              onChange={this.handlePropChangeText}
-            />
-          </span>
-          <span className="lab-playground__item">
-            <TextInput
-              id="collapseIconColor"
-              label="collapseIconColor"
-              value={collapseIconColor}
-              onChange={this.handlePropChangeText}
-            />
-          </span>
-          <p>
+          {showHeaderConfigs ? (
+            <React.Fragment>
+              <span className="lab-playground__item">
+                <TextInput
+                  id="logoSrc"
+                  label="logoSrc"
+                  value={logoSrc}
+                  onChange={this.handlePropChangeText}
+                />
+              </span>
+              <span className="lab-playground__item">
+                <TextInput
+                  id="logoAltText"
+                  label="logoAltText"
+                  value={logoAltText}
+                  onChange={this.handlePropChangeText}
+                />
+              </span>
+              <span className="lab-playground__item">
+                <TextInput
+                  id="collapseIcon"
+                  label="collapseIcon"
+                  value={collapseIcon}
+                  onChange={this.handlePropChangeText}
+                />
+              </span>
+              <span className="lab-playground__item">
+                <TextInput
+                  id="collapseIconColor"
+                  label="collapseIconColor"
+                  value={collapseIconColor}
+                  onChange={this.handlePropChangeText}
+                />
+              </span>
+            </React.Fragment>
+          ) : (
+            ""
+          )}
+          <p
+            onClick={() => this.handleToggleFor("showBodyConfigs")}
+            onKeyPress={() => this.handleToggleFor("showBodyConfigs")}
+            style={{ cursor: "pointer", display: "flex" }}
+            role="button"
+          >
             <strong>Body</strong>
+            <Icon
+              type={showBodyConfigs ? "collapse-open" : "collapse-closed"}
+            />
           </p>
-          <span className="lab-playground__item">
-            <TextInput
-              id="itemIcon"
-              label="itemIcon"
-              value={itemIcon}
-              onChange={this.handlePropChangeText}
-            />
-          </span>
-          <span className="lab-playground__item">
-            <TextInput
-              id="itemLabel"
-              label="itemLabel"
-              value={itemLabel}
-              onChange={this.handlePropChangeText}
-            />
-          </span>
-          <br />
-          <OutlineButton
-            text="Add item"
-            size="small"
-            onClick={this.addNewItem}
-          />
-          <OutlineButton
-            text="Remove last item"
-            size="small"
-            onClick={this.removeLastItem}
-          />
-
-          <p>
+          {showBodyConfigs ? (
+            <React.Fragment>
+              <span className="lab-playground__item">
+                <TextInput
+                  id="itemIcon"
+                  label="itemIcon"
+                  value={itemIcon}
+                  onChange={this.handlePropChangeText}
+                />
+              </span>
+              <span className="lab-playground__item">
+                <TextInput
+                  id="itemLabel"
+                  label="itemLabel"
+                  value={itemLabel}
+                  onChange={this.handlePropChangeText}
+                />
+              </span>
+              <br />
+              <OutlineButton
+                text="Add item"
+                size="small"
+                onClick={this.addNewItem}
+              />
+              <OutlineButton
+                text="Remove last item"
+                size="small"
+                onClick={this.removeLastItem}
+              />
+            </React.Fragment>
+          ) : (
+            ""
+          )}
+          <p
+            onClick={() => this.handleToggleFor("showFooterConfigs")}
+            onKeyPress={() => this.handleToggleFor("showFooterConfigs")}
+            style={{ cursor: "pointer", display: "flex" }}
+            role="button"
+          >
             <strong>Footer</strong>
+            <Icon
+              type={showFooterConfigs ? "collapse-open" : "collapse-closed"}
+            />
           </p>
-          <span className="lab-playground__item">
-            <TextInput
-              id="avatarAltText"
-              label="avatarAltText"
-              value={avatarAltText}
-              onChange={this.handlePropChangeText}
-            />
-          </span>
-          <span className="lab-playground__item">
-            <TextInput
-              id="avatarCaption"
-              label="avatarCaption"
-              value={avatarCaption}
-              onChange={this.handlePropChangeText}
-            />
-          </span>
-          <span className="lab-playground__item">
-            <TextInput
-              id="avatarSrc"
-              label="avatarSrc"
-              value={avatarSrc}
-              onChange={this.handlePropChangeText}
-            />
-          </span>
+          {showFooterConfigs ? (
+            <React.Fragment>
+              <span className="lab-playground__item">
+                <TextInput
+                  id="avatarAltText"
+                  label="avatarAltText"
+                  value={avatarAltText}
+                  onChange={this.handlePropChangeText}
+                />
+              </span>
+              <span className="lab-playground__item">
+                <TextInput
+                  id="avatarCaption"
+                  label="avatarCaption"
+                  value={avatarCaption}
+                  onChange={this.handlePropChangeText}
+                />
+              </span>
+              <span className="lab-playground__item">
+                <TextInput
+                  id="avatarSrc"
+                  label="avatarSrc"
+                  value={avatarSrc}
+                  onChange={this.handlePropChangeText}
+                />
+              </span>
 
-          <span className="lab-playground__item">
-            <TextInput
-              id="footerButtonIcon"
-              label="footerButtonIcon"
-              value={footerButtonIcon}
-              onChange={this.handlePropChangeText}
-            />
-          </span>
-          <span className="lab-playground__item">
-            <TextInput
-              id="footerButtonLabel"
-              label="footerButtonLabel"
-              value={footerButtonLabel}
-              onChange={this.handlePropChangeText}
-            />
-          </span>
-          <br />
-          <OutlineButton
-            text="Add footer button"
-            size="small"
-            onClick={this.addNewFooterButton}
-          />
-          <OutlineButton
-            text="Remove last footer button"
-            size="small"
-            onClick={this.removeLastFooterButton}
-          />
+              <span className="lab-playground__item">
+                <TextInput
+                  id="footerButtonIcon"
+                  label="footerButtonIcon"
+                  value={footerButtonIcon}
+                  onChange={this.handlePropChangeText}
+                />
+              </span>
+              <span className="lab-playground__item">
+                <TextInput
+                  id="footerButtonLabel"
+                  label="footerButtonLabel"
+                  value={footerButtonLabel}
+                  onChange={this.handlePropChangeText}
+                />
+              </span>
+              <br />
+              <OutlineButton
+                text="Add footer button"
+                size="small"
+                onClick={this.addNewFooterButton}
+              />
+              <OutlineButton
+                text="Remove last footer button"
+                size="small"
+                onClick={this.removeLastFooterButton}
+              />
+            </React.Fragment>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     );
