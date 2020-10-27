@@ -14,6 +14,10 @@ export default class Logotype extends React.Component {
 
   render() {
     const { logoSrc, altText } = this.props;
-    return <div className="lab-narrow-sidebar__logo" />;
+    return (
+      <div className="lab-narrow-sidebar__logo">
+        <img src={logoSrc} alt={altText} />
+      </div>
+    );
   }
 }
