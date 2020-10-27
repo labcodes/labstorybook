@@ -7,12 +7,14 @@ export default class Item extends React.Component {
     label: PropTypes.string,
     icon: PropTypes.string,
     onClick: PropTypes.string,
+    isActive: PropTypes.bool,
   };
 
   static defaultProps = {
     label: undefined,
     icon: undefined,
     onClick: undefined,
+    isActive: false,
   };
 
   handleClik = () => {
@@ -30,13 +32,15 @@ export default class Item extends React.Component {
   };
 
   render() {
-    const { label } = this.props;
+    const { label, isActive } = this.props;
 
     return (
       <React.Fragment>
         <button
           type="button"
-          className="lab-narrow-sidebar__item"
+          className={`lab-narrow-sidebar__item${
+            isActive ? " lab-narrow-sidebar__item--active" : ""
+          }`}
           onClick={this.handleClik}
         >
           {this.itemIcon()}
