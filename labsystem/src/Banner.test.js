@@ -1,5 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
+import { mount } from "enzyme";
 
 import Banner from "./Banner";
 
@@ -26,5 +27,23 @@ describe("Banner", () => {
       )
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
+  });
+
+  it("calls props.onClick when clicked", async () => {
+    const mockOnClick = jest.fn();
+    const mountedBanner = mount(
+      <Banner
+        text="Test click on Banner"
+        type="info"
+        icon="arrow-left"
+        buttonProps={{
+          text: "Info Banner",
+          onClick: mockOnClick,
+        }}
+      />
+    );
+    expect(mockOnClick.mock.calls.length).toEqual(0);
+    mountedBanner.find("button").simulate("click");
+    expect(mockOnClick.mock.calls.length).toEqual(1);
   });
 });

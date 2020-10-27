@@ -28,9 +28,11 @@ export default class Alert extends React.Component {
   };
 
   button = () => {
-    const { buttonProps } = this.props;
-    return buttonProps.text ? (
-      <TextButton size="normal" skin="dark" text={buttonProps.text} />
+    const {
+      buttonProps: { text },
+    } = this.props;
+    return text ? (
+      <TextButton size="normal" skin="dark" text={text} />
     ) : undefined;
   };
 
