@@ -6,14 +6,12 @@ export default class Item extends React.Component {
   static propTypes = {
     label: PropTypes.string,
     icon: PropTypes.string,
-    iconColor: PropTypes.string,
     onClick: PropTypes.string,
   };
 
   static defaultProps = {
     label: undefined,
     icon: undefined,
-    iconColor: "mineral-60",
     onClick: undefined,
   };
 
@@ -23,9 +21,9 @@ export default class Item extends React.Component {
   };
 
   itemIcon = () => {
-    const { icon, iconColor } = this.props;
+    const { icon } = this.props;
     return icon ? (
-      <Icon type={icon} color={iconColor} className="sidebar-item" />
+      <Icon type={icon} color="mineral-60" className="sidebar-item" />
     ) : (
       ""
     );
