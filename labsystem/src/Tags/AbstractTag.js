@@ -26,7 +26,7 @@ export default class AbstractTag extends React.Component {
     className: "",
   };
 
-  handleOnClick = (e) => {
+  handleEvent = (e) => {
     if ((e.keycode || e.which) === 32) {
       e.preventDefault();
     }
@@ -56,8 +56,8 @@ export default class AbstractTag extends React.Component {
           `${isOutline ? ` lab-tag--outline` : ""}` +
           `${color ? ` lab-tag--${color}-${skin}` : ` lab-tag--${skin}`}`
         }
-        onClick={this.handleOnClick}
-        onKeyPress={this.handleOnClick}
+        onClick={this.handleEvent}
+        onKeyPress={this.handleEvent}
         role="presentation"
         // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
         tabIndex="0"
