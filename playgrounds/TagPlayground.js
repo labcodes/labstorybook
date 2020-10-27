@@ -17,6 +17,16 @@ import {
 export default class TagPlayground extends React.Component {
   constructor(props) {
     super(props);
+    this.initialState = {
+      selectedText: "edit me",
+      selectedColor: "mineral",
+      selectedSkin: "pale",
+      selectedIsDisabled: false,
+      selectedIsOutline: false,
+      selectedIcon: "",
+      selectedThumbSrc: "",
+      removableTagIsOn: true,
+    };
 
     this.state = {
       availableComponents: {
@@ -26,18 +36,14 @@ export default class TagPlayground extends React.Component {
         DropdownTag,
       },
       currentComponent: "SimpleTag",
-
-      selectedText: "edit me",
-      selectedColor: "mineral",
-      selectedIsDisabled: false,
-      selectedIsOutline: false,
-      selectedIcon: "",
-      selectedThumbSrc: "",
-
-      removableTagIsOn: true,
-
+      selectedText: this.initialState.selectedText,
+      selectedColor: this.initialState.selectedColor,
+      selectedIsDisabled: this.initialState.selectedIsDisabled,
+      selectedIsOutline: this.initialState.selectedIsOutline,
+      selectedIcon: this.initialState.selectedIcon,
+      selectedThumbSrc: this.initialState.selectedThumbSrc,
+      removableTagIsOn: this.initialState.removableTagIsOn,
       togglableTagIsOn: false,
-
       isIconInputDisabled: false,
       isThumbSrcInputDisabled: false,
     };
@@ -47,16 +53,13 @@ export default class TagPlayground extends React.Component {
     const { value } = e.target;
     this.setState({
       currentComponent: value,
+      selectedColor: this.initialState.selectedColor,
+      selectedIsDisabled: this.initialState.selectedIsDisabled,
+      selectedIsOutline: this.initialState.selectedIsOutline,
+      selectedIcon: this.initialState.selectedIcon,
+      selectedThumbSrc: this.initialState.selectedThumbSrc,
+      removableTagIsOn: true,
     });
-    // If 'thumbSrc' has been selected, 'icon' will be disabled,
-    // but 'DropdownTag' has no 'thumbSrc'.
-    // Reset 'icon' state enables user to have a choice.
-    if (value === "DropdownTag") {
-      this.setState({
-        selectedThumbSrc: "",
-        isIconInputDisabled: false,
-      });
-    }
   };
 
   handleTextPropChange = (e) => {
