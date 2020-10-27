@@ -6,11 +6,18 @@ export default class FooterButton extends React.Component {
   static propTypes = {
     label: PropTypes.string,
     icon: PropTypes.string,
+    onClick: PropTypes.func,
   };
 
   static defaultProps = {
     label: undefined,
     icon: undefined,
+    onClick: undefined,
+  };
+
+  handleClik = () => {
+    const { onClick } = this.props;
+    onClick();
   };
 
   buttonIcon = () => {
@@ -23,7 +30,11 @@ export default class FooterButton extends React.Component {
 
     return (
       <React.Fragment>
-        <button type="button" className="lab-narrow-sidebar__footer__button">
+        <button
+          type="button"
+          className="lab-narrow-sidebar__footer__button"
+          onClick={this.handleClik}
+        >
           {this.buttonIcon()}
           {label}
         </button>
