@@ -7,18 +7,18 @@ export default class NarrowSidebar extends React.Component {
     children: PropTypes.element,
     isVivid: PropTypes.bool,
     color: PropTypes.string,
-    withScroll: PropTypes.bool,
+    withDividers: PropTypes.bool,
   };
 
   static defaultProps = {
     children: undefined,
     isVivid: false,
     color: "",
-    withScroll: false,
+    withDividers: false,
   };
 
   render() {
-    const { children, isVivid, color, withScroll } = this.props;
+    const { children, isVivid, color, withDividers } = this.props;
     return (
       <React.Fragment>
         <div className="lab-narrow__overlay" />
@@ -44,7 +44,7 @@ export default class NarrowSidebar extends React.Component {
                 ? ` lab-narrow-sidebar--vivid lab-narrow-sidebar--vivid--${color}`
                 : ""
             }` +
-            `${withScroll ? ` lab-narrow-sidebar--with-scroll` : ` ""`}`
+            `${withDividers ? ` lab-narrow-sidebar--with-scroll` : ` ""`}`
           }
         >
           {children}

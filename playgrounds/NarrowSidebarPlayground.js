@@ -13,7 +13,7 @@ export default class NarrowSidebarPlayground extends React.Component {
     this.state = {
       color: "teal",
       isVivid: false,
-      withScroll: true,
+      withDividers: true,
       logoSrc: "",
       logoAltText: "",
       itemIcon: "calendar",
@@ -81,7 +81,7 @@ export default class NarrowSidebarPlayground extends React.Component {
     const {
       color,
       isVivid,
-      withScroll,
+      withDividers,
       logoSrc,
       logoAltText,
       itemIcon,
@@ -104,13 +104,13 @@ export default class NarrowSidebarPlayground extends React.Component {
           <NarrowSidebar
             color={color}
             isVivid={isVivid}
-            withScroll={withScroll}
+            withDividers={withDividers}
           >
             <NarrowSidebar.Header>
               <NarrowSidebar.Logotype altText={logoAltText} logoSrc={logoSrc} />
               <NarrowSidebar.Collapse />
             </NarrowSidebar.Header>
-            <NarrowSidebar.Body withScroll={withScroll}>
+            <NarrowSidebar.Body withDividers={withDividers}>
               {sidebarItems.map((item) => item)}
             </NarrowSidebar.Body>
             <NarrowSidebar.Footer>
@@ -150,13 +150,13 @@ export default class NarrowSidebarPlayground extends React.Component {
             </label>
           </span>
           <span className="lab-playground__item">
-            <label htmlFor="withScroll">
-              withScroll
+            <label htmlFor="withDividers">
+              withDividers
               <br />
               <Toggle
-                name="withScroll"
-                label="withScroll"
-                value={withScroll}
+                name="withDividers"
+                label="withDividers"
+                value={withDividers}
                 handleToggle={this.handlePropChangeBool}
               />
             </label>
