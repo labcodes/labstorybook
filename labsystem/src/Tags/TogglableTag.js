@@ -23,23 +23,24 @@ export default class TogglableTag extends React.Component {
 
   selected = () => {
     const { isOn } = this.props;
-    return isOn ? (
-      <Icon
-        type="check"
-        color="black-75"
-        size="petit"
-        className="lab-tag--check-icon"
-      />
-    ) : undefined;
+    let iconClass;
+
+    if (isOn) {
+      iconClass = "lab-tag--check-icon lab-tag--check-icon-on";
+    } else {
+      iconClass = "lab-tag--check-icon lab-tag--check-icon-off";
+    }
+
+    return (
+      <Icon type="check" color="black-75" size="petit" className={iconClass} />
+    );
   };
 
   render() {
     const { text, color, isOutline, disabled, isOn, onClick } = this.props;
     return (
       <AbstractTag
-        className={`lab-tag--togglable${
-          isOn ? " lab-tag--selected lab-tag--has-left-icon" : ""
-        }`}
+        className={`lab-tag--togglable${isOn ? " lab-tag--selected" : ""}`}
         text={text}
         color={color}
         isOutline={isOutline}
