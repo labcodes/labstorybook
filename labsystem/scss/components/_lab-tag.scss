@@ -73,10 +73,24 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
   padding-left: $spacing-01;
 }
 
-.lab-tag--left-icon,
-.lab-tag--check-icon {
+.lab-tag--left-icon {
   display: flex;
   margin-right: $spacing-01;
+}
+
+.lab-tag--check-icon {
+  display: flex;
+  transition: all $duration-base;
+}
+
+.lab-tag--check-icon-on {
+  max-width: 24px;
+  opacity: 1;
+}
+
+.lab-tag--check-icon-off {
+  max-width: 0;
+  opacity: 0;
 }
 
 /* 
