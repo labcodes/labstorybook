@@ -14,19 +14,34 @@ export default class NarrowSidebarPlayground extends React.Component {
       color: "teal",
       isVivid: false,
       withDividers: true,
-      logoSrc: "",
+      logoSrc: "./favicon.ico",
       logoAltText: "",
       itemIcon: "calendar",
       itemLabel: "Test",
-      sidebarItems: [<NarrowSidebar.Item icon="coin" label="Teste" />],
+      sidebarItems: [
+        <NarrowSidebar.Item
+          icon="coin"
+          label="Teste"
+          isActive={true}
+          onClick={() => {
+            console.log("Clicked Item");
+          }}
+        />,
+      ],
       footerButtonIcon: "key",
       footerButtonLabel: "Password",
       footerButtons: [
-        <NarrowSidebar.FooterButton icon="key" label="Password" />,
+        <NarrowSidebar.FooterButton
+          icon="key"
+          label="Password"
+          onClick={() => {
+            console.log("Clicked Password");
+          }}
+        />,
       ],
       avatarAltText: "",
-      avatarSrc: "",
-      avatarCaption: "",
+      avatarSrc: "./docs/narrow-sidebar/MrGeraldo.png",
+      avatarCaption: "Mr. Geraldo",
       showHeaderConfigs: false,
       showBodyConfigs: false,
       showFooterConfigs: false,
@@ -63,6 +78,9 @@ export default class NarrowSidebarPlayground extends React.Component {
       <NarrowSidebar.FooterButton
         icon={footerButtonIcon}
         label={footerButtonLabel}
+        onClick={() => {
+          alert(`Clicked ${footerButtonLabel}`);
+        }}
       />
     );
     this.setState({ footerButtons });
@@ -253,6 +271,14 @@ export default class NarrowSidebarPlayground extends React.Component {
             <React.Fragment>
               <span className="lab-playground__item">
                 <TextInput
+                  id="avatarSrc"
+                  label="avatarSrc"
+                  value={avatarSrc}
+                  onChange={this.handlePropChangeText}
+                />
+              </span>
+              <span className="lab-playground__item">
+                <TextInput
                   id="avatarAltText"
                   label="avatarAltText"
                   value={avatarAltText}
@@ -264,14 +290,6 @@ export default class NarrowSidebarPlayground extends React.Component {
                   id="avatarCaption"
                   label="avatarCaption"
                   value={avatarCaption}
-                  onChange={this.handlePropChangeText}
-                />
-              </span>
-              <span className="lab-playground__item">
-                <TextInput
-                  id="avatarSrc"
-                  label="avatarSrc"
-                  value={avatarSrc}
                   onChange={this.handlePropChangeText}
                 />
               </span>
