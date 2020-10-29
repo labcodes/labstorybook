@@ -1,0 +1,263 @@
+import { Fragment } from "react";
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+
+import Alert from "../labsystem/src/Alert";
+import Banner from "../labsystem/src/Banner";
+
+import SystemMessagesPlayground from "../playgrounds/SystemMessagesPlayground.js"
+
+<Meta title="Components/System Messages" />
+
+<div className="docs-title">
+  <div>
+    <h1 className="docs-title__text">System Messages</h1>
+  </div>
+</div>
+
+<div className="docs-content">
+
+  ## General usage
+
+  <div className="columns">
+    <div className="column">
+      <p>Alerts can be divided into 2 subgroups:</p>
+      <p><strong>Banners:</strong> persistent proeminet messages about system wide states. They persist during the whole user session, not being dismissible through buttons, except the informational variant.
+      <br />Banners do not overlay any content, but pushes down the whole page or frame content. They appear only one at a time and only disappears if or when the related issue is resolved. Use banners to communicate errors, warnings, and information with its related options or actions. Banners contain a single message and specific actions a user can take.</p>
+      <p><strong>Alerts:</strong> persistent alerts that shows function specific information, warnings or errors. They appear into the specific div or frame the closest possibile to the related issue or component. The informational variant is dismissible.</p>
+    </div>
+    <div className="column">
+      <h3>Elements and Format</h3>
+      <p><strong>Icon (mandatory for tablet-up):</strong> They bring clarity to the Message. Icons should be placed to the left of a title with the frame size of 24px. The icon must be directly connected to the message meaning. Never use icons for alerts on mobile environment.</p>
+      <p><strong>Message (mandatory):</strong> The alert message should be short and include: a description of the issue, what is affected and what to do to fix the situation.</p>
+      <p><strong>Button (optional):</strong> Text button.</p>
+      <p className="doc-em-block">You must always tell the user what <strong>action</strong> is needed to take place so the issue presented is solved.</p>
+    </div>
+  </div>
+
+  ## Anatomy
+
+  <div className="doc-anatomy-block">
+    <div className="columns is-vcentered">
+      <div className="column">
+        <h3>Alert</h3>
+        <img src="docs/system-messages/alert-anatomy.png" />
+      </div>
+      <div className="column">
+        <ol>
+          <li><strong>Icon (mandatory for tablet-up)</strong></li>
+          <li><strong>Message (mandatory)</strong></li>
+          <li><strong>Button (optional)</strong></li>
+          <li><strong>Base background</strong></li>
+          <li><strong>Base stroke</strong></li>
+        </ol>
+        <p className="doc-em-block">Inline alerts have special corner radius rules:
+          <br/> Tablet-up - 12px
+          <br/> Mobile - 8px</p>
+      </div>
+    </div>
+    <div className="column">
+      <h3>Banner</h3>
+      <img src="docs/system-messages/banner-anatomy.png" />
+    </div>
+    <div className="columns">
+      <div className="column is-half">
+        <h3>Padding and Spacing</h3>
+        <p><strong>Banners:</strong> As they fill the screen width completely, there are some spacing rules that need to be know before using these components. Both tablet-up and mobile variations have 3 types and rules for spacing: vertical, horizontal, and inner.</p>
+        <p><strong className="doc-pink">Inner spacing (between elemens):</strong> fixed. On tablet-up: 16px / On mobile: 4px</p>
+        <p><strong className="doc-orange">Vertical padding (top and bottom):</strong> fixed value of 12px</p>
+      </div>
+    </div>
+    <div className="columns is-multiline">
+      <div className="column">
+        <p><strong className="doc-cyan">Horizontal padding (left and right):</strong></p>
+        <p><strong>Tablet-up:</strong> as inner elements are centered, the value is dynamic, but the minimum is equal the margin size of the used viewport grid.</p>
+      </div>
+      <div className="column">
+        <p className="doc-em-block"><strong>For example:</strong> a tablet landscape viewport has its margins value set at 24px, that said, the banner's horizontal margins can use dynamic values due to message and button text size variations, but never less than 24px.</p>
+      </div>
+      <div className="column is-narrow">
+        <img src="docs/system-messages/padding.png" />
+      </div>
+      <p><strong>Mobile:</strong> the horizontal padding value is fixed and equal the margin size of the used viewport grid.</p>
+      <div className="column is-narrow">
+        <img src="docs/system-messages/padding-mobile.png" />
+      </div> 
+      <div className="column">
+        <p className="doc-em-block"><strong>For example:</strong> a small mobile viewport has its margins value set at 16px, so, the banner's horizontal paddings are exaclty 16px.</p>
+      </div>
+    </div>
+  </div>
+
+  ## Playground
+
+  <Preview>
+    <Story name="InteractiveSystemMessagesDemo">
+        <Fragment>
+          <SystemMessagesPlayground />
+        </Fragment>
+    </Story>
+  </Preview>
+
+  <div>
+    <h2>Variations and Screen Sizes</h2>
+    <h3>Tablet and desktop</h3>
+    <p>On bigger screens the inside elements pile on side of each other.</p>
+    <img src="docs/system-messages/view.png" />
+    <h3>Mobile</h3>
+    <p>On smaller screens the action button is placed on the bottom right of the component and the use of icons is forbidden.</p>
+    <img src="docs/system-messages/view-mobile.png" />
+  </div>
+
+  ## Messages
+
+  <div className="columns">
+    <div className="column">
+      <p>Messages for alerts tell the user about important system or feature-related issues or status. It’s initiated by the system and it’s not a result of the user’s actions.</p>
+    </div>
+    <div className="column">
+      <h3>Writing messages</h3>
+      <p>The alert message should be short and include: a description of the issue, what is affected and what to do to fix the situation.</p>
+      <p><strong>Content:</strong> never put the blame on the user for causing any issue, but let  them know exactly what's happening by being clear and conversational.</p>
+      <p><strong>Lenght:</strong> try to be concise and use the least number of words possible.</p>
+      <p className="doc-em-block"><strong>For tablet-up</strong> alerts never write a message that uses more than <strong>2 lines</strong>.
+        <br />
+        <strong>For mobile</strong>, never more than <strong>3 lines</strong>.
+        <br />
+        <br />
+        Remember that banners are resizable, and, with that, message's size shifts up and down. Pay attention to the space the message element occupies to never exceed the limits above.
+      </p>
+    </div>
+  </div>
+
+  ## Type
+
+  ### Information
+
+  Use to show administrative related, maintenance and informative status about system or function specific.
+
+  <Preview>
+    <Story name="Info Sample">
+      <div style={{ height: "250px", overflowY: "scroll" }}>
+        <Banner
+          type="info"
+          text="Scheduled maintenance in our servers tomorrow 5 Mar @ 10AM."
+          icon="calendar"
+          buttonProps={{
+            text: "Dismiss",
+            onClick: () => alert("Button to DISMISS Banner was clicked!")
+          }}
+        />
+        <br />
+        <Alert
+          type="info"
+          text="Good news! Now you can add your expenses to your monthly spreadsheet."
+          icon="coin"
+          buttonProps={{
+            text: "Dismiss",
+            onClick: () => alert("Button to DISMISS Alert was detected!")
+          }}
+        />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </Story>
+  </Preview>
+
+  ### Warning
+
+  Use to antecipate possible errors, significant changes on the system, indicate system's status or setting that interferes in user actions.
+
+  <Preview>
+    <Story name="Warn Sample">
+      <div style={{ height: "250px", overflowY: "scroll" }}>
+        <Banner
+          type="warn"
+          text="We couldn't renew your plan. Please check your billing info."
+          icon="coin"
+          buttonProps={{
+            text: "Go to billing",
+            onClick: () => alert("Button to GO TO BILLING was clicked in Banner!")
+          }}
+        />
+        <br />
+        <Alert
+          type="warn"
+          text="You need to be signed in to use this feature."
+          icon="calendar"
+          buttonProps={{
+            text: "Login",
+            onClick: () => alert("Button to LOGIN was clicked in Allert!")
+          }}
+        />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </Story>
+  </Preview>
+
+  <p className="doc-em-block">Have empathy to comunicate what you need. Inform but it is not necessary to alarm. Be sure to do not talk about something that has already happened before (repeated warnings are an error).</p>
+
+  ### Error
+
+  It appears when something goes wrong within the system. It also can represent the next step after a sequence of warnings. Explain the problem and provide the user with a next step or an alternative.
+
+  <Preview>
+    <Story name="Error Sample">
+      <div style={{ height: "250px", overflowY: "scroll" }}>
+        <Banner
+          type="error"
+          text="Looks like we're having trouble retrieving some information. Please refresh the page."
+          icon="reload"
+          buttonProps={{
+            text: "Refresh",
+            onClick: () => alert("Button to REFRESH was clicked in Banner!")
+          }}
+        />
+        <br />
+        <Alert type="error" text="Enter the required fields do proceed." icon="key" />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </Story>
+  </Preview>
+
+  <p className="doc-em-block">Let the user know exactly what's causing the error by being clear and conversational like how you might explain a technical error to your non-technical friends. You can also suggest actions via text in the message element.</p>
+
+  ## Behavior
+
+  <div className="columns">
+    <div className="column">
+      <p><strong>Banners:</strong> As a system wide communication component, they appear at the very top of the app pushing down all the content by animation (600ms), staying fixed on this position even if the user scrolls the page.</p>
+      <p><strong>Alerts:</strong> These appear inside a frame or div of a specific set of components or function/feature, the closest to where the message is related, with a slide animation (600ms). The position (top, bottom, left of right) is free for the designer to choose and depends on the project settings and white space availability.</p>
+    </div>
+    <div className="column">
+      <h3>Focus & Piling/Stacking</h3>
+      <p><strong>Piling:</strong> It is not possible to pile banners. Inline alerts can be pilled up to 3 components, but avoid doing so.</p>
+    </div>
+  </div>
+
+  ### Use Example
+
+  <img src="docs/system-messages/use-example.png" />
+</div>

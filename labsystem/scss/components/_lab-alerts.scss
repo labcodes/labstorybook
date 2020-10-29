@@ -14,19 +14,19 @@ $alerts-line-height: 20px;
   color: $mineral-70;
   border-radius: 8px;
 
-  &__info {
+  &--info {
     @extend .lab-alert;
     background-color: rgba($mineral-20, .2);
     border: 2px solid $mineral-40;
   }
 
-  &__error {
+  &--error {
     @extend .lab-alert;
     background-color: rgba($red-20, .2);
     border: 2px solid $red-60;
   }
 
-  &__warn {
+  &--warn {
     @extend .lab-alert;
     background-color: rgba($yellow-20, .2);
     border: 2px solid $yellow-60;
@@ -35,6 +35,7 @@ $alerts-line-height: 20px;
   @include from($tablet) {
     border-radius: 12px;
     width: fit-content;
+    width: -moz-fit-content;
     flex-wrap: unset;
   }
 }
@@ -81,18 +82,23 @@ $alerts-line-height: 20px;
   align-items: center;
   padding: $spacing-03;
   color: $white;
+  position: sticky;
+  position: -webkit-sticky;
 
-  &__info {
+  top: 0;
+  z-index: 1;
+
+  &--info {
     @extend .lab-banner;
     background-color: $mineral-60;
   }
 
-  &__error {
+  &--error {
     @extend .lab-banner;
     background-color: $red-60;
   }
 
-  &__warn {
+  &--warn {
     @extend .lab-banner;
     background-color: $yellow-60;
     color: $black-75;
@@ -117,6 +123,6 @@ $alerts-line-height: 20px;
   @extend .lab-alert__message;
 }
 
-.lab-banner__button {
+.lab-banner .lab-btn {
   @extend .lab-alert__button;
 }

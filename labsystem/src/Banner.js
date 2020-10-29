@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { isUndefined } from "lodash";
 import Icon from "./Icon";
 import TextButton from "./Buttons/TextButton";
 
@@ -8,12 +9,18 @@ export default class Banner extends React.Component {
     text: PropTypes.string.isRequired,
     type: PropTypes.oneOf(["info", "warn", "error"]),
     icon: PropTypes.string.isRequired,
-    buttonText: PropTypes.string,
+    buttonProps: PropTypes.shape({
+      text: PropTypes.string,
+      onClick: PropTypes.func,
+    }),
   };
 
   static defaultProps = {
     type: "info",
-    buttonText: "",
+    buttonProps: {
+      text: "",
+      onClick: undefined,
+    },
   };
 
   icon = () => {
@@ -24,24 +31,37 @@ export default class Banner extends React.Component {
   };
 
   button = () => {
-    const { buttonText, type } = this.props;
-    if (buttonText) {
+    const { buttonProps, type } = this.props;
+    if (buttonProps.text) {
       return type === "warn" ? (
-        <TextButton size="normal" skin="dark" text={buttonText} />
+        <TextButton size="normal" skin="dark" text={buttonProps.text} />
       ) : (
-        <TextButton size="normal" skin="light" text={buttonText} />
+        <TextButton size="normal" skin="light" text={buttonProps.text} />
       );
     }
     return null;
   };
 
+  handleClick = (e) => {
+    const { buttonProps } = this.props;
+    if (!isUndefined(buttonProps.onClick)) {
+      buttonProps.onClick(e);
+    }
+  };
+
   render() {
     const { text, type } = this.props;
     return (
-      <div className={`lab-banner__${type}`}>
+      <div className={`lab-banner lab-banner--${type}`}>
         {this.icon()}
         <span className="lab-banner__message">{text}</span>
-        <span className="lab-alert__button">{this.button()}</span>
+        <span
+          className="lab-alert__button"
+          onClick={this.handleClick}
+          role="presentation"
+        >
+          {this.button()}
+        </span>
       </div>
     );
   }
