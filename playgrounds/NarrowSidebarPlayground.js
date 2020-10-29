@@ -11,7 +11,6 @@ export default class NarrowSidebarPlayground extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      color: "teal",
       isVivid: false,
       withDividers: true,
       logoSrc: "./favicon.ico",
@@ -97,7 +96,6 @@ export default class NarrowSidebarPlayground extends React.Component {
 
   render() {
     const {
-      color,
       isVivid,
       withDividers,
       logoSrc,
@@ -120,7 +118,6 @@ export default class NarrowSidebarPlayground extends React.Component {
         <div className="column lab-playground__component">
           <h4>TextInput</h4>
           <NarrowSidebar
-            color={color}
             isVivid={isVivid}
             withDividers={withDividers}
           >
@@ -146,15 +143,6 @@ export default class NarrowSidebarPlayground extends React.Component {
           <p>
             <strong>NarrowSidebar</strong>
           </p>
-          <span className="lab-playground__item">
-            <TextInput
-              id="color"
-              label="Color"
-              value={color}
-              onChange={this.handlePropChangeText}
-            />
-          </span>
-          <br />
           <span className="lab-playground__item">
             <label htmlFor="isVivid">
               isVivid

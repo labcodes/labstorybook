@@ -1,14 +1,30 @@
 @use 'sass:map';
 
-// Light
+$radius-default: 60px;
+$border-default: $border-01;
+
+// Default Colors (Pale)
 $item-focus-color: map-get($narrow-sidebar-theme, "30");
 $item-pressed-color: map-get($narrow-sidebar-theme, "20");
 $item-hover-color: map-get($narrow-sidebar-theme, "10");
 $item-active-color: map-get($narrow-sidebar-theme, "70");
-$narrow-mobile-topbar-bg: map-get($narrow-sidebar-theme, "60");
+$footer-button-color: map-get($narrow-sidebar-theme, "60");
 
-$radius-default: 60px;
-$border-default: $border-01;
+@if $narrow-sidebar-theme == $coral-palette {
+  @warn "Narrow sidebar can't use coral theme when skin is not vivid.";
+  $item-focus-color: map-get($default-theme, "30");
+  $item-pressed-color: map-get($default-theme, "20");
+  $item-hover-color: map-get($default-theme, "10");
+  $item-active-color: map-get($default-theme, "70");
+  $footer-button-color: map-get($default-theme, "60");
+}
+
+// Vivid Colors
+$narrow-bg: map-get($narrow-sidebar-theme, "60");
+
+@if $narrow-sidebar-theme == $mineral-palette {
+  $narrow-bg: map-get($narrow-sidebar-theme, "90");
+}
 
 .lab-narrow-sidebar {
   width: 80%;
@@ -17,17 +33,17 @@ $border-default: $border-01;
   overflow-x:hidden;
   height: 100vh;
   top: 0;
-  position: fixed; 
+  position: fixed;
   align-items: stretch;
   flex-direction: column;
   border-top-right-radius: $radius-default;
   background-color: white;
   transition: ease left .6s;
-  
+
   &--on {
     left: 0;
   }
-  
+
   &--off {
     left: -300px;
   }
@@ -37,32 +53,7 @@ $border-default: $border-01;
     border: $border-default $mineral-20;
     box-sizing: border-box;
   }
-} 
-
-.lab-narrow__overlay {
-  content: "";
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  top: 0;
-  left: 0;
-  background-color: $black-50;
-  pointer-events: none;
-  transition: ease all .2s;
-
-  &--on {
-    opacity: 1;
-  }
-
-  &--off {
-    opacity: 0;
-  }
-
-  @include from($tablet) {
-    display: none;
-  }
 }
-
 
 //Header
 .lab-narrow-sidebar__header {
@@ -106,8 +97,7 @@ $border-default: $border-01;
   @include from($tablet){
     margin: 0 0 8px 0;
   }
-  
-  
+
   &-photo {
     width: 48px;
     height: 48px;
@@ -132,7 +122,7 @@ $border-default: $border-01;
     color: $teal-70;
     font-weight: $weight-bold;
     font-family: $font-primary;
-    font-size: $font-size-3; 
+    font-size: $font-size-3;
 
     @include from($tablet){
       display: none;
@@ -173,22 +163,6 @@ $border-default: $border-01;
     display: none;
   }
 }
-// Topbar that apperson only on mobile.
-// It holds the button to open the sidebar on mobile.
-.lab-narrow-sidebar__mobile-topbar {
-  position:fixed;
-  right: 0;
-  top: 0;
-  background-color: $narrow-mobile-topbar-bg;
-  width: 100%;
-  height: 76px;  
-  border-bottom: 1px solid transparent;
-
-  @include from($tablet){
-    display: none;
-  }
-
-}
 
 .lab-narrow-sidebar__mobile-button {
   display: flex;
@@ -227,7 +201,7 @@ $border-default: $border-01;
     overflow: auto;
     margin-top: 0;
   }
-  
+
 }
 
 .lab-narrow-sidebar__item {
@@ -248,7 +222,7 @@ $border-default: $border-01;
 
   @include from($tablet){
       display: flex;
-      flex-direction: column; 
+      flex-direction: column;
       align-items: center;
       text-align: center;
       font-size: $font-size-1;
@@ -288,7 +262,7 @@ $border-default: $border-01;
 
   &:hover {
     background-color:$item-hover-color;
-  } 
+  }
 
   &:active {
     background-color:$item-focus-color;
@@ -305,8 +279,6 @@ $border-default: $border-01;
   }
 }
 
-
-
 //Footer
 .lab-narrow-sidebar__footer {
   display: flex;
@@ -314,11 +286,11 @@ $border-default: $border-01;
   margin: $spacing-06 0 $spacing-06;
   flex-direction: column;
   flex-grow: 0;
-  
+
   @include from($tablet){
     align-items: center;
   }
-  
+
   &__button {
     display: flex;
     width: 60%;
@@ -327,7 +299,7 @@ $border-default: $border-01;
     text-align: center;
     font-family: $font-primary;
     font-weight: $weight-medium;
-    color: $narrow-mobile-topbar-bg;
+    color: $footer-button-color;
     background-color: transparent;
     border: $border-default transparent;
     padding: $spacing-01 $spacing-03;
@@ -345,7 +317,7 @@ $border-default: $border-01;
     }
 
     .sidebar-item {
-      background-color: $narrow-mobile-topbar-bg;
+      background-color: $footer-button-color;
       margin-right: $spacing-02;
 
       @include from($tablet){
@@ -365,7 +337,6 @@ $border-default: $border-01;
 
   &__button:active {
     background-color: $item-focus-color;
-    
   }
 
   &__button--active {
@@ -382,41 +353,74 @@ $border-default: $border-01;
 //With Scroll
 .lab-narrow-sidebar--with-scroll {
   .lab-narrow-sidebar__body{
-    box-shadow: 1px 1px 2px $black-20;  
+    box-shadow: 1px 1px 2px $black-20;
   }
 
   .lab-narrow-sidebar__header{
     box-shadow: inset 0 -1px 2px $black-20;
   }
-} 
+}
 
 
 // Vivid Skin
-.lab-narrow-sidebar--vivid{
+.lab-narrow-sidebar--vivid {
   border: transparent;
+  background: $narrow-bg;
+
+  .lab-narrow-sidebar__header {
+    background-color: $narrow-bg;
+  }
+
+  // Unselected item
   .lab-narrow-sidebar__item {
     color: $white;
+    transition: all $duration-base;
 
     &:focus {
       &:before {
         border-color: $white-50;
       }
     }
-  
+
     &:hover {
       background-color: $white-20;
-    } 
-  
-    &:active {
-      background-color: $white-75;
-    }
-  
-    &--active {
-      background-color: $white;
     }
 
     .sidebar-item {
       background-color: $white;
+    }
+  }
+
+  // Selected item
+  .lab-narrow-sidebar__item--active {
+    background-color: $white;
+    color: $narrow-bg;
+
+    &:hover {
+      color: $white;
+      .lab-icon {
+        background-color: $white;
+      }
+    }
+
+    &:focus {
+      &:before {
+        border-color: $narrow-bg;
+      }
+    }
+
+    &:focus:hover {
+      &:before {
+        border-color: white;
+      }
+    }
+
+    &:active {
+      background-color: $narrow-bg;
+    }
+
+    .sidebar-item {
+      background-color: $narrow-bg;
     }
   }
 
@@ -430,17 +434,22 @@ $border-default: $border-01;
     &:focus {
       border-color: $white-50;
     }
-  
+
     &:hover {
       background-color: $white-20;
     }
-  
+
     &:active {
-      background-color: $white-75;      
+      background-color: $white-75;
     }
-  
+
     .lab-narrow-sidebar__footer__button--active {
       background-color: $white;
+      color: $narrow-bg;
+
+      .sidebar-item {
+        background-color: $narrow-bg;
+      }
     }
   }
 
@@ -449,7 +458,7 @@ $border-default: $border-01;
     &-text{
       color: $white;
     }
-  
+
     &-caption {
       color: $white-75;
     }
@@ -465,84 +474,24 @@ $border-default: $border-01;
 
     &:active {
       background-color: $white-75;
+
+      .sidebar-item {
+        background-color: $narrow-bg;
+      }
     }
 
     .sidebar-item{
       background-color: $white;
     }
   }
-  
+
   .lab-narrow-sidebar__mobile-topbar {
     background-color: $white;
-  }
-  
-}
 
-// Vivid narrow sidebar mixin
-
-@mixin narrow-sidebar-skin-vivid($color) {
-  background: $color;
-
-  .lab-narrow-sidebar__header{
-    background-color: $color;
-  }
-
-  .lab-narrow-sidebar__item--active,
-  .lab-narrow-sidebar__item:active {
-    color: $color; 
-
-    &:focus {
-      &:before {
-        border-color: $color;
+    &-button:active {
+      .lab-icon {
+        background-color: $narrow-bg;
       }
     }
-
-    .sidebar-item {
-      background-color: $color;
-    }
-  }
-
-  .lab-narrow-sidebar__footer__button--active,
-  .lab-narrow-sidebar__footer__button:active  {
-    color: $color; 
-    
-    .sidebar-item {
-      background-color: $color;
-    }    
-  }
- 
-  .lab-narrow-sidebar__collapse{
-    &:active{
-      .sidebar-item {
-        background-color: $color;
-      }
-    }
-  }  
-
-  
-  .lab-narrow-sidebar__mobile-topbar {
-    &-button:active{
-      .lab-icon{
-        background-color: $color;
-      }
-    }
-  }
-  
-}
-
-/*
-* This will generate the classes:
-* `.lab-narrow-sidebar--vivid-coral,
-* `.lab-narrow-sidebar--vivid-teal,
-* `.lab-narrow-sidebar--vivid-purple,
-* `.lab-narrow-sidebar--vivid-mineral,
-*/
-@each $name, $palette in $sidebar-colors {
-  .lab-narrow-sidebar--vivid--#{$name} {
-     @if $name == "mineral" {
-        @include narrow-sidebar-skin-vivid(map-get($palette, "90"));
-     } @else {
-        @include narrow-sidebar-skin-vivid(map-get($palette, "60")); 
-     }
   }
 }

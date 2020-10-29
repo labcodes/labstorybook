@@ -3,7 +3,7 @@
     display: inline-flex;
     margin-right: 80px;
   }
- 
+
   .lab-narrow-sidebar {
     display: flex;
     position: relative;
@@ -15,9 +15,9 @@
   }
 
   .lab-narrow-sidebar__body{
-    margin-top:0;
+    margin-top: 0;
   }
-      
+
   .lab-narrow-sidebar__mobile-topbar {
     position: relative;
   }
@@ -33,12 +33,12 @@
 
 //Purple Theming
 .lab-narrow-sidebar--stories--purple{
-  
+
   .lab-narrow-sidebar__collapse {
     &:focus {
       border-color: $purple-30;
     }
-  
+
     &:active {
       background-color: $purple-30;
     }
@@ -48,7 +48,7 @@
     &-button:focus {
       border-color: $purple-30;
     }
-  
+
     &-button:active {
       background-color: $purple-30;
     }
@@ -61,11 +61,11 @@
       }
     }
 
-    
+
     &:hover {
       background-color: $purple-10;
-    } 
-    
+    }
+
     &:active {
       background-color: $purple-30;
     }
@@ -74,7 +74,7 @@
       background-color: $purple-20;
       color: $purple-70;
 
-  
+
       .sidebar-item {
         background-color: $purple-70;
       }
@@ -97,16 +97,16 @@
     &__button:hover {
       background-color: $purple-10;
     }
-  
+
     &__button:active {
       background-color: $purple-30;
-      
+
     }
-  
+
     &__button--active {
       background-color: $purple-70;
       color: $purple-20;
-  
+
       .sidebar-item {
         background-color: $purple-70;
       }
@@ -117,12 +117,12 @@
 
 //Mineral Theming
 .lab-narrow-sidebar--stories--mineral{
-  
+
   .lab-narrow-sidebar__collapse {
     &:focus {
       border-color: $mineral-30;
     }
-  
+
     &:active {
       background-color: $mineral-30;
     }
@@ -132,7 +132,7 @@
     &-button:focus {
       border-color: $mineral-30;
     }
-  
+
     &-button:active {
       background-color: $mineral-30;
     }
@@ -145,11 +145,11 @@
       }
     }
 
-    
+
     &:hover {
       background-color: $mineral-10;
-    } 
-    
+    }
+
     &:active {
       background-color: $mineral-30;
     }
@@ -158,7 +158,7 @@
       background-color: $mineral-20;
       color: $mineral-70;
 
-  
+
       .sidebar-item {
         background-color: $mineral-70;
       }
@@ -181,19 +181,60 @@
     &__button:hover {
       background-color: $mineral-10;
     }
-  
+
     &__button:active {
       background-color: $mineral-30;
-      
+
     }
-  
+
     &__button--active {
       background-color: $mineral-70;
       color: $mineral-20;
-  
+
       .sidebar-item {
         background-color: $mineral-70;
       }
     }
   }
 }
+
+.lab-narrow__overlay {
+  content: "";
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: $black-50;
+  pointer-events: none;
+  transition: ease all .2s;
+
+  &--on {
+    opacity: 1;
+  }
+
+  &--off {
+    opacity: 0;
+  }
+
+  @include from($tablet) {
+    display: none;
+  }
+}
+
+// Topbar that apperson only on mobile.
+// It holds the button to open the sidebar on mobile.
+.lab-narrow-sidebar__mobile-topbar {
+  position:fixed;
+  right: 0;
+  top: 0;
+  background-color: $teal-60;
+  width: 100%;
+  height: 76px;
+  border-bottom: 1px solid transparent;
+
+  @include from($tablet){
+    display: none;
+  }
+}
+
