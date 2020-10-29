@@ -58,7 +58,7 @@ export default class TagPlayground extends React.Component {
       selectedIsOutline: this.initialState.selectedIsOutline,
       selectedIcon: this.initialState.selectedIcon,
       selectedThumbSrc: this.initialState.selectedThumbSrc,
-      removableTagIsOn: true,
+      removableTagIsOn: this.initialState.removableTagIsOn,
     });
   };
 
