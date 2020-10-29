@@ -15,9 +15,9 @@ export default class FooterButton extends React.Component {
     onClick: undefined,
   };
 
-  handleClik = () => {
+  handleClick = (e) => {
     const { onClick } = this.props;
-    onClick();
+    onClick(e);
   };
 
   buttonIcon = () => {
@@ -33,7 +33,7 @@ export default class FooterButton extends React.Component {
         <button
           type="button"
           className="lab-narrow-sidebar__footer__button"
-          onClick={this.handleClik}
+          onClick={this.handleClick}
         >
           {this.buttonIcon()}
           {label}

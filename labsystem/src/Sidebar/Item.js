@@ -17,9 +17,9 @@ export default class Item extends React.Component {
     isActive: false,
   };
 
-  handleClik = () => {
+  handleClick = (e) => {
     const { onClick } = this.props;
-    onClick();
+    onClick(e);
   };
 
   itemIcon = () => {
@@ -41,7 +41,7 @@ export default class Item extends React.Component {
           className={`lab-narrow-sidebar__item${
             isActive ? " lab-narrow-sidebar__item--active" : ""
           }`}
-          onClick={this.handleClik}
+          onClick={this.handleClick}
         >
           {this.itemIcon()}
           {label}
