@@ -297,7 +297,7 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
       font-size: $font-size-1;
     }
 
-    .sidebar-item {
+    .lab-narrow-sidebar__footer-icon {
       background-color: $footer-button-color;
       margin-right: $spacing-02;
 
@@ -325,7 +325,7 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
     color: $item-active-color;
     font-weight: $weight-semibold;
 
-    .sidebar-item {
+    .lab-narrow-sidebar__footer-icon {
       background-color: $item-active-color;
     }
   }
@@ -412,7 +412,7 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
   .lab-narrow-sidebar__footer__button {
     color: $white;
 
-    .sidebar-item {
+    .lab-narrow-sidebar__footer-icon {
       background-color: $white;
     }
 
@@ -433,7 +433,7 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
     background-color: $white;
     color: $vivid-bg;
 
-    .sidebar-item {
+    .lab-narrow-sidebar__footer-icon {
       background-color: $vivid-bg;
     }
   }
