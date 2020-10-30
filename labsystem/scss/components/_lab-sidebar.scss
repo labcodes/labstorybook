@@ -20,10 +20,10 @@ $footer-button-color: map-get($narrow-sidebar-theme, "60");
 }
 
 // Vivid Colors
-$narrow-bg: map-get($narrow-sidebar-theme, "60");
+$vivid-bg: map-get($narrow-sidebar-theme, "60");
 
 @if $narrow-sidebar-theme == $mineral-palette {
-  $narrow-bg: map-get($narrow-sidebar-theme, "90");
+  $vivid-bg: map-get($narrow-sidebar-theme, "90");
 }
 
 .lab-narrow-sidebar {
@@ -371,10 +371,10 @@ $narrow-bg: map-get($narrow-sidebar-theme, "60");
 // Vivid Skin
 .lab-narrow-sidebar--vivid {
   border: transparent;
-  background: $narrow-bg;
+  background: $vivid-bg;
 
   .lab-narrow-sidebar__header {
-    background-color: $narrow-bg;
+    background-color: $vivid-bg;
   }
 
   // Unselected item
@@ -393,7 +393,7 @@ $narrow-bg: map-get($narrow-sidebar-theme, "60");
     }
 
     &:active {
-      background-color: $narrow-bg;
+      background-color: $vivid-bg;
     }
 
     .sidebar-item {
@@ -404,7 +404,7 @@ $narrow-bg: map-get($narrow-sidebar-theme, "60");
   // Selected item
   .lab-narrow-sidebar__item--active {
     background-color: $white;
-    color: $narrow-bg;
+    color: $vivid-bg;
 
     &:hover {
       color: $white;
@@ -415,7 +415,7 @@ $narrow-bg: map-get($narrow-sidebar-theme, "60");
 
     &:focus {
       &:before {
-        border-color: $narrow-bg;
+        border-color: $vivid-bg;
       }
     }
 
@@ -426,11 +426,11 @@ $narrow-bg: map-get($narrow-sidebar-theme, "60");
     }
 
     &:active {
-      background-color: $narrow-bg;
+      background-color: $vivid-bg;
     }
 
     .sidebar-item {
-      background-color: $narrow-bg;
+      background-color: $vivid-bg;
     }
   }
 
@@ -450,16 +450,16 @@ $narrow-bg: map-get($narrow-sidebar-theme, "60");
     }
 
     &:active {
-      background-color: $narrow-bg;
+      background-color: $vivid-bg;
     }
   }
 
   .lab-narrow-sidebar__footer__button--active {
     background-color: $white;
-    color: $narrow-bg;
+    color: $vivid-bg;
 
     .sidebar-item {
-      background-color: $narrow-bg;
+      background-color: $vivid-bg;
     }
   }
 
@@ -474,9 +474,7 @@ $narrow-bg: map-get($narrow-sidebar-theme, "60");
     }
   }
 
-  .lab-narrow-sidebar__collapse,
-  .lab-narrow-sidebar__mobile-button{
-
+  .lab-narrow-sidebar__collapse {
     &:focus{
       border-color: $white-50;
       outline: none;
@@ -486,7 +484,7 @@ $narrow-bg: map-get($narrow-sidebar-theme, "60");
       background-color: $white-75;
 
       .lab-narrow-sidebar__collapse-icon {
-        background-color: $narrow-bg;
+        background-color: $vivid-bg;
       }
     }
   }
@@ -494,9 +492,6 @@ $narrow-bg: map-get($narrow-sidebar-theme, "60");
   .lab-narrow-sidebar__collapse-icon {
     background-color: $white;
 
-    .lab-narrow-sidebar__collapse-icon{
-      background-color: $white;
-    }
   }
 
   .lab-narrow-sidebar__mobile-topbar {
@@ -506,7 +501,7 @@ $narrow-bg: map-get($narrow-sidebar-theme, "60");
   .lab-narrow-sidebar__mobile-button {
     &:active {
       .lab-icon {
-        background-color: $narrow-bg;
+        background-color: $vivid-bg;
       }
     }
   }
