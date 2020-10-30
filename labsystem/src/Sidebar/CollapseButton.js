@@ -6,7 +6,10 @@ export default class Collapse extends React.Component {
     return (
       <React.Fragment>
         <button type="button" href="#" className="lab-narrow-sidebar__collapse">
-          <Icon type="menu-collapse" className="sidebar-item" />
+          <Icon
+            type="menu-collapse"
+            className="lab-narrow-sidebar__collapse-icon"
+          />
         </button>
       </React.Fragment>
     );
