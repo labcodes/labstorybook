@@ -168,31 +168,6 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
   background-color: $item-active-color;
 }
 
-.lab-narrow-sidebar__mobile-button {
-  display: flex;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  margin: 18px 0 18px 12px;
-  background-color: transparent;
-  border: $border-default transparent;
-  border-radius: $radius-02;
-
-  &:focus {
-    border-color: $item-focus-color;
-    outline: none;
-  }
-
-  &:active {
-    background-color: $item-focus-color;
-
-    .lab-icon {
-      background-color: $item-active-color;
-    }
-  }
-
-}
-
 //Body
 .lab-narrow-sidebar__body {
   display: flex;
@@ -491,18 +466,5 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
 
   .lab-narrow-sidebar__collapse-icon {
     background-color: $white;
-
-  }
-
-  .lab-narrow-sidebar__mobile-topbar {
-    background-color: $white;
-  }
-
-  .lab-narrow-sidebar__mobile-button {
-    &:active {
-      .lab-icon {
-        background-color: $vivid-bg;
-      }
-    }
   }
 }
