@@ -1,3 +1,10 @@
+$vivid-sidebar-all-colors: (
+  "teal": $teal-palette,
+  "purple": $purple-palette,
+  "mineral": $mineral-palette,
+  "coral": $coral-palette,
+);
+
 .lab-narrow-sidebar--stories{
   @media (min-width: 900px) {
     display: inline-flex;
@@ -223,7 +230,7 @@
   }
 }
 
-// Topbar that appers only on mobile.
+// Topbar that appears only on mobile.
 // It holds the button to open the sidebar on mobile.
 .lab-narrow-sidebar__mobile-topbar {
   position:fixed;
@@ -259,6 +266,144 @@
 
     .lab-icon {
       background-color: map-get($narrow-sidebar-theme, "70");
+    }
+  }
+}
+
+
+// Vivid Skin
+@each $name, $palette in $vivid-sidebar-all-colors {
+  $vivid-bg: map-get($palette, "60");
+
+  @if $palette == $mineral-palette {
+    $vivid-bg: map-get($palette, "90");
+  }
+
+  .lab-narrow-sidebar--stories-vivid-#{$name} {
+
+    .lab-narrow-sidebar--vivid {
+      border: transparent;
+      background: $vivid-bg;
+
+      .lab-narrow-sidebar__header {
+        background-color: $vivid-bg;
+      }
+
+      // Unselected item
+      .lab-narrow-sidebar__item {
+        color: $white;
+        transition: all $duration-base;
+
+        &:focus {
+          &:before {
+            border-color: $white-50;
+          }
+        }
+
+        &:hover {
+          background-color: $white-20;
+        }
+
+        &:active {
+          background-color: $vivid-bg;
+        }
+
+        .lab-narrow-sidebar__item-icon {
+          background-color: $white;
+        }
+      }
+
+      // Selected item
+      .lab-narrow-sidebar__item--active {
+        background-color: $white;
+        color: $vivid-bg;
+
+        &:hover {
+          color: $white;
+          .lab-icon {
+            background-color: $white;
+          }
+        }
+
+        &:focus {
+          &:before {
+            border-color: $vivid-bg;
+          }
+        }
+
+        &:focus:hover {
+          &:before {
+            border-color: white;
+          }
+        }
+
+        &:active {
+          background-color: $vivid-bg;
+        }
+
+        .lab-narrow-sidebar__item-icon {
+          background-color: $vivid-bg;
+        }
+      }
+
+      .lab-narrow-sidebar__footer__button {
+        color: $white;
+
+        .lab-narrow-sidebar__footer-icon {
+          background-color: $white;
+        }
+
+        &:focus {
+          border-color: $white-50;
+        }
+
+        &:hover {
+          background-color: $white-20;
+        }
+
+        &:active {
+          background-color: $vivid-bg;
+        }
+      }
+
+      .lab-narrow-sidebar__footer__button--active {
+        background-color: $white;
+        color: $vivid-bg;
+
+        .lab-narrow-sidebar__footer-icon {
+          background-color: $vivid-bg;
+        }
+      }
+
+      .lab-narrow-sidebar__avatar {
+
+        &-text{
+          color: $white;
+        }
+
+        &-caption {
+          color: $white-75;
+        }
+      }
+
+      .lab-narrow-sidebar__collapse {
+        &:focus{
+          border-color: $white-50;
+          outline: none;
+        }
+
+        &:active {
+          background-color: $white-75;
+
+          .lab-narrow-sidebar__collapse-icon {
+            background-color: $vivid-bg;
+          }
+        }
+      }
+
+      .lab-narrow-sidebar__collapse-icon {
+        background-color: $white;
+      }
     }
   }
 }
