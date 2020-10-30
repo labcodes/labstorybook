@@ -13,6 +13,7 @@ export default class AbstractTag extends React.Component {
     renderPrefix: PropTypes.object,
     renderSuffix: PropTypes.object,
     className: PropTypes.string,
+    tabIndex: PropTypes.string,
   };
 
   static defaultProps = {
@@ -24,6 +25,7 @@ export default class AbstractTag extends React.Component {
     renderPrefix: undefined,
     renderSuffix: undefined,
     className: "",
+    tabIndex: "0",
   };
 
   handleEvent = (e) => {
@@ -46,6 +48,7 @@ export default class AbstractTag extends React.Component {
       renderPrefix,
       renderSuffix,
       className,
+      tabIndex
     } = this.props;
 
     return (
@@ -60,7 +63,7 @@ export default class AbstractTag extends React.Component {
         onKeyPress={this.handleEvent}
         role="presentation"
         // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-        tabIndex="0"
+        tabIndex={tabIndex}
       >
         {renderPrefix}
         {text}

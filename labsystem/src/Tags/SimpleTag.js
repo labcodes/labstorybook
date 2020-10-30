@@ -82,6 +82,7 @@ export default class SimpleTag extends React.Component {
         color={color}
         disabled={disabled}
         renderPrefix={this.icon() || this.thumb()}
+        tabIndex="-1"
       />
     );
   }
