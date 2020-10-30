@@ -25,7 +25,11 @@ export default class Item extends React.Component {
   itemIcon = () => {
     const { icon } = this.props;
     return icon ? (
-      <Icon type={icon} color="mineral-60" className="sidebar-item" />
+      <Icon
+        type={icon}
+        color="mineral-60"
+        className="lab-narrow-sidebar__item-icon"
+      />
     ) : (
       ""
     );

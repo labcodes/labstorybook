@@ -20,10 +20,10 @@ $footer-button-color: map-get($narrow-sidebar-theme, "60");
 }
 
 // Vivid Colors
-$narrow-bg: map-get($narrow-sidebar-theme, "60");
+$vivid-bg: map-get($narrow-sidebar-theme, "60");
 
 @if $narrow-sidebar-theme == $mineral-palette {
-  $narrow-bg: map-get($narrow-sidebar-theme, "90");
+  $vivid-bg: map-get($narrow-sidebar-theme, "90");
 }
 
 .lab-narrow-sidebar {
@@ -164,28 +164,8 @@ $narrow-bg: map-get($narrow-sidebar-theme, "60");
   }
 }
 
-.lab-narrow-sidebar__mobile-button {
-  display: flex;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  margin: 18px 0 18px 12px;
-  background-color: transparent;
-  border: $border-default transparent;
-  border-radius: $radius-02;
-
-  &:focus {
-    border-color: $item-focus-color;
-    outline: none;
-  }
-
-  &:active {
-    background-color: $item-focus-color;
-    .lab-icon {
-      background-color: $item-active-color;
-    }
-  }
-
+.lab-narrow-sidebar__collapse-icon {
+  background-color: $item-active-color;
 }
 
 //Body
@@ -194,6 +174,7 @@ $narrow-bg: map-get($narrow-sidebar-theme, "60");
   align-self: flex-start;
   width: 100%;
   flex-direction: column;
+  flex-grow: 1;
   padding: $spacing-01 0;
   margin-top: 76px;
 
@@ -231,7 +212,7 @@ $narrow-bg: map-get($narrow-sidebar-theme, "60");
       border-radius: 0;
   }
 
-  .sidebar-item {
+  .lab-narrow-sidebar__item-icon {
     margin-right: $spacing-02;
 
     @include from($tablet){
@@ -273,7 +254,7 @@ $narrow-bg: map-get($narrow-sidebar-theme, "60");
     font-weight: $weight-semibold;
     color: $item-active-color;
 
-    .sidebar-item {
+    .lab-narrow-sidebar__item-icon {
       background-color: $item-active-color;
     }
   }
@@ -316,7 +297,7 @@ $narrow-bg: map-get($narrow-sidebar-theme, "60");
       font-size: $font-size-1;
     }
 
-    .sidebar-item {
+    .lab-narrow-sidebar__footer-icon {
       background-color: $footer-button-color;
       margin-right: $spacing-02;
 
@@ -344,7 +325,7 @@ $narrow-bg: map-get($narrow-sidebar-theme, "60");
     color: $item-active-color;
     font-weight: $weight-semibold;
 
-    .sidebar-item {
+    .lab-narrow-sidebar__footer-icon {
       background-color: $item-active-color;
     }
   }
@@ -365,10 +346,10 @@ $narrow-bg: map-get($narrow-sidebar-theme, "60");
 // Vivid Skin
 .lab-narrow-sidebar--vivid {
   border: transparent;
-  background: $narrow-bg;
+  background: $vivid-bg;
 
   .lab-narrow-sidebar__header {
-    background-color: $narrow-bg;
+    background-color: $vivid-bg;
   }
 
   // Unselected item
@@ -386,7 +367,11 @@ $narrow-bg: map-get($narrow-sidebar-theme, "60");
       background-color: $white-20;
     }
 
-    .sidebar-item {
+    &:active {
+      background-color: $vivid-bg;
+    }
+
+    .lab-narrow-sidebar__item-icon {
       background-color: $white;
     }
   }
@@ -394,7 +379,7 @@ $narrow-bg: map-get($narrow-sidebar-theme, "60");
   // Selected item
   .lab-narrow-sidebar__item--active {
     background-color: $white;
-    color: $narrow-bg;
+    color: $vivid-bg;
 
     &:hover {
       color: $white;
@@ -405,7 +390,7 @@ $narrow-bg: map-get($narrow-sidebar-theme, "60");
 
     &:focus {
       &:before {
-        border-color: $narrow-bg;
+        border-color: $vivid-bg;
       }
     }
 
@@ -416,18 +401,18 @@ $narrow-bg: map-get($narrow-sidebar-theme, "60");
     }
 
     &:active {
-      background-color: $narrow-bg;
+      background-color: $vivid-bg;
     }
 
-    .sidebar-item {
-      background-color: $narrow-bg;
+    .lab-narrow-sidebar__item-icon {
+      background-color: $vivid-bg;
     }
   }
 
   .lab-narrow-sidebar__footer__button {
     color: $white;
 
-    .sidebar-item {
+    .lab-narrow-sidebar__footer-icon {
       background-color: $white;
     }
 
@@ -440,16 +425,16 @@ $narrow-bg: map-get($narrow-sidebar-theme, "60");
     }
 
     &:active {
-      background-color: $white-75;
+      background-color: $vivid-bg;
     }
+  }
 
-    .lab-narrow-sidebar__footer__button--active {
-      background-color: $white;
-      color: $narrow-bg;
+  .lab-narrow-sidebar__footer__button--active {
+    background-color: $white;
+    color: $vivid-bg;
 
-      .sidebar-item {
-        background-color: $narrow-bg;
-      }
+    .lab-narrow-sidebar__footer-icon {
+      background-color: $vivid-bg;
     }
   }
 
@@ -464,9 +449,7 @@ $narrow-bg: map-get($narrow-sidebar-theme, "60");
     }
   }
 
-  .lab-narrow-sidebar__collapse,
-  .lab-narrow-sidebar__mobile-button{
-
+  .lab-narrow-sidebar__collapse {
     &:focus{
       border-color: $white-50;
       outline: none;
@@ -475,23 +458,13 @@ $narrow-bg: map-get($narrow-sidebar-theme, "60");
     &:active {
       background-color: $white-75;
 
-      .sidebar-item {
-        background-color: $narrow-bg;
+      .lab-narrow-sidebar__collapse-icon {
+        background-color: $vivid-bg;
       }
-    }
-
-    .sidebar-item{
-      background-color: $white;
     }
   }
 
-  .lab-narrow-sidebar__mobile-topbar {
+  .lab-narrow-sidebar__collapse-icon {
     background-color: $white;
-
-    &-button:active {
-      .lab-icon {
-        background-color: $narrow-bg;
-      }
-    }
   }
 }
