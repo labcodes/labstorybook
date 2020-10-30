@@ -386,6 +386,10 @@ $narrow-bg: map-get($narrow-sidebar-theme, "60");
       background-color: $white-20;
     }
 
+    &:active {
+      background-color: $narrow-bg;
+    }
+
     .sidebar-item {
       background-color: $white;
     }
@@ -440,16 +444,16 @@ $narrow-bg: map-get($narrow-sidebar-theme, "60");
     }
 
     &:active {
-      background-color: $white-75;
+      background-color: $narrow-bg;
     }
+  }
 
-    .lab-narrow-sidebar__footer__button--active {
-      background-color: $white;
-      color: $narrow-bg;
+  .lab-narrow-sidebar__footer__button--active {
+    background-color: $white;
+    color: $narrow-bg;
 
-      .sidebar-item {
-        background-color: $narrow-bg;
-      }
+    .sidebar-item {
+      background-color: $narrow-bg;
     }
   }
 
@@ -487,8 +491,10 @@ $narrow-bg: map-get($narrow-sidebar-theme, "60");
 
   .lab-narrow-sidebar__mobile-topbar {
     background-color: $white;
+  }
 
-    &-button:active {
+  .lab-narrow-sidebar__mobile-button {
+    &:active {
       .lab-icon {
         background-color: $narrow-bg;
       }
