@@ -194,6 +194,7 @@ $narrow-bg: map-get($narrow-sidebar-theme, "60");
   align-self: flex-start;
   width: 100%;
   flex-direction: column;
+  flex-grow: 1;
   padding: $spacing-01 0;
   margin-top: 76px;
 
