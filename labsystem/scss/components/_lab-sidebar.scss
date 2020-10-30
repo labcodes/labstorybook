@@ -159,6 +159,10 @@ $narrow-bg: map-get($narrow-sidebar-theme, "60");
     background-color: $item-focus-color;
   }
 
+  .sidebar-item {
+    background-color: $item-active-color;
+  }
+
   @include from($tablet){
     display: none;
   }
@@ -181,6 +185,7 @@ $narrow-bg: map-get($narrow-sidebar-theme, "60");
 
   &:active {
     background-color: $item-focus-color;
+
     .lab-icon {
       background-color: $item-active-color;
     }
