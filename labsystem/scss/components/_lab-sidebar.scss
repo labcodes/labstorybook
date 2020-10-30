@@ -212,7 +212,7 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
       border-radius: 0;
   }
 
-  .sidebar-item {
+  .lab-narrow-sidebar__item-icon {
     margin-right: $spacing-02;
 
     @include from($tablet){
@@ -254,7 +254,7 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
     font-weight: $weight-semibold;
     color: $item-active-color;
 
-    .sidebar-item {
+    .lab-narrow-sidebar__item-icon {
       background-color: $item-active-color;
     }
   }
@@ -371,7 +371,7 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
       background-color: $vivid-bg;
     }
 
-    .sidebar-item {
+    .lab-narrow-sidebar__item-icon {
       background-color: $white;
     }
   }
@@ -404,7 +404,7 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
       background-color: $vivid-bg;
     }
 
-    .sidebar-item {
+    .lab-narrow-sidebar__item-icon {
       background-color: $vivid-bg;
     }
   }

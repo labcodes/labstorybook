@@ -75,7 +75,7 @@
       color: $purple-70;
 
 
-      .sidebar-item {
+      .lab-narrow-sidebar__item-icon {
         background-color: $purple-70;
       }
     }
@@ -138,7 +138,7 @@
     }
   }
 
-  .lab-narrow-sidebar__item{
+  .lab-narrow-sidebar__item {
     &:focus{
       &:before{
         border-color: $mineral-30;
@@ -159,7 +159,7 @@
       color: $mineral-70;
 
 
-      .sidebar-item {
+      .lab-narrow-sidebar__item-icon {
         background-color: $mineral-70;
       }
     }
