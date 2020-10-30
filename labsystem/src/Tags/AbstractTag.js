@@ -48,7 +48,7 @@ export default class AbstractTag extends React.Component {
       renderPrefix,
       renderSuffix,
       className,
-      tabIndex
+      tabIndex,
     } = this.props;
 
     return (
