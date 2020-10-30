@@ -22,7 +22,11 @@ export default class FooterButton extends React.Component {
 
   buttonIcon = () => {
     const { icon } = this.props;
-    return icon ? <Icon type={icon} className="sidebar-item" /> : "";
+    return icon ? (
+      <Icon type={icon} className="lab-narrow-sidebar__footer-icon" />
+    ) : (
+      ""
+    );
   };
 
   render() {
