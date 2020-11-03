@@ -12,6 +12,7 @@ export default class NarrowSidebarPlayground extends React.Component {
     super(props);
     this.state = {
       isVivid: false,
+      isCollapsed: false,
       withDividers: true,
       logoSrc: "./favicon.ico",
       logoAltText: "",
@@ -59,6 +60,11 @@ export default class NarrowSidebarPlayground extends React.Component {
     this.setState({ [id]: checked });
   };
 
+  handleCollapse = () => {
+    const { isCollapsed } = this.state;
+    this.setState({ isCollapsed: !isCollapsed });
+  }
+
   addNewItem = () => {
     const { itemIcon, itemLabel, sidebarItems } = this.state;
 
@@ -99,6 +105,7 @@ export default class NarrowSidebarPlayground extends React.Component {
 
   render() {
     const {
+      isCollapsed,
       isVivid,
       withDividers,
       logoSrc,
@@ -116,17 +123,35 @@ export default class NarrowSidebarPlayground extends React.Component {
       showBodyConfigs,
       showFooterConfigs,
     } = this.state;
+
+    const { handleCollapse } = this;
+
     return (
       <div className="columns lab-playground lab-narrow-sidebar--stories">
         <div className="column lab-playground__component">
-          <h4>TextInput</h4>
+          {isCollapsed ? (
+            <React.Fragment>
+              <div className="lab-narrow__overlay" />
+              <div
+                className={
+                  "lab-narrow-sidebar__mobile-topbar" +
+                  `${isVivid ? " lab-narrow-sidebar--vivid" : ` ""`}`
+                }
+              >
+                <button type="button" onClick={handleCollapse} className="lab-narrow-sidebar__mobile-button">
+                  <Icon type="menu-expand" color="white" />
+                </button>
+              </div>
+            </React.Fragment>
+          ) : null}
           <NarrowSidebar
+            isCollapsed={isCollapsed}
             isVivid={isVivid}
             withDividers={withDividers}
           >
             <NarrowSidebar.Header>
               <NarrowSidebar.Logotype altText={logoAltText} logoSrc={logoSrc} />
-              <NarrowSidebar.Collapse />
+              <NarrowSidebar.CollapseButton onClick={handleCollapse} />
             </NarrowSidebar.Header>
             <NarrowSidebar.Body withDividers={withDividers}>
               {sidebarItems.map((item) => item)}
