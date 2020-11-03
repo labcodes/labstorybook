@@ -5,7 +5,7 @@ import Footer from "./Footer";
 import FooterButton from "./FooterButton";
 import UserAvatar from "./UserAvatar";
 import Logotype from "./Logotype";
-import Collapse from "./CollapseButton";
+import CollapseButton from "./CollapseButton";
 import Item from "./Item";
 
 NarrowSidebar.Header = Header;
@@ -14,7 +14,7 @@ NarrowSidebar.Footer = Footer;
 NarrowSidebar.FooterButton = FooterButton;
 NarrowSidebar.UserAvatar = UserAvatar;
 NarrowSidebar.Logotype = Logotype;
-NarrowSidebar.Collapse = Collapse;
+NarrowSidebar.CollapseButton = CollapseButton;
 NarrowSidebar.Item = Item;
 
 export default NarrowSidebar;
