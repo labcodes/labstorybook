@@ -33,19 +33,19 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
   overflow-x:hidden;
   height: 100vh;
   top: 0;
+  left: 0;
   position: fixed;
   align-items: stretch;
   flex-direction: column;
   border-top-right-radius: $radius-default;
   background-color: white;
-  transition: ease left .6s;
 
-  &--on {
-    left: 0;
-  }
+  @include mobile(){
+    transition: ease left .6s;
 
-  &--off {
-    left: -300px;
+    &--collapsed {
+      left: -80vw;
+    }
   }
 
   @include from($tablet){
