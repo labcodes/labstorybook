@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 export default class Body extends React.Component {
   static propTypes = {
-    children: PropTypes.element,
+    children: PropTypes.node,
     withDividers: PropTypes.bool,
   };
 
@@ -21,7 +21,6 @@ export default class Body extends React.Component {
           `${withDividers ? ` lab-narrow-sidebar__body--with-scroll` : ` ""`}`
         }
       >
-        {" "}
         {children}
       </nav>
     );

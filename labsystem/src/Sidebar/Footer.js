@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 export default class Footer extends React.Component {
   static propTypes = {
-    children: PropTypes.element,
+    children: PropTypes.node,
   };
 
   static defaultProps = {

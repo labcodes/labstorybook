@@ -6,14 +6,14 @@ export default class Item extends React.Component {
   static propTypes = {
     label: PropTypes.string,
     icon: PropTypes.string,
-    onClick: PropTypes.string,
+    onClick: PropTypes.func,
     isActive: PropTypes.bool,
   };
 
   static defaultProps = {
     label: undefined,
     icon: undefined,
-    onClick: undefined,
+    onClick: () => {},
     isActive: false,
   };
 

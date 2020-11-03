@@ -4,13 +4,12 @@ import Icon from "../Icon";
 
 export default class NarrowSidebar extends React.Component {
   static propTypes = {
-    children: PropTypes.element,
+    children: PropTypes.node.isRequired,
     isVivid: PropTypes.bool,
     withDividers: PropTypes.bool,
   };
 
   static defaultProps = {
-    children: undefined,
     isVivid: false,
     withDividers: false,
   };
