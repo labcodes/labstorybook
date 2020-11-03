@@ -1,17 +1,18 @@
-@import '../../labsystem/scss/variables/all';
-@import '../../labsystem/scss/utilities/all';
+@import "../../labsystem/scss/variables/all";
+@import "../../labsystem/scss/utilities/all";
 
-@import 'doc-header';
-@import 'doc-buttons';
-@import 'doc-link';
-@import 'doc-type';
-@import 'doc-color-swatches';
-@import 'doc-inputs';
-@import 'doc-checkbox';
-@import 'doc-radio';
-@import 'doc-tooltip';
-@import '../../playgrounds/scss/playgrounds';
-@import 'doc-utils';
+@import "doc-header";
+@import "doc-buttons";
+@import "doc-link";
+@import "doc-type";
+@import "doc-color-swatches";
+@import "doc-inputs";
+@import "doc-checkbox";
+@import "doc-radio";
+@import "doc-tooltip";
+@import "doc-utils";
+@import "doc-search";
+@import "../../playgrounds/scss/playgrounds";
 
 * {
   box-sizing: border-box;
