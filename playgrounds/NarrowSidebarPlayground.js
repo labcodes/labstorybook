@@ -21,6 +21,7 @@ export default class NarrowSidebarPlayground extends React.Component {
         <NarrowSidebar.Item
           icon="coin"
           label="Teste"
+          key="Teste"
           isActive={true}
           onClick={() => {
             console.log("Clicked Item");
@@ -32,6 +33,7 @@ export default class NarrowSidebarPlayground extends React.Component {
       footerButtons: [
         <NarrowSidebar.FooterButton
           icon="key"
+          key="Password"
           label="Password"
           onClick={() => {
             console.log("Clicked Password");
@@ -60,7 +62,7 @@ export default class NarrowSidebarPlayground extends React.Component {
   addNewItem = () => {
     const { itemIcon, itemLabel, sidebarItems } = this.state;
 
-    sidebarItems.push(<NarrowSidebar.Item icon={itemIcon} label={itemLabel} />);
+    sidebarItems.push(<NarrowSidebar.Item key={itemLabel} icon={itemIcon} label={itemLabel} />);
     this.setState({ sidebarItems });
   };
 
@@ -77,6 +79,7 @@ export default class NarrowSidebarPlayground extends React.Component {
       <NarrowSidebar.FooterButton
         icon={footerButtonIcon}
         label={footerButtonLabel}
+        key={footerButtonLabel}
         onClick={() => {
           alert(`Clicked ${footerButtonLabel}`);
         }}
