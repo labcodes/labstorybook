@@ -123,6 +123,6 @@ $alerts-line-height: 20px;
   @extend .lab-alert__message;
 }
 
-.lab-banner .lab-btn {
+.lab-alert__button {
   @extend .lab-alert__button;
 }
