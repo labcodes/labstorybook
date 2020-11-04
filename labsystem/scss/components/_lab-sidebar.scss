@@ -178,6 +178,8 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
   flex-grow: 1;
   padding: $spacing-01 0;
   margin-top: 76px;
+  border-top: $border-default transparent;
+  border-bottom: $border-default transparent;
 
   @include from ($tablet){
     overflow: auto;
@@ -333,13 +335,9 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
 }
 
 //With Scroll
-.lab-narrow-sidebar--with-scroll {
+.lab-narrow-sidebar--with-dividers {
   .lab-narrow-sidebar__body{
-    box-shadow: 1px 1px 2px $black-20;
-  }
-
-  .lab-narrow-sidebar__header{
-    box-shadow: inset 0 -1px 2px $black-20;
+    border-color: $mineral-20;
   }
 }
 

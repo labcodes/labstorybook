@@ -12,8 +12,8 @@ export default class NarrowSidebarPlayground extends React.Component {
     super(props);
     this.state = {
       isVivid: false,
-      withDividers: true,
       isOpenOnMobile: false,
+      withDividers: false,
       logoSrc: "./favicon.ico",
       logoAltText: "",
       itemIcon: "calendar",
