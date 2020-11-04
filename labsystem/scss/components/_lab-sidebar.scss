@@ -41,10 +41,11 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
   background-color: white;
 
   @include mobile(){
+    left: -80vw;
     transition: ease left .6s;
 
-    &--collapsed {
-      left: -80vw;
+    &--open-on-mobile {
+      left: 0;
     }
   }
 

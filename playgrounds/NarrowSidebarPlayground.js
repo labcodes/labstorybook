@@ -12,8 +12,8 @@ export default class NarrowSidebarPlayground extends React.Component {
     super(props);
     this.state = {
       isVivid: false,
-      isCollapsed: false,
       withDividers: true,
+      isOpenOnMobile: false,
       logoSrc: "./favicon.ico",
       logoAltText: "",
       itemIcon: "calendar",
@@ -60,9 +60,9 @@ export default class NarrowSidebarPlayground extends React.Component {
     this.setState({ [id]: checked });
   };
 
-  handleCollapse = () => {
-    const { isCollapsed } = this.state;
-    this.setState({ isCollapsed: !isCollapsed });
+  handleOpenOnMobile = () => {
+    const { isOpenOnMobile } = this.state;
+    this.setState({ isOpenOnMobile: !isOpenOnMobile });
   }
 
   addNewItem = () => {
@@ -105,7 +105,7 @@ export default class NarrowSidebarPlayground extends React.Component {
 
   render() {
     const {
-      isCollapsed,
+      isOpenOnMobile,
       isVivid,
       withDividers,
       logoSrc,
@@ -124,47 +124,48 @@ export default class NarrowSidebarPlayground extends React.Component {
       showFooterConfigs,
     } = this.state;
 
-    const { handleCollapse } = this;
+    const { handleOpenOnMobile } = this;
 
     return (
       <div className="columns lab-playground lab-narrow-sidebar--stories">
-        <div className="column lab-playground__component">
-          {isCollapsed ? (
-            <React.Fragment>
-              <div className="lab-narrow__overlay" />
-              <div
-                className={
-                  "lab-narrow-sidebar__mobile-topbar" +
-                  `${isVivid ? " lab-narrow-sidebar--vivid" : ` ""`}`
-                }
-              >
-                <button type="button" onClick={handleCollapse} className="lab-narrow-sidebar__mobile-button">
-                  <Icon type="menu-expand" color="white" />
-                </button>
-              </div>
-            </React.Fragment>
-          ) : null}
-          <NarrowSidebar
-            isCollapsed={isCollapsed}
-            isVivid={isVivid}
-            withDividers={withDividers}
-          >
-            <NarrowSidebar.Header>
-              <NarrowSidebar.Logotype altText={logoAltText} logoSrc={logoSrc} />
-              <NarrowSidebar.CollapseButton onClick={handleCollapse} />
-            </NarrowSidebar.Header>
-            <NarrowSidebar.Body withDividers={withDividers}>
-              {sidebarItems.map((item) => item)}
-            </NarrowSidebar.Body>
-            <NarrowSidebar.Footer>
-              <NarrowSidebar.UserAvatar
-                altText={avatarAltText}
-                caption={avatarCaption}
-                avatarSrc={avatarSrc}
-              />
-              {footerButtons.map((item) => item)}
-            </NarrowSidebar.Footer>
-          </NarrowSidebar>
+        <div className="column">
+          <div className="lab-playground__component">
+
+            <div className={`lab-narrow__overlay ${isOpenOnMobile ? "lab-narrow__overlay--visible" : null}`} onClick={handleOpenOnMobile} />
+
+            <div
+              className={
+                "lab-narrow-sidebar__mobile-topbar" +
+                `${isVivid ? " lab-narrow-sidebar--vivid" : ` ""`}`
+              }
+            >
+              <button type="button" onClick={handleOpenOnMobile} className="lab-narrow-sidebar__mobile-button">
+                <Icon type="menu-expand" color="white" />
+              </button>
+            </div>
+
+            <NarrowSidebar
+              isOpenOnMobile={isOpenOnMobile}
+              isVivid={isVivid}
+              withDividers={withDividers}
+            >
+              <NarrowSidebar.Header>
+                <NarrowSidebar.Logotype altText={logoAltText} logoSrc={logoSrc} />
+                <NarrowSidebar.CollapseButton onClick={handleOpenOnMobile} />
+              </NarrowSidebar.Header>
+              <NarrowSidebar.Body withDividers={withDividers}>
+                {sidebarItems.map((item) => item)}
+              </NarrowSidebar.Body>
+              <NarrowSidebar.Footer>
+                <NarrowSidebar.UserAvatar
+                  altText={avatarAltText}
+                  caption={avatarCaption}
+                  avatarSrc={avatarSrc}
+                />
+                {footerButtons.map((item) => item)}
+              </NarrowSidebar.Footer>
+            </NarrowSidebar>
+          </div>
         </div>
         <div className="column lab-playground__configs">
           <h4>Configurations</h4>

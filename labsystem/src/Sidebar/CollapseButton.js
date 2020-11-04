@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import Icon from "../Icon";
 
-export default class Collapse extends React.Component {
+export default class CollapseButton extends React.Component {
   static propTypes = {
     onClick: PropTypes.func,
   };
