@@ -26,6 +26,7 @@ export default class TagPlayground extends React.Component {
       selectedIcon: "",
       selectedThumbSrc: "",
       removableTagIsOn: true,
+      togglableTagIsOn: false,
     };
 
     this.state = {
@@ -43,7 +44,7 @@ export default class TagPlayground extends React.Component {
       selectedIcon: this.initialState.selectedIcon,
       selectedThumbSrc: this.initialState.selectedThumbSrc,
       removableTagIsOn: this.initialState.removableTagIsOn,
-      togglableTagIsOn: false,
+      togglableTagIsOn: this.initialState.togglableTagIsOn,
       isIconInputDisabled: false,
       isThumbSrcInputDisabled: false,
     };
@@ -59,6 +60,7 @@ export default class TagPlayground extends React.Component {
       selectedIcon: this.initialState.selectedIcon,
       selectedThumbSrc: this.initialState.selectedThumbSrc,
       removableTagIsOn: this.initialState.removableTagIsOn,
+      togglableTagIsOn: this.initialState.togglableTagIsOn,
     });
   };
 
