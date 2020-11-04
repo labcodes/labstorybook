@@ -34,6 +34,7 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
   height: 100vh;
   top: 0;
   left: 0;
+  z-index: 2;
   position: fixed;
   align-items: stretch;
   flex-direction: column;

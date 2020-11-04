@@ -24,16 +24,8 @@ $vivid-sidebar-all-colors: (
     margin-top: 0;
   }
 
-  .lab-narrow-sidebar__mobile-topbar {
-    position: relative;
-  }
-
   .lab-narrow-sidebar__mobile-button {
     display: inline;
-  }
-
-  .lab-narrow__overlay {
-    display: none;
   }
 }
 
@@ -207,21 +199,27 @@ $vivid-sidebar-all-colors: (
 // Overlay that appers only on mobile.
 .lab-narrow__overlay {
   content: "";
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
+
+  // when the overlay is implemented in the off-canvas component,
+  // it should use position:fixed, instead of absolute.
+  // now, for the playground's sake, we're using absolute,
+  // so it doesn't occupy the whole screen.
+  // position: fixed;
+  position: absolute;
+
+  height: 100%;
+  width: 100%;
   top: 0;
-  left: 0;
+  left: -9999em;
   background-color: $black-50;
   pointer-events: none;
-  transition: ease all .2s;
+  transition: ease opacity .2s;
+  opacity: 0;
+  z-index: 1;
 
-  &--on {
+  &--visible {
+    left: 0;
     opacity: 1;
-  }
-
-  &--off {
-    opacity: 0;
   }
 
   @include from($tablet) {
@@ -232,7 +230,13 @@ $vivid-sidebar-all-colors: (
 // Topbar that appears only on mobile.
 // It holds the button to open the sidebar on mobile.
 .lab-narrow-sidebar__mobile-topbar {
-  position:fixed;
+  // when the overlay is implemented in the off-canvas component,
+  // it should use position:fixed, instead of absolute.
+  // now, for the playground's sake, we're using absolute,
+  // so it doesn't occupy the whole screen.
+  // position: fixed;
+  position: absolute;
+
   right: 0;
   top: 0;
   background-color: map-get($narrow-sidebar-theme, "60");
