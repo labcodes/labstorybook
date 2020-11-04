@@ -1,0 +1,58 @@
+.lab-card {
+  &.lab-card--filled {}
+  &.lab-card--outline {}
+  &.lab-card--filled.lab-card--outline {}
+
+  &.lab-card--white {}
+  &.lab-card--mineral {}
+  &.lab-card--teal {}
+  &.lab-card--purple {}
+
+  &.lab-card--pale {}
+  &.lab-card--vivid {}
+
+  &.lab-card--compact {}
+  &.lab-card--horizontal {}
+}
+
+.lab-card-image {
+  &.lab-card-image--overflowed {}
+}
+
+.lab-card-divider {
+  &.lab-card-divider--overflowed {}
+}
+
+.lab-card-header {
+  &.lab-card-header--overlay {}
+
+}
+
+.lab-card-category {
+
+  .lab-card-category__color {
+    &.lab-card-category__color--mineral {}
+    &.lab-card-category__color--teal {}
+    &.lab-card-category__color--purple {}
+  }
+
+  .lab-card-category__text {}
+}
+
+.lab-card-title {}
+.lab-card-subtitle {}
+
+.lab-card-link-action {
+  &lab-card-link-action--normal {}
+  &lab-card-link-action--small {}
+  &lab-card-link-action--large {}
+}
+
+.lab-card-double-action {
+  &lab-card-double-action--normal {}
+  &lab-card-double-action--small {}
+  &lab-card-double-action--large {}
+
+  &lab-card-double-action--horizontal {}
+  &lab-card-double-action--text {}
+}

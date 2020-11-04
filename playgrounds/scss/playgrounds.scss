@@ -4,6 +4,13 @@
 
   .lab-playground__item {
     display: inline-block;
-    margin: 4px;
+    margin: 8px;
+    margin-left: 0;
   }
+
+  h4, h6 { margin: 0.4rem 0; }
+}
+.lab-playground {
+  .lab-card-image { width: 150px; }
+  .lab-toggle { margin-right: 0.4rem; }
 }
