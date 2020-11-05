@@ -1,4 +1,19 @@
+@use "sass:map";
+
+$default-padding: $spacing-05;
+$compact-padding: $spacing-03 $spacing-04;
+
 .lab-card {
+  display: block;
+  padding: $default-padding;
+  border-radius: $radius-04;
+  border: 2px solid $mineral-10;
+
+  p {
+    margin-top: $spacing-03;
+    margin-bottom: $spacing-03;
+  }
+
   &.lab-card--filled {}
   &.lab-card--outline {}
   &.lab-card--filled.lab-card--outline {}
@@ -11,36 +26,93 @@
   &.lab-card--pale {}
   &.lab-card--vivid {}
 
-  &.lab-card--compact {}
+  &.lab-card--compact {
+    padding: $compact-padding;
+
+    .lab-card-image .lab-card-image--overflowed {
+      border-radius: unset;
+      max-width: calc(100% + 2 * #{$compact-padding});
+      margin-left: -$compact-padding;
+      margin-right: -$compact-padding;
+    }
+  }
+
   &.lab-card--horizontal {}
 }
 
+// Elements
 .lab-card-image {
-  &.lab-card-image--overflowed {}
+  border-radius: $radius-03;
+  max-width: 100%;
+
+  &.lab-card-image--overflowed {
+    border-radius: unset;
+    max-width: calc(100% + 2 * #{$default-padding});
+    margin-left: -$default-padding;
+    margin-right: -$default-padding;
+  }
 }
 
 .lab-card-divider {
-  &.lab-card-divider--overflowed {}
+  border: 1px solid $mineral-10;
+  
+  &.lab-card-divider--overflowed {
+    margin-left: -$default-padding;
+    margin-right: -$default-padding;
+  }
 }
 
 .lab-card-header {
-  &.lab-card-header--overlay {}
+  margin-bottom: $spacing-03;
 
+  &.lab-card-header--overlay {}
 }
 
 .lab-card-category {
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: $spacing-03;
 
-  .lab-card-category__color {
-    &.lab-card-category__color--mineral {}
-    &.lab-card-category__color--teal {}
-    &.lab-card-category__color--purple {}
+  @each $name, $palette in $all-colors {
+    .lab-card-category__color {
+      width: 16px;
+      height: 8px;
+      border-radius: $radius-02;
+
+      &.lab-card-category__color--#{$name} {
+        background-color: map-get($palette, "20");
+      }
+    }
   }
 
-  .lab-card-category__text {}
+  .lab-card-category__text {
+    font-size: $font-size-2;
+    text-transform: uppercase;
+    font-weight: $weight-bold;
+    color: $mineral-80;
+    line-height: $spacing-06;
+    margin: 0 $spacing-01;
+  }
 }
 
-.lab-card-title {}
-.lab-card-subtitle {}
+.lab-card-title {
+  font-size: $font-size-4;
+  font-weight: $weight-bold;
+  color: $mineral-80;
+  line-height: $spacing-05;
+  margin-top: 0;
+  margin-bottom: $spacing-01;
+}
+
+.lab-card-subtitle {
+  font-size: $font-size-3;
+  font-weight: $weight-medium;
+  color: $black-75;
+  line-height: $spacing-06;
+  margin-top: 0;
+  margin-bottom: 0;
+}
 
 .lab-card-link-action {
   &lab-card-link-action--normal {}
