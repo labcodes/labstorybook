@@ -54,7 +54,7 @@ $compact-padding: $spacing-03 $spacing-04;
 }
 
 .lab-card-divider {
-  border: 1px solid $mineral-10;
+  border: 1px solid $mineral-20;
   
   &.lab-card-divider--overflowed {
     margin-left: -$default-padding;
@@ -115,16 +115,58 @@ $compact-padding: $spacing-03 $spacing-04;
 }
 
 .lab-card-link-action {
-  &lab-card-link-action--normal {}
-  &lab-card-link-action--small {}
-  &lab-card-link-action--large {}
+  display: flex;
+  justify-content: center;
+  margin-top: $spacing-05;
+  margin-bottom: $spacing-03;
+  font-size: $font-size-4;
+  color: $mineral-80;
+
+  &lab-card-link-action--normal {
+    font-size: $font-size-4;
+  }
+
+  &lab-card-link-action--small {
+    font-size: $font-size-3;
+  }
+
+  &lab-card-link-action--large {
+    font-size: $font-size-5;
+  }
 }
 
 .lab-card-double-action {
-  &lab-card-double-action--normal {}
-  &lab-card-double-action--small {}
-  &lab-card-double-action--large {}
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: $spacing-05;
+  margin-bottom: $spacing-01;
+  font-size: $font-size-4;
+  color: $mineral-80;
 
-  &lab-card-double-action--horizontal {}
-  &lab-card-double-action--text {}
+  button:first-child {
+    margin-bottom: $spacing-03;
+  }
+
+  &.lab-card-double-action--normal {}
+  &.lab-card-double-action--small {}
+  &.lab-card-double-action--large {}
+
+  &.lab-card-double-action--horizontal {
+    flex-direction: row;
+
+    button:first-child {
+      margin-right: $spacing-01;
+    }
+
+    button:last-child {
+      margin-left: $spacing-01;
+    }
+
+    .lab-btn {
+      flex-grow: 1;
+    }
+  }
+
+  &.lab-card-double-action--text {}
 }
