@@ -1,0 +1,18 @@
+@use 'sass:map';
+
+// Standard Dialog component
+.lab-dialog {
+  font-size: 20px
+}
+
+.lab-dialog__title {
+  display: flex;
+  color: $teal-40;
+  font-weight: $weight-bold;
+  padding: $spacing-03 $spacing-04;
+}
+
+.lab-dialog__content {
+  display: flex;
+  padding: $spacing-03 $spacing-04;
+}
