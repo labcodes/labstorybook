@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 
-import Dialog from "../labsystem/src/Dialog";
+import { StandardDialog } from "../labsystem/src/Dialog";
 
 <Meta title="Components/Dialog" />
 
@@ -14,5 +14,13 @@ import Dialog from "../labsystem/src/Dialog";
 <nav className="docs-content">
   <p>This is the start of Dialog's documentation.</p>
 
-  <Props of={Dialog} />
+  <Preview>
+    <Story name="Standard Dialog">
+      <Fragment>
+        <StandardDialog />
+      </Fragment>
+    </Story>
+  </Preview>
+
+  <Props of={StandardDialog} />
 </nav>
