@@ -16,7 +16,7 @@ export default class CardDivider extends React.Component {
     return (
       <hr
         className={`lab-card-divider
-          ${isOverflowed ? " lab-card--overflowed" : ""}
+          ${isOverflowed ? " lab-card-divider--overflowed" : ""}
         `}
       />
     );
