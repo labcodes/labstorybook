@@ -70,6 +70,7 @@ $card-compact-padding: $spacing-03 $spacing-04;
   margin: 0;
   
   &.lab-card-divider--overflowed {
+    width: calc(100% + 2 * #{$card-default-padding});
     margin-left: -$card-default-padding;
     margin-right: -$card-default-padding;
   }
