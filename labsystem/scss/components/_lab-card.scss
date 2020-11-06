@@ -231,8 +231,9 @@ $card-compact-padding: $spacing-03 $spacing-04;
 
     // Filled Layout
     &.lab-card--filled {
+      border: unset;
+      
       @if $name != "white" {
-        border-color: map-get($palette, "10");
         background-color: map-get($palette, "10");
       } @else if $name == "white" {
         border-color: map-get($palette, "87");
