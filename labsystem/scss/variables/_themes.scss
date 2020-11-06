@@ -30,3 +30,11 @@ $tag-all-colors: (
   "pink": map-get($support-palette, "pink"),
   "orange": map-get($support-palette, "orange"),
 );
+
+// Card
+$card-colors: (
+  "teal": $teal-palette,
+  "purple": $purple-palette,
+  "mineral": $mineral-palette,
+  "white": $white-palette,
+);
