@@ -19,7 +19,7 @@ $card-compact-padding: $spacing-03 $spacing-04;
     }
   }
   &.lab-card--vivid {
-    p:not(.lab-card-title):not(.lab-card-subtitle)k {
+    p:not(.lab-card-title):not(.lab-card-subtitle):not(.lab-card-category) {
       color: $white-87;
       margin-top: $spacing-03;
       margin-bottom: $spacing-03;
@@ -232,7 +232,7 @@ $card-compact-padding: $spacing-03 $spacing-04;
     // Filled Layout
     &.lab-card--filled {
       border: unset;
-      
+
       @if $name != "white" {
         background-color: map-get($palette, "10");
       } @else if $name == "white" {
