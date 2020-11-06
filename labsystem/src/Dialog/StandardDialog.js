@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { TextButton } from "../Buttons";
+import { TextButton, OutlineButton } from "../Buttons";
 
 export default class StandardDialog extends React.Component {
   static propTypes = {
@@ -10,13 +10,18 @@ export default class StandardDialog extends React.Component {
       text: PropTypes.string.isRequired,
       onClick: PropTypes.func.isRequired,
     }).isRequired,
+    outlineButtonProps: PropTypes.shape({
+      text: PropTypes.string.isRequired,
+      onClick: PropTypes.func.isRequired,
+    }),
   };
 
   render() {
     const {
       title,
       content,
-      buttonProps: { text, onClick },
+      buttonProps, 
+      outlineButtonProps,
     } = this.props;
 
     return (
@@ -27,13 +32,21 @@ export default class StandardDialog extends React.Component {
         </div>
         <p className="lab-dialog__content">{content}</p>
         <div className="lab-dialog__footer-wrapper">
-          <div className="lab-dialog__optional-button">optional button</div>
+          <div className="lab-dialog__optional-button">
+            { outlineButtonProps ? 
+              <OutlineButton
+                size="normal"
+                text={outlineButtonProps.text}
+                onClick={outlineButtonProps.onClick}
+              />
+            : undefined }
+          </div>
           <div className="lab-dialog__button">
             <TextButton
               size="normal"
               skin="dark"
-              text={text}
-              onClick={onClick}
+              text={buttonProps.text}
+              onClick={buttonProps.onClick}
             />
           </div>
         </div>

@@ -18,7 +18,7 @@ import { StandardDialog } from "../labsystem/src/Dialog";
     <Story name="Standard Dialog">
       <Fragment>
         <StandardDialog
-          title="Standard Dialog Title"
+          title="Standard Dialog"
           content="One elephant. Two elephants. Three elephants."
           buttonProps={{
             text: "click me!",
@@ -28,6 +28,27 @@ import { StandardDialog } from "../labsystem/src/Dialog";
       </Fragment>
     </Story>
   </Preview>
+
+  <Preview>
+    <Story name="Standard Dialog with outline button">
+      <Fragment>
+        <StandardDialog
+          title="Standard Dialog with outline button"
+          content="One elephant. Two elephants. Three elephants."
+          buttonProps={{
+            text: "click me!",
+            onClick: () => alert("Button has been clicked!"),
+          }}
+          outlineButtonProps={{
+            text: "click me too!",
+            onClick: () => alert("OutlineButton has been clicked!"),
+          }}
+        />
+      </Fragment>
+    </Story>
+  </Preview>
+
+
 
   <Props of={StandardDialog} />
 </nav>
