@@ -211,7 +211,7 @@ $card-compact-padding: $spacing-03 $spacing-04;
     }
 
     // Card Elements
-    .lab-icon {
+    .lab-card .lab-icon {
       background-color: map-get($palette, "80");
     }
 
