@@ -35,6 +35,10 @@ $card-compact-padding: $spacing-03 $spacing-04;
       margin-left: -$card-compact-padding;
       margin-right: -$card-compact-padding;
     }
+
+    &.lab-card-divider--overflowed {
+      width: calc(100% + 2 * #{$card-compact-padding});
+    }
   }
 
   &.lab-card--horizontal {}
