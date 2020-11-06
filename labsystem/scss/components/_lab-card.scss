@@ -3,6 +3,7 @@
 $default-padding: $spacing-05;
 $compact-padding: $spacing-03 $spacing-04;
 
+// Layout
 .lab-card {
   display: block;
   padding: $default-padding;
@@ -54,7 +55,9 @@ $compact-padding: $spacing-03 $spacing-04;
 }
 
 .lab-card-divider {
+  width: 100%;
   border: 1px solid $mineral-20;
+  margin: 0;
   
   &.lab-card-divider--overflowed {
     margin-left: -$default-padding;
