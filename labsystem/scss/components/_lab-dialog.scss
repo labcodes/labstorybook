@@ -2,17 +2,32 @@
 
 // Standard Dialog component
 .lab-dialog {
-  font-size: 20px
+
+  &--standard {
+  }
+}
+
+.lab-dialog__header-wrapper {
+  display: flex;
+  justify-content: space-between;
 }
 
 .lab-dialog__title {
-  display: flex;
   color: $teal-40;
   font-weight: $weight-bold;
-  padding: $spacing-03 $spacing-04;
 }
 
 .lab-dialog__content {
+}
+
+.lab-dialog__footer-wrapper {
   display: flex;
-  padding: $spacing-03 $spacing-04;
+  justify-content: flex-end;
+  background: $mineral-10;
+}
+
+.lab-dialog__optional-button {
+}
+
+.lab-dialog__button {
 }
