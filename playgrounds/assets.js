@@ -46,7 +46,6 @@ export const thumbSrcOptions = [
 export const skinOptions = ["pale", "vivid"];
 
 export const colorOptions = [
-  "",
   "mineral",
   "teal",
   "purple",
