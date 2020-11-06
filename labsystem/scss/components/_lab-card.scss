@@ -41,7 +41,14 @@ $card-compact-padding: $spacing-03 $spacing-04;
     }
   }
 
-  &.lab-card--horizontal {}
+  &.lab-card--horizontal {
+    flex-direction: row;
+
+    .lab-card-image {
+      max-height: 100%;
+      margin-right: $spacing-04;
+    }
+  }
 }
 
 // Elements
