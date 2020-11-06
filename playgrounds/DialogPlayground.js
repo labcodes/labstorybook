@@ -9,10 +9,12 @@ export default class DialogPlayground extends React.Component {
     super(props);
     this.initialState = {
       selectedTitle: "edit me",
+      selectedContent: "edit me",
     };
 
     this.state = {
       selectedTitle: this.initialState.selectedTitle,
+      selectedContent: this.initialState.selectedContent,
     };
   }
 
@@ -22,14 +24,14 @@ export default class DialogPlayground extends React.Component {
   };
 
   renderCurrentComponent = () => {
-    const { selectedTitle } = this.state;
+    const { selectedTitle, selectedContent } = this.state;
 
     return (
       <>
         <h4><strong>Standard Dialog</strong></h4>
         <StandardDialog
           title={selectedTitle}
-          content="This is a generic content."
+          content={selectedContent}
           buttonProps={{
             text: "click me!",
             onClick: () => alert("Clicked!"),
@@ -58,6 +60,23 @@ export default class DialogPlayground extends React.Component {
               />
             </label>
           </div>
+
+          <div className="lab-playground__item">
+            <label htmlFor="selectedContent">
+              <strong>content:</strong><br />
+              <textarea
+                id="selectedContent"
+                onChange={this.handleTextPropChange}
+                placeholder="Insert content"
+                style={{
+                  width: "121%",
+                  minHeight: "100px",
+                  resize: "none",
+                }}
+              />
+            </label>
+          </div>
+
         </div>
       </div>
     );

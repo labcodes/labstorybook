@@ -18,6 +18,9 @@
 }
 
 .lab-dialog__content {
+  min-width: 100%;
+  width: 0;
+  overflow-x: auto;
 }
 
 .lab-dialog__footer-wrapper {
