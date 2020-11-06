@@ -10,11 +10,15 @@ export default class DialogPlayground extends React.Component {
     this.initialState = {
       selectedTitle: "edit me",
       selectedContent: "edit me",
+      selectedButtonText: "edit me",
+      selectedButtonResponseText: "edit me",
     };
 
     this.state = {
       selectedTitle: this.initialState.selectedTitle,
       selectedContent: this.initialState.selectedContent,
+      selectedButtonText: this.initialState.selectedButtonText,
+      selectedButtonResponseText: this.initialState.selectedButtonResponseText,
     };
   }
 
@@ -24,7 +28,12 @@ export default class DialogPlayground extends React.Component {
   };
 
   renderCurrentComponent = () => {
-    const { selectedTitle, selectedContent } = this.state;
+    const {
+      selectedTitle,
+      selectedContent,
+      selectedButtonText,
+      selectedButtonResponseText,
+    } = this.state;
 
     return (
       <>
@@ -33,8 +42,8 @@ export default class DialogPlayground extends React.Component {
           title={selectedTitle}
           content={selectedContent}
           buttonProps={{
-            text: "click me!",
-            onClick: () => alert("Clicked!"),
+            text: selectedButtonText,
+            onClick: () => alert(selectedButtonResponseText),
           }}
         />
       </>
@@ -50,18 +59,20 @@ export default class DialogPlayground extends React.Component {
 
         <div className="column lab-playground__configs">
           <h4>Configurations</h4>
-          <div className="lab-playground__item">
+          <span className="lab-playground__item">
             <label htmlFor="selectedTitle">
-              <strong>title: </strong>
+              <strong>title:</strong>
+              <br />
               <input
                 id="selectedTitle"
                 onChange={this.handleTextPropChange}
                 placeholder="Insert title"
               />
             </label>
-          </div>
+          </span>
+          <br />
 
-          <div className="lab-playground__item">
+          <span className="lab-playground__item">
             <label htmlFor="selectedContent">
               <strong>content:</strong><br />
               <textarea
@@ -69,13 +80,39 @@ export default class DialogPlayground extends React.Component {
                 onChange={this.handleTextPropChange}
                 placeholder="Insert content"
                 style={{
-                  width: "121%",
+                  width: "100%",
                   minHeight: "100px",
                   resize: "none",
                 }}
               />
             </label>
-          </div>
+          </span>
+          <br />
+
+          <span className="lab-playground__item">
+            <label htmlFor="selectedButtonText">
+              <strong>buttonText:</strong>
+              <br />
+              <input
+                id="selectedButtonText"
+                onChange={this.handleTextPropChange}
+                placeholder="Insert button text"
+              />
+            </label>
+          </span>
+          <br />
+
+          <span className="lab-playground__item">
+            <label htmlFor="selectedButtonResponseText">
+              <strong>buttonResponseText:</strong>
+              <br />
+              <input
+                id="selectedButtonResponseText"
+                onChange={this.handleTextPropChange}
+                placeholder="Insert button response text"
+              />
+            </label>
+          </span>
 
         </div>
       </div>
