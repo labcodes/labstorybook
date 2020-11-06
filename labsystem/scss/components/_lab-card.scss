@@ -77,10 +77,15 @@ $compact-padding: $spacing-03 $spacing-04;
   margin-top: 0;
   margin-bottom: $spacing-03;
 
+  .lab-icon {
+    margin-right: $spacing-01;
+  }
+
   @each $name, $palette in $all-colors {
     .lab-card-category__color {
       width: 16px;
       height: 8px;
+      margin-right: $spacing-02;
       border-radius: $radius-02;
 
       &.lab-card-category__color--#{$name} {
@@ -90,7 +95,10 @@ $compact-padding: $spacing-03 $spacing-04;
   }
 
   .lab-card-category__text {
+    margin-right: $spacing-01;
     font-size: $font-size-2;
+    font-weight: $weight-bold;
+    line-height: $spacing-06;
     text-transform: uppercase;
     font-weight: $weight-bold;
     color: $mineral-80;
