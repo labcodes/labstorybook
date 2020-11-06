@@ -1,40 +1,39 @@
 @use "sass:map";
 
-$default-padding: $spacing-05;
-$compact-padding: $spacing-03 $spacing-04;
+$card-default-padding: $spacing-05;
+$card-compact-padding: $spacing-03 $spacing-04;
 
 // Layout
 .lab-card {
-  display: block;
-  padding: $default-padding;
+  display: flex;
+  flex-direction: column;
+  padding: $card-default-padding;
   border-radius: $radius-04;
-  border: 2px solid $mineral-10;
+  border: $border-01;
 
-  p {
-    margin-top: $spacing-03;
-    margin-bottom: $spacing-03;
+  &.lab-card--pale {
+    p:not(.lab-card-title):not(.lab-card-subtitle):not(.lab-card-category) {
+      color: $black-75;
+      margin-top: $spacing-03;
+      margin-bottom: $spacing-03;
+    }
+  }
+  &.lab-card--vivid {
+    p:not(.lab-card-title):not(.lab-card-subtitle)k {
+      color: $white-87;
+      margin-top: $spacing-03;
+      margin-bottom: $spacing-03;
+    }
   }
 
-  &.lab-card--filled {}
-  &.lab-card--outline {}
-  &.lab-card--filled.lab-card--outline {}
-
-  &.lab-card--white {}
-  &.lab-card--mineral {}
-  &.lab-card--teal {}
-  &.lab-card--purple {}
-
-  &.lab-card--pale {}
-  &.lab-card--vivid {}
-
   &.lab-card--compact {
-    padding: $compact-padding;
+    padding: $card-compact-padding;
 
     .lab-card-image .lab-card-image--overflowed {
       border-radius: unset;
-      max-width: calc(100% + 2 * #{$compact-padding});
-      margin-left: -$compact-padding;
-      margin-right: -$compact-padding;
+      max-width: calc(100% + 2 * #{$card-compact-padding});
+      margin-left: -$card-compact-padding;
+      margin-right: -$card-compact-padding;
     }
   }
 
@@ -48,9 +47,9 @@ $compact-padding: $spacing-03 $spacing-04;
 
   &.lab-card-image--overflowed {
     border-radius: unset;
-    max-width: calc(100% + 2 * #{$default-padding});
-    margin-left: -$default-padding;
-    margin-right: -$default-padding;
+    max-width: calc(100% + 2 * #{$card-default-padding});
+    margin-left: -$card-default-padding;
+    margin-right: -$card-default-padding;
   }
 }
 
@@ -60,8 +59,8 @@ $compact-padding: $spacing-03 $spacing-04;
   margin: 0;
   
   &.lab-card-divider--overflowed {
-    margin-left: -$default-padding;
-    margin-right: -$default-padding;
+    margin-left: -$card-default-padding;
+    margin-right: -$card-default-padding;
   }
 }
 
@@ -89,7 +88,7 @@ $compact-padding: $spacing-03 $spacing-04;
       border-radius: $radius-02;
 
       &.lab-card-category__color--#{$name} {
-        background-color: map-get($palette, "20");
+        background-color: map-get($palette, "60");
       }
     }
   }
@@ -100,10 +99,7 @@ $compact-padding: $spacing-03 $spacing-04;
     font-weight: $weight-bold;
     line-height: $spacing-06;
     text-transform: uppercase;
-    font-weight: $weight-bold;
     color: $mineral-80;
-    line-height: $spacing-06;
-    margin: 0 $spacing-01;
   }
 }
 
@@ -151,7 +147,6 @@ $compact-padding: $spacing-03 $spacing-04;
   flex-direction: column;
   justify-content: center;
   margin-top: $spacing-05;
-  margin-bottom: $spacing-01;
   font-size: $font-size-4;
   color: $mineral-80;
 
