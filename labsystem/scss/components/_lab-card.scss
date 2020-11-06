@@ -191,13 +191,13 @@ $card-compact-padding: $spacing-03 $spacing-04;
 
 // Colors
 @each $name, $palette in $card-colors {
-  .lab-card--#{$name} {
-    color: map-get($palette, "80");
 
+  // Card Layout
+  .lab-card--#{$name} {
     @if $name != "white" {
       &.lab-card--outline {
         border-color: map-get($palette, "10");
-    
+
         &.lab-card--vivid {
           @if $name == "mineral" {
             border-color: map-get($palette, "90");
@@ -209,7 +209,27 @@ $card-compact-padding: $spacing-03 $spacing-04;
         }
       }
     }
-  
+
+    // Card Elements
+    .lab-icon {
+      background-color: map-get($palette, "80");
+    }
+
+    .lab-card-category__text, .lab-card-title {
+      color: map-get($palette, "80");
+    }
+
+    .lab-card-divider {
+      border-color: map-get($palette, "20");
+    }
+
+    @if $name == "purple" {
+      .lab-card-link-action a::before {
+        background-color: map-get($palette, "30");
+      }
+    }
+
+    // Filled Layout
     &.lab-card--filled {
       @if $name != "white" {
         border-color: map-get($palette, "10");
@@ -233,9 +253,38 @@ $card-compact-padding: $spacing-03 $spacing-04;
           border-color: $white;
           background-color: $white;
         }
+
+        // Elements on Card Filled Vivid
+        @if $name != "white" {
+          .lab-icon {
+            background-color: map-get($palette, "10");
+          }
+
+          .lab-card-category__text, .lab-card-title {
+            color: map-get($palette, "10");
+          }
+
+          p {
+            color: $white-87;
+          }
+
+          .lab-card-link-action a {
+            color: $white;
+
+            &:hover {
+              color: map-get($palette, "80");
+            }
+          }
+        }
+      }
+
+      // Elements on Filled Card
+      .lab-card-divider {
+        border-color: map-get($palette, "20");
       }
     }
-  
+    
+    // Outline & Filled Layout
     &.lab-card--filled.lab-card--outline {
       border-color: map-get($palette, "90");
       background-color: map-get($palette, "10");
