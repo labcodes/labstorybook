@@ -244,8 +244,8 @@ $card-compact-padding: $spacing-03 $spacing-04;
           border-color: map-get($palette, "90");
           background-color: map-get($palette, "90");
         } @else if $name == "teal" {
-          border-color: map-get($palette, "40");
-          background-color: map-get($palette, "40");
+          border-color: map-get($palette, "60");
+          background-color: map-get($palette, "60");
         } @else if $name == "purple" {
           border-color: map-get($palette, "60");
           background-color: map-get($palette, "60");
