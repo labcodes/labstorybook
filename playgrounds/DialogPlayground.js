@@ -12,6 +12,9 @@ export default class DialogPlayground extends React.Component {
       selectedContent: "edit me",
       selectedButtonText: "edit me",
       selectedButtonResponseText: "edit me",
+      hasOutlineButton: false,
+      selectedOutlineButtonText: "edit me",
+      selectedOutlineButtonResponseText: "edit me",
     };
 
     this.state = {
@@ -19,8 +22,20 @@ export default class DialogPlayground extends React.Component {
       selectedContent: this.initialState.selectedContent,
       selectedButtonText: this.initialState.selectedButtonText,
       selectedButtonResponseText: this.initialState.selectedButtonResponseText,
+      hasOutlineButton: this.initialState.hasOutlineButton,
+      selectedOutlineButtonText: this.initialState.selectedOutlineButtonText,
+      selectedOutlineButtonResponseText: this.initialState.selectedOutlineButtonResponseText,
     };
   }
+
+  handleHasOutlineButtonPropChange = (e) => {
+    const { id, checked } = e.target;
+    this.setState({
+      [id]: checked,
+      selectedOutlineButtonText: this.initialState.selectedOutlineButtonText,
+      selectedOutlineButtonResponseText: this.initialState.selectedOutlineButtonResponseText,
+    });
+  };
 
   handleTextPropChange = (e) => {
     const { id, value } = e.target;
@@ -33,6 +48,9 @@ export default class DialogPlayground extends React.Component {
       selectedContent,
       selectedButtonText,
       selectedButtonResponseText,
+      hasOutlineButton,
+      selectedOutlineButtonText,
+      selectedOutlineButtonResponseText,
     } = this.state;
 
     return (
@@ -45,12 +63,19 @@ export default class DialogPlayground extends React.Component {
             text: selectedButtonText,
             onClick: () => alert(selectedButtonResponseText),
           }}
+          outlineButtonProps={ hasOutlineButton ?
+          {
+            text: selectedOutlineButtonText,
+            onClick: () => alert(selectedOutlineButtonResponseText),
+          } : undefined }
         />
       </>
     );
   };
 
   render() {
+    const { hasOutlineButton } = this.state;
+
     return (
       <div className="columns lab-playground">
         <div className="column lab-playground__component">
@@ -113,6 +138,49 @@ export default class DialogPlayground extends React.Component {
               />
             </label>
           </span>
+          <br />
+
+          <span className="lab-playground__item">
+            <label htmlFor="">
+              <strong>hasOutlineButton: </strong>
+              <input
+                id="hasOutlineButton"
+                type="checkbox"
+                onChange={this.handleHasOutlineButtonPropChange}
+              />
+            </label>
+          </span>
+          <br />
+
+          { hasOutlineButton ?
+            <>
+            <span className="lab-playground__item">
+              <label htmlFor="selectedOutlineButtonText">
+                <strong>selectedOutlineButtonText:</strong>
+                <br />
+                <input
+                  id="selectedOutlineButtonText"
+                  onChange={this.handleTextPropChange}
+                  placeholder="Insert outline button text"
+                />
+              </label>
+            </span>
+            <br />
+
+            <span className="lab-playground__item">
+              <label htmlFor="selectedOutlineButtonResponseText">
+                <strong>selectedOutlineButtonResponseText:</strong>
+                <br />
+                <input
+                  id="selectedOutlineButtonResponseText"
+                  onChange={this.handleTextPropChange}
+                  placeholder="Insert outline button response text"
+                />
+              </label>
+            </span>
+            <br />
+            </>
+          : undefined }
 
         </div>
       </div>
