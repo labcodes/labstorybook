@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { TextButton, OutlineButton } from "../Buttons";
+import { Button, OutlineButton } from "../Buttons";
 
 export default class StandardDialog extends React.Component {
   static propTypes = {
@@ -20,7 +20,7 @@ export default class StandardDialog extends React.Component {
     const {
       title,
       content,
-      buttonProps, 
+      buttonProps,
       outlineButtonProps,
     } = this.props;
 
@@ -33,7 +33,7 @@ export default class StandardDialog extends React.Component {
         <p className="lab-dialog__content">{content}</p>
         <div className="lab-dialog__footer-wrapper">
           <div className="lab-dialog__optional-button">
-            { outlineButtonProps ? 
+            { outlineButtonProps ?
               <OutlineButton
                 size="normal"
                 text={outlineButtonProps.text}
@@ -42,9 +42,8 @@ export default class StandardDialog extends React.Component {
             : undefined }
           </div>
           <div className="lab-dialog__button">
-            <TextButton
+            <Button
               size="normal"
-              skin="dark"
               text={buttonProps.text}
               onClick={buttonProps.onClick}
             />
