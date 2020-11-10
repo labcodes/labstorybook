@@ -6,12 +6,17 @@ export default class MessageDialog extends React.Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
     content: PropTypes.string.isRequired,
+    buttonProps: PropTypes.shape({
+      text: PropTypes.string.isRequired,
+      onClick: PropTypes.func.isRequired,
+    }).isRequired,
   };
 
   render() {
     const {
       title,
       content,
+      buttonProps,
     } = this.props;
 
     return (
@@ -26,8 +31,8 @@ export default class MessageDialog extends React.Component {
           <Button
             size="normal"
             fullWidth={true}
-            text={"click me!"}
-            onClick={() => {}}
+            text={buttonProps.text}
+            onClick={buttonProps.onClick}
           />
         </div>
       </div>

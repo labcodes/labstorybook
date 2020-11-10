@@ -55,6 +55,10 @@ import DialogPlayground from "../playgrounds/DialogPlayground";
         <MessageDialog
           title="Message Dialog"
           content="A lot of elephants!"
+          buttonProps={{
+            text: "click me!",
+            onClick: () => alert("Button has been clicked!"),
+          }}
         />
       </Fragment>
     </Story>
