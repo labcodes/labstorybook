@@ -26,13 +26,13 @@ export default class StandardDialog extends React.Component {
 
     return (
       <div className="lab-dialog lab-dialog--standard">
-        <div className="lab-dialog__header-wrapper">
-          <div className="lab-dialog__title">{title}</div>
-          <div className="lab-dialog__close-button">close button</div>
+        <div className="lab-dialog--standard__header-wrapper">
+          <div className="lab-dialog--standard__title">{title}</div>
+          <div className="lab-dialog__close-button--with-background">close button</div>
         </div>
-        <p className="lab-dialog__content">{content}</p>
-        <div className="lab-dialog__footer-wrapper">
-          <div className="lab-dialog__optional-button">
+        <p className="lab-dialog--standard__content">{content}</p>
+        <div className="lab-dialog--standard__footer-wrapper">
+          <div className="lab-dialog--standard__optional-button">
             { outlineButtonProps ?
               <OutlineButton
                 size="normal"
@@ -41,7 +41,7 @@ export default class StandardDialog extends React.Component {
               />
             : undefined }
           </div>
-          <div className="lab-dialog__button">
+          <div className="lab-dialog--standard__button">
             <Button
               size="normal"
               text={buttonProps.text}

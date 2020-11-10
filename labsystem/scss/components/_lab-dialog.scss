@@ -5,33 +5,58 @@
   border: 1px solid;
 
   &--standard {
+
+    &__header-wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__title {
+      color: $teal-40;
+      font-weight: $weight-bold;
+    }
+
+    &__content {
+      min-width: 100%;
+      width: 0;
+      overflow-x: auto;
+    }
+
+    &__footer-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      background: $mineral-10;
+    }
+
+    &__optional-button {
+    }
+
+    &__button {
+    }
   }
-}
 
-.lab-dialog__header-wrapper {
-  display: flex;
-  justify-content: space-between;
-}
+  &--message {
+    &__header-wrapper {
+      display: flex;
+      justify-content: flex-end;
+    }
 
-.lab-dialog__title {
-  color: $teal-40;
-  font-weight: $weight-bold;
-}
+    &__icon {
+    }
 
-.lab-dialog__content {
-  min-width: 100%;
-  width: 0;
-  overflow-x: auto;
-}
+    &__title {
+    }
 
-.lab-dialog__footer-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  background: $mineral-10;
-}
+    &__content {
+    }
 
-.lab-dialog__optional-button {
-}
+    &__button {
+    }
+  }
 
-.lab-dialog__button {
+  &__close-button--with-background {
+  }
+
+  &__close-button--without-background {
+  }
 }
