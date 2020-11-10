@@ -4,6 +4,8 @@ import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 import { StandardDialog, MessageDialog } from "../labsystem/src/Dialog";
 import DialogPlayground from "../playgrounds/DialogPlayground";
 
+import { iconOptions } from "../playgrounds/assets";
+
 <Meta title="Components/Dialog" />
 
 <header className="docs-title">
@@ -53,6 +55,7 @@ import DialogPlayground from "../playgrounds/DialogPlayground";
     <Story name="Message Dialog">
       <Fragment>
         <MessageDialog
+          icon={iconOptions[6]}
           title="Message Dialog"
           content="A lot of elephants!"
           buttonProps={{
