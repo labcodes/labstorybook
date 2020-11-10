@@ -11,20 +11,18 @@ export default class DialogPlayground extends React.Component {
       selectedTitle: "edit me",
       selectedContent: "edit me",
       selectedButtonText: "edit me",
-      selectedButtonResponseText: "edit me",
       hasOutlineButton: false,
       selectedOutlineButtonText: "edit me",
-      selectedOutlineButtonResponseText: "edit me",
     };
 
     this.state = {
       selectedTitle: this.initialState.selectedTitle,
       selectedContent: this.initialState.selectedContent,
       selectedButtonText: this.initialState.selectedButtonText,
-      selectedButtonResponseText: this.initialState.selectedButtonResponseText,
       hasOutlineButton: this.initialState.hasOutlineButton,
       selectedOutlineButtonText: this.initialState.selectedOutlineButtonText,
-      selectedOutlineButtonResponseText: this.initialState.selectedOutlineButtonResponseText,
+      selectedButtonResponseText: "Button has been clicked!",
+      selectedOutlineButtonResponseText: "OutlineButton has been clicked!",
     };
   }
 
@@ -33,7 +31,6 @@ export default class DialogPlayground extends React.Component {
     this.setState({
       [id]: checked,
       selectedOutlineButtonText: this.initialState.selectedOutlineButtonText,
-      selectedOutlineButtonResponseText: this.initialState.selectedOutlineButtonResponseText,
     });
   };
 
@@ -47,9 +44,9 @@ export default class DialogPlayground extends React.Component {
       selectedTitle,
       selectedContent,
       selectedButtonText,
-      selectedButtonResponseText,
       hasOutlineButton,
       selectedOutlineButtonText,
+      selectedButtonResponseText,
       selectedOutlineButtonResponseText,
     } = this.state;
 
@@ -128,19 +125,6 @@ export default class DialogPlayground extends React.Component {
           <br />
 
           <span className="lab-playground__item">
-            <label htmlFor="selectedButtonResponseText">
-              <strong>buttonResponseText:</strong>
-              <br />
-              <input
-                id="selectedButtonResponseText"
-                onChange={this.handleTextPropChange}
-                placeholder="Insert button response text"
-              />
-            </label>
-          </span>
-          <br />
-
-          <span className="lab-playground__item">
             <label htmlFor="">
               <strong>hasOutlineButton: </strong>
               <input
@@ -153,7 +137,6 @@ export default class DialogPlayground extends React.Component {
           <br />
 
           { hasOutlineButton ?
-            <>
             <span className="lab-playground__item">
               <label htmlFor="selectedOutlineButtonText">
                 <strong>selectedOutlineButtonText:</strong>
@@ -165,23 +148,7 @@ export default class DialogPlayground extends React.Component {
                 />
               </label>
             </span>
-            <br />
-
-            <span className="lab-playground__item">
-              <label htmlFor="selectedOutlineButtonResponseText">
-                <strong>selectedOutlineButtonResponseText:</strong>
-                <br />
-                <input
-                  id="selectedOutlineButtonResponseText"
-                  onChange={this.handleTextPropChange}
-                  placeholder="Insert outline button response text"
-                />
-              </label>
-            </span>
-            <br />
-            </>
           : undefined }
-
         </div>
       </div>
     );
