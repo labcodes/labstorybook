@@ -42,12 +42,20 @@
     }
 
     &__icon {
+      display: flex;
+      justify-content: center;
     }
 
     &__title {
+      display: flex;
+      justify-content: center;
+      color: $teal-40;
+      font-weight: $weight-bold;
     }
 
     &__content {
+      display:flex;
+      justify-content: center;
     }
 
     &__button {
