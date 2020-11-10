@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 
-import { StandardDialog } from "../labsystem/src/Dialog";
+import { StandardDialog, MessageDialog } from "../labsystem/src/Dialog";
 import DialogPlayground from "../playgrounds/DialogPlayground";
 
 <Meta title="Components/Dialog" />
@@ -45,6 +45,14 @@ import DialogPlayground from "../playgrounds/DialogPlayground";
             onClick: () => alert("OutlineButton has been clicked!"),
           }}
         />
+      </Fragment>
+    </Story>
+  </Preview>
+
+  <Preview>
+    <Story name="Message Dialog">
+      <Fragment>
+        <MessageDialog />
       </Fragment>
     </Story>
   </Preview>
