@@ -28,6 +28,8 @@ export default class CardPlayground extends React.Component {
       showHeaderConfigs: false,
       showCardBodyHTML: false,
 
+      cardIsHorizontal: false,
+
       cardImageIsOverflowed: false,
       cardImageIsAboveHeader: false,
 
@@ -61,6 +63,8 @@ export default class CardPlayground extends React.Component {
       availableComponents,
       currentComponent,
 
+      cardIsHorizontal,
+
       cardImageIsOverflowed,
       cardImageIsAboveHeader,
 
@@ -86,9 +90,9 @@ export default class CardPlayground extends React.Component {
     const Component = availableComponents[currentComponent];
 
     return (
-      <Component color={selectedColor} skin={selectedSkin}>
+      <Component color={selectedColor} skin={selectedSkin} isHorizontal={cardIsHorizontal}>
         {/* Remove this h1 when implementing the UI, since it's nor part of the card */}
-        <h1>{currentComponent}</h1>
+        {/* <h1>{currentComponent}</h1> */}
 
         {cardImageIsAboveHeader ? (
           <CardImage
@@ -164,6 +168,8 @@ export default class CardPlayground extends React.Component {
       selectedSkin,
       showHeaderConfigs,
       showCardBodyHTML,
+
+      cardIsHorizontal,
 
       cardImageIsOverflowed,
       cardImageIsAboveHeader,
@@ -263,6 +269,16 @@ export default class CardPlayground extends React.Component {
               </label>
             </span>
           ) : null}
+
+          <span className="lab-playground__item">
+            isHorizontal
+            <br />
+            <Toggle
+              name="cardIsHorizontal"
+              value={cardIsHorizontal}
+              handleToggle={() => this.handleToggleFor("cardIsHorizontal")}
+            />
+          </span>
 
           <span className="lab-playground__item" style={{ width: "100%" }}>
             <label htmlFor="cardBodyHTML">
