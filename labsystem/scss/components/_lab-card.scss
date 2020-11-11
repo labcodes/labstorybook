@@ -42,11 +42,34 @@ $card-compact-padding: $spacing-03 $spacing-04;
   }
 
   &.lab-card--horizontal {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto auto;
+    column-gap: $spacing-04;
 
     .lab-card-image {
-      max-height: 100%;
-      margin-right: $spacing-04;
+      margin-bottom: unset;
+      max-width: 100%;
+      height: 100%;
+      object-fit: cover;
+      grid-row: 1 / last-line;
+    }
+
+    .lab-card-image--overflowed {
+      border-top-right-radius: unset;
+      border-bottom-right-radius: unset;
+      max-width: calc(100% + 2 * #{$card-default-padding});
+      margin-top: -$card-default-padding;
+      margin-bottom: -$card-default-padding;
+      margin-left: -$card-default-padding;
+    }
+
+    .lab-card-header,
+    .lab-card-divider,
+    .lab-card-link-action,
+    .lab-card-double-action,
+    span {
+      grid-column-start: 2;
     }
   }
 }
