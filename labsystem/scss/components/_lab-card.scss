@@ -11,21 +11,6 @@ $card-compact-padding: $spacing-03 $spacing-04;
   border-radius: $radius-04;
   border: $border-01;
 
-  &.lab-card--pale {
-    p:not(.lab-card-title):not(.lab-card-subtitle):not(.lab-card-category) {
-      color: $black-75;
-      margin-top: $spacing-03;
-      margin-bottom: $spacing-03;
-    }
-  }
-  &.lab-card--vivid {
-    p:not(.lab-card-title):not(.lab-card-subtitle):not(.lab-card-category) {
-      color: $white-87;
-      margin-top: $spacing-03;
-      margin-bottom: $spacing-03;
-    }
-  }
-
   &.lab-card--compact {
     padding: $card-compact-padding;
 
@@ -156,6 +141,14 @@ $card-compact-padding: $spacing-03 $spacing-04;
   margin-bottom: 0;
 }
 
+// Body
+p:not(.lab-card-title):not(.lab-card-subtitle):not(.lab-card-category) {
+  color: $black-75;
+  margin-top: unset;
+  margin-bottom: $spacing-03;
+}
+
+// Actions
 .lab-card-link-action {
   display: flex;
   justify-content: center;
