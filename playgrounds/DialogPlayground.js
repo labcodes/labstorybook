@@ -1,10 +1,10 @@
 import React from "react";
 import { isEmpty } from "lodash";
 
-import { StandardDialog } from "../labsystem/src/Dialog";
+import { StandardDialog, MessageDialog } from "../labsystem/src/Dialog";
+import { iconOptions } from "./assets";
 
 export default class DialogPlayground extends React.Component {
-
   constructor(props) {
     super(props);
     this.initialState = {
@@ -13,9 +13,15 @@ export default class DialogPlayground extends React.Component {
       selectedButtonText: "edit me",
       hasOutlineButton: false,
       selectedOutlineButtonText: "edit me",
+      selectedIcon: "star",
     };
 
     this.state = {
+      availableComponents: {
+        StandardDialog,
+        MessageDialog,
+      },
+      currentComponent: "StandardDialog",
       selectedTitle: this.initialState.selectedTitle,
       selectedContent: this.initialState.selectedContent,
       selectedButtonText: this.initialState.selectedButtonText,
@@ -23,8 +29,22 @@ export default class DialogPlayground extends React.Component {
       selectedOutlineButtonText: this.initialState.selectedOutlineButtonText,
       selectedButtonResponseText: "Button has been clicked!",
       selectedOutlineButtonResponseText: "OutlineButton has been clicked!",
+      selectedIcon: this.initialState.selectedIcon,
     };
   }
+
+  handleCurrentComponentChange = (e) => {
+    const { value } = e.target;
+    this.setState({
+      currentComponent: value,
+      selectedTitle: this.initialState.selectedTitle,
+      selectedContent: this.initialState.selectedContent,
+      selectedButtonText: this.initialState.selectedButtonText,
+      hasOutlineButton: this.initialState.hasOutlineButton,
+      selectedOutlineButtonText: this.initialState.selectedOutlineButtonText,
+      selectedIcon: this.initialState.selectedIcon,
+    });
+  };
 
   handleHasOutlineButtonPropChange = (e) => {
     const { id, checked } = e.target;
@@ -39,8 +59,15 @@ export default class DialogPlayground extends React.Component {
     this.setState({ [id]: !isEmpty(value) ? value : "edit me" });
   };
 
+  handleIconPropChange = (e) => {
+    const { id, value } = e.target;
+    this.setState({ [id]: value });
+  };
+
   renderCurrentComponent = () => {
     const {
+      availableComponents,
+      currentComponent,
       selectedTitle,
       selectedContent,
       selectedButtonText,
@@ -48,30 +75,43 @@ export default class DialogPlayground extends React.Component {
       selectedOutlineButtonText,
       selectedButtonResponseText,
       selectedOutlineButtonResponseText,
+      selectedIcon,
     } = this.state;
+    const Component = availableComponents[currentComponent];
 
     return (
       <>
-        <h4><strong>Standard Dialog</strong></h4>
-        <StandardDialog
+        <h4>
+          <strong>{currentComponent}</strong>
+        </h4>
+        <Component
+          icon={selectedIcon}
           title={selectedTitle}
           content={selectedContent}
           buttonProps={{
             text: selectedButtonText,
             onClick: () => alert(selectedButtonResponseText),
           }}
-          outlineButtonProps={ hasOutlineButton ?
-          {
-            text: selectedOutlineButtonText,
-            onClick: () => alert(selectedOutlineButtonResponseText),
-          } : undefined }
+          outlineButtonProps={
+            hasOutlineButton
+              ? {
+                  text: selectedOutlineButtonText,
+                  onClick: () => alert(selectedOutlineButtonResponseText),
+                }
+              : undefined
+          }
         />
       </>
     );
   };
 
   render() {
-    const { hasOutlineButton } = this.state;
+    const {
+      availableComponents,
+      currentComponent,
+      hasOutlineButton,
+      selectedIcon,
+    } = this.state;
 
     return (
       <div className="columns lab-playground">
@@ -81,6 +121,21 @@ export default class DialogPlayground extends React.Component {
 
         <div className="column lab-playground__configs">
           <h4>Configurations</h4>
+
+          <span className="lab-playground__item">
+            <label htmlFor="currentComponent">
+              <strong>variation: </strong>
+              <select onChange={this.handleCurrentComponentChange}>
+                {Object.keys(availableComponents).map((option) => (
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </span>
+          <br />
+
           <span className="lab-playground__item">
             <label htmlFor="selectedTitle">
               <strong>title:</strong>
@@ -96,7 +151,8 @@ export default class DialogPlayground extends React.Component {
 
           <span className="lab-playground__item">
             <label htmlFor="selectedContent">
-              <strong>content:</strong><br />
+              <strong>content:</strong>
+              <br />
               <textarea
                 id="selectedContent"
                 onChange={this.handleTextPropChange}
@@ -124,31 +180,53 @@ export default class DialogPlayground extends React.Component {
           </span>
           <br />
 
-          <span className="lab-playground__item">
-            <label htmlFor="">
-              <strong>hasOutlineButton: </strong>
-              <input
-                id="hasOutlineButton"
-                type="checkbox"
-                onChange={this.handleHasOutlineButtonPropChange}
-              />
-            </label>
-          </span>
-          <br />
+          {currentComponent !== "MessageDialog" ? (
+            <div>
+              <span className="lab-playground__item">
+                <label htmlFor="hasOutlineButton">
+                  <strong>hasOutlineButton: </strong>
+                  <input
+                    id="hasOutlineButton"
+                    type="checkbox"
+                    onChange={this.handleHasOutlineButtonPropChange}
+                  />
+                </label>
+              </span>
+              <br />
 
-          { hasOutlineButton ?
+              {hasOutlineButton ? (
+                <span className="lab-playground__item">
+                  <label htmlFor="selectedOutlineButtonText">
+                    <strong>outlineButtonText:</strong>
+                    <br />
+                    <input
+                      id="selectedOutlineButtonText"
+                      onChange={this.handleTextPropChange}
+                      placeholder="Insert outline button text"
+                    />
+                  </label>
+                </span>
+              ) : null}
+            </div>
+          ) : (
             <span className="lab-playground__item">
-              <label htmlFor="selectedOutlineButtonText">
-                <strong>selectedOutlineButtonText:</strong>
+              <label htmlFor="selectedIcon">
+                <strong>icon: </strong>
                 <br />
-                <input
-                  id="selectedOutlineButtonText"
-                  onChange={this.handleTextPropChange}
-                  placeholder="Insert outline button text"
-                />
+                <select
+                  id="selectedIcon"
+                  value={selectedIcon}
+                  onChange={this.handleIconPropChange}
+                >
+                  {iconOptions.slice(1).map((item) => (
+                    <option value={item} key={`icon-${item}`}>
+                      {item}
+                    </option>
+                  ))}
+                </select>
               </label>
             </span>
-          : undefined }
+          )}
         </div>
       </div>
     );
