@@ -314,6 +314,18 @@ p:not(.lab-card-title):not(.lab-card-subtitle):not(.lab-card-category) {
               color: map-get($palette, "80");
             }
           }
+
+          .lab-card-header--overlay {
+            .lab-card-category__text,
+            .lab-card-title,
+            .lab-card-subtitle {
+              color: $white;
+            }
+
+            .lab-card-category .lab-icon {
+              background-color: $white;
+            }
+          }
         }
       }
     }
