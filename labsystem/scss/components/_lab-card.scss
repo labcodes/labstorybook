@@ -77,59 +77,68 @@ $card-compact-padding: $spacing-03 $spacing-04;
 
 .lab-card-header {
   margin-bottom: $spacing-03;
-  
-  &.lab-card-header--overlay {}
-}
 
-.lab-card-category {
-  display: flex;
-  align-items: center;
-  margin-top: 0;
-  margin-bottom: $spacing-03;
-  
-  .lab-icon {
-    margin-right: $spacing-01;
+  &.lab-card-header--overlay {
+    position: absolute;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.87) 0%, rgba(0, 0, 0, 0.1) 100%);
+    margin-top: -$card-default-padding;
+    margin-left: -$card-default-padding;
+    margin-right: -$card-default-padding;
+    padding: $card-default-padding;
   }
   
-  .lab-card-category__color {
-    width: 16px;
-    height: 8px;
-    margin-right: $spacing-02;
-    border-radius: $radius-02;
+  .lab-card-category {
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: $spacing-03;
     
-    @each $name, $palette in $all-colors {
-      &.lab-card-category__color--#{$name} {
-        background-color: map-get($palette, "60");
+    .lab-icon {
+      margin-right: $spacing-01;
+    }
+    
+    .lab-card-category__color {
+      width: 16px;
+      height: 8px;
+      margin-right: $spacing-02;
+      border-radius: $radius-02;
+      
+      @each $name, $palette in $all-colors {
+        &.lab-card-category__color--#{$name} {
+          background-color: map-get($palette, "60");
+        }
       }
+    }
+    
+    .lab-card-category__text {
+      margin-right: $spacing-01;
+      font-size: $font-size-2;
+      font-weight: $weight-bold;
+      line-height: $spacing-06;
+      text-transform: uppercase;
+      color: $mineral-80;
     }
   }
   
-  .lab-card-category__text {
-    margin-right: $spacing-01;
-    font-size: $font-size-2;
+  .lab-card-title {
+    font-size: $font-size-4;
     font-weight: $weight-bold;
-    line-height: $spacing-06;
-    text-transform: uppercase;
     color: $mineral-80;
+    line-height: $spacing-05;
+    margin-top: 0;
+    margin-bottom: $spacing-01;
   }
-}
-
-.lab-card-title {
-  font-size: $font-size-4;
-  font-weight: $weight-bold;
-  color: $mineral-80;
-  line-height: $spacing-05;
-  margin-top: 0;
-  margin-bottom: $spacing-01;
-}
-
-.lab-card-subtitle {
-  font-size: $font-size-3;
-  font-weight: $weight-medium;
-  color: $black-75;
-  line-height: $spacing-06;
-  margin-top: 0;
-  margin-bottom: 0;
+  
+  .lab-card-subtitle {
+    font-size: $font-size-3;
+    font-weight: $weight-medium;
+    color: $black-75;
+    line-height: $spacing-06;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 // Body
@@ -229,8 +238,20 @@ p:not(.lab-card-title):not(.lab-card-subtitle):not(.lab-card-category) {
       background-color: map-get($palette, "80");
     }
 
-    .lab-card-category__text, .lab-card-title {
+    .lab-card-header .lab-card-category__text, .lab-card-title {
       color: map-get($palette, "80");
+    }
+
+    .lab-card-header--overlay {
+      .lab-card-category__text,
+      .lab-card-title,
+      .lab-card-subtitle {
+        color: $white;
+      }
+  
+      .lab-card-category .lab-icon {
+        background-color: $white;
+      }
     }
 
     @if $name != "white" {
