@@ -43,7 +43,8 @@ $card-compact-padding: $spacing-03 $spacing-04;
     .lab-card-image--overflowed {
       border-top-right-radius: unset;
       border-bottom-right-radius: unset;
-      max-width: calc(100% + 2 * #{$card-default-padding});
+      max-width: calc(100% + #{$card-default-padding});
+      height: calc(100% + 2 * #{$card-default-padding});
       margin-top: -$card-default-padding;
       margin-bottom: -$card-default-padding;
       margin-left: -$card-default-padding;
