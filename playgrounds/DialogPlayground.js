@@ -22,14 +22,9 @@ export default class DialogPlayground extends React.Component {
         MessageDialog,
       },
       currentComponent: "StandardDialog",
-      selectedTitle: this.initialState.selectedTitle,
-      selectedContent: this.initialState.selectedContent,
-      selectedButtonText: this.initialState.selectedButtonText,
-      hasOutlineButton: this.initialState.hasOutlineButton,
-      selectedOutlineButtonText: this.initialState.selectedOutlineButtonText,
+      ...this.initialState,
       selectedButtonResponseText: "Button has been clicked!",
       selectedOutlineButtonResponseText: "OutlineButton has been clicked!",
-      selectedIcon: this.initialState.selectedIcon,
     };
   }
 
@@ -37,13 +32,8 @@ export default class DialogPlayground extends React.Component {
     const { value } = e.target;
     this.setState({
       currentComponent: value,
-      selectedTitle: this.initialState.selectedTitle,
-      selectedContent: this.initialState.selectedContent,
-      selectedButtonText: this.initialState.selectedButtonText,
-      hasOutlineButton: this.initialState.hasOutlineButton,
-      selectedOutlineButtonText: this.initialState.selectedOutlineButtonText,
-      selectedIcon: this.initialState.selectedIcon,
-    });
+      ...this.initialState,
+    })
   };
 
   handleHasOutlineButtonPropChange = (e) => {
