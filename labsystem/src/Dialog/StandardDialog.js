@@ -14,17 +14,30 @@ export default class StandardDialog extends React.Component {
       text: PropTypes.string.isRequired,
       onClick: PropTypes.func.isRequired,
     }),
+    isLarge: PropTypes.bool,
   };
 
   static defaultProps = {
     outlineButtonProps: undefined,
+    isLarge: false,
   };
 
   render() {
-    const { title, content, buttonProps, outlineButtonProps } = this.props;
+    const {
+      title,
+      content,
+      buttonProps,
+      outlineButtonProps,
+      isLarge,
+    } = this.props;
 
     return (
-      <div className="lab-dialog lab-dialog--standard">
+      <div
+        className={
+          `lab-dialog lab-dialog--standard` +
+          `${isLarge ? ` lab-dialog--large` : ""}`
+        }
+      >
         <div className="lab-dialog__standard-header">
           <div className="lab-dialog__standard-title">{title}</div>
           <div className="lab-dialog-close-button--with-background">

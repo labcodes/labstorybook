@@ -12,13 +12,19 @@ export default class MessageDialog extends React.Component {
       text: PropTypes.string.isRequired,
       onClick: PropTypes.func.isRequired,
     }).isRequired,
+    isLarge: PropTypes.bool,
   };
 
   render() {
-    const { icon, title, content, buttonProps } = this.props;
+    const { icon, title, content, buttonProps, isLarge } = this.props;
 
     return (
-      <div className="lab-dialog lab-dialog--message">
+      <div
+        className={
+          `lab-dialog lab-dialog--message` +
+          `${isLarge ? ` lab-dialog--large` : ""}`
+        }
+      >
         <div className="lab-dialog__message-header">
           <div className="lab-dialog__close-button">close button</div>
         </div>
