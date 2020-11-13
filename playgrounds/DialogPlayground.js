@@ -1,5 +1,4 @@
 import React from "react";
-import { isEmpty } from "lodash";
 
 import { StandardDialog, MessageDialog } from "../labsystem/src/Dialog";
 import { iconOptions } from "./assets";
@@ -8,11 +7,11 @@ export default class DialogPlayground extends React.Component {
   constructor(props) {
     super(props);
     this.initialState = {
-      selectedTitle: "edit me",
-      selectedContent: "edit me",
-      selectedButtonText: "edit me",
+      selectedTitle: "A generic Title",
+      selectedContent: "Some relevant content",
+      selectedButtonText: "Click me!",
       hasOutlineButton: false,
-      selectedOutlineButtonText: "edit me",
+      selectedOutlineButtonText: "Click me too!",
       selectedIcon: "star",
     };
 
@@ -33,7 +32,7 @@ export default class DialogPlayground extends React.Component {
     this.setState({
       currentComponent: value,
       ...this.initialState,
-    })
+    });
   };
 
   handleHasOutlineButtonPropChange = (e) => {
@@ -46,7 +45,7 @@ export default class DialogPlayground extends React.Component {
 
   handleTextPropChange = (e) => {
     const { id, value } = e.target;
-    this.setState({ [id]: !isEmpty(value) ? value : "edit me" });
+    this.setState({ [id]: value });
   };
 
   handleIconPropChange = (e) => {
@@ -101,6 +100,10 @@ export default class DialogPlayground extends React.Component {
       currentComponent,
       hasOutlineButton,
       selectedIcon,
+      selectedTitle,
+      selectedContent,
+      selectedButtonText,
+      selectedOutlineButtonText,
     } = this.state;
 
     return (
@@ -134,6 +137,7 @@ export default class DialogPlayground extends React.Component {
                 id="selectedTitle"
                 onChange={this.handleTextPropChange}
                 placeholder="Insert title"
+                value={selectedTitle}
               />
             </label>
           </span>
@@ -147,6 +151,7 @@ export default class DialogPlayground extends React.Component {
                 id="selectedContent"
                 onChange={this.handleTextPropChange}
                 placeholder="Insert content"
+                value={selectedContent}
                 style={{
                   width: "100%",
                   minHeight: "100px",
@@ -165,6 +170,7 @@ export default class DialogPlayground extends React.Component {
                 id="selectedButtonText"
                 onChange={this.handleTextPropChange}
                 placeholder="Insert button text"
+                value={selectedButtonText}
               />
             </label>
           </span>
@@ -193,6 +199,7 @@ export default class DialogPlayground extends React.Component {
                       id="selectedOutlineButtonText"
                       onChange={this.handleTextPropChange}
                       placeholder="Insert outline button text"
+                      value={selectedOutlineButtonText}
                     />
                   </label>
                 </span>

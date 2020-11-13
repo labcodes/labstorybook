@@ -36,15 +36,15 @@ export default class StandardDialog extends React.Component {
         </div>
         <p className="lab-dialog--standard__content">{content}</p>
         <div className="lab-dialog--standard__footer-wrapper">
-          <div className="lab-dialog--standard__optional-button">
-            {outlineButtonProps ? (
+          {outlineButtonProps ? (
+            <div className="lab-dialog--standard__optional-button">
               <OutlineButton
                 size="normal"
                 text={outlineButtonProps.text}
                 onClick={outlineButtonProps.onClick}
               />
-            ) : undefined}
-          </div>
+            </div>
+          ) : undefined}
           <div className="lab-dialog--standard__button">
             <Button
               size="normal"
