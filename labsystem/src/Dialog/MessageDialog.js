@@ -19,17 +19,15 @@ export default class MessageDialog extends React.Component {
 
     return (
       <div className="lab-dialog lab-dialog--message">
-        <div className="lab-dialog--message__header-wrapper">
-          <div className="lab-dialog__close-button--without-background">
-            close button
-          </div>
+        <div className="lab-dialog__message-header">
+          <div className="lab-dialog__close-button">close button</div>
         </div>
-        <div className="lab-dialog--message__icon">
+        <div className="lab-dialog__icon">
           <Icon type={icon} color="black-75" />
         </div>
-        <div className="lab-dialog--message__title">{title}</div>
-        <div className="lab-dialog--message__content">{content}</div>
-        <div className="lab-dialog--message__button">
+        <div className="lab-dialog__message-title">{title}</div>
+        <div className="lab-dialog__message-content">{content}</div>
+        <div className="lab-dialog__button">
           <Button
             size="normal"
             fullWidth

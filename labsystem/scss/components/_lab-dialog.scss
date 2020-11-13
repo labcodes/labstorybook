@@ -2,69 +2,71 @@
 
 // Standard Dialog component
 .lab-dialog {
+}
+
+.lab-dialog--standard {
   border: 1px solid;
+}
 
-  &--standard {
+.lab-dialog__standard-header {
+  display: flex;
+  justify-content: space-between;
+}
 
-    &__header-wrapper {
-      display: flex;
-      justify-content: space-between;
-    }
+.lab-dialog__standard-title {
+  color: $teal-40;
+  font-weight: $weight-bold;
+}
 
-    &__title {
-      color: $teal-40;
-      font-weight: $weight-bold;
-    }
+.lab-dialog__standard-content {
+  min-width: 100%;
+  width: 0;
+  overflow-x: auto;
+}
 
-    &__content {
-      min-width: 100%;
-      width: 0;
-      overflow-x: auto;
-    }
+.lab-dialog__standard-footer {
+  display: flex;
+  justify-content: flex-end;
+  background: $mineral-10;
+}
 
-    &__footer-wrapper {
-      display: flex;
-      justify-content: flex-end;
-      background: $mineral-10;
-    }
+.lab-dialog__optional-button {
+}
 
-    &__optional-button {
-    }
+.lab-dialog__button {
+}
 
-    &__button {
-    }
-  }
+.lab-dialog--message {
+  border: 1px solid;
+}
 
-  &--message {
-    &__header-wrapper {
-      display: flex;
-      justify-content: flex-end;
-    }
+.lab-dialog__icon {
+  display: flex;
+  justify-content: center;
+}
 
-    &__icon {
-      display: flex;
-      justify-content: center;
-    }
+.lab-dialog__message-header {
+  display: flex;
+  justify-content: flex-end;
+}
 
-    &__title {
-      display: flex;
-      justify-content: center;
-      color: $teal-40;
-      font-weight: $weight-bold;
-    }
+.lab-dialog__message-title {
+  display: flex;
+  justify-content: center;
+  color: $teal-40;
+  font-weight: $weight-bold;
+}
 
-    &__content {
-      display:flex;
-      justify-content: center;
-    }
+.lab-dialog__message-content {
+  display:flex;
+  justify-content: center;
+}
 
-    &__button {
-    }
-  }
+.lab-dialog-close-button--with-background {
+}
 
-  &__close-button--with-background {
-  }
+.lab-dialog.close-button {
+}
 
-  &__close-button--without-background {
-  }
+.lab-dialog--large {
 }
