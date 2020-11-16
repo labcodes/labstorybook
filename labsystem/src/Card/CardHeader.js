@@ -68,7 +68,7 @@ export default class CardHeader extends React.Component {
       >
         {categoryIcon || categoryColor || categoryText || categoryLabelText ? (
           <p className="lab-card-category">
-            {categoryIcon ? <Icon type={categoryIcon} size="petit" /> : null}
+            {categoryIcon ? <Icon type={categoryIcon} /> : null}
             {categoryColor ? (
               <span
                 className={`lab-card-category__color lab-card-category__color--${categoryColor}`}
