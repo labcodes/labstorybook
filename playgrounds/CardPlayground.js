@@ -51,6 +51,7 @@ export default class CardPlayground extends React.Component {
 
       availableCardActions: { LinkAction, DoubleAction },
       currentCardAction: "LinkAction",
+      currentCardActionSize: "normal",
       cardActionOpenNewTab: false,
       cardActionIsHorizontal: false,
       cardActionIsText: false,
@@ -85,6 +86,7 @@ export default class CardPlayground extends React.Component {
       cardDividerIsOverflowed,
 
       currentCardAction,
+      currentCardActionSize,
       cardActionOpenNewTab,
       cardActionIsHorizontal,
       cardActionIsText,
@@ -135,6 +137,7 @@ export default class CardPlayground extends React.Component {
             onClick={(e) => {
               console.log("LinkAction clicked", e);
             }}
+            size={currentCardActionSize}
             text="Sample Link Action"
             openNewTab={cardActionOpenNewTab}
           />
@@ -154,6 +157,7 @@ export default class CardPlayground extends React.Component {
                 icon: "minus",
               },
             ]}
+            size={currentCardActionSize}
             isHorizontal={cardActionIsHorizontal}
             isText={cardActionIsText}
           />
@@ -191,6 +195,7 @@ export default class CardPlayground extends React.Component {
 
       availableCardActions,
       currentCardAction,
+      currentCardActionSize,
       cardActionOpenNewTab,
       cardActionIsHorizontal,
       cardActionIsText,
@@ -452,6 +457,22 @@ export default class CardPlayground extends React.Component {
                     {option}
                   </option>
                 ))}
+              </select>
+            </label>
+          </span>
+
+          <span className="lab-playground__item">
+            <label htmlFor="currentCardActionSize">
+              size
+              <br />
+              <select
+                name="currentCardActionSize"
+                value={currentCardActionSize}
+                onChange={this.handleInputChange}
+              >
+                <option value="small">small</option>
+                <option value="normal">normal</option>
+                <option value="large">large</option>
               </select>
             </label>
           </span>

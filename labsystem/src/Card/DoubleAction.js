@@ -56,6 +56,7 @@ export default class DoubleAction extends React.Component {
             key={text}
             text={text}
             onClick={onClick}
+            size={size}
             {...(icon ? { icon } : undefined)}
           />
         ))}
