@@ -3,15 +3,9 @@ import PropTypes from "prop-types";
 
 export default class UserAvatar extends React.Component {
   static propTypes = {
-    avatarSrc: PropTypes.string,
-    altText: PropTypes.string,
-    caption: PropTypes.string,
-  };
-
-  static defaultProps = {
-    avatarSrc: undefined,
-    altText: undefined,
-    caption: undefined,
+    avatarSrc: PropTypes.string.isRequired,
+    altText: PropTypes.string.isRequired,
+    caption: PropTypes.string.isRequired,
   };
 
   render() {
