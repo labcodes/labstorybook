@@ -5,11 +5,7 @@ import Icon from "../Icon";
 
 export default class CollapseButton extends React.Component {
   static propTypes = {
-    onClick: PropTypes.func,
-  };
-
-  static defaultProps = {
-    onClick: () => {},
+    onClick: PropTypes.func.isRequired,
   };
 
   render() {
