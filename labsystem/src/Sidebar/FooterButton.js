@@ -4,13 +4,12 @@ import Icon from "../Icon";
 
 export default class FooterButton extends React.Component {
   static propTypes = {
-    label: PropTypes.string,
+    label: PropTypes.string.isRequired,
     icon: PropTypes.string,
     onClick: PropTypes.func,
   };
 
   static defaultProps = {
-    label: undefined,
     icon: undefined,
     onClick: undefined,
   };
@@ -20,26 +19,19 @@ export default class FooterButton extends React.Component {
     onClick(e);
   };
 
-  buttonIcon = () => {
-    const { icon } = this.props;
-    return icon ? (
-      <Icon type={icon} className="lab-narrow-sidebar__footer-icon" />
-    ) : (
-      ""
-    );
-  };
-
   render() {
-    const { label } = this.props;
+    const { label, icon } = this.props;
 
     return (
       <React.Fragment>
         <button
           type="button"
-          className="lab-narrow-sidebar__footer__button"
+          className="lab-narrow-sidebar__footer-button"
           onClick={this.handleClick}
         >
-          {this.buttonIcon()}
+          {icon ? (
+            <Icon type={icon} className="lab-narrow-sidebar__footer-icon" />
+          ) : null}
           {label}
         </button>
       </React.Fragment>

@@ -275,56 +275,47 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
   @include from($tablet){
     align-items: center;
   }
+}
 
-  &__button {
-    display: flex;
-    width: 60%;
-    box-sizing: border-box;
-    margin-bottom: $spacing-01;
-    text-align: center;
-    font-family: $font-primary;
-    font-weight: $weight-medium;
-    color: $footer-button-color;
-    background-color: transparent;
-    border: $border-default transparent;
-    padding: $spacing-01 $spacing-03;
-    margin-left: 28px;
-    border-radius: $radius-03;
-    font-size: $font-size-4;
+.lab-narrow-sidebar__footer-button {
+  display: flex;
+  width: 60%;
+  box-sizing: border-box;
+  margin-bottom: $spacing-01;
+  text-align: center;
+  font-family: $font-primary;
+  font-weight: $weight-medium;
+  color: $footer-button-color;
+  background-color: transparent;
+  border: $border-default transparent;
+  padding: $spacing-01 $spacing-03;
+  margin-left: 28px;
+  border-radius: $radius-03;
+  font-size: $font-size-4;
 
-    @include from($tablet) {
-      cursor: pointer;
-      padding: $spacing-01;
-      width: 76%;
-      margin-left: 0;
-      align-items: center;
-      font-size: $font-size-1;
-    }
-
-    .lab-narrow-sidebar__footer-icon {
-      background-color: $footer-button-color;
-      margin-right: $spacing-02;
-
-      @include from($tablet){
-        margin-right: $spacing-01;
-      }
-    }
+  @include from($tablet) {
+    cursor: pointer;
+    padding: $spacing-01;
+    width: 76%;
+    margin-left: 0;
+    align-items: center;
+    font-size: $font-size-1;
   }
 
-  &__button:focus {
+  &:focus {
     border: $border-default $item-focus-color;
     outline: none;
   }
 
-  &__button:hover {
+  &:hover {
     background-color: $item-hover-color;
   }
 
-  &__button:active {
+  &:active {
     background-color: $item-focus-color;
   }
 
-  &__button--active {
+  &--active {
     background-color: $item-pressed-color;
     color: $item-active-color;
     font-weight: $weight-semibold;
@@ -332,6 +323,15 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
     .lab-narrow-sidebar__footer-icon {
       background-color: $item-active-color;
     }
+  }
+}
+
+.lab-narrow-sidebar__footer-icon {
+  background-color: $footer-button-color;
+  margin-right: $spacing-02;
+
+  @include from($tablet){
+    margin-right: $spacing-01;
   }
 }
 
@@ -409,7 +409,7 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
     }
   }
 
-  .lab-narrow-sidebar__footer__button {
+  .lab-narrow-sidebar__footer-button {
     color: $white;
 
     .lab-narrow-sidebar__footer-icon {
@@ -429,7 +429,7 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
     }
   }
 
-  .lab-narrow-sidebar__footer__button--active {
+  .lab-narrow-sidebar__footer-button--active {
     background-color: $white;
     color: $vivid-bg;
 
