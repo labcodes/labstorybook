@@ -8,32 +8,26 @@
   border: 1px solid;
 }
 
-.lab-dialog__standard-header {
+.lab-dialog__header {
   display: flex;
   justify-content: space-between;
 }
 
-.lab-dialog__standard-title {
+.lab-dialog__title {
   color: $teal-40;
   font-weight: $weight-bold;
 }
 
-.lab-dialog__standard-content {
+.lab-dialog__content {
   min-width: 100%;
   width: 0;
   overflow-x: auto;
 }
 
-.lab-dialog__standard-footer {
+.lab-dialog__footer {
   display: flex;
   justify-content: flex-end;
   background: $mineral-10;
-}
-
-.lab-dialog__optional-button {
-}
-
-.lab-dialog__button {
 }
 
 .lab-dialog--message {
@@ -45,27 +39,21 @@
   justify-content: center;
 }
 
-.lab-dialog__message-header {
+.lab-dialog__header--message{
   display: flex;
   justify-content: flex-end;
 }
 
-.lab-dialog__message-title {
+.lab-dialog__title--message {
   display: flex;
   justify-content: center;
   color: $teal-40;
   font-weight: $weight-bold;
 }
 
-.lab-dialog__message-content {
+.lab-dialog__content--message {
   display:flex;
   justify-content: center;
-}
-
-.lab-dialog-close-button--with-background {
-}
-
-.lab-dialog.close-button {
 }
 
 .lab-dialog--large {

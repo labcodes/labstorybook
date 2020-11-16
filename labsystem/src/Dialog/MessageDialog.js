@@ -15,6 +15,10 @@ export default class MessageDialog extends React.Component {
     isLarge: PropTypes.bool,
   };
 
+  static defaultProps = {
+    isLarge: false,
+  }
+
   render() {
     const { icon, title, content, buttonProps, isLarge } = this.props;
 
@@ -25,22 +29,20 @@ export default class MessageDialog extends React.Component {
           `${isLarge ? ` lab-dialog--large` : ""}`
         }
       >
-        <div className="lab-dialog__message-header">
-          <div className="lab-dialog__close-button">close button</div>
+        <div className="lab-dialog__header lab-dialog__header--message">
+          <div>close button</div>
         </div>
         <div className="lab-dialog__icon">
           <Icon type={icon} color="black-75" />
         </div>
-        <div className="lab-dialog__message-title">{title}</div>
-        <div className="lab-dialog__message-content">{content}</div>
-        <div className="lab-dialog__button">
-          <Button
-            size="normal"
-            fullWidth
-            text={buttonProps.text}
-            onClick={buttonProps.onClick}
-          />
-        </div>
+        <div className="lab-dialog__title--message">{title}</div>
+        <div className="lab-dialog__content--message">{content}</div>
+        <Button
+          size="normal"
+          fullWidth
+          text={buttonProps.text}
+          onClick={buttonProps.onClick}
+        />
       </div>
     );
   }

@@ -38,30 +38,24 @@ export default class StandardDialog extends React.Component {
           `${isLarge ? ` lab-dialog--large` : ""}`
         }
       >
-        <div className="lab-dialog__standard-header">
-          <div className="lab-dialog__standard-title">{title}</div>
-          <div className="lab-dialog-close-button--with-background">
-            close button
-          </div>
+        <div className="lab-dialog__header">
+          <div className="lab-dialog__title">{title}</div>
+          <div>close button</div>
         </div>
-        <p className="lab-dialog__standard-content">{content}</p>
-        <div className="lab-dialog__standard-footer">
+        <p className="lab-dialog__content">{content}</p>
+        <div className="lab-dialog__footer">
           {outlineButtonProps ? (
-            <div className="lab-dialog__optional-button">
-              <OutlineButton
-                size="normal"
-                text={outlineButtonProps.text}
-                onClick={outlineButtonProps.onClick}
-              />
-            </div>
-          ) : undefined}
-          <div className="lab-dialog__button">
-            <Button
+            <OutlineButton
               size="normal"
-              text={buttonProps.text}
-              onClick={buttonProps.onClick}
+              text={outlineButtonProps.text}
+              onClick={outlineButtonProps.onClick}
             />
-          </div>
+          ) : undefined}
+          <Button
+            size="normal"
+            text={buttonProps.text}
+            onClick={buttonProps.onClick}
+          />
         </div>
       </div>
     );
