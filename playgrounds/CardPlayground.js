@@ -102,7 +102,7 @@ export default class CardPlayground extends React.Component {
           <CardImage
             src="/docs/card/card-image.jpg"
             alt="Labcodes offices' view"
-            isOverflowed={cardImageIsOverflowed}
+            isOverflowed={cardIsHorizontal && cardImageIsOverflowed}
           />
         ) : null}
         <CardHeader
@@ -124,7 +124,7 @@ export default class CardPlayground extends React.Component {
           <CardImage
             src="/docs/card/card-image.jpg"
             alt="Labcodes offices' view"
-            isOverflowed={cardImageIsOverflowed}
+            isOverflowed={cardIsHorizontal && cardImageIsOverflowed}
           />
         ) : null}
         <span dangerouslySetInnerHTML={{ __html: cardBodyHTML }} />
@@ -327,15 +327,17 @@ export default class CardPlayground extends React.Component {
           </span>
 
           <h6>CardImage</h6>
-          <span className="lab-playground__item">
-            isOverflowed
-            <br />
-            <Toggle
-              name="cardImageIsOverflowed"
-              value={cardImageIsOverflowed}
-              handleToggle={() => this.handleToggleFor("cardImageIsOverflowed")}
-            />
-          </span>
+          {cardIsHorizontal ? (
+            <span className="lab-playground__item">
+              isOverflowed
+              <br />
+              <Toggle
+                name="cardImageIsOverflowed"
+                value={cardImageIsOverflowed}
+                handleToggle={() => this.handleToggleFor("cardImageIsOverflowed")}
+              />
+            </span>
+          ) : null}
 
           <span className="lab-playground__item">
             Show it above the CardHeader
