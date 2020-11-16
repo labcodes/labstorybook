@@ -4,16 +4,14 @@ import Icon from "../Icon";
 
 export default class Item extends React.Component {
   static propTypes = {
-    label: PropTypes.string,
+    label: PropTypes.string.isRequired,
     icon: PropTypes.string,
-    onClick: PropTypes.func,
+    onClick: PropTypes.func.isRequired,
     isActive: PropTypes.bool,
   };
 
   static defaultProps = {
-    label: undefined,
     icon: undefined,
-    onClick: () => {},
     isActive: false,
   };
 
