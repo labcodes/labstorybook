@@ -47,6 +47,7 @@ export default class CardPlayground extends React.Component {
       cardBodyHTML:
         "<p>This HTML is inside the card body, below the image and header.</p>",
 
+      showDivider: true,
       cardDividerIsOverflowed: false,
 
       availableCardActions: { LinkAction, DoubleAction },
@@ -83,6 +84,7 @@ export default class CardPlayground extends React.Component {
 
       cardBodyHTML,
 
+      showDivider,
       cardDividerIsOverflowed,
 
       currentCardAction,
@@ -129,7 +131,7 @@ export default class CardPlayground extends React.Component {
         ) : null}
         <span dangerouslySetInnerHTML={{ __html: cardBodyHTML }} />
 
-        <CardDivider isOverflowed={cardDividerIsOverflowed} />
+        {showDivider ? <CardDivider isOverflowed={cardDividerIsOverflowed} /> : null}
 
         {currentCardAction === "LinkAction" ? (
           <LinkAction
@@ -191,6 +193,7 @@ export default class CardPlayground extends React.Component {
 
       cardBodyHTML,
 
+      showDivider,
       cardDividerIsOverflowed,
 
       availableCardActions,
@@ -440,6 +443,18 @@ export default class CardPlayground extends React.Component {
               value={cardDividerIsOverflowed}
               handleToggle={() =>
                 this.handleToggleFor("cardDividerIsOverflowed")
+              }
+            />
+          </span>
+
+          <span className="lab-playground__item">
+            Show divider
+            <br />
+            <Toggle
+              name="showDivider"
+              value={showDivider}
+              handleToggle={() =>
+                this.handleToggleFor("showDivider")
               }
             />
           </span>
