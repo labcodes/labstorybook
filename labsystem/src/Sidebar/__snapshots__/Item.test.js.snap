@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Item renders with base props 1`] = `
+<button
+  className="lab-narrow-sidebar__item"
+  onClick={[Function]}
+  type="button"
+>
+  Test item
+</button>
+`;
+
+exports[`Item renders with icon 1`] = `
+<button
+  className="lab-narrow-sidebar__item"
+  onClick={[Function]}
+  type="button"
+>
+  <span
+    className="lab-icon lab-icon--star lab-icon--mineral-60 lab-narrow-sidebar__item-icon"
+  />
+  Test item
+</button>
+`;
+
+exports[`Item renders with isActive 1`] = `
+<button
+  className="lab-narrow-sidebar__item lab-narrow-sidebar__item--active"
+  onClick={[Function]}
+  type="button"
+>
+  Test item
+</button>
+`;
