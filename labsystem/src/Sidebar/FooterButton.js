@@ -6,35 +6,27 @@ export default class FooterButton extends React.Component {
   static propTypes = {
     label: PropTypes.string.isRequired,
     icon: PropTypes.string,
-    onClick: PropTypes.func,
+    onClick: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
     icon: undefined,
-    onClick: undefined,
-  };
-
-  handleClick = (e) => {
-    const { onClick } = this.props;
-    onClick(e);
   };
 
   render() {
-    const { label, icon } = this.props;
+    const { label, icon, onClick } = this.props;
 
     return (
-      <React.Fragment>
-        <button
-          type="button"
-          className="lab-narrow-sidebar__footer-button"
-          onClick={this.handleClick}
-        >
-          {icon ? (
-            <Icon type={icon} className="lab-narrow-sidebar__footer-icon" />
-          ) : null}
-          {label}
-        </button>
-      </React.Fragment>
+      <button
+        type="button"
+        className="lab-narrow-sidebar__footer-button"
+        onClick={onClick}
+      >
+        {icon ? (
+          <Icon type={icon} className="lab-narrow-sidebar__footer-icon" />
+        ) : null}
+        {label}
+      </button>
     );
   }
 }
