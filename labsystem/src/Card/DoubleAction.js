@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Button, TextButton } from "../Buttons";
+import { Button, OutlineButton, TextButton } from "../Buttons";
 
 export default class DoubleAction extends React.Component {
   static propTypes = {
@@ -42,7 +42,6 @@ export default class DoubleAction extends React.Component {
 
   render() {
     const { actionsProps, size, isText, isHorizontal } = this.props;
-    const ButtonComponent = isText ? TextButton : Button;
 
     return (
       <section
@@ -51,15 +50,39 @@ export default class DoubleAction extends React.Component {
           ${isHorizontal ? " lab-card-double-action--horizontal" : ""}
         `}
       >
-        {actionsProps.map(({ text, onClick, icon }) => (
-          <ButtonComponent
-            key={text}
-            text={text}
-            onClick={onClick}
-            size={size}
-            {...(icon ? { icon } : undefined)}
-          />
-        ))}
+        {actionsProps.map(({ text, onClick, icon }, index) => {
+          if (isText) {
+            return (
+              <TextButton
+                key={text}
+                text={text}
+                onClick={onClick}
+                size={size}
+                {...(icon ? { icon } : undefined)}
+              />
+            );
+          }
+          if (index === 0) {
+            return (
+              <Button
+                key={text}
+                text={text}
+                onClick={onClick}
+                size={size}
+                {...(icon ? { icon } : undefined)}
+              />
+            );
+          }
+          return (
+            <OutlineButton
+              key={text}
+              text={text}
+              onClick={onClick}
+              size={size}
+              {...(icon ? { icon } : undefined)}
+            />
+          );
+        })}
       </section>
     );
   }

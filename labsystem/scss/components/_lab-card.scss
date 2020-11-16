@@ -193,6 +193,10 @@ p:not(.lab-card-title):not(.lab-card-subtitle):not(.lab-card-category) {
   font-size: $font-size-4;
   color: $mineral-80;
 
+  .lab-btn {
+    transition: none;
+  }
+
   .lab-btn:first-child {
     margin-bottom: $spacing-03;
   }
@@ -204,11 +208,12 @@ p:not(.lab-card-title):not(.lab-card-subtitle):not(.lab-card-category) {
       flex-grow: 1;
 
       &:first-child {
-        margin-right: $spacing-01;
+        order: 1;
+        margin-left: $spacing-01;
       }
 
       &:last-child {
-        margin-left: $spacing-01;
+        margin-right: $spacing-01;
       }
     }
   }
