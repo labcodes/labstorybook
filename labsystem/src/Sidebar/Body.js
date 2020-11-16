@@ -1,28 +1,34 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { NavbarWithDividersContext } from "./NarrowSidebar";
+
 export default class Body extends React.Component {
   static propTypes = {
     children: PropTypes.node,
-    withDividers: PropTypes.bool,
   };
 
   static defaultProps = {
     children: undefined,
-    withDividers: false,
   };
 
   render() {
-    const { children, withDividers } = this.props;
+    const { children } = this.props;
     return (
-      <nav
-        className={
-          `lab-narrow-sidebar__body` +
-          `${withDividers ? ` lab-narrow-sidebar__body--with-scroll` : ` ""`}`
-        }
-      >
-        {children}
-      </nav>
+      <NavbarWithDividersContext.Consumer>
+        {(withDividers) => (
+          <nav
+            className={
+              `lab-narrow-sidebar__body` +
+              `${
+                withDividers ? ` lab-narrow-sidebar__body--with-scroll` : ` ""`
+              }`
+            }
+          >
+            {children}
+          </nav>
+        )}
+      </NavbarWithDividersContext.Consumer>
     );
   }
 }
