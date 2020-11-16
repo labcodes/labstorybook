@@ -3,13 +3,8 @@ import PropTypes from "prop-types";
 
 export default class Logotype extends React.Component {
   static propTypes = {
-    logoSrc: PropTypes.string,
-    altText: PropTypes.string,
-  };
-
-  static defaultProps = {
-    logoSrc: undefined,
-    altText: undefined,
+    logoSrc: PropTypes.string.isRequired,
+    altText: PropTypes.string.isRequired,
   };
 
   render() {
