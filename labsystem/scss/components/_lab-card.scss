@@ -172,15 +172,15 @@ p:not(.lab-card-title):not(.lab-card-subtitle):not(.lab-card-category) {
   font-size: $font-size-4;
   color: $mineral-80;
 
-  &lab-card-link-action--normal {
+  &.lab-card-link-action--normal {
     font-size: $font-size-4;
   }
 
-  &lab-card-link-action--small {
+  &.lab-card-link-action--small {
     font-size: $font-size-3;
   }
 
-  &lab-card-link-action--large {
+  &.lab-card-link-action--large {
     font-size: $font-size-5;
   }
 }
