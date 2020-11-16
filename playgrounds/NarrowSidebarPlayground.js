@@ -41,7 +41,8 @@ export default class NarrowSidebarPlayground extends React.Component {
           }}
         />,
       ],
-      avatarAltText: "",
+      useAvatarInHeader: true,
+      avatarAltText: "Mr. Geraldo",
       avatarSrc: "./docs/narrow-sidebar/MrGeraldo.png",
       avatarCaption: "Mr. Geraldo",
       showHeaderConfigs: false,
@@ -116,6 +117,7 @@ export default class NarrowSidebarPlayground extends React.Component {
       footerButtonIcon,
       footerButtonLabel,
       footerButtons,
+      useAvatarInHeader,
       avatarAltText,
       avatarCaption,
       avatarSrc,
@@ -150,18 +152,24 @@ export default class NarrowSidebarPlayground extends React.Component {
               withDividers={withDividers}
             >
               <NarrowSidebar.Header>
-                <NarrowSidebar.Logotype altText={logoAltText} logoSrc={logoSrc} />
+                {useAvatarInHeader ? (
+                  <NarrowSidebar.UserAvatar avatarSrc={avatarSrc} altText={avatarAltText} caption={avatarCaption} />
+                ) : (
+                  <NarrowSidebar.Logotype altText={logoAltText} logoSrc={logoSrc} />
+                )}
                 <NarrowSidebar.CollapseButton onClick={handleOpenOnMobile} />
               </NarrowSidebar.Header>
               <NarrowSidebar.Body withDividers={withDividers}>
                 {sidebarItems.map((item) => item)}
               </NarrowSidebar.Body>
               <NarrowSidebar.Footer>
-                <NarrowSidebar.UserAvatar
-                  altText={avatarAltText}
-                  caption={avatarCaption}
-                  avatarSrc={avatarSrc}
-                />
+                {useAvatarInHeader ? null : (
+                  <NarrowSidebar.UserAvatar
+                    altText={avatarAltText}
+                    caption={avatarCaption}
+                    avatarSrc={avatarSrc}
+                  />
+                )}
                 {footerButtons.map((item) => item)}
               </NarrowSidebar.Footer>
             </NarrowSidebar>
@@ -196,6 +204,18 @@ export default class NarrowSidebarPlayground extends React.Component {
               />
             </label>
           </span>
+          <span className="lab-playground__item">
+            <label htmlFor="useAvatarInHeader">
+              Show avatar in the header
+              <br />
+              <Toggle
+                name="useAvatarInHeader"
+                label="useAvatarInHeader"
+                value={useAvatarInHeader}
+                handleToggle={this.handlePropChangeBool}
+              />
+            </label>
+          </span>
           <p
             onClick={() => this.handleToggleFor("showHeaderConfigs")}
             onKeyPress={() => this.handleToggleFor("showHeaderConfigs")}
@@ -207,28 +227,54 @@ export default class NarrowSidebarPlayground extends React.Component {
               type={showHeaderConfigs ? "collapse-open" : "collapse-closed"}
             />
           </p>
-          {showHeaderConfigs ? (
+          {showHeaderConfigs && useAvatarInHeader ? (
             <React.Fragment>
               <span className="lab-playground__item">
-                <TextInput
-                  id="logoSrc"
-                  label="logoSrc"
-                  value={logoSrc}
-                  onChange={this.handlePropChangeText}
-                />
-              </span>
-              <span className="lab-playground__item">
-                <TextInput
-                  id="logoAltText"
-                  label="logoAltText"
-                  value={logoAltText}
-                  onChange={this.handlePropChangeText}
-                />
-              </span>
-            </React.Fragment>
-          ) : (
-            ""
-          )}
+                  <TextInput
+                    id="avatarSrc"
+                    label="avatarSrc"
+                    value={avatarSrc}
+                    onChange={this.handlePropChangeText}
+                  />
+                </span>
+                <span className="lab-playground__item">
+                  <TextInput
+                    id="avatarAltText"
+                    label="avatarAltText"
+                    value={avatarAltText}
+                    onChange={this.handlePropChangeText}
+                  />
+                </span>
+                <span className="lab-playground__item">
+                  <TextInput
+                    id="avatarCaption"
+                    label="avatarCaption"
+                    value={avatarCaption}
+                    onChange={this.handlePropChangeText}
+                  />
+                </span>
+              </React.Fragment>
+            ) : null}
+            {showHeaderConfigs && !useAvatarInHeader ? (
+              <React.Fragment>
+                <span className="lab-playground__item">
+                  <TextInput
+                    id="logoSrc"
+                    label="logoSrc"
+                    value={logoSrc}
+                    onChange={this.handlePropChangeText}
+                  />
+                </span>
+                <span className="lab-playground__item">
+                  <TextInput
+                    id="logoAltText"
+                    label="logoAltText"
+                    value={logoAltText}
+                    onChange={this.handlePropChangeText}
+                  />
+                </span>
+              </React.Fragment>
+          ) : null}
           <p
             onClick={() => this.handleToggleFor("showBodyConfigs")}
             onKeyPress={() => this.handleToggleFor("showBodyConfigs")}
@@ -284,7 +330,7 @@ export default class NarrowSidebarPlayground extends React.Component {
               type={showFooterConfigs ? "collapse-open" : "collapse-closed"}
             />
           </p>
-          {showFooterConfigs ? (
+          {showFooterConfigs && !useAvatarInHeader ? (
             <React.Fragment>
               <span className="lab-playground__item">
                 <TextInput
@@ -310,7 +356,10 @@ export default class NarrowSidebarPlayground extends React.Component {
                   onChange={this.handlePropChangeText}
                 />
               </span>
-
+            </React.Fragment>
+          ) : null}
+          {showFooterConfigs ? (
+            <React.Fragment>
               <span className="lab-playground__item">
                 <TextInput
                   id="footerButtonIcon"
