@@ -33,30 +33,32 @@ $card-compact-padding: $spacing-03 $spacing-04;
     }
   }
 
-  &.lab-card--horizontal {
-    display: block;
-    padding-left: calc(33% + 2 * #{$card-default-padding});
+  @include from($tablet){
+    &.lab-card--horizontal {
+      display: block;
+      padding-left: calc(33% + 2 * #{$card-default-padding});
 
-    .lab-card-image {
-      border-radius: inherit;
-      position: absolute;
-      margin: 0;
-      max-width: calc(33%);
-      left: $card-default-padding;
-      top: $card-default-padding;
-      height: calc(100% - 2 * #{$card-default-padding});
-      object-fit: cover;
-    }
+      .lab-card-image {
+        border-radius: inherit;
+        position: absolute;
+        margin: 0;
+        max-width: calc(33%);
+        left: $card-default-padding;
+        top: $card-default-padding;
+        height: calc(100% - 2 * #{$card-default-padding});
+        object-fit: cover;
+      }
 
-    .lab-card-image--overflowed {
-      top: 0;
-      left: 0;
-      border-top-right-radius: unset;
-      border-bottom-right-radius: unset;
-      border-bottom-left-radius: inherit;
-      max-width: calc(33% + #{$card-default-padding});
-      height: 100%;
-      margin: 0;
+      .lab-card-image--overflowed {
+        top: 0;
+        left: 0;
+        border-top-right-radius: unset;
+        border-bottom-right-radius: unset;
+        border-bottom-left-radius: inherit;
+        max-width: calc(33% + #{$card-default-padding});
+        height: 100%;
+        margin: 0;
+      }
     }
   }
 }
