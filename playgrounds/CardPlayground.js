@@ -50,6 +50,7 @@ export default class CardPlayground extends React.Component {
       showDivider: true,
       cardDividerIsOverflowed: false,
 
+      showCardActions: true,
       availableCardActions: { LinkAction, DoubleAction },
       currentCardAction: "LinkAction",
       currentCardActionSize: "normal",
@@ -88,6 +89,7 @@ export default class CardPlayground extends React.Component {
       showDivider,
       cardDividerIsOverflowed,
 
+      showCardActions,
       currentCardAction,
       currentCardActionSize,
       cardActionOpenNewTab,
@@ -142,7 +144,7 @@ export default class CardPlayground extends React.Component {
           <CardDivider isOverflowed={cardDividerIsOverflowed} />
         ) : null}
 
-        {currentCardAction === "LinkAction" ? (
+        {currentCardAction === "LinkAction" && showCardActions ? (
           <LinkAction
             href={`${window.location.href}&link-action=clicked`}
             onClick={(e) => {
@@ -154,7 +156,7 @@ export default class CardPlayground extends React.Component {
           />
         ) : null}
 
-        {currentCardAction === "DoubleAction" ? (
+        {currentCardAction === "DoubleAction" && showCardActions ? (
           <DoubleAction
             actionsProps={[
               {
@@ -208,6 +210,7 @@ export default class CardPlayground extends React.Component {
       cardDividerIsOverflowed,
 
       availableCardActions,
+      showCardActions,
       currentCardAction,
       currentCardActionSize,
       cardActionOpenNewTab,
@@ -504,6 +507,16 @@ export default class CardPlayground extends React.Component {
                 <option value="large">large</option>
               </select>
             </label>
+          </span>
+
+          <span className="lab-playground__item">
+            Show Card Actions
+            <br />
+            <Toggle
+              name="showCardActions"
+              value={showCardActions}
+              handleToggle={() => this.handleToggleFor("showCardActions")}
+            />
           </span>
 
           {currentCardAction === "LinkAction" ? (
