@@ -24,7 +24,10 @@ export default class DialogPlayground extends React.Component {
       ...this.initialState,
       selectedButtonResponseText: "Button has been clicked!",
       selectedOutlineButtonResponseText: "OutlineButton has been clicked!",
+      modalIsOpen: false,
     };
+
+    this.handleOutsideClick = this.handleOutsideClick.bind(this);
   }
 
   handleCurrentComponentChange = (e) => {
@@ -53,6 +56,23 @@ export default class DialogPlayground extends React.Component {
     this.setState({ [id]: value });
   };
 
+  showModal = () => {
+    document.addEventListener("click", this.handleOutsideClick, false);
+    this.setState({ modalIsOpen: true });
+  };
+
+  handleModalClose = () => {
+    document.removeEventListener("click", this.handleOutsideClick, false);
+    this.setState({ modalIsOpen: false });
+  };
+
+  handleOutsideClick = (e) => {
+    if (this.node.contains(e.target)) {
+      return;
+    }
+    this.handleModalClose();
+  };
+
   renderCurrentComponent = () => {
     const {
       availableComponents,
@@ -65,6 +85,7 @@ export default class DialogPlayground extends React.Component {
       selectedButtonResponseText,
       selectedOutlineButtonResponseText,
       selectedIcon,
+      modalIsOpen,
     } = this.state;
     const Component = availableComponents[currentComponent];
 
@@ -73,23 +94,37 @@ export default class DialogPlayground extends React.Component {
         <h4>
           <strong>{currentComponent}</strong>
         </h4>
-        <Component
-          icon={selectedIcon}
-          title={selectedTitle}
-          content={selectedContent}
-          buttonProps={{
-            text: selectedButtonText,
-            onClick: () => alert(selectedButtonResponseText),
+        <div
+          className="container"
+          ref={(node) => {
+            this.node = node;
           }}
-          outlineButtonProps={
-            hasOutlineButton
-              ? {
-                  text: selectedOutlineButtonText,
-                  onClick: () => alert(selectedOutlineButtonResponseText),
-                }
-              : undefined
-          }
-        />
+        >
+          <button type="button" onClick={this.showModal}>
+            show Modal
+          </button>
+          {modalIsOpen && (
+            <Component
+              icon={selectedIcon}
+              title={selectedTitle}
+              content={selectedContent}
+              handleClose={this.handleModalClose}
+              isOpen={modalIsOpen}
+              buttonProps={{
+                text: selectedButtonText,
+                onClick: () => alert(selectedButtonResponseText),
+              }}
+              outlineButtonProps={
+                hasOutlineButton
+                  ? {
+                      text: selectedOutlineButtonText,
+                      onClick: () => alert(selectedOutlineButtonResponseText),
+                    }
+                  : undefined
+              }
+            />
+          )}
+        </div>
       </>
     );
   };

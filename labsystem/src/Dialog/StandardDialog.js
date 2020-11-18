@@ -15,11 +15,15 @@ export default class StandardDialog extends React.Component {
       onClick: PropTypes.func.isRequired,
     }),
     isLarge: PropTypes.bool,
+    handleClose: PropTypes.func,
+    isOpen: PropTypes.bool,
   };
 
   static defaultProps = {
     outlineButtonProps: undefined,
     isLarge: false,
+    handleClose: () => {},
+    isOpen: false,
   };
 
   render() {
@@ -29,8 +33,11 @@ export default class StandardDialog extends React.Component {
       buttonProps,
       outlineButtonProps,
       isLarge,
+      isOpen,
+      handleClose,
     } = this.props;
 
+    if (!isOpen) return null;
     return (
       <div
         className={
@@ -40,7 +47,9 @@ export default class StandardDialog extends React.Component {
       >
         <div className="lab-dialog__header">
           <div className="lab-dialog__title">{title}</div>
-          <div>close button</div>
+          <button type="button" onClick={handleClose}>
+            x
+          </button>
         </div>
         <p className="lab-dialog__content">{content}</p>
         <div className="lab-dialog__footer">

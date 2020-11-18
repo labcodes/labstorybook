@@ -13,15 +13,28 @@ export default class MessageDialog extends React.Component {
       onClick: PropTypes.func.isRequired,
     }).isRequired,
     isLarge: PropTypes.bool,
+    handleClose: PropTypes.func,
+    isOpen: PropTypes.bool,
   };
 
   static defaultProps = {
     isLarge: false,
-  }
+    handleClose: () => {},
+    isOpen: false,
+  };
 
   render() {
-    const { icon, title, content, buttonProps, isLarge } = this.props;
+    const {
+      icon,
+      title,
+      content,
+      buttonProps,
+      isLarge,
+      handleClose,
+      isOpen,
+    } = this.props;
 
+    if (!isOpen) return null;
     return (
       <div
         className={
@@ -30,7 +43,9 @@ export default class MessageDialog extends React.Component {
         }
       >
         <div className="lab-dialog__header lab-dialog__header--message">
-          <div>close button</div>
+          <button type="button" onClick={handleClose}>
+            x
+          </button>
         </div>
         <div className="lab-dialog__icon">
           <Icon type={icon} color="black-75" />

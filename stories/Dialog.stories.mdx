@@ -17,57 +17,6 @@ import { iconOptions } from "../playgrounds/assets";
 <nav className="docs-content">
   <p>This is the start of Dialog's documentation.</p>
 
-  <Preview>
-    <Story name="Standard Dialog">
-      <Fragment>
-        <StandardDialog
-          title="Standard Dialog"
-          content="One elephant. Two elephants. Three elephants."
-          buttonProps={{
-            text: "click me!",
-            onClick: () => alert("Button has been clicked!"),
-          }}
-        />
-      </Fragment>
-    </Story>
-  </Preview>
-
-  <Preview>
-    <Story name="Standard Dialog with outline button">
-      <Fragment>
-        <StandardDialog
-          title="Standard Dialog with outline button"
-          content="One elephant. Two elephants. Three elephants."
-          buttonProps={{
-            text: "click me!",
-            onClick: () => alert("Button has been clicked!"),
-          }}
-          outlineButtonProps={{
-            text: "click me too!",
-            onClick: () => alert("OutlineButton has been clicked!"),
-          }}
-        />
-      </Fragment>
-    </Story>
-  </Preview>
-
-  <Preview>
-    <Story name="Message Dialog">
-      <Fragment>
-        <MessageDialog
-          icon={iconOptions[6]}
-          title="Message Dialog"
-          content="A lot of elephants!"
-          buttonProps={{
-            text: "click me!",
-            onClick: () => alert("Button has been clicked!"),
-          }}
-        />
-      </Fragment>
-    </Story>
-  </Preview>
-
-
   ### Playground
 
   <Preview>
