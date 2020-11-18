@@ -56,6 +56,7 @@ export default class CardPlayground extends React.Component {
       cardActionOpenNewTab: false,
       cardActionIsHorizontal: false,
       cardActionIsText: false,
+      cardActionButtonsAreDisabled: false,
     };
   }
 
@@ -92,11 +93,17 @@ export default class CardPlayground extends React.Component {
       cardActionOpenNewTab,
       cardActionIsHorizontal,
       cardActionIsText,
+      cardActionButtonsAreDisabled,
     } = this.state;
     const Component = availableComponents[currentComponent];
 
     return (
-      <Component color={selectedColor} skin={selectedSkin} isHorizontal={cardIsHorizontal} isCompact={cardIsCompact}>
+      <Component
+        color={selectedColor}
+        skin={selectedSkin}
+        isHorizontal={cardIsHorizontal}
+        isCompact={cardIsCompact}
+      >
         {/* Remove this h1 when implementing the UI, since it's nor part of the card */}
         {/* <h1>{currentComponent}</h1> */}
 
@@ -131,7 +138,9 @@ export default class CardPlayground extends React.Component {
         ) : null}
         <span dangerouslySetInnerHTML={{ __html: cardBodyHTML }} />
 
-        {showDivider ? <CardDivider isOverflowed={cardDividerIsOverflowed} /> : null}
+        {showDivider ? (
+          <CardDivider isOverflowed={cardDividerIsOverflowed} />
+        ) : null}
 
         {currentCardAction === "LinkAction" ? (
           <LinkAction
@@ -152,11 +161,13 @@ export default class CardPlayground extends React.Component {
                 text: "Action 1",
                 onClick: (e) => console.log("Action 1 clicked", e),
                 icon: "plus",
+                disabled: cardActionButtonsAreDisabled,
               },
               {
                 text: "Action 2",
                 onClick: (e) => console.log("Action 2 clicked", e),
                 icon: "minus",
+                disabled: cardActionButtonsAreDisabled,
               },
             ]}
             size={currentCardActionSize}
@@ -202,6 +213,7 @@ export default class CardPlayground extends React.Component {
       cardActionOpenNewTab,
       cardActionIsHorizontal,
       cardActionIsText,
+      cardActionButtonsAreDisabled,
     } = this.state;
     const {
       props: {
@@ -337,7 +349,9 @@ export default class CardPlayground extends React.Component {
               <Toggle
                 name="cardImageIsOverflowed"
                 value={cardImageIsOverflowed}
-                handleToggle={() => this.handleToggleFor("cardImageIsOverflowed")}
+                handleToggle={() =>
+                  this.handleToggleFor("cardImageIsOverflowed")
+                }
               />
             </span>
           ) : null}
@@ -453,9 +467,7 @@ export default class CardPlayground extends React.Component {
             <Toggle
               name="showDivider"
               value={showDivider}
-              handleToggle={() =>
-                this.handleToggleFor("showDivider")
-              }
+              handleToggle={() => this.handleToggleFor("showDivider")}
             />
           </span>
 
@@ -510,9 +522,7 @@ export default class CardPlayground extends React.Component {
 
           {currentCardAction === "DoubleAction" ? (
             <React.Fragment>
-              <span
-                className="lab-playground__item"
-              >
+              <span className="lab-playground__item">
                 isHorizontal
                 <br />
                 <Toggle
@@ -523,20 +533,26 @@ export default class CardPlayground extends React.Component {
                   }
                 />
               </span>
-              <span
-                className="lab-playground__item"
-              >
+              <span className="lab-playground__item">
                 isText
                 <br />
                 <Toggle
                   name="cardActionIsText"
                   value={cardActionIsText}
+                  handleToggle={() => this.handleToggleFor("cardActionIsText")}
+                />
+              </span>
+              <span className="lab-playground__item">
+                Disable buttons
+                <br />
+                <Toggle
+                  name="cardActionButtonsAreDisabled"
+                  value={cardActionButtonsAreDisabled}
                   handleToggle={() =>
-                    this.handleToggleFor("cardActionIsText")
+                    this.handleToggleFor("cardActionButtonsAreDisabled")
                   }
                 />
               </span>
-
             </React.Fragment>
           ) : null}
         </div>

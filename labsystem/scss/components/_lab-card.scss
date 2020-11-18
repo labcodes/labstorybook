@@ -195,10 +195,6 @@ p:not(.lab-card-title):not(.lab-card-subtitle):not(.lab-card-category) {
   font-size: $font-size-4;
   color: $mineral-80;
 
-  .lab-btn {
-    transition: none;
-  }
-
   .lab-btn:first-child {
     margin-bottom: $spacing-03;
   }

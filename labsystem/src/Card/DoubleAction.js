@@ -9,6 +9,7 @@ export default class DoubleAction extends React.Component {
       PropTypes.exact({
         text: PropTypes.string.isRequired,
         onClick: PropTypes.func.isRequired,
+        disabled: PropTypes.bool,
         icon: PropTypes.string,
       })
     ).isRequired,
@@ -50,7 +51,7 @@ export default class DoubleAction extends React.Component {
           ${isHorizontal ? " lab-card-double-action--horizontal" : ""}
         `}
       >
-        {actionsProps.map(({ text, onClick, icon }, index) => {
+        {actionsProps.map(({ text, onClick, icon, disabled }, index) => {
           if (isText) {
             return (
               <TextButton
@@ -59,6 +60,7 @@ export default class DoubleAction extends React.Component {
                 onClick={onClick}
                 size={size}
                 {...(icon ? { icon } : undefined)}
+                {...(disabled ? { disabled } : undefined)}
               />
             );
           }
@@ -70,6 +72,7 @@ export default class DoubleAction extends React.Component {
                 onClick={onClick}
                 size={size}
                 {...(icon ? { icon } : undefined)}
+                {...(disabled ? { disabled } : undefined)}
               />
             );
           }
@@ -80,6 +83,7 @@ export default class DoubleAction extends React.Component {
               onClick={onClick}
               size={size}
               {...(icon ? { icon } : undefined)}
+              {...(disabled ? { disabled } : undefined)}
             />
           );
         })}
