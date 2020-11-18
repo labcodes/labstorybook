@@ -31,6 +31,13 @@ $card-compact-padding: $spacing-03 $spacing-04;
     &.lab-card-divider--overflowed {
       width: calc(100% + 2 * #{$card-compact-padding});
     }
+
+    .lab-card-header--overlay {
+      margin-top: -#{nth($card-compact-padding, 1)};
+      margin-left: -#{nth($card-compact-padding, 2)};
+      margin-right: -#{nth($card-compact-padding, 2)};
+      padding: $card-compact-padding;
+    }
   }
 
   @include from($tablet){
@@ -58,6 +65,23 @@ $card-compact-padding: $spacing-03 $spacing-04;
         max-width: calc(33% + #{$card-default-padding});
         height: 100%;
         margin: 0;
+      }
+
+      &.lab-card--compact {
+        .lab-card-image {
+          margin: 0;
+          height: calc(100% - 2 * #{nth($card-compact-padding, 1)});
+          left: nth($card-compact-padding, 2);
+          top: nth($card-compact-padding, 1);
+        }
+
+        .lab-card-image--overflowed {
+          left: 0;
+          top: 0;
+          height: 100%;
+          border-top-left-radius: inherit;
+          border-bottom-left-radius: inherit;
+        }
       }
     }
   }
