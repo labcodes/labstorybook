@@ -106,9 +106,6 @@ export default class CardPlayground extends React.Component {
         isHorizontal={cardIsHorizontal}
         isCompact={cardIsCompact}
       >
-        {/* Remove this h1 when implementing the UI, since it's nor part of the card */}
-        {/* <h1>{currentComponent}</h1> */}
-
         {cardImageIsAboveHeader ? (
           <CardImage
             src="/docs/card/card-image.jpg"
@@ -129,7 +126,7 @@ export default class CardPlayground extends React.Component {
           categoryColor={
             cardHeaderCategoryIcon.length ? undefined : cardHeaderCategoryColor
           }
-          isOverlay={cardHeaderIsOverlay}
+          isOverlay={!cardIsHorizontal && cardHeaderIsOverlay}
         />
         {!cardImageIsAboveHeader ? (
           <CardImage
