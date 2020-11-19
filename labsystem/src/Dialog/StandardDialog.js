@@ -26,6 +26,11 @@ export default class StandardDialog extends React.Component {
     isOpen: false,
   };
 
+  componentDidUpdate() {
+    const { isOpen } = this.props;
+    document.body.style.overflow = isOpen ? "hidden" : "unset";
+  }
+
   render() {
     const {
       title,
@@ -45,26 +50,28 @@ export default class StandardDialog extends React.Component {
           `${isLarge ? ` lab-dialog--large` : ""}`
         }
       >
-        <div className="lab-dialog__header">
-          <div className="lab-dialog__title">{title}</div>
-          <button type="button" onClick={handleClose}>
-            x
-          </button>
-        </div>
-        <p className="lab-dialog__content">{content}</p>
-        <div className="lab-dialog__footer">
-          {outlineButtonProps ? (
-            <OutlineButton
+        <div className="lab-dialog lab-dialog__container">
+          <div className="lab-dialog__header">
+            <div className="lab-dialog__title">{title}</div>
+            <button type="button" onClick={handleClose}>
+              x
+            </button>
+          </div>
+          <p className="lab-dialog__content">{content}</p>
+          <div className="lab-dialog__footer">
+            {outlineButtonProps ? (
+              <OutlineButton
+                size="normal"
+                text={outlineButtonProps.text}
+                onClick={outlineButtonProps.onClick}
+              />
+            ) : undefined}
+            <Button
               size="normal"
-              text={outlineButtonProps.text}
-              onClick={outlineButtonProps.onClick}
+              text={buttonProps.text}
+              onClick={buttonProps.onClick}
             />
-          ) : undefined}
-          <Button
-            size="normal"
-            text={buttonProps.text}
-            onClick={buttonProps.onClick}
-          />
+          </div>
         </div>
       </div>
     );

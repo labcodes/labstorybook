@@ -23,6 +23,11 @@ export default class MessageDialog extends React.Component {
     isOpen: false,
   };
 
+  componentDidUpdate() {
+    const { isOpen } = this.props;
+    document.body.style.overflow = isOpen ? "hidden" : "unset";
+  }
+
   render() {
     const {
       icon,
@@ -42,22 +47,24 @@ export default class MessageDialog extends React.Component {
           `${isLarge ? ` lab-dialog--large` : ""}`
         }
       >
-        <div className="lab-dialog__header lab-dialog__header--message">
-          <button type="button" onClick={handleClose}>
-            x
-          </button>
+        <div className="lab-dialog lab-dialog__container">
+          <div className="lab-dialog__header lab-dialog__header--message">
+            <button type="button" onClick={handleClose}>
+              x
+            </button>
+          </div>
+          <div className="lab-dialog__icon">
+            <Icon type={icon} color="black-75" />
+          </div>
+          <div className="lab-dialog__title--message">{title}</div>
+          <div className="lab-dialog__content--message">{content}</div>
+          <Button
+            size="normal"
+            fullWidth
+            text={buttonProps.text}
+            onClick={buttonProps.onClick}
+          />
         </div>
-        <div className="lab-dialog__icon">
-          <Icon type={icon} color="black-75" />
-        </div>
-        <div className="lab-dialog__title--message">{title}</div>
-        <div className="lab-dialog__content--message">{content}</div>
-        <Button
-          size="normal"
-          fullWidth
-          text={buttonProps.text}
-          onClick={buttonProps.onClick}
-        />
       </div>
     );
   }
