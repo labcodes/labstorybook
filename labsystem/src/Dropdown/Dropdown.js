@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { element } from "prop-types";
-
 export default class Dropdown extends React.Component {
   static propTypes = {
     direction: PropTypes.oneOf(["down", "up"]),
@@ -26,8 +24,8 @@ export default class Dropdown extends React.Component {
     this.state = {
       isOpen: false,
       highlightedItem: 0,
-      itemsLength: itemsLength,
-      itemIndexes: itemIndexes,
+      itemsLength,
+      itemIndexes,
     };
   }
 
@@ -37,8 +35,8 @@ export default class Dropdown extends React.Component {
 
       this.setState({
         highlightedItem: 0,
-        itemsLength: itemsLength,
-        itemIndexes: itemIndexes,
+        itemsLength,
+        itemIndexes,
       });
     }
   }
@@ -116,15 +114,14 @@ export default class Dropdown extends React.Component {
         })}
         {isOpen ? (
           <>
-            {children.map((element, i) => {
-              return (
+            {children.map(
+              (element, i) =>
                 element &&
                 React.cloneElement(element, {
                   isHighlighted: i === itemIndexes[highlightedItem],
                   key: i,
                 })
-              );
-            })}
+            )}
           </>
         ) : null}
       </div>

@@ -20,7 +20,7 @@ export default class Item extends React.Component {
     disabled: false,
     isDestructive: false,
     isConfirmation: false,
-  }
+  };
 
   render() {
     const { isHighlighted, label, onClick, disabled } = this.props;
