@@ -23,9 +23,29 @@ export default class MessageDialog extends React.Component {
     isOpen: false,
   };
 
+  constructor(props) {
+    super(props);
+    this.escFunction = this.escFunction.bind(this);
+  }
+
+  componentDidMount() {
+    document.addEventListener("keydown", this.escFunction, false);
+  }
+
   componentDidUpdate() {
     const { isOpen } = this.props;
     document.body.style.overflow = isOpen ? "hidden" : "unset";
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.escFunction, false);
+  }
+
+  escFunction(event) {
+    const { handleClose } = this.props;
+    if (event.keyCode === 27) {
+      handleClose();
+    }
   }
 
   render() {
@@ -41,13 +61,13 @@ export default class MessageDialog extends React.Component {
 
     if (!isOpen) return null;
     return (
-      <div
-        className={
-          `lab-dialog lab-dialog--message` +
-          `${isLarge ? ` lab-dialog--large` : ""}`
-        }
-      >
-        <div className="lab-dialog lab-dialog__container">
+      <div className="lab-dialog__container" role="dialog" aria-modal="true">
+        <div
+          className={
+            `lab-dialog lab-dialog--message` +
+            `${isLarge ? ` lab-dialog--large` : ""}`
+          }
+        >
           <div className="lab-dialog__header lab-dialog__header--message">
             <button type="button" onClick={handleClose}>
               x
