@@ -13,6 +13,10 @@ $vivid-sidebar-all-colors: (
 
   .lab-narrow-sidebar {
     position: relative;
+
+    @include mobile(){
+      max-height: 60vh;
+    }
   }
 
   .lab-narrow-sidebar__header {
