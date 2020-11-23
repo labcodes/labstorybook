@@ -1,3 +1,17 @@
-.dropdown__item--highlighted {
-  color: red;
+.dropdown {
+  .dropdown__items-container {
+    position: relative;
+  }
+
+  // .dropdown__items-container--down{
+  // }
+
+  .dropdown__items-container--up{
+    position: relative;
+    top: -80px;
+  }
+
+  .dropdown__item--highlighted {
+    color: red;
+  }
 }

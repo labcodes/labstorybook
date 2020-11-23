@@ -1,6 +1,7 @@
 import React from "react";
 
 import Dropdown from "../labsystem/src/Dropdown/Dropdown";
+import Radio from "../labsystem/src/Radio";
 
 export default class InputPlayground extends React.Component {
   constructor(props) {
@@ -20,6 +21,11 @@ export default class InputPlayground extends React.Component {
   handlePropChangeBool = (e) => {
     const { id, checked } = e.target;
     this.setState({ [id]: checked });
+  };
+
+  handleDirectionChange = (e) => {
+    const { value } = e.target;
+    this.setState({ direction: value });
   };
 
   render() {
@@ -69,6 +75,8 @@ export default class InputPlayground extends React.Component {
       <div className="columns lab-playground">
         <div className="column lab-playground__component">
           <h4>TextInput</h4>
+          <br />
+          <br />
           <Dropdown
             direction={direction}
             isMultiSelect={isMultiSelect}
@@ -92,17 +100,22 @@ export default class InputPlayground extends React.Component {
         <div className="column lab-playground__configs">
           <h4>Configurations</h4>
           <span className="lab-playground__item">
-            <label htmlFor="label">
-              Label
-              <br />
-              <input
-                id="label"
-                type="text"
-                label="Label"
-                value={label}
-                onChange={this.handlePropChangeText}
-              />
-            </label>
+            direction (default is "down")
+            <br />
+            <Radio
+              id="direction-down"
+              name="direction"
+              label="down"
+              value="down"
+              onChange={this.handleDirectionChange}
+            />
+            <Radio
+              id="direction-up"
+              name="direction"
+              label="up"
+              value="up"
+              onChange={this.handleDirectionChange}
+            />
           </span>
           <br />
           <span className="lab-playground__item">

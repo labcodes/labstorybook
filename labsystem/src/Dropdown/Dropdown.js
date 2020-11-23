@@ -102,7 +102,7 @@ export default class Dropdown extends React.Component {
 
   render() {
     const { isOpen, highlightedItem, itemIndexes } = this.state;
-    const { renderTrigger, children } = this.props;
+    const { renderTrigger, children, direction } = this.props;
     const { openDropdown, closeDropdown, handleKeyUp } = this;
 
     return (
@@ -113,7 +113,9 @@ export default class Dropdown extends React.Component {
           onKeyUp: handleKeyUp,
         })}
         {isOpen ? (
-          <>
+          <div
+            className={`dropdown__items-container dropdown__items-container--${direction}`}
+          >
             {children.map(
               (element, i) =>
                 element &&
@@ -122,7 +124,7 @@ export default class Dropdown extends React.Component {
                   key: i,
                 })
             )}
-          </>
+          </div>
         ) : null}
       </div>
     );
