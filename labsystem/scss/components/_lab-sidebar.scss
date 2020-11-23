@@ -80,8 +80,8 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
 
 .lab-narrow-sidebar__logo {
   display: block;
-  width: 52px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
 
   img {
     width: 100%;
@@ -135,12 +135,15 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
 
 .lab-narrow-sidebar__collapse {
   background-color: transparent;
-  display: block;
   box-sizing: border-box;
   color: $mineral-60;
   background-color: transparent;
   border: $border-default transparent;
   border-radius: $radius-02;
+  line-height: 1;
+  padding: 8px 10px;
+  align-items: center;
+  display: flex;
 
   &:focus {
     border-color: $item-focus-color;
@@ -275,6 +278,10 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
 
   .lab-narrow-sidebar__avatar {
     margin-bottom: 18px;
+
+    @include mobile(){
+      margin-left: 28px;
+    }
   }
 }
 
