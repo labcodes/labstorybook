@@ -33,7 +33,7 @@ export default class Item extends React.Component {
             className="lab-narrow-sidebar__item-icon"
           />
         ) : null}
-        {label}
+        <span className="lab-narrow-sidebar__item-label">{label}</span>
       </button>
     );
   }

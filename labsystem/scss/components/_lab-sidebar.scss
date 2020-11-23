@@ -30,7 +30,7 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
   width: 80%;
   display: flex;
   overflow-y: auto;
-  overflow-x:hidden;
+  overflow-x: hidden;
   height: 100vh;
   top: 0;
   left: 0;
@@ -41,16 +41,16 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
   border-top-right-radius: $radius-default;
   background-color: white;
 
-  @include mobile(){
+  @include mobile() {
     left: -80vw;
-    transition: ease left .6s;
+    transition: ease left 0.6s;
 
     &--open-on-mobile {
       left: 0;
     }
   }
 
-  @include from($tablet){
+  @include from($tablet) {
     width: 128px;
     border: $border-default $mineral-20;
     box-sizing: border-box;
@@ -70,7 +70,7 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
   background-color: $white;
   box-sizing: border-box;
 
-  @include from ($tablet){
+  @include from($tablet) {
     justify-content: center;
     position: relative;
     width: 128px;
@@ -96,7 +96,7 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
   margin-left: 28px;
   margin-bottom: 12px;
 
-  @include from($tablet){
+  @include from($tablet) {
     margin: 0 0 8px 0;
   }
 
@@ -113,12 +113,12 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
       object-position: left;
     }
 
-    @include from($tablet){
+    @include from($tablet) {
       margin: 0 0 8px 0;
     }
   }
 
-  &-text{
+  &-text {
     display: flex;
     flex-direction: column;
     color: $teal-70;
@@ -126,7 +126,7 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
     font-family: $font-primary;
     font-size: $font-size-3;
 
-    @include from($tablet){
+    @include from($tablet) {
       display: none;
     }
   }
@@ -137,7 +137,7 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
     color: $black-50;
     font-weight: $weight-medium;
 
-    @include from($tablet){
+    @include from($tablet) {
       display: none;
     }
   }
@@ -161,7 +161,7 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
     background-color: $item-focus-color;
   }
 
-  @include from($tablet){
+  @include from($tablet) {
     display: none;
   }
 }
@@ -182,11 +182,10 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
   border-top: $border-default transparent;
   border-bottom: $border-default transparent;
 
-  @include from ($tablet){
+  @include from($tablet) {
     overflow: auto;
     margin-top: 0;
   }
-
 }
 
 .lab-narrow-sidebar__item {
@@ -205,21 +204,21 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
   margin-right: -$spacing-02;
   border-radius: $spacing-03;
 
-  @include from($tablet){
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      font-size: $font-size-1;
-      padding: $spacing-04;
-      margin: 0;
-      border-radius: 0;
+  @include from($tablet) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: $font-size-1;
+    padding: $spacing-04;
+    margin: 0;
+    border-radius: 0;
   }
 
   .lab-narrow-sidebar__item-icon {
     margin-right: $spacing-02;
 
-    @include from($tablet){
+    @include from($tablet) {
       margin: 0;
     }
   }
@@ -239,22 +238,22 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
       bottom: 6px;
       border-radius: $radius-03;
 
-      @include from($tablet){
+      @include from($tablet) {
         margin-right: 0;
       }
     }
   }
 
   &:hover {
-    background-color:$item-hover-color;
+    background-color: $item-hover-color;
   }
 
   &:active {
-    background-color:$item-focus-color;
+    background-color: $item-focus-color;
   }
 
   &--active {
-    background-color:$item-pressed-color;
+    background-color: $item-pressed-color;
     font-weight: $weight-semibold;
     color: $item-active-color;
 
@@ -262,6 +261,14 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
       background-color: $item-active-color;
     }
   }
+}
+
+.lab-narrow-sidebar__item-label,
+.lab-narrow-sidebar__footer-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 //Footer
@@ -272,7 +279,7 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
   flex-direction: column;
   flex-grow: 0;
 
-  @include from($tablet){
+  @include from($tablet) {
     align-items: center;
   }
 }
@@ -330,18 +337,17 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
   background-color: $footer-button-color;
   margin-right: $spacing-02;
 
-  @include from($tablet){
+  @include from($tablet) {
     margin-right: $spacing-01;
   }
 }
 
 //With Scroll
 .lab-narrow-sidebar--with-dividers {
-  .lab-narrow-sidebar__body{
+  .lab-narrow-sidebar__body {
     border-color: $mineral-20;
   }
 }
-
 
 // Vivid Skin
 .lab-narrow-sidebar--vivid {
@@ -439,8 +445,7 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
   }
 
   .lab-narrow-sidebar__avatar {
-
-    &-text{
+    &-text {
       color: $white;
     }
 
@@ -450,7 +455,7 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
   }
 
   .lab-narrow-sidebar__collapse {
-    &:focus{
+    &:focus {
       border-color: $white-50;
       outline: none;
     }

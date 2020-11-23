@@ -25,7 +25,7 @@ export default class FooterButton extends React.Component {
         {icon ? (
           <Icon type={icon} className="lab-narrow-sidebar__footer-icon" />
         ) : null}
-        {label}
+        <span className="lab-narrow-sidebar__footer-label">{label}</span>
       </button>
     );
   }
