@@ -6,7 +6,11 @@ exports[`FooterButton renders with base props 1`] = `
   onClick={[Function]}
   type="button"
 >
-  Test button
+  <span
+    className="lab-narrow-sidebar__item-label"
+  >
+    Test button
+  </span>
 </button>
 `;
 
@@ -19,6 +23,10 @@ exports[`FooterButton renders with icon 1`] = `
   <span
     className="lab-icon lab-icon--star lab-icon--mineral-60 lab-narrow-sidebar__item-icon"
   />
-  Test button
+  <span
+    className="lab-narrow-sidebar__item-label"
+  >
+    Test button
+  </span>
 </button>
 `;
