@@ -117,16 +117,18 @@ import NarrowSidebarPlayground from '../playgrounds/NarrowSidebarPlayground';
 <p>We have two skins: <strong>pale</strong> and <strong>vivid</strong>. Background and border colors change according to the descriptions below.</p>
 <div class="columns">
   <div class="column">
-    <tbody>
-      <tr>
-        <td>
-          <img src="docs/narrow-sidebar/stroke-fill-nside.png" />
-        </td>
-        <td>
-          <img src="docs/narrow-sidebar/exception-nside.png" />
-        </td>
-      </tr>
-    </tbody>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <img src="docs/narrow-sidebar/stroke-fill-nside.png" />
+          </td>
+          <td>
+            <img src="docs/narrow-sidebar/exception-nside.png" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
     <p class="u-color-pink-60"><small>Coral shades cannot be used for elements on pale sidebar.</small></p>
   </div>
 
@@ -202,8 +204,8 @@ import NarrowSidebarPlayground from '../playgrounds/NarrowSidebarPlayground';
             </NarrowSidebar.Body>
             <NarrowSidebar.Footer>
               <NarrowSidebar.UserAvatar avatarSrc="./docs/narrow-sidebar/MrGeraldo.png" altText="User photo" caption="Cool guy"/>
-              <NarrowSidebar.FooterButton icon="key" label="Password"/>
-              <NarrowSidebar.FooterButton icon="logout" label="Logout" />
+              <NarrowSidebar.FooterButton onClick={() => {}} icon="key" label="Password"/>
+              <NarrowSidebar.FooterButton onClick={() => {}} icon="logout" label="Logout" />
             </NarrowSidebar.Footer>
           </NarrowSidebar>
         </div>
@@ -227,8 +229,8 @@ import NarrowSidebarPlayground from '../playgrounds/NarrowSidebarPlayground';
             </NarrowSidebar.Body>
             <NarrowSidebar.Footer>
               <NarrowSidebar.UserAvatar avatarSrc="./docs/narrow-sidebar/MrGeraldo.png" altText="User photo" caption="Cool guy"/>
-              <NarrowSidebar.FooterButton icon="key" label="Password"/>
-              <NarrowSidebar.FooterButton icon="logout" label="Logout" />
+              <NarrowSidebar.FooterButton onClick={() => {}} icon="key" label="Password"/>
+              <NarrowSidebar.FooterButton onClick={() => {}} icon="logout" label="Logout" />
             </NarrowSidebar.Footer>
           </NarrowSidebar>
         </div>
@@ -252,8 +254,8 @@ import NarrowSidebarPlayground from '../playgrounds/NarrowSidebarPlayground';
             </NarrowSidebar.Body>
             <NarrowSidebar.Footer>
               <NarrowSidebar.UserAvatar avatarSrc="./docs/narrow-sidebar/MrGeraldo.png" altText="User photo" caption="Cool guy"/>
-              <NarrowSidebar.FooterButton icon="key" label="Password"/>
-              <NarrowSidebar.FooterButton icon="logout" label="Logout" />
+              <NarrowSidebar.FooterButton onClick={() => {}} icon="key" label="Password"/>
+              <NarrowSidebar.FooterButton onClick={() => {}} icon="logout" label="Logout" />
             </NarrowSidebar.Footer>
           </NarrowSidebar>
         </div>
@@ -287,8 +289,8 @@ import NarrowSidebarPlayground from '../playgrounds/NarrowSidebarPlayground';
             </NarrowSidebar.Body>
             <NarrowSidebar.Footer>
               <NarrowSidebar.UserAvatar avatarSrc="./docs/narrow-sidebar/MrGeraldo.png" altText="User photo" caption="Cool guy"/>
-              <NarrowSidebar.FooterButton icon="key" label="Password"/>
-              <NarrowSidebar.FooterButton icon="logout" label="Logout" />
+              <NarrowSidebar.FooterButton onClick={() => {}} icon="key" label="Password"/>
+              <NarrowSidebar.FooterButton onClick={() => {}} icon="logout" label="Logout" />
             </NarrowSidebar.Footer>
           </NarrowSidebar>
         </div>
@@ -312,8 +314,8 @@ import NarrowSidebarPlayground from '../playgrounds/NarrowSidebarPlayground';
             </NarrowSidebar.Body>
             <NarrowSidebar.Footer>
               <NarrowSidebar.UserAvatar avatarSrc="./docs/narrow-sidebar/MrGeraldo.png" altText="User photo" caption="Cool guy"/>
-              <NarrowSidebar.FooterButton icon="key" label="Password"/>
-              <NarrowSidebar.FooterButton icon="logout" label="Logout" />
+              <NarrowSidebar.FooterButton onClick={() => {}} icon="key" label="Password"/>
+              <NarrowSidebar.FooterButton onClick={() => {}} icon="logout" label="Logout" />
             </NarrowSidebar.Footer>
           </NarrowSidebar>
         </div>
@@ -337,8 +339,8 @@ import NarrowSidebarPlayground from '../playgrounds/NarrowSidebarPlayground';
             </NarrowSidebar.Body>
             <NarrowSidebar.Footer>
               <NarrowSidebar.UserAvatar avatarSrc="./docs/narrow-sidebar/MrGeraldo.png" altText="User photo" caption="Cool guy"/>
-              <NarrowSidebar.FooterButton icon="key" label="Password"/>
-              <NarrowSidebar.FooterButton icon="logout" label="Logout" />
+              <NarrowSidebar.FooterButton onClick={() => {}} icon="key" label="Password"/>
+              <NarrowSidebar.FooterButton onClick={() => {}} icon="logout" label="Logout" />
             </NarrowSidebar.Footer>
           </NarrowSidebar>
         </div>
@@ -346,7 +348,7 @@ import NarrowSidebarPlayground from '../playgrounds/NarrowSidebarPlayground';
           <NarrowSidebar withDividers isVivid isOpenOnMobile>
             <NarrowSidebar.Header >
               <NarrowSidebar.Logotype logoSrc="./favicon.ico" altText="User photo" />
-              <NarrowSidebar.CollapseButton />
+              <NarrowSidebar.CollapseButton onClick={() => {}} />
             </NarrowSidebar.Header>
             <NarrowSidebar.Body  >
               <NarrowSidebar.Item onClick={() => {}} icon="calendar" label="Teste" />
