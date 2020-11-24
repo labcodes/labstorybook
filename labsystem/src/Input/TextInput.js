@@ -20,6 +20,9 @@ export default class TextInput extends React.Component {
     customErrorMsg: PropTypes.string,
     onChange: PropTypes.func,
     onIconClick: PropTypes.func,
+    onFocus: PropTypes.func,
+    onBlur: PropTypes.func,
+    onKeyUp: PropTypes.func,
   };
 
   static defaultProps = {
@@ -36,6 +39,9 @@ export default class TextInput extends React.Component {
     customErrorMsg: undefined,
     onChange: undefined,
     onIconClick: undefined,
+    onFocus: undefined,
+    onBlur: undefined,
+    onKeyUp: undefined,
   };
 
   render() {
@@ -54,6 +60,9 @@ export default class TextInput extends React.Component {
       customErrorMsg,
       onChange,
       onIconClick,
+      onFocus,
+      onBlur,
+      onKeyUp,
       disabled,
     } = this.props;
 
@@ -73,6 +82,9 @@ export default class TextInput extends React.Component {
         isValid={isValid}
         customErrorMsg={customErrorMsg}
         onChange={onChange}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        onKeyUp={onKeyUp}
         onIconClick={onIconClick}
         {...(disabled ? { disabled } : undefined)}
       />

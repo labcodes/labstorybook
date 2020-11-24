@@ -23,6 +23,9 @@ export default class AbstractTextInput extends React.Component {
     customErrorMsg: PropTypes.string,
     onChange: PropTypes.func,
     onIconClick: PropTypes.func,
+    onFocus: PropTypes.func,
+    onBlur: PropTypes.func,
+    onKeyUp: PropTypes.func,
     placeholder: PropTypes.string,
     children: PropTypes.element,
   };
@@ -43,6 +46,9 @@ export default class AbstractTextInput extends React.Component {
     customErrorMsg: undefined,
     onChange: undefined,
     onIconClick: undefined,
+    onFocus: undefined,
+    onBlur: undefined,
+    onKeyUp: undefined,
     placeholder: " ", // acrescentei pra poder colocar placeholder no search//
     children: undefined,
   };
@@ -167,6 +173,9 @@ export default class AbstractTextInput extends React.Component {
       prefix,
       suffix,
       onIconClick,
+      onFocus,
+      onBlur,
+      onKeyUp,
       customErrorMsg,
       placeholder,
       children,
@@ -196,6 +205,9 @@ export default class AbstractTextInput extends React.Component {
             value={localValue}
             ref={this.inputRef}
             onChange={this.handleOnChange}
+            onFocus={onFocus}
+            onBlur={onBlur}
+            onKeyUp={onKeyUp}
             autoComplete="off"
             {...(required ? { required } : undefined)}
             {...(disabled ? { disabled } : undefined)}

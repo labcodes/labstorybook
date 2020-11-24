@@ -13,6 +13,9 @@ export default class AbstractSearch extends React.Component {
     onChange: PropTypes.func,
     onSearch: PropTypes.func,
     onClear: PropTypes.func,
+    onFocus: PropTypes.func,
+    onBlur: PropTypes.func,
+    onKeyUp: PropTypes.func,
     placeholder: PropTypes.string,
     type: PropTypes.oneOf(["standard", "inline"]).isRequired,
   };
@@ -25,6 +28,9 @@ export default class AbstractSearch extends React.Component {
     onChange: undefined,
     onSearch: undefined,
     onClear: undefined,
+    onFocus: undefined,
+    onBlur: undefined,
+    onKeyUp: undefined,
     placeholder: " ", // acrescentei pra poder colocar placeholder no search//
   };
 
@@ -91,7 +97,15 @@ export default class AbstractSearch extends React.Component {
   };
 
   render() {
-    const { id, disabled, placeholder, type } = this.props;
+    const {
+      id,
+      disabled,
+      placeholder,
+      type,
+      onFocus,
+      onBlur,
+      onKeyUp,
+    } = this.props;
 
     const { localValue } = this.state;
 
@@ -115,6 +129,9 @@ export default class AbstractSearch extends React.Component {
             onChange={this.handleOnChange}
             autoComplete="off"
             onKeyDown={this.handleKeyPress}
+            onFocus={onFocus}
+            onBlur={onBlur}
+            onKeyUp={onKeyUp}
             {...(disabled ? { disabled } : undefined)}
             {...(placeholder ? { placeholder } : "")}
           />

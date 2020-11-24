@@ -10,6 +10,9 @@ export default class TextButton extends React.Component {
     size: PropTypes.oneOf(["normal", "small", "large"]),
     disabled: PropTypes.bool,
     onClick: PropTypes.func,
+    onFocus: PropTypes.func,
+    onBlur: PropTypes.func,
+    onKeyUp: PropTypes.func,
     fullWidth: PropTypes.bool,
   };
 
@@ -19,11 +22,25 @@ export default class TextButton extends React.Component {
     size: "normal",
     disabled: false,
     onClick: undefined,
+    onFocus: undefined,
+    onBlur: undefined,
+    onKeyUp: undefined,
     fullWidth: false,
   };
 
   render() {
-    const { text, skin, icon, size, disabled, onClick, fullWidth } = this.props;
+    const {
+      text,
+      skin,
+      icon,
+      size,
+      disabled,
+      onClick,
+      fullWidth,
+      onFocus,
+      onBlur,
+      onKeyUp,
+    } = this.props;
     return (
       <AbstractButton
         variant="text"
@@ -33,6 +50,9 @@ export default class TextButton extends React.Component {
         size={size}
         disabled={disabled}
         onClick={onClick}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        onKeyUp={onKeyUp}
         fullWidth={fullWidth}
       />
     );

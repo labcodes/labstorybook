@@ -21,6 +21,9 @@ export default class AbstractButton extends React.Component {
     size: PropTypes.oneOf(["normal", "small", "large"]),
     disabled: PropTypes.bool,
     onClick: PropTypes.func,
+    onFocus: PropTypes.func,
+    onBlur: PropTypes.func,
+    onKeyUp: PropTypes.func,
     fullWidth: PropTypes.bool,
   };
 
@@ -32,6 +35,9 @@ export default class AbstractButton extends React.Component {
     size: "normal",
     disabled: false,
     onClick: undefined,
+    onFocus: undefined,
+    onBlur: undefined,
+    onKeyUp: undefined,
     fullWidth: false,
   };
 
@@ -57,7 +63,18 @@ export default class AbstractButton extends React.Component {
   };
 
   render() {
-    const { type, text, variant, skin, size, disabled, fullWidth } = this.props;
+    const {
+      type,
+      text,
+      variant,
+      skin,
+      size,
+      disabled,
+      fullWidth,
+      onFocus,
+      onBlur,
+      onKeyUp,
+    } = this.props;
     return (
       <button
         // eslint-disable-next-line react/button-has-type
@@ -69,6 +86,9 @@ export default class AbstractButton extends React.Component {
           `${fullWidth ? ` lab-btn--block` : ""}`
         }
         onClick={this.handleOnClick}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        onKeyUp={onKeyUp}
         disabled={disabled || undefined}
       >
         {this.icon()}

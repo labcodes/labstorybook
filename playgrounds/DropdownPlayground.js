@@ -2,6 +2,7 @@ import React from "react";
 
 import Dropdown from "../labsystem/src/Dropdown/Dropdown";
 import Radio from "../labsystem/src/Radio";
+import Button from "../labsystem/src/Buttons/Button";
 
 export default class InputPlayground extends React.Component {
   constructor(props) {
@@ -80,8 +81,8 @@ export default class InputPlayground extends React.Component {
           <Dropdown
             direction={direction}
             isMultiSelect={isMultiSelect}
-            onOpen={() => console.log("lala")}
-            renderTrigger={() => <button>hi</button>}
+            onOpen={() => console.log("clicked dropdown trigger")}
+            renderTrigger={() => <Button text="menu" />}
           >
             <Dropdown.Item
               label="item 1"

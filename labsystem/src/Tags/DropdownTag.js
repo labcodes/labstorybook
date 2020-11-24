@@ -12,6 +12,9 @@ export default class DropdownTag extends React.Component {
     isOutline: PropTypes.bool,
     disabled: PropTypes.bool,
     onClick: PropTypes.func,
+    onFocus: PropTypes.func,
+    onBlur: PropTypes.func,
+    onKeyUp: PropTypes.func,
   };
 
   static defaultProps = {
@@ -21,6 +24,9 @@ export default class DropdownTag extends React.Component {
     isOutline: false,
     disabled: false,
     onClick: () => {},
+    onFocus: () => {},
+    onBlur: () => {},
+    onKeyUp: () => {},
   };
 
   icon = () => {
@@ -55,6 +61,9 @@ export default class DropdownTag extends React.Component {
       isOutline,
       disabled,
       onClick,
+      onFocus,
+      onBlur,
+      onKeyUp,
     } = this.props;
     return (
       <AbstractTag
@@ -68,6 +77,9 @@ export default class DropdownTag extends React.Component {
         isOutline={isOutline}
         disabled={disabled}
         onClick={onClick}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        onKeyUp={onKeyUp}
         renderPrefix={this.icon()}
         renderSuffix={this.dropdownIcon()}
       />
