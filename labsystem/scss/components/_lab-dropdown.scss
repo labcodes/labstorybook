@@ -14,4 +14,21 @@
   .dropdown__item--highlighted {
     color: red;
   }
+
+  // just as an example
+  .dropdown__item--teal-flag {
+    background-color: $teal-60;
+    border-radius: $radius-02;
+    display: inline-block;
+    width: 20px;
+    height: 8px;
+  }
+
+  .dropdown__item--is-confirmation {
+    background-color: green;
+  }
+
+  .dropdown__item--is-destructive {
+    background-color: red;
+  }
 }
