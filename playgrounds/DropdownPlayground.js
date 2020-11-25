@@ -2,15 +2,33 @@ import React from "react";
 
 import Dropdown from "../labsystem/src/Dropdown/Dropdown";
 import Radio from "../labsystem/src/Radio";
+import Checkbox from "../labsystem/src/Checkbox";
+import TextInput from "../labsystem/src/Input/TextInput";
 import Button from "../labsystem/src/Buttons/Button";
+import OutlineButton from "../labsystem/src/Buttons/OutlineButton";
+import { iconOptions, colorOptions } from "./assets";
 
 export default class InputPlayground extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      label: "",
+      label: "menu",
       direction: "down",
       isMultiSelect: false,
+      itemIcon: "",
+      itemFlagColor: "",
+      itemLabel: "",
+      itemIsConfirmation: false,
+      itemIsDestructive: false,
+      itemDisabled: false,
+      dropdownItems: [
+        {
+          label: "item 1",
+          key: "item1",
+          flagColor: "teal",
+          onClick: () => console.log("item 1"),
+        },
+      ],
     };
   }
 
@@ -29,73 +47,79 @@ export default class InputPlayground extends React.Component {
     this.setState({ direction: value });
   };
 
-  render() {
-    const { label, direction, isMultiSelect } = this.state;
+  addNewItem = () => {
+    const {
+      itemIcon,
+      itemFlagColor,
+      itemLabel,
+      dropdownItems,
+      itemDisabled,
+      itemIsConfirmation,
+      itemIsDestructive,
+    } = this.state;
 
-    const iconOptions = [
-      "",
-      "arrow-down",
-      "arrow-left",
-      "arrow-right",
-      "arrow-top",
-      "calendar",
-      "coin",
-      "collapse-closed",
-      "collapse-open",
-      "check",
-      "dropdown-closed",
-      "dropdown-open",
-      "edit",
-      "eye-closed",
-      "eye-opened",
-      "track",
-      "key",
-      "logout",
-      "lupe",
-      "minus",
-      "plus",
-      "reload",
-      "remove",
-      "sort",
-      "star",
-      "trash",
-      "upload",
-      "arrow-fill-right",
-      "arrow-fill-left",
-      "chevron-right",
-      "chevron-left",
-      "menu-expand",
-      "menu-collapse",
-      "menu-default",
-      "external",
-      "wallet",
-      "workspace",
-    ];
+    const key = String(Math.random());
+
+    dropdownItems.push({
+      key,
+      label: itemLabel,
+      onClick: () => {
+        alert(`Clicked ${itemLabel}`);
+      },
+      ...(itemIcon ? { icon: itemIcon } : undefined),
+      ...(itemFlagColor ? { flagColor: itemFlagColor } : undefined),
+      ...(itemIsConfirmation
+        ? { isConfirmation: itemIsConfirmation }
+        : undefined),
+      ...(itemIsDestructive ? { isDestructive: itemIsDestructive } : undefined),
+      ...(itemDisabled ? { disabled: itemDisabled } : undefined),
+    });
+    this.setState({
+      itemIcon: "",
+      itemFlagColor: "",
+      itemLabel: "",
+      itemIsConfirmation: false,
+      itemIsDestructive: false,
+      itemDisabled: false,
+      dropdownItems,
+    });
+  };
+
+  removeLastItem = () => {
+    const { dropdownItems } = this.state;
+    dropdownItems.pop();
+    this.setState({ dropdownItems });
+  };
+
+  render() {
+    const {
+      label,
+      direction,
+      isMultiSelect,
+      dropdownItems,
+      itemIcon,
+      itemFlagColor,
+      itemIsConfirmation,
+      itemIsDestructive,
+      itemLabel,
+      itemDisabled,
+    } = this.state;
 
     return (
       <div className="columns lab-playground">
         <div className="column lab-playground__component">
-          <h4>TextInput</h4>
+          <h4>Dropdown</h4>
           <br />
           <br />
           <Dropdown
             direction={direction}
             isMultiSelect={isMultiSelect}
             onOpen={() => console.log("clicked dropdown trigger")}
-            renderTrigger={() => <Button text="menu" />}
+            renderTrigger={() => <Button text={label} />}
           >
-            <Dropdown.Item
-              label="item 1"
-              onClick={() => console.log("item 1")}
-            />
-            <Dropdown.Item
-              label="item 2"
-              onClick={() => console.log("item 2")}
-            />
-            <Dropdown.Item
-              label="item 3"
-              onClick={() => console.log("item 3")}
-            />
+            {dropdownItems.map((item) => (
+              <Dropdown.Item {...item} key={item.key} />
+            ))}
           </Dropdown>
         </div>
         <div className="column lab-playground__configs">
@@ -120,12 +144,34 @@ export default class InputPlayground extends React.Component {
           </span>
           <br />
           <span className="lab-playground__item">
-            <label htmlFor="icon">
+            <Checkbox
+              id="isMultiSelect"
+              name="isMultiSelect"
+              label="isMultiSelect"
+              checked={isMultiSelect}
+              onChange={this.handlePropChangeBool}
+            />
+          </span>
+          <p>
+            <strong>New Item:</strong>
+          </p>
+          <span className="lab-playground__item">
+            <TextInput
+              id="itemLabel"
+              label="item label"
+              value={itemLabel}
+              onChange={this.handlePropChangeText}
+            />
+          </span>
+          <br />
+          <span className="lab-playground__item">
+            <label htmlFor="itemIcon">
               icon
               <br />
               <select
                 name="icons"
-                id="icon"
+                id="itemIcon"
+                disabled={!!itemFlagColor}
                 onChange={this.handlePropChangeText}
               >
                 {iconOptions.map((item) => (
@@ -138,18 +184,63 @@ export default class InputPlayground extends React.Component {
           </span>
           <br />
           <span className="lab-playground__item">
-            <label htmlFor="disabled">
-              Disabled
+            <label htmlFor="itemFlagColor">
+              flagColor
               <br />
-              <input
-                id="isMultiSelect"
-                type="checkbox"
-                label="isMultiSelect"
-                checked={isMultiSelect}
-                onChange={this.handlePropChangeBool}
-              />
+              <select
+                name="colors"
+                id="itemFlagColor"
+                disabled={!!itemIcon}
+                onChange={this.handlePropChangeText}
+              >
+                {["", ...colorOptions].map((item) => (
+                  <option value={item} key={item}>
+                    {item}
+                  </option>
+                ))}
+              </select>
             </label>
           </span>
+          <br />
+          <span className="lab-playground__item">
+            <Checkbox
+              id="itemDisabled"
+              name="itemDisabled"
+              label="Disabled"
+              checked={itemDisabled}
+              onChange={this.handlePropChangeBool}
+            />
+          </span>
+          <span className="lab-playground__item">
+            <Checkbox
+              id="itemIsConfirmation"
+              name="itemIsConfirmation"
+              label="isConfirmation"
+              checked={itemIsConfirmation}
+              onChange={this.handlePropChangeBool}
+            />
+          </span>
+          <span className="lab-playground__item">
+            <Checkbox
+              id="itemIsDestructive"
+              name="itemIsDestructive"
+              label="isDestructive"
+              checked={itemIsDestructive}
+              onChange={this.handlePropChangeBool}
+            />
+          </span>
+          <br />
+          <OutlineButton
+            text="Add item"
+            size="small"
+            disabled={!itemLabel}
+            onClick={this.addNewItem}
+          />
+          <OutlineButton
+            text="Remove last item"
+            size="small"
+            onClick={this.removeLastItem}
+          />
         </div>
       </div>
     );
