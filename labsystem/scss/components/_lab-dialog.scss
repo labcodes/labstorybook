@@ -1,9 +1,8 @@
 @use 'sass:map';
 
 // Standard Dialog component
-
-.lab-dialog__container {
-  z-index: 2;
+.lab-dialog-overlay {
+  z-index: 1;
   position: fixed;
   top: 0;
   left: 0;
@@ -17,6 +16,9 @@
 
 .lab-dialog {
   background-color: #fefefe;
+  position: fixed;
+  z-index: 2;
+
   width: 24rem;
   height: 10rem;
   padding: 1rem;
@@ -49,7 +51,6 @@
 }
 
 .lab-dialog--message {
-  border: 1px solid;
 }
 
 .lab-dialog__icon {

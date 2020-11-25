@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import FocusTrap from "focus-trap-react";
 import { Button, OutlineButton } from "../Buttons";
 
 export default class StandardDialog extends React.Component {
@@ -26,13 +27,8 @@ export default class StandardDialog extends React.Component {
     isOpen: false,
   };
 
-  constructor(props) {
-    super(props);
-    this.escFunction = this.escFunction.bind(this);
-  }
-
   componentDidMount() {
-    document.addEventListener("keydown", this.escFunction, false);
+    document.addEventListener("keydown", this.handleKeyDown, false);
   }
 
   componentDidUpdate() {
@@ -41,15 +37,16 @@ export default class StandardDialog extends React.Component {
   }
 
   componentWillUnmount() {
-    document.removeEventListener("keydown", this.escFunction, false);
+    document.removeEventListener("keydown", this.handleKeyDown, false);
+    document.body.style.overflow = "unset";
   }
 
-  escFunction(event) {
+  handleKeyDown = (event) => {
     const { handleClose } = this.props;
     if (event.keyCode === 27) {
       handleClose();
     }
-  }
+  };
 
   render() {
     const {
@@ -64,36 +61,45 @@ export default class StandardDialog extends React.Component {
 
     if (!isOpen) return null;
     return (
-      <div className="lab-dialog__container" role="dialog" aria-modal="true">
+      <>
         <div
-          className={
-            `lab-dialog lab-dialog--standard` +
-            `${isLarge ? ` lab-dialog--large` : ""}`
-          }
-        >
-          <div className="lab-dialog__header">
-            <div className="lab-dialog__title">{title}</div>
-            <button type="button" onClick={handleClose}>
-              x
-            </button>
-          </div>
-          <p className="lab-dialog__content">{content}</p>
-          <div className="lab-dialog__footer">
-            {outlineButtonProps ? (
-              <OutlineButton
+          className="lab-dialog-overlay"
+          onClick={handleClose}
+          role="presentation"
+        />
+        <FocusTrap focusTrapOptions={{ allowOutsideClick: true }}>
+          <div
+            className={
+              `lab-dialog lab-dialog--standard` +
+              `${isLarge ? ` lab-dialog--large` : ""}`
+            }
+            role="dialog"
+            aria-modal="true"
+          >
+            <div className="lab-dialog__header">
+              <div className="lab-dialog__title">{title}</div>
+              <button type="button" onClick={handleClose}>
+                x
+              </button>
+            </div>
+            <p className="lab-dialog__content">{content}</p>
+            <div className="lab-dialog__footer">
+              {outlineButtonProps ? (
+                <OutlineButton
+                  size="normal"
+                  text={outlineButtonProps.text}
+                  onClick={outlineButtonProps.onClick}
+                />
+              ) : undefined}
+              <Button
                 size="normal"
-                text={outlineButtonProps.text}
-                onClick={outlineButtonProps.onClick}
+                text={buttonProps.text}
+                onClick={buttonProps.onClick}
               />
-            ) : undefined}
-            <Button
-              size="normal"
-              text={buttonProps.text}
-              onClick={buttonProps.onClick}
-            />
+            </div>
           </div>
-        </div>
-      </div>
+        </FocusTrap>
+      </>
     );
   }
 }
