@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import FocusTrap from "focus-trap-react";
-import { Button } from "../Buttons";
+import { Button, OutlineButton } from "../Buttons";
 import Icon from "../Icon";
 
 export default class MessageDialog extends React.Component {
@@ -13,12 +13,17 @@ export default class MessageDialog extends React.Component {
       text: PropTypes.string.isRequired,
       onClick: PropTypes.func.isRequired,
     }).isRequired,
+    outlineButtonProps: PropTypes.shape({
+      text: PropTypes.string.isRequired,
+      onClick: PropTypes.func.isRequired,
+    }),
     isLarge: PropTypes.bool,
     handleClose: PropTypes.func,
     isOpen: PropTypes.bool,
   };
 
   static defaultProps = {
+    outlineButtonProps: undefined,
     isLarge: false,
     handleClose: () => {},
     isOpen: false,
@@ -51,6 +56,7 @@ export default class MessageDialog extends React.Component {
       title,
       content,
       buttonProps,
+      outlineButtonProps,
       isLarge,
       isOpen,
       handleClose,
@@ -83,12 +89,21 @@ export default class MessageDialog extends React.Component {
             </div>
             <div className="lab-dialog__title--message">{title}</div>
             <div className="lab-dialog__content--message">{content}</div>
-            <Button
-              size="normal"
-              fullWidth
-              text={buttonProps.text}
-              onClick={buttonProps.onClick}
-            />
+            <div className="lab-dialog__footer">
+              {outlineButtonProps ? (
+                <OutlineButton
+                  size="normal"
+                  text={outlineButtonProps.text}
+                  onClick={outlineButtonProps.onClick}
+                />
+              ) : undefined}
+              <Button
+                size="normal"
+                {...(outlineButtonProps ? undefined : { fullWidth: true })}
+                text={buttonProps.text}
+                onClick={buttonProps.onClick}
+              />
+            </div>
           </div>
         </FocusTrap>
       </>

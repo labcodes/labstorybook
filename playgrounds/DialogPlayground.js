@@ -40,7 +40,6 @@ export default class DialogPlayground extends React.Component {
     const { id, checked } = e.target;
     this.setState({
       [id]: checked,
-      selectedOutlineButtonText: this.initialState.selectedOutlineButtonText,
     });
   };
 
@@ -198,36 +197,35 @@ export default class DialogPlayground extends React.Component {
           </span>
           <br />
 
-          {currentComponent !== "MessageDialog" ? (
-            <div>
-              <span className="lab-playground__item">
-                <label htmlFor="hasOutlineButton">
-                  <strong>hasOutlineButton: </strong>
-                  <input
-                    id="hasOutlineButton"
-                    type="checkbox"
-                    onChange={this.handleHasOutlineButtonPropChange}
-                  />
-                </label>
-              </span>
-              <br />
+          <span className="lab-playground__item">
+            <label htmlFor="hasOutlineButton">
+              <strong>hasOutlineButton: </strong>
+              <input
+                id="hasOutlineButton"
+                type="checkbox"
+                onChange={this.handleHasOutlineButtonPropChange}
+                checked={hasOutlineButton}
+              />
+            </label>
+          </span>
+          <br />
 
-              {hasOutlineButton ? (
-                <span className="lab-playground__item">
-                  <label htmlFor="selectedOutlineButtonText">
-                    <strong>outlineButtonText:</strong>
-                    <br />
-                    <input
-                      id="selectedOutlineButtonText"
-                      onChange={this.handleTextPropChange}
-                      placeholder="Insert outline button text"
-                      value={selectedOutlineButtonText}
-                    />
-                  </label>
-                </span>
-              ) : null}
-            </div>
-          ) : (
+          {hasOutlineButton ? (
+            <span className="lab-playground__item">
+              <label htmlFor="selectedOutlineButtonText">
+                <strong>outlineButtonText:</strong>
+                <br />
+                <input
+                  id="selectedOutlineButtonText"
+                  onChange={this.handleTextPropChange}
+                  placeholder="Insert outline button text"
+                  value={selectedOutlineButtonText}
+                />
+              </label>
+            </span>
+          ) : null}
+
+          {currentComponent === "MessageDialog" ? (
             <span className="lab-playground__item">
               <label htmlFor="selectedIcon">
                 <strong>icon: </strong>
@@ -245,7 +243,7 @@ export default class DialogPlayground extends React.Component {
                 </select>
               </label>
             </span>
-          )}
+          ) : null}
         </div>
       </div>
     );
