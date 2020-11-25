@@ -46,7 +46,7 @@ $card-compact-padding: $spacing-03 $spacing-04;
       padding-left: calc(33% + 2 * #{$card-default-padding});
 
       .lab-card-image {
-        border-radius: inherit;
+        border-radius: $radius-03;
         position: absolute;
         margin: 0;
         max-width: calc(33%);
@@ -61,7 +61,7 @@ $card-compact-padding: $spacing-03 $spacing-04;
         left: 0;
         border-top-right-radius: unset;
         border-bottom-right-radius: unset;
-        border-bottom-left-radius: inherit;
+        border-bottom-left-radius: $radius-03;
         max-width: calc(33% + #{$card-default-padding});
         height: 100%;
         margin: 0;
@@ -79,8 +79,8 @@ $card-compact-padding: $spacing-03 $spacing-04;
           left: 0;
           top: 0;
           height: 100%;
-          border-top-left-radius: inherit;
-          border-bottom-left-radius: inherit;
+          border-top-left-radius: $radius-03;
+          border-bottom-left-radius: $radius-03;
         }
       }
     }
@@ -109,8 +109,8 @@ $card-compact-padding: $spacing-03 $spacing-04;
   &.lab-card-header--overlay {
     position: absolute;
     width: 100%;
-    border-top-left-radius: inherit;
-    border-top-right-radius: inherit;
+    border-top-left-radius: $radius-03;
+    border-top-right-radius: $radius-03;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.87) 0%, rgba(0, 0, 0, 0.1) 100%);
     margin-top: -$card-default-padding;
     margin-left: -$card-default-padding;
