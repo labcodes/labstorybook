@@ -9,11 +9,11 @@ export default class MessageDialog extends React.Component {
     icon: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     content: PropTypes.string.isRequired,
-    buttonProps: PropTypes.shape({
+    buttonProps: PropTypes.exact({
       text: PropTypes.string.isRequired,
       onClick: PropTypes.func.isRequired,
     }).isRequired,
-    outlineButtonProps: PropTypes.shape({
+    outlineButtonProps: PropTypes.exact({
       text: PropTypes.string.isRequired,
       onClick: PropTypes.func.isRequired,
     }),
@@ -28,6 +28,14 @@ export default class MessageDialog extends React.Component {
     handleClose: () => {},
     isOpen: false,
   };
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      swipeStartYCoordinate: undefined,
+    };
+  }
 
   componentDidMount() {
     document.addEventListener("keydown", this.handleKeyDown, false);
@@ -50,6 +58,21 @@ export default class MessageDialog extends React.Component {
     }
   };
 
+  handleTouchStart = (event) => {
+    this.setState({ swipeStartYCoordinate: event.changedTouches[0].screenY });
+  };
+
+  handleTouchEnd = (event) => {
+    const { handleClose } = this.props;
+    const { swipeStartYCoordinate } = this.state;
+
+    if (event.changedTouches[0].screenY - swipeStartYCoordinate >= 75) {
+      this.setState({ swipeStartYCoordinate: undefined }, () => handleClose());
+    } else {
+      this.setState({ swipeStartYCoordinate: undefined });
+    }
+  };
+
   render() {
     const {
       icon,
@@ -64,7 +87,7 @@ export default class MessageDialog extends React.Component {
 
     if (!isOpen) return null;
     return (
-      <>
+      <React.Fragment>
         <div
           className="lab-dialog-overlay"
           onClick={handleClose}
@@ -79,16 +102,29 @@ export default class MessageDialog extends React.Component {
             role="dialog"
             aria-modal="true"
           >
+            <button
+              type="button"
+              className="lab-dialog__mobile-close-button"
+              onClick={handleClose}
+              onTouchStart={this.handleTouchStart}
+              onTouchEnd={this.handleTouchEnd}
+            >
+              <Icon type="collapse-open" size="petit" />
+            </button>
             <div className="lab-dialog__header lab-dialog__header--message">
               <button type="button" onClick={handleClose}>
                 x
               </button>
             </div>
+
             <div className="lab-dialog__icon">
               <Icon type={icon} color="black-75" />
             </div>
+
             <div className="lab-dialog__title--message">{title}</div>
+
             <div className="lab-dialog__content--message">{content}</div>
+
             <div className="lab-dialog__footer">
               {outlineButtonProps ? (
                 <OutlineButton
@@ -106,7 +142,7 @@ export default class MessageDialog extends React.Component {
             </div>
           </div>
         </FocusTrap>
-      </>
+      </React.Fragment>
     );
   }
 }

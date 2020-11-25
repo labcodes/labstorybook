@@ -20,7 +20,6 @@
   z-index: 2;
 
   width: 24rem;
-  height: 10rem;
   padding: 1rem;
   border-radius: 5px;
 }
@@ -76,4 +75,8 @@
 }
 
 .lab-dialog--large {
+}
+
+.lab-dialog__mobile-close-button {
+  width: 100%;
 }

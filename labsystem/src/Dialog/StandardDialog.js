@@ -9,11 +9,11 @@ export default class StandardDialog extends React.Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
     content: PropTypes.string.isRequired,
-    buttonProps: PropTypes.shape({
+    buttonProps: PropTypes.exact({
       text: PropTypes.string.isRequired,
       onClick: PropTypes.func.isRequired,
     }).isRequired,
-    outlineButtonProps: PropTypes.shape({
+    outlineButtonProps: PropTypes.exact({
       text: PropTypes.string.isRequired,
       onClick: PropTypes.func.isRequired,
     }),
@@ -86,7 +86,7 @@ export default class StandardDialog extends React.Component {
 
     if (!isOpen) return null;
     return (
-      <>
+      <React.Fragment>
         <div
           className="lab-dialog-overlay"
           onClick={handleClose}
@@ -104,7 +104,6 @@ export default class StandardDialog extends React.Component {
             <button
               type="button"
               className="lab-dialog__mobile-close-button"
-              style={{ width: "100%" }}
               onClick={handleClose}
               onTouchStart={this.handleTouchStart}
               onTouchEnd={this.handleTouchEnd}
@@ -115,7 +114,7 @@ export default class StandardDialog extends React.Component {
             <div className="lab-dialog__header">
               <div className="lab-dialog__title">{title}</div>
               <button type="button" onClick={handleClose}>
-                x
+                <Icon type="remove" />
               </button>
             </div>
 
@@ -137,7 +136,7 @@ export default class StandardDialog extends React.Component {
             </div>
           </div>
         </FocusTrap>
-      </>
+      </React.Fragment>
     );
   }
 }
