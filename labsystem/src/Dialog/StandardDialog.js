@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import FocusTrap from "focus-trap-react";
+
+import Icon from "../Icon";
 import { Button, OutlineButton } from "../Buttons";
 
 export default class StandardDialog extends React.Component {
@@ -27,6 +29,14 @@ export default class StandardDialog extends React.Component {
     isOpen: false,
   };
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      swipeStartYCoordinate: undefined,
+    };
+  }
+
   componentDidMount() {
     document.addEventListener("keydown", this.handleKeyDown, false);
   }
@@ -45,6 +55,21 @@ export default class StandardDialog extends React.Component {
     const { handleClose } = this.props;
     if (event.keyCode === 27) {
       handleClose();
+    }
+  };
+
+  handleTouchStart = (event) => {
+    this.setState({ swipeStartYCoordinate: event.changedTouches[0].screenY });
+  };
+
+  handleTouchEnd = (event) => {
+    const { handleClose } = this.props;
+    const { swipeStartYCoordinate } = this.state;
+
+    if (event.changedTouches[0].screenY - swipeStartYCoordinate >= 75) {
+      this.setState({ swipeStartYCoordinate: undefined }, () => handleClose());
+    } else {
+      this.setState({ swipeStartYCoordinate: undefined });
     }
   };
 
@@ -76,13 +101,26 @@ export default class StandardDialog extends React.Component {
             role="dialog"
             aria-modal="true"
           >
+            <button
+              type="button"
+              className="lab-dialog__mobile-close-button"
+              style={{ width: "100%" }}
+              onClick={handleClose}
+              onTouchStart={this.handleTouchStart}
+              onTouchEnd={this.handleTouchEnd}
+            >
+              <Icon type="collapse-open" size="petit" />
+            </button>
+
             <div className="lab-dialog__header">
               <div className="lab-dialog__title">{title}</div>
               <button type="button" onClick={handleClose}>
                 x
               </button>
             </div>
+
             <p className="lab-dialog__content">{content}</p>
+
             <div className="lab-dialog__footer">
               {outlineButtonProps ? (
                 <OutlineButton
