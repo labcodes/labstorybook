@@ -13,6 +13,7 @@ export default class DialogPlayground extends React.Component {
       hasOutlineButton: false,
       selectedOutlineButtonText: "Click me too!",
       selectedIcon: "star",
+      selectedIsModal: false,
     };
 
     this.state = {
@@ -36,7 +37,7 @@ export default class DialogPlayground extends React.Component {
     });
   };
 
-  handleHasOutlineButtonPropChange = (e) => {
+  handleBoolPropChange = (e) => {
     const { id, checked } = e.target;
     this.setState({
       [id]: checked,
@@ -74,6 +75,7 @@ export default class DialogPlayground extends React.Component {
       selectedOutlineButtonResponseText,
       selectedIcon,
       modalIsOpen,
+      selectedIsModal,
     } = this.state;
     const Component = availableComponents[currentComponent];
 
@@ -97,6 +99,7 @@ export default class DialogPlayground extends React.Component {
             content={selectedContent}
             handleClose={this.handleModalClose}
             isOpen={modalIsOpen}
+            isModal={selectedIsModal}
             buttonProps={{
               text: selectedButtonText,
               onClick: () => alert(selectedButtonResponseText),
@@ -125,6 +128,7 @@ export default class DialogPlayground extends React.Component {
       selectedContent,
       selectedButtonText,
       selectedOutlineButtonText,
+      selectedIsModal,
     } = this.state;
 
     return (
@@ -198,12 +202,25 @@ export default class DialogPlayground extends React.Component {
           <br />
 
           <span className="lab-playground__item">
+            <label htmlFor="selectedIsModal">
+              <strong>selectedIsModal: </strong>
+              <input
+                id="selectedIsModal"
+                type="checkbox"
+                onChange={this.handleBoolPropChange}
+                checked={selectedIsModal}
+              />
+            </label>
+          </span>
+          <br />
+
+          <span className="lab-playground__item">
             <label htmlFor="hasOutlineButton">
               <strong>hasOutlineButton: </strong>
               <input
                 id="hasOutlineButton"
                 type="checkbox"
-                onChange={this.handleHasOutlineButtonPropChange}
+                onChange={this.handleBoolPropChange}
                 checked={hasOutlineButton}
               />
             </label>
@@ -213,7 +230,7 @@ export default class DialogPlayground extends React.Component {
           {hasOutlineButton ? (
             <span className="lab-playground__item">
               <label htmlFor="selectedOutlineButtonText">
-                <strong>outlineButtonText:</strong>
+                <strong>selectedOutlineButtonText:</strong>
                 <br />
                 <input
                   id="selectedOutlineButtonText"
@@ -222,6 +239,7 @@ export default class DialogPlayground extends React.Component {
                   value={selectedOutlineButtonText}
                 />
               </label>
+              <br />
             </span>
           ) : null}
 

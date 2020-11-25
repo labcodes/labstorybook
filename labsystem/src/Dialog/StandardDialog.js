@@ -20,6 +20,7 @@ export default class StandardDialog extends React.Component {
     isLarge: PropTypes.bool,
     handleClose: PropTypes.func,
     isOpen: PropTypes.bool,
+    isModal: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -27,6 +28,7 @@ export default class StandardDialog extends React.Component {
     isLarge: false,
     handleClose: () => {},
     isOpen: false,
+    isModal: false,
   };
 
   constructor(props) {
@@ -42,8 +44,8 @@ export default class StandardDialog extends React.Component {
   }
 
   componentDidUpdate() {
-    const { isOpen } = this.props;
-    document.body.style.overflow = isOpen ? "hidden" : "unset";
+    const { isOpen, isModal } = this.props;
+    document.body.style.overflow = isOpen && isModal ? "hidden" : "unset";
   }
 
   componentWillUnmount() {
@@ -82,16 +84,19 @@ export default class StandardDialog extends React.Component {
       isLarge,
       isOpen,
       handleClose,
+      isModal,
     } = this.props;
 
     if (!isOpen) return null;
     return (
       <React.Fragment>
-        <div
-          className="lab-dialog-overlay"
-          onClick={handleClose}
-          role="presentation"
-        />
+        {isModal ? (
+          <div
+            className="lab-dialog-overlay"
+            onClick={handleClose}
+            role="presentation"
+          />
+        ) : null}
         <FocusTrap focusTrapOptions={{ allowOutsideClick: true }}>
           <div
             className={
