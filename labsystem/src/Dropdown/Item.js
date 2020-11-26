@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -109,6 +111,10 @@ export default class Item extends React.Component {
     } = this.props;
 
     return (
+      /* We disabled eslint rules for accessibility in this file
+        because we didn't find a better solution for this use case.
+        Please test this carefully and try to figure out
+        a better solution if things are broken. */
       <div
         onClick={!disabled ? onClick : () => {}}
         className={`dropdown__item
