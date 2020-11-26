@@ -75,7 +75,7 @@ export default class Item extends React.Component {
     super(props);
     const { icon, flagColor, isDestructive, isConfirmation } = props;
     if (icon && flagColor) {
-      console.error(
+      throw Error(
         "A Dropdown Item cannot receive both 'icon' and 'flagColor' props at the same time."
       );
     }
@@ -83,6 +83,15 @@ export default class Item extends React.Component {
     if ((isDestructive && !icon) || (isConfirmation && !icon)) {
       console.warn(
         "Destructive or Confirmation dropdown items require an icon"
+      );
+    }
+  }
+
+  componentDidUpdate() {
+    const { icon, flagColor } = this.props;
+    if (icon && flagColor) {
+      throw Error(
+        "A Dropdown Item cannot receive both 'icon' and 'flagColor' props at the same time."
       );
     }
   }
@@ -98,11 +107,6 @@ export default class Item extends React.Component {
       isDestructive,
       isConfirmation,
     } = this.props;
-
-    // We must evaluate if this is the best way of dealing with invalid input of icon and flagColor at the same time
-    if (icon && flagColor) {
-      return null;
-    }
 
     return (
       <div
