@@ -1,6 +1,9 @@
 import React from "react";
 
+import TextInput from "../labsystem/src/Input/TextInput";
+import Checkbox from "../labsystem/src/Checkbox";
 import { StandardDialog, MessageDialog } from "../labsystem/src/Dialog";
+import { Button } from "../labsystem/src/Buttons";
 import { iconOptions } from "./assets";
 
 export default class DialogPlayground extends React.Component {
@@ -80,41 +83,32 @@ export default class DialogPlayground extends React.Component {
     const Component = availableComponents[currentComponent];
 
     return (
-      <>
+      <React.Fragment>
         <h4>
           <strong>{currentComponent}</strong>
         </h4>
-        <div
-          className="container"
-          ref={(node) => {
-            this.node = node;
+        <Button text="Show Modal" onClick={this.showModal} />
+        <Component
+          icon={selectedIcon}
+          title={selectedTitle}
+          content={selectedContent}
+          handleClose={this.handleModalClose}
+          isOpen={modalIsOpen}
+          isModal={selectedIsModal}
+          buttonProps={{
+            text: selectedButtonText,
+            onClick: () => alert(selectedButtonResponseText),
           }}
-        >
-          <button type="button" onClick={this.showModal}>
-            show Modal
-          </button>
-          <Component
-            icon={selectedIcon}
-            title={selectedTitle}
-            content={selectedContent}
-            handleClose={this.handleModalClose}
-            isOpen={modalIsOpen}
-            isModal={selectedIsModal}
-            buttonProps={{
-              text: selectedButtonText,
-              onClick: () => alert(selectedButtonResponseText),
-            }}
-            outlineButtonProps={
-              hasOutlineButton
-                ? {
-                    text: selectedOutlineButtonText,
-                    onClick: () => alert(selectedOutlineButtonResponseText),
-                  }
-                : undefined
-            }
-          />
-        </div>
-      </>
+          outlineButtonProps={
+            hasOutlineButton
+              ? {
+                  text: selectedOutlineButtonText,
+                  onClick: () => alert(selectedOutlineButtonResponseText),
+                }
+              : undefined
+          }
+        />
+      </React.Fragment>
     );
   };
 
@@ -155,16 +149,12 @@ export default class DialogPlayground extends React.Component {
           <br />
 
           <span className="lab-playground__item">
-            <label htmlFor="selectedTitle">
-              <strong>title:</strong>
-              <br />
-              <input
-                id="selectedTitle"
-                onChange={this.handleTextPropChange}
-                placeholder="Insert title"
-                value={selectedTitle}
-              />
-            </label>
+            <TextInput
+              id="selectedTitle"
+              onChange={this.handleTextPropChange}
+              value={selectedTitle}
+              label="title"
+            />
           </span>
           <br />
 
@@ -175,7 +165,6 @@ export default class DialogPlayground extends React.Component {
               <textarea
                 id="selectedContent"
                 onChange={this.handleTextPropChange}
-                placeholder="Insert content"
                 value={selectedContent}
                 style={{
                   width: "100%",
@@ -188,57 +177,44 @@ export default class DialogPlayground extends React.Component {
           <br />
 
           <span className="lab-playground__item">
-            <label htmlFor="selectedButtonText">
-              <strong>buttonText:</strong>
-              <br />
-              <input
-                id="selectedButtonText"
-                onChange={this.handleTextPropChange}
-                placeholder="Insert button text"
-                value={selectedButtonText}
-              />
-            </label>
+            <TextInput
+              id="selectedButtonText"
+              onChange={this.handleTextPropChange}
+              placeholder="Insert button text"
+              value={selectedButtonText}
+              label="button text:"
+            />
           </span>
           <br />
 
           <span className="lab-playground__item">
-            <label htmlFor="selectedIsModal">
-              <strong>selectedIsModal: </strong>
-              <input
-                id="selectedIsModal"
-                type="checkbox"
-                onChange={this.handleBoolPropChange}
-                checked={selectedIsModal}
-              />
-            </label>
+            <Checkbox
+              id="selectedIsModal"
+              onChange={this.handleBoolPropChange}
+              checked={selectedIsModal}
+              label="is modal"
+            />
           </span>
           <br />
 
           <span className="lab-playground__item">
-            <label htmlFor="hasOutlineButton">
-              <strong>hasOutlineButton: </strong>
-              <input
-                id="hasOutlineButton"
-                type="checkbox"
-                onChange={this.handleBoolPropChange}
-                checked={hasOutlineButton}
-              />
-            </label>
+            <Checkbox
+              id="hasOutlineButton"
+              onChange={this.handleBoolPropChange}
+              checked={hasOutlineButton}
+              label="has outline button"
+            />
           </span>
           <br />
 
           {hasOutlineButton ? (
             <span className="lab-playground__item">
-              <label htmlFor="selectedOutlineButtonText">
-                <strong>selectedOutlineButtonText:</strong>
-                <br />
-                <input
-                  id="selectedOutlineButtonText"
-                  onChange={this.handleTextPropChange}
-                  placeholder="Insert outline button text"
-                  value={selectedOutlineButtonText}
-                />
-              </label>
+              <TextInput
+                id="selectedOutlineButtonText"
+                onChange={this.handleTextPropChange}
+                value={selectedOutlineButtonText}
+                label="outline button text:"
+              />
               <br />
             </span>
           ) : null}

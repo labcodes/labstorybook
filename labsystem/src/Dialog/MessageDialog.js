@@ -118,7 +118,7 @@ export default class MessageDialog extends React.Component {
             </button>
             <div className="lab-dialog__header lab-dialog__header--message">
               <button type="button" onClick={handleClose}>
-                x
+                <Icon type="remove" />
               </button>
             </div>
 
