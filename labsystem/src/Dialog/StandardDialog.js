@@ -108,7 +108,7 @@ export default class StandardDialog extends React.Component {
           >
             <button
               type="button"
-              className="lab-dialog__mobile-close-button"
+              className="lab-dialog__close-button--mobile"
               onClick={handleClose}
               onTouchStart={this.handleTouchStart}
               onTouchEnd={this.handleTouchEnd}
@@ -118,7 +118,11 @@ export default class StandardDialog extends React.Component {
 
             <div className="lab-dialog__header">
               <div className="lab-dialog__title">{title}</div>
-              <button type="button" onClick={handleClose}>
+              <button
+                className="lab-dialog__close-button"
+                type="button"
+                onClick={handleClose}
+              >
                 <Icon type="remove" />
               </button>
             </div>

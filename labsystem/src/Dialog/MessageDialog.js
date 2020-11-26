@@ -109,7 +109,7 @@ export default class MessageDialog extends React.Component {
           >
             <button
               type="button"
-              className="lab-dialog__mobile-close-button"
+              className="lab-dialog__close-button--mobile"
               onClick={handleClose}
               onTouchStart={this.handleTouchStart}
               onTouchEnd={this.handleTouchEnd}
@@ -117,7 +117,11 @@ export default class MessageDialog extends React.Component {
               <Icon type="collapse-open" size="petit" />
             </button>
             <div className="lab-dialog__header lab-dialog__header--message">
-              <button type="button" onClick={handleClose}>
+              <button
+                className="lab-dialog__close-button"
+                type="button"
+                onClick={handleClose}
+              >
                 <Icon type="remove" />
               </button>
             </div>
