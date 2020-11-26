@@ -1,26 +1,40 @@
 import { Fragment } from 'react';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
-import NarrowSidebar from '../labsystem/src/Sidebar/Narrow-Sidebar';
+import NarrowSidebar from '../labsystem/src/Sidebar';
 import Header from '../labsystem/src/Sidebar/Header';
 import Body from '../labsystem/src/Sidebar/Body';
 import Footer from '../labsystem/src/Sidebar/Footer';
 import FooterButton from '../labsystem/src/Sidebar/FooterButton';
 import UserAvatar from '../labsystem/src/Sidebar/UserAvatar';
 import Logotype from '../labsystem/src/Sidebar/Logotype';
-import Collapse from '../labsystem/src/Sidebar/CollapseButton';
+import CollapseButton from '../labsystem/src/Sidebar/CollapseButton';
 import Item from '../labsystem/src/Sidebar/Item';
 import Icon from '../labsystem/src/Icon';
 
-<Meta title="Components/Narrow Sidebar/Overview" component={NarrowSidebar} />
+import NarrowSidebarPlayground from '../playgrounds/NarrowSidebarPlayground';
 
-<div class="docs-title">
+<Meta title="Components/Narrow Sidebar"/>
+
+<div class="docs-title docs-title--with-tab">
   <div>
     <h1 class="docs-title__text">Narrow Sidebar</h1>
   </div>
 </div>
 
 <div class="docs-content">
+
+<div className="simple-tab-wrapper"></div>
+<input className="simple-tab" type="radio" name="colors-tab" id="tab1" defaultChecked/>
+<label htmlFor="tab1">Overview</label>
+
+<input className="simple-tab" type="radio" name="colors-tab" id="tab2" />
+<label htmlFor="tab2">Examples</label>
+
+<input className="simple-tab" type="radio" name="colors-tab" id="tab3" />
+<label htmlFor="tab3">Playground</label>
+
+<div className="simple-tab__content content1">
 
 <p>Narrow-sidebars are components that lets users navigate within content of a product. It must be displayed fixed at the left side of the screen and can't be expanded. This component should be used only in a small amount of content situation.</p>
 
@@ -103,16 +117,18 @@ import Icon from '../labsystem/src/Icon';
 <p>We have two skins: <strong>pale</strong> and <strong>vivid</strong>. Background and border colors change according to the descriptions below.</p>
 <div class="columns">
   <div class="column">
-    <tbody>
-      <tr>
-        <td>
-          <img src="docs/narrow-sidebar/stroke-fill-nside.png" />
-        </td>
-        <td>
-          <img src="docs/narrow-sidebar/exception-nside.png" />
-        </td>
-      </tr>
-    </tbody>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <img src="docs/narrow-sidebar/stroke-fill-nside.png" />
+          </td>
+          <td>
+            <img src="docs/narrow-sidebar/exception-nside.png" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
     <p class="u-color-pink-60"><small>Coral shades cannot be used for elements on pale sidebar.</small></p>
   </div>
 
@@ -125,5 +141,252 @@ import Icon from '../labsystem/src/Icon';
 <h3>Color Combination</h3>
 <p><strong>Pale narrow sidebar </strong> may be used over any page background color, but the elements should consider the UI theme (if the app uses a teal theme, it must use the elements following this color scheme). For <strong>vivid narrow sidebar</strong>, make sure to have at least a difference of 20 between sidebar and page's background color values.</p>
 <img src="docs/narrow-sidebar/combinations-nside.png" />
+
+## Prop API docs
+
+  Here's the list of props based on the components' prop types definitions.
+
+  ### NarrowSidebar
+  <Props of={NarrowSidebar} />
+
+
+  ### Header
+  <Props of={Header}/>
+
+  ### Body
+  <Props of={Body}/>
+
+  ### Footer
+  <Props of={Footer}/>
+
+  ### FooterButton
+  <Props of={FooterButton}/>
+
+  ### UserAvatar
+  <Props of={UserAvatar}/>
+
+  ### Logotype
+  <Props of={Logotype}/>
+
+  ### CollapseButton
+  <Props of={CollapseButton}/>
+
+  ### Item
+  <Props of={Item}/>
+
+</div>
+
+<div className="simple-tab__content content2">
+
+  <h2>Pale Sidebar</h2>
+  <p>Default Narrow Sidebar has Pale Skin that has three different colors option - teal, purple and mineral. What defines what color must be chosen is the application theme.</p>
+
+  <Preview>
+    <Story name="Pale Sidebar">
+      <Fragment>
+        <div className="lab-narrow-sidebar--stories">
+          <NarrowSidebar withDividers isOpenOnMobile>
+            <NarrowSidebar.Header >
+              <NarrowSidebar.Logotype logoSrc="./favicon.ico" altText="Logotype image" />
+              <NarrowSidebar.CollapseButton onClick={() => {}} />
+            </NarrowSidebar.Header>
+            <NarrowSidebar.Body  >
+              <NarrowSidebar.Item onClick={() => {}} isActive icon="calendar" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="coin" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+            </NarrowSidebar.Body>
+            <NarrowSidebar.Footer>
+              <NarrowSidebar.UserAvatar avatarSrc="./docs/narrow-sidebar/MrGeraldo.png" altText="User photo" caption="Cool guy"/>
+              <NarrowSidebar.FooterButton onClick={() => {}} icon="key" label="Password"/>
+              <NarrowSidebar.FooterButton onClick={() => {}} icon="logout" label="Logout" />
+            </NarrowSidebar.Footer>
+          </NarrowSidebar>
+        </div>
+        <div className="lab-narrow-sidebar--stories lab-narrow-sidebar--stories--purple">
+          <NarrowSidebar withDividers isOpenOnMobile>
+            <NarrowSidebar.Header >
+              <NarrowSidebar.Logotype logoSrc="./favicon.ico" altText="User photo" />
+              <NarrowSidebar.CollapseButton onClick={() => {}} />
+            </NarrowSidebar.Header>
+            <NarrowSidebar.Body  >
+              <NarrowSidebar.Item onClick={() => {}} isActive icon="calendar" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="coin" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+            </NarrowSidebar.Body>
+            <NarrowSidebar.Footer>
+              <NarrowSidebar.UserAvatar avatarSrc="./docs/narrow-sidebar/MrGeraldo.png" altText="User photo" caption="Cool guy"/>
+              <NarrowSidebar.FooterButton onClick={() => {}} icon="key" label="Password"/>
+              <NarrowSidebar.FooterButton onClick={() => {}} icon="logout" label="Logout" />
+            </NarrowSidebar.Footer>
+          </NarrowSidebar>
+        </div>
+        <div className="lab-narrow-sidebar--stories lab-narrow-sidebar--stories--mineral">
+          <NarrowSidebar withDividers isOpenOnMobile>
+            <NarrowSidebar.Header >
+              <NarrowSidebar.Logotype logoSrc="./favicon.ico" altText="User photo" />
+              <NarrowSidebar.CollapseButton onClick={() => {}} />
+            </NarrowSidebar.Header>
+            <NarrowSidebar.Body  >
+              <NarrowSidebar.Item onClick={() => {}} isActive icon="calendar" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="coin" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+            </NarrowSidebar.Body>
+            <NarrowSidebar.Footer>
+              <NarrowSidebar.UserAvatar avatarSrc="./docs/narrow-sidebar/MrGeraldo.png" altText="User photo" caption="Cool guy"/>
+              <NarrowSidebar.FooterButton onClick={() => {}} icon="key" label="Password"/>
+              <NarrowSidebar.FooterButton onClick={() => {}} icon="logout" label="Logout" />
+            </NarrowSidebar.Footer>
+          </NarrowSidebar>
+        </div>
+      </Fragment>
+    </Story>
+  </Preview>
+
+  <h2>Vivid Sidebar</h2>
+  <p>Default narrow sidebar vivid skin that has four different colors option - teal, purple, coral and mineral. What defines what color must be chosen is the application theme.</p>
+
+  <Preview>
+    <Story name="Vivid Sidebar">
+      <Fragment>
+          <div className="lab-narrow-sidebar--stories lab-narrow-sidebar--stories-vivid-teal">
+          <NarrowSidebar withDividers isVivid isOpenOnMobile>
+            <NarrowSidebar.Header >
+              <NarrowSidebar.Logotype logoSrc="./favicon.ico" altText="User photo" />
+              <NarrowSidebar.CollapseButton onClick={() => {}} />
+            </NarrowSidebar.Header>
+            <NarrowSidebar.Body>
+              <NarrowSidebar.Item onClick={() => {}} isActive icon="calendar" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="coin" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+            </NarrowSidebar.Body>
+            <NarrowSidebar.Footer>
+              <NarrowSidebar.UserAvatar avatarSrc="./docs/narrow-sidebar/MrGeraldo.png" altText="User photo" caption="Cool guy"/>
+              <NarrowSidebar.FooterButton onClick={() => {}} icon="key" label="Password"/>
+              <NarrowSidebar.FooterButton onClick={() => {}} icon="logout" label="Logout" />
+            </NarrowSidebar.Footer>
+          </NarrowSidebar>
+        </div>
+        <div className="lab-narrow-sidebar--stories lab-narrow-sidebar--stories-vivid-purple">
+          <NarrowSidebar withDividers isVivid isOpenOnMobile>
+            <NarrowSidebar.Header >
+              <NarrowSidebar.Logotype logoSrc="./favicon.ico" altText="User photo" />
+              <NarrowSidebar.CollapseButton onClick={() => {}} />
+            </NarrowSidebar.Header>
+            <NarrowSidebar.Body  >
+              <NarrowSidebar.Item onClick={() => {}} isActive icon="calendar" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="coin" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+            </NarrowSidebar.Body>
+            <NarrowSidebar.Footer>
+              <NarrowSidebar.UserAvatar avatarSrc="./docs/narrow-sidebar/MrGeraldo.png" altText="User photo" caption="Cool guy"/>
+              <NarrowSidebar.FooterButton onClick={() => {}} icon="key" label="Password"/>
+              <NarrowSidebar.FooterButton onClick={() => {}} icon="logout" label="Logout" />
+            </NarrowSidebar.Footer>
+          </NarrowSidebar>
+        </div>
+        <div className="lab-narrow-sidebar--stories lab-narrow-sidebar--stories-vivid-mineral">
+          <NarrowSidebar withDividers isVivid isOpenOnMobile>
+            <NarrowSidebar.Header >
+              <NarrowSidebar.Logotype logoSrc="./favicon.ico" altText="User photo" />
+              <NarrowSidebar.CollapseButton onClick={() => {}} />
+            </NarrowSidebar.Header>
+            <NarrowSidebar.Body  >
+              <NarrowSidebar.Item onClick={() => {}} isActive icon="calendar" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="coin" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+            </NarrowSidebar.Body>
+            <NarrowSidebar.Footer>
+              <NarrowSidebar.UserAvatar avatarSrc="./docs/narrow-sidebar/MrGeraldo.png" altText="User photo" caption="Cool guy"/>
+              <NarrowSidebar.FooterButton onClick={() => {}} icon="key" label="Password"/>
+              <NarrowSidebar.FooterButton onClick={() => {}} icon="logout" label="Logout" />
+            </NarrowSidebar.Footer>
+          </NarrowSidebar>
+        </div>
+        <div className="lab-narrow-sidebar--stories lab-narrow-sidebar--stories-vivid-coral">
+          <NarrowSidebar withDividers isVivid isOpenOnMobile>
+            <NarrowSidebar.Header >
+              <NarrowSidebar.Logotype logoSrc="./favicon.ico" altText="User photo" />
+              <NarrowSidebar.CollapseButton onClick={() => {}} />
+            </NarrowSidebar.Header>
+            <NarrowSidebar.Body  >
+              <NarrowSidebar.Item onClick={() => {}} icon="calendar" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="coin" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+              <NarrowSidebar.Item onClick={() => {}} icon="wallet" label="Teste" />
+            </NarrowSidebar.Body>
+            <NarrowSidebar.Footer>
+              <NarrowSidebar.UserAvatar avatarSrc="./docs/narrow-sidebar/MrGeraldo.png" altText="User photo" caption="Cool guy"/>
+              <NarrowSidebar.FooterButton onClick={() => {}} icon="key" label="Password"/>
+              <NarrowSidebar.FooterButton onClick={() => {}} icon="logout" label="Logout" />
+            </NarrowSidebar.Footer>
+          </NarrowSidebar>
+        </div>
+      </Fragment>
+    </Story>
+  </Preview>
+
+</div>
+
+<div className="simple-tab__content content3">
+
+<h2>Narrow Sidebar Playground</h2>
+
+<Preview>
+  <Story name="Sidebar\'s Playground">
+    <Fragment>
+      <NarrowSidebarPlayground />
+    </Fragment>
+  </Story>
+</Preview>
+
+</div>
 
 </div>

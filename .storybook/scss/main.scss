@@ -1,18 +1,23 @@
-@import '../../labsystem/scss/variables/all';
-@import '../../labsystem/scss/utilities/all';
+// Bulma Grid
+@import "../../labsystem/node_modules/bulma/sass/utilities/all";
+@import "../../labsystem/node_modules/bulma/sass/grid/all";
 
-@import 'doc-header';
-@import 'doc-buttons';
-@import 'doc-link';
-@import 'doc-type';
-@import 'doc-color-swatches';
-@import 'doc-inputs';
-@import 'doc-checkbox';
-@import 'doc-radio';
-@import 'doc-tooltip';
-@import '../../playgrounds/scss/playgrounds';
-@import 'doc-narrow-sidebar';
-@import 'doc-search';
+@import "../../labsystem/scss/variables/all";
+@import "../../labsystem/scss/utilities/all";
+
+@import "doc-base";
+@import "doc-header";
+@import "doc-buttons";
+@import "doc-link";
+@import "doc-type";
+@import "doc-color-swatches";
+@import "doc-inputs";
+@import "doc-checkbox";
+@import "doc-radio";
+@import "doc-tooltip";
+@import "../../playgrounds/scss/playgrounds";
+@import "doc-narrow-sidebar";
+@import "doc-search";
 
 * {
   box-sizing: border-box;

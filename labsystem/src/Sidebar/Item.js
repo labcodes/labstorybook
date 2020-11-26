@@ -4,36 +4,37 @@ import Icon from "../Icon";
 
 export default class Item extends React.Component {
   static propTypes = {
-    label: PropTypes.string,
+    label: PropTypes.string.isRequired,
     icon: PropTypes.string,
-    iconColor: PropTypes.string,
+    onClick: PropTypes.func.isRequired,
+    isActive: PropTypes.bool,
   };
 
   static defaultProps = {
-    label: undefined,
     icon: undefined,
-    iconColor: "mineral-60",
-  };
-
-  itemIcon = () => {
-    const { icon, iconColor } = this.props;
-    return icon ? (
-      <Icon type={icon} color={iconColor} className="sidebar-item" />
-    ) : (
-      ""
-    );
+    isActive: false,
   };
 
   render() {
-    const { label } = this.props;
+    const { label, icon, isActive, onClick } = this.props;
 
     return (
-      <React.Fragment>
-        <button type="button" href="#" className="lab-narrow-sidebar__item">
-          {this.itemIcon()}
-          {label}
-        </button>
-      </React.Fragment>
+      <button
+        type="button"
+        className={`lab-narrow-sidebar__item${
+          isActive ? " lab-narrow-sidebar__item--active" : ""
+        }`}
+        onClick={onClick}
+      >
+        {icon ? (
+          <Icon
+            type={icon}
+            color="mineral-60"
+            className="lab-narrow-sidebar__item-icon"
+          />
+        ) : null}
+        <span className="lab-narrow-sidebar__item-label">{label}</span>
+      </button>
     );
   }
 }

@@ -1,68 +1,61 @@
 @use 'sass:map';
 
-// Light
+$radius-default: 60px;
+$border-default: $border-01;
+
+// Default Colors (Pale)
 $item-focus-color: map-get($narrow-sidebar-theme, "30");
 $item-pressed-color: map-get($narrow-sidebar-theme, "20");
 $item-hover-color: map-get($narrow-sidebar-theme, "10");
 $item-active-color: map-get($narrow-sidebar-theme, "70");
-$narrow-mobile-topbar-bg: map-get($narrow-sidebar-theme, "60");
+$footer-button-color: map-get($narrow-sidebar-theme, "60");
 
-$radius-default: 60px;
-$border-default: $border-01;
+@if $narrow-sidebar-theme == $coral-palette {
+  @warn "Narrow sidebar can't use coral theme when skin is not vivid.";
+  $item-focus-color: map-get($default-theme, "30");
+  $item-pressed-color: map-get($default-theme, "20");
+  $item-hover-color: map-get($default-theme, "10");
+  $item-active-color: map-get($default-theme, "70");
+  $footer-button-color: map-get($default-theme, "60");
+}
+
+// Vivid Colors
+$vivid-bg: map-get($narrow-sidebar-theme, "60");
+
+@if $narrow-sidebar-theme == $mineral-palette {
+  $vivid-bg: map-get($narrow-sidebar-theme, "90");
+}
 
 .lab-narrow-sidebar {
   width: 80%;
   display: flex;
   overflow-y: auto;
-  overflow-x:hidden;
+  overflow-x: hidden;
   height: 100vh;
   top: 0;
-  position: fixed; 
+  left: 0;
+  z-index: 2;
+  position: fixed;
   align-items: stretch;
   flex-direction: column;
   border-top-right-radius: $radius-default;
   background-color: white;
-  transition: ease left .6s;
-  
-  &--on {
-    left: 0;
-  }
-  
-  &--off {
-    left: -300px;
+
+  @include mobile() {
+    left: -80vw;
+    transition: ease left 0.6s;
+
+    &--open-on-mobile {
+      left: 0;
+    }
   }
 
-  @include from($tablet){
+  @include from($tablet) {
     width: 128px;
     border: $border-default $mineral-20;
     box-sizing: border-box;
   }
-} 
-
-.lab-narrow__overlay {
-  content: "";
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  top: 0;
-  left: 0;
-  background-color: $black-50;
-  pointer-events: none;
-  transition: ease all .2s;
-
-  &--on {
-    opacity: 1;
-  }
-
-  &--off {
-    opacity: 0;
-  }
-
-  @include from($tablet) {
-    display: none;
-  }
 }
-
 
 //Header
 .lab-narrow-sidebar__header {
@@ -77,7 +70,7 @@ $border-default: $border-01;
   background-color: $white;
   box-sizing: border-box;
 
-  @include from ($tablet){
+  @include from($tablet) {
     justify-content: center;
     position: relative;
     width: 128px;
@@ -87,43 +80,43 @@ $border-default: $border-01;
 
 .lab-narrow-sidebar__logo {
   display: block;
-  width: 52px;
-  height: 44px;
-  background-color: $mineral-20;
+  width: 48px;
+  height: 48px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 }
 
 .lab-narrow-sidebar__avatar {
   display: flex;
   align-items: center;
-  margin-left: 28px;
-  margin-bottom: 12px;
 
-  @include from($tablet){
-    margin: 0 0 8px 0;
-  }
-  
-  
   &-photo {
     width: 48px;
     height: 48px;
-    border-radius: 100%;
-    margin: 12px 8px 12px 0;
-    background-color: $mineral-20;
 
-    @include from($tablet){
-      margin: 0 0 8px 0;
+    img {
+      border-radius: 100%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: left;
     }
   }
 
-  &-text{
+  &-text {
     display: flex;
     flex-direction: column;
+    margin-left: 20px;
     color: $teal-70;
     font-weight: $weight-bold;
     font-family: $font-primary;
-    font-size: $font-size-3; 
+    font-size: $font-size-3;
 
-    @include from($tablet){
+    @include from($tablet) {
       display: none;
     }
   }
@@ -134,7 +127,7 @@ $border-default: $border-01;
     color: $black-50;
     font-weight: $weight-medium;
 
-    @include from($tablet){
+    @include from($tablet) {
       display: none;
     }
   }
@@ -142,12 +135,15 @@ $border-default: $border-01;
 
 .lab-narrow-sidebar__collapse {
   background-color: transparent;
-  display: block;
   box-sizing: border-box;
   color: $mineral-60;
   background-color: transparent;
   border: $border-default transparent;
   border-radius: $radius-02;
+  line-height: 1;
+  padding: 8px 10px;
+  align-items: center;
+  display: flex;
 
   &:focus {
     border-color: $item-focus-color;
@@ -158,50 +154,14 @@ $border-default: $border-01;
     background-color: $item-focus-color;
   }
 
-  @include from($tablet){
+  @include from($tablet) {
     display: none;
   }
 }
-// Topbar that apperson only on mobile.
-// It holds the button to open the sidebar on mobile.
-.lab-narrow-sidebar__mobile-topbar {
-  position:fixed;
-  right: 0;
-  top: 0;
-  background-color: $narrow-mobile-topbar-bg;
-  width: 100%;
-  height: 76px;  
-  border-bottom: 1px solid transparent;
 
-  @include from($tablet){
-    display: none;
-  }
-  
-  &-button {
-    display: flex;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    margin: 18px 0 18px 12px;
-    background-color: transparent;
-    border: $border-default transparent;
-    border-radius: $radius-02;
-  
-    &:focus {
-      border-color: $item-focus-color;
-      outline: none;
-    }
-  
-    &:active {
-      background-color: $item-focus-color;
-      .lab-icon {
-        background-color: $item-active-color;
-      }
-    }
-  
-  }
+.lab-narrow-sidebar__collapse-icon {
+  background-color: $item-active-color;
 }
-
 
 //Body
 .lab-narrow-sidebar__body {
@@ -209,14 +169,16 @@ $border-default: $border-01;
   align-self: flex-start;
   width: 100%;
   flex-direction: column;
+  flex-grow: 1;
   padding: $spacing-01 0;
   margin-top: 76px;
+  border-top: $border-default transparent;
+  border-bottom: $border-default transparent;
 
-  @include from ($tablet){
+  @include from($tablet) {
     overflow: auto;
     margin-top: 0;
   }
-  
 }
 
 .lab-narrow-sidebar__item {
@@ -235,21 +197,21 @@ $border-default: $border-01;
   margin-right: -$spacing-02;
   border-radius: $spacing-03;
 
-  @include from($tablet){
-      display: flex;
-      flex-direction: column; 
-      align-items: center;
-      text-align: center;
-      font-size: $font-size-1;
-      padding: $spacing-04;
-      margin: 0;
-      border-radius: 0;
+  @include from($tablet) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: $font-size-1;
+    padding: $spacing-04;
+    margin: 0;
+    border-radius: 0;
   }
 
-  .sidebar-item {
+  .lab-narrow-sidebar__item-icon {
     margin-right: $spacing-02;
 
-    @include from($tablet){
+    @include from($tablet) {
       margin: 0;
     }
   }
@@ -269,32 +231,38 @@ $border-default: $border-01;
       bottom: 6px;
       border-radius: $radius-03;
 
-      @include from($tablet){
+      @include from($tablet) {
         margin-right: 0;
       }
     }
   }
 
   &:hover {
-    background-color:$item-hover-color;
-  } 
+    background-color: $item-hover-color;
+  }
 
   &:active {
-    background-color:$item-focus-color;
+    background-color: $item-focus-color;
   }
 
   &--active {
-    background-color:$item-pressed-color;
+    background-color: $item-pressed-color;
     font-weight: $weight-semibold;
     color: $item-active-color;
 
-    .sidebar-item {
+    .lab-narrow-sidebar__item-icon {
       background-color: $item-active-color;
     }
   }
 }
 
-
+.lab-narrow-sidebar__item-label,
+.lab-narrow-sidebar__footer-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
 
 //Footer
 .lab-narrow-sidebar__footer {
@@ -303,235 +271,206 @@ $border-default: $border-01;
   margin: $spacing-06 0 $spacing-06;
   flex-direction: column;
   flex-grow: 0;
-  
-  @include from($tablet){
+
+  @include from($tablet) {
     align-items: center;
   }
-  
-  &__button {
-    display: flex;
-    width: 60%;
-    box-sizing: border-box;
-    margin-bottom: $spacing-01;
-    text-align: center;
-    font-family: $font-primary;
-    font-weight: $weight-medium;
-    color: $narrow-mobile-topbar-bg;
-    background-color: transparent;
-    border: $border-default transparent;
-    padding: $spacing-01 $spacing-03;
-    margin-left: 28px;
-    border-radius: $radius-03;
-    font-size: $font-size-4;
 
-    @include from($tablet) {
-      cursor: pointer;
-      padding: $spacing-01;
-      width: 76%;
-      margin-left: 0;
-      align-items: center;
-      font-size: $font-size-1;
-    }
+  .lab-narrow-sidebar__avatar {
+    margin-bottom: 18px;
 
-    .sidebar-item {
-      background-color: $narrow-mobile-topbar-bg;
-      margin-right: $spacing-02;
-
-      @include from($tablet){
-        margin-right: $spacing-01;
-      }
+    @include mobile(){
+      margin-left: 28px;
     }
   }
+}
 
-  &__button:focus {
+.lab-narrow-sidebar__footer-button {
+  display: flex;
+  width: 60%;
+  box-sizing: border-box;
+  margin-bottom: $spacing-01;
+  text-align: center;
+  font-family: $font-primary;
+  font-weight: $weight-medium;
+  color: $footer-button-color;
+  background-color: transparent;
+  border: $border-default transparent;
+  padding: $spacing-01 $spacing-03;
+  margin-left: 28px;
+  border-radius: $radius-03;
+  font-size: $font-size-4;
+
+  @include from($tablet) {
+    cursor: pointer;
+    padding: $spacing-01;
+    width: 76%;
+    margin-left: 0;
+    align-items: center;
+    font-size: $font-size-1;
+  }
+
+  &:focus {
     border: $border-default $item-focus-color;
     outline: none;
   }
 
-  &__button:hover {
+  &:hover {
     background-color: $item-hover-color;
   }
 
-  &__button:active {
+  &:active {
     background-color: $item-focus-color;
-    
   }
 
-  &__button--active {
+  &--active {
     background-color: $item-pressed-color;
     color: $item-active-color;
     font-weight: $weight-semibold;
 
-    .sidebar-item {
+    .lab-narrow-sidebar__footer-icon {
       background-color: $item-active-color;
     }
   }
 }
 
+.lab-narrow-sidebar__footer-icon {
+  background-color: $footer-button-color;
+  margin-right: $spacing-02;
+
+  @include from($tablet) {
+    margin-right: $spacing-01;
+  }
+}
+
 //With Scroll
-.lab-narrow-sidebar--with-scroll {
-  .lab-narrow-sidebar__body{
-    box-shadow: 1px 1px 2px $black-20;  
+.lab-narrow-sidebar--with-dividers {
+  .lab-narrow-sidebar__body {
+    border-color: $mineral-20;
   }
-
-  .lab-narrow-sidebar__header{
-    box-shadow: inset 0 -1px 2px $black-20;
-  }
-} 
-
+}
 
 // Vivid Skin
-.lab-narrow-sidebar--vivid{
+.lab-narrow-sidebar--vivid {
   border: transparent;
+  background: $vivid-bg;
+
+  .lab-narrow-sidebar__header {
+    background-color: $vivid-bg;
+  }
+
+  // Unselected item
   .lab-narrow-sidebar__item {
     color: $white;
+    transition: all $duration-base;
 
     &:focus {
       &:before {
         border-color: $white-50;
       }
     }
-  
+
     &:hover {
       background-color: $white-20;
-    } 
-  
-    &:active {
-      background-color: $white-75;
-    }
-  
-    &--active {
-      background-color: $white;
     }
 
-    .sidebar-item {
+    &:active {
+      background-color: $vivid-bg;
+    }
+
+    .lab-narrow-sidebar__item-icon {
       background-color: $white;
     }
   }
 
-  .lab-narrow-sidebar__footer__button {
+  // Selected item
+  .lab-narrow-sidebar__item--active {
+    background-color: $white;
+    color: $vivid-bg;
+
+    &:hover {
+      color: $white;
+      .lab-icon {
+        background-color: $white;
+      }
+    }
+
+    &:focus {
+      &:before {
+        border-color: $vivid-bg;
+      }
+    }
+
+    &:focus:hover {
+      &:before {
+        border-color: white;
+      }
+    }
+
+    &:active {
+      background-color: $vivid-bg;
+    }
+
+    .lab-narrow-sidebar__item-icon {
+      background-color: $vivid-bg;
+    }
+  }
+
+  .lab-narrow-sidebar__footer-button {
     color: $white;
 
-    .sidebar-item {
+    .lab-narrow-sidebar__footer-icon {
       background-color: $white;
     }
 
     &:focus {
       border-color: $white-50;
     }
-  
+
     &:hover {
       background-color: $white-20;
     }
-  
+
     &:active {
-      background-color: $white-75;      
+      background-color: $vivid-bg;
     }
-  
-    .lab-narrow-sidebar__footer__button--active {
-      background-color: $white;
+  }
+
+  .lab-narrow-sidebar__footer-button--active {
+    background-color: $white;
+    color: $vivid-bg;
+
+    .lab-narrow-sidebar__footer-icon {
+      background-color: $vivid-bg;
     }
   }
 
   .lab-narrow-sidebar__avatar {
-
-    &-text{
+    &-text {
       color: $white;
     }
-  
+
     &-caption {
       color: $white-75;
     }
   }
 
-  .lab-narrow-sidebar__collapse,
-  .lab-narrow-sidebar__mobile-button{
-
-    &:focus{
+  .lab-narrow-sidebar__collapse {
+    &:focus {
       border-color: $white-50;
       outline: none;
     }
 
     &:active {
       background-color: $white-75;
-    }
 
-    .sidebar-item{
-      background-color: $white;
+      .lab-narrow-sidebar__collapse-icon {
+        background-color: $vivid-bg;
+      }
     }
   }
-  
-  .lab-narrow-sidebar__mobile-topbar {
+
+  .lab-narrow-sidebar__collapse-icon {
     background-color: $white;
-  }
-  
-}
-
-// Vivid narrow sidebar mixin
-
-@mixin narrow-sidebar-skin-vivid($color) {
-  background: $color;
-
-  .lab-narrow-sidebar__header{
-    background-color: $color;
-  }
-
-  .lab-narrow-sidebar__item--active,
-  .lab-narrow-sidebar__item:active {
-    color: $color; 
-
-    &:focus {
-      &:before {
-        border-color: $color;
-      }
-    }
-
-    .sidebar-item {
-      background-color: $color;
-    }
-  }
-
-  .lab-narrow-sidebar__footer__button--active,
-  .lab-narrow-sidebar__footer__button:active  {
-    color: $color; 
-    
-    .sidebar-item {
-      background-color: $color;
-    }    
-  }
- 
-  .lab-narrow-sidebar__collapse{
-    &:active{
-      .sidebar-item {
-        background-color: $color;
-      }
-    }
-  }  
-
-  
-  .lab-narrow-sidebar__mobile-topbar {
-    &-button:active{
-      .lab-icon{
-        background-color: $color;
-      }
-    }
-  }
-  
-}
-
-/*
-* This will generate the classes:
-* `.lab-narrow-sidebar--vivid-coral,
-* `.lab-narrow-sidebar--vivid-teal,
-* `.lab-narrow-sidebar--vivid-purple,
-* `.lab-narrow-sidebar--vivid-mineral,
-*/
-@each $name, $palette in $sidebar-colors {
-  .lab-narrow-sidebar--vivid--#{$name} {
-     @if $name == "mineral" {
-        @include narrow-sidebar-skin-vivid(map-get($palette, "90"));
-     } @else {
-        @include narrow-sidebar-skin-vivid(map-get($palette, "60")); 
-     }
   }
 }
