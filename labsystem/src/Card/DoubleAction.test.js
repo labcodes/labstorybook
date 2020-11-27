@@ -52,8 +52,12 @@ describe("DoubleAction", () => {
         />
       </CardContext.Provider>
     );
+
+    expect(mockOnClick1.mock.calls.length).toEqual(0);
     mountedLinkAction.find("button").first().simulate("click");
     expect(mockOnClick1.mock.calls.length).toEqual(1);
+
+    expect(mockOnClick2.mock.calls.length).toEqual(0);
     mountedLinkAction.find("button").last().simulate("click");
     expect(mockOnClick2.mock.calls.length).toEqual(1);
   });

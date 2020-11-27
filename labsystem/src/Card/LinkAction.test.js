@@ -17,6 +17,7 @@ describe("LinkAction", () => {
     const shallowedLinkAction = shallow(
       <LinkAction text="test" onClick={mockOnClick} />
     );
+    expect(mockOnClick.mock.calls.length).toEqual(0);
     shallowedLinkAction.find("a").simulate("click");
     expect(mockOnClick.mock.calls.length).toEqual(1);
   });
