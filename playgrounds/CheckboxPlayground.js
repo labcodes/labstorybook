@@ -3,6 +3,7 @@ import React from "react";
 import Checkbox from "../labsystem/src/Checkbox";
 
 import TextInput from "../labsystem/src/Input/TextInput";
+import Toggle from "../labsystem/src/Toggle";
 
 export default class CheckboxPlayground extends React.Component {
   constructor(props) {
@@ -72,26 +73,24 @@ export default class CheckboxPlayground extends React.Component {
               />
             </span>
             <span className="lab-playground__item">
-              <fieldset>
-                <Checkbox
-                  id="disabled"
-                  label="Disabled"
-                  name="disabled"
-                  onChange={this.handlePropBool}
-                />
-                <Checkbox
-                  id="checked"
-                  label="Checked"
-                  name="checked"
-                  onChange={this.handlePropBool}
-                />
-                <Checkbox
-                  id="indeterminate"
-                  label="Indeterminate"
-                  name="indeterminate"
-                  onChange={this.handlePropBool}
-                />
-              </fieldset>
+              <p>
+                <strong>Disabled</strong>
+              </p>
+              <Toggle name="disabled" handleToggle={this.handlePropBool} />
+            </span>
+            <span className="lab-playground__item">
+              <Checkbox
+                id="checked"
+                label="Checked"
+                name="checked"
+                onChange={this.handlePropBool}
+              />
+              <Checkbox
+                id="indeterminate"
+                label="Indeterminate"
+                name="indeterminate"
+                onChange={this.handlePropBool}
+              />
             </span>
           </div>
         </div>
