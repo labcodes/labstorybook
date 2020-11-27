@@ -4,6 +4,8 @@ import TextInput from "../labsystem/src/Input/TextInput";
 import EmailInput from "../labsystem/src/Input/EmailInput";
 import PasswordInput from "../labsystem/src/Input/PasswordInput";
 
+import Toggle from "../labsystem/src/Toggle";
+
 export default class InputPlayground extends React.Component {
   constructor(props) {
     super(props);
@@ -17,7 +19,7 @@ export default class InputPlayground extends React.Component {
       helpMessage: "",
       prefix: "",
       suffix: "",
-      customErrorMsg: "custom error",
+      customErrorMsg: "",
       disabled: false,
       required: false,
       isValid: true,
@@ -94,28 +96,26 @@ export default class InputPlayground extends React.Component {
     return (
       <div className="columns lab-playground">
         <div className="column lab-playground__component">
-          <h4>TextInput</h4>
-          <TextInput
-            defaultValue={textValue}
-            id="textValue"
-            label={label}
-            icon={icon}
-            iconColor={iconColor}
-            helpMessage={helpMessage}
-            prefix={prefix}
-            suffix={suffix}
-            customErrorMsg={customErrorMsg}
-            required={required}
-            isValid={isValid}
-            onChange={this.handlePropChangeText}
-            {...(disabled ? { disabled } : undefined)}
-          />
-          <p>
-            <strong>TextInput value: </strong>
-            {textValue}
-          </p>
+          <span className="lab-playground__item">
+            <h3>TextInput</h3>
+            <TextInput
+              defaultValue={textValue}
+              id="textValue"
+              label={label}
+              icon={icon}
+              iconColor={iconColor}
+              helpMessage={helpMessage}
+              prefix={prefix}
+              suffix={suffix}
+              customErrorMsg={customErrorMsg}
+              required={required}
+              isValid={isValid}
+              onChange={this.handlePropChangeText}
+              {...(disabled ? { disabled } : undefined)}
+            />
+          </span>
 
-          <h4>EmailInput</h4>
+          <h3>EmailInput</h3>
           <EmailInput
             defaultValue={emailValue}
             id="emailValue"
@@ -130,12 +130,8 @@ export default class InputPlayground extends React.Component {
             onChange={this.handlePropChangeText}
             {...(disabled ? { disabled } : undefined)}
           />
-          <p>
-            <strong>EmailInput value: </strong>
-            {emailValue}
-          </p>
 
-          <h4>PasswordInput</h4>
+          <h3>PasswordInput</h3>
           <PasswordInput
             defaultValue={passwordValue}
             id="passwordValue"
@@ -149,27 +145,18 @@ export default class InputPlayground extends React.Component {
             onChange={this.handlePropChangeText}
             {...(disabled ? { disabled } : undefined)}
           />
-          <p>
-            <strong>PasswordInput value: </strong>
-            {passwordValue}
-          </p>
         </div>
+
         <div className="column lab-playground__configs">
-          <h4>Configurations</h4>
+          <h3>Prop Settings</h3>
           <span className="lab-playground__item">
-            <label htmlFor="label">
-              Label
-              <br />
-              <input
-                id="label"
-                type="text"
-                label="Label"
-                value={label}
-                onChange={this.handlePropChangeText}
-              />
-            </label>
+            <TextInput
+              label="Label"
+              id="label"
+              value={label}
+              onChange={this.handlePropChangeText}
+            />
           </span>
-          <br />
           <span className="lab-playground__item">
             <label htmlFor="icon">
               icon
@@ -201,96 +188,54 @@ export default class InputPlayground extends React.Component {
             </label>
           </span>
           <span className="lab-playground__item">
-            <label htmlFor="helpMessage">
-              helpMessage
-              <br />
-              <input
-                id="helpMessage"
-                type="text"
-                label="helpMessage"
-                value={helpMessage}
-                onChange={this.handlePropChangeText}
-              />
-            </label>
+            <TextInput
+              label="Help message"
+              id="helpMessage"
+              value={helpMessage}
+              onChange={this.handlePropChangeText}
+            />
           </span>
           <span className="lab-playground__item">
-            <label htmlFor="customErrorMsg">
-              customErrorMsg
-              <br />
-              <input
-                id="customErrorMsg"
-                type="text"
-                label="customErrorMsg"
-                value={customErrorMsg}
-                onChange={this.handlePropChangeText}
-              />
-            </label>
+            <TextInput
+              label="Error message"
+              id="customErrorMsg"
+              value={customErrorMsg}
+              onChange={this.handlePropChangeText}
+            />
           </span>
           <span className="lab-playground__item">
-            <label htmlFor="prefix">
-              Prefix
-              <br />
-              <input
-                id="prefix"
-                type="text"
-                label="prefix"
-                value={prefix}
-                onChange={this.handlePropChangeText}
-              />
-            </label>
+            <TextInput
+              label="Prefix text"
+              id="prefix"
+              value={prefix}
+              onChange={this.handlePropChangeText}
+            />
           </span>
           <span className="lab-playground__item">
-            <label htmlFor="suffix">
-              Suffix
-              <br />
-              <input
-                id="suffix"
-                type="text"
-                label="suffix"
-                value={suffix}
-                onChange={this.handlePropChangeText}
-              />
-            </label>
-          </span>
-          <br />
-          <span className="lab-playground__item">
-            <label htmlFor="required">
-              Required
-              <br />
-              <input
-                id="required"
-                type="checkbox"
-                label="Required"
-                checked={required}
-                onChange={this.handlePropChangeBool}
-              />
-            </label>
+            <TextInput
+              label="Suffix text"
+              id="suffix"
+              value={suffix}
+              onChange={this.handlePropChangeText}
+            />
           </span>
           <span className="lab-playground__item">
-            <label htmlFor="disabled">
-              Disabled
-              <br />
-              <input
-                id="disabled"
-                type="checkbox"
-                label="Disabled"
-                checked={disabled}
-                onChange={this.handlePropChangeBool}
-              />
-            </label>
-          </span>
-          <span className="lab-playground__item">
-            <label htmlFor="isValid">
-              isValid
-              <br />
-              <input
-                id="isValid"
-                type="checkbox"
-                label="IsValid"
-                checked={isValid}
-                onChange={this.handlePropChangeBool}
-              />
-            </label>
+            <p>
+              <strong>Required</strong>
+            </p>
+            <Toggle name="required" handleToggle={this.handlePropChangeBool} />
+            <p>
+              <strong>Disabled</strong>
+            </p>
+            <Toggle name="disabled" handleToggle={this.handlePropChangeBool} />
+            <p>
+              <strong>isValid</strong>
+            </p>
+            <Toggle
+              name="isValid"
+              handleToggle={this.handlePropChangeBool}
+              defaultValue="true"
+            />
           </span>
         </div>
       </div>
