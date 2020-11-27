@@ -37,7 +37,7 @@ exports[`StandardSearch renders with base props 1`] = `
         type="button"
       >
         <span
-          className="lab-icon lab-icon--lupe lab-icon--white lab-standard-search__icon"
+          className="lab-icon lab-icon--magnifying-glass lab-icon--white lab-standard-search__icon"
         />
       </button>
       <span
