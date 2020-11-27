@@ -109,7 +109,7 @@ export default class MessageDialog extends React.Component {
           >
             <button
               type="button"
-              className="lab-dialog__close-button--mobile"
+              className="lab-dialog__mobile-close-button"
               onClick={handleClose}
               onTouchStart={this.handleTouchStart}
               onTouchEnd={this.handleTouchEnd}

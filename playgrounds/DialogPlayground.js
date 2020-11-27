@@ -1,4 +1,5 @@
 import React from "react";
+import { isEmpty } from "lodash";
 
 import TextInput from "../labsystem/src/Input/TextInput";
 import Checkbox from "../labsystem/src/Checkbox";
@@ -72,7 +73,6 @@ export default class DialogPlayground extends React.Component {
       selectedTitle,
       selectedContent,
       selectedButtonText,
-      hasOutlineButton,
       selectedOutlineButtonText,
       selectedButtonResponseText,
       selectedOutlineButtonResponseText,
@@ -100,7 +100,7 @@ export default class DialogPlayground extends React.Component {
             onClick: () => alert(selectedButtonResponseText),
           }}
           outlineButtonProps={
-            hasOutlineButton
+            !isEmpty(selectedOutlineButtonText)
               ? {
                   text: selectedOutlineButtonText,
                   onClick: () => alert(selectedOutlineButtonResponseText),
@@ -116,7 +116,6 @@ export default class DialogPlayground extends React.Component {
     const {
       availableComponents,
       currentComponent,
-      hasOutlineButton,
       selectedIcon,
       selectedTitle,
       selectedContent,
@@ -180,9 +179,18 @@ export default class DialogPlayground extends React.Component {
             <TextInput
               id="selectedButtonText"
               onChange={this.handleTextPropChange}
-              placeholder="Insert button text"
               value={selectedButtonText}
-              label="button text:"
+              label="buttonProps.text"
+            />
+          </span>
+          <br />
+
+          <span className="lab-playground__item">
+            <TextInput
+              id="selectedOutlineButtonText"
+              onChange={this.handleTextPropChange}
+              value={selectedOutlineButtonText}
+              label="outlineButtonProps.text"
             />
           </span>
           <br />
@@ -192,38 +200,15 @@ export default class DialogPlayground extends React.Component {
               id="selectedIsModal"
               onChange={this.handleBoolPropChange}
               checked={selectedIsModal}
-              label="is modal"
+              label="isModal"
             />
           </span>
           <br />
-
-          <span className="lab-playground__item">
-            <Checkbox
-              id="hasOutlineButton"
-              onChange={this.handleBoolPropChange}
-              checked={hasOutlineButton}
-              label="has outline button"
-            />
-          </span>
-          <br />
-
-          {hasOutlineButton ? (
-            <span className="lab-playground__item">
-              <TextInput
-                id="selectedOutlineButtonText"
-                onChange={this.handleTextPropChange}
-                value={selectedOutlineButtonText}
-                label="outline button text:"
-              />
-              <br />
-            </span>
-          ) : null}
 
           {currentComponent === "MessageDialog" ? (
             <span className="lab-playground__item">
               <label htmlFor="selectedIcon">
                 <strong>icon: </strong>
-                <br />
                 <select
                   id="selectedIcon"
                   value={selectedIcon}
