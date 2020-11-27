@@ -8,6 +8,14 @@
     margin-top: 0;
     margin-bottom: $spacing-03;
   }
+
+  & fieldset{
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .lab-playground__configs {
