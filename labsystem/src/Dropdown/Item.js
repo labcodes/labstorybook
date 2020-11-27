@@ -117,15 +117,17 @@ export default class Item extends React.Component {
         a better solution if things are broken. */
       <div
         onClick={!disabled ? onClick : () => {}}
-        className={`dropdown__item
-          ${isHighlighted ? " dropdown__item--highlighted" : ""}
-          ${isConfirmation ? " dropdown__item--is-confirmation" : ""}
-          ${isDestructive ? " dropdown__item--is-destructive" : ""}
-          ${disabled ? " dropdown__item--disabled" : ""}`}
+        className={`lab-dropdown__item
+          ${isHighlighted ? " lab-dropdown__item--highlighted" : ""}
+          ${isConfirmation ? " lab-dropdown__item--is-confirmation" : ""}
+          ${isDestructive ? " lab-dropdown__item--is-destructive" : ""}
+          ${disabled ? " lab-dropdown__item--disabled" : ""}`}
       >
         {icon ? <Icon type={icon} /> : null}
         {flagColor ? (
-          <span className={`dropdown__item--${flagColor}-flag`} />
+          <span
+            className={`lab-dropdown__item-flag lab-dropdown__item-flag--${flagColor}`}
+          />
         ) : null}
         {label}
       </div>

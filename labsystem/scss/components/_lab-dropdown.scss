@@ -1,34 +1,36 @@
-.dropdown {
-  .dropdown__items-container {
-    position: relative;
-  }
+// .lab-dropdown {}
 
-  // .dropdown__items-container--down{
-  // }
+.lab-dropdown__items-container {
+  position: relative;
+}
 
-  .dropdown__items-container--up{
-    position: relative;
-    top: -80px;
-  }
+// .lab-dropdown__items-container--down{
+// }
 
-  .dropdown__item--highlighted {
-    color: red;
-  }
+.lab-dropdown__items-container--up{
+  position: relative;
+  top: -80px;
+}
 
-  // just as an example
-  .dropdown__item--teal-flag {
-    background-color: $teal-60;
-    border-radius: $radius-02;
-    display: inline-block;
-    width: 20px;
-    height: 8px;
-  }
+.lab-dropdown__item--highlighted {
+  color: red;
+}
 
-  .dropdown__item--is-confirmation {
-    background-color: green;
-  }
+.lab-dropdown__item-flag {
+  border-radius: $radius-02;
+  display: inline-block;
+  width: 20px;
+  height: 8px;
+}
+// just as an example
+.lab-dropdown__item-flag--teal {
+  background-color: $teal-60;
+}
 
-  .dropdown__item--is-destructive {
-    background-color: red;
-  }
+.lab-dropdown__item--is-confirmation {
+  background-color: green;
+}
+
+.lab-dropdown__item--is-destructive {
+  background-color: red;
 }

@@ -106,7 +106,7 @@ export default class Dropdown extends React.Component {
     const { openDropdown, closeDropdown, handleKeyUp } = this;
 
     return (
-      <div className="dropdown">
+      <div className="lab-dropdown">
         {React.cloneElement(renderTrigger(), {
           onFocus: openDropdown,
           onBlur: closeDropdown,
@@ -114,7 +114,7 @@ export default class Dropdown extends React.Component {
         })}
         {isOpen ? (
           <div
-            className={`dropdown__items-container dropdown__items-container--${direction}`}
+            className={`lab-dropdown__items-container lab-dropdown__items-container--${direction}`}
           >
             {children.map(
               (element, i) =>
