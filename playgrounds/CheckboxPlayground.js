@@ -71,30 +71,27 @@ export default class CheckboxPlayground extends React.Component {
                 onChange={this.handlePropString}
               />
             </span>
-            <br />
             <span className="lab-playground__item">
-              <Checkbox
-                id="disabled"
-                label="Disabled"
-                name="disabled"
-                onChange={this.handlePropBool}
-              />
-            </span>
-            <span className="lab-playground__item">
-              <Checkbox
-                id="checked"
-                label="Checked"
-                name="checked"
-                onChange={this.handlePropBool}
-              />
-            </span>
-            <span className="lab-playground__item">
-              <Checkbox
-                id="indeterminate"
-                label="Indeterminate"
-                name="indeterminate"
-                onChange={this.handlePropBool}
-              />
+              <fieldset>
+                <Checkbox
+                  id="disabled"
+                  label="Disabled"
+                  name="disabled"
+                  onChange={this.handlePropBool}
+                />
+                <Checkbox
+                  id="checked"
+                  label="Checked"
+                  name="checked"
+                  onChange={this.handlePropBool}
+                />
+                <Checkbox
+                  id="indeterminate"
+                  label="Indeterminate"
+                  name="indeterminate"
+                  onChange={this.handlePropBool}
+                />
+              </fieldset>
             </span>
           </div>
         </div>
