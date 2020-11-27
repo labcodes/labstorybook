@@ -2,11 +2,13 @@
 import React from "react";
 import Checkbox from "../labsystem/src/Checkbox";
 
+import TextInput from "../labsystem/src/Input/TextInput";
+
 export default class CheckboxPlayground extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      label: "",
+      label: "This is a checkbox",
       disabled: false,
       checked: undefined,
       indeterminate: false,
@@ -38,7 +40,6 @@ export default class CheckboxPlayground extends React.Component {
       <React.Fragment>
         <div className="columns lab-playground">
           <div className="column lab-playground__component">
-            <h4>Checkbox</h4>
             <Checkbox
               id="checkbox-playground-item"
               name="checkbox-playground-group"
@@ -53,72 +54,47 @@ export default class CheckboxPlayground extends React.Component {
           </div>
 
           <div className="column lab-playground__configs">
-            <h4>Configurations</h4>
+            <h3>Prop Settings</h3>
             <span className="lab-playground__item">
-              <label htmlFor="label">
-                Label
-                <br />
-                <input
-                  id="label"
-                  type="text"
-                  label="label"
-                  value={label}
-                  onChange={this.handlePropString}
-                />
-              </label>
+              <TextInput
+                label="Label"
+                id="label"
+                value={label}
+                onChange={this.handlePropString}
+              />
             </span>
             <span className="lab-playground__item">
-              <label htmlFor="className">
-                className
-                <br />
-                <input
-                  id="className"
-                  type="text"
-                  label="className"
-                  value={className}
-                  onChange={this.handlePropString}
-                />
-              </label>
+              <TextInput
+                label="className"
+                id="className"
+                value={className}
+                onChange={this.handlePropString}
+              />
             </span>
             <br />
             <span className="lab-playground__item">
-              <label htmlFor="disabled">
-                Disabled
-                <br />
-                <input
-                  id="disabled"
-                  type="checkbox"
-                  label="disabled"
-                  checked={disabled}
-                  onChange={this.handlePropBool}
-                />
-              </label>
+              <Checkbox
+                id="disabled"
+                label="Disabled"
+                name="disabled"
+                onChange={this.handlePropBool}
+              />
             </span>
             <span className="lab-playground__item">
-              <label htmlFor="checked">
-                Checked
-                <br />
-                <input
-                  id="checked"
-                  type="checkbox"
-                  label="checked"
-                  checked={checked}
-                  onChange={this.handlePropBool}
-                />
-              </label>
+              <Checkbox
+                id="checked"
+                label="Checked"
+                name="checked"
+                onChange={this.handlePropBool}
+              />
             </span>
             <span className="lab-playground__item">
-              <label htmlFor="indeterminate">
-                Indeterminate
-                <br />
-                <input
-                  id="indeterminate"
-                  type="checkbox"
-                  label="indeterminate"
-                  checked={indeterminate}
-                  onChange={this.handlePropBool}
-                />
-              </label>
+              <Checkbox
+                id="indeterminate"
+                label="Indeterminate"
+                name="indeterminate"
+                onChange={this.handlePropBool}
+              />
             </span>
           </div>
         </div>
