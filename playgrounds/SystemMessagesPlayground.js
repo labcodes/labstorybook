@@ -5,10 +5,7 @@ import Banner from "../labsystem/src/Banner";
 import Alert from "../labsystem/src/Alert";
 import { iconOptions } from "./assets";
 
-import Toggle from "../labsystem/src/Toggle";
-import Radio from "../labsystem/src/Radio";
 import TextInput from "../labsystem/src/Input/TextInput";
-import Icon from "../labsystem/src/Icon";
 
 export default class SystemMessagesPlayground extends React.Component {
   constructor(props) {
