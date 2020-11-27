@@ -90,10 +90,16 @@ export default class Item extends React.Component {
   }
 
   componentDidUpdate() {
-    const { icon, flagColor } = this.props;
+    const { icon, flagColor, isDestructive, isConfirmation } = this.props;
     if (icon && flagColor) {
       throw Error(
         "A Dropdown Item cannot receive both 'icon' and 'flagColor' props at the same time."
+      );
+    }
+
+    if ((isDestructive && !icon) || (isConfirmation && !icon)) {
+      console.warn(
+        "Destructive or Confirmation dropdown items require an icon"
       );
     }
   }
