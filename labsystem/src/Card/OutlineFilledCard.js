@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { CardContext } from "./contexts";
+
 export default class OutlineFilledCard extends React.Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
@@ -18,14 +20,16 @@ export default class OutlineFilledCard extends React.Component {
     const { children, color, isCompact, isHorizontal } = this.props;
 
     return (
-      <article
-        className={`lab-card lab-card--outline lab-card--filled lab-card--${color}
+      <CardContext.Provider value={{ color, cardType: "outlineFilled" }}>
+        <article
+          className={`lab-card lab-card--outline lab-card--filled lab-card--${color}
           ${isCompact ? " lab-card--compact" : ""}
           ${isHorizontal ? " lab-card--horizontal" : ""}
         `}
-      >
-        {children}
-      </article>
+        >
+          {children}
+        </article>
+      </CardContext.Provider>
     );
   }
 }

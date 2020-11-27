@@ -28,6 +28,9 @@ export default class CardPlayground extends React.Component {
       showHeaderConfigs: false,
       showCardBodyHTML: false,
 
+      cardIsHorizontal: false,
+      cardIsCompact: false,
+
       cardImageIsOverflowed: false,
       cardImageIsAboveHeader: false,
 
@@ -44,13 +47,17 @@ export default class CardPlayground extends React.Component {
       cardBodyHTML:
         "<p>This HTML is inside the card body, below the image and header.</p>",
 
+      showDivider: true,
       cardDividerIsOverflowed: false,
 
+      showCardActions: true,
       availableCardActions: { LinkAction, DoubleAction },
       currentCardAction: "LinkAction",
+      currentCardActionSize: "normal",
       cardActionOpenNewTab: false,
       cardActionIsHorizontal: false,
       cardActionIsText: false,
+      cardActionButtonsAreDisabled: false,
     };
   }
 
@@ -60,6 +67,9 @@ export default class CardPlayground extends React.Component {
       selectedSkin,
       availableComponents,
       currentComponent,
+
+      cardIsHorizontal,
+      cardIsCompact,
 
       cardImageIsOverflowed,
       cardImageIsAboveHeader,
@@ -76,25 +86,31 @@ export default class CardPlayground extends React.Component {
 
       cardBodyHTML,
 
+      showDivider,
       cardDividerIsOverflowed,
 
+      showCardActions,
       currentCardAction,
+      currentCardActionSize,
       cardActionOpenNewTab,
       cardActionIsHorizontal,
       cardActionIsText,
+      cardActionButtonsAreDisabled,
     } = this.state;
     const Component = availableComponents[currentComponent];
 
     return (
-      <Component color={selectedColor} skin={selectedSkin}>
-        {/* Remove this h1 when implementing the UI, since it's nor part of the card */}
-        <h1>{currentComponent}</h1>
-
+      <Component
+        color={selectedColor}
+        skin={selectedSkin}
+        isHorizontal={cardIsHorizontal}
+        isCompact={cardIsCompact}
+      >
         {cardImageIsAboveHeader ? (
           <CardImage
             src="/docs/card/card-image.jpg"
             alt="Labcodes offices' view"
-            isOverflowed={cardImageIsOverflowed}
+            isOverflowed={cardIsHorizontal && cardImageIsOverflowed}
           />
         ) : null}
         <CardHeader
@@ -110,44 +126,50 @@ export default class CardPlayground extends React.Component {
           categoryColor={
             cardHeaderCategoryIcon.length ? undefined : cardHeaderCategoryColor
           }
-          isOverlay={cardHeaderIsOverlay}
+          isOverlay={!cardIsHorizontal && cardHeaderIsOverlay}
         />
         {!cardImageIsAboveHeader ? (
           <CardImage
             src="/docs/card/card-image.jpg"
             alt="Labcodes offices' view"
-            isOverflowed={cardImageIsOverflowed}
+            isOverflowed={cardIsHorizontal && cardImageIsOverflowed}
           />
         ) : null}
         <span dangerouslySetInnerHTML={{ __html: cardBodyHTML }} />
 
-        <CardDivider isOverflowed={cardDividerIsOverflowed} />
+        {showDivider ? (
+          <CardDivider isOverflowed={cardDividerIsOverflowed} />
+        ) : null}
 
-        {currentCardAction === "LinkAction" ? (
+        {currentCardAction === "LinkAction" && showCardActions ? (
           <LinkAction
             href={`${window.location.href}&link-action=clicked`}
             onClick={(e) => {
               console.log("LinkAction clicked", e);
             }}
+            size={currentCardActionSize}
             text="Sample Link Action"
             openNewTab={cardActionOpenNewTab}
           />
         ) : null}
 
-        {currentCardAction === "DoubleAction" ? (
+        {currentCardAction === "DoubleAction" && showCardActions ? (
           <DoubleAction
             actionsProps={[
               {
                 text: "Action 1",
                 onClick: (e) => console.log("Action 1 clicked", e),
                 icon: "plus",
+                disabled: cardActionButtonsAreDisabled,
               },
               {
                 text: "Action 2",
                 onClick: (e) => console.log("Action 2 clicked", e),
                 icon: "minus",
+                disabled: cardActionButtonsAreDisabled,
               },
             ]}
+            size={currentCardActionSize}
             isHorizontal={cardActionIsHorizontal}
             isText={cardActionIsText}
           />
@@ -165,6 +187,9 @@ export default class CardPlayground extends React.Component {
       showHeaderConfigs,
       showCardBodyHTML,
 
+      cardIsHorizontal,
+      cardIsCompact,
+
       cardImageIsOverflowed,
       cardImageIsAboveHeader,
 
@@ -178,13 +203,17 @@ export default class CardPlayground extends React.Component {
 
       cardBodyHTML,
 
+      showDivider,
       cardDividerIsOverflowed,
 
       availableCardActions,
+      showCardActions,
       currentCardAction,
+      currentCardActionSize,
       cardActionOpenNewTab,
       cardActionIsHorizontal,
       cardActionIsText,
+      cardActionButtonsAreDisabled,
     } = this.state;
     const {
       props: {
@@ -264,6 +293,26 @@ export default class CardPlayground extends React.Component {
             </span>
           ) : null}
 
+          <span className="lab-playground__item">
+            isHorizontal
+            <br />
+            <Toggle
+              name="cardIsHorizontal"
+              value={cardIsHorizontal}
+              handleToggle={() => this.handleToggleFor("cardIsHorizontal")}
+            />
+          </span>
+
+          <span className="lab-playground__item">
+            isCompact
+            <br />
+            <Toggle
+              name="cardIsCompact"
+              value={cardIsCompact}
+              handleToggle={() => this.handleToggleFor("cardIsCompact")}
+            />
+          </span>
+
           <span className="lab-playground__item" style={{ width: "100%" }}>
             <label htmlFor="cardBodyHTML">
               <span
@@ -293,15 +342,19 @@ export default class CardPlayground extends React.Component {
           </span>
 
           <h6>CardImage</h6>
-          <span className="lab-playground__item">
-            isOverflowed
-            <br />
-            <Toggle
-              name="cardImageIsOverflowed"
-              value={cardImageIsOverflowed}
-              handleToggle={() => this.handleToggleFor("cardImageIsOverflowed")}
-            />
-          </span>
+          {cardIsHorizontal ? (
+            <span className="lab-playground__item">
+              isOverflowed
+              <br />
+              <Toggle
+                name="cardImageIsOverflowed"
+                value={cardImageIsOverflowed}
+                handleToggle={() =>
+                  this.handleToggleFor("cardImageIsOverflowed")
+                }
+              />
+            </span>
+          ) : null}
 
           <span className="lab-playground__item">
             Show it above the CardHeader
@@ -408,6 +461,16 @@ export default class CardPlayground extends React.Component {
             />
           </span>
 
+          <span className="lab-playground__item">
+            Show divider
+            <br />
+            <Toggle
+              name="showDivider"
+              value={showDivider}
+              handleToggle={() => this.handleToggleFor("showDivider")}
+            />
+          </span>
+
           <h6>CardAction</h6>
           <span className="lab-playground__item">
             <label htmlFor="currentCardAction">
@@ -427,6 +490,32 @@ export default class CardPlayground extends React.Component {
             </label>
           </span>
 
+          <span className="lab-playground__item">
+            <label htmlFor="currentCardActionSize">
+              size
+              <br />
+              <select
+                name="currentCardActionSize"
+                value={currentCardActionSize}
+                onChange={this.handleInputChange}
+              >
+                <option value="small">small</option>
+                <option value="normal">normal</option>
+                <option value="large">large</option>
+              </select>
+            </label>
+          </span>
+
+          <span className="lab-playground__item">
+            Show Card Actions
+            <br />
+            <Toggle
+              name="showCardActions"
+              value={showCardActions}
+              handleToggle={() => this.handleToggleFor("showCardActions")}
+            />
+          </span>
+
           {currentCardAction === "LinkAction" ? (
             <span className="lab-playground__item">
               openNewTab
@@ -443,9 +532,7 @@ export default class CardPlayground extends React.Component {
 
           {currentCardAction === "DoubleAction" ? (
             <React.Fragment>
-              <span
-                className="lab-playground__item"
-              >
+              <span className="lab-playground__item">
                 isHorizontal
                 <br />
                 <Toggle
@@ -456,20 +543,26 @@ export default class CardPlayground extends React.Component {
                   }
                 />
               </span>
-              <span
-                className="lab-playground__item"
-              >
+              <span className="lab-playground__item">
                 isText
                 <br />
                 <Toggle
                   name="cardActionIsText"
                   value={cardActionIsText}
+                  handleToggle={() => this.handleToggleFor("cardActionIsText")}
+                />
+              </span>
+              <span className="lab-playground__item">
+                Disable buttons
+                <br />
+                <Toggle
+                  name="cardActionButtonsAreDisabled"
+                  value={cardActionButtonsAreDisabled}
                   handleToggle={() =>
-                    this.handleToggleFor("cardActionIsText")
+                    this.handleToggleFor("cardActionButtonsAreDisabled")
                   }
                 />
               </span>
-
             </React.Fragment>
           ) : null}
         </div>
