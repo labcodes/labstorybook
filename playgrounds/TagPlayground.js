@@ -1,6 +1,9 @@
 import React from "react";
 import { isEmpty } from "lodash";
 
+import TextInput from "../labsystem/src/Input/TextInput";
+import Checkbox from "../labsystem/src/Checkbox";
+
 import {
   SimpleTag,
   TogglableTag,
@@ -125,9 +128,6 @@ export default class TagPlayground extends React.Component {
 
     return (
       <>
-        <h4>
-          <strong>{currentComponent}</strong>
-        </h4>
         {removableTagIsOn ? (
           <Component
             text={selectedText}
@@ -151,6 +151,7 @@ export default class TagPlayground extends React.Component {
     const {
       availableComponents,
       currentComponent,
+      selectedText,
       selectedIcon,
       selectedThumbSrc,
       isIconInputDisabled,
@@ -164,7 +165,7 @@ export default class TagPlayground extends React.Component {
         </div>
 
         <div className="column lab-playground__configs">
-          <h4>Configurations</h4>
+          <h3>Prop Settings</h3>
 
           <span className="lab-playground__item">
             <label htmlFor="currentComponent">
@@ -178,19 +179,15 @@ export default class TagPlayground extends React.Component {
               </select>
             </label>
           </span>
-          <br />
 
           <span className="lab-playground__item">
-            <label htmlFor="selectedText">
-              <strong>text: </strong>
-              <input
-                id="selectedText"
-                onChange={this.handleTextPropChange}
-                placeholder="Insert text"
-              />
-            </label>
+            <TextInput
+              label="Text"
+              id="selectedText"
+              value={selectedText}
+              onChange={this.handleTextPropChange}
+            />
           </span>
-          <br />
 
           <span className="lab-playground__item">
             <label htmlFor="selectedColor">
@@ -222,29 +219,23 @@ export default class TagPlayground extends React.Component {
           <br />
 
           <span className="lab-playground__item">
-            <label htmlFor="selectedIsDisabled">
-              <strong>disabled: </strong>
-              <input
+            <fieldset>
+              <Checkbox
                 id="selectedIsDisabled"
-                type="checkbox"
+                label="Disabled"
+                name="disabled"
                 onChange={this.handleBoolPropChange}
               />
-            </label>
-          </span>
-
-          {currentComponent !== "TogglableTag" ? (
-            <span className="lab-playground__item">
-              <label htmlFor="selectedIsOutline">
-                <strong>isOutline: </strong>
-                <input
+              {currentComponent !== "TogglableTag" ? (
+                <Checkbox
                   id="selectedIsOutline"
-                  type="checkbox"
+                  label="isOutline"
+                  name="isOutline"
                   onChange={this.handleBoolPropChange}
                 />
-              </label>
-            </span>
-          ) : null}
-          <br />
+              ) : null}
+            </fieldset>
+          </span>
 
           {currentComponent !== "TogglableTag" ? (
             <span className="lab-playground__item">
