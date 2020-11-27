@@ -10,6 +10,9 @@ export default class AbstractTag extends React.Component {
     skin: PropTypes.string,
     color: PropTypes.string,
     onClick: PropTypes.func,
+    onFocus: PropTypes.func,
+    onBlur: PropTypes.func,
+    onKeyUp: PropTypes.func,
     renderPrefix: PropTypes.object,
     renderSuffix: PropTypes.object,
     className: PropTypes.string,
@@ -22,6 +25,9 @@ export default class AbstractTag extends React.Component {
     color: "",
     disabled: false,
     onClick: undefined,
+    onFocus: () => {},
+    onBlur: () => {},
+    onKeyUp: () => {},
     renderPrefix: undefined,
     renderSuffix: undefined,
     className: "",
@@ -49,6 +55,9 @@ export default class AbstractTag extends React.Component {
       renderSuffix,
       className,
       tabIndex,
+      onFocus,
+      onBlur,
+      onKeyUp,
     } = this.props;
 
     return (
@@ -60,6 +69,9 @@ export default class AbstractTag extends React.Component {
           `${color ? ` lab-tag--${color}-${skin}` : ` lab-tag--${skin}`}`
         }
         onClick={this.handleEvent}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        onKeyUp={onKeyUp}
         onKeyPress={this.handleEvent}
         role="presentation"
         // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
