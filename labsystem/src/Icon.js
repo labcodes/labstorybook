@@ -21,7 +21,7 @@ export default class Icon extends React.Component {
       "track",
       "key",
       "logout",
-      "lupe",
+      "magnifying-glass",
       "minus",
       "plus",
       "reload",

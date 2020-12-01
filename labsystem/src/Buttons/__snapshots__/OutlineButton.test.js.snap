@@ -22,16 +22,16 @@ exports[`OutlineButton renders as expected when passing a light skin 1`] = `
 </button>
 `;
 
-exports[`OutlineButton renders as expected when passing a lupe icon 1`] = `
+exports[`OutlineButton renders as expected when passing a magnifying-glass icon 1`] = `
 <button
   className="lab-btn lab-btn--outline lab-btn--normal"
   onClick={[Function]}
   type="button"
 >
   <span
-    className="lab-icon lab-icon--lupe lab-icon--white lab-icon--petit lab-btn__icon"
+    className="lab-icon lab-icon--magnifying-glass lab-icon--white lab-icon--petit lab-btn__icon"
   />
-  Test Outline Lupe Button
+  Test Outline magnifying-glass Button
 </button>
 `;
 
