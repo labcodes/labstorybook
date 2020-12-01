@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 
 import Icon from '../labsystem/src/Icon';
 import Badge from '../labsystem/src/Badge';
@@ -25,32 +25,32 @@ Icons can be used as shown in the examples below:
 
 ### Arrow Left - Sizes
 
-<Preview>
+<Canvas>
   <Story name="Sample Icon - Sizes">
     <Icon type='arrow-left' color="teal-40" />
     <Icon type='arrow-left' color="teal-40" size="petit" />
     <Icon type='arrow-left' color="teal-40" size="small" />
   </Story>
-</Preview>
+</Canvas>
 
 ## Sample Badges
 Badges can be used as shown in the examples below:
 
 ### Harvest - Wrapper Colors
 
-<Preview>
+<Canvas>
   <Story name="Sample Badge - Wrapper Colors">
     <Badge type='harvest' wrapperColor="teal-40" color="white" />
     <Badge type='harvest' wrapperColor="purple-40" color="white" />
     <Badge type='harvest' color="mineral-40" wrapperColor="mineral-10" />
   </Story>
-</Preview>
+</Canvas>
 
 ## Icon Colors
 All the available Icons are shown below. You can use them with all the colors available on the design system.
 
 ### Icon - Teal
-<Preview>
+<Canvas>
   <Story name="Icon Teal">
     <Fragment>
       <Icon type='arrow-left' color="teal-40"/>
@@ -94,10 +94,10 @@ All the available Icons are shown below. You can use them with all the colors av
       <Icon type='workspace' color="teal-40" />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ### Icon - Purple
-<Preview>
+<Canvas>
   <Story name="Icon Mineral 70">
     <Fragment>
       <Icon type='arrow-left' color="purple-60"/>
@@ -141,7 +141,7 @@ All the available Icons are shown below. You can use them with all the colors av
       <Icon type='workspace' color="purple-60" />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Badge Colors
 
@@ -149,7 +149,7 @@ All the available Badges are shown below. You can use all the colors available o
 
 
 ### Badge - Teal
-<Preview>
+<Canvas>
   <Story name="Badge Teal">
     <Fragment>
       <Badge type='harvest' wrapperColor="teal-40" color="white"/>
@@ -160,10 +160,10 @@ All the available Badges are shown below. You can use all the colors available o
       <Badge type='floating-add' wrapperColor="teal-40" color="white"/>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ### Badge - Purple
-<Preview>
+<Canvas>
   <Story name="Badge Mineral 70">
     <Fragment>
       <Badge type='harvest' wrapperColor="purple-60" color="white"/>
@@ -174,10 +174,10 @@ All the available Badges are shown below. You can use all the colors available o
       <Badge type='floating-add' wrapperColor="purple-60" color="white"/>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ### Badge - Mineral 20
-<Preview>
+<Canvas>
   <Story name="Badge Mineral 20">
     <Fragment>
       <Badge type='harvest' color="mineral-30" wrapperColor="mineral-10" />
@@ -188,15 +188,15 @@ All the available Badges are shown below. You can use all the colors available o
       <Badge type='floating-add' color="mineral-30" wrapperColor="mineral-10" />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Prop API docs
 
 Here's the list of props based on the component's prop types definitions.
 ### Icon
-<Props of={Icon} />
+<ArgsTable of={Icon} />
 
 ### Badge
-<Props of={Badge} />
+<ArgsTable of={Badge} />
 
 </div>

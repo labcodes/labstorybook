@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 
 import NarrowSidebar from '../labsystem/src/Sidebar';
 import Header from '../labsystem/src/Sidebar/Header';
@@ -147,32 +147,32 @@ import NarrowSidebarPlayground from '../playgrounds/NarrowSidebarPlayground';
   Here's the list of props based on the components' prop types definitions.
 
   ### NarrowSidebar
-  <Props of={NarrowSidebar} />
+  <ArgsTable of={NarrowSidebar} />
 
 
   ### Header
-  <Props of={Header}/>
+  <ArgsTable of={Header}/>
 
   ### Body
-  <Props of={Body}/>
+  <ArgsTable of={Body}/>
 
   ### Footer
-  <Props of={Footer}/>
+  <ArgsTable of={Footer}/>
 
   ### FooterButton
-  <Props of={FooterButton}/>
+  <ArgsTable of={FooterButton}/>
 
   ### UserAvatar
-  <Props of={UserAvatar}/>
+  <ArgsTable of={UserAvatar}/>
 
   ### Logotype
-  <Props of={Logotype}/>
+  <ArgsTable of={Logotype}/>
 
   ### CollapseButton
-  <Props of={CollapseButton}/>
+  <ArgsTable of={CollapseButton}/>
 
   ### Item
-  <Props of={Item}/>
+  <ArgsTable of={Item}/>
 
 </div>
 
@@ -181,7 +181,7 @@ import NarrowSidebarPlayground from '../playgrounds/NarrowSidebarPlayground';
   <h2>Pale Sidebar</h2>
   <p>Default Narrow Sidebar has Pale Skin that has three different colors option - teal, purple and mineral. What defines what color must be chosen is the application theme.</p>
 
-  <Preview>
+  <Canvas>
     <Story name="Pale Sidebar">
       <Fragment>
         <div className="lab-narrow-sidebar--stories">
@@ -261,12 +261,12 @@ import NarrowSidebarPlayground from '../playgrounds/NarrowSidebarPlayground';
         </div>
       </Fragment>
     </Story>
-  </Preview>
+  </Canvas>
 
   <h2>Vivid Sidebar</h2>
   <p>Default narrow sidebar vivid skin that has four different colors option - teal, purple, coral and mineral. What defines what color must be chosen is the application theme.</p>
 
-  <Preview>
+  <Canvas>
     <Story name="Vivid Sidebar">
       <Fragment>
           <div className="lab-narrow-sidebar--stories lab-narrow-sidebar--stories-vivid-teal">
@@ -371,7 +371,7 @@ import NarrowSidebarPlayground from '../playgrounds/NarrowSidebarPlayground';
         </div>
       </Fragment>
     </Story>
-  </Preview>
+  </Canvas>
 
 </div>
 
@@ -379,13 +379,13 @@ import NarrowSidebarPlayground from '../playgrounds/NarrowSidebarPlayground';
 
 <h2>Narrow Sidebar Playground</h2>
 
-<Preview>
+<Canvas>
   <Story name="Sidebar\'s Playground">
     <Fragment>
       <NarrowSidebarPlayground />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 </div>
 
