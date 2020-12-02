@@ -15,7 +15,7 @@ export default class Toggle extends React.Component {
   static defaultProps = {
     color: "teal",
     disabled: false,
-    defaultValue: false,
+    defaultValue: undefined,
     value: undefined,
     handleToggle: undefined,
   };
@@ -30,7 +30,7 @@ export default class Toggle extends React.Component {
       );
     }
     this.state = {
-      localValue: defaultValue,
+      localValue: !isUndefined(defaultValue) ? defaultValue : false,
     };
   }
 
