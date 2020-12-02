@@ -1,10 +1,10 @@
 import React from "react";
-import PropTypes, { oneOf } from "prop-types";
+import PropTypes from "prop-types";
 import { isUndefined } from "lodash";
 
 export default class Toggle extends React.Component {
   static propTypes = {
-    color: oneOf(["teal", "purple"]),
+    color: PropTypes.oneOf(["teal", "purple"]),
     disabled: PropTypes.bool,
     defaultValue: PropTypes.bool,
     value: PropTypes.bool,
