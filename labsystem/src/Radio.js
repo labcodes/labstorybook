@@ -23,7 +23,7 @@ export default class Radio extends React.Component {
     checked: undefined,
     defaultChecked: undefined,
     className: undefined,
-    onChange: undefined,
+    onChange: () => {},
   };
 
   constructor(props) {

@@ -41,8 +41,8 @@ export default class AbstractTextInput extends React.Component {
     suffix: undefined,
     isValid: undefined,
     customErrorMsg: undefined,
-    onChange: undefined,
-    onIconClick: undefined,
+    onChange: () => {},
+    onIconClick: () => {},
     placeholder: " ", // acrescentei pra poder colocar placeholder no search//
     children: undefined,
   };
@@ -129,17 +129,13 @@ export default class AbstractTextInput extends React.Component {
   };
 
   handleOnChange = (e) => {
-    const { onChange, isValid, customErrorMsg, required } = this.props;
+    const { isValid, customErrorMsg, required } = this.props;
     const inputElement = e.target;
     const inputElementValue = inputElement.value;
     const inputElementIsValid = inputElement.validity.valid;
 
     // First we reset the custom validity
     inputElement.setCustomValidity("");
-
-    if (!isUndefined(onChange)) {
-      onChange(e);
-    }
 
     // Then we set the state with the new value
     this.setState({ localValue: inputElementValue }, () => {
@@ -264,7 +260,7 @@ TrailingIcon.propTypes = {
 TrailingIcon.defaultProps = {
   icon: undefined,
   iconColor: undefined,
-  onIconClick: undefined,
+  onIconClick: () => {},
 };
 
 function TextInputMessage(props) {

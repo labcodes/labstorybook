@@ -26,7 +26,7 @@ export default class Button extends React.Component {
     icon: undefined,
     size: "normal",
     disabled: false,
-    onClick: undefined,
+    onClick: () => {},
     fullWidth: false,
   };
 

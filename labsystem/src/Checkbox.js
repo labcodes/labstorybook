@@ -27,7 +27,7 @@ export default class Checkbox extends React.Component {
     indeterminate: false,
     defaultChecked: undefined,
     className: undefined,
-    onChange: undefined,
+    onChange: () => {},
   };
 
   constructor(props) {
