@@ -30,7 +30,17 @@ export default class DialogPlayground extends React.Component {
       selectedButtonResponseText: "Button has been clicked!",
       selectedOutlineButtonResponseText: "OutlineButton has been clicked!",
       modalIsOpen: false,
+      windowIsSmall: undefined,
     };
+  }
+
+  componentDidMount() {
+    window.addEventListener("resize", this.handleResize);
+    this.handleResize();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleResize, false);
   }
 
   handleCurrentComponentChange = (e) => {
@@ -64,6 +74,10 @@ export default class DialogPlayground extends React.Component {
 
   handleModalClose = () => {
     this.setState({ modalIsOpen: false });
+  };
+
+  handleResize = () => {
+    this.setState({ windowIsSmall: window.outerWidth < 600 });
   };
 
   renderCurrentComponent = () => {
@@ -122,6 +136,7 @@ export default class DialogPlayground extends React.Component {
       selectedButtonText,
       selectedOutlineButtonText,
       selectedIsModal,
+      windowIsSmall,
     } = this.state;
 
     return (
@@ -195,15 +210,20 @@ export default class DialogPlayground extends React.Component {
           </span>
           <br />
 
-          <span className="lab-playground__item">
-            <Checkbox
-              id="selectedIsModal"
-              onChange={this.handleBoolPropChange}
-              checked={selectedIsModal}
-              label="isModal"
-            />
-          </span>
-          <br />
+          {!windowIsSmall ? (
+            <>
+              <span className="lab-playground__item">
+                <Checkbox
+                  name="selectedIsModal"
+                  id="selectedIsModal"
+                  onChange={this.handleBoolPropChange}
+                  checked={selectedIsModal}
+                  label="isModal"
+                />
+              </span>
+              <br />
+            </>
+          ) : null}
 
           {currentComponent === "MessageDialog" ? (
             <span className="lab-playground__item">

@@ -36,22 +36,36 @@ export default class StandardDialog extends React.Component {
 
     this.state = {
       swipeStartYCoordinate: undefined,
+      windowIsSmall: undefined,
     };
   }
 
   componentDidMount() {
     document.addEventListener("keydown", this.handleKeyDown, false);
+    window.addEventListener("resize", this.handleResize);
+    this.handleResize();
+    this.hideOverflow(this.checkHideOverflow());
   }
 
   componentDidUpdate() {
-    const { isOpen, isModal } = this.props;
-    document.body.style.overflow = isOpen && isModal ? "hidden" : "unset";
+    this.hideOverflow(this.checkHideOverflow());
   }
 
   componentWillUnmount() {
     document.removeEventListener("keydown", this.handleKeyDown, false);
+    window.removeEventListener("resize", this.handleResize, false);
     document.body.style.overflow = "unset";
   }
+
+  checkHideOverflow = () => {
+    const { isOpen, isModal } = this.props;
+    const { windowIsSmall } = this.state;
+    return isOpen && (isModal || windowIsSmall);
+  };
+
+  hideOverflow = (shouldHideOverflow) => {
+    document.body.style.overflow = shouldHideOverflow ? "hidden" : "unset";
+  };
 
   handleKeyDown = (event) => {
     const { handleClose } = this.props;
@@ -75,6 +89,10 @@ export default class StandardDialog extends React.Component {
     }
   };
 
+  handleResize = () => {
+    this.setState({ windowIsSmall: window.outerWidth < 600 });
+  };
+
   render() {
     const {
       title,
@@ -86,11 +104,12 @@ export default class StandardDialog extends React.Component {
       handleClose,
       isModal,
     } = this.props;
+    const { windowIsSmall } = this.state;
 
     if (!isOpen) return null;
     return (
       <React.Fragment>
-        {isModal ? (
+        {isModal || windowIsSmall ? (
           <div
             className="lab-dialog-overlay"
             onClick={handleClose}
