@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Toggle renders as expected when passing a different theme 1`] = `
+exports[`Toggle renders as expected when passing a different color 1`] = `
 <label
   className="
           lab-toggle
-          lab-toggle--teal
+          lab-toggle--purple
            lab-toggle--disabled
         "
   htmlFor="test-toggle"
