@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
 
 import { StandardDialog, MessageDialog } from "../labsystem/src/Dialog";
 import DialogPlayground from "../playgrounds/DialogPlayground";
@@ -19,13 +19,13 @@ import { iconOptions } from "../playgrounds/assets";
 
   ### Playground
 
-  <Preview>
+  <Canvas>
     <Story name="InteractiveDialogDemo">
       <Fragment>
         <DialogPlayground />
       </Fragment>
     </Story>
-  </Preview>
+  </Canvas>
 
-  <Props of={StandardDialog} />
+  <ArgsTable of={StandardDialog} />
 </nav>

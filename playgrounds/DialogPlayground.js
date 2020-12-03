@@ -77,7 +77,7 @@ export default class DialogPlayground extends React.Component {
   };
 
   handleResize = () => {
-    this.setState({ windowIsSmall: window.outerWidth < 600 });
+    this.setState({ windowIsSmall: window.outerWidth <= 768 });
   };
 
   renderCurrentComponent = () => {
@@ -137,6 +137,7 @@ export default class DialogPlayground extends React.Component {
       selectedOutlineButtonText,
       selectedIsModal,
       windowIsSmall,
+      modalIsOpen,
     } = this.state;
 
     return (
@@ -219,6 +220,7 @@ export default class DialogPlayground extends React.Component {
                   onChange={this.handleBoolPropChange}
                   checked={selectedIsModal}
                   label="isModal"
+                  disabled={modalIsOpen}
                 />
               </span>
               <br />

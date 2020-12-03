@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import FocusTrap from "focus-trap-react";
+import DialogWrapper from "./DialogWrapper";
 import { Button, OutlineButton } from "../Buttons";
 import Icon from "../Icon";
 
@@ -43,14 +43,8 @@ export default class MessageDialog extends React.Component {
     document.addEventListener("keydown", this.handleKeyDown, false);
   }
 
-  componentDidUpdate() {
-    const { isOpen, isModal } = this.props;
-    document.body.style.overflow = isOpen && isModal ? "hidden" : "unset";
-  }
-
   componentWillUnmount() {
     document.removeEventListener("keydown", this.handleKeyDown, false);
-    document.body.style.overflow = "unset";
   }
 
   handleKeyDown = (event) => {
@@ -90,68 +84,63 @@ export default class MessageDialog extends React.Component {
 
     if (!isOpen) return null;
     return (
-      <React.Fragment>
-        {isModal ? (
-          <div
-            className="lab-dialog-overlay"
+      <DialogWrapper
+        handleClose={handleClose}
+        isOpen={isOpen}
+        isModal={isModal}
+      >
+        <div
+          className={
+            `lab-dialog lab-dialog--message` +
+            `${isLarge ? ` lab-dialog--large` : ""}`
+          }
+          role="dialog"
+          aria-modal="true"
+        >
+          <button
+            type="button"
+            className="lab-dialog__mobile-close-button"
             onClick={handleClose}
-            role="presentation"
-          />
-        ) : null}
-        <FocusTrap focusTrapOptions={{ allowOutsideClick: true }}>
-          <div
-            className={
-              `lab-dialog lab-dialog--message` +
-              `${isLarge ? ` lab-dialog--large` : ""}`
-            }
-            role="dialog"
-            aria-modal="true"
+            onTouchStart={this.handleTouchStart}
+            onTouchEnd={this.handleTouchEnd}
           >
+            <Icon type="collapse-open" size="petit" />
+          </button>
+          <div className="lab-dialog__header lab-dialog__header--message">
             <button
+              className="lab-dialog__close-button"
               type="button"
-              className="lab-dialog__mobile-close-button"
               onClick={handleClose}
-              onTouchStart={this.handleTouchStart}
-              onTouchEnd={this.handleTouchEnd}
             >
-              <Icon type="collapse-open" size="petit" />
+              <Icon type="remove" />
             </button>
-            <div className="lab-dialog__header lab-dialog__header--message">
-              <button
-                className="lab-dialog__close-button"
-                type="button"
-                onClick={handleClose}
-              >
-                <Icon type="remove" />
-              </button>
-            </div>
-
-            <div className="lab-dialog__icon">
-              <Icon type={icon} color="black-75" />
-            </div>
-
-            <div className="lab-dialog__title--message">{title}</div>
-
-            <div className="lab-dialog__content--message">{content}</div>
-
-            <div className="lab-dialog__footer">
-              {outlineButtonProps ? (
-                <OutlineButton
-                  size="normal"
-                  text={outlineButtonProps.text}
-                  onClick={outlineButtonProps.onClick}
-                />
-              ) : undefined}
-              <Button
-                size="normal"
-                {...(outlineButtonProps ? undefined : { fullWidth: true })}
-                text={buttonProps.text}
-                onClick={buttonProps.onClick}
-              />
-            </div>
           </div>
-        </FocusTrap>
-      </React.Fragment>
+
+          <div className="lab-dialog__icon">
+            <Icon type={icon} color="black-75" />
+          </div>
+
+          <div className="lab-dialog__title--message">{title}</div>
+
+          <div className="lab-dialog__content--message">{content}</div>
+
+          <div className="lab-dialog__footer">
+            {outlineButtonProps ? (
+              <OutlineButton
+                size="normal"
+                text={outlineButtonProps.text}
+                onClick={outlineButtonProps.onClick}
+              />
+            ) : undefined}
+            <Button
+              size="normal"
+              {...(outlineButtonProps ? undefined : { fullWidth: true })}
+              text={buttonProps.text}
+              onClick={buttonProps.onClick}
+            />
+          </div>
+        </div>
+      </DialogWrapper>
     );
   }
 }
