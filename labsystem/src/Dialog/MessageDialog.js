@@ -120,9 +120,13 @@ export default class MessageDialog extends React.Component {
             <Icon type={icon} color="black-75" />
           </div>
 
-          <div className="lab-dialog__title--message">{title}</div>
+          <div className="lab-dialog__title lab-dialog__title--message">
+            {title}
+          </div>
 
-          <div className="lab-dialog__content--message">{content}</div>
+          <div className="lab-dialog__content lab-dialog__content--message">
+            {content}
+          </div>
 
           <div className="lab-dialog__footer">
             {outlineButtonProps ? (
