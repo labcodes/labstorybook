@@ -48,23 +48,19 @@ export default class DialogWrapper extends React.Component {
   render() {
     const { handleClose, children } = this.props;
     const { shouldToggleOverflow } = this.state;
-    return (
+    return shouldToggleOverflow ? (
       <React.Fragment>
-        {shouldToggleOverflow ? (
-          <React.Fragment>
-            <div
-              className="lab-dialog-overlay"
-              onClick={handleClose}
-              role="presentation"
-            />
-            <FocusTrap focusTrapOptions={{ allowOutsideClick: true }}>
-              {children}
-            </FocusTrap>
-          </React.Fragment>
-        ) : (
-          <React.Fragment>{children}</React.Fragment>
-        )}
+        <div
+          className="lab-dialog-overlay"
+          onClick={handleClose}
+          role="presentation"
+        />
+        <FocusTrap focusTrapOptions={{ allowOutsideClick: true }}>
+          {children}
+        </FocusTrap>
       </React.Fragment>
+    ) : (
+      <React.Fragment>{children}</React.Fragment>
     );
   }
 }
