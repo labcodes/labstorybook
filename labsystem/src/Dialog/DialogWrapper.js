@@ -21,6 +21,7 @@ export default class DialogWrapper extends React.Component {
 
   componentDidMount() {
     window.addEventListener("resize", this.handleResize);
+    this.handleOverflow();
   }
 
   componentDidUpdate() {
