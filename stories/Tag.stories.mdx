@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
 
 import { SimpleTag, TogglableTag, RemovableTag, DropdownTag } from "../labsystem/src/Tags";
 import TagPlayground from "../playgrounds/TagPlayground";
@@ -26,7 +26,7 @@ import { thumbSrcOptions, iconOptions } from "../playgrounds/assets";
   <h2>General usage</h2>
   <div class="columns">
     <div class="column">
-      <p>A tag is a compact component that represents an input entity, element attribute or action. It is used to bring attention to a relevant information in a compact and discrete format.</p> 
+      <p>A tag is a compact component that represents an input entity, element attribute or action. It is used to bring attention to a relevant information in a compact and discrete format.</p>
       <p><strong>There are 4 types of tags. Tags can have 2 different styles of multiple colors. Each style might have 2 distinct shades.</strong></p>
     </div>
     <div class="column">
@@ -104,13 +104,13 @@ import { thumbSrcOptions, iconOptions } from "../playgrounds/assets";
 
 ### Playground
 
-  <Preview>
+  <Canvas>
     <Story name="InteractiveTagDemo">
       <Fragment>
         <TagPlayground />
       </Fragment>
     </Story>
-  </Preview>
+  </Canvas>
 
 ## Style
 
@@ -119,7 +119,7 @@ Tags have two styles settings. Use `outline` to use borders instead of a filled 
 ##### Default tag style
 If no color setting is used, the tag will be displayed with a mineral fill background using `skin="pale"`.
 
-<Preview>
+<Canvas>
   <Story name="Fill sample">
     <Fragment>
       <SimpleTag text="Simple tag" />
@@ -131,12 +131,12 @@ If no color setting is used, the tag will be displayed with a mineral fill backg
       <RemovableTag text="Removable" />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ##### Outline
 Using `outline` will display a tag with white background and 2px border.
 
-<Preview>
+<Canvas>
   <Story name="Outline sample">
     <Fragment>
       <SimpleTag isOutline text="Simple tag" />
@@ -148,12 +148,12 @@ Using `outline` will display a tag with white background and 2px border.
       <RemovableTag isOutline text="Removable" />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ##### Skin
 Using `skin="vivid"` will display a tag with more vivid colors either for fill or outline tags. Togglable tags cannot receive this prop.
 
-<Preview>
+<Canvas>
   <Story name="Skin sample">
     <Fragment>
       <SimpleTag skin="vivid" text="Simple tag" />
@@ -169,7 +169,7 @@ Using `skin="vivid"` will display a tag with more vivid colors either for fill o
       <RemovableTag isOutline skin="vivid" text="Removable" />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ##### Disabled
 This prop is used if a tag action is disabled. Therefore, Simple Tags cannot receive this prop.
@@ -178,7 +178,7 @@ All disabled styles remain the same regardless of any property other than `outli
 
 ###### Default
 
-<Preview>
+<Canvas>
   <Story name="Disabled sample">
     <Fragment>
       <TogglableTag disabled text="Togglable" />
@@ -187,11 +187,11 @@ All disabled styles remain the same regardless of any property other than `outli
       <RemovableTag disabled text="Removable" />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ###### Outline
 
-<Preview>
+<Canvas>
   <Story name="Disabled outline sample">
     <Fragment>
       <TogglableTag disabled isOutline text="Togglable" />
@@ -200,7 +200,7 @@ All disabled styles remain the same regardless of any property other than `outli
       <RemovableTag disabled isOutline text="Removable" />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Color
 The `color` prop can be set to any tag.
@@ -212,7 +212,7 @@ All disabled styles remains unchanged regardless of any value used.
 
 ###### Teal
 
-<Preview>
+<Canvas>
   <Story name="Teal Theme Sample">
     <Fragment>
       <TogglableTag color="teal" text="Togglable" />
@@ -235,7 +235,7 @@ All disabled styles remains unchanged regardless of any value used.
       <SimpleTag isOutline color="teal" text="Simple tag" />
       <SimpleTag isOutline color="teal" text="Simple tag" icon="calendar"  />
       <SimpleTag isOutline color="teal" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
-      <br /> 
+      <br />
       <TogglableTag isOutline color="teal" text="Togglable" isOn/>
       <DropdownTag isOutline color="teal" skin="vivid" text="Dropdown" icon="calendar" />
       <RemovableTag isOutline color="teal" skin="vivid" text="Removable" />
@@ -244,11 +244,11 @@ All disabled styles remains unchanged regardless of any value used.
       <SimpleTag isOutline color="teal" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ###### Purple
 
-<Preview>
+<Canvas>
   <Story name="Purple Theme Sample">
     <Fragment>
       <TogglableTag color="purple" text="Togglable" />
@@ -271,7 +271,7 @@ All disabled styles remains unchanged regardless of any value used.
       <SimpleTag isOutline color="purple" text="Simple tag" />
       <SimpleTag isOutline color="purple" text="Simple tag" icon={iconOptions[4]} />
       <SimpleTag isOutline color="purple" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
-      <br /> 
+      <br />
       <TogglableTag isOutline color="purple" text="Togglable" isOn />
       <DropdownTag isOutline color="purple" skin="vivid" text="Dropdown" icon="calendar"  />
       <RemovableTag isOutline color="purple" skin="vivid" text="Removable" />
@@ -280,7 +280,7 @@ All disabled styles remains unchanged regardless of any value used.
       <SimpleTag isOutline color="purple" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ##### Other colors
 The `color` prop also supports the values `green`, `red`, `yellow`, `cyan`, `orange`, and `pink`.
@@ -289,7 +289,7 @@ All disabled styles remains unchanged regardless of any value used.
 
 ###### Green
 
-<Preview>
+<Canvas>
   <Story name="Green Theme Sample">
     <Fragment>
       <TogglableTag color="green" text="Togglable" />
@@ -312,7 +312,7 @@ All disabled styles remains unchanged regardless of any value used.
       <SimpleTag isOutline color="green" text="Simple tag" />
       <SimpleTag isOutline color="green" text="Simple tag" icon={iconOptions[5]} />
       <SimpleTag isOutline color="green" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
-      <br /> 
+      <br />
       <TogglableTag isOutline color="green" text="Togglable" isOn />
       <DropdownTag isOutline color="green" skin="vivid" text="Dropdown" icon="calendar"  />
       <RemovableTag isOutline color="green" skin="vivid" text="Removable" />
@@ -321,11 +321,11 @@ All disabled styles remains unchanged regardless of any value used.
       <SimpleTag isOutline color="green" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ###### Red
 
-<Preview>
+<Canvas>
   <Story name="Red Theme Sample">
     <Fragment>
       <TogglableTag color="red" text="Togglable" />
@@ -348,7 +348,7 @@ All disabled styles remains unchanged regardless of any value used.
       <SimpleTag isOutline color="red" text="Simple tag" />
       <SimpleTag isOutline color="red" text="Simple tag" icon={iconOptions[6]} />
       <SimpleTag isOutline color="red" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
-      <br /> 
+      <br />
       <TogglableTag isOutline color="red" text="Togglable" isOn />
       <DropdownTag isOutline color="red" skin="vivid" text="Dropdown" icon="calendar" />
       <RemovableTag isOutline color="red" skin="vivid" text="Removable" />
@@ -357,11 +357,11 @@ All disabled styles remains unchanged regardless of any value used.
       <SimpleTag isOutline color="red" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ###### Yellow
 
-<Preview>
+<Canvas>
   <Story name="Yellow Theme Sample">
     <Fragment>
       <TogglableTag color="yellow" text="Togglable" />
@@ -384,7 +384,7 @@ All disabled styles remains unchanged regardless of any value used.
       <SimpleTag isOutline color="yellow" text="Simple tag" />
       <SimpleTag isOutline color="yellow" text="Simple tag" icon={iconOptions[7]} />
       <SimpleTag isOutline color="yellow" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
-      <br /> 
+      <br />
       <TogglableTag isOutline color="yellow" text="Togglable" isOn />
       <DropdownTag isOutline color="yellow" skin="vivid" text="Dropdown" icon="calendar" />
       <RemovableTag isOutline color="yellow" skin="vivid" text="Removable" />
@@ -393,11 +393,11 @@ All disabled styles remains unchanged regardless of any value used.
       <SimpleTag isOutline color="yellow" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ###### Cyan
 
-<Preview>
+<Canvas>
   <Story name="Cyan Theme Sample">
     <Fragment>
       <TogglableTag color="cyan" text="Togglable" />
@@ -420,7 +420,7 @@ All disabled styles remains unchanged regardless of any value used.
       <SimpleTag isOutline color="cyan" text="Simple tag" />
       <SimpleTag isOutline color="cyan" text="Simple tag" icon={iconOptions[8]} />
       <SimpleTag isOutline color="cyan" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
-      <br /> 
+      <br />
       <TogglableTag isOutline color="cyan" text="Togglable" isOn />
       <DropdownTag isOutline color="cyan" skin="vivid" text="Dropdown" icon="calendar" />
       <RemovableTag isOutline color="cyan" skin="vivid" text="Removable" />
@@ -429,11 +429,11 @@ All disabled styles remains unchanged regardless of any value used.
       <SimpleTag isOutline color="cyan" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ###### Organge
 
-<Preview>
+<Canvas>
   <Story name="Organge Theme Sample">
     <Fragment>
       <TogglableTag color="orange" text="Togglable" />
@@ -456,7 +456,7 @@ All disabled styles remains unchanged regardless of any value used.
       <SimpleTag isOutline color="orange" text="Simple tag" />
       <SimpleTag isOutline color="orange" text="Simple tag" icon={iconOptions[9]} />
       <SimpleTag isOutline color="orange" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
-      <br /> 
+      <br />
       <TogglableTag isOutline color="orange" text="Togglable" isOn />
       <DropdownTag isOutline color="orange" skin="vivid" text="Dropdown" icon="calendar" />
       <RemovableTag isOutline color="orange" skin="vivid" text="Removable" />
@@ -465,11 +465,11 @@ All disabled styles remains unchanged regardless of any value used.
       <SimpleTag isOutline color="orange" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ###### Pink
 
-<Preview>
+<Canvas>
   <Story name="Pink Theme Sample">
     <Fragment>
       <TogglableTag color="pink" text="Togglable" />
@@ -492,7 +492,7 @@ All disabled styles remains unchanged regardless of any value used.
       <SimpleTag isOutline color="pink" text="Simple tag" />
       <SimpleTag isOutline color="pink" text="Simple tag" icon={iconOptions[10]} />
       <SimpleTag isOutline color="pink" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
-      <br /> 
+      <br />
       <TogglableTag isOutline color="pink" text="Togglable" isOn />
       <DropdownTag isOutline color="pink" skin="vivid" text="Dropdown" icon="calendar" />
       <RemovableTag isOutline color="pink" skin="vivid" text="Removable" />
@@ -501,19 +501,19 @@ All disabled styles remains unchanged regardless of any value used.
       <SimpleTag isOutline color="pink" skin="vivid" text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Prop API docs
 
 Here's the list of props based on the component's prop types definitions.
 ### SimpleTag
-<Props of={SimpleTag} />
+<ArgsTable of={SimpleTag} />
 
 ### TogglableTag
-<Props of={TogglableTag} />
+<ArgsTable of={TogglableTag} />
 
 ### RemovableTag
-<Props of={RemovableTag} />
+<ArgsTable of={RemovableTag} />
 
 ### DropdownTag
-<Props of={DropdownTag} />
+<ArgsTable of={DropdownTag} />

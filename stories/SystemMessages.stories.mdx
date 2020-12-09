@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
 
 import Alert from "../labsystem/src/Alert";
 import Banner from "../labsystem/src/Banner";
@@ -81,7 +81,7 @@ import SystemMessagesPlayground from "../playgrounds/SystemMessagesPlayground.js
       <p><strong>Mobile:</strong> the horizontal padding value is fixed and equal the margin size of the used viewport grid.</p>
       <div className="column is-narrow">
         <img src="docs/system-messages/padding-mobile.png" />
-      </div> 
+      </div>
       <div className="column">
         <p className="doc-em-block"><strong>For example:</strong> a small mobile viewport has its margins value set at 16px, so, the banner's horizontal paddings are exaclty 16px.</p>
       </div>
@@ -90,13 +90,13 @@ import SystemMessagesPlayground from "../playgrounds/SystemMessagesPlayground.js
 
   ## Playground
 
-  <Preview>
+  <Canvas>
     <Story name="InteractiveSystemMessagesDemo">
         <Fragment>
           <SystemMessagesPlayground />
         </Fragment>
     </Story>
-  </Preview>
+  </Canvas>
 
   <div>
     <h2>Variations and Screen Sizes</h2>
@@ -135,14 +135,14 @@ import SystemMessagesPlayground from "../playgrounds/SystemMessagesPlayground.js
 
   Use to show administrative related, maintenance and informative status about system or function specific.
 
-  <Preview>
+  <Canvas>
     <Story name="Info Sample">
       <div style={{ height: "250px", overflowY: "scroll" }}>
         <Banner
           type="info"
           text="Scheduled maintenance in our servers tomorrow 5 Mar @ 10AM."
           icon="calendar"
-          buttonProps={{
+          buttonArgsTable={{
             text: "Dismiss",
             onClick: () => alert("Button to DISMISS Banner was clicked!")
           }}
@@ -152,7 +152,7 @@ import SystemMessagesPlayground from "../playgrounds/SystemMessagesPlayground.js
           type="info"
           text="Good news! Now you can add your expenses to your monthly spreadsheet."
           icon="coin"
-          buttonProps={{
+          buttonArgsTable={{
             text: "Dismiss",
             onClick: () => alert("Button to DISMISS Alert was detected!")
           }}
@@ -168,20 +168,20 @@ import SystemMessagesPlayground from "../playgrounds/SystemMessagesPlayground.js
         </p>
       </div>
     </Story>
-  </Preview>
+  </Canvas>
 
   ### Warning
 
   Use to antecipate possible errors, significant changes on the system, indicate system's status or setting that interferes in user actions.
 
-  <Preview>
+  <Canvas>
     <Story name="Warn Sample">
       <div style={{ height: "250px", overflowY: "scroll" }}>
         <Banner
           type="warn"
           text="We couldn't renew your plan. Please check your billing info."
           icon="coin"
-          buttonProps={{
+          buttonArgsTable={{
             text: "Go to billing",
             onClick: () => alert("Button to GO TO BILLING was clicked in Banner!")
           }}
@@ -191,7 +191,7 @@ import SystemMessagesPlayground from "../playgrounds/SystemMessagesPlayground.js
           type="warn"
           text="You need to be signed in to use this feature."
           icon="calendar"
-          buttonProps={{
+          buttonArgsTable={{
             text: "Login",
             onClick: () => alert("Button to LOGIN was clicked in Allert!")
           }}
@@ -207,7 +207,7 @@ import SystemMessagesPlayground from "../playgrounds/SystemMessagesPlayground.js
         </p>
       </div>
     </Story>
-  </Preview>
+  </Canvas>
 
   <p className="doc-em-block">Have empathy to comunicate what you need. Inform but it is not necessary to alarm. Be sure to do not talk about something that has already happened before (repeated warnings are an error).</p>
 
@@ -215,14 +215,14 @@ import SystemMessagesPlayground from "../playgrounds/SystemMessagesPlayground.js
 
   It appears when something goes wrong within the system. It also can represent the next step after a sequence of warnings. Explain the problem and provide the user with a next step or an alternative.
 
-  <Preview>
+  <Canvas>
     <Story name="Error Sample">
       <div style={{ height: "250px", overflowY: "scroll" }}>
         <Banner
           type="error"
           text="Looks like we're having trouble retrieving some information. Please refresh the page."
           icon="reload"
-          buttonProps={{
+          buttonArgsTable={{
             text: "Refresh",
             onClick: () => alert("Button to REFRESH was clicked in Banner!")
           }}
@@ -240,7 +240,7 @@ import SystemMessagesPlayground from "../playgrounds/SystemMessagesPlayground.js
         </p>
       </div>
     </Story>
-  </Preview>
+  </Canvas>
 
   <p className="doc-em-block">Let the user know exactly what's causing the error by being clear and conversational like how you might explain a technical error to your non-technical friends. You can also suggest actions via text in the message element.</p>
 

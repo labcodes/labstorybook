@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 
 import Toggle from '../labsystem/src/Toggle';
 
@@ -25,40 +25,40 @@ The `Toggle` component might receive up to five inputs as props, where the `colo
 Toggle can be used as shown in the example below:
 
 
-<Preview>
+<Canvas>
   <Story name="Sample Toggle">
     <Toggle name="sample-toggle-1" />
   </Story>
-</Preview>
+</Canvas>
 
 ## Toggle themes
 Toggle can be used in the following themes:
 
-<Preview>
+<Canvas>
   <Story name="Sample Toggle Themes">
     <Fragment>
       <Toggle name="sample-toggle-teal" color="teal"/><br /><br />
       <Toggle name="sample-toggle-purple" color="purple" defaultValue={true} /><br /><br />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Toggle Disabled
 Togge can be disabled and, at the same time receive, a `defaultValue`:
 
-<Preview>
+<Canvas>
   <Story name="Sample Toggle Disabled">
     <Fragment>
       <Toggle name="sample-toggle-disabled-off" disabled /><br /><br />
       <Toggle name="sample-toggle-disabled-on" disabled defaultValue={true} />
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Prop API docs
 
 Here's the list of props based on the component's prop types definitions.
 ### Toggle
-<Props of={Toggle} />
+<ArgsTable of={Toggle} />
 
 </div>
