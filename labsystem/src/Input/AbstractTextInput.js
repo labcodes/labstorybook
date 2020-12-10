@@ -128,9 +128,9 @@ export default class AbstractTextInput extends React.Component {
     return suffix ? <div className="lab-input__suffix">{suffix}</div> : "";
   };
 
-  handleOnChange = (e) => {
+  handleOnChange = (event) => {
     const { onChange, isValid, customErrorMsg, required } = this.props;
-    const inputElement = e.target;
+    const inputElement = event.target;
     const inputElementValue = inputElement.value;
     const inputElementIsValid = inputElement.validity.valid;
 
@@ -138,7 +138,7 @@ export default class AbstractTextInput extends React.Component {
     inputElement.setCustomValidity("");
 
     if (!isUndefined(onChange)) {
-      onChange(e);
+      onChange(event);
     }
 
     // Then we set the state with the new value
