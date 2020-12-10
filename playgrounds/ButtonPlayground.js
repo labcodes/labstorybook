@@ -4,7 +4,7 @@ import { isEmpty } from "lodash";
 import Radio from "../labsystem/src/Radio";
 import TextInput from "../labsystem/src/Input/TextInput";
 import { Button, OutlineButton, TextButton } from "../labsystem/src/Button";
-import { iconOptions } from "./assets";
+import { iconOptions, buttonSkinOptions } from "./assets";
 
 export default class ButtonPlayground extends React.Component {
   constructor(props) {
@@ -12,6 +12,7 @@ export default class ButtonPlayground extends React.Component {
     this.initialState = {
       selectedText: "edit me",
       selectedIcon: "",
+      selectedSkin: "pale",
     };
 
     this.state = {
@@ -57,6 +58,7 @@ export default class ButtonPlayground extends React.Component {
       currentComponent,
       selectedText,
       selectedIcon,
+      selectedSkin,
     } = this.state;
     const Component = availableComponents[currentComponent];
 
@@ -65,13 +67,17 @@ export default class ButtonPlayground extends React.Component {
         <h4>
           <strong>{currentComponent}</strong>
         </h4>
-        <Component text={selectedText} icon={selectedIcon} />
+        <Component
+          text={selectedText}
+          icon={selectedIcon}
+          skin={selectedSkin}
+        />
       </React.Fragment>
     );
   };
 
   render() {
-    const { selectedText, selectedIcon } = this.state;
+    const { selectedText, selectedIcon, selectedSkin } = this.state;
 
     return (
       <div className="columns lab-playground">
@@ -124,18 +130,38 @@ export default class ButtonPlayground extends React.Component {
           <br />
 
           <span className="lab-playground__item">
-            <strong>icon: </strong>
-            <select
-              id="selectedIcon"
-              value={selectedIcon}
-              onChange={this.handleIconPropChange}
-            >
-              {iconOptions.map((item) => (
-                <option value={item} key={`icon-${item}`}>
-                  {!isEmpty(item) ? item : "none"}
-                </option>
-              ))}
-            </select>
+            <label htmlFor="selectedIcon">
+              <strong>icon: </strong>
+              <select
+                id="selectedIcon"
+                value={selectedIcon}
+                onChange={this.handleIconPropChange}
+              >
+                {iconOptions.map((item) => (
+                  <option value={item} key={`icon-${item}`}>
+                    {!isEmpty(item) ? item : "none"}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </span>
+          <br />
+
+          <span className="lab-playground__item">
+            <label htmlFor="selectedSkin">
+              <strong>skin: </strong>
+              <select
+                id="selectedSkin"
+                value={selectedSkin}
+                onChange={this.handleTextPropChange}
+              >
+                {buttonSkinOptions.map((item) => (
+                  <option value={item} key={`skin-${item}`}>
+                    {item}
+                  </option>
+                ))}
+              </select>
+            </label>
           </span>
         </div>
       </div>
