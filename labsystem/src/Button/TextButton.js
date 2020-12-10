@@ -5,7 +5,7 @@ import AbstractButton from "./AbstractButton";
 export default class TextButton extends React.Component {
   static propTypes = {
     text: PropTypes.string.isRequired,
-    skin: PropTypes.oneOf(["light", "dark"]),
+    skin: PropTypes.oneOf(["", "light", "dark"]),
     icon: PropTypes.string,
     size: PropTypes.oneOf(["normal", "small", "large"]),
     disabled: PropTypes.bool,

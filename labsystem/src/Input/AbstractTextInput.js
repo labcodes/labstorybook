@@ -182,7 +182,7 @@ export default class AbstractTextInput extends React.Component {
     }
 
     return (
-      <>
+      <React.Fragment>
         <div className={`lab-input ${className || ""}`}>
           <input
             className={
@@ -225,7 +225,7 @@ export default class AbstractTextInput extends React.Component {
           localValue={localValue}
           localIsValid={localIsValid}
         />
-      </>
+      </React.Fragment>
     );
   }
 }

@@ -5,6 +5,7 @@ import Radio from "../labsystem/src/Radio";
 import TextInput from "../labsystem/src/Input/TextInput";
 import { Button, OutlineButton, TextButton } from "../labsystem/src/Button";
 import { iconOptions, buttonSkinOptions } from "./assets";
+import Checkbox from "../labsystem/src/Checkbox";
 
 export default class ButtonPlayground extends React.Component {
   constructor(props) {
@@ -12,8 +13,10 @@ export default class ButtonPlayground extends React.Component {
     this.initialState = {
       selectedText: "edit me",
       selectedIcon: "",
-      selectedSkin: "pale",
+      selectedSkin: "",
       selectedSize: "normal",
+      selectedIsDisabled: false,
+      fullWidth: false,
     };
 
     this.state = {
@@ -40,6 +43,11 @@ export default class ButtonPlayground extends React.Component {
     this.setState({ [id]: !isEmpty(value) ? value : "edit me" });
   };
 
+  handleSkinPropChange = (event) => {
+    const { id, value } = event.target;
+    this.setState({ [id]: value });
+  };
+
   handleButtonVariationPropChange = (event) => {
     const { value } = event.target;
     this.setState({
@@ -60,6 +68,11 @@ export default class ButtonPlayground extends React.Component {
     this.setState({ [id]: value });
   };
 
+  handleCheckboxPropChange = (event) => {
+    const { id, checked } = event.target;
+    this.setState({ [id]: checked });
+  };
+
   renderCurrentComponent = () => {
     const {
       availableComponents,
@@ -68,6 +81,8 @@ export default class ButtonPlayground extends React.Component {
       selectedIcon,
       selectedSkin,
       selectedSize,
+      fullWidth,
+      selectedIsDisabled,
     } = this.state;
     const Component = availableComponents[currentComponent];
 
@@ -81,13 +96,22 @@ export default class ButtonPlayground extends React.Component {
           icon={selectedIcon}
           skin={selectedSkin}
           size={selectedSize}
+          {...(fullWidth ? { fullWidth } : undefined)}
+          disabled={selectedIsDisabled}
         />
       </React.Fragment>
     );
   };
 
   render() {
-    const { selectedText, selectedIcon, selectedSkin } = this.state;
+    const {
+      selectedText,
+      selectedIcon,
+      selectedSkin,
+      fullWidth,
+      selectedIsDisabled,
+      currentComponent,
+    } = this.state;
 
     return (
       <div className="columns lab-playground">
@@ -163,11 +187,11 @@ export default class ButtonPlayground extends React.Component {
               <select
                 id="selectedSkin"
                 value={selectedSkin}
-                onChange={this.handleTextPropChange}
+                onChange={this.handleSkinPropChange}
               >
-                {buttonSkinOptions.map((item) => (
+                {buttonSkinOptions[currentComponent].map((item) => (
                   <option value={item} key={`skin-${item}`}>
-                    {item}
+                    {!isEmpty(item) ? item : "none"}
                   </option>
                 ))}
               </select>
@@ -175,7 +199,7 @@ export default class ButtonPlayground extends React.Component {
           </span>
           <br />
 
-          <span>
+          <span className="lab-playground__item">
             <strong>size: </strong>
             <br />
             <fieldset>
@@ -202,10 +226,31 @@ export default class ButtonPlayground extends React.Component {
                 value="large"
                 onChange={this.handleButtonSizePropChange}
               />
-              <br />
             </fieldset>
           </span>
+          <br />
         </div>
+
+        <span className="lab-playground__item">
+          <Checkbox
+            name="fullWidth"
+            id="fullWidth"
+            onChange={this.handleCheckboxPropChange}
+            checked={fullWidth}
+            label="full width"
+          />
+        </span>
+        <br />
+
+        <span className="lab-playground__item">
+          <Checkbox
+            name="selectedIsDisabled"
+            id="selectedIsDisabled"
+            onChange={this.handleCheckboxPropChange}
+            checked={selectedIsDisabled}
+            label="disabled"
+          />
+        </span>
       </div>
     );
   }
