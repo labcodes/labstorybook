@@ -24,13 +24,19 @@ export default class SystemMessagesPlayground extends React.Component {
     };
   }
 
+<<<<<<< HEAD
   handleCurrentComponentChange = (event) => {
     const { value } = event.target;
+=======
+  handleCurrentComponentChange = (e) => {
+    const { value } = e.target;
+>>>>>>> Enable 'Button' variation to be editable in 'ButtonPlayground'
     this.setState({
       currentComponent: value,
     });
   };
 
+<<<<<<< HEAD
   handleTextPropChange = (event) => {
     const { id, value } = event.target;
     this.setState({ [id]: !isEmpty(value) ? value : "edit me" });
@@ -43,6 +49,20 @@ export default class SystemMessagesPlayground extends React.Component {
 
   handleIconPropChange = (event) => {
     const { id, value } = event.target;
+=======
+  handleTextPropChange = (e) => {
+    const { id, value } = e.target;
+    this.setState({ [id]: !isEmpty(value) ? value : "edit me" });
+  };
+
+  handleButtonTextPropChange = (e) => {
+    const { id, value } = e.target;
+    this.setState({ [id]: upperCase(value) });
+  };
+
+  handleIconPropChange = (e) => {
+    const { id, value } = e.target;
+>>>>>>> Enable 'Button' variation to be editable in 'ButtonPlayground'
     this.setState({ [id]: value });
   };
 
