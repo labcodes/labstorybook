@@ -15,6 +15,13 @@ export default class ButtonPlayground extends React.Component {
     };
   }
 
+  handleCurrentComponentChange = (e) => {
+    const { value } = e.target;
+    this.setState({
+      currentComponent: value,
+    });
+  };
+
   renderCurrentComponent = () => {
     const { availableComponents, currentComponent } = this.state;
     const Component = availableComponents[currentComponent];
@@ -30,6 +37,8 @@ export default class ButtonPlayground extends React.Component {
   };
 
   render() {
+    const { availableComponents } = this.state;
+
     return (
       <div className="columns lab-playground">
         <div className="column lab-playground__component">
@@ -38,7 +47,21 @@ export default class ButtonPlayground extends React.Component {
 
         <div className="column lab-playground__configs">
           <h4>Configurations</h4>
+
+          <span className="lab-playground__item">
+            <label htmlFor="currentComponent">
+              <strong>variation: </strong>
+              <select onChange={this.handleCurrentComponentChange}>
+                {Object.keys(availableComponents).map((option) => (
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </span>
           <br />
+
         </div>
       </div>
     );

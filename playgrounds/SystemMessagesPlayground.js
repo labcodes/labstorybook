@@ -22,35 +22,6 @@ export default class SystemMessagesPlayground extends React.Component {
     };
   }
 
-  renderCurrentComponent = () => {
-    const {
-      availableComponents,
-      currentComponent,
-      selectedText,
-      selectedIcon,
-      selectedButtonText,
-    } = this.state;
-    const Component = availableComponents[currentComponent];
-
-    return (
-      <>
-        <h4>
-          <strong>{currentComponent}</strong>
-        </h4>
-        <Component
-          text={selectedText}
-          icon={selectedIcon}
-          buttonProps={{
-            text: selectedButtonText,
-            onClick: () => {
-              alert(`Button to ${selectedButtonText} was clicked!`);
-            },
-          }}
-        />
-      </>
-    );
-  };
-
   handleCurrentComponentChange = (e) => {
     const { value } = e.target;
     this.setState({
@@ -71,6 +42,35 @@ export default class SystemMessagesPlayground extends React.Component {
   handleIconPropChange = (e) => {
     const { id, value } = e.target;
     this.setState({ [id]: value });
+  };
+
+  renderCurrentComponent = () => {
+    const {
+      availableComponents,
+      currentComponent,
+      selectedText,
+      selectedIcon,
+      selectedButtonText,
+    } = this.state;
+    const Component = availableComponents[currentComponent];
+
+    return (
+      <React.Fragment>
+        <h4>
+          <strong>{currentComponent}</strong>
+        </h4>
+        <Component
+          text={selectedText}
+          icon={selectedIcon}
+          buttonProps={{
+            text: selectedButtonText,
+            onClick: () => {
+              alert(`Button to ${selectedButtonText} was clicked!`);
+            },
+          }}
+        />
+      </React.Fragment>
+    );
   };
 
   render() {
