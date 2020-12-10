@@ -56,10 +56,10 @@ export default class Radio extends React.Component {
     }
   }
 
-  handleOnChange = (e) => {
+  handleOnChange = (event) => {
     const { onChange } = this.props;
     if (!isUndefined(onChange)) {
-      onChange(e);
+      onChange(event);
     }
 
     this.setState((state) => ({ localChecked: !state.localChecked }));
