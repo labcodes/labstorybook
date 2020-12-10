@@ -1,7 +1,30 @@
-.lab-playground__configs {
-  border-left: 2px solid $teal-40;
-  height: 100%;
+.lab-playground {
+  margin: $spacing-05 0 !important;
+  border: 2px solid $mineral-10;
+  border-radius: $radius-03;
 
+  h3 {
+    font-size: $font-size-7;
+    margin-top: 0;
+    margin-bottom: $spacing-03;
+  }
+
+  fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+
+    > * {
+      margin-right: $spacing-02;
+    }
+  }
+}
+
+.lab-playground__configs {
+  border-left: 2px solid $mineral-10;
+  padding: $spacing-06;
+  height: 100%;
+  
   .lab-playground__item {
     display: inline-block;
     margin: 8px 4px;
@@ -15,4 +38,9 @@
 }
 .lab-playground {
   .lab-toggle { margin-right: 0.4rem; }
+}
+
+.lab-playground__component {
+  padding: $spacing-06;
+  align-self: center;
 }
