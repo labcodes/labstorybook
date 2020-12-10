@@ -13,10 +13,15 @@ export default class ButtonPlayground extends React.Component {
     this.initialState = {
       selectedText: "edit me",
       selectedIcon: "",
+<<<<<<< HEAD
       selectedSkin: "",
       selectedSize: "normal",
       selectedIsDisabled: false,
       fullWidth: false,
+=======
+      selectedSkin: "pale",
+      selectedSize: "normal",
+>>>>>>> Enable 'Button.size' to be editable in 'ButtonPlayground'
     };
 
     this.state = {
@@ -43,11 +48,14 @@ export default class ButtonPlayground extends React.Component {
     this.setState({ [id]: !isEmpty(value) ? value : "edit me" });
   };
 
+<<<<<<< HEAD
   handleSkinPropChange = (event) => {
     const { id, value } = event.target;
     this.setState({ [id]: value });
   };
 
+=======
+>>>>>>> Enable 'Button.size' to be editable in 'ButtonPlayground'
   handleButtonVariationPropChange = (event) => {
     const { value } = event.target;
     this.setState({
@@ -81,8 +89,11 @@ export default class ButtonPlayground extends React.Component {
       selectedIcon,
       selectedSkin,
       selectedSize,
+<<<<<<< HEAD
       fullWidth,
       selectedIsDisabled,
+=======
+>>>>>>> Enable 'Button.size' to be editable in 'ButtonPlayground'
     } = this.state;
     const Component = availableComponents[currentComponent];
 
@@ -93,8 +104,11 @@ export default class ButtonPlayground extends React.Component {
           icon={selectedIcon}
           skin={selectedSkin}
           size={selectedSize}
+<<<<<<< HEAD
           {...(fullWidth ? { fullWidth } : undefined)}
           disabled={selectedIsDisabled}
+=======
+>>>>>>> Enable 'Button.size' to be editable in 'ButtonPlayground'
         />
       </React.Fragment>
     );
@@ -196,7 +210,11 @@ export default class ButtonPlayground extends React.Component {
           </span>
           <br />
 
+<<<<<<< HEAD
           <span className="lab-playground__item">
+=======
+          <span>
+>>>>>>> Enable 'Button.size' to be editable in 'ButtonPlayground'
             <strong>size: </strong>
             <br />
             <fieldset>
@@ -223,6 +241,7 @@ export default class ButtonPlayground extends React.Component {
                 value="large"
                 onChange={this.handleButtonSizePropChange}
               />
+<<<<<<< HEAD
             </fieldset>
           </span>
           <br />
@@ -249,6 +268,11 @@ export default class ButtonPlayground extends React.Component {
               handleToggle={this.handlePropChangeBool}
             />
           </span>
+=======
+              <br />
+            </fieldset>
+          </span>
+>>>>>>> Enable 'Button.size' to be editable in 'ButtonPlayground'
         </div>
       </div>
     );
