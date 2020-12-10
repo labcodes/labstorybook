@@ -7,6 +7,8 @@ import { Button, OutlineButton, TextButton } from "../labsystem/src/Button";
 import { iconOptions, buttonSkinOptions } from "./assets";
 import Toggle from "../labsystem/src/Toggle";
 
+import { Button, OutlineButton, TextButton } from "../labsystem/src/Button";
+
 export default class ButtonPlayground extends React.Component {
   constructor(props) {
     super(props);
