@@ -13,6 +13,7 @@ export default class ButtonPlayground extends React.Component {
       selectedText: "edit me",
       selectedIcon: "",
       selectedSkin: "pale",
+      selectedSize: "normal",
     };
 
     this.state = {
@@ -39,11 +40,18 @@ export default class ButtonPlayground extends React.Component {
     this.setState({ [id]: !isEmpty(value) ? value : "edit me" });
   };
 
-  handleRadioPropChange = (event) => {
+  handleButtonVariationPropChange = (event) => {
     const { value } = event.target;
     this.setState({
       currentComponent: value,
       ...this.initialState,
+    });
+  };
+
+  handleButtonSizePropChange = (event) => {
+    const { value } = event.target;
+    this.setState({
+      selectedSize: value,
     });
   };
 
@@ -59,6 +67,7 @@ export default class ButtonPlayground extends React.Component {
       selectedText,
       selectedIcon,
       selectedSkin,
+      selectedSize,
     } = this.state;
     const Component = availableComponents[currentComponent];
 
@@ -71,6 +80,7 @@ export default class ButtonPlayground extends React.Component {
           text={selectedText}
           icon={selectedIcon}
           skin={selectedSkin}
+          size={selectedSize}
         />
       </React.Fragment>
     );
@@ -93,27 +103,27 @@ export default class ButtonPlayground extends React.Component {
             <br />
             <fieldset>
               <Radio
-                id="radio-1"
+                id="ButtonVariationRadio-1"
                 label="Button"
                 name="ButtonVariationRadio"
                 value="Button"
-                onChange={this.handleRadioPropChange}
+                onChange={this.handleButtonVariationPropChange}
               />
               <br />
               <Radio
-                id="radio-2"
+                id="ButtonVariationRadio-2"
                 label="OutlineButton"
                 name="ButtonVariationRadio"
                 value="OutlineButton"
-                onChange={this.handleRadioPropChange}
+                onChange={this.handleButtonVariationPropChange}
               />
               <br />
               <Radio
-                id="radio-3"
+                id="ButtonVariationRadio-3"
                 label="TextButton"
                 name="ButtonVariationRadio"
                 value="TextButton"
-                onChange={this.handleRadioPropChange}
+                onChange={this.handleButtonVariationPropChange}
               />
             </fieldset>
           </span>
@@ -162,6 +172,38 @@ export default class ButtonPlayground extends React.Component {
                 ))}
               </select>
             </label>
+          </span>
+          <br />
+
+          <span>
+            <strong>size: </strong>
+            <br />
+            <fieldset>
+              <Radio
+                id="ButtonSizeRadio-1"
+                label="small"
+                name="ButtonSizeRadio"
+                value="small"
+                onChange={this.handleButtonSizePropChange}
+              />
+              <br />
+              <Radio
+                id="ButtonSizeRadio-2"
+                label="normal"
+                name="ButtonSizeRadio"
+                value="normal"
+                onChange={this.handleButtonSizePropChange}
+              />
+              <br />
+              <Radio
+                id="ButtonSizeRadio-3"
+                label="large"
+                name="ButtonSizeRadio"
+                value="large"
+                onChange={this.handleButtonSizePropChange}
+              />
+              <br />
+            </fieldset>
           </span>
         </div>
       </div>
