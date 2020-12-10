@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 
 import TextInput from '../labsystem/src/Input/TextInput';
 import EmailInput from '../labsystem/src/Input/EmailInput';
@@ -48,15 +48,23 @@ We can have 3 types of text inputs.
 ###### Prefix and Suffix elements
 ![prefix and suffix input anatomy](docs/anatomy-02.png)
 
-## Interactive demo
-  This demo lets you preview the component, its variations, and configuration options.
-  <TextInputPlayground />
+#### Input Playground
+
+<Canvas>
+  <Story name="Input Playground">
+  <Fragment>
+    <div>
+      <TextInputPlayground />
+    </div>
+  </Fragment>
+  </Story>
+</Canvas>
 
 #### Default Input
 
 It’s a standard text input. Can be used for enter a id, phone number, street address, email address, etc.
 
-<Preview>
+<Canvas>
   <Story name="Default Input">
     <Fragment>
       <div className="stories-half_width-wrapper">
@@ -71,13 +79,13 @@ It’s a standard text input. Can be used for enter a id, phone number, street a
       </div>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 #### Required Input
 
 It’s a default input that is required to be filled. It has a helper message to inform if a required input text is missing.
 
-<Preview>
+<Canvas>
   <Story name="Required Input">
     <Fragment>
       <div className="stories-half_width-wrapper">
@@ -88,13 +96,13 @@ It’s a default input that is required to be filled. It has a helper message to
       </div>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 #### Prefix
 
 It’s a text field input + fixed prefix.
 
-<Preview>
+<Canvas>
   <Story name="Prefix Input">
     <Fragment>
       <div className="stories-half_width-wrapper">
@@ -117,13 +125,13 @@ It’s a text field input + fixed prefix.
       </div>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 #### Suffix
 
 It’s a text field input + fixed suffix.
 
-<Preview>
+<Canvas>
   <Story name="Suffix Input">
     <Fragment>
       <div className="stories-half_width-wrapper">
@@ -146,7 +154,7 @@ It’s a text field input + fixed suffix.
       </div>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 #### Behavior
 <div class="columns">
@@ -176,7 +184,7 @@ It’s a text field input + fixed suffix.
 
 #### Text, Email and Password Input Components
 
-<Preview>
+<Canvas>
   <Story name="Email Input Component">
   <Fragment>
     <div className="stories-half_width-wrapper">
@@ -186,13 +194,13 @@ It’s a text field input + fixed suffix.
     </div>
   </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 #### Theming
 
 For text inputs, you can also use purple theme. Error state remain with the same style in any theme.
 The theme must be selected by changing the value of the `$input-theme` variable in the `scss/variables/_settings.scss`.
-<Preview>
+<Canvas>
   <Story name="Styles">
   <Fragment>
     <div className="stories-half_width-wrapper lab-input--stories-force-purple">
@@ -212,18 +220,18 @@ The theme must be selected by changing the value of the `$input-theme` variable 
     </div>
   </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Prop API docs
 
   Here's the list of props based on the component's prop types definitions.
   ### TextInput
-  <Props of={TextInput} />
+  <ArgsTable of={TextInput} />
 
   ### EmailInput
-  <Props of={EmailInput} />
+  <ArgsTable of={EmailInput} />
 
   ### PasswordInput
-  <Props of={PasswordInput} />
+  <ArgsTable of={PasswordInput} />
 
 </div>

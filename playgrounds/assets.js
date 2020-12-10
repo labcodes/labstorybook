@@ -17,7 +17,7 @@ export const iconOptions = [
   "track",
   "key",
   "logout",
-  "lupe",
+  "magnifying-glass",
   "minus",
   "plus",
   "reload",

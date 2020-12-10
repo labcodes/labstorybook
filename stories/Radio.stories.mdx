@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 
 import Radio from '../labsystem/src/Radio';
 import RadioPlayground from '../playgrounds/RadioPlayground';
@@ -17,8 +17,8 @@ import RadioPlayground from '../playgrounds/RadioPlayground';
     <p>Radio is a type of selector that is used when we have a list of options, and only one option can be selected.
     </p>
 
-## Acessibility
-  Striving to keep our forms accessible, we recommend to use this type of component by using the `fieldset` tag to nest a group of 
+##### Acessibility
+  Striving to keep our forms accessible, we recommend to use this type of component by using the `fieldset` tag to nest a group of
   selectors and the `legend` tag to identify the heading of the group.
   These elements works indicating to screen readers that a group of form fields relate to each other.
 
@@ -40,15 +40,21 @@ import RadioPlayground from '../playgrounds/RadioPlayground';
     </div>
 </div>
 
-## Interactive demo
-  This demo lets you preview the component, its variations, and configuration options.
-  <RadioPlayground />
+#### Interactive demo
+  This demo lets you preview the radio component, its variations, and configuration options.
+  <Canvas>
+    <Story name="InteractiveDemo">
+      <Fragment>
+        <RadioPlayground />
+      </Fragment>
+    </Story>
+  </Canvas>
 
 
 ## Radio
 
 
-<Preview>
+<Canvas>
   <Story name="Radio">
     <Fragment>
       <fieldset>
@@ -62,7 +68,7 @@ import RadioPlayground from '../playgrounds/RadioPlayground';
       </fieldset>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Behavior
 1. Choose an option
@@ -73,7 +79,7 @@ import RadioPlayground from '../playgrounds/RadioPlayground';
 
 ## Styles
 Checkboxes can also be used in the purple theme
-<Preview>
+<Canvas>
   <Story name="Styles">
   <Fragment>
     <fieldset>
@@ -83,12 +89,12 @@ Checkboxes can also be used in the purple theme
     </fieldset>
   </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Prop API docs
 
   Here's the list of props based on the component's prop types definitions.
   ### Radio
-  <Props of={Radio} />
+  <ArgsTable of={Radio} />
 
 </div>

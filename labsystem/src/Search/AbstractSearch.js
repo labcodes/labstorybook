@@ -179,7 +179,11 @@ function StandardSearchIcon(props) {
         onClick={handleOnSearch}
         {...(disabled ? { disabled } : undefined)}
       >
-        <Icon className="lab-standard-search__icon" type="lupe" color="white" />
+        <Icon
+          className="lab-standard-search__icon"
+          type="magnifying-glass"
+          color="white"
+        />
       </button>
       <span className="lab-standard-search__separator" />
     </React.Fragment>
@@ -203,7 +207,7 @@ function InlineSearchIcon(props) {
       className={`lab-inline-search__icon ${
         disabled ? "lab-inline-search__icon--disabled" : ""
       }`}
-      type="lupe"
+      type="magnifying-glass"
       color="mineral-40"
     />
   );

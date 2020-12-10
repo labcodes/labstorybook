@@ -27,8 +27,11 @@
   
   .lab-playground__item {
     display: inline-block;
-    margin: $spacing-02 0;
-    width: 100%;
+    margin: 8px 4px;
+  }
+
+  .lab-btn {
+    margin: 4px;
   }
 }
 
