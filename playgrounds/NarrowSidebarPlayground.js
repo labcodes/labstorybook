@@ -4,7 +4,7 @@ import React from "react";
 import NarrowSidebar from "../labsystem/src/Sidebar/NarrowSidebar";
 import TextInput from "../labsystem/src/Input/TextInput";
 import Toggle from "../labsystem/src/Toggle";
-import OutlineButton from "../labsystem/src/Buttons/OutlineButton";
+import OutlineButton from "../labsystem/src/Button/OutlineButton";
 import Icon from "../labsystem/src/Icon";
 
 export default class NarrowSidebarPlayground extends React.Component {

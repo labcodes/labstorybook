@@ -37,6 +37,7 @@ export default class TagPlayground extends React.Component {
         DropdownTag,
       },
       currentComponent: "SimpleTag",
+      ...this.initialState,
       selectedText: this.initialState.selectedText,
       selectedColor: this.initialState.selectedColor,
       selectedIsDisabled: this.initialState.selectedIsDisabled,
@@ -124,7 +125,7 @@ export default class TagPlayground extends React.Component {
         : this.handleToggleTag;
 
     return (
-      <>
+      <React.Fragment>
         <h4>
           <strong>{currentComponent}</strong>
         </h4>
@@ -143,7 +144,7 @@ export default class TagPlayground extends React.Component {
         ) : (
           ""
         )}
-      </>
+      </React.Fragment>
     );
   };
 
