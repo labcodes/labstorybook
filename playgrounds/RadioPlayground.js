@@ -62,7 +62,6 @@ export default class RadioPlayground extends React.Component {
                 disabled={disabled1}
                 value={label1}
                 className={className}
-                onChange={this.handleChecked}
               />
               <Radio
                 id="radio-playground-item2"
@@ -72,7 +71,6 @@ export default class RadioPlayground extends React.Component {
                 disabled={disabled2}
                 value={label2}
                 className={className}
-                onChange={this.handleChecked}
               />
             </fieldset>
           </div>
