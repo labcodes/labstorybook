@@ -1,0 +1,31 @@
+import { Fragment } from "react";
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+
+import { StandardDialog, MessageDialog } from "../labsystem/src/Dialog";
+import DialogPlayground from "../playgrounds/DialogPlayground";
+
+import { iconOptions } from "../playgrounds/assets";
+
+<Meta title="Components/Dialog" />
+
+<header className="docs-title">
+  <div>
+    <h1 className="docs-title__text">Dialog</h1>
+  </div>
+</header>
+
+<nav className="docs-content">
+  <p>This is the start of Dialog's documentation.</p>
+
+  ### Playground
+
+  <Canvas>
+    <Story name="InteractiveDialogDemo">
+      <Fragment>
+        <DialogPlayground />
+      </Fragment>
+    </Story>
+  </Canvas>
+
+  <ArgsTable of={StandardDialog} />
+</nav>
