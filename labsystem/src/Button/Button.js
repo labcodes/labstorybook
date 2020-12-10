@@ -6,6 +6,7 @@ export default class Button extends React.Component {
   static propTypes = {
     text: PropTypes.string.isRequired,
     skin: PropTypes.oneOf([
+      "",
       "light",
       "dark",
       "warning",
