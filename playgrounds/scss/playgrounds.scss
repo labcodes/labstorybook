@@ -4,8 +4,11 @@
 
   .lab-playground__item {
     display: inline-block;
-    margin: 8px;
-    margin-left: 0;
+    margin: 8px 4px;
+  }
+
+  .lab-btn {
+    margin: 4px;
   }
 
   h4, h6 { margin: 0.4rem 0; }

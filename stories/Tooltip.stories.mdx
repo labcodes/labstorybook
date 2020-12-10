@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
 
 import Tooltip from "../labsystem/src/Tooltip";
 import OutlineButton from "../labsystem/src/Buttons/OutlineButton";
@@ -103,7 +103,7 @@ Continuously display the tooltip as long as the user hovers over the element.
 
 Tooltips placement relative to the target is defined by the user through props, and can have one of the 12 following values:
 
-<Preview>
+<Canvas>
   <Story name="Placement">
     <Fragment>
       <div className="columns docs-tooltip">
@@ -226,13 +226,13 @@ Tooltips placement relative to the target is defined by the user through props, 
       </div>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Long texts
 
 Tooltip text should not be longer than 180 characters and 3 lines. A warn will be thrown in the console if the 180 chars limit is crossed.
 
-<Preview>
+<Canvas>
   <Story name="LongText">
     <Fragment>
       <Tooltip
@@ -247,13 +247,13 @@ Tooltip text should not be longer than 180 characters and 3 lines. A warn will b
       </Tooltip>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Icon
 
 Tooltip can also be triggered by an Icon or other elements.
 
-<Preview>
+<Canvas>
   <Story name="Icon">
     <Fragment>
       <Tooltip
@@ -267,7 +267,7 @@ Tooltip can also be triggered by an Icon or other elements.
       </Tooltip>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Prop API docs
 
@@ -275,6 +275,6 @@ Here's the list of props based on the component's prop types definitions.
 
 ### Tooltip
 
-<Props of={Tooltip} />
+<ArgsTable of={Tooltip} />
 
 </div>

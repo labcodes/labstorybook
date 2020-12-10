@@ -95,3 +95,11 @@ span.sbdocs-span {
   font-size: inherit;
   font-family: $font-primary;
 }
+
+a {
+  margin: 0 2px !important;
+  font-family: $font-primary !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  color: inherit !important;
+}

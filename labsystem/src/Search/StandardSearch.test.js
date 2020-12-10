@@ -58,7 +58,7 @@ describe("StandardSearch", () => {
     expect(onClearFn).toBeCalled();
   });
 
-  it("calls onSearch prop when the lupe icon is clicked", async () => {
+  it("calls onSearch prop when the magnifying-glass icon is clicked", async () => {
     const onSearchFn = jest.fn();
     const component = mount(
       <StandardSearch defaultValue="default" onSearch={onSearchFn} />

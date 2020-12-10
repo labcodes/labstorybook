@@ -1,0 +1,36 @@
+@import '../../labsystem/scss/variables/all';
+
+// Containers
+
+.doc-em-block {
+  background-color: $teal-20;
+  border-radius: 12px;
+  font-size: $font-size-3  !important;
+  font-weight: $weight-semibold !important;
+  color: $black-75;
+  padding: $spacing-03 $spacing-04;
+
+  strong {
+    font-weight: $weight-black !important;
+  }
+}
+
+.doc-anatomy-block {
+  background-color: $mineral-10;
+  border-radius: 4px;
+  padding: 16px;
+}
+
+// Typography colors
+
+.doc-cyan {
+  color: $cyan-60;
+}
+
+.doc-orange {
+  color: $orange-60;
+}
+
+.doc-pink {
+  color: $pink-60;
+}

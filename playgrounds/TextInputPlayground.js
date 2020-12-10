@@ -70,7 +70,7 @@ export default class InputPlayground extends React.Component {
       "track",
       "key",
       "logout",
-      "lupe",
+      "magnifying-glass",
       "minus",
       "plus",
       "reload",

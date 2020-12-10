@@ -13,6 +13,7 @@ export default class AbstractTag extends React.Component {
     renderPrefix: PropTypes.object,
     renderSuffix: PropTypes.object,
     className: PropTypes.string,
+    tabIndex: PropTypes.string,
   };
 
   static defaultProps = {
@@ -24,9 +25,13 @@ export default class AbstractTag extends React.Component {
     renderPrefix: undefined,
     renderSuffix: undefined,
     className: "",
+    tabIndex: "0",
   };
 
-  handleOnClick = (e) => {
+  handleEvent = (e) => {
+    if ((e.keycode || e.which) === 32) {
+      e.preventDefault();
+    }
     const { onClick } = this.props;
     if (!isUndefined(onClick)) {
       onClick(e);
@@ -43,6 +48,7 @@ export default class AbstractTag extends React.Component {
       renderPrefix,
       renderSuffix,
       className,
+      tabIndex,
     } = this.props;
 
     return (
@@ -53,9 +59,11 @@ export default class AbstractTag extends React.Component {
           `${isOutline ? ` lab-tag--outline` : ""}` +
           `${color ? ` lab-tag--${color}-${skin}` : ` lab-tag--${skin}`}`
         }
-        onClick={this.handleOnClick}
-        onKeyDown={this.handleOnClick}
+        onClick={this.handleEvent}
+        onKeyPress={this.handleEvent}
         role="presentation"
+        // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+        tabIndex={tabIndex}
       >
         {renderPrefix}
         {text}

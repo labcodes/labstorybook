@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 
 import StandardSearch from '../labsystem/src/Search/StandardSearch';
 import InlineSearch from '../labsystem/src/Search/InlineSearch';
@@ -25,41 +25,26 @@ of search components: Standard and Inline.
 
 ## Standard Search
 
-Similar to the datepicker. It's a standard input linked to a search button. It should be used when the design needs more
-emphasis in the search funcionality. This search suggest results in an autocomplete dropdown and, for more detailed answers,
+It's a standard input linked to a search button. It should be used when the design needs more
+emphasis in the search funcionality. This search suggests results in an autocomplete dropdown and, for more detailed answers,
 it can take the user to another page.
 
-<Preview>
+<Canvas>
   <Story name="Standard Search">
-    <Fragment>
-        <h3>Default</h3>
-       <StandardSearch />
-        <br />
-        <h3> Disabled</h3>
-        <StandardSearch disabled/>
-        <h3>Disabled with Default Text</h3>
-        <StandardSearch defaultValue="lala" disabled/>
-    </Fragment>
+    <StandardSearch />
   </Story>
-</Preview>
+</Canvas>
 
 ## Inline Search
 
-Similar to the text+trailing icon input. It should be used when the design needs a more compact and clean
+Similar to the <a href="https://labstorybook-master.netlify.app/?path=/docs/components-text-input">text with trailing icon input</a>. It should be used when the design needs a more compact and clean
 component. This search works filtering the results and showing them simultaneously as the user types.
 
-<Preview>
+<Canvas>
   <Story name="Inline Search">
-    <Fragment>
-        <h3>Default</h3>
-        <InlineSearch />
-        <h3>Disabled</h3>
-        <InlineSearch disabled />
-        <h3>Disabled with Default Text</h3>
-        <InlineSearch defaultValue="lele" disabled />
-    </Fragment>
+    <InlineSearch />
   </Story>
-</Preview>
+</Canvas>
 
 ## Behavior
 <div class="columns">
@@ -68,7 +53,7 @@ component. This search works filtering the results and showing them simultaneous
     <ol>
       <li>If the page have the search funcionality as the main purpose, the seach field should be focused by default. If not, focus to activate it. </li>
       <li>With the field focused, type the query.</li>
-      <li>"X" icon apears at the right corner of the text input, and it can be clicked at any moment to clear whatever was typed.</li>
+      <li>"X" icon apears at the right corner of the text input, and it can be clicked at any moment to clear whatever was typed. Pressing the <code>ESC</code> key also clears the input value.</li>
       <li>An autocomplete dropdown should appear under the search input.</li>
       <li>Click on the search button / press enter to trigger the search action or choose a result of the autocomplete dropdown and click on it.</li>
       <li>Click outside the component if you want to unfocus the input without triggering the search action, but keeping the typed text. </li>
@@ -80,7 +65,7 @@ component. This search works filtering the results and showing them simultaneous
       <li>Focus the inline seach field.</li>
       <li>Type the query.</li>
       <li>The results should appear as the keyword is typed and should behave as a filtered search.</li>
-      <li>Click on the "X"icon to clear the input value.</li>
+      <li>Click on the "X" icon or press the <code>ESC</code> key to clear the input value.</li>
       <li>Click outside the component if you want to unfocus the input.</li>
     </ol>
   </div>
@@ -88,14 +73,8 @@ component. This search works filtering the results and showing them simultaneous
 
 ## Theming
 
-For Search component, you can also use purple theme. Error state remain with the same style in any theme.
-The theme must be selected by changing the value of the `$input-theme` variable in the `scss/variables/_settings.scss`.
-<Preview>
-  <Story name="Styles">
-  <Fragment>
-      <img src="docs/search/search-purple.png" alt="StandardSearch and InlineSearch using purple theme"/>
-  </Fragment>
-  </Story>
-</Preview>
+For Search component, you can also use purple theme. The theme must be selected by changing the value of the `$input-theme` variable in the `scss/variables/_settings.scss`.
+
+<img src="docs/search/search-purple.png" alt="StandardSearch and InlineSearch using purple theme"/>
 
 </div>

@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 
 import Checkbox from '../labsystem/src/Checkbox';
 import CheckboxPlayground from '../playgrounds/CheckboxPlayground';
@@ -18,7 +18,7 @@ import CheckboxPlayground from '../playgrounds/CheckboxPlayground';
   </p>
 
   ##### Acessibility
-  Striving to keep our forms accessible, we recommend to use this type of component by using the `fieldset` tag to nest a group of 
+  Striving to keep our forms accessible, we recommend to use this type of component by using the `fieldset` tag to nest a group of
   selectors and the `legend` tag to identify the heading of the group.
   These elements works indicating to screen readers that a group of form fields relate to each other.
 
@@ -42,18 +42,18 @@ import CheckboxPlayground from '../playgrounds/CheckboxPlayground';
 
 #### Interactive demo
   This demo lets you preview the checkbox component, its variations, and configuration options.
-  <Preview>
+  <Canvas>
     <Story name="InteractiveDemo">
       <Fragment>
         <CheckboxPlayground />
       </Fragment>
     </Story>
-  </Preview>
+  </Canvas>
 
 
 #### Checkbox
 
-<Preview>
+<Canvas>
   <Story name="Checkbox">
     <Fragment>
         <fieldset>
@@ -67,7 +67,7 @@ import CheckboxPlayground from '../playgrounds/CheckboxPlayground';
         </fieldset>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 #### Behavior
 1. Choose an option
@@ -78,7 +78,7 @@ import CheckboxPlayground from '../playgrounds/CheckboxPlayground';
 
 #### Styles
 Checkboxes can also be used in the purple theme
-<Preview>
+<Canvas>
   <Story name="Styles">
   <Fragment>
     <fieldset>
@@ -88,12 +88,12 @@ Checkboxes can also be used in the purple theme
     </fieldset>
   </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
 ## Prop API docs
 
   Here's the list of props based on the component's prop types definitions.
   ### Checkbox
-  <Props of={Checkbox} />
+  <ArgsTable of={Checkbox} />
 
 </div>
