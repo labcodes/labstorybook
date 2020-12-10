@@ -36,10 +36,10 @@ export default class Alert extends React.Component {
     ) : undefined;
   };
 
-  handleClick = (e) => {
+  handleClick = (event) => {
     const { buttonProps } = this.props;
     if (!isUndefined(buttonProps.onClick)) {
-      buttonProps.onClick(e);
+      buttonProps.onClick(event);
     }
   };
 

@@ -42,10 +42,10 @@ export default class Banner extends React.Component {
     return null;
   };
 
-  handleClick = (e) => {
+  handleClick = (event) => {
     const { buttonProps } = this.props;
     if (!isUndefined(buttonProps.onClick)) {
-      buttonProps.onClick(e);
+      buttonProps.onClick(event);
     }
   };
 

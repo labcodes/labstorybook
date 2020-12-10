@@ -49,10 +49,10 @@ export default class AbstractButton extends React.Component {
     );
   };
 
-  handleOnClick = (e) => {
+  handleOnClick = (event) => {
     const { onClick } = this.props;
     if (!isUndefined(onClick)) {
-      onClick(e);
+      onClick(event);
     }
   };
 

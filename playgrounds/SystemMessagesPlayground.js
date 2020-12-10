@@ -22,25 +22,25 @@ export default class SystemMessagesPlayground extends React.Component {
     };
   }
 
-  handleCurrentComponentChange = (e) => {
-    const { value } = e.target;
+  handleCurrentComponentChange = (event) => {
+    const { value } = event.target;
     this.setState({
       currentComponent: value,
     });
   };
 
-  handleTextPropChange = (e) => {
-    const { id, value } = e.target;
+  handleTextPropChange = (event) => {
+    const { id, value } = event.target;
     this.setState({ [id]: !isEmpty(value) ? value : "edit me" });
   };
 
-  handleButtonTextPropChange = (e) => {
-    const { id, value } = e.target;
+  handleButtonTextPropChange = (event) => {
+    const { id, value } = event.target;
     this.setState({ [id]: upperCase(value) });
   };
 
-  handleIconPropChange = (e) => {
-    const { id, value } = e.target;
+  handleIconPropChange = (event) => {
+    const { id, value } = event.target;
     this.setState({ [id]: value });
   };
 
