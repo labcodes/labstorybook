@@ -41,52 +41,38 @@ export default class TagPlayground extends React.Component {
       },
       currentComponent: "SimpleTag",
       ...this.initialState,
-      selectedText: this.initialState.selectedText,
-      selectedColor: this.initialState.selectedColor,
-      selectedIsDisabled: this.initialState.selectedIsDisabled,
-      selectedIsOutline: this.initialState.selectedIsOutline,
-      selectedIcon: this.initialState.selectedIcon,
-      selectedThumbSrc: this.initialState.selectedThumbSrc,
-      removableTagIsOn: this.initialState.removableTagIsOn,
-      togglableTagIsOn: this.initialState.togglableTagIsOn,
       isIconInputDisabled: false,
       isThumbSrcInputDisabled: false,
     };
   }
 
-  handleCurrentComponentChange = (e) => {
-    const { value } = e.target;
+  handleCurrentComponentChange = (event) => {
+    const { value } = event.target;
     this.setState({
       currentComponent: value,
-      selectedColor: this.initialState.selectedColor,
-      selectedIsDisabled: this.initialState.selectedIsDisabled,
-      selectedIsOutline: this.initialState.selectedIsOutline,
-      selectedIcon: this.initialState.selectedIcon,
-      selectedThumbSrc: this.initialState.selectedThumbSrc,
-      removableTagIsOn: this.initialState.removableTagIsOn,
-      togglableTagIsOn: this.initialState.togglableTagIsOn,
+      ...this.initialState,
     });
   };
 
-  handleTextPropChange = (e) => {
-    const { id, value } = e.target;
+  handleTextPropChange = (event) => {
+    const { id, value } = event.target;
     this.setState({ [id]: !isEmpty(value) ? value : "edit me" });
   };
 
-  handleBoolPropChange = (e) => {
-    const { id, checked } = e.target;
+  handleBoolPropChange = (event) => {
+    const { id, checked } = event.target;
     this.setState({ [id]: checked });
   };
 
-  handleIconPropChange = (e) => {
-    const { id, value } = e.target;
+  handleIconPropChange = (event) => {
+    const { id, value } = event.target;
     this.setState({ [id]: value });
     // Deactivate `thumb` if has an `icon`
     this.setState({ isThumbSrcInputDisabled: !isEmpty(value) });
   };
 
-  handleThumbSrcPropChange = (e) => {
-    const { id, value } = e.target;
+  handleThumbSrcPropChange = (event) => {
+    const { id, value } = event.target;
     this.setState({ [id]: value });
     // Deactivate `icon` if has a `thumbSrc`
     this.setState({ isIconInputDisabled: !isEmpty(value) });
