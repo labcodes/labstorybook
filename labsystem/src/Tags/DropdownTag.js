@@ -5,7 +5,7 @@ import Icon from "../Icon";
 
 export default class DropdownTag extends React.Component {
   static propTypes = {
-    /** */
+    /** Text that will be rendered inside the Tag. */
     text: PropTypes.string.isRequired,
     /** */
     icon: PropTypes.string,
@@ -17,7 +17,7 @@ export default class DropdownTag extends React.Component {
     isOutline: PropTypes.bool,
     /** Disables the Tag component, including functionality and style. */
     disabled: PropTypes.bool,
-    /** */
+    /** Callback to be executed when the Tag is clicked. */
     onClick: PropTypes.func,
   };
 

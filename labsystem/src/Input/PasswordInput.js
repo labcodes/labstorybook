@@ -27,7 +27,7 @@ export default class PasswordInput extends React.Component {
     isValid: PropTypes.bool,
     /** */
     customErrorMsg: PropTypes.string,
-    /** */
+    /** Callback to be executed when the Input current value changes. */
     onChange: PropTypes.func,
   };
 

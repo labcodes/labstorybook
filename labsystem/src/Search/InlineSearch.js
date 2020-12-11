@@ -13,7 +13,7 @@ export default class InlineSearch extends React.Component {
     disabled: PropTypes.bool,
     /** */
     value: PropTypes.string,
-    /** */
+    /** Callback to be executed when the Search current value changes. */
     onChange: PropTypes.func,
     /** */
     onSearch: PropTypes.func,

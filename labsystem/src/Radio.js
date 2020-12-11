@@ -23,7 +23,7 @@ export default class Radio extends React.Component {
     defaultChecked: PropTypes.bool,
     /** */
     className: PropTypes.string,
-    /** */
+    /** Callback to be executed when the Radio current value changes. */
     onChange: PropTypes.func,
   };
 

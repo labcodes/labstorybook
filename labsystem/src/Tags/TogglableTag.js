@@ -5,7 +5,7 @@ import Icon from "../Icon";
 
 export default class TogglableTag extends React.Component {
   static propTypes = {
-    /** */
+    /** Text that will be rendered inside the Tag. */
     text: PropTypes.string.isRequired,
     /** */
     color: PropTypes.string,
@@ -15,7 +15,7 @@ export default class TogglableTag extends React.Component {
     disabled: PropTypes.bool,
     /** */
     isOn: PropTypes.bool,
-    /** */
+    /** Callback to be executed when the Tag is clicked. */
     onClick: PropTypes.func,
   };
 

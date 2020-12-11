@@ -14,7 +14,7 @@ export default class Toggle extends React.Component {
     defaultValue: PropTypes.bool,
     /** */
     value: PropTypes.bool,
-    /** */
+    /** Callback to be executed when the Toggle is clicked. */
     handleToggle: PropTypes.func,
   };
 
