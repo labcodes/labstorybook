@@ -10,7 +10,7 @@ export default class Toggle extends React.Component {
     color: PropTypes.oneOf(["teal", "purple"]),
     /** Disables the Toggle component, including functionality and style. */
     disabled: PropTypes.bool,
-    /** */
+    /** Defines a default value for the Toggle initialization. */
     defaultValue: PropTypes.bool,
     /** */
     value: PropTypes.bool,
