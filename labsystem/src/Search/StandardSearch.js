@@ -9,7 +9,7 @@ export default class StandardSearch extends React.Component {
     id: PropTypes.string,
     /** */
     defaultValue: PropTypes.string,
-    /** */
+    /** Disables the Search component, including functionality and style. */
     disabled: PropTypes.bool,
     /** */
     value: PropTypes.string,

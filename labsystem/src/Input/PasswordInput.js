@@ -9,7 +9,7 @@ export default class PasswordInput extends React.Component {
     id: PropTypes.string.isRequired,
     /** */
     label: PropTypes.string.isRequired,
-    /** */
+    /** Disables the Input component, including functionality and style. */
     disabled: PropTypes.bool,
     /** */
     defaultValue: PropTypes.string,

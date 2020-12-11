@@ -15,7 +15,7 @@ export default class Radio extends React.Component {
     label: PropTypes.string.isRequired,
     /** */
     value: PropTypes.oneOfType([string, number, bool]).isRequired,
-    /** */
+    /** Disables the Input component, including functionality and style. */
     disabled: PropTypes.bool,
     /** */
     checked: PropTypes.bool,
