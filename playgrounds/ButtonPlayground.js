@@ -5,7 +5,7 @@ import Radio from "../labsystem/src/Radio";
 import TextInput from "../labsystem/src/Input/TextInput";
 import { Button, OutlineButton, TextButton } from "../labsystem/src/Button";
 import { iconOptions, buttonSkinOptions } from "./assets";
-import Checkbox from "../labsystem/src/Checkbox";
+import Toggle from "../labsystem/src/Toggle";
 
 export default class ButtonPlayground extends React.Component {
   constructor(props) {
@@ -68,7 +68,7 @@ export default class ButtonPlayground extends React.Component {
     this.setState({ [id]: value });
   };
 
-  handleCheckboxPropChange = (event) => {
+  handlePropChangeBool = (event) => {
     const { id, checked } = event.target;
     this.setState({ [id]: checked });
   };
@@ -88,9 +88,6 @@ export default class ButtonPlayground extends React.Component {
 
     return (
       <React.Fragment>
-        <h4>
-          <strong>{currentComponent}</strong>
-        </h4>
         <Component
           text={selectedText}
           icon={selectedIcon}
@@ -120,7 +117,7 @@ export default class ButtonPlayground extends React.Component {
         </div>
 
         <div className="column lab-playground__configs">
-          <h4>Configurations</h4>
+          <h3>Prop Settings</h3>
 
           <span className="lab-playground__item">
             <strong>variation: </strong>
@@ -229,28 +226,30 @@ export default class ButtonPlayground extends React.Component {
             </fieldset>
           </span>
           <br />
+
+          <span className="lab-playground__item">
+            full width
+            <br />
+            <Toggle
+              name="fullWidth"
+              label="full width"
+              value={fullWidth}
+              handleToggle={this.handlePropChangeBool}
+            />
+          </span>
+          <br />
+
+          <span className="lab-playground__item">
+            disabled
+            <br />
+            <Toggle
+              name="selectedIsDisabled"
+              label="disabled"
+              value={selectedIsDisabled}
+              handleToggle={this.handlePropChangeBool}
+            />
+          </span>
         </div>
-
-        <span className="lab-playground__item">
-          <Checkbox
-            name="fullWidth"
-            id="fullWidth"
-            onChange={this.handleCheckboxPropChange}
-            checked={fullWidth}
-            label="full width"
-          />
-        </span>
-        <br />
-
-        <span className="lab-playground__item">
-          <Checkbox
-            name="selectedIsDisabled"
-            id="selectedIsDisabled"
-            onChange={this.handleCheckboxPropChange}
-            checked={selectedIsDisabled}
-            label="disabled"
-          />
-        </span>
       </div>
     );
   }
