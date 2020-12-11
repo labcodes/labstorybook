@@ -18,7 +18,7 @@ export default class SimpleTag extends React.Component {
     skin: PropTypes.string,
     /** */
     color: PropTypes.string,
-    /** */
+    /** Disables the Tag component, including functionality and style. */
     disabled: PropTypes.bool,
   };
 

@@ -18,7 +18,7 @@ export default class RemovableTag extends React.Component {
     skin: PropTypes.string,
     /** */
     isOutline: PropTypes.bool,
-    /** */
+    /** Disables the Tag component, including functionality and style. */
     disabled: PropTypes.bool,
     /** */
     onClick: PropTypes.func,
