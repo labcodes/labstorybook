@@ -33,6 +33,7 @@ export default class Tooltip extends React.Component {
   constructor(props) {
     super(props);
     if (props.text.length > 180) {
+      // eslint-disable-next-line no-console
       console.warn(
         `Tooltip with id='${props.id}' has ${props.text.length} characters. It shouldn't be longer than 180 characters`
       );
