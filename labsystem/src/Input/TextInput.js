@@ -33,7 +33,7 @@ export default class TextInput extends React.Component {
     customErrorMsg: PropTypes.string,
     /** Callback to be executed when the Input current value changes. */
     onChange: PropTypes.func,
-    /** */
+    /** Callback to be executed when the Input's Icon is clicked. */
     onIconClick: PropTypes.func,
   };
 

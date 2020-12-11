@@ -43,7 +43,7 @@ export default class AbstractTextInput extends React.Component {
     customErrorMsg: undefined,
     onChange: undefined,
     onIconClick: undefined,
-    placeholder: " ", // acrescentei pra poder colocar placeholder no search//
+    placeholder: " ",
     children: undefined,
   };
 
