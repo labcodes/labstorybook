@@ -19,9 +19,9 @@ export default class EmailInput extends React.Component {
     icon: PropTypes.string,
     /** */
     iconColor: PropTypes.string,
-    /** */
+    /** Defines if the Input is required. */
     required: PropTypes.bool,
-    /** */
+    /** Text that will be displayed as a help message. */
     helpMessage: PropTypes.string,
     /** */
     prefix: PropTypes.string,
