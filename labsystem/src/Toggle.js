@@ -12,7 +12,7 @@ export default class Toggle extends React.Component {
     disabled: PropTypes.bool,
     /** Defines a default value for the Toggle initialization. */
     defaultValue: PropTypes.bool,
-    /** */
+    /** Defines a static value for the Toggle. If set, internal logic is deactivated. */
     value: PropTypes.bool,
     /** Callback to be executed when the Toggle is clicked. */
     handleToggle: PropTypes.func,

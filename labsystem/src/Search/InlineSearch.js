@@ -15,7 +15,7 @@ export default class InlineSearch extends React.Component {
     value: PropTypes.string,
     /** Callback to be executed when the Search current value changes. */
     onChange: PropTypes.func,
-    /** */
+    /** Callback to be executed when the search is performed. */
     onSearch: PropTypes.func,
     /** */
     onClear: PropTypes.func,
