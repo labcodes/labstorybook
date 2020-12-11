@@ -5,9 +5,9 @@ import AbstractSearch from "./AbstractSearch";
 
 export default class StandardSearch extends React.Component {
   static propTypes = {
-    /** */
+    /** Text that will serve as unique identifier. It's also an important accessibility tool. */
     id: PropTypes.string,
-    /** */
+    /** Defines a default value for the Search initialization. */
     defaultValue: PropTypes.string,
     /** Disables the Search component, including functionality and style. */
     disabled: PropTypes.bool,

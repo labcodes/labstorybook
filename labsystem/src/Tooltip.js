@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 export default class Tooltip extends React.Component {
   static propTypes = {
-    /** */
+    /** Text that will serve as unique identifier. It's also an important accessibility tool. */
     id: PropTypes.string.isRequired,
     /** */
     text: PropTypes.string.isRequired,

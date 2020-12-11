@@ -8,7 +8,7 @@ import Icon from "./Icon";
 
 export default class Checkbox extends React.Component {
   static propTypes = {
-    /** */
+    /** Text that will serve as unique identifier. It's also an important accessibility tool. */
     id: PropTypes.string.isRequired,
     /** */
     name: PropTypes.string.isRequired,
