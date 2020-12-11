@@ -19,7 +19,7 @@ export default class TextInput extends React.Component {
     icon: PropTypes.string,
     /** */
     iconColor: PropTypes.string,
-    /** */
+    /** Defines if the Input is required. */
     required: PropTypes.bool,
     /** */
     helpMessage: PropTypes.string,

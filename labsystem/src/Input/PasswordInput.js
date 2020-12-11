@@ -15,7 +15,7 @@ export default class PasswordInput extends React.Component {
     defaultValue: PropTypes.string,
     /** */
     value: PropTypes.string,
-    /** */
+    /** Defines if the Input is required. */
     required: PropTypes.bool,
     /** */
     helpMessage: PropTypes.string,
