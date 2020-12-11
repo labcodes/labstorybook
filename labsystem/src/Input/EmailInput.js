@@ -5,11 +5,11 @@ import AbstractTextInput from "./AbstractTextInput";
 
 export default class EmailInput extends React.Component {
   static propTypes = {
-    /** Text that will be used to identify the Input.  */
+    /** Text that will serve as unique identifier. It's also an important accessibility tool. */
     id: PropTypes.string.isRequired,
-    /** Text that will be rendered as the Input's label.  */
+    /** Text that will be rendered as the Input's label. */
     label: PropTypes.string.isRequired,
-    /** Disables the Input. */
+    /** Disables the Input component, including functionality and style. */
     disabled: PropTypes.bool,
     /** Defines a default value for the Input initialization. */
     defaultValue: PropTypes.string,
