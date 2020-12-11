@@ -4,16 +4,16 @@ import { isUndefined } from "lodash";
 
 export default class Toggle extends React.Component {
   static propTypes = {
-    /** */
+    /** Text that will serve as unique identifier. It's also an important accessibility tool. */
+    name: PropTypes.string.isRequired,
+    /** Defines the Toggle color. */
     color: PropTypes.oneOf(["teal", "purple"]),
-    /** */
+    /** Disables the Toggle component, including functionality and style. */
     disabled: PropTypes.bool,
     /** */
     defaultValue: PropTypes.bool,
     /** */
     value: PropTypes.bool,
-    /** */
-    name: PropTypes.string.isRequired,
     /** */
     handleToggle: PropTypes.func,
   };
