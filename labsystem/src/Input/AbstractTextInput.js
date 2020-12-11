@@ -211,6 +211,7 @@ export default class AbstractTextInput extends React.Component {
             icon={icon}
             iconColor={iconColor}
             onIconClick={onIconClick}
+            {...(disabled ? { disabled } : undefined)}
           />
           {this.requiredIcon()}
           {children}
@@ -229,9 +230,9 @@ export default class AbstractTextInput extends React.Component {
 // ----- Auxiliary components ----- //
 
 function TrailingIcon(props) {
-  const { icon, iconColor, onIconClick } = props;
+  const { icon, iconColor, onIconClick, disabled } = props;
   let className = "lab-input__icon";
-  if (!onIconClick) {
+  if (disabled) {
     className += " lab-input__icon--disabled";
   }
   if (icon && iconColor) {
@@ -255,12 +256,14 @@ TrailingIcon.propTypes = {
   icon: PropTypes.string,
   iconColor: PropTypes.string,
   onIconClick: PropTypes.func,
+  disabled: PropTypes.bool,
 };
 
 TrailingIcon.defaultProps = {
   icon: undefined,
   iconColor: undefined,
   onIconClick: () => {},
+  disabled: undefined,
 };
 
 function TextInputMessage(props) {
