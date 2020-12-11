@@ -6,7 +6,7 @@ import PasswordInput from "../labsystem/src/Input/PasswordInput";
 
 import Toggle from "../labsystem/src/Toggle";
 
-export default class InputPlayground extends React.Component {
+export default class TextInputPlayground extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -234,7 +234,7 @@ export default class InputPlayground extends React.Component {
             <Toggle
               name="isValid"
               handleToggle={this.handlePropChangeBool}
-              defaultValue="true"
+              defaultValue
             />
           </span>
         </div>
