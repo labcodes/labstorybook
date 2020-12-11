@@ -26,7 +26,7 @@ export default class Checkbox extends React.Component {
     defaultChecked: PropTypes.bool,
     /** */
     className: PropTypes.string,
-    /** */
+    /** Callback to be executed when the Checkbox is clicked. */
     onChange: PropTypes.func,
   };
 

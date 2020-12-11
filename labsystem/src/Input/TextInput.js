@@ -9,7 +9,7 @@ export default class TextInput extends React.Component {
     id: PropTypes.string.isRequired,
     /** */
     label: PropTypes.string.isRequired,
-    /** */
+    /** Disables the Input component, including functionality and style. */
     disabled: PropTypes.bool,
     /** Defines a default value for the Input initialization. */
     defaultValue: PropTypes.string,
@@ -31,7 +31,7 @@ export default class TextInput extends React.Component {
     isValid: PropTypes.bool,
     /** */
     customErrorMsg: PropTypes.string,
-    /** */
+    /** Callback to be executed when the Input current value changes. */
     onChange: PropTypes.func,
     /** */
     onIconClick: PropTypes.func,
