@@ -6,7 +6,7 @@ import Icon from "../Icon";
 
 export default class RemovableTag extends React.Component {
   static propTypes = {
-    /** */
+    /** Text that will be rendered inside the Tag. */
     text: PropTypes.string.isRequired,
     /** */
     thumbSrc: PropTypes.string,
@@ -20,7 +20,7 @@ export default class RemovableTag extends React.Component {
     isOutline: PropTypes.bool,
     /** Disables the Tag component, including functionality and style. */
     disabled: PropTypes.bool,
-    /** */
+    /** Callback to be executed when the Tag is clicked. */
     onClick: PropTypes.func,
   };
 

@@ -6,7 +6,7 @@ import Icon from "../Icon";
 
 export default class SimpleTag extends React.Component {
   static propTypes = {
-    /** */
+    /** Text that will be rendered inside the Tag. */
     text: PropTypes.string.isRequired,
     /** */
     thumbSrc: PropTypes.string,

@@ -5,7 +5,7 @@ export default class Tooltip extends React.Component {
   static propTypes = {
     /** Text that will serve as unique identifier. It's also an important accessibility tool. */
     id: PropTypes.string.isRequired,
-    /** */
+    /** Text that will be rendered inside the Tooltip. */
     text: PropTypes.string.isRequired,
     /** */
     children: PropTypes.node.isRequired,

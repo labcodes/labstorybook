@@ -29,7 +29,7 @@ export default class EmailInput extends React.Component {
     suffix: PropTypes.string,
     /** */
     customErrorMsg: PropTypes.string,
-    /** */
+    /** Callback to be executed when the Input current value changes. */
     onChange: PropTypes.func,
     /** */
     onIconClick: PropTypes.func,
