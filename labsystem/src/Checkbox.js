@@ -8,15 +8,25 @@ import Icon from "./Icon";
 
 export default class Checkbox extends React.Component {
   static propTypes = {
+    /** */
     id: PropTypes.string.isRequired,
+    /** */
     name: PropTypes.string.isRequired,
+    /** */
     label: PropTypes.string.isRequired,
+    /** */
     disabled: PropTypes.bool,
+    /** */
     checked: PropTypes.bool,
+    /** */
     value: PropTypes.oneOfType([string, number, bool]),
+    /** */
     indeterminate: PropTypes.bool,
+    /** */
     defaultChecked: PropTypes.bool,
+    /** */
     className: PropTypes.string,
+    /** */
     onChange: PropTypes.func,
   };
 

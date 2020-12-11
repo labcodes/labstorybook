@@ -3,9 +3,13 @@ import PropTypes from "prop-types";
 
 export default class Tooltip extends React.Component {
   static propTypes = {
+    /** */
     id: PropTypes.string.isRequired,
+    /** */
     text: PropTypes.string.isRequired,
+    /** */
     children: PropTypes.node.isRequired,
+    /** */
     placement: PropTypes.oneOf([
       "top-start",
       "top",

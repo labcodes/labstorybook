@@ -5,11 +5,17 @@ import Icon from "../Icon";
 
 export default class TogglableTag extends React.Component {
   static propTypes = {
+    /** */
     text: PropTypes.string.isRequired,
+    /** */
     color: PropTypes.string,
+    /** */
     isOutline: PropTypes.bool,
+    /** */
     disabled: PropTypes.bool,
+    /** */
     isOn: PropTypes.bool,
+    /** */
     onClick: PropTypes.func,
   };
 
