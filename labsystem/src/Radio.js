@@ -7,14 +7,23 @@ import { isUndefined } from "lodash";
 
 export default class Radio extends React.Component {
   static propTypes = {
+    /** */
     id: PropTypes.string.isRequired,
+    /** */
     name: PropTypes.string.isRequired,
+    /** */
     label: PropTypes.string.isRequired,
+    /** */
     value: PropTypes.oneOfType([string, number, bool]).isRequired,
+    /** */
     disabled: PropTypes.bool,
+    /** */
     checked: PropTypes.bool,
+    /** */
     defaultChecked: PropTypes.bool,
+    /** */
     className: PropTypes.string,
+    /** */
     onChange: PropTypes.func,
   };
 

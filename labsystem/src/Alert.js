@@ -6,11 +6,17 @@ import TextButton from "./Buttons/TextButton";
 
 export default class Alert extends React.Component {
   static propTypes = {
+    /** */
     text: PropTypes.string.isRequired,
+    /** */
     type: PropTypes.oneOf(["info", "warn", "error"]),
+    /** */
     icon: PropTypes.string.isRequired,
+    /** */
     buttonProps: PropTypes.shape({
+      /** */
       text: PropTypes.string,
+      /** */
       onClick: PropTypes.func,
     }),
   };

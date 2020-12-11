@@ -5,17 +5,29 @@ import AbstractTextInput from "./AbstractTextInput";
 
 export default class PasswordInput extends React.Component {
   static propTypes = {
+    /** */
     id: PropTypes.string.isRequired,
+    /** */
     label: PropTypes.string.isRequired,
+    /** */
     disabled: PropTypes.bool,
+    /** */
     defaultValue: PropTypes.string,
+    /** */
     value: PropTypes.string,
+    /** */
     required: PropTypes.bool,
+    /** */
     helpMessage: PropTypes.string,
+    /** */
     prefix: PropTypes.string,
+    /** */
     suffix: PropTypes.string,
+    /** */
     isValid: PropTypes.bool,
+    /** */
     customErrorMsg: PropTypes.string,
+    /** */
     onChange: PropTypes.func,
   };
 

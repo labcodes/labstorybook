@@ -5,20 +5,35 @@ import AbstractTextInput from "./AbstractTextInput";
 
 export default class TextInput extends React.Component {
   static propTypes = {
+    /** */
     id: PropTypes.string.isRequired,
+    /** */
     label: PropTypes.string.isRequired,
+    /** */
     disabled: PropTypes.bool,
+    /** */
     defaultValue: PropTypes.string,
+    /** */
     value: PropTypes.string,
+    /** */
     icon: PropTypes.string,
+    /** */
     iconColor: PropTypes.string,
+    /** */
     required: PropTypes.bool,
+    /** */
     helpMessage: PropTypes.string,
+    /** */
     prefix: PropTypes.string,
+    /** */
     suffix: PropTypes.string,
+    /** */
     isValid: PropTypes.bool,
+    /** */
     customErrorMsg: PropTypes.string,
+    /** */
     onChange: PropTypes.func,
+    /** */
     onIconClick: PropTypes.func,
   };
 

@@ -5,19 +5,32 @@ import AbstractTextInput from "./AbstractTextInput";
 
 export default class EmailInput extends React.Component {
   static propTypes = {
+    /** Text that will be used to identify the Input.  */
     id: PropTypes.string.isRequired,
+    /** Text that will be rendered as the Input's label.  */
     label: PropTypes.string.isRequired,
+    /** Disables the Input. */
     disabled: PropTypes.bool,
     defaultValue: PropTypes.string,
+    /** Text that is written in the Input.  */
     value: PropTypes.string,
+    /** */
     icon: PropTypes.string,
+    /** */
     iconColor: PropTypes.string,
+    /** */
     required: PropTypes.bool,
+    /** */
     helpMessage: PropTypes.string,
+    /** */
     prefix: PropTypes.string,
+    /** */
     suffix: PropTypes.string,
+    /** */
     customErrorMsg: PropTypes.string,
+    /** */
     onChange: PropTypes.func,
+    /** */
     onIconClick: PropTypes.func,
   };
 

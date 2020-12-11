@@ -6,12 +6,19 @@ import Icon from "../Icon";
 
 export default class SimpleTag extends React.Component {
   static propTypes = {
+    /** */
     text: PropTypes.string.isRequired,
+    /** */
     thumbSrc: PropTypes.string,
+    /** */
     icon: PropTypes.string,
+    /** */
     isOutline: PropTypes.bool,
+    /** */
     skin: PropTypes.string,
+    /** */
     color: PropTypes.string,
+    /** */
     disabled: PropTypes.bool,
   };
 
