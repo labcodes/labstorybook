@@ -5,13 +5,13 @@ import AbstractTextInput from "./AbstractTextInput";
 
 export default class PasswordInput extends React.Component {
   static propTypes = {
-    /** */
+    /** Text that will serve as unique identifier. It's also an important accessibility tool. */
     id: PropTypes.string.isRequired,
     /** */
     label: PropTypes.string.isRequired,
     /** Disables the Input component, including functionality and style. */
     disabled: PropTypes.bool,
-    /** */
+    /** Defines a default value for the Input initialization. */
     defaultValue: PropTypes.string,
     /** */
     value: PropTypes.string,

@@ -5,13 +5,13 @@ import AbstractTextInput from "./AbstractTextInput";
 
 export default class TextInput extends React.Component {
   static propTypes = {
-    /** */
+    /** Text that will serve as unique identifier. It's also an important accessibility tool. */
     id: PropTypes.string.isRequired,
     /** */
     label: PropTypes.string.isRequired,
     /** */
     disabled: PropTypes.bool,
-    /** */
+    /** Defines a default value for the Input initialization. */
     defaultValue: PropTypes.string,
     /** */
     value: PropTypes.string,

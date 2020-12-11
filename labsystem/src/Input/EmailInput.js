@@ -11,7 +11,7 @@ export default class EmailInput extends React.Component {
     label: PropTypes.string.isRequired,
     /** Disables the Input component, including functionality and style. */
     disabled: PropTypes.bool,
-    /** */
+    /** Defines a default value for the Input initialization. */
     defaultValue: PropTypes.string,
     /** Text that will be rendered inside the Input field. */
     value: PropTypes.string,
