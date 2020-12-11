@@ -5,12 +5,19 @@ import Icon from "../Icon";
 
 export default class DropdownTag extends React.Component {
   static propTypes = {
+    /** */
     text: PropTypes.string.isRequired,
+    /** */
     icon: PropTypes.string,
+    /** */
     color: PropTypes.string,
+    /** */
     skin: PropTypes.string,
+    /** */
     isOutline: PropTypes.bool,
+    /** */
     disabled: PropTypes.bool,
+    /** */
     onClick: PropTypes.func,
   };
 

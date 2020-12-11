@@ -5,13 +5,21 @@ import AbstractSearch from "./AbstractSearch";
 
 export default class InlineSearch extends React.Component {
   static propTypes = {
+    /** */
     id: PropTypes.string,
+    /** */
     defaultValue: PropTypes.string,
+    /** */
     disabled: PropTypes.bool,
+    /** */
     value: PropTypes.string,
+    /** */
     onChange: PropTypes.func,
+    /** */
     onSearch: PropTypes.func,
+    /** */
     onClear: PropTypes.func,
+    /** */
     placeholder: PropTypes.string,
   };
 

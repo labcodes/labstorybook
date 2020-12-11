@@ -6,13 +6,21 @@ import Icon from "../Icon";
 
 export default class RemovableTag extends React.Component {
   static propTypes = {
+    /** */
     text: PropTypes.string.isRequired,
+    /** */
     thumbSrc: PropTypes.string,
+    /** */
     icon: PropTypes.string,
+    /** */
     color: PropTypes.string,
+    /** */
     skin: PropTypes.string,
+    /** */
     isOutline: PropTypes.bool,
+    /** */
     disabled: PropTypes.bool,
+    /** */
     onClick: PropTypes.func,
   };
 
