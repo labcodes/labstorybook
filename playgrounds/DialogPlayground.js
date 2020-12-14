@@ -18,6 +18,7 @@ export default class DialogPlayground extends React.Component {
       selectedOutlineButtonText: "Click me too!",
       selectedIcon: "star",
       selectedIsModal: false,
+      selectedIsLarge: false,
     };
 
     this.state = {
@@ -93,6 +94,7 @@ export default class DialogPlayground extends React.Component {
       selectedIcon,
       modalIsOpen,
       selectedIsModal,
+      selectedIsLarge,
     } = this.state;
     const Component = availableComponents[currentComponent];
 
@@ -106,6 +108,7 @@ export default class DialogPlayground extends React.Component {
           handleClose={this.handleModalClose}
           isOpen={modalIsOpen}
           isModal={selectedIsModal}
+          isLarge={selectedIsLarge}
           buttonProps={{
             text: selectedButtonText,
             onClick: () => alert(selectedButtonResponseText),
@@ -133,6 +136,7 @@ export default class DialogPlayground extends React.Component {
       selectedButtonText,
       selectedOutlineButtonText,
       selectedIsModal,
+      selectedIsLarge,
       windowIsSmall,
       modalIsOpen,
     } = this.state;
@@ -211,7 +215,9 @@ export default class DialogPlayground extends React.Component {
           {!windowIsSmall ? (
             <>
               <span className="lab-playground__item">
-                <p><strong>isModal</strong></p>
+                <p>
+                  <strong>isModal</strong>
+                </p>
                 <Toggle
                   name="selectedIsModal"
                   label="selectedIsModal"
@@ -221,6 +227,18 @@ export default class DialogPlayground extends React.Component {
               </span>
             </>
           ) : null}
+
+          <span className="lab-playground__item">
+            <p>
+              <strong>isLarge</strong>
+            </p>
+            <Toggle
+              name="selectedIsLarge"
+              label="selectedIsLarge"
+              value={selectedIsLarge}
+              handleToggle={this.handleBoolPropChange}
+            />
+          </span>
 
           {currentComponent === "MessageDialog" ? (
             <span className="lab-playground__item">
