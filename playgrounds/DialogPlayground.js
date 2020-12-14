@@ -2,7 +2,7 @@ import React from "react";
 import { isEmpty } from "lodash";
 
 import TextInput from "../labsystem/src/Input/TextInput";
-import Checkbox from "../labsystem/src/Checkbox";
+import Toggle from "../labsystem/src/Toggle";
 import { StandardDialog, MessageDialog } from "../labsystem/src/Dialog";
 import { Button } from "../labsystem/src/Buttons";
 import { iconOptions } from "./assets";
@@ -98,10 +98,7 @@ export default class DialogPlayground extends React.Component {
 
     return (
       <React.Fragment>
-        <h4>
-          <strong>{currentComponent}</strong>
-        </h4>
-        <Button text="Show Modal" onClick={this.showModal} />
+        <Button text="Open Dialog" onClick={this.showModal} />
         <Component
           icon={selectedIcon}
           title={selectedTitle}
@@ -147,7 +144,7 @@ export default class DialogPlayground extends React.Component {
         </div>
 
         <div className="column lab-playground__configs">
-          <h4>Configurations</h4>
+          <h3>Prop Settings</h3>
 
           <span className="lab-playground__item">
             <label htmlFor="currentComponent">
@@ -214,16 +211,14 @@ export default class DialogPlayground extends React.Component {
           {!windowIsSmall ? (
             <>
               <span className="lab-playground__item">
-                <Checkbox
+                <p><strong>isModal</strong></p>
+                <Toggle
                   name="selectedIsModal"
-                  id="selectedIsModal"
-                  onChange={this.handleBoolPropChange}
-                  checked={selectedIsModal}
-                  label="isModal"
-                  disabled={modalIsOpen}
+                  label="selectedIsModal"
+                  value={selectedIsModal}
+                  handleToggle={this.handleBoolPropChange}
                 />
               </span>
-              <br />
             </>
           ) : null}
 
