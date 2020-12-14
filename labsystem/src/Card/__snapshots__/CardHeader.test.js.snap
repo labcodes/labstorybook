@@ -28,7 +28,7 @@ exports[`CardHeader renders with categoryIcon 1`] = `
     className="lab-card-category"
   >
     <span
-      className="lab-icon lab-icon--star lab-icon--undefined"
+      className="lab-icon lab-icon--star"
     />
   </p>
 </article>
@@ -44,8 +44,9 @@ exports[`CardHeader renders with categoryLabelText 1`] = `
     <span
       className="lab-tag  lab-tag--pale"
       onClick={[Function]}
-      onKeyDown={[Function]}
+      onKeyPress={[Function]}
       role="presentation"
+      tabIndex="-1"
     >
       test
     </span>
