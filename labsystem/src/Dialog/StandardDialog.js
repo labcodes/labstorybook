@@ -107,7 +107,7 @@ export default class StandardDialog extends React.Component {
           </button>
 
           <div className="lab-dialog__header">
-            <div className="lab-dialog__title">{title}</div>
+            <h1 className="lab-dialog__title">{title}</h1>
             <button
               className="lab-dialog__close-button"
               type="button"
