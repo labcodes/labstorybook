@@ -9,11 +9,11 @@ export default class DropdownTag extends React.Component {
     text: PropTypes.string.isRequired,
     /** Type of the icon to be rendered. Won't render an icon if not passed to the component. */
     icon: PropTypes.string,
-    /** */
+    /** Color of the rendered Tag. */
     color: PropTypes.string,
-    /** */
+    /** Skin of the the rendered Tag. */
     skin: PropTypes.string,
-    /** */
+    /** Defines if the Tag has an outline style. */
     isOutline: PropTypes.bool,
     /** Disables the Tag component, including functionality and style. */
     disabled: PropTypes.bool,
