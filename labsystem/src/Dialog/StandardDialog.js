@@ -103,7 +103,7 @@ export default class StandardDialog extends React.Component {
             onTouchStart={this.handleTouchStart}
             onTouchEnd={this.handleTouchEnd}
           >
-            <Icon type="collapse-open" size="petit" />
+            <Icon type="collapse-open" />
           </button>
 
           <div className="lab-dialog__header">
