@@ -5,13 +5,13 @@ import Icon from "../Icon";
 
 export default class AbstractButton extends React.Component {
   static propTypes = {
-    /** */
+    /** HTML type of the Button. */
     type: PropTypes.oneOf(["button", "submit", "reset"]),
-    /** */
-    text: PropTypes.string.isRequired,
-    /** */
+    /** Style variation of the Button. */
     variant: PropTypes.oneOf(["default", "outline", "text"]),
-    /** */
+    /** Text that will be rendered inside the Button. */
+    text: PropTypes.string.isRequired,
+    /** Skin of the the rendered Button. */
     skin: PropTypes.oneOf([
       "light",
       "dark",
@@ -23,13 +23,13 @@ export default class AbstractButton extends React.Component {
     ]),
     /** Type of the icon to be rendered. Won't render an icon if not passed to the component. */
     icon: PropTypes.string,
-    /** */
+    /** Size of the Button. */
     size: PropTypes.oneOf(["normal", "small", "large"]),
-    /** */
+    /** Disables the Button, cancelling the onClick handler. */
     disabled: PropTypes.bool,
-    /** */
+    /** Callback to be executed when the Button is clicked. */
     onClick: PropTypes.func,
-    /** */
+    /** Makes the Button occupy its container's full width. */
     fullWidth: PropTypes.bool,
   };
 
