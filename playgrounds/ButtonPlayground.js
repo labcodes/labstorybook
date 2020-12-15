@@ -17,8 +17,6 @@ export default class ButtonPlayground extends React.Component {
       selectedSize: "normal",
       selectedIsDisabled: false,
       fullWidth: false,
-      selectedSkin: "pale",
-      selectedSize: "normal",
     };
 
     this.state = {
@@ -104,17 +102,21 @@ export default class ButtonPlayground extends React.Component {
 
   render() {
     const {
+      currentComponent,
       selectedText,
       selectedIcon,
       selectedSkin,
+      selectedSize,
       fullWidth,
       selectedIsDisabled,
-      currentComponent,
     } = this.state;
 
     return (
       <div className="columns lab-playground">
-        <div className="column lab-playground__component">
+        <div
+          className="column lab-playground__component"
+          style={selectedSkin === "light" ? { background: "#2E3942" } : {}}
+        >
           {this.renderCurrentComponent()}
         </div>
 
@@ -131,6 +133,7 @@ export default class ButtonPlayground extends React.Component {
                 name="ButtonVariationRadio"
                 value="Button"
                 onChange={this.handleButtonVariationPropChange}
+                checked={currentComponent === "Button"}
               />
               <br />
               <Radio
@@ -139,6 +142,7 @@ export default class ButtonPlayground extends React.Component {
                 name="ButtonVariationRadio"
                 value="OutlineButton"
                 onChange={this.handleButtonVariationPropChange}
+                checked={currentComponent === "OutlineButton"}
               />
               <br />
               <Radio
@@ -147,6 +151,7 @@ export default class ButtonPlayground extends React.Component {
                 name="ButtonVariationRadio"
                 value="TextButton"
                 onChange={this.handleButtonVariationPropChange}
+                checked={currentComponent === "TextButton"}
               />
             </fieldset>
           </span>
@@ -208,6 +213,7 @@ export default class ButtonPlayground extends React.Component {
                 name="ButtonSizeRadio"
                 value="small"
                 onChange={this.handleButtonSizePropChange}
+                checked={selectedSize === "small"}
               />
               <br />
               <Radio
@@ -216,6 +222,7 @@ export default class ButtonPlayground extends React.Component {
                 name="ButtonSizeRadio"
                 value="normal"
                 onChange={this.handleButtonSizePropChange}
+                checked={selectedSize === "normal"}
               />
               <br />
               <Radio
@@ -224,6 +231,7 @@ export default class ButtonPlayground extends React.Component {
                 name="ButtonSizeRadio"
                 value="large"
                 onChange={this.handleButtonSizePropChange}
+                checked={selectedSize === "large"}
               />
             </fieldset>
           </span>
