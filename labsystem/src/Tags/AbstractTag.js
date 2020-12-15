@@ -4,15 +4,25 @@ import { isUndefined } from "lodash";
 
 export default class AbstractTag extends React.Component {
   static propTypes = {
+    /** */
     text: PropTypes.string.isRequired,
+    /** */
     disabled: PropTypes.bool,
+    /** */
     isOutline: PropTypes.bool,
+    /** */
     skin: PropTypes.string,
+    /** */
     color: PropTypes.string,
+    /** */
     onClick: PropTypes.func,
+    /** */
     renderPrefix: PropTypes.object,
+    /** */
     renderSuffix: PropTypes.object,
+    /** */
     className: PropTypes.string,
+    /** */
     tabIndex: PropTypes.string,
   };
 

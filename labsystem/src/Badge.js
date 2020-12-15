@@ -3,8 +3,10 @@ import PropTypes from "prop-types";
 
 export default class Badge extends React.Component {
   static propTypes = {
+    /** */
     type: PropTypes.oneOf(["floating-add", "harvest", "meta", "ponto", "star"])
       .isRequired,
+    /** */
     color: PropTypes.oneOf([
       "white",
       "black",
@@ -24,6 +26,7 @@ export default class Badge extends React.Component {
       "purple-60",
       "purple-70",
     ]),
+    /** */
     wrapperColor: PropTypes.oneOf([
       "white",
       "black",
@@ -43,6 +46,7 @@ export default class Badge extends React.Component {
       "purple-60",
       "purple-70",
     ]),
+    /** */
     className: PropTypes.string,
   };
 
