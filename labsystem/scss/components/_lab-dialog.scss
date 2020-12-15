@@ -1,55 +1,88 @@
 @use 'sass:map';
 
-// Standard Dialog component
+// Modal overlay
 .lab-dialog-overlay {
   z-index: 2;
+  display: flex;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  background-color: $black-50;
 }
 
+// Global styles
 .lab-dialog {
-  background-color: #fefefe;
-  position: fixed;
   z-index: 2;
+  width: 90%;
+  max-height: 60%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%,-50%);
+  padding: $spacing-06 28px; // missing token
+  border-radius: $radius-04;
+  background-color: $white;
+  box-shadow: 0 0 28px 0 $black-20; // missing token
+  // Font settings
+  font-family: $font-primary;
+  -webkit-font-smoothing: antialiased;
 
-  width: 24rem;
-  padding: 1rem;
-  border-radius: 5px;
+  @include from($tablet) {
+    width: 520px;
+    max-height: 100%;
+
+    &.lab-dialog--large {
+      width: 768px;
+    }
+  }
 }
 
-.lab-dialog--standard {
-}
-
+// Global elements
 .lab-dialog__header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .lab-dialog__title {
-  color: $teal-40;
+  margin: 0;
+  color: $teal-60;
   font-weight: $weight-bold;
+  font-size: $font-size-6;
+  line-height: $spacing-06;
 }
 
 .lab-dialog__content {
-  min-width: 100%;
-  width: 0;
   overflow-x: auto;
+  margin-bottom: $spacing-06;
+  min-width: 100%;
+  color: $black-75;
+  font-size: $font-size-4;
+  font-weight: $weight-medium;
+  line-height: $spacing-06;
 }
 
 .lab-dialog__footer {
   display: flex;
+  margin-top: 0;
+  margin-left: -28px; // missing token
+  margin-right: -28px; // missing token
+  margin-bottom: -$spacing-06;
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+  padding: $spacing-06 28px; // missing token
   justify-content: flex-end;
   background: $mineral-10;
-}
 
-.lab-dialog--message {
+  :first-child {
+    margin-right: $spacing-04;
+  }
 }
 
 .lab-dialog__icon {
@@ -57,7 +90,83 @@
   justify-content: center;
 }
 
-.lab-dialog__header--message{
+.lab-dialog__close-button {
+  display: none;
+
+  .lab-icon {
+    background-color: $mineral-60;
+  }
+
+  @include from($tablet) {
+    cursor: pointer;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: unset;
+    border: none;
+
+    &:focus {
+      border-radius: $radius-02;
+      box-shadow: 0 0 0 2px $teal-30;
+      background-color: transparent;
+      outline: unset;
+      
+      .lab-icon {
+        background-color: $teal-60;
+      }
+    }
+
+    &:hover {
+      border-radius: $radius-02;
+      background-color: $teal-10;
+
+      .lab-icon {
+        background-color: $teal-60;
+      }
+    }
+  }
+
+  &:active {
+    border-radius: $radius-02;
+    box-shadow: 0 0 0 2px $teal-30;
+    background-color: $teal-20;
+    outline: unset;
+    
+    .lab-icon {
+      background-color: $teal-70;
+    }
+  }
+}
+
+.lab-dialog__mobile-close-button {
+  display: flex;
+  justify-content: center;
+  margin-top: -28px; // missing token
+  margin-bottom: 0;
+  width: 100%;
+  height: 24px;
+  background-color: unset;
+  border: none;
+
+  .lab-icon {
+    background-color: $mineral-60;
+  }
+
+  @include from($tablet) {
+    display: none;
+  }
+}
+
+// Standard Dialog component
+.lab-dialog--standard {
+}
+
+// Message Dialog Component
+.lab-dialog--message {
+}
+
+// Message Dialog elements
+.lab-dialog__header--message {
   display: flex;
   justify-content: flex-end;
 }
@@ -74,12 +183,4 @@
   justify-content: center;
 }
 
-.lab-dialog--large {
-}
-
-.lab-dialog__close-button {
-}
-
-.lab-dialog__mobile-close-button {
-  width: 100%;
-}
+// como colocar scroll quando o conteúdo fica maior que a altura?
