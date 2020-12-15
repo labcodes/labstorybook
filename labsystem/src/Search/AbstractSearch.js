@@ -6,14 +6,23 @@ import Icon from "../Icon";
 
 export default class AbstractSearch extends React.Component {
   static propTypes = {
+    /** */
     id: PropTypes.string,
+    /** */
     defaultValue: PropTypes.string,
+    /** */
     disabled: PropTypes.bool,
+    /** */
     value: PropTypes.string,
+    /** */
     onChange: PropTypes.func,
+    /** */
     onSearch: PropTypes.func,
+    /** */
     onClear: PropTypes.func,
+    /** */
     placeholder: PropTypes.string,
+    /** */
     type: PropTypes.oneOf(["standard", "inline"]).isRequired,
   };
 
@@ -160,7 +169,9 @@ function TrailingIcon(props) {
 }
 
 TrailingIcon.propTypes = {
+  /** */
   onClear: PropTypes.func,
+  /** */
   disabled: PropTypes.bool,
 };
 
@@ -191,7 +202,9 @@ function StandardSearchIcon(props) {
 }
 
 StandardSearchIcon.propTypes = {
+  /** */
   disabled: PropTypes.bool,
+  /** */
   handleOnSearch: PropTypes.func,
 };
 
@@ -214,9 +227,11 @@ function InlineSearchIcon(props) {
 }
 
 InlineSearchIcon.propTypes = {
+  /** */
   disabled: PropTypes.bool,
 };
 
 InlineSearchIcon.defaultProps = {
+  /** */
   disabled: false,
 };
