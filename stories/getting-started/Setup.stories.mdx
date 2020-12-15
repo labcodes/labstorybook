@@ -28,13 +28,13 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
     <div class="column">
       <h2>Confetti</h2>
       <h3>Installing</h3>
-      <p>Since currently all our codebase is inside the same repo, if you want to use our desing system by itself in outside projects, you'll need to ask Luciano on Slack to generate a package for you.</p>
+      <p>Since currently all our codebase is inside the same repo, if you want to use our desing system by itself in outside projects, you'll need to ask Luciano (luciano@labcodes.com.br) to generate a package for you.</p>
       <p>He'll send you a compressed version of the transpiled components, together with the scss files you'll need to use them in your project. The compressed file should be named <code>labsystem-0.1.0.tgz</code> or something similar.</p>
       <p>With the compressed file at hand, copy it to your project and install it by running <code>npm install labsystem-0.1.0.tgz</code>. That will make the components and scss files to be unpacked and available inside the <code>node_modules</code> folder.</p>
       <h3>Importing the styles</h3>
       <p>To be able to use our styles, you'll have to have scss and svg support in your react project. If you do, just import our main scss file into yours by adding <code>@import '~labsystem/scss/main';</code> to your mais scss file.</p>
       <h3>Importing the fonts</h3>
-      <p>Since we're using the design system internally and for testing purposes, if you want access to the fonts, talk with Debora or Luciano, so they can send you the HTML tag to import them. Our styles already reference the fonts, so after importing them, everything should be good to go.</p>
+      <p>Since we're using the design system internally and for testing purposes, if you want access to the fonts, talk with Debora (debora@labcodes.com.br) or Luciano (luciano@labcodes.com.br), so they can send you the HTML tag to import them. Our styles already reference the fonts, so after importing them, everything should be good to go.</p>
       <h3>Changing the theme for the components</h3>
       <p>Our design system accepts theming via scss variables. To change a theme for a component, you'll just need to override the corresponding theme variable.</p>
       <p>To do that, take a look at which are the default themes in our <a href="https://github.com/labcodes/labstorybook/blob/master/labsystem/scss/variables/_settings.scss">_settings.scss</a> file, and which themes are available for the components in the <a href="https://github.com/labcodes/labstorybook/blob/master/labsystem/scss/variables/_colors.scss">_colors.scss</a> file.</p>
