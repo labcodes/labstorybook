@@ -97,15 +97,6 @@ export default class MessageDialog extends React.Component {
           role="dialog"
           aria-modal="true"
         >
-          <button
-            type="button"
-            className="lab-dialog__mobile-close-button"
-            onClick={handleClose}
-            onTouchStart={this.handleTouchStart}
-            onTouchEnd={this.handleTouchEnd}
-          >
-            <Icon type="collapse-open" />
-          </button>
           <div className="lab-dialog__header lab-dialog__header--message">
             <button
               className="lab-dialog__close-button"
