@@ -8,15 +8,15 @@ export default class RemovableTag extends React.Component {
   static propTypes = {
     /** Text that will be rendered inside the Tag. */
     text: PropTypes.string.isRequired,
-    /** */
+    /** Source of the thumb to be rendered. Won't render a thumb if not passed to the component. */
     thumbSrc: PropTypes.string,
-    /** */
+    /** Type of the icon to be rendered. Won't render an icon if not passed to the component. */
     icon: PropTypes.string,
-    /** */
+    /** Color of the rendered Tag. */
     color: PropTypes.string,
-    /** */
+    /** Skin of the the rendered Tag. */
     skin: PropTypes.string,
-    /** */
+    /** Defines if the Tag has an outline style. */
     isOutline: PropTypes.bool,
     /** Disables the Tag component, including functionality and style. */
     disabled: PropTypes.bool,

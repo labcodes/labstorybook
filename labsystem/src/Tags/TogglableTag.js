@@ -7,16 +7,16 @@ export default class TogglableTag extends React.Component {
   static propTypes = {
     /** Text that will be rendered inside the Tag. */
     text: PropTypes.string.isRequired,
-    /** */
+    /** Color of the rendered Tag. */
     color: PropTypes.string,
-    /** */
+    /** Defines if the Tag has an outline style. */
     isOutline: PropTypes.bool,
     /** Disables the Tag component, including functionality and style. */
     disabled: PropTypes.bool,
-    /** */
-    isOn: PropTypes.bool,
     /** Callback to be executed when the Tag is clicked. */
     onClick: PropTypes.func,
+    /** Defines if the Tag is switched on. */
+    isOn: PropTypes.bool,
   };
 
   static defaultProps = {

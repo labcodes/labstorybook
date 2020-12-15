@@ -4,38 +4,38 @@ import { isUndefined } from "lodash";
 
 export default class AbstractTag extends React.Component {
   static propTypes = {
-    /** */
-    text: PropTypes.string.isRequired,
-    /** */
-    disabled: PropTypes.bool,
-    /** */
-    isOutline: PropTypes.bool,
-    /** */
-    skin: PropTypes.string,
-    /** */
-    color: PropTypes.string,
-    /** */
-    onClick: PropTypes.func,
-    /** */
+    /** Components to be rendered at the beginning of the Tag. */
     renderPrefix: PropTypes.object,
-    /** */
+    /** Components to be rendered at the end of the Tag. */
     renderSuffix: PropTypes.object,
-    /** */
-    className: PropTypes.string,
-    /** */
+    /** HTML tabIndex, used to avoid Tag from being selected with TAB key, if "-1". */
     tabIndex: PropTypes.string,
+    /** HMTL className of a concrete Tag to be enriched. */
+    className: PropTypes.string,
+    /** Text that will be rendered inside the Tag. */
+    text: PropTypes.string.isRequired,
+    /** Color of the rendered Tag. */
+    color: PropTypes.string,
+    /** Skin of the the rendered Tag. */
+    skin: PropTypes.string,
+    /** Defines if the Tag has an outline style. */
+    isOutline: PropTypes.bool,
+    /** Disables the Tag component, including functionality and style. */
+    disabled: PropTypes.bool,
+    /** Callback to be executed when the Tag is clicked. */
+    onClick: PropTypes.func,
   };
 
   static defaultProps = {
-    isOutline: false,
-    skin: "pale",
-    color: "",
-    disabled: false,
-    onClick: undefined,
     renderPrefix: undefined,
     renderSuffix: undefined,
-    className: "",
     tabIndex: "0",
+    className: "",
+    isOutline: false,
+    color: "",
+    skin: "pale",
+    disabled: false,
+    onClick: undefined,
   };
 
   handleEvent = (e) => {
