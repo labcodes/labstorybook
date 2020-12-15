@@ -117,7 +117,7 @@ export default class MessageDialog extends React.Component {
           </div>
 
           <div className="lab-dialog__icon">
-            <Icon type={icon} color="black-75" />
+            <Icon type={icon} />
           </div>
 
           <div className="lab-dialog__title lab-dialog__title--message">
