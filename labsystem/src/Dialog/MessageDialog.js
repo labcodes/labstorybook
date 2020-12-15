@@ -128,7 +128,7 @@ export default class MessageDialog extends React.Component {
             {content}
           </div>
 
-          <div className="lab-dialog__footer">
+          <div className="lab-dialog__footer lab-dialog__footer--message">
             {outlineButtonProps ? (
               <OutlineButton
                 size="normal"
