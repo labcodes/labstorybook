@@ -32,7 +32,7 @@ export default class AbstractTextInput extends React.Component {
     required: PropTypes.bool,
     /** Text that will be displayed as a help message. */
     helpMessage: PropTypes.string,
-    /** Text that will be displayed at the begining of the Input. */
+    /** Text that will be displayed at the beginning of the Input. */
     prefix: PropTypes.string,
     /** Text that will be displayed at the end of the Input. */
     suffix: PropTypes.string,

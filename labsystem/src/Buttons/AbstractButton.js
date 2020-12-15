@@ -11,6 +11,8 @@ export default class AbstractButton extends React.Component {
     variant: PropTypes.oneOf(["default", "outline", "text"]),
     /** Text that will be rendered inside the Button. */
     text: PropTypes.string.isRequired,
+    /** Type of the icon to be rendered. Won't render an icon if not passed to the component. */
+    icon: PropTypes.string,
     /** Skin of the the rendered Button. */
     skin: PropTypes.oneOf([
       "light",
@@ -21,8 +23,6 @@ export default class AbstractButton extends React.Component {
       "destructive-invert",
       "confirmation-invert",
     ]),
-    /** Type of the icon to be rendered. Won't render an icon if not passed to the component. */
-    icon: PropTypes.string,
     /** Size of the Button. */
     size: PropTypes.oneOf(["normal", "small", "large"]),
     /** Disables the Button, cancelling the onClick handler. */
@@ -36,12 +36,12 @@ export default class AbstractButton extends React.Component {
   static defaultProps = {
     type: "button",
     variant: "default",
-    skin: undefined,
     icon: undefined,
+    skin: undefined,
     size: "normal",
     disabled: false,
-    onClick: undefined,
     fullWidth: false,
+    onClick: undefined,
   };
 
   icon = () => {
