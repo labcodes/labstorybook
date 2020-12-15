@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 export default class Icon extends React.Component {
   static propTypes = {
-    /** */
+    /** Type of the Icon to be rendered. */
     type: PropTypes.oneOf([
       "arrow-down",
       "arrow-left",
@@ -42,7 +42,7 @@ export default class Icon extends React.Component {
       "wallet",
       "workspace",
     ]).isRequired,
-    /** */
+    /** Color of the rendered Icon. */
     color: PropTypes.oneOf([
       "white",
       "black-75",
@@ -61,7 +61,7 @@ export default class Icon extends React.Component {
       "purple-60",
       "purple-70",
     ]),
-    /** */
+    /** Size of the rendered Icon. */
     size: PropTypes.oneOf(["small", "petit"]),
     /** */
     className: PropTypes.string,

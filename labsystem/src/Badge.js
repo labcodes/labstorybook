@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 
 export default class Badge extends React.Component {
   static propTypes = {
-    /** */
+    /** Type of the Badge to be rendered. */
     type: PropTypes.oneOf(["floating-add", "harvest", "meta", "ponto", "star"])
       .isRequired,
-    /** */
+    /** Color of the rendered Badge's inernal icon. */
     color: PropTypes.oneOf([
       "white",
       "black",
@@ -26,7 +26,7 @@ export default class Badge extends React.Component {
       "purple-60",
       "purple-70",
     ]),
-    /** */
+    /** Defines the Badge's internal background color. */
     wrapperColor: PropTypes.oneOf([
       "white",
       "black",
