@@ -5,9 +5,13 @@ import Icon from "../Icon";
 
 export default class AbstractButton extends React.Component {
   static propTypes = {
+    /** */
     type: PropTypes.oneOf(["button", "submit", "reset"]),
+    /** */
     text: PropTypes.string.isRequired,
+    /** */
     variant: PropTypes.oneOf(["default", "outline", "text"]),
+    /** */
     skin: PropTypes.oneOf([
       "light",
       "dark",
@@ -17,10 +21,15 @@ export default class AbstractButton extends React.Component {
       "destructive-invert",
       "confirmation-invert",
     ]),
+    /** Type of the icon to be rendered. Won't render an icon if not passed to the component. */
     icon: PropTypes.string,
+    /** */
     size: PropTypes.oneOf(["normal", "small", "large"]),
+    /** */
     disabled: PropTypes.bool,
+    /** */
     onClick: PropTypes.func,
+    /** */
     fullWidth: PropTypes.bool,
   };
 

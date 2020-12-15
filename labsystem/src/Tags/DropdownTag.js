@@ -7,7 +7,7 @@ export default class DropdownTag extends React.Component {
   static propTypes = {
     /** Text that will be rendered inside the Tag. */
     text: PropTypes.string.isRequired,
-    /** */
+    /** Type of the icon to be rendered. Won't render an icon if not passed to the component. */
     icon: PropTypes.string,
     /** */
     color: PropTypes.string,

@@ -10,11 +10,13 @@ export default class Banner extends React.Component {
     text: PropTypes.string.isRequired,
     /** */
     type: PropTypes.oneOf(["info", "warn", "error"]),
-    /** */
+    /** Type of the icon to be rendered. */
     icon: PropTypes.string.isRequired,
     /** */
     buttonProps: PropTypes.shape({
+      /** */
       text: PropTypes.string,
+      /** */
       onClick: PropTypes.func,
     }),
   };
