@@ -55,12 +55,14 @@
   color: $teal-60;
   font-weight: $weight-bold;
   font-size: $font-size-6;
-  line-height: $spacing-06;
+  line-height: $spacing-07;
+  text-align: center;
 }
 
 .lab-dialog__content {
   overflow-x: auto;
-  margin-bottom: $spacing-06;
+  margin-top: $spacing-04;
+  margin-bottom: 28px; // missing token
   min-width: 100%;
   color: $black-75;
   font-size: $font-size-4;
@@ -70,6 +72,7 @@
 
 .lab-dialog__footer {
   display: flex;
+  justify-content: flex-end;
   margin-top: 0;
   margin-left: -28px; // missing token
   margin-right: -28px; // missing token
@@ -77,17 +80,11 @@
   border-bottom-left-radius: inherit;
   border-bottom-right-radius: inherit;
   padding: $spacing-06 28px; // missing token
-  justify-content: flex-end;
-  background: $mineral-10;
+  background-color: $mineral-10;
 
-  :first-child {
-    margin-right: $spacing-04;
+  :nth-child(2) {
+    margin-left: $spacing-04;
   }
-}
-
-.lab-dialog__icon {
-  display: flex;
-  justify-content: center;
 }
 
 .lab-dialog__close-button {
@@ -166,21 +163,50 @@
 }
 
 // Message Dialog elements
-.lab-dialog__header--message {
+.lab-dialog__icon {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -$spacing-07;
+  margin-bottom: $spacing-03;
+  height: 72px;
+  
+  .lab-icon {
+    transform: scale(3);
+    background-color: $mineral-70;
+  }
+}
+
+.lab-dialog__header--message {
   justify-content: flex-end;
 }
 
 .lab-dialog__title--message {
   display: flex;
   justify-content: center;
-  color: $teal-40;
-  font-weight: $weight-bold;
+  font-size: $font-size-7;
+  font-weight: $weight-semibold;
+  text-transform: uppercase;
+  margin-bottom: 28px; // missing token
 }
 
 .lab-dialog__content--message {
   display:flex;
   justify-content: center;
+  margin-top: 28px; // missing token
+  font-size: $font-size-3;
+  text-align: center;
+}
+
+.lab-dialog__footer--message {
+  align-items: stretch;
+  padding-top: 0;
+  padding-bottom: $spacing-08;
+  background-color: unset;
+  
+  button {
+    flex-grow: 1;
+  }
 }
 
 // como colocar scroll quando o conteúdo fica maior que a altura?
