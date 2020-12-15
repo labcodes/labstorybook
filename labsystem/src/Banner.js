@@ -8,15 +8,15 @@ export default class Banner extends React.Component {
   static propTypes = {
     /** Text that will be rendered inside the Banner. */
     text: PropTypes.string.isRequired,
-    /** */
+    /** Type of the Banner. */
     type: PropTypes.oneOf(["info", "warn", "error"]),
     /** Type of the icon to be rendered. */
     icon: PropTypes.string.isRequired,
-    /** */
+    /** Ojbect with information about the Banners's button. */
     buttonProps: PropTypes.shape({
-      /** */
+      /** Text that will be rendered inside the Banners's button. */
       text: PropTypes.string,
-      /** */
+      /** Callback to be executed when the Banners's button is clicked. */
       onClick: PropTypes.func,
     }),
   };
