@@ -15,19 +15,19 @@ export default class EmailInput extends React.Component {
     defaultValue: PropTypes.string,
     /** Text that will be rendered inside the Input field. */
     value: PropTypes.string,
-    /** */
+    /** Defines which symbol to show. */
     icon: PropTypes.string,
-    /** */
+    /** Defines the color of the displayed symbol. */
     iconColor: PropTypes.string,
     /** Defines if the Input is required. */
     required: PropTypes.bool,
     /** Text that will be displayed as a help message. */
     helpMessage: PropTypes.string,
-    /** */
+    /** Text that will be displayed at the begining of the Input. */
     prefix: PropTypes.string,
-    /** */
+    /** Text that will be displayed at the end of the Input. */
     suffix: PropTypes.string,
-    /** */
+    /** Custom error message to be displayed if Input is not valid. */
     customErrorMsg: PropTypes.string,
     /** Callback to be executed when the Input current value changes. */
     onChange: PropTypes.func,
