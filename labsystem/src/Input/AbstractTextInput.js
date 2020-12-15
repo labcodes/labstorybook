@@ -6,30 +6,51 @@ import Icon from "../Icon";
 
 export default class AbstractTextInput extends React.Component {
   static propTypes = {
-    id: PropTypes.string.isRequired,
+    /** */
     type: PropTypes.string,
-    label: PropTypes.string.isRequired,
+    /** */
     className: PropTypes.string,
-    disabled: PropTypes.bool,
-    defaultValue: PropTypes.string,
-    value: PropTypes.string,
-    icon: PropTypes.string,
-    iconColor: PropTypes.string,
-    required: PropTypes.bool,
-    helpMessage: PropTypes.string,
-    prefix: PropTypes.string,
-    suffix: PropTypes.string,
-    isValid: PropTypes.bool,
-    customErrorMsg: PropTypes.string,
-    onChange: PropTypes.func,
-    onIconClick: PropTypes.func,
+    /** */
     placeholder: PropTypes.string,
+    /** */
     children: PropTypes.element,
+    /** Text that will serve as unique identifier. It's also an important accessibility tool. */
+    id: PropTypes.string.isRequired,
+    /** Text that will be rendered as the Input's label. */
+    label: PropTypes.string.isRequired,
+    /** Disables the Input component, including functionality and style. */
+    disabled: PropTypes.bool,
+    /** Defines a default value for the Input initialization. */
+    defaultValue: PropTypes.string,
+    /** Text that will be rendered inside the Input field. */
+    value: PropTypes.string,
+    /** Type of the icon to be rendered. Won't render an icon if not passed to the component. */
+    icon: PropTypes.string,
+    /** Defines the color of the displayed symbol. */
+    iconColor: PropTypes.string,
+    /** Defines if the Input is required. */
+    required: PropTypes.bool,
+    /** Text that will be displayed as a help message. */
+    helpMessage: PropTypes.string,
+    /** Text that will be displayed at the begining of the Input. */
+    prefix: PropTypes.string,
+    /** Text that will be displayed at the end of the Input. */
+    suffix: PropTypes.string,
+    /** Defines if the Input is valid. */
+    isValid: PropTypes.bool,
+    /** Custom error message to be displayed if Input is not valid. */
+    customErrorMsg: PropTypes.string,
+    /** Callback to be executed when the Input current value changes. */
+    onChange: PropTypes.func,
+    /** Callback to be executed when the Input's Icon is clicked. */
+    onIconClick: PropTypes.func,
   };
 
   static defaultProps = {
     type: "text",
     className: "",
+    placeholder: " ",
+    children: undefined,
     disabled: false,
     defaultValue: undefined,
     value: undefined,
@@ -43,14 +64,12 @@ export default class AbstractTextInput extends React.Component {
     customErrorMsg: undefined,
     onChange: undefined,
     onIconClick: undefined,
-    placeholder: " ",
-    children: undefined,
   };
 
   constructor(props) {
     super(props);
     this.inputRef = React.createRef();
-    const { defaultValue, value, id, isValid } = props;
+    const { id, defaultValue, value, isValid } = props;
     if (!isUndefined(defaultValue) && !isUndefined(value)) {
       // eslint-disable-next-line no-console
       console.warn(
@@ -64,7 +83,7 @@ export default class AbstractTextInput extends React.Component {
   }
 
   componentDidMount() {
-    const { customErrorMsg, defaultValue, value } = this.props;
+    const { defaultValue, value, customErrorMsg } = this.props;
     const { isValid } = this.props;
     let { localIsValid } = this.state;
 
@@ -85,7 +104,7 @@ export default class AbstractTextInput extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { customErrorMsg, isValid, value } = this.props;
+    const { value, isValid, customErrorMsg } = this.props;
     const inputElement = this.inputRef.current;
 
     if (isValid !== prevProps.isValid) {
@@ -129,7 +148,7 @@ export default class AbstractTextInput extends React.Component {
   };
 
   handleOnChange = (e) => {
-    const { onChange, isValid, customErrorMsg, required } = this.props;
+    const { required, isValid, customErrorMsg, onChange } = this.props;
     const inputElement = e.target;
     const inputElementValue = inputElement.value;
     const inputElementIsValid = inputElement.validity.valid;
@@ -156,20 +175,20 @@ export default class AbstractTextInput extends React.Component {
 
   render() {
     const {
-      id,
       type,
+      children,
+      id,
       label,
       disabled,
-      required,
       icon,
       iconColor,
+      required,
       helpMessage,
       prefix,
       suffix,
-      onIconClick,
       customErrorMsg,
+      onIconClick,
       placeholder,
-      children,
     } = this.props;
 
     let { className } = this.props;
