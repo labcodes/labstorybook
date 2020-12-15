@@ -120,9 +120,9 @@ export default class MessageDialog extends React.Component {
             <Icon type={icon} color="black-75" />
           </div>
 
-          <div className="lab-dialog__title lab-dialog__title--message">
+          <h1 className="lab-dialog__title lab-dialog__title--message">
             {title}
-          </div>
+          </h1>
 
           <div className="lab-dialog__content lab-dialog__content--message">
             {content}
