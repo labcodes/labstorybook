@@ -18,7 +18,9 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
       <p>To set up the storybook, clone the repository, then, with node and npm installed, run <code>npm install</code>.</p>
       <p>With that done, you'll need to enter the <code>labsystem</code> folder (by running <code>cd labsystem</code>), and run <code>npm install</code> again, since this folder contains the source code for the design system itself. Labsystem is the old name for our design system, and will be changed in the future, along with these docs.</p>
       <h3>Running the storybook locally</h3>
-      <p>After setting it up, to run the storybook locally, go to the root folder (the one that contains the <code>.storybook</code> folder) and run <code>npm start</code>.</p>
+      <p>After setting it up, to run the storybook locally, go to the root folder (the one that contains the <code>.storybook</code> folder) and run <code>npm start</code>. That will run a development server that runs at http://localhost:8000 and that constains this whole storybook site.</p>
+      <h3>Running the tests</h3>
+      <p>To manually run the tests, first go into the <code>labsystem</code> folder, then run <code>npm test</code>. The tests will also be automatically run before any push is made to the Github repository.</p>
       <h3>Deploying staging apps</h3>
       <p>If you have made any changes to the Storybook's or Confetti's source code and want to share it with other people for QA, just push your branch and Netlify will automatically deploy it to https://your-branch-name--labstorybook-master.netlify.app after a few minutes. When it's merged on master, it will be available at the base https://labstorybook-master.netlify.app url.</p>
     </div>
@@ -31,8 +33,9 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
       <p>Since currently all our codebase is inside the same repo, if you want to use our desing system by itself in outside projects, you'll need to ask Luciano (luciano@labcodes.com.br) to generate a package for you.</p>
       <p>He'll send you a compressed version of the transpiled components, together with the scss files you'll need to use them in your project. The compressed file should be named <code>labsystem-0.1.0.tgz</code> or something similar.</p>
       <p>With the compressed file at hand, copy it to your project and install it by running <code>npm install labsystem-0.1.0.tgz</code>. That will make the components and scss files to be unpacked and available inside the <code>node_modules</code> folder.</p>
+      <p>Note: this installation process will change soon, when we separate the Confetti package from the storybook and publish it to npm.</p>
       <h3>Importing the styles</h3>
-      <p>To be able to use our styles, you'll have to have scss and svg support in your react project. If you do, just import our main scss file into yours by adding <code>@import '~labsystem/scss/main';</code> to your mais scss file.</p>
+      <p>To be able to use our styles, you'll have to have scss and svg support in your react project. If you do, just import our main scss file into yours by adding <code>@import '~labsystem/scss/main';</code> to your main scss file.</p>
       <h3>Importing the fonts</h3>
       <p>Since we're using the design system internally and for testing purposes, if you want access to the fonts, talk with Debora (debora@labcodes.com.br) or Luciano (luciano@labcodes.com.br), so they can send you the HTML tag to import them. Our styles already reference the fonts, so after importing them, everything should be good to go.</p>
       <h3>Changing the theme for the components</h3>
@@ -54,7 +57,7 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
         </div>
       </div>
       <h3>Where do I get more information on components?</h3>
-      <p>To where to import the components from, explore our <a href="https://github.com/labcodes/labstorybook/tree/master/labsystem/src">folder structure for components</a>. The compressed package's <code>dist</code> folder uses the same structure as the <code>src</code> folder from our source code, so if you, for example, want to import the Button component, you'll import it with <code>import &#123; Button &#125; from "labsystem/dist/Button/";</code> or <code>import Button from "labsystem/dist/Button/Button";</code>, because the source code for the Button component is inside the <code>labsystem/src/Button</code> folder.</p>
+      <p>To know where to import the components from, explore our <a href="https://github.com/labcodes/labstorybook/tree/master/labsystem/src">folder structure for components</a>. The compressed package's <code>dist</code> folder uses the same structure as the <code>src</code> folder from our source code, so if you, for example, want to import the Button component, you'll import it with <code>import &#123; Button &#125; from "labsystem/dist/Button/";</code> or <code>import Button from "labsystem/dist/Button/Button";</code>, because the source code for the Button component is inside the <code>labsystem/src/Button</code> folder.</p>
       <p>For information on props and their types, just check the prop tabels inside each component's docs.</p>
     </div>
   </div>
