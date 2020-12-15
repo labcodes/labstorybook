@@ -1,0 +1,62 @@
+import { Fragment } from 'react';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+<Meta title="Getting started/Setup" />
+
+<div class="docs-title">
+  <div>
+    <h1 class="docs-title__text">Setup</h1>
+  </div>
+</div>
+
+<div class="docs-content">
+
+  <div class="columns">
+    <div class="column">
+      <h2>Storybook</h2>
+      <p>Currently, all our codebase, including both the storybook and the Confetti's own source code, are on the same repository. You can visit it on <a href="https://github.com/labcodes/labstorybook/">Github</a>.</p>
+      <p>To set up the storybook, clone the repository, then, with node and npm installed, run <code>npm install</code>.</p>
+      <p>With that done, you'll need to enter the <code>labsystem</code> folder (by running <code>cd labsystem</code>), and run <code>npm install</code> again, since this folder contains the source code for the design system itself. Labsystem is the old name for our design system, and will be changed in the future, along with these docs.</p>
+      <h3>Running the storybook locally</h3>
+      <p>After setting it up, to run the storybook locally, go to the root folder (the one that contains the <code>.storybook</code> folder) and run <code>npm start</code>.</p>
+      <h3>Deploying staging apps</h3>
+      <p>If you have made any changes to the Storybook's or Confetti's source code and want to share it with other people for QA, just push your branch and Netlify will automatically deploy it to https://your-branch-name--labstorybook-master.netlify.app after a few minutes. When it's merged on master, it will be available at the base https://labstorybook-master.netlify.app url.</p>
+    </div>
+  </div>
+
+  <div class="columns">
+    <div class="column">
+      <h2>Confetti</h2>
+      <h3>Installing</h3>
+      <p>Since currently all our codebase is inside the same repo, if you want to use our desing system by itself in outside projects, you'll need to ask Luciano on Slack to generate a package for you.</p>
+      <p>He'll send you a compressed version of the transpiled components, together with the scss files you'll need to use them in your project. The compressed file should be named <code>labsystem-0.1.0.tgz</code> or something similar.</p>
+      <p>With the compressed file at hand, copy it to your project and install it by running <code>npm install labsystem-0.1.0.tgz</code>. That will make the components and scss files to be unpacked and available inside the <code>node_modules</code> folder.</p>
+      <h3>Importing the styles</h3>
+      <p>To be able to use our styles, you'll have to have scss and svg support in your react project. If you do, just import our main scss file into yours by adding <code>@import '~labsystem/scss/main';</code> to your mais scss file.</p>
+      <h3>Importing the fonts</h3>
+      <p>Since we're using the design system internally and for testing purposes, if you want access to the fonts, talk with Debora or Luciano, so they can send you the HTML tag to import them. Our styles already reference the fonts, so after importing them, everything should be good to go.</p>
+      <h3>Changing the theme for the components</h3>
+      <p>Our design system accepts theming via scss variables. To change a theme for a component, you'll just need to override the corresponding theme variable.</p>
+      <p>To do that, take a look at which are the default themes in our <a href="https://github.com/labcodes/labstorybook/blob/master/labsystem/scss/variables/_settings.scss">_settings.scss</a> file, and which themes are available for the components in the <a href="https://github.com/labcodes/labstorybook/blob/master/labsystem/scss/variables/_colors.scss">_colors.scss</a> file.</p>
+      <p>To change the themes, you may need to import our variables files before overwriting. To properly overwrite the Button theme, for example, you may need to do something like this:</p>
+      <div class="columns">
+        <div class="column is-half is-offset-one-quarter">
+          <img src="docs/getting-started/overwriting-themes.jpg" alt="Example of the code needed to overwrite the Button theme" />
+        </div>
+      </div>
+      <h3>Using the components</h3>
+      <p>To use any of our components, you just need to import them directly from <code>labsystem/dist/[component]</code>.</p>
+      <p>If you want to use the Alert component, for example, open your react component file, put <code>import Alert from "labsystem/dist/Alert";</code> on the top of the file, then use it inside your <code>render</code> method, as you would do for any other component.</p>
+      <p>For example, if you render the Alert with <code>&lt;Alert text="Testing alerts!" icon="eye-opened" /&gt;</code> in the Welcome page from our <a href="https://github.com/labcodes/django-react-webpack/">Django boilerplate</a>, you'll probably be looking at something like this:</p>
+      <div class="columns">
+        <div class="column is-half is-offset-one-quarter">
+          <img src="docs/getting-started/alerts-on-outside-project.jpg" alt="Example of an Alert being rendered with our Django boilerplate" />
+        </div>
+      </div>
+      <h3>Where do I get more information on components?</h3>
+      <p>To where to import the components from, explore our <a href="https://github.com/labcodes/labstorybook/tree/master/labsystem/src">folder structure for components</a>. The compressed package's <code>dist</code> folder uses the same structure as the <code>src</code> folder from our source code, so if you, for example, want to import the Button component, you'll import it with <code>import &#123; Button &#125; from "labsystem/dist/Button/";</code> or <code>import Button from "labsystem/dist/Button/Button";</code>, because the source code for the Button component is inside the <code>labsystem/src/Button</code> folder.</p>
+      <p>For information on props and their types, just check the prop tabels inside each component's docs.</p>
+    </div>
+  </div>
+
+</div>
