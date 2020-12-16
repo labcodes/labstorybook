@@ -7,9 +7,7 @@ export default class Tooltip extends React.Component {
     id: PropTypes.string.isRequired,
     /** Text that will be rendered inside the Tooltip. */
     text: PropTypes.string.isRequired,
-    /** */
-    children: PropTypes.node.isRequired,
-    /** */
+    /** Defines the Tooltip's relative position from the target. */
     placement: PropTypes.oneOf([
       "top-start",
       "top",
@@ -24,6 +22,8 @@ export default class Tooltip extends React.Component {
       "bottom",
       "bottom-end",
     ]),
+    /** Target component to which the Tooltip should be applied upon. */
+    children: PropTypes.node.isRequired,
   };
 
   static defaultProps = {
