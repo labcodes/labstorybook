@@ -6,13 +6,11 @@ import Icon from "../Icon";
 
 export default class AbstractTextInput extends React.Component {
   static propTypes = {
-    /** */
+    /** Text that will specify the HTML type attribute of an <input> element. */
     type: PropTypes.string,
-    /** */
-    className: PropTypes.string,
-    /** */
+    /** Text that will serve as placeholder if the Input field is empty. */
     placeholder: PropTypes.string,
-    /** */
+    /** Children component. */
     children: PropTypes.element,
     /** Text that will serve as unique identifier. It's also an important accessibility tool. */
     id: PropTypes.string.isRequired,
@@ -44,6 +42,8 @@ export default class AbstractTextInput extends React.Component {
     onChange: PropTypes.func,
     /** Callback to be executed when the Input's Icon is clicked. */
     onIconClick: PropTypes.func,
+    /** */
+    className: PropTypes.string,
   };
 
   static defaultProps = {
@@ -329,12 +329,8 @@ TextInputMessage.propTypes = {
 };
 
 TextInputMessage.defaultProps = {
-  /** */
   helpMessage: undefined,
-  /** */
   customErrorMsg: undefined,
-  /** */
   localValue: undefined,
-  /** */
   localIsValid: undefined,
 };
