@@ -275,11 +275,8 @@ function TrailingIcon(props) {
 }
 
 TrailingIcon.propTypes = {
-  /** */
   icon: PropTypes.string,
-  /** */
   iconColor: PropTypes.string,
-  /** */
   onIconClick: PropTypes.func,
 };
 
@@ -318,13 +315,9 @@ function TextInputMessage(props) {
 }
 
 TextInputMessage.propTypes = {
-  /** */
   helpMessage: PropTypes.string,
-  /** */
   customErrorMsg: PropTypes.string,
-  /** */
   localValue: PropTypes.string,
-  /** */
   localIsValid: PropTypes.bool,
 };
 
