@@ -232,6 +232,5 @@ InlineSearchIcon.propTypes = {
 };
 
 InlineSearchIcon.defaultProps = {
-  /** */
   disabled: false,
 };

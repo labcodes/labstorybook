@@ -329,12 +329,8 @@ TextInputMessage.propTypes = {
 };
 
 TextInputMessage.defaultProps = {
-  /** */
   helpMessage: undefined,
-  /** */
   customErrorMsg: undefined,
-  /** */
   localValue: undefined,
-  /** */
   localIsValid: undefined,
 };
