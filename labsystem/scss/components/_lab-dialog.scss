@@ -1,5 +1,56 @@
 @use 'sass:map';
 
+// Transitions
+@keyframes fadeIn {
+  0% { opacity:0; }
+  100% { opacity:1; }
+}
+  
+@-moz-keyframes fadeIn {
+  0% { opacity:0; }
+  100% { opacity:1; }
+}
+
+@-webkit-keyframes fadeIn {
+  0% { opacity:0; }
+  100% { opacity:1; }
+}
+
+@-o-keyframes fadeIn {
+  0% { opacity:0; }
+  100% { opacity:1; }
+}
+
+@-ms-keyframes fadeIn {
+  0% { opacity:0; }
+  100% { opacity:1; }
+}
+
+@keyframes slideUp {
+  0% { bottom: -100%; }
+  100% { bottom: 0; }
+}
+
+@-moz-keyframes slideUp {
+  0% { bottom: -100%; }
+  100% { bottom: 0; }
+}
+
+@-webkit-keyframes slideUp {
+  0% { bottom: -100%; }
+  100% { bottom: 0; }
+}
+
+@-o-keyframes slideUp {
+  0% { bottom: -100%; }
+  100% { bottom: 0; }
+}
+
+@-ms-keyframes slideUp {
+  0% { bottom: -100%; }
+  100% { bottom: 0; }
+}
+
 // Modal overlay
 .lab-dialog-overlay {
   z-index: 2;
@@ -12,6 +63,11 @@
   align-items: center;
   justify-content: center;
   background-color: $black-50;
+  -webkit-animation: fadeIn ease 0.2s;
+  -moz-animation: fadeIn ease 0.2s;
+  -ms-animation: fadeIn ease 0.2s;
+  -o-animation: fadeIn ease 0.2s;
+  animation: fadeIn ease 0.2s;
 }
 
 // Global style
@@ -25,9 +81,15 @@
   box-shadow: 0 0 28px 0 $black-20; // missing token
   font-family: $font-primary;
   -webkit-font-smoothing: antialiased;
+
+  -webkit-animation: fadeIn ease 0.2s;
+  -moz-animation: fadeIn ease 0.2s;
+  -ms-animation: fadeIn ease 0.2s;
+  -o-animation: fadeIn ease 0.2s;
+  animation: fadeIn ease 0.2s;
 }
 
-// Standard Dialog component
+// Standard
 .lab-dialog--standard {
   padding-left: 28px; // missing token
   padding-right: 28px; // missing token
@@ -35,6 +97,11 @@
   max-height: 90%;
   bottom: 0;
   left: 0;
+  -webkit-animation: slideUp ease 0.25s;
+  -moz-animation: slideUp ease 0.25s;
+  -ms-animation: slideUp ease 0.25s;
+  -o-animation: slideUp ease 0.25s;
+  animation: slideUp ease 0.25s;
 
   @include from($tablet) {
     width: 520px;
@@ -49,7 +116,7 @@
   }
 }
 
-// Message Dialog component
+// Message
 .lab-dialog--message {
   padding-left: $spacing-10;
   padding-right: $spacing-10;
@@ -67,7 +134,6 @@
     height: fit-content;
     max-height: 100%;
   }
-
 }
 
 .lab-dialog--large {
