@@ -1,3 +1,7 @@
 .lab-playground__component {
   position: relative;
 }
+
+.docblock-source * {
+  max-width: 100% !important;
+}
