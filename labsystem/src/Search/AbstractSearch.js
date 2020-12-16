@@ -6,23 +6,23 @@ import Icon from "../Icon";
 
 export default class AbstractSearch extends React.Component {
   static propTypes = {
-    /** */
+    /** Text that will serve as unique identifier. It's also an important accessibility tool. */
     id: PropTypes.string,
-    /** */
+    /** Defines a default value for the Search initialization. */
     defaultValue: PropTypes.string,
-    /** */
+    /** Disables the Search component, including functionality and style. */
     disabled: PropTypes.bool,
-    /** */
+    /** Text that will be rendered inside the Search field. */
     value: PropTypes.string,
-    /** */
+    /** Callback to be executed when the Search current value changes. */
     onChange: PropTypes.func,
-    /** */
+    /** Callback to be executed when the search is performed. */
     onSearch: PropTypes.func,
-    /** */
+    /** Callback to be executed when the Search is cleared out. */
     onClear: PropTypes.func,
-    /** */
+    /** Text that will serve as placeholder if the Search field is empty. */
     placeholder: PropTypes.string,
-    /** */
+    /** Style variation of the Search. */
     type: PropTypes.oneOf(["standard", "inline"]).isRequired,
   };
 
@@ -232,6 +232,5 @@ InlineSearchIcon.propTypes = {
 };
 
 InlineSearchIcon.defaultProps = {
-  /** */
   disabled: false,
 };
