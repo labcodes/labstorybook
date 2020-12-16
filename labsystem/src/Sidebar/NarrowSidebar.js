@@ -15,11 +15,8 @@ export default class NarrowSidebar extends React.Component {
   };
 
   static defaultProps = {
-    /** */
     isVivid: false,
-    /** */
     isOpenOnMobile: false,
-    /** */
     withDividers: false,
   };
 

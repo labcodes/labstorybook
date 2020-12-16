@@ -5,7 +5,7 @@ import { NavbarWithDividersContext } from "./NarrowSidebar";
 
 export default class Body extends React.Component {
   static propTypes = {
-    /** */
+    /** Target component to which the Sidebar should be applied upon. */
     children: PropTypes.node,
   };
 

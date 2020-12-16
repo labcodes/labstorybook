@@ -4,11 +4,11 @@ import Icon from "../Icon";
 
 export default class FooterButton extends React.Component {
   static propTypes = {
-    /** */
+    /** Text that will be rendered inside the Button. */
     label: PropTypes.string.isRequired,
-    /** */
+    /** Type of the icon to be rendered. Won't render an icon if not passed to the component. */
     icon: PropTypes.string,
-    /** */
+    /** Callback to be executed when the FooterButton is clicked. */
     onClick: PropTypes.func.isRequired,
   };
 

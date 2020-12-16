@@ -5,7 +5,7 @@ import Icon from "../Icon";
 
 export default class CollapseButton extends React.Component {
   static propTypes = {
-    /** */
+    /** Callback to be executed when the CollapseButton is clicked. */
     onClick: PropTypes.func.isRequired,
   };
 
