@@ -169,9 +169,7 @@ function TrailingIcon(props) {
 }
 
 TrailingIcon.propTypes = {
-  /** */
   onClear: PropTypes.func,
-  /** */
   disabled: PropTypes.bool,
 };
 
@@ -202,9 +200,7 @@ function StandardSearchIcon(props) {
 }
 
 StandardSearchIcon.propTypes = {
-  /** */
   disabled: PropTypes.bool,
-  /** */
   handleOnSearch: PropTypes.func,
 };
 
@@ -227,7 +223,6 @@ function InlineSearchIcon(props) {
 }
 
 InlineSearchIcon.propTypes = {
-  /** */
   disabled: PropTypes.bool,
 };
 
