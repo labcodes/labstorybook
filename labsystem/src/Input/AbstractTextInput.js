@@ -34,7 +34,7 @@ export default class AbstractTextInput extends React.Component {
     defaultValue: undefined,
     value: undefined,
     icon: undefined,
-    iconColor: undefined,
+    iconColor: "mineral-70",
     required: false,
     helpMessage: undefined,
     prefix: undefined,
@@ -207,12 +207,14 @@ export default class AbstractTextInput extends React.Component {
               {label}
             </label>
           </div>
-          <TrailingIcon
-            icon={icon}
-            iconColor={iconColor}
-            onIconClick={onIconClick}
-            {...(disabled ? { disabled } : undefined)}
-          />
+          {icon ? (
+            <TrailingIcon
+              icon={icon}
+              iconColor={iconColor}
+              onIconClick={onIconClick}
+              {...(disabled ? { disabled } : undefined)}
+            />
+          ) : null}
           {this.requiredIcon()}
           {children}
         </div>
@@ -231,37 +233,28 @@ export default class AbstractTextInput extends React.Component {
 
 function TrailingIcon(props) {
   const { icon, iconColor, onIconClick, disabled } = props;
-  let className = "lab-input__icon";
-  if (disabled) {
-    className += " lab-input__icon--disabled";
-  }
-  if (icon && iconColor) {
-    return (
-      <button type="button" className={className} onClick={onIconClick}>
-        <Icon type={icon} color={iconColor} />
-      </button>
-    );
-  }
-  if (icon) {
-    return (
-      <button type="button" className={className} onClick={onIconClick}>
-        <Icon type={icon} />
-      </button>
-    );
-  }
-  return null;
+  return (
+    <button
+      type="button"
+      className={`lab-input__icon${
+        disabled ? ` lab-input__icon--disabled` : ``
+      }`}
+      onClick={disabled ? null : onIconClick}
+    >
+      <Icon type={icon} color={iconColor} />
+    </button>
+  );
 }
 
 TrailingIcon.propTypes = {
-  icon: PropTypes.string,
+  icon: PropTypes.string.isRequired,
   iconColor: PropTypes.string,
   onIconClick: PropTypes.func,
   disabled: PropTypes.bool,
 };
 
 TrailingIcon.defaultProps = {
-  icon: undefined,
-  iconColor: undefined,
+  iconColor: "mineral-70",
   onIconClick: () => {},
   disabled: undefined,
 };
