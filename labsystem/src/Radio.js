@@ -9,7 +9,7 @@ export default class Radio extends React.Component {
   static propTypes = {
     /** Text that will serve as unique identifier. It's also an important accessibility tool. */
     id: PropTypes.string.isRequired,
-    /** Text that will specify the HTML name attribute of an <input> element. */
+    /** Text that will specify the HTML `name` attribute of an <input> element. */
     name: PropTypes.string.isRequired,
     /** Text that will be rendered as the Radio's label. */
     label: PropTypes.string.isRequired,
@@ -21,9 +21,9 @@ export default class Radio extends React.Component {
     defaultChecked: PropTypes.bool,
     /** Callback to be executed when the Radio current value changes. */
     onChange: PropTypes.func,
-    /** */
+    /** Value that will specify the HTML `value` attribute of an <input> element. */
     value: PropTypes.oneOfType([string, number, bool]).isRequired,
-    /** */
+    /** Extra HTML classes. */
     className: PropTypes.string,
   };
 
