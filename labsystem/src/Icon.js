@@ -63,7 +63,7 @@ export default class Icon extends React.Component {
     ]),
     /** Size of the rendered Icon. */
     size: PropTypes.oneOf(["small", "petit"]),
-    /** */
+    /** Extra HTML classes. */
     className: PropTypes.string,
   };
 
