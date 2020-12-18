@@ -43,7 +43,7 @@ export default class AbstractTextInput extends React.Component {
     customErrorMsg: undefined,
     onChange: () => {},
     onIconClick: () => {},
-    placeholder: " ", // acrescentei pra poder colocar placeholder no search//
+    placeholder: " ",
     children: undefined,
   };
 
@@ -129,14 +129,14 @@ export default class AbstractTextInput extends React.Component {
   };
 
   handleOnChange = (e) => {
-    const { isValid, customErrorMsg, required } = this.props;
+    const { onChange, isValid, customErrorMsg, required } = this.props;
     const inputElement = e.target;
     const inputElementValue = inputElement.value;
     const inputElementIsValid = inputElement.validity.valid;
 
     // First we reset the custom validity
     inputElement.setCustomValidity("");
-
+    onChange(e);
     // Then we set the state with the new value
     this.setState({ localValue: inputElementValue }, () => {
       if (isUndefined(isValid) || (isValid && required)) {
