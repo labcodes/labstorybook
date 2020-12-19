@@ -12,9 +12,9 @@ export default class Checkbox extends React.Component {
     id: PropTypes.string.isRequired,
     /** Text that will specify the HTML name attribute of an <input> element. */
     name: PropTypes.string.isRequired,
-    /** Text that will be rendered as the Checkbox's label. */
+    /** This is the checkbox's label. */
     label: PropTypes.string.isRequired,
-    /** Disables the Input component, including functionality and style. */
+    /** Disables the checkbox. */
     disabled: PropTypes.bool,
     /** Defines if the Checkbox is currently checked. */
     checked: PropTypes.bool,
@@ -22,11 +22,11 @@ export default class Checkbox extends React.Component {
     indeterminate: PropTypes.bool,
     /** Defines if the Checkbox is initialized as "checked". */
     defaultChecked: PropTypes.bool,
-    /** Callback to be executed when the Checkbox is clicked. */
+    /** Callback action to be executed when the Checkbox is clicked. */
     onChange: PropTypes.func,
-    /** Value that will specify the HTML `value` attribute of an <input> element. */
+    /** */
     value: PropTypes.oneOfType([string, number, bool]),
-    /** Extra HTML classes. */
+    /** Add a class name to make custom changes */
     className: PropTypes.string,
   };
 

@@ -61,9 +61,9 @@ export default class Icon extends React.Component {
       "purple-60",
       "purple-70",
     ]),
-    /** Size of the rendered Icon. */
+    /** Size of the rendered Icon, petit = 16px, small = 20px. If omitted will render at 24px. */
     size: PropTypes.oneOf(["small", "petit"]),
-    /** Extra HTML classes. */
+    /** Add a class name to make custom changes */
     className: PropTypes.string,
   };
 

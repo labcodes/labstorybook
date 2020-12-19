@@ -4,7 +4,7 @@ import { isUndefined } from "lodash";
 
 export default class AbstractTag extends React.Component {
   static propTypes = {
-    /** Components to be rendered at the beginning of the Tag. */
+    /** Tag's left element (optional and customizable) */
     renderPrefix: PropTypes.object,
     /** Components to be rendered at the end of the Tag. */
     renderSuffix: PropTypes.object,
