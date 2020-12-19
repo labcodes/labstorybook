@@ -22,7 +22,7 @@ export default class Checkbox extends React.Component {
     indeterminate: PropTypes.bool,
     /** Defines if the Checkbox is initialized as "checked". */
     defaultChecked: PropTypes.bool,
-    /** Callback to be executed when the Checkbox is clicked. */
+    /** Callback action to be executed when the Checkbox is clicked. */
     onChange: PropTypes.func,
     /** */
     value: PropTypes.oneOfType([string, number, bool]),
