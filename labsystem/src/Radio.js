@@ -13,17 +13,17 @@ export default class Radio extends React.Component {
     name: PropTypes.string.isRequired,
     /** Text that will be rendered as the Radio's label. */
     label: PropTypes.string.isRequired,
-    /** Disables the Input component, including functionality and style. */
+    /** Disables the Input component. */
     disabled: PropTypes.bool,
     /** Defines if the Radio is currently checked. */
     checked: PropTypes.bool,
     /** Defines if the Radio is initialized as "checked". */
     defaultChecked: PropTypes.bool,
-    /** Callback to be executed when the Radio current value changes. */
+    /** Callback action to be executed when the Radio current value changes. */
     onChange: PropTypes.func,
     /** Value that will specify the HTML `value` attribute of an <input> element. */
     value: PropTypes.oneOfType([string, number, bool]).isRequired,
-    /** Extra HTML classes. */
+    /** Add a class name to make custom changes */
     className: PropTypes.string,
   };
 

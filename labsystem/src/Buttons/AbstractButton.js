@@ -7,13 +7,13 @@ export default class AbstractButton extends React.Component {
   static propTypes = {
     /** HTML type of the Button. */
     type: PropTypes.oneOf(["button", "submit", "reset"]),
-    /** Style variation of the Button. */
+    /** Button style variation. */
     variant: PropTypes.oneOf(["default", "outline", "text"]),
-    /** Text that will be rendered inside the Button. */
+    /** This is the button label. */
     text: PropTypes.string.isRequired,
-    /** Type of the icon to be rendered. Won't render an icon if not passed to the component. */
+    /** Sets the icon related to the button label. Default state: no icon. */
     icon: PropTypes.string,
-    /** Skin of the the rendered Button. */
+    /** Sets a special color skin to the button. */
     skin: PropTypes.oneOf([
       "light",
       "dark",
@@ -23,13 +23,13 @@ export default class AbstractButton extends React.Component {
       "destructive-invert",
       "confirmation-invert",
     ]),
-    /** Size of the Button. */
+    /** Sets the button's height. Small = 32px, Normal = 40px, Large = 48px. */
     size: PropTypes.oneOf(["normal", "small", "large"]),
-    /** Disables the Button, cancelling the onClick handler. */
+    /** Makes the button disabled, cancelling the onClick handler. */
     disabled: PropTypes.bool,
-    /** Callback to be executed when the Button is clicked. */
+    /** Action to be executed when the button is clicked. */
     onClick: PropTypes.func,
-    /** Makes the Button occupy its container's full width. */
+    /** Makes the button expand to its container's full width. */
     fullWidth: PropTypes.bool,
   };
 
