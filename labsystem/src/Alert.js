@@ -16,7 +16,7 @@ export default class Alert extends React.Component {
     buttonProps: PropTypes.shape({
       /** Alert's text button label. */
       text: PropTypes.string,
-      /** Callback to be executed when the Alert's button is clicked. */
+      /** Action to be executed when the button is clicked. */
       onClick: PropTypes.func,
     }),
   };
