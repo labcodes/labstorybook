@@ -6,7 +6,7 @@ export default class Badge extends React.Component {
     /** Type of the Badge to be rendered. */
     type: PropTypes.oneOf(["floating-add", "harvest", "meta", "ponto", "star"])
       .isRequired,
-    /** Color of the rendered Badge's inernal icon. */
+    /** Color of the Badge's inner icon. */
     color: PropTypes.oneOf([
       "white",
       "black",
