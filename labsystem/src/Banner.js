@@ -14,7 +14,7 @@ export default class Banner extends React.Component {
     icon: PropTypes.string.isRequired,
     /** Ojbect with information about the Banners's button. */
     buttonProps: PropTypes.shape({
-      /** Text that will be rendered inside the Banners's button. */
+      /** Banner's text button label. */
       text: PropTypes.string,
       /** Action to be executed when the button is clicked. */
       onClick: PropTypes.func,
