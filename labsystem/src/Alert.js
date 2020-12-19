@@ -14,7 +14,7 @@ export default class Alert extends React.Component {
     icon: PropTypes.string.isRequired,
     /** Ojbect with information about the Alert's button. */
     buttonProps: PropTypes.shape({
-      /** Text that will be rendered inside the Alert's button. */
+      /** Alert's text button label. */
       text: PropTypes.string,
       /** Callback to be executed when the Alert's button is clicked. */
       onClick: PropTypes.func,
