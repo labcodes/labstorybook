@@ -6,7 +6,7 @@ import TextButton from "./Buttons/TextButton";
 
 export default class Alert extends React.Component {
   static propTypes = {
-    /** Text that will be rendered inside the Alert. */
+    /** This is the message text string. */
     text: PropTypes.string.isRequired,
     /** Type of the Alert. */
     type: PropTypes.oneOf(["info", "warn", "error"]),
