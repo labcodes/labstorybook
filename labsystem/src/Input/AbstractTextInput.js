@@ -16,7 +16,7 @@ export default class AbstractTextInput extends React.Component {
     id: PropTypes.string.isRequired,
     /** The Input's text label. */
     label: PropTypes.string.isRequired,
-    /** Disables the Input component, including functionality and style. */
+    /** Sets the text input to disabled, refusing interactions. */
     disabled: PropTypes.bool,
     /** Defines a default value for the Input initialization. */
     defaultValue: PropTypes.string,
