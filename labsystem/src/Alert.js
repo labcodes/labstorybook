@@ -10,7 +10,7 @@ export default class Alert extends React.Component {
     text: PropTypes.string.isRequired,
     /** Type of the Alert. */
     type: PropTypes.oneOf(["info", "warn", "error"]),
-    /** Type of the icon to be rendered inside the Alert. */
+    /** Sets the icon related to the alert’s message. */
     icon: PropTypes.string.isRequired,
     /** Ojbect with information about the Alert's button. */
     buttonProps: PropTypes.shape({
