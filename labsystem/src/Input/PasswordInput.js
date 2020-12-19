@@ -7,9 +7,9 @@ export default class PasswordInput extends React.Component {
   static propTypes = {
     /** Text that will serve as unique identifier. It's also an important accessibility tool. */
     id: PropTypes.string.isRequired,
-    /** Text that will be rendered as the Input's label. */
+    /** The Input's text label. */
     label: PropTypes.string.isRequired,
-    /** Disables the Input component, including functionality and style. */
+    /** Sets the text input to disabled, refusing interactions. */
     disabled: PropTypes.bool,
     /** Defines a default value for the Input initialization. */
     defaultValue: PropTypes.string,
@@ -17,17 +17,17 @@ export default class PasswordInput extends React.Component {
     value: PropTypes.string,
     /** Defines if the Input is required. */
     required: PropTypes.bool,
-    /** Text that will be displayed as a help message. */
+    /** Text that will be displayed as a help message below the input. */
     helpMessage: PropTypes.string,
-    /** Text that will be displayed at the beginning of the Input. */
+    /** Text that will be displayed at the left portion of the Input. */
     prefix: PropTypes.string,
     /** Text that will be displayed at the end of the Input. */
     suffix: PropTypes.string,
-    /** Defines if the Input is valid. */
+    /** Text that will be displayed at the right portion of the Input. */
     isValid: PropTypes.bool,
-    /** Custom error message to be displayed if Input is not valid. */
+    /** Custom error message displayed below the Input when the value is not valid. */
     customErrorMsg: PropTypes.string,
-    /** Callback to be executed when the Input current value changes. */
+    /** Callback action to be executed when the Input default value changes. */
     onChange: PropTypes.func,
   };
 

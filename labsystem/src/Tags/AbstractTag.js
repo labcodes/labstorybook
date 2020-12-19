@@ -10,7 +10,7 @@ export default class AbstractTag extends React.Component {
     renderSuffix: PropTypes.object,
     /** HTML tabIndex, used to avoid Tag from being selected with TAB key, if "-1". */
     tabIndex: PropTypes.string,
-    /** HMTL className of a concrete Tag to be enriched. */
+    /** Defines a class name to create a custom style for the component. */
     className: PropTypes.string,
     /** Text that will be rendered inside the Tag. */
     text: PropTypes.string.isRequired,
