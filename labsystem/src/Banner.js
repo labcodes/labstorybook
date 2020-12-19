@@ -16,7 +16,7 @@ export default class Banner extends React.Component {
     buttonProps: PropTypes.shape({
       /** Text that will be rendered inside the Banners's button. */
       text: PropTypes.string,
-      /** Callback to be executed when the Banners's button is clicked. */
+      /** Action to be executed when the button is clicked. */
       onClick: PropTypes.func,
     }),
   };
