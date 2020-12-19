@@ -14,7 +14,7 @@ export default class Checkbox extends React.Component {
     name: PropTypes.string.isRequired,
     /** Text that will be rendered as the Checkbox's label. */
     label: PropTypes.string.isRequired,
-    /** Disables the Input component, including functionality and style. */
+    /** Disables the checkbox. */
     disabled: PropTypes.bool,
     /** Defines if the Checkbox is currently checked. */
     checked: PropTypes.bool,
