@@ -26,7 +26,7 @@ export default class Badge extends React.Component {
       "purple-60",
       "purple-70",
     ]),
-    /** Defines the Badge's internal background color. */
+    /** Defines the Badge's wrapper background color. */
     wrapperColor: PropTypes.oneOf([
       "white",
       "black",
