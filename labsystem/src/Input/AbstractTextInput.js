@@ -8,7 +8,7 @@ export default class AbstractTextInput extends React.Component {
   static propTypes = {
     /** Text that will specify the HTML type attribute of an <input> element. */
     type: PropTypes.string,
-    /** Text that will serve as placeholder if the Input field is empty. */
+    /** The placeholder text when Input field is empty. */
     placeholder: PropTypes.string,
     /** Children component. */
     children: PropTypes.element,
