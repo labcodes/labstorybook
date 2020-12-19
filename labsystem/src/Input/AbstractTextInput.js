@@ -24,25 +24,25 @@ export default class AbstractTextInput extends React.Component {
     value: PropTypes.string,
     /** Type of the icon to be rendered. Won't render an icon if not passed to the component. */
     icon: PropTypes.string,
-    /** Defines the color of the displayed symbol. */
+    /** Defines the color of the displayed icon. */
     iconColor: PropTypes.string,
     /** Defines if the Input is required. */
     required: PropTypes.bool,
-    /** Text that will be displayed as a help message. */
+    /** Text that will be displayed as a help message below the input. */
     helpMessage: PropTypes.string,
-    /** Text that will be displayed at the beginning of the Input. */
+    /** Text that will be displayed at the left portion of the Input. */
     prefix: PropTypes.string,
-    /** Text that will be displayed at the end of the Input. */
+    /** Text that will be displayed at the right portion of the Input. */
     suffix: PropTypes.string,
     /** Defines if the Input is valid. */
     isValid: PropTypes.bool,
-    /** Custom error message to be displayed if Input is not valid. */
+    /** Custom error message displayed below the Input when the value is not valid. */
     customErrorMsg: PropTypes.string,
-    /** Callback to be executed when the Input current value changes. */
+    /** Callback action to be executed when the Input default value changes. */
     onChange: PropTypes.func,
-    /** Callback to be executed when the Input's Icon is clicked. */
+    /** Callback action to be executed when the Input's Icon is clicked. */
     onIconClick: PropTypes.func,
-    /** */
+    /** Add a class name to make custom changes */
     className: PropTypes.string,
   };
 

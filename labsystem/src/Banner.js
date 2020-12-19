@@ -6,11 +6,11 @@ import TextButton from "./Buttons/TextButton";
 
 export default class Banner extends React.Component {
   static propTypes = {
-    /** Text that will be rendered inside the Banner. */
+    /** This is the message text string. */
     text: PropTypes.string.isRequired,
     /** Type of the Banner. */
     type: PropTypes.oneOf(["info", "warn", "error"]),
-    /** Type of the icon to be rendered inside de Banner. */
+    /** Sets the icon related to the banner’s message. */
     icon: PropTypes.string.isRequired,
     /** Ojbect with information about the Banners's button. */
     buttonProps: PropTypes.shape({

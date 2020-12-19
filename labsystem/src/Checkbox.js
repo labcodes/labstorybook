@@ -12,7 +12,7 @@ export default class Checkbox extends React.Component {
     id: PropTypes.string.isRequired,
     /** Text that will specify the HTML name attribute of an <input> element. */
     name: PropTypes.string.isRequired,
-    /** Text that will be rendered as the Checkbox's label. */
+    /** This is the checkbox's label. */
     label: PropTypes.string.isRequired,
     /** Disables the checkbox. */
     disabled: PropTypes.bool,
@@ -26,7 +26,7 @@ export default class Checkbox extends React.Component {
     onChange: PropTypes.func,
     /** */
     value: PropTypes.oneOfType([string, number, bool]),
-    /** */
+    /** Add a class name to make custom changes */
     className: PropTypes.string,
   };
 

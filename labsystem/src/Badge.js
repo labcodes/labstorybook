@@ -46,7 +46,7 @@ export default class Badge extends React.Component {
       "purple-60",
       "purple-70",
     ]),
-    /** */
+    /** Add a class name to make custom changes */
     className: PropTypes.string,
   };
 
