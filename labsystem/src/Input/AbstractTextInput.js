@@ -14,7 +14,7 @@ export default class AbstractTextInput extends React.Component {
     children: PropTypes.element,
     /** Text that will serve as unique identifier. It's also an important accessibility tool. */
     id: PropTypes.string.isRequired,
-    /** Text that will be rendered as the Input's label. */
+    /** The Input's text label. */
     label: PropTypes.string.isRequired,
     /** Disables the Input component, including functionality and style. */
     disabled: PropTypes.bool,
