@@ -1,0 +1,76 @@
+import { Fragment } from 'react';
+import { Meta, Story, Canvas, Preview, Props } from '@storybook/addon-docs/blocks';
+import Banner from "../../labsystem/src/Banner";
+
+<Meta title="Base/Grid" />
+
+<div class="docs-title">
+  <div>
+    <h1 class="docs-title__text">Grid</h1>
+  </div>
+</div>
+
+<div class="docs-content">
+
+  <p>For this first release, we are using Bulma's grid system. Bulma is a free, open source CSS framework based on Flexbox. It's responsive and modular, making it possible for us to import only the styles related to the grid.</p>
+
+  <h2>Container</h2>
+  <p>Besides the columns, the <code>container</code> is another important element to define layout.</p>
+  <p>It is a simple utility element that allows you to center content on larger viewports. Using the class <code>container</code> on a div will limit its width and center it horizontally.</p>
+  <p>This is how Bulma sets <code>max-width</code> as default:</p>
+
+  <table>
+    <tr>
+      <th>Class</th>
+      <th>Below <code>1023px</code></th>
+      <th>Desktop. Between <code>1024px</code> and <code>1215px</code></th>
+      <th>Widescreen. Between <code>1216px</code> and <code>1407px</code></th>
+      <th>Fullhd. <code>1408px</code> and above</th>
+    </tr>
+    <tr>
+      <td><code>.container</code></td>
+      <td>full width</td>
+      <td><code>960px</code></td>
+      <td><code>1152px</code></td>
+      <td><code>1344px</code></td>
+    </tr>
+    <tr>
+      <td><code>.container.is-widescreen</code></td>
+      <td>full width</td>
+      <td>full width</td>
+      <td><code>1152px</code></td>
+      <td><code>1344px</code></td>
+    </tr>
+    <tr>
+      <td><code>.container.is-fullhd</code></td>
+      <td>full width</td>
+      <td>full width</td>
+      <td>full width</td>
+      <td><code>1344px</code></td>
+    </tr>
+    <tr>
+      <td><code>.container.is-fluid</code></td>
+      <td>full width</td>
+      <td>full width</td>
+      <td>full width</td>
+      <td>full width</td>
+    </tr>
+  </table>
+  
+  <h5>Example</h5>
+
+  <Canvas>
+    <Story name="Container">
+      <div className="container is-fluid">
+        <Banner
+          type="info"
+          icon="check"
+          text="This alert is placed inside a container"
+        />
+      </div>
+    </Story>
+  </Canvas>
+
+  <p>For more details, check <a href="https://bulma.io/documentation/layout/container/">Bulma's documentation</a>.</p>
+
+</div>
