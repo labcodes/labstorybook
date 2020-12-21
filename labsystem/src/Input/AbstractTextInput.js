@@ -8,10 +8,6 @@ export default class AbstractTextInput extends React.Component {
   static propTypes = {
     /** Text that will specify the HTML type attribute of an <input> element. */
     type: PropTypes.string,
-    /** The placeholder text when the Input field is empty. */
-    placeholder: PropTypes.string,
-    /** Children component. */
-    children: PropTypes.element,
     /** Text that will serve as unique identifier. It's also an important accessibility tool. */
     id: PropTypes.string.isRequired,
     /** The Input's text label. */
@@ -49,8 +45,6 @@ export default class AbstractTextInput extends React.Component {
   static defaultProps = {
     type: "text",
     className: "",
-    placeholder: " ",
-    children: undefined,
     disabled: false,
     defaultValue: undefined,
     value: undefined,
@@ -176,7 +170,6 @@ export default class AbstractTextInput extends React.Component {
   render() {
     const {
       type,
-      children,
       id,
       label,
       disabled,
@@ -188,7 +181,6 @@ export default class AbstractTextInput extends React.Component {
       suffix,
       customErrorMsg,
       onIconClick,
-      placeholder,
     } = this.props;
 
     let { className } = this.props;
@@ -211,14 +203,12 @@ export default class AbstractTextInput extends React.Component {
             }
             id={id}
             type={type}
-            placeholder=" "
             value={localValue}
             ref={this.inputRef}
             onChange={this.handleOnChange}
             autoComplete="off"
             {...(required ? { required } : undefined)}
             {...(disabled ? { disabled } : undefined)}
-            {...(placeholder ? { placeholder } : "")}
           />
           <div className="lab-input__borders" />
           {this.prefixArea()}
@@ -236,7 +226,6 @@ export default class AbstractTextInput extends React.Component {
             onIconClick={onIconClick}
           />
           {this.requiredIcon()}
-          {children}
         </div>
         <TextInputMessage
           helpMessage={helpMessage}
