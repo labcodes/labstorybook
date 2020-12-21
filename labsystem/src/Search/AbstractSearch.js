@@ -52,13 +52,13 @@ export default class AbstractSearch extends React.Component {
     }
   }
 
-  handleOnChange = (e) => {
+  handleOnChange = (event) => {
     const { onChange } = this.props;
 
-    this.setState({ localValue: e.target.value });
+    this.setState({ localValue: event.target.value });
 
     if (!isUndefined(onChange)) {
-      onChange(e);
+      onChange(event);
     }
   };
 
@@ -71,10 +71,10 @@ export default class AbstractSearch extends React.Component {
     }
   };
 
-  handleKeyPress = (e) => {
+  handleKeyPress = (event) => {
     const { onSearch } = this.props;
-    if (e.keyCode === 13 && !isUndefined(onSearch)) {
-      onSearch(e.target.value);
+    if (event.keyCode === 13 && !isUndefined(onSearch)) {
+      onSearch(event.target.value);
     }
   };
 

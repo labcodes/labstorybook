@@ -74,7 +74,8 @@ h6.sbdocs-h6 {
   font-weight: $weight-semibold;
 }
 
-p, li,
+p,
+li,
 p.sbdocs-p,
 li.sbdocs-li {
   margin-block-start: 1rem;
@@ -106,4 +107,11 @@ a {
   font-size: inherit !important;
   line-height: inherit !important;
   color: inherit !important;
+}
+
+.docblock-source * {
+  max-width: 100% !important;
+}
+.lab-playground-bg-mineral {
+  background: #2e3942;
 }

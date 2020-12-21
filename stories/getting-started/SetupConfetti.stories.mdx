@@ -1,0 +1,60 @@
+import { Fragment } from 'react';
+import { Source } from "@storybook/components";
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+<Meta title="Getting started/Setup - Confetti" />
+
+<div class="docs-title">
+  <div>
+    <h1 class="docs-title__text">Setup - Confetti</h1>
+  </div>
+</div>
+
+<div class="docs-content">
+
+  <div class="columns">
+    <div class="column">
+      <h2>Confetti</h2>
+      <h3>Installing</h3>
+      <p>Since currently all our codebase is inside the same repo, if you want to use our desing system by itself in outside projects, you'll need to ask Luciano (luciano@labcodes.com.br) to generate a package for you.</p>
+      <p>He'll send you a compressed version of the transpiled components, together with the scss files you'll need to use them in your project. The compressed file should be named <code>labsystem-0.1.0.tgz</code> or something similar.</p>
+      <p>With the compressed file at hand, copy it to your project and install it by running <code>npm install labsystem-0.1.0.tgz</code>. That will make the components and scss files to be unpacked and available inside the <code>node_modules</code> folder.</p>
+      <p>Note: this installation process will change soon, when we separate the Confetti package from the storybook and publish it to npm.</p>
+      <h3>Importing the styles</h3>
+      <p>To be able to use our styles, you'll have to have scss and svg support in your react project. If you do, just import our main scss file into yours by adding <code>@import '~labsystem/scss/main';</code> to your main scss file.</p>
+      <h3>Importing the fonts</h3>
+      <p>Since we're using the design system internally and for testing purposes, if you want use the fonts, add the following code to the head tag of your project:</p>
+      <Source language="html" code={`
+<link href="https://use.typekit.net/boj8rad.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet"/>`
+       }></Source>
+      <p><strong>Keep in mind that the license for the fonts is only for Labcodes' projects, and that the fonts won't work for other codebases.</strong> If you wish to use our fonts, acquire your license to use them, or try changing the font to one with a broader license.</p>
+      <p>Our styles already reference the fonts, so after importing them, everything should be good to go.</p>
+      <h3>Changing the theme for the components</h3>
+      <p>Our design system accepts theming via scss variables. To change a theme for a component, you'll just need to override the corresponding theme variable.</p>
+      <p>To do that, take a look at which are the default themes in our <a target="_blank" rel="noopener" href="https://github.com/labcodes/labstorybook/blob/master/labsystem/scss/variables/_settings.scss">_settings.scss</a> file, and which themes are available for the components in the <a target="_blank" rel="noopener" href="https://github.com/labcodes/labstorybook/blob/master/labsystem/scss/variables/_colors.scss">_colors.scss</a> file.</p>
+      <p>To change the themes, you may need to import our variables files before overwriting. To properly overwrite the Button theme, for example, you may need to do something like this:</p>
+      <Source language="scss" code={`
+// first, import the variables file
+@import "~labsystem/scss/variables/_all";
+// then, overwrite the variable
+$button-theme: $purple-palette;
+// finally, import the rest of the styles
+@import "~labsystem/scss/main";`
+      }/>
+      <h3>Using the components</h3>
+      <p>To use any of our components, you just need to import them directly from <code>labsystem/dist/[component]</code>.</p>
+      <p>If you want to use the Alert component, for example, open your react component file, put <code>import Alert from "labsystem/dist/Alert";</code> on the top of the file, then use it inside your <code>render</code> method, as you would do for any other component.</p>
+      <p>For example, if you render the Alert with <code>&lt;Alert text="Testing alerts!" icon="eye-opened" /&gt;</code> in the Welcome page from our <a target="_blank" rel="noopener" href="https://github.com/labcodes/django-react-webpack/">Django boilerplate</a>, you'll probably be looking at something like this:</p>
+      <div class="columns">
+        <div class="column is-half is-offset-one-quarter">
+          <img src="docs/getting-started/alerts-on-outside-project.jpg" alt="Example of an Alert being rendered with our Django boilerplate" />
+        </div>
+      </div>
+      <h3>Where do I get more information on components?</h3>
+      <p>To know where to import the components from, explore our <a target="_blank" rel="noopener" href="https://github.com/labcodes/labstorybook/tree/master/labsystem/src">folder structure for components</a>. The compressed package's <code>dist</code> folder uses the same structure as the <code>src</code> folder from our source code, so if you, for example, want to import the Button component, you'll import it with <code>import &#123; Button &#125; from "labsystem/dist/Button/";</code> or <code>import Button from "labsystem/dist/Button/Button";</code>, because the source code for the Button component is inside the <code>labsystem/src/Button</code> folder.</p>
+      <p>For information on props and their types, just check the prop tabels inside each component's docs.</p>
+    </div>
+  </div>
+
+</div>

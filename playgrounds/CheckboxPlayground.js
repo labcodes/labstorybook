@@ -17,13 +17,13 @@ export default class CheckboxPlayground extends React.Component {
     };
   }
 
-  handlePropString = (e) => {
-    const { id, value } = e.target;
+  handlePropString = (event) => {
+    const { id, value } = event.target;
     this.setState({ [id]: value });
   };
 
-  handlePropBool = (e) => {
-    const { id, checked } = e.target;
+  handlePropBool = (event) => {
+    const { id, checked } = event.target;
     this.setState({ [id]: checked });
   };
 

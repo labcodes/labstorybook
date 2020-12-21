@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { isUndefined } from "lodash";
 import Icon from "./Icon";
-import TextButton from "./Buttons/TextButton";
+import TextButton from "./Button/TextButton";
 
 export default class Banner extends React.Component {
   static propTypes = {
@@ -42,10 +42,10 @@ export default class Banner extends React.Component {
     return null;
   };
 
-  handleClick = (e) => {
+  handleClick = (event) => {
     const { buttonProps } = this.props;
     if (!isUndefined(buttonProps.onClick)) {
-      buttonProps.onClick(e);
+      buttonProps.onClick(event);
     }
   };
 
