@@ -2,8 +2,8 @@ $icon-size: 1.5rem !default;
 $icon-bg-color: map-get($icon-theme, "70") !default;
 
 .lab-icon {
-  -webkit-mask-image: url('~confetti/static/icons/main-icons.svg');
-  mask-image: url('~confetti/static/icons/main-icons.svg');
+  -webkit-mask-image: url('~labsystem/static/icons/main-icons.svg');
+  mask-image: url('~labsystem/static/icons/main-icons.svg');
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   height: $icon-size;
