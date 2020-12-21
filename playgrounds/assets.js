@@ -56,3 +56,18 @@ export const colorOptions = [
   "orange",
   "pink",
 ];
+
+export const buttonSkinOptions = {
+  Button: [
+    "",
+    "light",
+    "dark",
+    "warning",
+    "destructive",
+    "warning-invert",
+    "destructive-invert",
+    "confirmation-invert",
+  ],
+  OutlineButton: ["", "light", "dark"],
+  TextButton: ["", "light", "dark"],
+};
