@@ -123,9 +123,8 @@ export default class ButtonPlayground extends React.Component {
         <div className="column lab-playground__configs">
           <h3>Prop Settings</h3>
 
-          <span className="lab-playground__item">
+          <div className="lab-playground__item">
             <strong>variation: </strong>
-            <br />
             <fieldset>
               <Radio
                 id="ButtonVariationRadio-1"
@@ -135,7 +134,6 @@ export default class ButtonPlayground extends React.Component {
                 onChange={this.handleButtonVariationPropChange}
                 checked={currentComponent === "Button"}
               />
-              <br />
               <Radio
                 id="ButtonVariationRadio-2"
                 label="OutlineButton"
@@ -144,7 +142,6 @@ export default class ButtonPlayground extends React.Component {
                 onChange={this.handleButtonVariationPropChange}
                 checked={currentComponent === "OutlineButton"}
               />
-              <br />
               <Radio
                 id="ButtonVariationRadio-3"
                 label="TextButton"
@@ -154,20 +151,18 @@ export default class ButtonPlayground extends React.Component {
                 checked={currentComponent === "TextButton"}
               />
             </fieldset>
-          </span>
-          <br />
+          </div>
 
-          <span className="lab-playground__item">
+          <div className="lab-playground__item">
             <TextInput
               id="selectedText"
               onChange={this.handleTextPropChange}
               value={selectedText}
               label="text"
             />
-          </span>
-          <br />
+          </div>
 
-          <span className="lab-playground__item">
+          <div className="lab-playground__item">
             <label htmlFor="selectedIcon">
               <strong>icon: </strong>
               <select
@@ -182,10 +177,9 @@ export default class ButtonPlayground extends React.Component {
                 ))}
               </select>
             </label>
-          </span>
-          <br />
+          </div>
 
-          <span className="lab-playground__item">
+          <div className="lab-playground__item">
             <label htmlFor="selectedSkin">
               <strong>skin: </strong>
               <select
@@ -200,12 +194,10 @@ export default class ButtonPlayground extends React.Component {
                 ))}
               </select>
             </label>
-          </span>
-          <br />
+          </div>
 
-          <span className="lab-playground__item">
+          <div className="lab-playground__item">
             <strong>size: </strong>
-            <br />
             <fieldset>
               <Radio
                 id="ButtonSizeRadio-1"
@@ -215,7 +207,6 @@ export default class ButtonPlayground extends React.Component {
                 onChange={this.handleButtonSizePropChange}
                 checked={selectedSize === "small"}
               />
-              <br />
               <Radio
                 id="ButtonSizeRadio-2"
                 label="normal"
@@ -224,7 +215,6 @@ export default class ButtonPlayground extends React.Component {
                 onChange={this.handleButtonSizePropChange}
                 checked={selectedSize === "normal"}
               />
-              <br />
               <Radio
                 id="ButtonSizeRadio-3"
                 label="large"
@@ -234,29 +224,29 @@ export default class ButtonPlayground extends React.Component {
                 checked={selectedSize === "large"}
               />
             </fieldset>
-          </span>
-          <br />
+          </div>
 
-          <span className="lab-playground__item">
-            full width
-            <br />
+          <div className="lab-playground__item">
+            <p>
+              <strong>full width</strong>
+            </p>
             <Toggle
               name="fullWidth"
               value={fullWidth}
               handleToggle={this.handlePropChangeBool}
             />
-          </span>
-          <br />
+          </div>
 
-          <span className="lab-playground__item">
-            disabled
-            <br />
+          <div className="lab-playground__item">
+            <p>
+              <strong>disabled</strong>
+            </p>
             <Toggle
               name="selectedIsDisabled"
               value={selectedIsDisabled}
               handleToggle={this.handlePropChangeBool}
             />
-          </span>
+          </div>
         </div>
       </div>
     );
