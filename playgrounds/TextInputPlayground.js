@@ -26,13 +26,13 @@ export default class InputPlayground extends React.Component {
     };
   }
 
-  handlePropChangeText = (e) => {
-    const { id, value } = e.target;
+  handlePropChangeText = (event) => {
+    const { id, value } = event.target;
     this.setState({ [id]: value });
   };
 
-  handlePropChangeBool = (e) => {
-    const { id, checked } = e.target;
+  handlePropChangeBool = (event) => {
+    const { id, checked } = event.target;
     this.setState({ [id]: checked });
   };
 

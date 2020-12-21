@@ -85,10 +85,10 @@ export default class Checkbox extends React.Component {
     return <Icon type={type} color={color} size="small" />;
   };
 
-  handleOnChange = (e) => {
+  handleOnChange = (event) => {
     const { onChange } = this.props;
     if (!isUndefined(onChange)) {
-      onChange(e);
+      onChange(event);
     }
 
     this.setState((state) => ({ localChecked: !state.localChecked }));

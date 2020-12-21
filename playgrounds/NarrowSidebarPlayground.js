@@ -4,7 +4,7 @@ import React from "react";
 import NarrowSidebar from "../labsystem/src/Sidebar/NarrowSidebar";
 import TextInput from "../labsystem/src/Input/TextInput";
 import Toggle from "../labsystem/src/Toggle";
-import OutlineButton from "../labsystem/src/Buttons/OutlineButton";
+import OutlineButton from "../labsystem/src/Button/OutlineButton";
 import Icon from "../labsystem/src/Icon";
 
 export default class NarrowSidebarPlayground extends React.Component {
@@ -51,13 +51,13 @@ export default class NarrowSidebarPlayground extends React.Component {
     };
   }
 
-  handlePropChangeText = (e) => {
-    const { id, value } = e.target;
+  handlePropChangeText = (event) => {
+    const { id, value } = event.target;
     this.setState({ [id]: value });
   };
 
-  handlePropChangeBool = (e) => {
-    const { id, checked } = e.target;
+  handlePropChangeBool = (event) => {
+    const { id, checked } = event.target;
     this.setState({ [id]: checked });
   };
 

@@ -1,13 +1,15 @@
 import { Fragment } from 'react';
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 
-import { Button, OutlineButton, TextButton } from '../labsystem/src/Buttons';
+import { Button, OutlineButton, TextButton } from '../labsystem/src/Button';
+
+import ButtonPlayground from "../playgrounds/ButtonPlayground";
 
 <Meta title="Components/Button" component={Button} />
 
 <div class="docs-title">
   <div>
-    <h1 class="docs-title__text">Buttons</h1>
+    <h1 class="docs-title__text">Button</h1>
   </div>
 </div>
 
@@ -118,6 +120,14 @@ import { Button, OutlineButton, TextButton } from '../labsystem/src/Buttons';
     </table>
   </div>
 </div>
+
+<div className="simple-tab__content content3">
+  <h2>Interactive Demo</h2>
+  <p>This demo lets you preview the button component, its variations, and configuration options.</p>
+
+  <ButtonPlayground />
+</div>
+
 
 ## Anatomy
 
@@ -452,13 +462,13 @@ Use the mineral or white skins for secondary actions on <b>notifications</b> and
   <Story name="Full-width Button">
     <Fragment>
         <div className="doc-buttons--block">
-          <Button text="Small Button" size="small" fullWidth={true}/>
+          <Button text="Small Button" size="small" fullWidth/>
         </div>
         <div className="doc-buttons--block">
-          <TextButton text="Normal Text Button" size="normal" fullWidth={true}/>
+          <TextButton text="Normal Text Button" size="normal" fullWidth/>
         </div>
         <div className="doc-buttons--block">
-          <OutlineButton text="Large Outline Button" size="large" fullWidth={true}/>
+          <OutlineButton text="Large Outline Button" size="large" fullWidth/>
         </div>
     </Fragment>
   </Story>

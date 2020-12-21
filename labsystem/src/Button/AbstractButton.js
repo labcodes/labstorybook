@@ -15,6 +15,7 @@ export default class AbstractButton extends React.Component {
     icon: PropTypes.string,
     /** Sets a special color skin to the button. */
     skin: PropTypes.oneOf([
+      "",
       "light",
       "dark",
       "warning",
@@ -36,8 +37,8 @@ export default class AbstractButton extends React.Component {
   static defaultProps = {
     type: "button",
     variant: "default",
+    skin: "",
     icon: undefined,
-    skin: undefined,
     size: "normal",
     disabled: false,
     fullWidth: false,
@@ -58,10 +59,10 @@ export default class AbstractButton extends React.Component {
     );
   };
 
-  handleOnClick = (e) => {
+  handleOnClick = (event) => {
     const { onClick } = this.props;
     if (!isUndefined(onClick)) {
-      onClick(e);
+      onClick(event);
     }
   };
 

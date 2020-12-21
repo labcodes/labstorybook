@@ -24,6 +24,38 @@ export default class SystemMessagesPlayground extends React.Component {
     };
   }
 
+  handleCurrentComponentChange = (event) => {
+    const { value } = event.target;
+    this.setState({
+      currentComponent: value,
+    });
+  };
+
+  handleTextPropChange = (event) => {
+    const { id, value } = event.target;
+    this.setState({ [id]: !isEmpty(value) ? value : "edit me" });
+  };
+
+  handleButtonTextPropChange = (event) => {
+    const { id, value } = event.target;
+    this.setState({ [id]: upperCase(value) });
+  };
+
+  handleIconPropChange = (event) => {
+    const { id, value } = event.target;
+    this.setState({ [id]: !isEmpty(value) ? value : "edit me" });
+  };
+
+  handleButtonTextPropChange = (event) => {
+    const { id, value } = event.target;
+    this.setState({ [id]: upperCase(value) });
+  };
+
+  handleIconPropChange = (event) => {
+    const { id, value } = event.target;
+    this.setState({ [id]: value });
+  };
+
   renderCurrentComponent = () => {
     const {
       availableComponents,
@@ -35,7 +67,7 @@ export default class SystemMessagesPlayground extends React.Component {
     const Component = availableComponents[currentComponent];
 
     return (
-      <>
+      <React.Fragment>
         <Component
           text={selectedText}
           icon={selectedIcon}
@@ -46,32 +78,8 @@ export default class SystemMessagesPlayground extends React.Component {
             },
           }}
         />
-      </>
+      </React.Fragment>
     );
-  };
-
-  handleCurrentComponentChange = (e) => {
-    const { value } = e.target;
-    this.setState({
-      currentComponent: value,
-    });
-  };
-
-  handleTextPropChange = (e) => {
-    const { id, value } = e.target;
-    this.setState({
-      [id]: !isEmpty(value) ? value : "This is a system message",
-    });
-  };
-
-  handleButtonTextPropChange = (e) => {
-    const { id, value } = e.target;
-    this.setState({ [id]: upperCase(value) });
-  };
-
-  handleIconPropChange = (e) => {
-    const { id, value } = e.target;
-    this.setState({ [id]: value });
   };
 
   render() {

@@ -2,12 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import AbstractButton from "./AbstractButton";
 
-export default class TextButton extends React.Component {
+export default class OutlineButton extends React.Component {
   static propTypes = {
     /** This is the button label. */
     text: PropTypes.string.isRequired,
     /** Sets a special color skin to the button. */
-    skin: PropTypes.oneOf(["light", "dark"]),
+    skin: PropTypes.oneOf(["", "light", "dark"]),
     /** Sets the icon related to the button label. Default state: no icon. */
     icon: PropTypes.string,
     /** Sets the button's height. Small = 32px, Normal = 40px, Large = 48px. */
@@ -21,7 +21,7 @@ export default class TextButton extends React.Component {
   };
 
   static defaultProps = {
-    skin: undefined,
+    skin: "",
     icon: undefined,
     size: "normal",
     disabled: false,
@@ -33,7 +33,7 @@ export default class TextButton extends React.Component {
     const { text, skin, icon, size, disabled, onClick, fullWidth } = this.props;
     return (
       <AbstractButton
-        variant="text"
+        variant="outline"
         text={text}
         skin={skin}
         icon={icon}
