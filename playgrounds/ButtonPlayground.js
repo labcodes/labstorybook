@@ -242,7 +242,6 @@ export default class ButtonPlayground extends React.Component {
             <br />
             <Toggle
               name="fullWidth"
-              label="full width"
               value={fullWidth}
               handleToggle={this.handlePropChangeBool}
             />
@@ -254,7 +253,6 @@ export default class ButtonPlayground extends React.Component {
             <br />
             <Toggle
               name="selectedIsDisabled"
-              label="disabled"
               value={selectedIsDisabled}
               handleToggle={this.handlePropChangeBool}
             />
