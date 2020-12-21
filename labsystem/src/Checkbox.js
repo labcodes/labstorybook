@@ -18,7 +18,7 @@ export default class Checkbox extends React.Component {
     disabled: PropTypes.bool,
     /** Defines if the Checkbox is currently checked. */
     checked: PropTypes.bool,
-    /** Defines if the Checkbox is marked as "checked" or "partially checked". */
+    /** Marks Checkbox as indeterminate. Used on "check/uncheck all" Checkbox in a `fieldset` to display when some itens are checked and others are unchecked */
     indeterminate: PropTypes.bool,
     /** Defines if the Checkbox is initialized as "checked". */
     defaultChecked: PropTypes.bool,
