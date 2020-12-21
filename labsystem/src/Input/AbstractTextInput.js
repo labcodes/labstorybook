@@ -45,6 +45,8 @@ export default class AbstractTextInput extends React.Component {
   static defaultProps = {
     type: "text",
     className: "",
+    placeholder: " ",
+    children: undefined,
     disabled: false,
     defaultValue: undefined,
     value: undefined,
