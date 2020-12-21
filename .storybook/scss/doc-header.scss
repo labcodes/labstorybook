@@ -2,6 +2,8 @@ $simple-tab-item-height: 48px;
 $content-margin-top: 64px;
 $docs-title-height: 240px;
 $docs-content-margin: $docs-title-height - $content-margin-top;
+$content-max-width: 900px;
+
 
 // Title of a documentation page, or story.
 .docs-title {
