@@ -3,8 +3,8 @@ $badge-bg-color: map-get($icon-theme, "60") !default;
 $badge-color: white !default;
 
 .lab-badge {
-  -webkit-mask-image: url('~labsystem/static/icons/main-badges.svg');
-  mask-image: url('~labsystem/static/icons/main-badges.svg');
+  -webkit-mask-image: url('~confetti/static/icons/main-badges.svg');
+  mask-image: url('~confetti/static/icons/main-badges.svg');
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   height: $icon-size;

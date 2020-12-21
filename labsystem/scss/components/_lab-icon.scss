@@ -2,8 +2,8 @@ $icon-size: 1.5rem !default;
 $icon-bg-color: map-get($icon-theme, "70") !default;
 
 .lab-icon {
-  -webkit-mask-image: url('~labsystem/static/icons/main-icons.svg');
-  mask-image: url('~labsystem/static/icons/main-icons.svg');
+  -webkit-mask-image: url('~confetti/static/icons/main-icons.svg');
+  mask-image: url('~confetti/static/icons/main-icons.svg');
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   height: $icon-size;
@@ -14,7 +14,7 @@ $icon-bg-color: map-get($icon-theme, "70") !default;
   flex-shrink: 0;
   background-color: $icon-bg-color;
 
-  /* Color modifiers. 
+  /* Color modifiers.
    * Create classes '.lab-icon--white' and '.lab-icon--black' directly.
    * Iterates over $all-colors map to also create classes like '.lab-icon--white'.
    * Each ones sets a different background color. */
@@ -77,5 +77,5 @@ $icon-bg-color: map-get($icon-theme, "70") !default;
   &--chevron-left { @include icon-position(6, 3); }
   &--workspace { @include icon-position(6, 4); }
 
-  
+
 }
