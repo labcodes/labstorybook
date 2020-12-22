@@ -6,7 +6,7 @@ export const parameters = {
   options: {
     method: 'alphabetical',
     storySort: {
-      order: ['Getting started', 'Base', ['Principles', 'Accessibility', 'Changelog'], 'Components'],
+      order: ['Getting started', 'Base', ['Principles', 'Accessibility', 'Responsiveness', 'Grid', 'Spacing', 'Colors', 'Typography', 'Motion'], 'Components'],
     },
   },
 }
