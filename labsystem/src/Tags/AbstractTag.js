@@ -28,13 +28,13 @@ export default class AbstractTag extends React.Component {
     tabIndex: "0",
   };
 
-  handleEvent = (e) => {
-    if ((e.keycode || e.which) === 32) {
-      e.preventDefault();
+  handleEvent = (event) => {
+    if ((event.keycode || event.which) === 32) {
+      event.preventDefault();
     }
     const { onClick } = this.props;
     if (!isUndefined(onClick)) {
-      onClick(e);
+      onClick(event);
     }
   };
 

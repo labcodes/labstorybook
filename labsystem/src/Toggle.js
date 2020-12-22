@@ -34,10 +34,10 @@ export default class Toggle extends React.Component {
     };
   }
 
-  handleOnChange = (e) => {
+  handleOnChange = (event) => {
     const { handleToggle } = this.props;
     if (!isUndefined(handleToggle)) {
-      handleToggle(e);
+      handleToggle(event);
     }
 
     this.setState((state) => ({ localValue: !state.localValue }));

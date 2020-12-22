@@ -9,6 +9,7 @@ export default class AbstractButton extends React.Component {
     text: PropTypes.string.isRequired,
     variant: PropTypes.oneOf(["default", "outline", "text"]),
     skin: PropTypes.oneOf([
+      "",
       "light",
       "dark",
       "warning",
@@ -27,7 +28,7 @@ export default class AbstractButton extends React.Component {
   static defaultProps = {
     type: "button",
     variant: "default",
-    skin: undefined,
+    skin: "",
     icon: undefined,
     size: "normal",
     disabled: false,
@@ -49,10 +50,10 @@ export default class AbstractButton extends React.Component {
     );
   };
 
-  handleOnClick = (e) => {
+  handleOnClick = (event) => {
     const { onClick } = this.props;
     if (!isUndefined(onClick)) {
-      onClick(e);
+      onClick(event);
     }
   };
 

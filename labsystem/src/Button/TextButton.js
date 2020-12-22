@@ -2,10 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import AbstractButton from "./AbstractButton";
 
-export default class OutlineButton extends React.Component {
+export default class TextButton extends React.Component {
   static propTypes = {
     text: PropTypes.string.isRequired,
-    skin: PropTypes.oneOf(["light", "dark"]),
+    skin: PropTypes.oneOf(["", "light", "dark"]),
     icon: PropTypes.string,
     size: PropTypes.oneOf(["normal", "small", "large"]),
     disabled: PropTypes.bool,
@@ -26,7 +26,7 @@ export default class OutlineButton extends React.Component {
     const { text, skin, icon, size, disabled, onClick, fullWidth } = this.props;
     return (
       <AbstractButton
-        variant="outline"
+        variant="text"
         text={text}
         skin={skin}
         icon={icon}

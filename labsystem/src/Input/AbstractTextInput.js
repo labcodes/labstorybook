@@ -128,15 +128,19 @@ export default class AbstractTextInput extends React.Component {
     return suffix ? <div className="lab-input__suffix">{suffix}</div> : "";
   };
 
-  handleOnChange = (e) => {
+  handleOnChange = (event) => {
     const { onChange, isValid, customErrorMsg, required } = this.props;
-    const inputElement = e.target;
+    const inputElement = event.target;
     const inputElementValue = inputElement.value;
     const inputElementIsValid = inputElement.validity.valid;
 
     // First we reset the custom validity
     inputElement.setCustomValidity("");
-    onChange(e);
+
+    if (!isUndefined(onChange)) {
+      onChange(event);
+    }
+
     // Then we set the state with the new value
     this.setState({ localValue: inputElementValue }, () => {
       if (isUndefined(isValid) || (isValid && required)) {
@@ -178,7 +182,7 @@ export default class AbstractTextInput extends React.Component {
     }
 
     return (
-      <>
+      <React.Fragment>
         <div className={`lab-input ${className || ""}`}>
           <input
             className={
@@ -224,7 +228,7 @@ export default class AbstractTextInput extends React.Component {
           localValue={localValue}
           localIsValid={localIsValid}
         />
-      </>
+      </React.Fragment>
     );
   }
 }
