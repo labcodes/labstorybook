@@ -37,7 +37,7 @@ import { thumbSrcOptions, iconOptions } from "../playgrounds/assets";
   <h2>Anatomy</h2>
   <div class="columns">
     <div class="column">
-      <h5>Elements</h5>
+      <p><strong>Elements</strong></p>
       <div class="columns">
         <div class="column is-half">
           <img src="docs/tag/anatomy.png"/>
@@ -53,7 +53,7 @@ import { thumbSrcOptions, iconOptions } from "../playgrounds/assets";
       </div>
     </div>
     <div class="column">
-      <h5>Borders & shadows</h5>
+      <p><strong>Borders & shadows</strong></p>
       <div class="columns">
         <div class="column is-half">
           <img src="docs/tag/borders.png"/>
@@ -104,7 +104,7 @@ import { thumbSrcOptions, iconOptions } from "../playgrounds/assets";
   </div>
 </div>
 
-### Playground
+<h2>Interactive Demo</h2>
 
   <Canvas>
     <Story name="InteractiveTagDemo">
@@ -114,12 +114,11 @@ import { thumbSrcOptions, iconOptions } from "../playgrounds/assets";
     </Story>
   </Canvas>
 
-## Style
+<h2>Style</h2>
+<p>Tags have two styles settings. Use <code>outline</code> to use borders instead of a filled background. Use <code>skin="vivid"</code> to display more vivid colors.</p>
 
-Tags have two styles settings. Use `outline` to use borders instead of a filled background. Use `skin="vivid"` to display more vivid colors.
-
-##### Default tag style
-If no color setting is used, the tag will be displayed with a mineral fill background using `skin="pale"`.
+<h3>Default tag style</h3>
+<p>If no color setting is used, the tag will be displayed with a mineral fill background using <code>skin="pale"</code>.</p>
 
 <Canvas>
   <Story name="Fill sample">
@@ -135,8 +134,8 @@ If no color setting is used, the tag will be displayed with a mineral fill backg
   </Story>
 </Canvas>
 
-##### Outline
-Using `outline` will display a tag with white background and 2px border.
+<h3>Outline</h3>
+<p>Using <code>outline</code> will display a tag with white background and 2px border.</p>
 
 <Canvas>
   <Story name="Outline sample">
@@ -152,8 +151,8 @@ Using `outline` will display a tag with white background and 2px border.
   </Story>
 </Canvas>
 
-##### Skin
-Using `skin="vivid"` will display a tag with more vivid colors either for fill or outline tags. Togglable tags cannot receive this prop.
+<h3>Skin</h3>
+<p>Using <code>skin="vivid"</code> will display a tag with more vivid colors either for fill or outline tags. Togglable tags cannot receive this prop.</p>
 
 <Canvas>
   <Story name="Skin sample">
@@ -173,12 +172,11 @@ Using `skin="vivid"` will display a tag with more vivid colors either for fill o
   </Story>
 </Canvas>
 
-##### Disabled
-This prop is used if a tag action is disabled. Therefore, Simple Tags cannot receive this prop.
+<h3>Disabled</h3>
+<p>This prop is used if a tag action is disabled. Therefore, Simple Tags cannot receive this prop.</p>
+<p>All disabled styles remain the same regardless of any property other than <code>outline</code>.</p>
 
-All disabled styles remain the same regardless of any property other than `outline`.
-
-###### Default
+<h4>Default</h4>
 
 <Canvas>
   <Story name="Disabled sample">
@@ -191,7 +189,7 @@ All disabled styles remain the same regardless of any property other than `outli
   </Story>
 </Canvas>
 
-###### Outline
+<h4>Outline</h4>
 
 <Canvas>
   <Story name="Disabled outline sample">
@@ -204,15 +202,14 @@ All disabled styles remain the same regardless of any property other than `outli
   </Story>
 </Canvas>
 
-## Color
-The `color` prop can be set to any tag.
+<h2>Color</h2>
+<p>The <code>color</code> prop can be set to any tag.</p>
 
-##### Theme
-Tag's default color is `mineral` but it can also be set to teal or purple from the theme settings or by the user with `color="teal"` or `color="purple"`.
+<h3>Theme</h3>
+<p>Tag's default color is <code>mineral</code> but it can also be set to teal or purple from the theme settings or by the user with <code>color="teal"</code> or <code>color="purple"</code>.</p>
+<p>All disabled styles remains unchanged regardless of any value used.</p>
 
-All disabled styles remains unchanged regardless of any value used.
-
-###### Teal
+<h4>Teal</h4>
 
 <Canvas>
   <Story name="Teal Theme Sample">
@@ -248,7 +245,7 @@ All disabled styles remains unchanged regardless of any value used.
   </Story>
 </Canvas>
 
-###### Purple
+<h4>Purple</h4>
 
 <Canvas>
   <Story name="Purple Theme Sample">
@@ -284,12 +281,11 @@ All disabled styles remains unchanged regardless of any value used.
   </Story>
 </Canvas>
 
-##### Other colors
-The `color` prop also supports the values `green`, `red`, `yellow`, `cyan`, `orange`, and `pink`.
+<h4>Other colors</h4>
+<p>The <code>color</code> prop also supports the values <code>green</code>, <code>red</code>, <code>yellow</code>, <code>cyan</code>, <code>orange</code>, and <code>pink</code>.</p>
+<p>All disabled styles remains unchanged regardless of any value used.</p>
 
-All disabled styles remains unchanged regardless of any value used.
-
-###### Green
+<h5>Green</h5>
 
 <Canvas>
   <Story name="Green Theme Sample">
@@ -325,7 +321,7 @@ All disabled styles remains unchanged regardless of any value used.
   </Story>
 </Canvas>
 
-###### Red
+<h5>Red</h5>
 
 <Canvas>
   <Story name="Red Theme Sample">
@@ -361,7 +357,7 @@ All disabled styles remains unchanged regardless of any value used.
   </Story>
 </Canvas>
 
-###### Yellow
+<h5>Yellow</h5>
 
 <Canvas>
   <Story name="Yellow Theme Sample">
@@ -397,7 +393,7 @@ All disabled styles remains unchanged regardless of any value used.
   </Story>
 </Canvas>
 
-###### Cyan
+<h5>Cyan</h5>
 
 <Canvas>
   <Story name="Cyan Theme Sample">
@@ -433,7 +429,7 @@ All disabled styles remains unchanged regardless of any value used.
   </Story>
 </Canvas>
 
-###### Organge
+<h5>Organge</h5>
 
 <Canvas>
   <Story name="Organge Theme Sample">
@@ -469,7 +465,7 @@ All disabled styles remains unchanged regardless of any value used.
   </Story>
 </Canvas>
 
-###### Pink
+<h5>Pink</h5>
 
 <Canvas>
   <Story name="Pink Theme Sample">
@@ -505,17 +501,17 @@ All disabled styles remains unchanged regardless of any value used.
   </Story>
 </Canvas>
 
-## Prop API docs
+<h2>Prop API docs</h2>
+<p>Here's the list of props based on the component's prop types definitions.</p>
 
-Here's the list of props based on the component's prop types definitions.
-### SimpleTag
+<h3>SimpleTag</h3>
 <ArgsTable of={SimpleTag} />
 
-### TogglableTag
+<h3>TogglableTag</h3>
 <ArgsTable of={TogglableTag} />
 
-### RemovableTag
+<h3>RemovableTag</h3>
 <ArgsTable of={RemovableTag} />
 
-### DropdownTag
+<h3>DropdownTag</h3>
 <ArgsTable of={DropdownTag} />
