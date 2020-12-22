@@ -1,0 +1,126 @@
+import { Fragment } from 'react';
+import { Source } from "@storybook/components";
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+
+<Meta title="Base/Responsiveness" />
+
+
+<div className="docs-title">
+  <div>
+    <h1 className="docs-title__text">Responsiveness</h1>
+  </div>
+</div>
+
+<div className="docs-content">
+  <p>Every element in Bulma is <strong>mobile-first</strong> and optimizes for <strong>vertical reading</strong>.</p>
+  <p>It has <a href="https://github.com/jgthms/bulma/blob/master/sass/utilities/initial-variables.sass#L56,L64">5 breakpoints</a>:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Variablet</th>
+        <th>Breakpoint</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>mobile</code></td>
+        <td>up to <code>768px</code></td>
+      </tr>
+      <tr>
+        <td><code>tablet</code></td>
+        <td>from <code>769px</code></td>
+      </tr>
+      <tr>
+        <td><code>desktop</code></td>
+        <td>from <code>1024px</code></td>
+      </tr>
+      <tr>
+        <td><code>widescreen</code></td>
+        <td>from <code>1216px</code></td>
+      </tr>
+      <tr>
+        <td><code>fullhd</code></td>
+        <td>from <code>1408px</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>We follow a mobile-first approach, which means that mobile is our default view and CSS rules are built growing accordingly. Bulma has already <a href="https://github.com/jgthms/bulma/blob/master/sass/utilities/mixins.sass#L81,L129">9 mixins</a> prepared for this.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Mixin</th>
+        <th>Breakpoint min</th>
+        <th>Breakpoint max</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>=mobile</code></td>
+        <td>-</td>
+        <td><code>768px</code></td>
+      </tr>
+      <tr>
+        <td><code>=tablet</code></td>
+        <td><code>769px</code></td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td><code>=tablet-only</code></td>
+        <td><code>769px</code></td>
+        <td><code>1023px</code></td>
+      </tr>
+      <tr>
+        <td><code>=touch</code></td>
+        <td>-</td>
+        <td><code>1023px</code></td>
+      </tr>
+      <tr>
+        <td><code>=desktop</code></td>
+        <td><code>1024px</code></td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td><code>=desktop-only</code></td>
+        <td><code>1024px</code></td>
+        <td><code>1215px</code></td>
+      </tr>
+      <tr>
+        <td><code>=widescreen</code></td>
+        <td><code>1216px</code></td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td><code>=widescreen-only</code></td>
+        <td><code>1216px</code></td>
+        <td><code>1407px</code></td>
+      </tr>
+      <tr>
+        <td><code>=fullhd</code></td>
+        <td><code>1408px</code></td>
+        <td>-</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>What these mixins do is add the content inside the appropriate media queries. That way, when writing the SCSS, we don't need to repeat code that much. You just need to use the mixins and place the content inside.</p>
+
+  <Source language="scss" code={`
+@include tablet() {
+  // CSS rules to change from tablet up
+}
+  `}>
+  </Source>
+
+  <p>This will render the following:</p>
+
+  <Source language="scss" code={`
+@media screen and (min-width: $tablet), print {
+  // CSS rules to change from tablet up
+}
+  `}>
+  </Source>
+
+  <p>For more details, check <a href="https://bulma.io/documentation/overview/responsiveness/">Bulma's documentation</a>.</p>
+
+</div>
