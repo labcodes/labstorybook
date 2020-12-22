@@ -82,29 +82,29 @@ import Banner from "../../labsystem/src/Banner";
 
   <Canvas>
     <Story name="Columns">
-      <div class="columns">
-        <div class="column">
+      <div className="columns">
+        <div className="column">
           <Banner
             type="info"
             icon="check"
             text="First column"
           />
         </div>
-        <div class="column">
+        <div className="column">
           <Banner
             type="info"
             icon="check"
             text="Second column"
           />
         </div>
-        <div class="column">
+        <div className="column">
           <Banner
             type="info"
             icon="check"
             text="Third column"
           />
         </div>
-        <div class="column">
+        <div className="column">
           <Banner
             type="info"
             icon="check"
@@ -123,41 +123,45 @@ import Banner from "../../labsystem/src/Banner";
   <p>This is how Bulma sets <code>max-width</code> as default:</p>
 
   <table>
-    <tr>
-      <th>Class</th>
-      <th>Below <code>1023px</code></th>
-      <th>Desktop. Between <code>1024px</code> and <code>1215px</code></th>
-      <th>Widescreen. Between <code>1216px</code> and <code>1407px</code></th>
-      <th>Fullhd. <code>1408px</code> and above</th>
-    </tr>
-    <tr>
-      <td><code>.container</code></td>
-      <td>full width</td>
-      <td><code>960px</code></td>
-      <td><code>1152px</code></td>
-      <td><code>1344px</code></td>
-    </tr>
-    <tr>
-      <td><code>.container.is-widescreen</code></td>
-      <td>full width</td>
-      <td>full width</td>
-      <td><code>1152px</code></td>
-      <td><code>1344px</code></td>
-    </tr>
-    <tr>
-      <td><code>.container.is-fullhd</code></td>
-      <td>full width</td>
-      <td>full width</td>
-      <td>full width</td>
-      <td><code>1344px</code></td>
-    </tr>
-    <tr>
-      <td><code>.container.is-fluid</code></td>
-      <td>full width</td>
-      <td>full width</td>
-      <td>full width</td>
-      <td>full width</td>
-    </tr>
+    <thead>
+      <tr>
+        <th>Class</th>
+        <th>Below <code>1023px</code></th>
+        <th>Desktop. Between <code>1024px</code> and <code>1215px</code></th>
+        <th>Widescreen. Between <code>1216px</code> and <code>1407px</code></th>
+        <th>Fullhd. <code>1408px</code> and above</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>.container</code></td>
+        <td>full width</td>
+        <td><code>960px</code></td>
+        <td><code>1152px</code></td>
+        <td><code>1344px</code></td>
+      </tr>
+      <tr>
+        <td><code>.container.is-widescreen</code></td>
+        <td>full width</td>
+        <td>full width</td>
+        <td><code>1152px</code></td>
+        <td><code>1344px</code></td>
+      </tr>
+      <tr>
+        <td><code>.container.is-fullhd</code></td>
+        <td>full width</td>
+        <td>full width</td>
+        <td>full width</td>
+        <td><code>1344px</code></td>
+      </tr>
+      <tr>
+        <td><code>.container.is-fluid</code></td>
+        <td>full width</td>
+        <td>full width</td>
+        <td>full width</td>
+        <td>full width</td>
+      </tr>
+    </tbody>
   </table>
   
   <p><strong>Example</strong></p>
