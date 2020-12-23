@@ -41,8 +41,6 @@ import Icon from "../labsystem/src/Icon";
         <img src="docs/tooltip/tooltip-anatomy.png" />
     </div>
     <div class="column">
-        <br />
-        <br />
         <ol>
          <li>Text</li>
          <li>Border (2px)</li>
@@ -59,13 +57,13 @@ import Icon from "../labsystem/src/Icon";
 </div>
 
 
-## Colors
+<h2>Colors</h2>
 
 The tooltips color is defined in the `scss/variables/_settings.scss` file, and can be Black, Teal or Purple. Avoid using Purple tooltips if the project theme is Teal, and vice versa.
 
 <img src="docs/tooltip/examples/colors.png" />
 
-## Behavior
+<h2>Behavior</h2>
 
 A tooltip is displayed upon hovering over it (desktop). It is not displayed on mobile.
 Continuously display the tooltip as long as the user hovers over the element.
@@ -99,7 +97,7 @@ Continuously display the tooltip as long as the user hovers over the element.
 </div>
 
 
-## Placement
+<h2>Placement</h2>
 
 Tooltips placement relative to the target is defined by the user through props, and can have one of the 12 following values:
 
@@ -228,7 +226,7 @@ Tooltips placement relative to the target is defined by the user through props, 
   </Story>
 </Canvas>
 
-## Long texts
+<h2>Long texts</h2>
 
 Tooltip text should not be longer than 180 characters and 3 lines. A warn will be thrown in the console if the 180 chars limit is crossed.
 
@@ -249,7 +247,7 @@ Tooltip text should not be longer than 180 characters and 3 lines. A warn will b
   </Story>
 </Canvas>
 
-## Icon
+<h2>Icon</h2>
 
 Tooltip can also be triggered by an Icon or other elements.
 
@@ -269,11 +267,11 @@ Tooltip can also be triggered by an Icon or other elements.
   </Story>
 </Canvas>
 
-## Prop API docs
+<h2>Prop API docs</h2>
 
 Here's the list of props based on the component's prop types definitions.
 
-### Tooltip
+<h3>Tooltip</h3>
 
 <ArgsTable of={Tooltip} />
 
