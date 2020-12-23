@@ -26,135 +26,62 @@ import NarrowSidebarPlayground from '../playgrounds/NarrowSidebarPlayground';
 
 <div className="simple-tab-wrapper"></div>
 <input className="simple-tab" type="radio" name="colors-tab" id="tab1" defaultChecked/>
-<label htmlFor="tab1">Overview</label>
+<label htmlFor="tab1">Code</label>
 
 <input className="simple-tab" type="radio" name="colors-tab" id="tab2" />
-<label htmlFor="tab2">Examples</label>
-
-<input className="simple-tab" type="radio" name="colors-tab" id="tab3" />
-<label htmlFor="tab3">Playground</label>
+<label htmlFor="tab2">Usage</label>
 
 <div className="simple-tab__content content1">
 
-<p>Narrow-sidebars are components that lets users navigate within content of a product. It must be displayed fixed at the left side of the screen and can't be expanded. This component should be used only in a small amount of content situation.</p>
+  <p>Narrow-sidebars are components that lets users navigate within content of a product. It must be displayed fixed at the left side of the screen and can't be expanded. This component should be used only in a small amount of content situation.</p>
 
-<h2>Anatomy</h2>
-<p>The Narrow Sidebar is divided in 3 parts.</p>
-<p>First, we have the <strong>header</strong> area. Here you may use to style with your logo or user avatar.</p>
-<p>Below the header is the <strong>body</strong>, which should be top aligned. It can have up to 6 items without scrolling. If more items are necessary, this container can have a scrolling behavior.</p>
-<p>Last, the bottom area should be used as a <strong>footer</strong> utility content. This container can have action buttons or additional secondary information/links. Here, the content will vary according to the application needs.</p>
+  <h2>Overview</h2>
+  <p>The Narrow Sidebar is divided in 3 parts.</p>
+  <p>First, we have the <strong>header</strong> area. Here you may use to style with your logo or user avatar.</p>
+  <p>Below the header is the <strong>body</strong>, which should be top aligned. It can have up to 6 items without scrolling. If more items are necessary, this container can have a scrolling behavior.</p>
+  <p>Last, the bottom area should be used as a <strong>footer</strong> utility content. This container can have action buttons or additional secondary information/links. Here, the content will vary according to the application needs.</p>
 
-<div class="columns">
-  <div class="column">
-    <img src="docs/narrow-sidebar/header-nside.png" />
-    <p><strong>Header (mandatory)</strong></p>
-    <p>You must choose at least one of the above options to use in your Narrow Sidebar.</p>
-    <img src="docs/narrow-sidebar/obs-nside.png" />
+  <div class="columns">
+    <div class="column">
+      <img src="docs/narrow-sidebar/header-nside.png" />
+      <p><strong>Header (mandatory)</strong></p>
+      <p>You must choose at least one of the above options to use in your Narrow Sidebar.</p>
+      <img src="docs/narrow-sidebar/obs-nside.png" />
+    </div>
+    <div class="column">
+      <img src="docs/narrow-sidebar/body-nside.png" />
+      <p><strong>Body</strong></p>
+      <p>Body can be designed following these components above. The labels can only have 15 characters, so if more text is necessary here, you should use the Standard Sidebar*.</p>
+    </div>
+    <div class="column">
+      <img src="docs/narrow-sidebar/footer-nside.png" />
+      <p><strong>Footer</strong></p>
+      <p>Using the footer is optional, and you can use one of the following layouts.</p>
+    </div>
   </div>
 
-  <div class="column">
-    <img src="docs/narrow-sidebar/body-nside.png" />
-    <p><strong>Body</strong></p>
-    <p>Body can be designed following these components above. The labels can only have 15 characters, so if more text is necessary here, you should use the Standard Sidebar*.</p>
-  </div>
+  <h2>Interactive demo</h2>
+  <p>This demo let you preview the component, its variations, and configuration options.</p>
 
-  <div class="column">
-    <img src="docs/narrow-sidebar/footer-nside.png" />
-    <p><strong>Footer</strong></p>
-    <p>Using the footer is optional, and you can use one of the following layouts.</p>
-  </div>
-</div>
+  <NarrowSidebarPlayground />
 
-<h3>Size and Responsiveness</h3>
-<div class="columns">
-  <div class="column">
-    <img src="docs/narrow-sidebar/mobile-nside.png" />
-  </div>
-
-  <div class="column">
-    <img src="docs/narrow-sidebar/mobile-nside-02.png" />
-  </div>
-
-  <div class="column">
-    <p>On mobile, the Narrow Sidebar must have 80% of the screen width and cannot collapse. The height should be 100% of the viewport. What happens in mobile is that the component stays hidden and appears if the user triggers the action to open it.</p>
-    <p>When the sidebar is hidden, there is a topbar component where the open navigation icon button should be. Clicking this button opens the navigation.</p>
-    <p>When the sidebar is open, it looks almost like mobile Standard Sidebar*,  with the difference that the body only can have items, with no multilevel sections.</p>
-  </div>
-</div>
-
-<hr />
-
-<h2>Behavior</h2>
-<div class="columns">
-  <div class="column">
-    <h3>Desktop</h3>
-    <p>The Narrow Sidebar must always be fixed at the left side of the screen. As this component is not expandable, it does not have any animation, besides the ones that are already defined by the body's items states.</p>
-  </div>
-
-  <div class="column">
-    <h3>Mobile</h3>
-    <p>Mobile Narrow Sidebar has an animation to hide and reveal the component. When the topbar button is trigerred, the side navigation stays temporary visible and slides over the content. The Narrow Sidebar disappears again if user clicks on the header "collapse button" or if he clicks outside the component.</p>
-  </div>
-</div>
-
-<hr />
-
-<h2>Accessibility</h2>
-<h3>Tab order</h3>
-<div class="columns">
-  <div class="column is-one-quarter">
-    <p>The tab navigation should start being withheld by the Narrow Sidebar.</p>
-    <p>After focus the first element, the navigation should happen with the use of the keybord arrows. If the user presses tab again, the focus goes to footer area. The third tab should take the focus to the main content region, going out of the Narrow Sidebar.</p>
-  </div>
-  <div class="column">
-    <img src="docs/narrow-sidebar/tab-order-nside.png" />
-  </div>
-</div>
-
-<hr />
-
-<h2>Style and Colors</h2>
-<p>We have two skins: <strong>pale</strong> and <strong>vivid</strong>. Background and border colors change according to the descriptions below.</p>
-<div class="columns">
-  <div class="column">
-    <table>
-      <tbody>
-        <tr>
-          <td>
-            <img src="docs/narrow-sidebar/stroke-fill-nside.png" />
-          </td>
-          <td>
-            <img src="docs/narrow-sidebar/exception-nside.png" />
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <p class="u-color-pink-60"><small>Coral shades cannot be used for elements on pale sidebar.</small></p>
-  </div>
-
-  <div class="column">
-    <p>Vivid sidebars' buttons follow the exceptions guidelines (as seen at the page <a href="https://labstorybook-master.netlify.app/?path=/docs/components-button--default-button"> Button</a>)</p>
-    <img src="docs/narrow-sidebar/colors-nside.png" />
-  </div>
-</div>
-
-<h3>Color Combination</h3>
-<p><strong>Pale narrow sidebar </strong> may be used over any page background color, but the elements should consider the UI theme (if the app uses a teal theme, it must use the elements following this color scheme). For <strong>vivid narrow sidebar</strong>, make sure to have at least a difference of 20 between sidebar and page's background color values.</p>
-<img src="docs/narrow-sidebar/combinations-nside.png" />
-
-## Prop API docs
-
-  Here's the list of props based on the components' prop types definitions.
+  <h2>Prop API</h2>
+  <p>Go to <a href="/?path=/docs/getting-started-setup-confetti--page">Setup</a> for instructions on how to import the component.  </p>
 
   ### NarrowSidebar
   <ArgsTable of={NarrowSidebar} />
 
-
   ### Header
   <ArgsTable of={Header}/>
 
+  ### Logotype
+  <ArgsTable of={Logotype}/>
+
   ### Body
   <ArgsTable of={Body}/>
+
+  ### Item
+  <ArgsTable of={Item}/>
 
   ### Footer
   <ArgsTable of={Footer}/>
@@ -165,18 +92,77 @@ import NarrowSidebarPlayground from '../playgrounds/NarrowSidebarPlayground';
   ### UserAvatar
   <ArgsTable of={UserAvatar}/>
 
-  ### Logotype
-  <ArgsTable of={Logotype}/>
-
   ### CollapseButton
   <ArgsTable of={CollapseButton}/>
 
-  ### Item
-  <ArgsTable of={Item}/>
-
+  <h2>Accessibility</h2>
+  <h3>Tab order</h3>
+  <div class="columns">
+    <div class="column is-one-quarter">
+      <p>The tab navigation should start being withheld by the Narrow Sidebar.</p>
+      <p>After focus the first element, the navigation should happen with the use of the keybord arrows. If the user presses tab again, the focus goes to footer area. The third tab should take the focus to the main content region, going out of the Narrow Sidebar.</p>
+    </div>
+    <div class="column">
+      <img src="docs/narrow-sidebar/tab-order-nside.png" />
+    </div>
+  </div>
 </div>
 
 <div className="simple-tab__content content2">
+  <h2>Size and Responsiveness</h2>
+  <div class="columns">
+    <div class="column">
+      <img src="docs/narrow-sidebar/mobile-nside.png" />
+    </div>
+    <div class="column">
+      <img src="docs/narrow-sidebar/mobile-nside-02.png" />
+    </div>
+    <div class="column">
+      <p>On mobile, the Narrow Sidebar must have 80% of the screen width and cannot collapse. The height should be 100% of the viewport. What happens in mobile is that the component stays hidden and appears if the user triggers the action to open it.</p>
+      <p>When the sidebar is hidden, there is a topbar component where the open navigation icon button should be. Clicking this button opens the navigation.</p>
+      <p>When the sidebar is open, it looks almost like mobile Standard Sidebar*,  with the difference that the body only can have items, with no multilevel sections.</p>
+    </div>
+  </div>
+
+  <h2>Behavior</h2>
+  <div class="columns">
+    <div class="column">
+      <h3>Desktop</h3>
+      <p>The Narrow Sidebar must always be fixed at the left side of the screen. As this component is not expandable, it does not have any animation, besides the ones that are already defined by the body's items states.</p>
+    </div>
+    <div class="column">
+      <h3>Mobile</h3>
+      <p>Mobile Narrow Sidebar has an animation to hide and reveal the component. When the topbar button is trigerred, the side navigation stays temporary visible and slides over the content. The Narrow Sidebar disappears again if user clicks on the header "collapse button" or if he clicks outside the component.</p>
+    </div>
+  </div>
+
+  <h2>Style and Colors</h2>
+  <p>We have two skins: <strong>pale</strong> and <strong>vivid</strong>. Background and border colors change according to the descriptions below.</p>
+  <div class="columns">
+    <div class="column">
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <img src="docs/narrow-sidebar/stroke-fill-nside.png" />
+            </td>
+            <td>
+              <img src="docs/narrow-sidebar/exception-nside.png" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="u-color-pink-60"><small>Coral shades cannot be used for elements on pale sidebar.</small></p>
+    </div>
+    <div class="column">
+      <p>Vivid sidebars' buttons follow the exceptions guidelines (as seen at the page <a href="https://labstorybook-master.netlify.app/?path=/docs/components-button--default-button"> Button</a>)</p>
+      <img src="docs/narrow-sidebar/colors-nside.png" />
+    </div>
+  </div>
+
+  <h3>Color Combination</h3>
+  <p><strong>Pale narrow sidebar </strong> may be used over any page background color, but the elements should consider the UI theme (if the app uses a teal theme, it must use the elements following this color scheme). For <strong>vivid narrow sidebar</strong>, make sure to have at least a difference of 20 between sidebar and page's background color values.</p>
+  <img src="docs/narrow-sidebar/combinations-nside.png" />
 
   <h2>Pale Sidebar</h2>
   <p>Default Narrow Sidebar has Pale Skin that has three different colors option - teal, purple and mineral. What defines what color must be chosen is the application theme.</p>
@@ -374,19 +360,4 @@ import NarrowSidebarPlayground from '../playgrounds/NarrowSidebarPlayground';
   </Canvas>
 
 </div>
-
-<div className="simple-tab__content content3">
-
-<h2>Narrow Sidebar Playground</h2>
-
-<Canvas>
-  <Story name="Sidebar\'s Playground">
-    <Fragment>
-      <NarrowSidebarPlayground />
-    </Fragment>
-  </Story>
-</Canvas>
-
-</div>
-
 </div>
