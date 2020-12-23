@@ -246,7 +246,10 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
         color: $tag-text-color;
         box-shadow: 0 0 0 4px $tag-hover-shadow-color;
 
-        .lab-icon {
+        .lab-tag--left-icon,
+        .lab-tag--check-icon,
+        .lab-tag--dropdown-icon,
+        .lab-tag--remove-icon {
           background-color: $tag-vivid-color;
         }
       }
