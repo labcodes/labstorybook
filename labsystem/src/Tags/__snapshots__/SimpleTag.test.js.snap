@@ -6,7 +6,6 @@ exports[`SimpleTag renders as expected with a magnifying-glass icon 1`] = `
   onClick={[Function]}
   onKeyPress={[Function]}
   role="presentation"
-  tabIndex="-1"
 >
   <span
     className="lab-icon lab-icon--magnifying-glass lab-icon--black-75 lab-icon--petit lab-tag--left-icon"
@@ -21,7 +20,6 @@ exports[`SimpleTag renders as expected with a purple color 1`] = `
   onClick={[Function]}
   onKeyPress={[Function]}
   role="presentation"
-  tabIndex="-1"
 >
   Test render purple SimpleTag
 </span>
@@ -33,7 +31,6 @@ exports[`SimpleTag renders as expected with a thumb 1`] = `
   onClick={[Function]}
   onKeyPress={[Function]}
   role="presentation"
-  tabIndex="-1"
 >
   <img
     alt=""
@@ -50,7 +47,6 @@ exports[`SimpleTag renders as expected with a vivid skin 1`] = `
   onClick={[Function]}
   onKeyPress={[Function]}
   role="presentation"
-  tabIndex="-1"
 >
   Test render vivid SimpleTag
 </span>
@@ -62,7 +58,6 @@ exports[`SimpleTag renders as expected with outline as true 1`] = `
   onClick={[Function]}
   onKeyPress={[Function]}
   role="presentation"
-  tabIndex="-1"
 >
   Test render outline SimpleTag
 </span>
@@ -74,7 +69,6 @@ exports[`SimpleTag renders with base props 1`] = `
   onClick={[Function]}
   onKeyPress={[Function]}
   role="presentation"
-  tabIndex="-1"
 >
   Test render SimpleTag
 </span>
