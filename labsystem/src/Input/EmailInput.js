@@ -32,8 +32,8 @@ export default class EmailInput extends React.Component {
     prefix: undefined,
     suffix: undefined,
     customErrorMsg: undefined,
-    onChange: undefined,
-    onIconClick: undefined,
+    onChange: () => {},
+    onIconClick: () => {},
   };
 
   render() {

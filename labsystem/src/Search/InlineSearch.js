@@ -20,9 +20,9 @@ export default class InlineSearch extends React.Component {
     defaultValue: undefined,
     disabled: false,
     value: undefined,
-    onChange: undefined,
-    onSearch: undefined,
-    onClear: undefined,
+    onChange: () => {},
+    onSearch: () => {},
+    onClear: () => {},
     placeholder: "Search",
   };
 

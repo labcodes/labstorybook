@@ -29,7 +29,7 @@ export default class PasswordInput extends React.Component {
     suffix: undefined,
     isValid: undefined,
     customErrorMsg: undefined,
-    onChange: undefined,
+    onChange: () => {},
   };
 
   constructor(props) {

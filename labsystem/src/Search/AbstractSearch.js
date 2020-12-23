@@ -22,10 +22,10 @@ export default class AbstractSearch extends React.Component {
     defaultValue: undefined,
     disabled: false,
     value: undefined,
-    onChange: undefined,
-    onSearch: undefined,
-    onClear: undefined,
-    placeholder: " ", // acrescentei pra poder colocar placeholder no search//
+    onChange: () => {},
+    onSearch: () => {},
+    onClear: () => {},
+    placeholder: " ",
   };
 
   constructor(props) {

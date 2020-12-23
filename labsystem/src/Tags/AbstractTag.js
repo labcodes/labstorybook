@@ -21,7 +21,7 @@ export default class AbstractTag extends React.Component {
     skin: "pale",
     color: "",
     disabled: false,
-    onClick: undefined,
+    onClick: () => {},
     renderPrefix: undefined,
     renderSuffix: undefined,
     className: "",

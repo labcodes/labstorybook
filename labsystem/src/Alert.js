@@ -17,7 +17,7 @@ export default class Alert extends React.Component {
 
   static defaultProps = {
     type: "info",
-    buttonProps: { text: "", onClick: undefined },
+    buttonProps: { text: "", onClick: () => {} },
   };
 
   icon = () => {

@@ -21,7 +21,7 @@ export default class Radio extends React.Component {
     disabled: false,
     checked: undefined,
     className: undefined,
-    onChange: undefined,
+    onChange: () => {},
   };
 
   handleOnChange = (event) => {

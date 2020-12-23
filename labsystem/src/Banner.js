@@ -19,7 +19,7 @@ export default class Banner extends React.Component {
     type: "info",
     buttonProps: {
       text: "",
-      onClick: undefined,
+      onClick: () => {},
     },
   };
 
