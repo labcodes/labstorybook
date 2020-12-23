@@ -8,7 +8,6 @@ export default class AbstractTag extends React.Component {
     renderPrefix: PropTypes.object,
     /** Components to be rendered at the end of the Tag. */
     renderSuffix: PropTypes.object,
-    /** HTML tabIndex, used to avoid Tag from being selected with TAB key, if "-1". */
     tabIndex: PropTypes.string,
     /** Defines a class name to create a custom style for the component. */
     className: PropTypes.string,
@@ -29,7 +28,6 @@ export default class AbstractTag extends React.Component {
   static defaultProps = {
     renderPrefix: undefined,
     renderSuffix: undefined,
-    tabIndex: "0",
     className: "",
     isOutline: false,
     color: "",

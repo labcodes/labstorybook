@@ -9,15 +9,15 @@ export default class StandardSearch extends React.Component {
     id: PropTypes.string,
     /** Defines a default value for the Search initialization. */
     defaultValue: PropTypes.string,
-    /** Sets the text input to disabled, refusing interactions. */
+    /** Disables the Search. */
     disabled: PropTypes.bool,
     /** Text that will be rendered inside the Search field. */
     value: PropTypes.string,
-    /** Callback action to be executed when the Search default value changes. */
+    /** Action to be executed when the Search default value changes. */
     onChange: PropTypes.func,
-    /** Callback to be executed when the search is performed. */
+    /** Action to be executed when the search is performed. */
     onSearch: PropTypes.func,
-    /** Callback to be executed when the Search is cleared out. */
+    /** Action to be executed when the Search is cleared out. */
     onClear: PropTypes.func,
     /** The placeholder text when the Search field is empty. Usually used to describe the values accepted (e.g.: Search by keyword or status). */
     placeholder: PropTypes.string,
