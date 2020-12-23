@@ -56,18 +56,6 @@ exports[`SimpleTag renders as expected with a vivid skin 1`] = `
 </span>
 `;
 
-exports[`SimpleTag renders as expected with disabled as true 1`] = `
-<span
-  className="lab-tag  lab-tag--disabled lab-tag--pale"
-  onClick={[Function]}
-  onKeyPress={[Function]}
-  role="presentation"
-  tabIndex="-1"
->
-  Test render disabled SimpleTag
-</span>
-`;
-
 exports[`SimpleTag renders as expected with outline as true 1`] = `
 <span
   className="lab-tag  lab-tag--outline lab-tag--pale"
