@@ -43,9 +43,7 @@ Array [
   >
     <span
       className="lab-checkbox__box"
-    >
-      
-    </span>
+    />
     test checkbox
   </label>,
 ]
@@ -93,9 +91,7 @@ Array [
   >
     <span
       className="lab-checkbox__box"
-    >
-      
-    </span>
+    />
     test checkbox
   </label>,
 ]

@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import React from "react";
-import { shallow } from "enzyme";
+import { mount } from "enzyme";
 import renderer from "react-test-renderer";
 
 import Checkbox from "./Checkbox";
@@ -12,13 +12,24 @@ describe("Checkbox", () => {
   });
 
   it("renders with base props", async () => {
+    const mockedIndeterminate = jest.fn();
     const renderedComponent = renderer
       .create(
         <Checkbox
           name="test-checkbox-group"
           id="test-checkbox"
           label="test checkbox"
-        />
+        />,
+        {
+          createNodeMock: (element) => {
+            if (element.type === "input") {
+              return {
+                indeterminate: mockedIndeterminate,
+              };
+            }
+            return {};
+          },
+        }
       )
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
@@ -27,7 +38,7 @@ describe("Checkbox", () => {
   it("raises console.warn when passing checked and defaultChecked at the same time", async () => {
     console.warn = jest.fn();
 
-    shallow(
+    mount(
       <Checkbox
         name="test-checkbox-group"
         id="test-checkbox"
@@ -44,6 +55,7 @@ describe("Checkbox", () => {
   });
 
   it("renders as expected when passing disabled as true", async () => {
+    const mockedIndeterminate = jest.fn();
     const renderedComponent = renderer
       .create(
         <Checkbox
@@ -51,7 +63,17 @@ describe("Checkbox", () => {
           id="test-checkbox"
           label="test checkbox"
           disabled
-        />
+        />,
+        {
+          createNodeMock: (element) => {
+            if (element.type === "input") {
+              return {
+                indeterminate: mockedIndeterminate,
+              };
+            }
+            return {};
+          },
+        }
       )
       .toJSON();
 
@@ -59,6 +81,7 @@ describe("Checkbox", () => {
   });
 
   it("renders as expected when passing indeterminate as true", async () => {
+    const mockedIndeterminate = jest.fn();
     const renderedComponent = renderer
       .create(
         <Checkbox
@@ -67,13 +90,24 @@ describe("Checkbox", () => {
           label="test checkbox"
           indeterminate
           checked
-        />
+        />,
+        {
+          createNodeMock: (element) => {
+            if (element.type === "input") {
+              return {
+                indeterminate: mockedIndeterminate,
+              };
+            }
+            return {};
+          },
+        }
       )
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
   });
 
   it("renders as expected when passing a different className", async () => {
+    const mockedIndeterminate = jest.fn();
     const renderedComponent = renderer
       .create(
         <Checkbox
@@ -82,14 +116,24 @@ describe("Checkbox", () => {
           label="test checkbox"
           className="lab-checkbox--purple"
           checked
-        />
+        />,
+        {
+          createNodeMock: (element) => {
+            if (element.type === "input") {
+              return {
+                indeterminate: mockedIndeterminate,
+              };
+            }
+            return {};
+          },
+        }
       )
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
   });
 
   it("inits state.localChecked with defaultChecked if defined", async () => {
-    let component = shallow(
+    let component = mount(
       <Checkbox
         name="test-checkbox"
         id="test-checkbox"
@@ -99,7 +143,7 @@ describe("Checkbox", () => {
     );
     expect(component.state().localChecked).toBe(true);
 
-    component = shallow(
+    component = mount(
       <Checkbox
         name="test-checkbox"
         id="test-checkbox"
@@ -109,14 +153,32 @@ describe("Checkbox", () => {
     );
     expect(component.state().localChecked).toBe(false);
 
-    component = shallow(
+    component = mount(
       <Checkbox name="test-checkbox" id="test-checkbox" label="test checkbox" />
     );
     expect(component.state().localChecked).toBe(false);
   });
 
+  it("sets input as indeterminate", async () => {
+    const component = mount(
+      <Checkbox name="test-checkbox" id="test-checkbox" label="test checkbox" />
+    );
+
+    expect(component.find("input[indeterminate]").length).toBeFalsy();
+
+    component.setProps({ indeterminate: true });
+    component.update();
+
+    expect(component.find("input[indeterminate]")).toBeTruthy();
+
+    component.setProps({ indeterminate: undefined });
+    component.update();
+
+    expect(component.find("input[indeterminate]").length).toBeFalsy();
+  });
+
   it("changes state when input changes", async () => {
-    const component = shallow(
+    const component = mount(
       <Checkbox name="test-checkbox" id="test-checkbox" label="test checkbox" />
     );
 
@@ -127,7 +189,7 @@ describe("Checkbox", () => {
 
   it("calls props.onChange passing event when input changes", async () => {
     const mockOnChange = jest.fn();
-    const component = shallow(
+    const component = mount(
       <Checkbox
         name="test-checkbox"
         id="test-checkbox"
@@ -142,6 +204,6 @@ describe("Checkbox", () => {
     component.find("input").at(0).simulate("change", { test: "event" });
 
     expect(component.state().localChecked).toBe(true);
-    expect(mockOnChange).toBeCalledWith({ test: "event" });
+    expect(mockOnChange).toBeCalled();
   });
 });
