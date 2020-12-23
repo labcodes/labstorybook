@@ -132,6 +132,32 @@ describe("Checkbox", () => {
     expect(renderedComponent).toMatchSnapshot();
   });
 
+  it("renders as expected when passing indeterminate", async () => {
+    const mockedIndeterminate = jest.fn();
+    const renderedComponent = renderer
+      .create(
+        <Checkbox
+          name="test-checkbox"
+          id="test-checkbox"
+          label="test checkbox"
+          className="lab-checkbox--purple"
+          indeterminate
+        />,
+        {
+          createNodeMock: (element) => {
+            if (element.type === "input") {
+              return {
+                indeterminate: mockedIndeterminate,
+              };
+            }
+            return {};
+          },
+        }
+      )
+      .toJSON();
+    expect(renderedComponent).toMatchSnapshot();
+  });
+
   it("inits state.localChecked with defaultChecked if defined", async () => {
     let component = mount(
       <Checkbox
