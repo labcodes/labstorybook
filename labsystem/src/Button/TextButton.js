@@ -25,7 +25,7 @@ export default class TextButton extends React.Component {
     icon: undefined,
     size: "normal",
     disabled: false,
-    onClick: undefined,
+    onClick: () => {},
     fullWidth: false,
   };
 

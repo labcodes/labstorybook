@@ -41,8 +41,8 @@ export default class AbstractButton extends React.Component {
     icon: undefined,
     size: "normal",
     disabled: false,
+    onClick: () => {},
     fullWidth: false,
-    onClick: undefined,
   };
 
   icon = () => {

@@ -49,8 +49,8 @@ export default class TextInput extends React.Component {
     suffix: undefined,
     isValid: undefined,
     customErrorMsg: undefined,
-    onChange: undefined,
-    onIconClick: undefined,
+    onChange: () => {},
+    onIconClick: () => {},
   };
 
   render() {

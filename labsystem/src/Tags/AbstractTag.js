@@ -35,7 +35,7 @@ export default class AbstractTag extends React.Component {
     color: "",
     skin: "pale",
     disabled: false,
-    onClick: undefined,
+    onClick: () => {},
   };
 
   handleEvent = (event) => {

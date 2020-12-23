@@ -37,7 +37,7 @@ export default class Checkbox extends React.Component {
     indeterminate: false,
     defaultChecked: undefined,
     className: undefined,
-    onChange: undefined,
+    onChange: () => {},
   };
 
   constructor(props) {
@@ -60,29 +60,28 @@ export default class Checkbox extends React.Component {
     this.state = {
       localChecked,
     };
+
+    this.inputRef = React.createRef();
+  }
+
+  componentDidMount() {
+    this.checkIndeterminate();
   }
 
   componentDidUpdate(prevProps) {
     const { checked } = this.props;
+
     if (checked !== prevProps.checked) {
       // eslint-disable-next-line react/no-did-update-set-state
       this.setState(() => ({ localChecked: checked }));
     }
+
+    this.checkIndeterminate();
   }
 
-  checkIcon = () => {
-    const { disabled, indeterminate } = this.props;
-    let color = "white";
-    let type = "check";
-
-    if (indeterminate) {
-      type = "minus";
-    }
-    if (disabled) {
-      color = "mineral-40";
-    }
-
-    return <Icon type={type} color={color} size="small" />;
+  checkIndeterminate = () => {
+    const { indeterminate } = this.props;
+    this.inputRef.current.indeterminate = indeterminate;
   };
 
   handleOnChange = (event) => {
@@ -112,6 +111,7 @@ export default class Checkbox extends React.Component {
         <input
           className={`lab-checkbox ${className || ""}`}
           type="checkbox"
+          ref={this.inputRef}
           id={id}
           name={name}
           checked={localChecked}
@@ -121,7 +121,13 @@ export default class Checkbox extends React.Component {
         />
         <label className="lab-checkbox__label" htmlFor={id}>
           <span className="lab-checkbox__box">
-            {localChecked || indeterminate ? this.checkIcon() : ""}
+            {localChecked || indeterminate ? (
+              <Icon
+                type={indeterminate ? "minus" : "check"}
+                color={disabled ? "mineral-40" : "white"}
+                size="small"
+              />
+            ) : null}
           </span>
           {label}
         </label>

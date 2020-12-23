@@ -1,0 +1,33 @@
+import { Fragment } from 'react';
+import { Source } from "@storybook/components";
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+<Meta title="Getting started/Theme" />
+
+<div class="docs-title">
+  <div>
+    <h1 class="docs-title__text">Theme</h1>
+  </div>
+</div>
+
+<div class="docs-content">
+
+  <div class="columns">
+    <div class="column">
+      <h2>Changing the theme for the components</h2>
+      <p>Our design system accepts theming via scss variables. To change a theme for a component, you'll just need to override the corresponding theme variable.</p>
+      <p>To do that, take a look at which are the default themes in our <a target="_blank" rel="noopener" href="https://github.com/labcodes/labstorybook/blob/master/labsystem/scss/variables/_settings.scss">_settings.scss</a> file, and which themes are available for the components in the <a target="_blank" rel="noopener" href="https://github.com/labcodes/labstorybook/blob/master/labsystem/scss/variables/_colors.scss">_colors.scss</a> file.</p>
+      <p>To change the themes, you may need to import our variables files before overwriting. To properly overwrite the Button theme, for example, you may need to do something like this:</p>
+      <Source language="scss" code={`
+// first, import the color variables file
+@import "~labsystem/scss/variables/_colors";
+// then, overwrite the theme variable
+// if you want to override all of them, overwrite the $default-theme variable
+$button-theme: $purple-palette;
+// finally, import the rest of the styles
+@import "~labsystem/scss/main";`
+      }/>
+    </div>
+  </div>
+
+</div>

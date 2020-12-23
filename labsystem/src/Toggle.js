@@ -23,7 +23,7 @@ export default class Toggle extends React.Component {
     disabled: false,
     defaultValue: undefined,
     value: undefined,
-    handleToggle: undefined,
+    handleToggle: () => {},
   };
 
   constructor(props) {
