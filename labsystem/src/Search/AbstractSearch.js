@@ -20,7 +20,7 @@ export default class AbstractSearch extends React.Component {
     onSearch: PropTypes.func,
     /** Callback to be executed when the Search is cleared out. */
     onClear: PropTypes.func,
-    /** The placeholder text when the Search field is empty. */
+    /** The placeholder text when the Search field is empty. Usually used to describe the values accepted (e.g.: Search by keyword or status). */
     placeholder: PropTypes.string,
     /** Style variation of the Search. */
     type: PropTypes.oneOf(["standard", "inline"]).isRequired,

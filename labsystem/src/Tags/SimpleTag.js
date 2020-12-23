@@ -6,17 +6,17 @@ import Icon from "../Icon";
 
 export default class SimpleTag extends React.Component {
   static propTypes = {
-    /** Text that will be rendered inside the Tag. */
+    /** This is the Tag's text. */
     text: PropTypes.string.isRequired,
     /** Source of the thumb to be rendered. Won't render a thumb if not passed to the component. */
     thumbSrc: PropTypes.string,
     /** Type of the icon to be rendered. Won't render an icon if not passed to the component. */
     icon: PropTypes.string,
-    /** Color of the rendered Tag. */
+    /** Sets Tag's color. */
     color: PropTypes.string,
     /** Skin of the the rendered Tag. */
     skin: PropTypes.string,
-    /** Defines if the Tag has an outline style. */
+    /** Sets an outline style. */
     isOutline: PropTypes.bool,
     /** Disables the Tag component, including functionality and style. */
     disabled: PropTypes.bool,

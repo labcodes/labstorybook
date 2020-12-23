@@ -9,11 +9,11 @@ export default class PasswordInput extends React.Component {
     id: PropTypes.string.isRequired,
     /** The Input's text label. */
     label: PropTypes.string.isRequired,
-    /** Sets the text input to disabled, refusing interactions. */
+    /** Disables the text input. */
     disabled: PropTypes.bool,
     /** Defines a default value for the Input initialization. */
     defaultValue: PropTypes.string,
-    /** Text that will be rendered inside the Input field. */
+    /** Value that will be rendered inside the Input field. */
     value: PropTypes.string,
     /** Defines if the Input is required. */
     required: PropTypes.bool,

@@ -19,7 +19,7 @@ export default class StandardSearch extends React.Component {
     onSearch: PropTypes.func,
     /** Callback to be executed when the Search is cleared out. */
     onClear: PropTypes.func,
-    /** The placeholder text when the Search field is empty. */
+    /** The placeholder text when the Search field is empty. Usually used to describe the values accepted (e.g.: Search by keyword or status). */
     placeholder: PropTypes.string,
   };
 

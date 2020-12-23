@@ -6,17 +6,17 @@ import Icon from "../Icon";
 
 export default class AbstractTextInput extends React.Component {
   static propTypes = {
-    /** Text that will specify the HTML type attribute of an <input> element. */
+    /** Passes AbstractInput's type to the HTML Input `type` attribute of the `<input>` element. */
     type: PropTypes.string,
     /** Text that will serve as unique identifier. It's also an important accessibility tool. */
     id: PropTypes.string.isRequired,
     /** The Input's text label. */
     label: PropTypes.string.isRequired,
-    /** Sets the text input to disabled, refusing interactions. */
+    /** Disables the text input. */
     disabled: PropTypes.bool,
     /** Defines a default value for the Input initialization. */
     defaultValue: PropTypes.string,
-    /** Text that will be rendered inside the Input field. */
+    /** Value that will be rendered inside the Input field. */
     value: PropTypes.string,
     /** Type of the icon to be rendered. Won't render an icon if not passed to the component. */
     icon: PropTypes.string,

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 export default class Header extends React.Component {
   static propTypes = {
-    /** Target component to which the Sidebar should be applied upon. */
+    /** Components that will be rendered in the Header. */
     children: PropTypes.node,
   };
 

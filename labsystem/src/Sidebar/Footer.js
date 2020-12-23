@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 export default class Footer extends React.Component {
   static propTypes = {
-    /** Target component to which the Sidebar should be applied upon. */
+    /** Components that will be rendered in the Footer. */
     children: PropTypes.node,
   };
 

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 export const NavbarWithDividersContext = React.createContext(false);
 export default class NarrowSidebar extends React.Component {
   static propTypes = {
-    /** Target component to which the Sidebar should be applied upon. */
+    /** Components that will be rendered in the NarrowSidebar (Header, Item, Logotype, etc). */
     children: PropTypes.node.isRequired,
     /** In mobile environment, defines if the Sidebar is open. */
     isOpenOnMobile: PropTypes.bool,

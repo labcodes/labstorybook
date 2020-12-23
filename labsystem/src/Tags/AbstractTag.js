@@ -12,17 +12,17 @@ export default class AbstractTag extends React.Component {
     tabIndex: PropTypes.string,
     /** Defines a class name to create a custom style for the component. */
     className: PropTypes.string,
-    /** Text that will be rendered inside the Tag. */
+    /** This is the Tag's text. */
     text: PropTypes.string.isRequired,
-    /** Color of the rendered Tag. */
+    /** Sets Tag's color. */
     color: PropTypes.string,
     /** Skin of the the rendered Tag. */
     skin: PropTypes.string,
-    /** Defines if the Tag has an outline style. */
+    /** Sets an outline style. */
     isOutline: PropTypes.bool,
-    /** Disables the Tag component, including functionality and style. */
+    /** Disables the Tag component. */
     disabled: PropTypes.bool,
-    /** Callback to be executed when the Tag is clicked. */
+    /** Action to be executed when the Tag is clicked. */
     onClick: PropTypes.func,
   };
 
