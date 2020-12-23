@@ -69,6 +69,25 @@ import { thumbSrcOptions, iconOptions } from "../playgrounds/assets";
     </div>
   </div>
 
+  <h2>Interactive demo</h2>
+  <p>This demo lets you preview the component, its variations, and configuration options.</p>
+  <TagPlayground />
+
+  <h2>Prop API</h2>
+  <p>Go to <a href="/?path=/docs/getting-started-setup-confetti--page">Setup</a> for instructions on how to import the component.</p>
+
+  <h3>SimpleTag</h3>
+  <ArgsTable of={SimpleTag} />
+
+  <h3>TogglableTag</h3>
+  <ArgsTable of={TogglableTag} />
+
+  <h3>RemovableTag</h3>
+  <ArgsTable of={RemovableTag} />
+
+  <h3>DropdownTag</h3>
+  <ArgsTable of={DropdownTag} />
+
   <h2>Variations</h2>
   <div>
     <div class="columns">
@@ -103,16 +122,6 @@ import { thumbSrcOptions, iconOptions } from "../playgrounds/assets";
     </div>
   </div>
 </div>
-
-### Playground
-
-  <Canvas>
-    <Story name="InteractiveTagDemo">
-      <Fragment>
-        <TagPlayground />
-      </Fragment>
-    </Story>
-  </Canvas>
 
 ## Style
 
@@ -504,18 +513,3 @@ All disabled styles remains unchanged regardless of any value used.
     </Fragment>
   </Story>
 </Canvas>
-
-## Prop API docs
-
-Here's the list of props based on the component's prop types definitions.
-### SimpleTag
-<ArgsTable of={SimpleTag} />
-
-### TogglableTag
-<ArgsTable of={TogglableTag} />
-
-### RemovableTag
-<ArgsTable of={RemovableTag} />
-
-### DropdownTag
-<ArgsTable of={DropdownTag} />
