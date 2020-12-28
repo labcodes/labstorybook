@@ -46,20 +46,22 @@ import NarrowSidebarPlayground from '../playgrounds/NarrowSidebarPlayground';
 
 <div class="columns">
   <div class="column">
-    <img src="docs/narrow-sidebar/header-nside.png" />
+    <img src="docs/narrow-sidebar/header-nside.png" alt="Narrow sidebar header examples" />
     <p><strong>Header (mandatory)</strong></p>
     <p>You must choose at least one of the above options to use in your Narrow Sidebar.</p>
-    <img src="docs/narrow-sidebar/obs-nside.png" />
+    <div className="doc-em-block">
+      <p>*Even if using body or footer is optional, the narrow sidebar should have at least one of them.</p>
+    </div>
   </div>
 
   <div class="column">
-    <img src="docs/narrow-sidebar/body-nside.png" />
+    <img src="docs/narrow-sidebar/body-nside.png" alt="Narrow sidebar body example" />
     <p><strong>Body</strong></p>
     <p>Body can be designed following these components above. The labels can only have 15 characters, so if more text is necessary here, you should use the Standard Sidebar*.</p>
   </div>
 
   <div class="column">
-    <img src="docs/narrow-sidebar/footer-nside.png" />
+    <img src="docs/narrow-sidebar/footer-nside.png" alt="Narrow sidebar footer examples" />
     <p><strong>Footer</strong></p>
     <p>Using the footer is optional, and you can use one of the following layouts.</p>
   </div>
@@ -68,11 +70,11 @@ import NarrowSidebarPlayground from '../playgrounds/NarrowSidebarPlayground';
 <h2>Size and Responsiveness</h2>
 <div class="columns">
   <div class="column">
-    <img src="docs/narrow-sidebar/mobile-nside.png" />
+    <img src="docs/narrow-sidebar/mobile-nside.png" alt="Mobile view for expanded narrow sidebar" />
   </div>
 
   <div class="column">
-    <img src="docs/narrow-sidebar/mobile-nside-02.png" />
+    <img src="docs/narrow-sidebar/mobile-nside-02.png" alt="Mobile view for collapsed narrow sidebar" />
   </div>
 
   <div class="column">
@@ -107,7 +109,7 @@ import NarrowSidebarPlayground from '../playgrounds/NarrowSidebarPlayground';
     <p>After focus the first element, the navigation should happen with the use of the keybord arrows. If the user presses tab again, the focus goes to footer area. The third tab should take the focus to the main content region, going out of the Narrow Sidebar.</p>
   </div>
   <div class="column">
-    <img src="docs/narrow-sidebar/tab-order-nside.png" />
+    <img src="docs/narrow-sidebar/tab-order-nside.png" alt="Tab order for narrow sidebar on destkop" />
   </div>
 </div>
 
@@ -121,10 +123,10 @@ import NarrowSidebarPlayground from '../playgrounds/NarrowSidebarPlayground';
       <tbody>
         <tr>
           <td>
-            <img src="docs/narrow-sidebar/stroke-fill-nside.png" />
+            <img src="docs/narrow-sidebar/stroke-fill-nside.png" alt="Available color options for pale and vivid sidebars" />
           </td>
           <td>
-            <img src="docs/narrow-sidebar/exception-nside.png" />
+            <img src="docs/narrow-sidebar/exception-nside.png" alt="Examples of sidebar's body with pale colors" />
           </td>
         </tr>
       </tbody>
@@ -134,13 +136,13 @@ import NarrowSidebarPlayground from '../playgrounds/NarrowSidebarPlayground';
 
   <div class="column">
     <p>Vivid sidebars' buttons follow the exceptions guidelines (as seen at the page <a href="https://labstorybook-master.netlify.app/?path=/docs/components-button--default-button"> Button</a>)</p>
-    <img src="docs/narrow-sidebar/colors-nside.png" />
+    <img src="docs/narrow-sidebar/colors-nside.png" alt="Examples of narrow sidebar's body with vivid colors" />
   </div>
 </div>
 
 <h3>Color Combination</h3>
 <p><strong>Pale narrow sidebar </strong> may be used over any page background color, but the elements should consider the UI theme (if the app uses a teal theme, it must use the elements following this color scheme). For <strong>vivid narrow sidebar</strong>, make sure to have at least a difference of 20 between sidebar and page's background color values.</p>
-<img src="docs/narrow-sidebar/combinations-nside.png" />
+<img src="docs/narrow-sidebar/combinations-nside.png" alt="Available color combinations for narrow sidebar" />
 
 <h2>Prop API docs</h2>
 <p>Here's the list of props based on the components' prop types definitions.</p>
