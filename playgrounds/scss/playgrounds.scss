@@ -26,9 +26,9 @@
   height: 100%;
 
   .lab-playground__item {
-    display: flex;
-    flex-direction: column;
-    margin: $spacing-05 $spacing-01;
+    display: inline-block;
+    margin: $spacing-02 0;
+    width: 100%;
 
     p {
       margin: $spacing-01 0;
