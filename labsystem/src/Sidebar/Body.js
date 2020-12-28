@@ -5,6 +5,7 @@ import { NavbarWithDividersContext } from "./NarrowSidebar";
 
 export default class Body extends React.Component {
   static propTypes = {
+    /** Components that will be rendered in the Body. */
     children: PropTypes.node,
   };
 

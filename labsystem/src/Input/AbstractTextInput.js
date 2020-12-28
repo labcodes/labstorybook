@@ -6,25 +6,40 @@ import Icon from "../Icon";
 
 export default class AbstractTextInput extends React.Component {
   static propTypes = {
-    id: PropTypes.string.isRequired,
+    /** Passes AbstractInput's type to the HTML Input `type` attribute of the `<input>` element. */
     type: PropTypes.string,
+    /** Text that will serve as unique identifier. It's also an important accessibility tool. */
+    id: PropTypes.string.isRequired,
+    /** The Input's text label. */
     label: PropTypes.string.isRequired,
-    className: PropTypes.string,
+    /** Disables the text input. */
     disabled: PropTypes.bool,
+    /** Defines a default value for the Input initialization. */
     defaultValue: PropTypes.string,
+    /** Value that will be rendered inside the Input field. */
     value: PropTypes.string,
+    /** Type of the icon to be rendered. Won't render an icon if not passed to the component. */
     icon: PropTypes.string,
+    /** Defines the color of the displayed icon. */
     iconColor: PropTypes.string,
+    /** Defines if the Input is required. */
     required: PropTypes.bool,
+    /** Text that will be displayed as a help message below the input. */
     helpMessage: PropTypes.string,
+    /** Text that will be displayed at the left portion of the Input. */
     prefix: PropTypes.string,
+    /** Text that will be displayed at the right portion of the Input. */
     suffix: PropTypes.string,
+    /** Defines if the Input is valid. */
     isValid: PropTypes.bool,
+    /** Custom error message displayed below the Input when the value is not valid. */
     customErrorMsg: PropTypes.string,
+    /** Callback action to be executed when the Input default value changes. */
     onChange: PropTypes.func,
+    /** Callback action to be executed when the Input's Icon is clicked. */
     onIconClick: PropTypes.func,
-    placeholder: PropTypes.string,
-    children: PropTypes.element,
+    /** Add a class name to make custom changes */
+    className: PropTypes.string,
   };
 
   static defaultProps = {
@@ -34,23 +49,21 @@ export default class AbstractTextInput extends React.Component {
     defaultValue: undefined,
     value: undefined,
     icon: undefined,
-    iconColor: undefined,
+    iconColor: "mineral-70",
     required: false,
     helpMessage: undefined,
     prefix: undefined,
     suffix: undefined,
     isValid: undefined,
     customErrorMsg: undefined,
-    onChange: undefined,
-    onIconClick: undefined,
-    placeholder: " ", // acrescentei pra poder colocar placeholder no search//
-    children: undefined,
+    onChange: () => {},
+    onIconClick: () => {},
   };
 
   constructor(props) {
     super(props);
     this.inputRef = React.createRef();
-    const { defaultValue, value, id, isValid } = props;
+    const { id, defaultValue, value, isValid } = props;
     if (!isUndefined(defaultValue) && !isUndefined(value)) {
       // eslint-disable-next-line no-console
       console.warn(
@@ -64,7 +77,7 @@ export default class AbstractTextInput extends React.Component {
   }
 
   componentDidMount() {
-    const { customErrorMsg, defaultValue, value } = this.props;
+    const { defaultValue, value, customErrorMsg } = this.props;
     const { isValid } = this.props;
     let { localIsValid } = this.state;
 
@@ -85,7 +98,7 @@ export default class AbstractTextInput extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { customErrorMsg, isValid, value } = this.props;
+    const { value, isValid, customErrorMsg } = this.props;
     const inputElement = this.inputRef.current;
 
     if (isValid !== prevProps.isValid) {
@@ -156,20 +169,18 @@ export default class AbstractTextInput extends React.Component {
 
   render() {
     const {
-      id,
       type,
+      id,
       label,
       disabled,
-      required,
       icon,
       iconColor,
+      required,
       helpMessage,
       prefix,
       suffix,
-      onIconClick,
       customErrorMsg,
-      placeholder,
-      children,
+      onIconClick,
     } = this.props;
 
     let { className } = this.props;
@@ -192,14 +203,12 @@ export default class AbstractTextInput extends React.Component {
             }
             id={id}
             type={type}
-            placeholder=" "
             value={localValue}
             ref={this.inputRef}
             onChange={this.handleOnChange}
             autoComplete="off"
             {...(required ? { required } : undefined)}
             {...(disabled ? { disabled } : undefined)}
-            {...(placeholder ? { placeholder } : "")}
           />
           <div className="lab-input__borders" />
           {this.prefixArea()}
@@ -211,13 +220,15 @@ export default class AbstractTextInput extends React.Component {
               {label}
             </label>
           </div>
-          <TrailingIcon
-            icon={icon}
-            iconColor={iconColor}
-            onIconClick={onIconClick}
-          />
+          {icon ? (
+            <TrailingIcon
+              icon={icon}
+              iconColor={iconColor}
+              onIconClick={onIconClick}
+              {...(disabled ? { disabled } : undefined)}
+            />
+          ) : null}
           {this.requiredIcon()}
-          {children}
         </div>
         <TextInputMessage
           helpMessage={helpMessage}
@@ -233,38 +244,31 @@ export default class AbstractTextInput extends React.Component {
 // ----- Auxiliary components ----- //
 
 function TrailingIcon(props) {
-  const { icon, iconColor, onIconClick } = props;
-  let className = "lab-input__icon";
-  if (!onIconClick) {
-    className += " lab-input__icon--disabled";
-  }
-  if (icon && iconColor) {
-    return (
-      <button type="button" className={className} onClick={onIconClick}>
-        <Icon type={icon} color={iconColor} />
-      </button>
-    );
-  }
-  if (icon) {
-    return (
-      <button type="button" className={className} onClick={onIconClick}>
-        <Icon type={icon} />
-      </button>
-    );
-  }
-  return null;
+  const { icon, iconColor, onIconClick, disabled } = props;
+  return (
+    <button
+      type="button"
+      className={`lab-input__icon${
+        disabled ? ` lab-input__icon--disabled` : ``
+      }`}
+      onClick={disabled ? null : onIconClick}
+    >
+      <Icon type={icon} color={iconColor} />
+    </button>
+  );
 }
 
 TrailingIcon.propTypes = {
-  icon: PropTypes.string,
+  icon: PropTypes.string.isRequired,
   iconColor: PropTypes.string,
   onIconClick: PropTypes.func,
+  disabled: PropTypes.bool,
 };
 
 TrailingIcon.defaultProps = {
-  icon: undefined,
-  iconColor: undefined,
-  onIconClick: undefined,
+  iconColor: "mineral-70",
+  onIconClick: () => {},
+  disabled: undefined,
 };
 
 function TextInputMessage(props) {

@@ -43,8 +43,32 @@ Array [
   >
     <span
       className="lab-checkbox__box"
+    />
+    test checkbox
+  </label>,
+]
+`;
+
+exports[`Checkbox renders as expected when passing indeterminate 1`] = `
+Array [
+  <input
+    checked={false}
+    className="lab-checkbox lab-checkbox--purple"
+    id="test-checkbox"
+    name="test-checkbox"
+    onChange={[Function]}
+    type="checkbox"
+  />,
+  <label
+    className="lab-checkbox__label"
+    htmlFor="test-checkbox"
+  >
+    <span
+      className="lab-checkbox__box"
     >
-      
+      <span
+        className="lab-icon lab-icon--minus lab-icon--white lab-icon--small"
+      />
     </span>
     test checkbox
   </label>,
@@ -93,9 +117,7 @@ Array [
   >
     <span
       className="lab-checkbox__box"
-    >
-      
-    </span>
+    />
     test checkbox
   </label>,
 ]

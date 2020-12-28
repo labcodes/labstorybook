@@ -6,7 +6,6 @@ exports[`TogglableTag renders as expected with a yellow color 1`] = `
   onClick={[Function]}
   onKeyPress={[Function]}
   role="presentation"
-  tabIndex="0"
 >
   <span
     className="lab-icon lab-icon--check lab-icon--black-75 lab-icon--petit lab-tag--check-icon lab-tag--check-icon-off"
@@ -21,7 +20,6 @@ exports[`TogglableTag renders as expected with disabled as true 1`] = `
   onClick={[Function]}
   onKeyPress={[Function]}
   role="presentation"
-  tabIndex="0"
 >
   <span
     className="lab-icon lab-icon--check lab-icon--black-75 lab-icon--petit lab-tag--check-icon lab-tag--check-icon-off"
@@ -36,7 +34,6 @@ exports[`TogglableTag renders as expected with outline as true 1`] = `
   onClick={[Function]}
   onKeyPress={[Function]}
   role="presentation"
-  tabIndex="0"
 >
   <span
     className="lab-icon lab-icon--check lab-icon--black-75 lab-icon--petit lab-tag--check-icon lab-tag--check-icon-off"
@@ -51,7 +48,6 @@ exports[`TogglableTag renders with a pale skin if not isOn 1`] = `
   onClick={[Function]}
   onKeyPress={[Function]}
   role="presentation"
-  tabIndex="0"
 >
   <span
     className="lab-icon lab-icon--check lab-icon--black-75 lab-icon--petit lab-tag--check-icon lab-tag--check-icon-off"
@@ -66,7 +62,6 @@ exports[`TogglableTag renders with a vivid skin and a checked icon if isOn 1`] =
   onClick={[Function]}
   onKeyPress={[Function]}
   role="presentation"
-  tabIndex="0"
 >
   <span
     className="lab-icon lab-icon--check lab-icon--black-75 lab-icon--petit lab-tag--check-icon lab-tag--check-icon-on"
@@ -81,7 +76,6 @@ exports[`TogglableTag renders with base props 1`] = `
   onClick={[Function]}
   onKeyPress={[Function]}
   role="presentation"
-  tabIndex="0"
 >
   <span
     className="lab-icon lab-icon--check lab-icon--black-75 lab-icon--petit lab-tag--check-icon lab-tag--check-icon-off"
