@@ -17,12 +17,11 @@ import ButtonPlayground from "../playgrounds/ButtonPlayground";
 
 <p>Buttons are used to initialize and trigger actions, link internal sections and point to external pages. Their primary use is triggering actions (e.g.: add, save, delete, confirmation prompts, etc.)</p>
 
-## General Usage
-
+<h2>General Usage</h2>
 <p>Buttons can be composed of just a label or of an icon plus a label.</p>
 <p>Primary calls to action on a dialog or on a page should be represented by a default (filled) button. Secondary or related actions should be represented by an outline button. A text button is recommend for tertiary actions.</p>
 
-<h4>Button positioning and order</h4>
+<h3>Button positioning and order</h3>
 <p>Default buttons always appear on the right of modals, dialogs, forms and most of UI parts. Outline and text buttons appear and pile to the left of the default button.</p>
 <ul>
   <li>Use full-width buttons for dialogs and side panels.</li>
@@ -30,10 +29,10 @@ import ButtonPlayground from "../playgrounds/ButtonPlayground";
   <li>Use left-aligned buttons to place actions at bottom of lists, comparative collums, tabled layouts, multiple content collumned layouts.</li>
 </ul>
 
-<h4>Labels</h4>
+<h3>Labels</h3>
 <p>Button labels must say what will happen when the user interacts with it. Labels use sentence case (only the first word in a phrase and any proper nouns capitalized) and are as short as possible (max. of 3 words). They must clearly explain what happens when the button is clicked.</p>
 
-<h4>Icon use</h4>
+<h3>Icon use</h3>
 <ul>
   <li>Use icon frames of 16px within buttons.</li>
   <li>Icons should always appear to the left of the label.</li>
@@ -43,15 +42,15 @@ import ButtonPlayground from "../playgrounds/ButtonPlayground";
 </ul>
 <p><span class="u-color-pink-60">An only icon button is represented by a pictogram. Use it on extreme situations. Make sure the drawing is clear and communicate in one glance what action it triggers.</span></p>
 
-## Variations
+<h2>Variations</h2>
 
 <div class="columns">
   <div class="column">
     <table className="doc-btn-table">
       <thead>
         <tr>
-          <th><h4>Variant</h4></th>
-          <th><h4>Purpose</h4></th>
+          <th><h3>Variant</h3></th>
+          <th><h3>Purpose</h3></th>
         </tr>
       </thead>
       <tbody>
@@ -83,8 +82,8 @@ import ButtonPlayground from "../playgrounds/ButtonPlayground";
     <table className="doc-btn-table">
       <thead>
         <tr>
-          <th><h4>Size</h4></th>
-          <th><h4>Purpose</h4></th>
+          <th><h3>Size</h3></th>
+          <th><h3>Purpose</h3></th>
         </tr>
       </thead>
       <tbody>
@@ -129,11 +128,10 @@ import ButtonPlayground from "../playgrounds/ButtonPlayground";
 </div>
 
 
-## Anatomy
-
+<h2>Anatomy</h2>
 <div class="columns">
   <div class="column">
-    <h5>Field elements</h5><br/>
+    <p><strong>Field elements</strong></p>
     <img src="docs/buttons/btn-field.svg" alt="Buttons field elements"/>
   </div>
   <div class="column">
@@ -148,20 +146,22 @@ import ButtonPlayground from "../playgrounds/ButtonPlayground";
     </ol>
   </div>
   <div class="column">
-    <h5>Borders</h5><br/><br/>
-    <img src="docs/buttons/btn-borders.svg" alt="Button borders scheme"/><br/><br/>
-    <p>All the buttons have a rounded corner radius of 4px on it's base background or border. Base and Focus borders should have 2px, and Hover borders should have 6px.</p>
+    <p><strong>Borders</strong></p>
+    <img src="docs/buttons/btn-borders.svg" alt="Button borders scheme"/>
+    <p>All the buttons have a rounded corner radius of 4px on it's base background or border.</p>
+    <p>Base and Focus borders should have 2px, and Hover borders should have 6px.</p>
   </div>
   <div class="column">
-    <h5>Paddings & Spacings</h5><br/><br/>
-    <img src="docs/buttons/btn-spacing.svg" alt="Button spacing scheme"/><br/><br/>
-    <p>Left and Right: 16px<br/>Top and Bottom: Flexible according to button size<br/>Internal: 8px</p>
+    <p><strong>Paddings & Spacings</strong></p>
+    <img src="docs/buttons/btn-spacing.svg" alt="Button spacing scheme"/>
+    <p>Left and Right: 16px</p>
+    <p>Top and Bottom: Flexible according to button size</p>
+    <p>Internal: 8px</p>
   </div>
 </div>
 
-## States and Styles
-
-### Default
+<h2>States and Styles</h2>
+<h3>Default</h3>
 
 <Canvas>
   <Story name="Default Button">
@@ -188,7 +188,7 @@ import ButtonPlayground from "../playgrounds/ButtonPlayground";
   </Story>
 </Canvas>
 
-#### Default with icons
+<h4>Default with icons</h4>
 
 <Canvas>
   <Story name="Default Button icons">
@@ -215,11 +215,9 @@ import ButtonPlayground from "../playgrounds/ButtonPlayground";
   </Story>
 </Canvas>
 
-#### Skins
-
-Use the mineral or white skins for primary actions on <b>toasts</b> and <b>banners</b>.
-
-You can also use <b>Message Colors</b> on labels to place these buttons also in background colored <b>notifications</b>.
+<h4>Skins</h4>
+<p>Use the mineral or white skins for primary actions on <strong>toasts</strong> and <strong>banners</strong>.</p>
+<p>You can also use <strong>Message Colors</strong> on labels to place these buttons also in background colored <strong>notifications</strong>.</p>
 
 <Canvas>
   <Story name="Default Button Skins">
@@ -250,7 +248,7 @@ You can also use <b>Message Colors</b> on labels to place these buttons also in 
   </Story>
 </Canvas>
 
-#### Skins with icons
+<h4>Skins with icons</h4>
 
 <Canvas>
   <Story name="Default Button Skins icons">
@@ -281,8 +279,7 @@ You can also use <b>Message Colors</b> on labels to place these buttons also in 
   </Story>
 </Canvas>
 
-
-### Outline
+<h3>Outline</h3>
 
 <Canvas>
   <Story name="Outline Button">
@@ -309,7 +306,7 @@ You can also use <b>Message Colors</b> on labels to place these buttons also in 
   </Story>
 </Canvas>
 
-#### Outline with icons
+<h4>Outline with icons</h4>
 
 <Canvas>
   <Story name="Outline Button icons">
@@ -336,11 +333,10 @@ You can also use <b>Message Colors</b> on labels to place these buttons also in 
   </Story>
 </Canvas>
 
-#### Skins
+<h4>Skins</h4>
 
-Use the mineral or white skins for secondary actions on <b>notifications</b> and <b>dialogs</b>.
-
-On <b>dialogs</b>, the secondary action for <b>destructive</b> or <b>warning</b> actions must always be a mineral or white outline button. For regular confirmation, use the outline button in teal.
+<p>Use the mineral or white skins for secondary actions on <strong>notifications</strong> and <strong>dialogs</strong>.</p>
+<p>On <strong>dialogs</strong>, the secondary action for <strong>destructive</strong> or <strong>warning</strong> actions must always be a mineral or white outline button. For regular confirmation, use the outline button in teal.</p>
 
 <Canvas>
   <Story name="Outline Button Skins">
@@ -355,7 +351,7 @@ On <b>dialogs</b>, the secondary action for <b>destructive</b> or <b>warning</b>
   </Story>
 </Canvas>
 
-#### Skin with icon
+<h4>Skin with icon</h4>
 
 <Canvas>
   <Story name="Outline button skin with icon">
@@ -370,7 +366,7 @@ On <b>dialogs</b>, the secondary action for <b>destructive</b> or <b>warning</b>
   </Story>
 </Canvas>
 
-### Text
+<h3>Text</h3>
 
 <Canvas>
   <Story name="Text Button">
@@ -397,7 +393,7 @@ On <b>dialogs</b>, the secondary action for <b>destructive</b> or <b>warning</b>
   </Story>
 </Canvas>
 
-### Text with icon
+<h4>Text with icon</h4>
 
 <Canvas>
   <Story name="Text Button icon">
@@ -424,9 +420,8 @@ On <b>dialogs</b>, the secondary action for <b>destructive</b> or <b>warning</b>
   </Story>
 </Canvas>
 
-#### Skins
-
-Use the mineral or white skins for secondary actions on <b>notifications</b> and <b>dialogs</b>.
+<h4>Skins</h4>
+<p>Use the mineral or white skins for secondary actions on <strong>notifications</strong> and <strong>dialogs</strong>.</p>
 
 <Canvas>
   <Story name="Text Button Skins">
@@ -441,7 +436,7 @@ Use the mineral or white skins for secondary actions on <b>notifications</b> and
   </Story>
 </Canvas>
 
-#### Skin with icon
+<h4>Skin with icon</h4>
 
 <Canvas>
   <Story name="Text Button Skins icon">
@@ -456,7 +451,7 @@ Use the mineral or white skins for secondary actions on <b>notifications</b> and
   </Story>
 </Canvas>
 
-#### Full-width
+<h3>Full-width</h3>
 
 <Canvas>
   <Story name="Full-width Button">
@@ -474,9 +469,8 @@ Use the mineral or white skins for secondary actions on <b>notifications</b> and
   </Story>
 </Canvas>
 
-## Prop API docs
-
-Here's the list of props based on the component's prop types definitions.
+<h2>Prop API docs</h2>
+<p>Here's the list of props based on the component's prop types definitions.</p>
 <ArgsTable of={Button} />
 
 </div>
