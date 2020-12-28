@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import Icon from "../Icon";
-import { Button, OutlineButton } from "../Buttons";
+import { Button, OutlineButton } from "../Button";
 import DialogWrapper from "./DialogWrapper";
 
 export default class StandardDialog extends React.Component {

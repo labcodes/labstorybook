@@ -4,7 +4,7 @@ import { isEmpty } from "lodash";
 import TextInput from "../labsystem/src/Input/TextInput";
 import Toggle from "../labsystem/src/Toggle";
 import { StandardDialog, MessageDialog } from "../labsystem/src/Dialog";
-import { Button } from "../labsystem/src/Buttons";
+import { Button } from "../labsystem/src/Button";
 import { iconOptions } from "./assets";
 
 export default class DialogPlayground extends React.Component {

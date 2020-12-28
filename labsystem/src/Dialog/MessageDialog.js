@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import DialogWrapper from "./DialogWrapper";
-import { Button, OutlineButton } from "../Buttons";
+import { Button, OutlineButton } from "../Button";
 import Icon from "../Icon";
 
 export default class MessageDialog extends React.Component {
