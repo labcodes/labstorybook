@@ -48,46 +48,46 @@
 
 @keyframes slideUp {
   0% {
-    bottom: -100%;
+    transform: translateY(100%);
   }
   100% {
-    bottom: 0;
+    transform: translateY(0);
   }
 }
 
 @-moz-keyframes slideUp {
   0% {
-    bottom: -100%;
+    transform: translateY(100%);
   }
   100% {
-    bottom: 0;
+    transform: translateY(0);
   }
 }
 
 @-webkit-keyframes slideUp {
   0% {
-    bottom: -100%;
+    -webkit-transform: translateY(100%);
   }
   100% {
-    bottom: 0;
+    -webkit-transform: translateY(0);
   }
 }
 
 @-o-keyframes slideUp {
   0% {
-    bottom: -100%;
+    transform: translateY(100%);
   }
   100% {
-    bottom: 0;
+    transform: translateY(0);
   }
 }
 
 @-ms-keyframes slideUp {
   0% {
-    bottom: -100%;
+    -ms-transform: translateY(100%);
   }
   100% {
-    bottom: 0;
+    -ms-transform: translateY(0);
   }
 }
 
@@ -114,6 +114,8 @@
 .lab-dialog {
   z-index: 2;
   position: fixed;
+  font-family: $font-primary;
+  -webkit-font-smoothing: antialiased;
 }
 
 .lab-dialog--standard {
@@ -121,6 +123,12 @@
   max-height: 90%;
   bottom: 0;
   left: 0;
+
+  -webkit-animation: slideUp ease-in $duration-fast;
+  -moz-animation: slideUp ease-in $duration-fast;
+  -ms-animation: slideUp ease-in $duration-fast;
+  -o-animation: slideUp ease-in $duration-fast;
+  animation: slideUp ease-in $duration-fast;
 
   @include from($tablet) {
     width: 520px;
@@ -130,6 +138,12 @@
     transform: translate(-50%, -50%);
     -ms-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translate(-50%, -50%);
+
+    -webkit-animation: fadeIn cubic-bezier(0.95, 0.05, 0.8, 0.04) $duration-base;
+    -moz-animation: fadeIn cubic-bezier(0.95, 0.05, 0.8, 0.04) $duration-base;
+    -ms-animation: fadeIn cubic-bezier(0.95, 0.05, 0.8, 0.04) $duration-base;
+    -o-animation: fadeIn cubic-bezier(0.95, 0.05, 0.8, 0.04) $duration-base;
+    animation: fadeIn cubic-bezier(0.95, 0.05, 0.8, 0.04) $duration-base;
   }
 }
 
@@ -141,6 +155,12 @@
   transform: translate(-50%, -50%);
   -ms-transform: translateX(-50%) translateY(-50%);
   -webkit-transform: translate(-50%, -50%);
+
+  -webkit-animation: fadeIn cubic-bezier(0.95, 0.05, 0.8, 0.04) $duration-base;
+  -moz-animation: fadeIn cubic-bezier(0.95, 0.05, 0.8, 0.04) $duration-base;
+  -ms-animation: fadeIn cubic-bezier(0.95, 0.05, 0.8, 0.04) $duration-base;
+  -o-animation: fadeIn cubic-bezier(0.95, 0.05, 0.8, 0.04) $duration-base;
+  animation: fadeIn cubic-bezier(0.95, 0.05, 0.8, 0.04) $duration-base;
 
   @include from($tablet) {
     width: 520px;
@@ -154,19 +174,6 @@
   padding: $spacing-06 28px; // missing token
   background-color: $white;
   box-shadow: 0 0 28px 0 $black-20; // missing token
-  font-family: $font-primary;
-  -webkit-font-smoothing: antialiased;
-
-  -webkit-animation: fadeIn ease 0.2s;
-  -moz-animation: fadeIn ease 0.2s;
-  -ms-animation: fadeIn ease 0.2s;
-  -o-animation: fadeIn ease 0.2s;
-  animation: fadeIn ease 0.2s;
-  -webkit-animation: slideUp ease 0.25s;
-  -moz-animation: slideUp ease 0.25s;
-  -ms-animation: slideUp ease 0.25s;
-  -o-animation: slideUp ease 0.25s;
-  animation: slideUp ease 0.25s;
 
   @include from($tablet) {
     border-radius: $radius-04;
@@ -175,20 +182,10 @@
 
 // Message
 .lab-dialog__content--message {
-  border-top-left-radius: $radius-04;
-  border-top-right-radius: $radius-04;
+  border-radius: $radius-04;
   padding: $spacing-06 28px; // missing token
   background-color: $white;
   box-shadow: 0 0 28px 0 $black-20; // missing token
-  font-family: $font-primary;
-  -webkit-font-smoothing: antialiased;
-
-  -webkit-animation: fadeIn ease 0.2s;
-  -moz-animation: fadeIn ease 0.2s;
-  -ms-animation: fadeIn ease 0.2s;
-  -o-animation: fadeIn ease 0.2s;
-  animation: fadeIn ease 0.2s;
-  border-radius: $radius-04;
 }
 
 @include from($tablet) {
