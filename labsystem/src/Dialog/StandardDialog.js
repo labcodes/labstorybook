@@ -107,7 +107,7 @@ export default class StandardDialog extends React.Component {
               type="button"
               onClick={handleClose}
             >
-              <Icon type="remove" />
+              <Icon type="remove" className="lab-dialog__close-button-icon" />
             </button>
           </div>
 

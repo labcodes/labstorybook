@@ -206,13 +206,18 @@
   background-color: unset;
   border: none;
 
+  &.lab-dialog__close-button--message {
+    display: flex;
+    align-items: center;
+  }
+
   &:focus {
     border-radius: $radius-02;
     box-shadow: 0 0 0 2px $teal-30;
     background-color: transparent;
     outline: unset;
 
-    .lab-icon {
+    .lab-dialog__close-button-icon {
       background-color: $teal-60;
     }
   }
@@ -221,12 +226,12 @@
     border-radius: $radius-02;
     background-color: $teal-10;
 
-    .lab-icon {
+    .lab-dialog__close-button-icon {
       background-color: $teal-60;
     }
   }
 
-  .lab-icon {
+  .lab-dialog__close-button-icon {
     background-color: $mineral-60;
   }
 
@@ -236,13 +241,14 @@
     background-color: $teal-20;
     outline: unset;
 
-    .lab-icon {
+    .lab-dialog__close-button-icon {
       background-color: $teal-70;
     }
   }
 
   @include from($tablet) {
-    display: block;
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -352,18 +358,18 @@
 }
 
 // Message Dialog elements
-.lab-dialog__icon {
+.lab-dialog__icon-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: -$spacing-07;
   margin-bottom: $spacing-03;
   height: 72px;
+}
 
-  .lab-icon {
-    transform: scale(3);
-    background-color: $mineral-70;
-  }
+.lab-dialog__icon {
+  transform: scale(3);
+  background-color: $mineral-70;
 }
 
 .lab-dialog__close-button--message {
