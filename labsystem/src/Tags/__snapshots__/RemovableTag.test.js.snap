@@ -6,7 +6,6 @@ exports[`RemovableTag renders as disabled 1`] = `
   onClick={[Function]}
   onKeyPress={[Function]}
   role="presentation"
-  tabIndex="0"
 >
   Test render disabled RemovableTag
   <span
@@ -25,7 +24,6 @@ exports[`RemovableTag renders as outline 1`] = `
   onClick={[Function]}
   onKeyPress={[Function]}
   role="presentation"
-  tabIndex="0"
 >
   Test render outline RemovableTag
   <span
@@ -44,7 +42,6 @@ exports[`RemovableTag renders with a green color 1`] = `
   onClick={[Function]}
   onKeyPress={[Function]}
   role="presentation"
-  tabIndex="0"
 >
   Test render green RemovableTag
   <span
@@ -63,7 +60,6 @@ exports[`RemovableTag renders with base props 1`] = `
   onClick={[Function]}
   onKeyPress={[Function]}
   role="presentation"
-  tabIndex="0"
 >
   Test render RemovableTag
   <span

@@ -5,19 +5,33 @@ import AbstractTextInput from "./AbstractTextInput";
 
 export default class EmailInput extends React.Component {
   static propTypes = {
+    /** Text that will serve as unique identifier. It's also an important accessibility tool. */
     id: PropTypes.string.isRequired,
+    /** The Input's text label. */
     label: PropTypes.string.isRequired,
+    /** Disables the text input. */
     disabled: PropTypes.bool,
+    /** Defines a default value for the Input initialization. */
     defaultValue: PropTypes.string,
+    /** Value that will be rendered inside the Input field. */
     value: PropTypes.string,
+    /** Defines an icon type to display inside the input. */
     icon: PropTypes.string,
+    /** Defines the Icon color. */
     iconColor: PropTypes.string,
+    /** Defines if the Input is required. */
     required: PropTypes.bool,
+    /** Text that will be displayed as a help message below the input. */
     helpMessage: PropTypes.string,
+    /** Text that will be displayed at the left portion of the Input. */
     prefix: PropTypes.string,
+    /** Text that will be displayed at the right portion of the Input. */
     suffix: PropTypes.string,
+    /** Custom error message displayed below the Input when the value is not valid. */
     customErrorMsg: PropTypes.string,
+    /** Callback action to be executed when the Input default value changes. */
     onChange: PropTypes.func,
+    /** Callback action to be executed when the Input's Icon is clicked.  */
     onIconClick: PropTypes.func,
   };
 

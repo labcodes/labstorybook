@@ -6,14 +6,23 @@ import Icon from "../Icon";
 
 export default class AbstractSearch extends React.Component {
   static propTypes = {
+    /** Text that will serve as unique identifier. It's also an important accessibility tool. */
     id: PropTypes.string,
+    /** Defines a default value for the Search initialization. */
     defaultValue: PropTypes.string,
+    /** Disables the Search. */
     disabled: PropTypes.bool,
+    /** Text that will be rendered inside the Search field. */
     value: PropTypes.string,
+    /** Action to be executed when the Search default value changes. */
     onChange: PropTypes.func,
+    /** Action to be executed when the search is performed. */
     onSearch: PropTypes.func,
+    /** Action to be executed when the Search field is cleared out. */
     onClear: PropTypes.func,
+    /** The placeholder text when the Search field is empty. Usually used to describe the values accepted (e.g.: Search by keyword or status). */
     placeholder: PropTypes.string,
+    /** Style variation of the Search. */
     type: PropTypes.oneOf(["standard", "inline"]).isRequired,
   };
 

@@ -4,9 +4,13 @@ import Icon from "../Icon";
 
 export default class Item extends React.Component {
   static propTypes = {
+    /** This is the item's label. */
     label: PropTypes.string.isRequired,
+    /** Sets the icon related to the Item label. Default state: no icon. */
     icon: PropTypes.string,
+    /** Callback action to be executed when the Item is clicked. */
     onClick: PropTypes.func.isRequired,
+    /** Defines if the current Item is the active one in the Sidebar. */
     isActive: PropTypes.bool,
   };
 

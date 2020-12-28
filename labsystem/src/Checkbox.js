@@ -8,16 +8,26 @@ import Icon from "./Icon";
 
 export default class Checkbox extends React.Component {
   static propTypes = {
+    /** Text that will serve as unique identifier. It's also an important accessibility tool. */
     id: PropTypes.string.isRequired,
+    /** Text that will specify the HTML name attribute of an <input> element. */
     name: PropTypes.string.isRequired,
+    /** This is the checkbox's label. */
     label: PropTypes.string.isRequired,
+    /** Disables the checkbox. */
     disabled: PropTypes.bool,
+    /** Defines if the Checkbox is currently checked. */
     checked: PropTypes.bool,
-    value: PropTypes.oneOfType([string, number, bool]),
+    /** Marks Checkbox as indeterminate. Used on "check/uncheck all" Checkbox in a `fieldset` to display when some itens are checked and others are unchecked */
     indeterminate: PropTypes.bool,
+    /** Defines if the Checkbox is initialized as "checked". */
     defaultChecked: PropTypes.bool,
-    className: PropTypes.string,
+    /** Callback action to be executed when the Checkbox is clicked. */
     onChange: PropTypes.func,
+    /** Value that will specify the HTML `value` attribute of an <input> element. */
+    value: PropTypes.oneOfType([string, number, bool]),
+    /** Add a class name to make custom changes */
+    className: PropTypes.string,
   };
 
   static defaultProps = {
