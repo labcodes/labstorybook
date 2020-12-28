@@ -87,15 +87,9 @@ export default class StandardDialog extends React.Component {
         handleClose={handleClose}
         isOpen={isOpen}
         isModal={isModal}
+        isLarge={isLarge}
       >
-        <div
-          className={
-            `lab-dialog lab-dialog--standard` +
-            `${isLarge ? ` lab-dialog--large` : ""}`
-          }
-          role="dialog"
-          aria-modal="true"
-        >
+        <div className="lab-dialog__content" role="dialog" aria-modal="true">
           <button
             type="button"
             className="lab-dialog__mobile-close-button"
@@ -117,7 +111,7 @@ export default class StandardDialog extends React.Component {
             </button>
           </div>
 
-          <p className="lab-dialog__content">{content}</p>
+          <p className="lab-dialog__body">{content}</p>
 
           <div className="lab-dialog__footer">
             {outlineButtonProps ? (

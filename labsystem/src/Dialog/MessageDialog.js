@@ -88,18 +88,17 @@ export default class MessageDialog extends React.Component {
         handleClose={handleClose}
         isOpen={isOpen}
         isModal={isModal}
+        isLarge={isLarge}
+        isMessageDialog
       >
         <div
-          className={
-            `lab-dialog lab-dialog--message` +
-            `${isLarge ? ` lab-dialog--large` : ""}`
-          }
+          className="lab-dialog__content lab-dialog__content--message"
           role="dialog"
           aria-modal="true"
         >
           <button
             type="button"
-            className="lab-dialog__mobile-close-button"
+            className="lab-dialog__mobile-close-button lab-dialog__mobile-close-button--message"
             onClick={handleClose}
             onTouchStart={this.handleTouchStart}
             onTouchEnd={this.handleTouchEnd}
@@ -124,7 +123,7 @@ export default class MessageDialog extends React.Component {
             {title}
           </div>
 
-          <div className="lab-dialog__content lab-dialog__content--message">
+          <div className="lab-dialog__body lab-dialog__body--message">
             {content}
           </div>
 

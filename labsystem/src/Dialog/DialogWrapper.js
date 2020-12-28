@@ -8,6 +8,13 @@ export default class DialogWrapper extends React.Component {
     isOpen: PropTypes.bool.isRequired,
     isModal: PropTypes.bool.isRequired,
     children: PropTypes.node.isRequired,
+    isMessageDialog: PropTypes.bool,
+    isLarge: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    isMessageDialog: undefined,
+    isLarge: undefined,
   };
 
   constructor(props) {
@@ -47,7 +54,7 @@ export default class DialogWrapper extends React.Component {
   };
 
   render() {
-    const { handleClose, children } = this.props;
+    const { handleClose, isLarge, isMessageDialog, children } = this.props;
     const { shouldToggleOverflow } = this.state;
     return shouldToggleOverflow ? (
       <React.Fragment>
@@ -57,11 +64,27 @@ export default class DialogWrapper extends React.Component {
           role="presentation"
         />
         <FocusTrap focusTrapOptions={{ allowOutsideClick: true }}>
-          {children}
+          <div
+            className={`lab-dialog${
+              isMessageDialog ? " lab-dialog--message" : " lab-dialog--standard"
+            }
+            ${isLarge ? ` lab-dialog--large` : ""}`}
+          >
+            {children}
+          </div>
         </FocusTrap>
       </React.Fragment>
     ) : (
-      <React.Fragment>{children}</React.Fragment>
+      <React.Fragment>
+        <div
+          className={`lab-dialog${
+            isMessageDialog ? " lab-dialog--message" : " lab-dialog--standard"
+          }
+            ${isLarge ? ` lab-dialog--large` : ""}`}
+        >
+          {children}
+        </div>
+      </React.Fragment>
     );
   }
 }

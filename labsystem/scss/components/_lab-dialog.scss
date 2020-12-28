@@ -2,53 +2,93 @@
 
 // Transitions
 @keyframes fadeIn {
-  0% { opacity:0; }
-  100% { opacity:1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-  
+
 @-moz-keyframes fadeIn {
-  0% { opacity:0; }
-  100% { opacity:1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes fadeIn {
-  0% { opacity:0; }
-  100% { opacity:1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @-o-keyframes fadeIn {
-  0% { opacity:0; }
-  100% { opacity:1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @-ms-keyframes fadeIn {
-  0% { opacity:0; }
-  100% { opacity:1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes slideUp {
-  0% { bottom: -100%; }
-  100% { bottom: 0; }
+  0% {
+    bottom: -100%;
+  }
+  100% {
+    bottom: 0;
+  }
 }
 
 @-moz-keyframes slideUp {
-  0% { bottom: -100%; }
-  100% { bottom: 0; }
+  0% {
+    bottom: -100%;
+  }
+  100% {
+    bottom: 0;
+  }
 }
 
 @-webkit-keyframes slideUp {
-  0% { bottom: -100%; }
-  100% { bottom: 0; }
+  0% {
+    bottom: -100%;
+  }
+  100% {
+    bottom: 0;
+  }
 }
 
 @-o-keyframes slideUp {
-  0% { bottom: -100%; }
-  100% { bottom: 0; }
+  0% {
+    bottom: -100%;
+  }
+  100% {
+    bottom: 0;
+  }
 }
 
 @-ms-keyframes slideUp {
-  0% { bottom: -100%; }
-  100% { bottom: 0; }
+  0% {
+    bottom: -100%;
+  }
+  100% {
+    bottom: 0;
+  }
 }
 
 // Modal overlay
@@ -74,6 +114,41 @@
 .lab-dialog {
   z-index: 2;
   position: fixed;
+}
+
+.lab-dialog--standard {
+  width: 100%;
+  max-height: 90%;
+  bottom: 0;
+  left: 0;
+
+  @include from($tablet) {
+    width: 520px;
+    top: 50%;
+    bottom: unset;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%, -50%);
+  }
+}
+
+.lab-dialog--message {
+  width: 90%;
+  max-height: 60%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%, -50%);
+
+  @include from($tablet) {
+    width: 520px;
+  }
+}
+
+// Standard
+.lab-dialog__content {
   border-top-left-radius: $radius-04;
   border-top-right-radius: $radius-04;
   padding: $spacing-06 28px; // missing token
@@ -87,14 +162,6 @@
   -ms-animation: fadeIn ease 0.2s;
   -o-animation: fadeIn ease 0.2s;
   animation: fadeIn ease 0.2s;
-}
-
-// Standard
-.lab-dialog--standard {
-  width: 100%;
-  max-height: 90%;
-  bottom: 0;
-  left: 0;
   -webkit-animation: slideUp ease 0.25s;
   -moz-animation: slideUp ease 0.25s;
   -ms-animation: slideUp ease 0.25s;
@@ -102,36 +169,32 @@
   animation: slideUp ease 0.25s;
 
   @include from($tablet) {
-    width: 520px;
-    max-height: fit-content;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translate(-50%,-50%);
     border-radius: $radius-04;
   }
 }
 
 // Message
-.lab-dialog--message {
-  width: 90%;
-  max-height: 60%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translate(-50%,-50%);
-  border-radius: $radius-04;
+.lab-dialog__content--message {
+  border-top-left-radius: $radius-04;
+  border-top-right-radius: $radius-04;
+  padding: $spacing-06 28px; // missing token
+  background-color: $white;
+  box-shadow: 0 0 28px 0 $black-20; // missing token
+  font-family: $font-primary;
+  -webkit-font-smoothing: antialiased;
 
-  @include from($tablet) {
-    width: 520px;
-    max-height: fit-content;
-  }
+  -webkit-animation: fadeIn ease 0.2s;
+  -moz-animation: fadeIn ease 0.2s;
+  -ms-animation: fadeIn ease 0.2s;
+  -o-animation: fadeIn ease 0.2s;
+  animation: fadeIn ease 0.2s;
+  border-radius: $radius-04;
 }
 
-.lab-dialog--large {
-  width: 768px;
+@include from($tablet) {
+  .lab-dialog--large {
+    width: 768px;
+  }
 }
 
 // Global elements
@@ -148,7 +211,7 @@
     box-shadow: 0 0 0 2px $teal-30;
     background-color: transparent;
     outline: unset;
-    
+
     .lab-icon {
       background-color: $teal-60;
     }
@@ -172,7 +235,7 @@
     box-shadow: 0 0 0 2px $teal-30;
     background-color: $teal-20;
     outline: unset;
-    
+
     .lab-icon {
       background-color: $teal-70;
     }
@@ -197,12 +260,16 @@
     background-color: $mineral-60;
   }
 
+  &.lab-dialog__mobile-close-button--message {
+    display: none;
+  }
+
   &:focus {
     border-radius: $radius-02;
     box-shadow: 0 0 0 2px $teal-30;
     background-color: transparent;
     outline: unset;
-    
+
     .lab-icon {
       background-color: $teal-60;
     }
@@ -226,7 +293,7 @@
     box-shadow: 0 0 0 2px $teal-30;
     background-color: $teal-20;
     outline: unset;
-    
+
     .lab-icon {
       background-color: $teal-70;
     }
@@ -256,7 +323,7 @@
   }
 }
 
-.lab-dialog__content {
+.lab-dialog__body {
   overflow-x: auto;
   margin-top: $spacing-04;
   margin-bottom: 28px; // missing token
@@ -284,7 +351,6 @@
   }
 }
 
-
 // Message Dialog elements
 .lab-dialog__icon {
   display: flex;
@@ -293,7 +359,7 @@
   margin-top: -$spacing-07;
   margin-bottom: $spacing-03;
   height: 72px;
-  
+
   .lab-icon {
     transform: scale(3);
     background-color: $mineral-70;
@@ -317,8 +383,8 @@
   text-transform: uppercase;
 }
 
-.lab-dialog__content--message {
-  display:flex;
+.lab-dialog__body--message {
+  display: flex;
   justify-content: center;
   margin-top: $spacing-06;
   margin-bottom: 28px; // missing token
@@ -331,7 +397,7 @@
   padding-top: 0;
   padding-bottom: $spacing-08;
   background-color: unset;
-  
+
   button {
     flex-grow: 1;
   }
