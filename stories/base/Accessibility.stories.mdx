@@ -1,0 +1,70 @@
+import { Fragment } from 'react';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Button, OutlineButton, TextButton } from '../../labsystem/src/Button';
+
+<Meta title="Base/Accessibility" />
+
+<div className="docs-title docs-title--with-tab">
+  <div>
+    <h1 className="docs-title__text">Accessibility</h1>
+  </div>
+</div>
+
+<div className="docs-content">
+  <div className="simple-tab-wrapper"></div>
+  <input className="simple-tab" type="radio" name="type-tab" id="tab1" defaultChecked/>
+  <label htmlFor="tab1">Overview</label>
+
+  <input className="simple-tab" type="radio" name="type-tab" id="tab2" />
+  <label htmlFor="tab2">Tests</label>
+
+  <div className="simple-tab__content content1">
+  <p>Labcodes believes in web environments made for all people. Confetti follows the global accessibility standard (WCAG) AA Level and try our best to comply with AAA requirements.</p>
+  <h2> Principles</h2>
+  <p>From <a href="https://www.w3.org/WAI/fundamentals/accessibility-principles/">W3C's Web Accessibility Initiative</a></p>
+  <p>All users must have access to, be able to use, and understand the same content, no matter what disability they might have or what sort of device they might be using to get at that content.</p>
+
+  <p>All content should be/have:</p>
+  <ul>
+    <li>Perceivable information and user interface</li>
+    <li>Operable user interface and navigation</li>
+    <li>Understandable information and user interface</li>
+    <li>Robust content and reliable interpretation</li>
+  </ul>
+
+  <h2>Resources</h2>
+  <ul>
+    <li><a href="https://labcodes-wiki.herokuapp.com/best-practices/accessibility/">Labcodes' Web Accessibility Guide</a></li>
+    <li>World Wide Web Consortium (W3C)‘s <a href="https://www.w3.org/WAI/">Web Accessibility Initiative</a> (WAI)</li>
+    <li><a href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guidelines</a></li>
+  </ul>
+  </div>
+
+  <div className="simple-tab__content content2">
+    <h2>Automatic tests</h2>
+    <h3>Text Editor</h3>
+    <p>By having <a href="https://www.npmjs.com/package/eslint">ESLint</a> enabled with the <a href="https://www.npmjs.com/package/eslint-config-airbnb">Airbnb Accessibility Configs</a>, whenever we write a piece of code that doesn’t follow the accessibility guidelines, we receive a visual warning. Depending on the project, we should choose whether or not to go further and prevent code merging altogether if the accessibility requirements are not met, by using tools like <a href="https://www.npmjs.com/package/husky">husky</a>, for example.</p>
+    <h3>Browser</h3>
+    <ul>
+      <li>Perform Lighthouse Audit Testing from browser's dev tools or <a href="https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk">extension</a> (Chrome) or locally use <a href="https://addyosmani.com/a11y">A11y Command-line Tools</a> to audit your page</li>
+      <li>Use <a href="https://chrome.google.com/webstore/detail/spectrum/ofclemegkcmilinpcimpjkfhjfgmhieb?hl=pt-BR">Spectrum extension</a> to test colors for different visual impairments</li>
+      <li><a href="https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl?hl=en-US">No Coffee</a> (Chrome Plugin): to simulate all levels of vision loss.</li>
+      <li><a href="https://chrome.google.com/webstore/detail/line-height-adjuster/nggicopcmcgpnpjbibppkjadniipeppa?hl=en-US">Line Height Adjuster</a> (Chrome Plugin): To test compliance with Text Spacing guideline</li>
+      <li><a href="https://chrome.google.com/webstore/detail/dyslexia-unscrambled/ebobafleaeaancdaofchakjljljjkdfg">Dyslexia Unscrambled</a> (Chrome Plugin): transforms any webpage into one that is more easily readable by those who are dyslexic.</li>
+    </ul>
+    <h2>Manual tests</h2>
+    <p>Set an environment that reproduces the restrictions of a disability, like removing the mouse or using a screen reader.</p>
+    <ul>
+      <li>Check if everything is reachable from keyboard: tab through links and all form and video controls to see if they receive focus.</li>
+      <li>Use assistive technology like a screen reader or switch controls to test all features</li>
+      <ul>
+        <li><a href="https://www.nvaccess.org/download/">NVDA</a> (Windows - Open Source)</li>
+        <li><a href="https://support.apple.com/guide/voiceover/welcome/10">VoiceOver</a> (Apple)</li>
+        <li><a href="https://www.freedomscientific.com/products/software/jaws/">JAWS</a> (Windows - Paid)</li>
+      </ul>
+      <li>Do not hide actions on behaviors that are not available for mobile devices, like hover states. It should be avoided even when an alternative method is provided for such screen types.</li>
+      <li>Check if all images have an alt text set.</li>
+      <li>Always ensure that the HTML uses semantic tags on components.</li>
+    </ul>
+  </div>
+</div>

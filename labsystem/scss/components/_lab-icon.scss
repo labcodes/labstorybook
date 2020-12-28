@@ -14,7 +14,7 @@ $icon-bg-color: map-get($icon-theme, "70") !default;
   flex-shrink: 0;
   background-color: $icon-bg-color;
 
-  /* Color modifiers. 
+  /* Color modifiers.
    * Create classes '.lab-icon--white' and '.lab-icon--black' directly.
    * Iterates over $all-colors map to also create classes like '.lab-icon--white'.
    * Each ones sets a different background color. */
@@ -55,7 +55,7 @@ $icon-bg-color: map-get($icon-theme, "70") !default;
 
   &--eye-opened { @include icon-position(3, 0); }
   &--eye-closed { @include icon-position(3, 1); }
-  &--lupe { @include icon-position(3, 2); }
+  &--magnifying-glass { @include icon-position(3, 2); }
   &--trash { @include icon-position(3, 3); }
   &--menu-default { @include icon-position(3, 4); }
 
@@ -77,5 +77,5 @@ $icon-bg-color: map-get($icon-theme, "70") !default;
   &--chevron-left { @include icon-position(6, 3); }
   &--workspace { @include icon-position(6, 4); }
 
-  
+
 }

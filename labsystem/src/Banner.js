@@ -2,15 +2,21 @@ import React from "react";
 import PropTypes from "prop-types";
 import { isUndefined } from "lodash";
 import Icon from "./Icon";
-import TextButton from "./Buttons/TextButton";
+import TextButton from "./Button/TextButton";
 
 export default class Banner extends React.Component {
   static propTypes = {
+    /** This is the message text string. */
     text: PropTypes.string.isRequired,
+    /** Type of the Banner. */
     type: PropTypes.oneOf(["info", "warn", "error"]),
+    /** Sets the icon related to the banner’s message. */
     icon: PropTypes.string.isRequired,
+    /** Ojbect with information about the Banners's button. */
     buttonProps: PropTypes.shape({
+      /** Banner's text button label. */
       text: PropTypes.string,
+      /** Action to be executed when the button is clicked. */
       onClick: PropTypes.func,
     }),
   };
@@ -19,7 +25,7 @@ export default class Banner extends React.Component {
     type: "info",
     buttonProps: {
       text: "",
-      onClick: undefined,
+      onClick: () => {},
     },
   };
 
@@ -42,10 +48,10 @@ export default class Banner extends React.Component {
     return null;
   };
 
-  handleClick = (e) => {
+  handleClick = (event) => {
     const { buttonProps } = this.props;
     if (!isUndefined(buttonProps.onClick)) {
-      buttonProps.onClick(e);
+      buttonProps.onClick(event);
     }
   };
 

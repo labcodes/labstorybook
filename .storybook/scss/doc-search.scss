@@ -36,23 +36,23 @@
   }
 
   
-  .lab-input__field:focus ~ .lab-icon--inline-search-lupe {
+  .lab-input__field:focus ~ .lab-icon--inline-search-magnifying-glass {
       background-color: $purple-70;
   }
 
-  .lab-input__field:not(:placeholder-shown) ~ .lab-icon--inline-search-lupe {
+  .lab-input__field:not(:placeholder-shown) ~ .lab-icon--inline-search-magnifying-glass {
       background-color: $purple-60;
   }
 
-  .lab-input__field:not(:placeholder-shown):focus ~ .lab-icon--inline-search-lupe {
+  .lab-input__field:not(:placeholder-shown):focus ~ .lab-icon--inline-search-magnifying-glass {
       background-color: $purple-70;
   }
 
-  .lab-input__field:not(:placeholder-shown):hover ~ .lab-icon--inline-search-lupe {
+  .lab-input__field:not(:placeholder-shown):hover ~ .lab-icon--inline-search-magnifying-glass {
       background-color: $purple-60;
   }
 
-  .lab-input__field:not(:placeholder-shown):focus:hover ~ .lab-icon--inline-search-lupe {
+  .lab-input__field:not(:placeholder-shown):focus:hover ~ .lab-icon--inline-search-magnifying-glass {
       background-color: $purple-80;
   }
     

@@ -24,11 +24,19 @@
   border-left: 2px solid $mineral-10;
   padding: $spacing-06;
   height: 100%;
-  
+
   .lab-playground__item {
-    display: inline-block;
-    margin: $spacing-02 0;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: $spacing-05 $spacing-01;
+
+    p {
+      margin: $spacing-01 0;
+    }
+  }
+
+  .lab-btn {
+    margin: 4px;
   }
 }
 

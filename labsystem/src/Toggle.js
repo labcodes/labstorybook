@@ -4,20 +4,26 @@ import { isUndefined } from "lodash";
 
 export default class Toggle extends React.Component {
   static propTypes = {
-    theme: PropTypes.string,
-    disabled: PropTypes.bool,
-    defaultValue: PropTypes.bool,
-    value: PropTypes.bool,
+    /** Text that will serve as unique identifier. It's also an important accessibility tool. */
     name: PropTypes.string.isRequired,
+    /** Defines a static value for the Toggle. If set, internal logic is deactivated. */
+    value: PropTypes.bool,
+    /** Defines the Toggle color. */
+    color: PropTypes.oneOf(["teal", "purple"]),
+    /** Disables the Toggle component, keeping the value. */
+    disabled: PropTypes.bool,
+    /** Sets value to true by default. */
+    defaultValue: PropTypes.bool,
+    /** Action executed when the Toggle is clicked. */
     handleToggle: PropTypes.func,
   };
 
   static defaultProps = {
-    theme: undefined,
+    color: "teal",
     disabled: false,
-    defaultValue: false,
+    defaultValue: undefined,
     value: undefined,
-    handleToggle: undefined,
+    handleToggle: () => {},
   };
 
   constructor(props) {
@@ -30,21 +36,21 @@ export default class Toggle extends React.Component {
       );
     }
     this.state = {
-      localValue: defaultValue,
+      localValue: !isUndefined(defaultValue) ? defaultValue : false,
     };
   }
 
-  handleOnChange = (e) => {
+  handleOnChange = (event) => {
     const { handleToggle } = this.props;
     if (!isUndefined(handleToggle)) {
-      handleToggle(e);
+      handleToggle(event);
     }
 
     this.setState((state) => ({ localValue: !state.localValue }));
   };
 
   render() {
-    const { theme, name, disabled, value } = this.props;
+    const { color, name, disabled, value } = this.props;
     const { localValue } = this.state;
     const isChecked = !isUndefined(value) ? value : localValue;
 
@@ -52,7 +58,7 @@ export default class Toggle extends React.Component {
       <label
         className={`
           lab-toggle
-          ${theme ? `lab-toggle--${theme}` : ""}
+          ${color ? `lab-toggle--${color}` : ""}
           ${disabled ? " lab-toggle--disabled" : ""}
         `}
         htmlFor={name}

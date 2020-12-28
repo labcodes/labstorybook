@@ -21,9 +21,9 @@ describe("Toggle", () => {
     expect(renderedComponent).toMatchSnapshot();
   });
 
-  it("renders as expected when passing a different theme", async () => {
+  it("renders as expected when passing a different color", async () => {
     const renderedComponent = renderer
-      .create(<Toggle theme="purple" name="test-toggle" disabled />)
+      .create(<Toggle color="purple" name="test-toggle" disabled />)
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
   });

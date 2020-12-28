@@ -1,17 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SimpleTag renders as expected with a lupe icon 1`] = `
+exports[`SimpleTag renders as expected with a magnifying-glass icon 1`] = `
 <span
   className="lab-tag  lab-tag--has-left-icon lab-tag--pale"
   onClick={[Function]}
   onKeyPress={[Function]}
   role="presentation"
-  tabIndex="-1"
 >
   <span
-    className="lab-icon lab-icon--lupe lab-icon--black-75 lab-icon--petit lab-tag--left-icon"
+    className="lab-icon lab-icon--magnifying-glass lab-icon--black-75 lab-icon--petit lab-tag--left-icon"
   />
-  Test render SimpleTag with lupe icon
+  Test render SimpleTag with magnifying-glass icon
 </span>
 `;
 
@@ -21,7 +20,6 @@ exports[`SimpleTag renders as expected with a purple color 1`] = `
   onClick={[Function]}
   onKeyPress={[Function]}
   role="presentation"
-  tabIndex="-1"
 >
   Test render purple SimpleTag
 </span>
@@ -33,7 +31,6 @@ exports[`SimpleTag renders as expected with a thumb 1`] = `
   onClick={[Function]}
   onKeyPress={[Function]}
   role="presentation"
-  tabIndex="-1"
 >
   <img
     alt=""
@@ -50,21 +47,8 @@ exports[`SimpleTag renders as expected with a vivid skin 1`] = `
   onClick={[Function]}
   onKeyPress={[Function]}
   role="presentation"
-  tabIndex="-1"
 >
   Test render vivid SimpleTag
-</span>
-`;
-
-exports[`SimpleTag renders as expected with disabled as true 1`] = `
-<span
-  className="lab-tag  lab-tag--disabled lab-tag--pale"
-  onClick={[Function]}
-  onKeyPress={[Function]}
-  role="presentation"
-  tabIndex="-1"
->
-  Test render disabled SimpleTag
 </span>
 `;
 
@@ -74,7 +58,6 @@ exports[`SimpleTag renders as expected with outline as true 1`] = `
   onClick={[Function]}
   onKeyPress={[Function]}
   role="presentation"
-  tabIndex="-1"
 >
   Test render outline SimpleTag
 </span>
@@ -86,7 +69,6 @@ exports[`SimpleTag renders with base props 1`] = `
   onClick={[Function]}
   onKeyPress={[Function]}
   role="presentation"
-  tabIndex="-1"
 >
   Test render SimpleTag
 </span>

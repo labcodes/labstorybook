@@ -17,16 +17,16 @@ export default class RadioPlayground extends React.Component {
     };
   }
 
-  handleLabel1 = (e) => {
-    this.setState({ label1: e.target.value });
+  handleLabel1 = (event) => {
+    this.setState({ label1: event.target.value });
   };
 
-  handleLabel2 = (e) => {
-    this.setState({ label2: e.target.value });
+  handleLabel2 = (event) => {
+    this.setState({ label2: event.target.value });
   };
 
-  handleClassName = (e) => {
-    this.setState({ className: e.target.value });
+  handleClassName = (event) => {
+    this.setState({ className: event.target.value });
   };
 
   handleDisabled1 = () => {
@@ -62,7 +62,6 @@ export default class RadioPlayground extends React.Component {
                 disabled={disabled1}
                 value={label1}
                 className={className}
-                onChange={this.handleChecked}
               />
               <Radio
                 id="radio-playground-item2"
@@ -72,7 +71,6 @@ export default class RadioPlayground extends React.Component {
                 disabled={disabled2}
                 value={label2}
                 className={className}
-                onChange={this.handleChecked}
               />
             </fieldset>
           </div>
