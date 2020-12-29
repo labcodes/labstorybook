@@ -1,5 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`OutlineButton renders as expected if full width 1`] = `
+<button
+  className="lab-btn lab-btn--outline lab-btn--normal lab-btn--block"
+  onClick={[Function]}
+  type="button"
+>
+  
+  Test Outline fullWidth Button
+</button>
+`;
+
 exports[`OutlineButton renders as expected when passing a large size 1`] = `
 <button
   className="lab-btn lab-btn--outline lab-btn--large"

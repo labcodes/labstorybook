@@ -53,4 +53,11 @@ describe("Button", () => {
     shallowedButton.simulate("click");
     expect(mockOnClick.mock.calls.length).toEqual(1);
   });
+
+  it("renders as expected if full width", async () => {
+    const renderedComponent = renderer
+      .create(<Button text="Test Default fullWidth Button" fullWidth />)
+      .toJSON();
+    expect(renderedComponent).toMatchSnapshot();
+  });
 });
