@@ -32,7 +32,7 @@ $input-shadow-filled-hover: map-get($input-theme, "10");
 $input-shadow-filled-focus: map-get($input-theme, "30");
 
 $input-shadow-invalid-focus: $coral-20;
-$input-main-invalid: $red-60;
+$input-main-invalid: $coral-70;
 $input-background-invalid: $coral-10;
 $input-background-invalid-prefix: $coral-20;
 $input-border-disabled: $mineral-30;
@@ -379,7 +379,7 @@ $input-border-disabled: $mineral-30;
   .lab-input__field--prefixed:disabled ~ &,
   .lab-input__field--suffixed:disabled ~ & {
     background-color: $mineral-20;
-    color: $black-50;
+    color: $black-75;
   }
 }
 

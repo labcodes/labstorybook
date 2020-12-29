@@ -7,62 +7,38 @@ import { isUndefined } from "lodash";
 
 export default class Radio extends React.Component {
   static propTypes = {
+    /** Text that will serve as unique identifier. It's also an important accessibility tool. */
     id: PropTypes.string.isRequired,
+    /** Text that will specify the HTML `name` attribute of an <input> element. It's used to group a set of Radios. */
     name: PropTypes.string.isRequired,
+    /** Text that will be rendered as the Radio's label. */
     label: PropTypes.string.isRequired,
-    value: PropTypes.oneOfType([string, number, bool]).isRequired,
+    /** Disables the Input component. */
     disabled: PropTypes.bool,
+    /** Defines if the Radio is currently checked. */
     checked: PropTypes.bool,
+    /** Defines if the Radio is initialized as "checked". */
     defaultChecked: PropTypes.bool,
-    className: PropTypes.string,
+    /** Callback action to be executed when the Radio current value changes. */
     onChange: PropTypes.func,
+    /** Value that will specify the HTML `value` attribute of an <input> element. */
+    value: PropTypes.oneOfType([string, number, bool]).isRequired,
+    /** Add a class name to make custom changes */
+    className: PropTypes.string,
   };
 
   static defaultProps = {
     disabled: false,
     checked: undefined,
-    defaultChecked: undefined,
     className: undefined,
-    onChange: undefined,
+    onChange: () => {},
   };
-
-  constructor(props) {
-    super(props);
-    const { defaultChecked, checked, id } = props;
-    if (!isUndefined(defaultChecked) && !isUndefined(checked)) {
-      // eslint-disable-next-line no-console
-      console.warn(
-        `You are setting both checked and defaultChecked for radio input ${id} at the same time. We always initialize the radio with defaultChecked. Make sure this is the behaviour you want.`
-      );
-    }
-
-    let localChecked = false;
-    if (defaultChecked) {
-      localChecked = defaultChecked;
-    } else if (!isUndefined(checked)) {
-      localChecked = checked;
-    }
-
-    this.state = {
-      localChecked,
-    };
-  }
-
-  componentDidUpdate(prevProps) {
-    const { checked } = this.props;
-    if (checked !== prevProps.checked) {
-      // eslint-disable-next-line react/no-did-update-set-state
-      this.setState(() => ({ localChecked: checked }));
-    }
-  }
 
   handleOnChange = (event) => {
     const { onChange } = this.props;
     if (!isUndefined(onChange)) {
       onChange(event);
     }
-
-    this.setState((state) => ({ localChecked: !state.localChecked }));
   };
 
   render() {
@@ -74,11 +50,11 @@ export default class Radio extends React.Component {
           className={`lab-radio ${className || ""}`}
           type="radio"
           id={id}
-          {...(disabled ? { disabled } : undefined)}
           checked={checked}
           name={name}
           value={value}
           onChange={this.handleOnChange}
+          {...(disabled ? { disabled } : undefined)}
         />
         <label className="lab-radio__label" htmlFor={id}>
           <span className="lab-radio__container" />

@@ -14,77 +14,72 @@ import RadioPlayground from '../playgrounds/RadioPlayground';
 </div>
 
 <div class="docs-content">
-    <p>Radio is a type of selector that is used when we have a list of options, and only one option can be selected.
-    </p>
+  <p>Radio is a type of selector that is used when we have a list of options, and only one option can be selected.</p>
 
-<h2>Anatomy</h2>
-<div class="columns">
+  <h2>Anatomy</h2>
+  <div class="columns">
     <div class="column">
-        <img src="docs/radio/radio-anatomy.png" />
+      <img src="docs/radio/radio-anatomy.png" alt="Radio button anatomy" />
     </div>
     <div class="column">
-        <br />
-        <br />
-        <ol>
-         <li>Radio border</li>
-         <li>Radio selection indicator</li>
-         <li>Hover stroke</li>
-         <li>Base container stroke</li>
-         <li>Focus stroke</li>
-        </ol>
+      <ol>
+        <li>Radio border</li>
+        <li>Radio selection indicator</li>
+        <li>Hover stroke</li>
+        <li>Base container stroke</li>
+        <li>Focus stroke</li>
+      </ol>
     </div>
-</div>
+  </div>
 
-<h2>Interactive demo</h2>
-<p>This demo lets you preview the component, its variations, and configuration options.</p>
-<RadioPlayground />
+  <h2>Interactive demo</h2>
+  <p>This demo lets you preview the component, its variations, and configuration options.</p>
+  <RadioPlayground />
 
-<h2>Prop API</h2>
-<p>Go to <a href="/?path=/docs/getting-started-setup-confetti--page">Setup</a> for instructions on how to import the component.  </p>
-<ArgsTable of={Radio} />
+  <h2>Prop API</h2>
+  <p>Go to <a href="/?path=/docs/getting-started-setup-confetti--page">Setup</a> for instructions on how to import the component.  </p>
+  <ArgsTable of={Radio} />
 
-## Accessibility
+  ## Accessibility
+
   Striving to keep our forms accessible, we recommend to use this type of component by using the `fieldset` tag to nest a group of
   selectors and the `legend` tag to identify the heading of the group.
   These elements works indicating to screen readers that a group of form fields relate to each other.
 
-## States
+  ## States
 
-<Canvas>
-  <Story name="Radio">
-    <Fragment>
-      <fieldset>
-        <Radio id="radio-1" label="Idle" name="radio" value="" />
-        <br />
-        <Radio id="radio-2" label="Idle" name="radio" value="" />
-        <br />
-        <Radio id="radio-3" label="Disabled" name="radio" disabled value="" />
-        <br />
-        <Radio id="radio-4" label="Disabled" name="radio-disabled" checked disabled value="" />
-      </fieldset>
-    </Fragment>
-  </Story>
-</Canvas>
+  <Canvas>
+    <Story name="Styles">
+      <Fragment>
+        <fieldset>
+          <Radio className="lab-radio--purple" id="radio-5" label="Idle" name="radio2" value="" />
+          <br />
+          <Radio className="lab-radio--purple" id="radio-6" label="Idle" name="radio2" value="" />
+        </fieldset>
+      </Fragment>
+    </Story>
+  </Canvas>
 
-## Behavior
-1. Choose an option
-2. Click on it and the chosen option will be selected
-3. If another option is selected, the previous one will be deselected
-<br />
-<br />
+  ## Behavior
 
-## Styles
-Checkboxes can also be used in the purple theme
-<Canvas>
-  <Story name="Styles">
-  <Fragment>
-    <fieldset>
-      <Radio className="lab-radio--purple" id="radio-5" label="Idle" name="radio2" value="" />
-      <br />
-      <Radio className="lab-radio--purple" id="radio-6" label="Idle" name="radio2" value="" />
-    </fieldset>
-  </Fragment>
-  </Story>
-</Canvas>
+  1. Choose an option
+  2. Click on it and the chosen option will be selected
+  3. If another option is selected, the previous one will be deselected
+
+  ## Styles
+
+  Checkboxes can also be used in the purple theme
+
+  <Canvas>
+    <Story name="Styles">
+      <Fragment>
+        <fieldset>
+          <Radio className="lab-radio--purple" id="radio-5" label="Idle" name="radio2" value="" />
+          <br />
+          <Radio className="lab-radio--purple" id="radio-6" label="Idle" name="radio2" value="" />
+        </fieldset>
+      </Fragment>
+    </Story>
+  </Canvas>
 
 </div>

@@ -5,12 +5,18 @@ import Icon from "../Icon";
 
 export default class TogglableTag extends React.Component {
   static propTypes = {
+    /** This is the Tag's text. */
     text: PropTypes.string.isRequired,
+    /** Sets Tag's color. */
     color: PropTypes.string,
+    /** Sets an outline style. */
     isOutline: PropTypes.bool,
+    /** Disables the Tag component. */
     disabled: PropTypes.bool,
-    isOn: PropTypes.bool,
+    /** Action to be executed when the Tag is clicked. */
     onClick: PropTypes.func,
+    /** Defines if the Tag is toggled on. */
+    isOn: PropTypes.bool,
   };
 
   static defaultProps = {
