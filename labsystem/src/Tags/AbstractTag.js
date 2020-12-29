@@ -67,7 +67,8 @@ export default class AbstractTag extends React.Component {
         }
         onClick={this.handleEvent}
         onKeyPress={this.handleEvent}
-        role="presentation"
+        role="button"
+        tabIndex="0"
       >
         {renderPrefix}
         {text}
