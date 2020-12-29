@@ -5,6 +5,7 @@ import Banner from "../labsystem/src/Banner";
 import Alert from "../labsystem/src/Alert";
 import { iconOptions } from "./assets";
 
+import Radio from "../labsystem/src/Radio";
 import TextInput from "../labsystem/src/Input/TextInput";
 
 export default class SystemMessagesPlayground extends React.Component {
@@ -95,16 +96,25 @@ export default class SystemMessagesPlayground extends React.Component {
           <h3>Prop Settings</h3>
 
           <span className="lab-playground__item">
-            <label htmlFor="currentComponent">
-              <strong>type: </strong>
-              <select onChange={this.handleCurrentComponentChange}>
-                {Object.keys(availableComponents).map((option) => (
-                  <option key={option} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-            </label>
+            <fieldset>
+              <legend>Variation</legend>
+              <Radio
+                id="Banner"
+                name="variation"
+                label="Banner"
+                value="Banner"
+                checked={currentComponent === "Banner"}
+                onChange={this.handleCurrentComponentChange}
+              />
+              <Radio
+                id="Alert"
+                name="variation"
+                label="Alert"
+                value="Alert"
+                checked={currentComponent === "Alert"}
+                onChange={this.handleCurrentComponentChange}
+              />
+            </fieldset>
           </span>
 
           <span className="lab-playground__item">
