@@ -7,44 +7,28 @@ import ButtonPlayground from "../playgrounds/ButtonPlayground";
 
 <Meta title="Components/Button" component={Button} />
 
-<div class="docs-title">
+<div class="docs-title docs-title--with-tab">
   <div>
     <h1 class="docs-title__text">Button</h1>
   </div>
 </div>
 
 <div class="docs-content">
+  <div className="simple-tab-wrapper"></div>
 
-<p>Buttons are used to initialize and trigger actions, link internal sections and point to external pages. Their primary use is triggering actions (e.g.: add, save, delete, confirmation prompts, etc.)</p>
+  <input className="simple-tab" type="radio" name="type-tab" id="tab1" defaultChecked/>
+  <label htmlFor="tab1">Code</label>
 
-## General Usage
+  <input className="simple-tab" type="radio" name="type-tab" id="tab2" />
+  <label htmlFor="tab2">Usage</label>
 
+  <div className="simple-tab__content content1">
+    <h2>Overview</h2>
 <p>Buttons can be composed of just a label or of an icon plus a label.</p>
-<p>Primary calls to action on a dialog or on a page should be represented by a default (filled) button. Secondary or related actions should be represented by an outline button. A text button is recommend for tertiary actions.</p>
-
-<h4>Button positioning and order</h4>
-<p>Default buttons always appear on the right of modals, dialogs, forms and most of UI parts. Outline and text buttons appear and pile to the left of the default button.</p>
-<ul>
-  <li>Use full-width buttons for dialogs and side panels.</li>
-  <li>Use right-aligned buttons primarily and if the main response advances the user through a screenflow (from left to the right).</li>
-  <li>Use left-aligned buttons to place actions at bottom of lists, comparative collums, tabled layouts, multiple content collumned layouts.</li>
-</ul>
-
-<h4>Labels</h4>
-<p>Button labels must say what will happen when the user interacts with it. Labels use sentence case (only the first word in a phrase and any proper nouns capitalized) and are as short as possible (max. of 3 words). They must clearly explain what happens when the button is clicked.</p>
-
-<h4>Icon use</h4>
-<ul>
-  <li>Use icon frames of 16px within buttons.</li>
-  <li>Icons should always appear to the left of the label.</li>
-  <li>Icons used in buttons must be directly related to the action that the user is taking. <span class="u-color-cyan-60">Don't hesitate to create a new icon when it is necessary.</span></li>
-  <li>Always use the same color value as the label within a button. Icon follows label with equal emphasys.</li>
-  <li>Use icon in buttons to give more significancy to any action, function or indicate triggers as "open external link".</li>
-</ul>
-<p><span class="u-color-pink-60">An only icon button is represented by a pictogram. Use it on extreme situations. Make sure the drawing is clear and communicate in one glance what action it triggers.</span></p>
-
-## Variations
-
+  </div>
+  </div>
+  <div className="simple-tab__content content2">
+    <h2>Variations</h2>
 <div class="columns">
   <div class="column">
     <table className="doc-btn-table">
