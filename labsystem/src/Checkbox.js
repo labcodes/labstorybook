@@ -10,7 +10,7 @@ export default class Checkbox extends React.Component {
   static propTypes = {
     /** Text that will serve as unique identifier. It's also an important accessibility tool. */
     id: PropTypes.string.isRequired,
-    /** Text that will specify the HTML name attribute of an <input> element. */
+    /** Text that will specify the HTML name attribute of an `<input>` element. */
     name: PropTypes.string.isRequired,
     /** This is the checkbox's label. */
     label: PropTypes.string.isRequired,
@@ -24,7 +24,7 @@ export default class Checkbox extends React.Component {
     defaultChecked: PropTypes.bool,
     /** Callback action to be executed when the Checkbox is clicked. */
     onChange: PropTypes.func,
-    /** Value that will specify the HTML `value` attribute of an <input> element. */
+    /** Value that will specify the HTML `value` attribute of an `<input>` element. */
     value: PropTypes.oneOfType([string, number, bool]),
     /** Add a class name to make custom changes */
     className: PropTypes.string,
