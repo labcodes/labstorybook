@@ -1,0 +1,183 @@
+import { Fragment } from 'react';
+import { Meta, Story, Canvas, Preview, Props } from '@storybook/addon-docs/blocks';
+import Banner from "../../labsystem/src/Banner";
+
+<Meta title="Base/Grid" />
+
+
+<div className="docs-title docs-title--with-tab">
+  <div>
+    <h1 className="docs-title__text">Grid</h1>
+  </div>
+</div>
+
+<div className="docs-content">
+  <div className="simple-tab-wrapper"></div>
+  <input className="simple-tab" type="radio" name="type-tab" id="tab1" defaultChecked/>
+  <label htmlFor="tab1">Overview</label>
+
+  <input className="simple-tab" type="radio" name="type-tab" id="tab2" />
+  <label htmlFor="tab2">Code</label>
+
+  <div className="simple-tab__content content1">
+  <p>A grid consists of a specific set of alignment relationships that guides the distribution of elements in a page. It has 3 important elements:</p>
+
+  <div className="columns">
+    <div className="column">
+      <ol>
+        <li>Columns</li>
+        <li>Gutters</li>
+        <li>Margins</li>
+      </ol>
+    </div>
+    <div className="column is-three-quarters">
+      <img src="docs/grid/layout.svg" alt="Grid with all elements" />
+    </div>
+  </div>
+
+  <p><strong>Columns</strong></p>
+  <div className="columns">
+    <div className="column">
+      <img src="docs/grid/columns.svg" alt="Columns of a grid highlighted" />
+    </div>
+    <div className="column">
+      <p>Content is placed in the areas of the screen that contain columns.</p>
+      <p>Column width is defined using percentages, rather than fixed values, to allow content to flexibly adapt to any screen size. The number of columns displayed in the grid is determined by the screen size.</p>
+    </div>
+  </div>
+
+  <p><strong>Gutters</strong></p>
+  <div className="columns">
+    <div className="column">
+      <img src="docs/grid/gutters.svg" alt="Gutters of a grid highlighted" />
+    </div>
+    <div className="column">
+      <p>Gutters are the spaces between columns. They separate content.</p>
+      <p>Gutter widths are fixed values at each breakpoint range. Wider gutters are more appropriate for larger screens, as they create more whitespace between columns.</p>
+    </div>
+  </div>
+
+  <p><strong>Margins</strong></p>
+  <div className="columns">
+    <div className="column">
+      <img src="docs/grid/margins.svg" alt="Margins of a grid highlighted" />
+    </div>
+    <div className="column">
+      <p>Margins are the space between content and the left and right edges.</p>
+      <p>Margin widths are defined as fixed values at each breakpoint range. Wider margins are more appropriate for larger screens, as they create more whitespace around the perimeter of content.</p>
+    </div>
+  </div>
+
+  <p>We use a grid system of 12 columns to organize layout and content on a page.</p>
+  </div>
+
+  <div className="simple-tab__content content2">
+  <p>For this first release, we are using Bulma's grid. Bulma is a free, open source CSS framework based on Flexbox. It's responsive and modular, making it possible for us to import only the styles related to the grid.</p>
+  <p>Here are the important parts of Bulma's grid used on Confetti.</p>
+
+  <h2>Columns</h2>
+  <p>Bulma implements a column layout built with CSS Flexbox to create responsive interfaces.</p>
+  <p>To start it only requires a <code>columns</code> container and <code>columns</code> children. You can add add as many columns as you want, but is recommended to stick with 12 columns</p>
+  <p>By default, each column will have an equal width, no matter the number of columns.</p>
+
+  <Canvas>
+    <Story name="Columns">
+      <div className="columns">
+        <div className="column">
+          <Banner
+            type="info"
+            icon="check"
+            text="First column"
+          />
+        </div>
+        <div className="column">
+          <Banner
+            type="info"
+            icon="check"
+            text="Second column"
+          />
+        </div>
+        <div className="column">
+          <Banner
+            type="info"
+            icon="check"
+            text="Third column"
+          />
+        </div>
+        <div className="column">
+          <Banner
+            type="info"
+            icon="check"
+            text="Fourth column"
+          />
+        </div>
+      </div>
+    </Story>
+  </Canvas>
+
+  <p>You can change size, nest columns, define offset, how they look on different sizes and more. Check <a href="https://bulma.io/documentation/columns/">Bulma's documentation</a> to learn how.</p>
+
+  <h2>Container</h2>
+  <p>Besides the columns, the <code>container</code> is another important element to define layout.</p>
+  <p>It is a simple utility element that allows you to center content on larger viewports. Using the class <code>container</code> on a div will limit its width and center it horizontally.</p>
+  <p>This is how Bulma sets <code>max-width</code> as default:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Class</th>
+        <th>Below <code>1023px</code></th>
+        <th>Desktop. Between <code>1024px</code> and <code>1215px</code></th>
+        <th>Widescreen. Between <code>1216px</code> and <code>1407px</code></th>
+        <th>Fullhd. <code>1408px</code> and above</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>.container</code></td>
+        <td>full width</td>
+        <td><code>960px</code></td>
+        <td><code>1152px</code></td>
+        <td><code>1344px</code></td>
+      </tr>
+      <tr>
+        <td><code>.container.is-widescreen</code></td>
+        <td>full width</td>
+        <td>full width</td>
+        <td><code>1152px</code></td>
+        <td><code>1344px</code></td>
+      </tr>
+      <tr>
+        <td><code>.container.is-fullhd</code></td>
+        <td>full width</td>
+        <td>full width</td>
+        <td>full width</td>
+        <td><code>1344px</code></td>
+      </tr>
+      <tr>
+        <td><code>.container.is-fluid</code></td>
+        <td>full width</td>
+        <td>full width</td>
+        <td>full width</td>
+        <td>full width</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <p><strong>Example</strong></p>
+
+  <Canvas>
+    <Story name="Container">
+      <div className="container">
+        <Banner
+          type="info"
+          icon="check"
+          text="This alert is placed inside a container"
+        />
+      </div>
+    </Story>
+  </Canvas>
+
+  <p>For more details, check <a href="https://bulma.io/documentation/layout/container/">Bulma's documentation</a>.</p>
+  </div>
+</div>

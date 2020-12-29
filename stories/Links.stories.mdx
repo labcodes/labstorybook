@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 
 <Meta title="Components/Links" />
 
@@ -10,29 +10,25 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 </div>
 
 <div class="docs-content">
+  <p>Links can appear inline or isolated. Use it for internal navigation or conect to external content. Font size adjusts to the size of inline text or paragraph. Font color always White or Mineral 80. Use only primary or secondary colors on the Hyperlink indicator.</p>
 
-  Links can appear inline or isolated. Use it for internal navigation or conect to external content. Font size adjusts to the size of inline text or paragraph. Font color always White or Mineral 80. Use only primary or secondary colors on the Hyperlink indicator.
-
-  <Preview>
+  <Canvas>
     <Story name="Anchor link">
       <p>This is an <a href="">inline link</a></p>
     </Story>
-  </Preview>
+  </Canvas>
 
-  ## Anatomy
-
-  <h5>Field elements</h5><br/>
+  <h2>Anatomy</h2>
   <img src="docs/buttons/link-anatomy.svg" alt="Link anatomy"/>
 
-  ## Theming
+  <h2>Theming</h2>
+  <p>Font color always White or Mineral 80. Use only primary or secondary colors on the Hyperlink indicator.</p>
 
-  Font color always White or Mineral 80. Use only primary or secondary colors on the Hyperlink indicator.
-
-  <Preview>
+  <Canvas>
     <Story name="Anchor link themes">
       <p>This is an <a href="">inline link</a> for teal theme.</p>
       <p>This is an <a href="" className="doc-link--purple">inline link</a> for purple theme.</p>
     </Story>
-  </Preview>
+  </Canvas>
 
 </div>

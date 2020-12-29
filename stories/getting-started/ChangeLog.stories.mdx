@@ -1,0 +1,62 @@
+import { Fragment } from 'react';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { SimpleTag, TogglableTag, RemovableTag, DropdownTag } from "../../labsystem/src/Tags";
+
+<Meta title="Getting started/Changelog" />
+
+<div class="docs-title">
+  <div>
+    <h1 class="docs-title__text">Changelog</h1>
+  </div>
+</div>
+
+<div class="docs-content">
+
+| Component          | Design                                                | React                                                  | Accessibility                                                | Release                                          |
+| ------------------ | ----------------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| **Toggle**         | <SimpleTag text="Experimental" color="purple" />      | <SimpleTag text="Experimental" color="purple" />       | <SimpleTag text="Experimental" color="purple" />         | <SimpleTag text="0.1.0-alpha" color="cyan" />          |
+| **Radio**          | <SimpleTag text="Experimental" color="purple" />      | <SimpleTag text="Experimental" color="purple" />       | <SimpleTag text="Experimental" color="purple" />         | <SimpleTag text="0.1.0-alpha" color="cyan" />          |
+| **Checkbox**       | <SimpleTag text="Experimental" color="purple" />      | <SimpleTag text="Experimental" color="purple" />       | <SimpleTag text="Experimental" color="purple" />         | <SimpleTag text="0.1.0-alpha" color="cyan" />          |
+| **Buttons**        | <SimpleTag text="Experimental" color="purple" />      | <SimpleTag text="Experimental" color="purple" />       | <SimpleTag text="Experimental" color="purple" />         | <SimpleTag text="0.1.0-alpha" color="cyan" />          |
+| **Text Input**     | <SimpleTag text="Experimental" color="purple" />      | <SimpleTag text="Experimental" color="purple" />       | <SimpleTag text="Experimental" color="purple" />         | <SimpleTag text="0.1.0-alpha" color="cyan" />          |
+| **Search Input**   | <SimpleTag text="Experimental" color="purple" />      | <SimpleTag text="Experimental" color="purple" />       | <SimpleTag text="Experimental" color="purple" />         | <SimpleTag text="0.1.0-alpha" color="cyan" />          |
+| **Tags**           | <SimpleTag text="Experimental" color="purple" />      | <SimpleTag text="Experimental" color="purple" />       | <SimpleTag text="Experimental" color="purple" />         | <SimpleTag text="0.1.0-alpha" color="cyan" />          |
+| **Tooltips**       | <SimpleTag text="Experimental" color="purple" />      | <SimpleTag text="Experimental" color="purple" />       | <SimpleTag text="Experimental" color="purple" />         | <SimpleTag text="0.1.0-alpha" color="cyan" />          |
+| **Narrow Sidebar** | <SimpleTag text="Experimental" color="purple" />      | <SimpleTag text="Experimental" color="purple" />       | <SimpleTag text="Experimental" color="purple" />         | <SimpleTag text="0.1.0-alpha" color="cyan" />          |
+| **Dialog**         | <SimpleTag text="Experimental" color="purple" />      | <SimpleTag text="WIP" color="yellow" />                | <SimpleTag text="Experimental" color="purple" />         | <SimpleTag text="0.1.0-alpha" color="cyan" />          |
+| **Cards**          | <SimpleTag text="Experimental" color="purple" />      | <SimpleTag text="WIP" color="yellow" />                | <SimpleTag text="Experimental" color="purple" />         | <SimpleTag text="0.1.0-alpha" color="cyan" />          |
+| **Dropdown Menu**  | <SimpleTag text="Experimental" color="purple" />      | <SimpleTag text="WIP" color="yellow" />                | <SimpleTag text="Experimental" color="purple" />         | -                                                      |
+| **Slider**         | <SimpleTag text="Experimental" color="purple" />      | <SimpleTag text="Not started" />                       | -                                                      | -                                                      |
+| **Textarea**       | <SimpleTag text="Experimental" color="purple" />      | <SimpleTag text="Not started" />                       | -                                                      | -                                                      |
+| **Number Input**   | <SimpleTag text="Experimental" color="purple" />      | <SimpleTag text="Not started" />                       | -                                                      | -                                                      |
+| **Date Picker**    | <SimpleTag text="Experimental" color="purple" />      | <SimpleTag text="Not started" />                       | -                                                      | -                                                      |
+| **Tabs**           | <SimpleTag text="Experimental" color="purple" />      | <SimpleTag text="Not started" />                       | -                                                      | -                                                      |
+| **Autocomplete**   | <SimpleTag text="Experimental" color="purple" />      | <SimpleTag text="Not started" />                       | -                                                      | -                                                      |
+| **File Uploader**  | <SimpleTag text="Experimental" color="purple" />      | <SimpleTag text="Not started" />                       | -                                                      | -                                                      |
+| **Notifications**  | <SimpleTag text="Experimental" color="purple" />      | <SimpleTag text="Not started" />                       | -                                                      | -                                                      |
+| **Alerts**         | <SimpleTag text="Experimental" color="purple" />      | <SimpleTag text="Not started" />                       | -                                                      | -                                                      |
+| **Sidebar**        | <SimpleTag text="Experimental" color="purple" />      | <SimpleTag text="Not started" />                       | -                                                      | -                                                      |
+| **Topbar**         | <SimpleTag text="Experimental" color="purple" />      | <SimpleTag text="Not started" />                       | -                                                      | -                                                      |
+| **Lists**          | <SimpleTag text="Experimental" color="purple" />      | <SimpleTag text="Not started" />                       | -                                                      | -                                                      |
+| **Data Table**     | <SimpleTag text="Experimental" color="purple" />      | <SimpleTag text="Not started" />                       | -                                                      | -                                                      |
+
+<h2>Status description</h2>
+
+Design: to understand which components are available on Figma's Design System or are mapped on the roadmap.
+* <SimpleTag text="Not started" color="mineral" /> The component is mapped but hasn't started yet.
+* <SimpleTag text="Experimental" color="purple" /> The component is ready to be implemented, but misses usability checks (Figma-wise).
+* <SimpleTag text="Stable" color="teal" /> The component is ready to be implemented and has been tested (Figma-wise).
+
+React: to understand which components are available to use in Confetti or are mapped on the roadmap.
+* <SimpleTag text="Not started" color="mineral" /> The component is mapped but hasn't started yet.
+* <SimpleTag text="WIP" color="yellow" /> Work in Progress.
+* <SimpleTag text="Experimental" color="purple" /> The component is ready, but bugs are expected.
+* <SimpleTag text="Stable" color="teal" /> The component is robust and stable.
+
+Accessibility: to understand component's accessibility testing.
+* <SimpleTag text="Experimental" color="purple" /> Passed text editor checks, but misses manual checks.
+* <SimpleTag text="Stable" color="teal" /> Passed both automatic and manual tests.
+
+Release: to check a component's release version.
+
+</div>
