@@ -4,28 +4,35 @@ import { isUndefined } from "lodash";
 
 export default class AbstractTag extends React.Component {
   static propTypes = {
-    text: PropTypes.string.isRequired,
-    disabled: PropTypes.bool,
-    isOutline: PropTypes.bool,
-    skin: PropTypes.string,
-    color: PropTypes.string,
-    onClick: PropTypes.func,
+    /** Tag's left element (optional and customizable) */
     renderPrefix: PropTypes.object,
+    /** Components to be rendered at the end of the Tag. */
     renderSuffix: PropTypes.object,
+    /** Defines a class name to create a custom style for the component. */
     className: PropTypes.string,
-    tabIndex: PropTypes.string,
+    /** This is the Tag's text. */
+    text: PropTypes.string.isRequired,
+    /** Sets Tag's color. */
+    color: PropTypes.string,
+    /** Skin of the the rendered Tag. */
+    skin: PropTypes.string,
+    /** Sets an outline style. */
+    isOutline: PropTypes.bool,
+    /** Disables the Tag component. */
+    disabled: PropTypes.bool,
+    /** Action to be executed when the Tag is clicked. */
+    onClick: PropTypes.func,
   };
 
   static defaultProps = {
-    isOutline: false,
-    skin: "pale",
-    color: "",
-    disabled: false,
-    onClick: undefined,
     renderPrefix: undefined,
     renderSuffix: undefined,
     className: "",
-    tabIndex: "0",
+    isOutline: false,
+    color: "",
+    skin: "pale",
+    disabled: false,
+    onClick: () => {},
   };
 
   handleEvent = (event) => {
@@ -48,7 +55,6 @@ export default class AbstractTag extends React.Component {
       renderPrefix,
       renderSuffix,
       className,
-      tabIndex,
     } = this.props;
 
     return (
@@ -61,9 +67,8 @@ export default class AbstractTag extends React.Component {
         }
         onClick={this.handleEvent}
         onKeyPress={this.handleEvent}
-        role="presentation"
-        // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-        tabIndex={tabIndex}
+        role="button"
+        tabIndex="0"
       >
         {renderPrefix}
         {text}

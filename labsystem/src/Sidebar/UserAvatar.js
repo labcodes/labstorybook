@@ -3,8 +3,11 @@ import PropTypes from "prop-types";
 
 export default class UserAvatar extends React.Component {
   static propTypes = {
+    /** Source of the avatar to be rendered. */
     avatarSrc: PropTypes.string.isRequired,
+    /** Text that will specify the HTML alt attribute of an <img> element. */
     altText: PropTypes.string.isRequired,
+    /** Text that will be rendered as the avatar's caption. */
     caption: PropTypes.string.isRequired,
   };
 

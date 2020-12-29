@@ -8,16 +8,26 @@ import Icon from "./Icon";
 
 export default class Checkbox extends React.Component {
   static propTypes = {
+    /** Text that will serve as unique identifier. It's also an important accessibility tool. */
     id: PropTypes.string.isRequired,
+    /** Text that will specify the HTML name attribute of an `<input>` element. */
     name: PropTypes.string.isRequired,
+    /** This is the checkbox's label. */
     label: PropTypes.string.isRequired,
+    /** Disables the checkbox. */
     disabled: PropTypes.bool,
+    /** Defines if the Checkbox is currently checked. */
     checked: PropTypes.bool,
-    value: PropTypes.oneOfType([string, number, bool]),
+    /** Marks Checkbox as indeterminate. Used on "check/uncheck all" Checkbox in a `fieldset` to display when some itens are checked and others are unchecked */
     indeterminate: PropTypes.bool,
+    /** Defines if the Checkbox is initialized as "checked". */
     defaultChecked: PropTypes.bool,
-    className: PropTypes.string,
+    /** Callback action to be executed when the Checkbox is clicked. */
     onChange: PropTypes.func,
+    /** Value that will specify the HTML `value` attribute of an `<input>` element. */
+    value: PropTypes.oneOfType([string, number, bool]),
+    /** Add a class name to make custom changes */
+    className: PropTypes.string,
   };
 
   static defaultProps = {
@@ -27,7 +37,7 @@ export default class Checkbox extends React.Component {
     indeterminate: false,
     defaultChecked: undefined,
     className: undefined,
-    onChange: undefined,
+    onChange: () => {},
   };
 
   constructor(props) {
@@ -50,29 +60,28 @@ export default class Checkbox extends React.Component {
     this.state = {
       localChecked,
     };
+
+    this.inputRef = React.createRef();
+  }
+
+  componentDidMount() {
+    this.checkIndeterminate();
   }
 
   componentDidUpdate(prevProps) {
     const { checked } = this.props;
+
     if (checked !== prevProps.checked) {
       // eslint-disable-next-line react/no-did-update-set-state
       this.setState(() => ({ localChecked: checked }));
     }
+
+    this.checkIndeterminate();
   }
 
-  checkIcon = () => {
-    const { disabled, indeterminate } = this.props;
-    let color = "white";
-    let type = "check";
-
-    if (indeterminate) {
-      type = "minus";
-    }
-    if (disabled) {
-      color = "mineral-40";
-    }
-
-    return <Icon type={type} color={color} size="small" />;
+  checkIndeterminate = () => {
+    const { indeterminate } = this.props;
+    this.inputRef.current.indeterminate = indeterminate;
   };
 
   handleOnChange = (event) => {
@@ -102,6 +111,7 @@ export default class Checkbox extends React.Component {
         <input
           className={`lab-checkbox ${className || ""}`}
           type="checkbox"
+          ref={this.inputRef}
           id={id}
           name={name}
           checked={localChecked}
@@ -111,7 +121,13 @@ export default class Checkbox extends React.Component {
         />
         <label className="lab-checkbox__label" htmlFor={id}>
           <span className="lab-checkbox__box">
-            {localChecked || indeterminate ? this.checkIcon() : ""}
+            {localChecked || indeterminate ? (
+              <Icon
+                type={indeterminate ? "minus" : "check"}
+                color={disabled ? "mineral-40" : "white"}
+                size="small"
+              />
+            ) : null}
           </span>
           {label}
         </label>

@@ -16,23 +16,19 @@ import TextInputPlayground from '../playgrounds/TextInputPlayground';
 
 <div class="docs-content">
 
-#### General usage
+<p>This component is a form field that allows user to type text information. We can have 3 types of text inputs.</p>
 
-This component is a form field that allows user to type text information.
-We can have 3 types of text inputs.
-<br />
-
-#### Type
+<h2>Types</h2>
 <div class="columns">
   <div class="column">
-    <img src="docs/text-input/types-01.png" />
+    <img src="docs/text-input/types-01.png" alt="Text and email types of inputs" />
     <p>
       This component is a form field that allows user to type text information.
       We can have 3 types of text inputs.
     </p>
   </div>
   <div class="column">
-    <img src="docs/text-input/types-02.png" />
+    <img src="docs/text-input/types-02.png" alt="Password input" />
     <p>
       Password input type should be styling as the Default Input with trailing icon.
       The icon must work as a toggle, showing (or hiding) the visibility of the password as the user clicks on it.
@@ -40,13 +36,12 @@ We can have 3 types of text inputs.
   </div>
 </div>
 
-#### Anatomy
+<h2>Anatomy</h2>
+<p><strong>Field elements</strong></p>
+<img src="docs/anatomy.png" alt="Input anatomy" />
 
-###### Field elements
-![input anatomy](docs/anatomy.png)
-
-###### Prefix and Suffix elements
-![prefix and suffix input anatomy](docs/anatomy-02.png)
+<p><strong>Prefix and Suffix elements</strong></p>
+<img src="docs/anatomy-02.png" alt="Prefix and suffix input anatomy" />
 
 <h2>Interactive demo</h2>
 <p>This demo lets you preview the component, its variations, and configuration options.</p>
@@ -64,59 +59,55 @@ We can have 3 types of text inputs.
 ### PasswordInput
 <ArgsTable of={PasswordInput} />
 
-#### Default Input
-
-It’s a standard text input. Can be used for enter a id, phone number, street address, email address, etc.
+<h2>Examples</h2>
+<h3>Default Input</h3>
+<p>It’s a standard text input. Can be used for enter a id, phone number, street address, email address, etc.</p>
 
 <Canvas>
   <Story name="Default Input">
     <Fragment>
       <div className="stories-half_width-wrapper">
-        <h6>Disabled</h6>
+        <p><strong>Disabled</strong></p>
         <TextInput type="text" id="disabled" label="Disabled" disabled />
-        <h6>Default</h6>
+        <p><strong>Default</strong></p>
         <TextInput id="id" label="Label" />
-        <h6>Trailing icon</h6>
+        <p><strong>Trailing icon</strong></p>
         <TextInput className="lab-input__field--icon" id="id2" label="Label" icon="eye-opened" iconColor="mineral-70" />
-        <h6>Error</h6>
+        <p><strong>Error</strong></p>
         <EmailInput id="error" label="Name" defaultValue="Teste" customErrorMsg="Error message" />
       </div>
     </Fragment>
   </Story>
 </Canvas>
 
-#### Required Input
-
-It’s a default input that is required to be filled. It has a helper message to inform if a required input text is missing.
+<h3>Required Input</h3>
+<p>It’s a default input that is required to be filled. It has a helper message to inform if a required input text is missing.</p>
 
 <Canvas>
   <Story name="Required Input">
     <Fragment>
       <div className="stories-half_width-wrapper">
-        <h6>Required Default</h6>
+        <p><strong>Required Default</strong></p>
         <TextInput type="text" id="required" label="Label" helpMessage="Help message" required />
-        <h6>Required Error</h6>
+        <p><strong>Required Error</strong></p>
         <TextInput type="email" id="required2" label="Required" isValid={false} helpMessage="Help message" customErrorMsg="teste" required />
       </div>
     </Fragment>
   </Story>
 </Canvas>
 
-#### Prefix
-
-It’s a text field input + fixed prefix.
+<h3>Prefix</h3>
+<p>It’s a text field input + fixed prefix.</p>
 
 <Canvas>
   <Story name="Prefix Input">
     <Fragment>
       <div className="stories-half_width-wrapper">
-        <h6>Prefix Disabled</h6>
+        <p><strong>Prefix Disabled</strong></p>
         <TextInput id="prefix-disabled" label="Label" prefix="CAD" disabled />
-        <br />
-        <h6>Prefix Default</h6>
+        <p><strong>Prefix Default</strong></p>
         <TextInput id="help" label="Label" prefix="R$"/>
-        <br />
-        <h6>Prefix Error</h6>
+        <p><strong>Prefix Error</strong></p>
         <TextInput
           type="email"
           id="prefix-error"
@@ -131,21 +122,18 @@ It’s a text field input + fixed prefix.
   </Story>
 </Canvas>
 
-#### Suffix
-
-It’s a text field input + fixed suffix.
+<h3>Suffix</h3>
+<p>It’s a text field input + fixed suffix.</p>
 
 <Canvas>
   <Story name="Suffix Input">
     <Fragment>
       <div className="stories-half_width-wrapper">
-        <h6>Suffix Disabled</h6>
+        <p><strong>Suffix Disabled</strong></p>
         <TextInput id="suffix-disabled" label="Label" suffix=".com" disabled />
-        <br/>
-        <h6>Suffix Default</h6>
+        <p><strong>Suffix Default</strong></p>
         <TextInput id="suffix-address" label="Label" suffix=".com" />
-        <br />
-        <h6>Suffix Error</h6>
+        <p><strong>Suffix Error</strong></p>
         <TextInput
           type="email"
           id="suffix-error"
@@ -160,10 +148,10 @@ It’s a text field input + fixed suffix.
   </Story>
 </Canvas>
 
-#### Behavior
+<h2>Behavior</h2>
 <div class="columns">
   <div class="column">
-    <h6>Default input/ Prefix and suffix input</h6>
+    <h3>Default, prefix and suffix input</h3>
     <ol>
       <li>Click on the component to focus </li>
       <li>The placeholder will move up and behave like a label</li>
@@ -173,7 +161,7 @@ It’s a text field input + fixed suffix.
     </ol>
   </div>
   <div class="column">
-    <h6>Required Input</h6>
+    <h3>Required Input</h3>
     <ol>
       <li>Click on the component to focus</li>
       <li>The placeholder will move up and behave like a label</li>
@@ -186,7 +174,7 @@ It’s a text field input + fixed suffix.
   </div>
 </div>
 
-#### Text, Email and Password Input Components
+<h3>Text, Email and Password Input Components</h3>
 
 <Canvas>
   <Story name="Email Input Component">
@@ -200,27 +188,24 @@ It’s a text field input + fixed suffix.
   </Story>
 </Canvas>
 
-#### Theming
+<h2>Theming</h2>
+<p>For text inputs, you can also use purple theme. Error state remain with the same style in any theme. The theme must be selected by changing the value of the <code>$input-theme</code> variable in the <code>scss/variables/_settings.scss</code>.</p>
 
-For text inputs, you can also use purple theme. Error state remain with the same style in any theme.
-The theme must be selected by changing the value of the `$input-theme` variable in the `scss/variables/_settings.scss`.
 <Canvas>
   <Story name="Styles">
   <Fragment>
     <div className="stories-half_width-wrapper lab-input--stories-force-purple">
-      <h6>Default</h6>
+      <p><strong>Default</strong></p>
         <TextInput defaultValue="Purple" id="purple1" label="Label" />
-      <h6>Required Default</h6>
+      <p><strong>Required Default</strong></p>
         <TextInput id="purple2" label="Label" defaultValue="Purple"
         helpMessage="Help message" required />
-      <h6>Prefix Default</h6>
+      <p><strong>Prefix Default</strong></p>
         <TextInput defaultValue="Purple"
         id="purple3" label="Label" prefix="R$" />
-      <br />
-      <h6>Suffix Default</h6>
+      <p><strong>Suffix Default</strong></p>
         <TextInput defaultValue="Purple"
         id="suffix-address-purple" label="Label" suffix=".com" />
-      <br />
     </div>
   </Fragment>
   </Story>

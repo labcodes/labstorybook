@@ -43,18 +43,20 @@ import NarrowSidebarPlayground from '../playgrounds/NarrowSidebarPlayground';
 
   <div class="columns">
     <div class="column">
-      <img src="docs/narrow-sidebar/header-nside.png" />
+      <img src="docs/narrow-sidebar/header-nside.png" alt="Narrow sidebar header examples" />
       <p><strong>Header (mandatory)</strong></p>
       <p>You must choose at least one of the above options to use in your Narrow Sidebar.</p>
-      <img src="docs/narrow-sidebar/obs-nside.png" />
+      <div className="doc-em-block">
+        <p>*Even if using body or footer is optional, the narrow sidebar should have at least one of them.</p>
+      </div>
     </div>
     <div class="column">
-      <img src="docs/narrow-sidebar/body-nside.png" />
+      <img src="docs/narrow-sidebar/body-nside.png" alt="Narrow sidebar body example" />
       <p><strong>Body</strong></p>
       <p>Body can be designed following these components above. The labels can only have 15 characters, so if more text is necessary here, you should use the Standard Sidebar*.</p>
     </div>
     <div class="column">
-      <img src="docs/narrow-sidebar/footer-nside.png" />
+      <img src="docs/narrow-sidebar/footer-nside.png" alt="Narrow sidebar footer examples" />
       <p><strong>Footer</strong></p>
       <p>Using the footer is optional, and you can use one of the following layouts.</p>
     </div>
@@ -68,31 +70,31 @@ import NarrowSidebarPlayground from '../playgrounds/NarrowSidebarPlayground';
   <h2>Prop API</h2>
   <p>Go to <a href="/?path=/docs/getting-started-setup-confetti--page">Setup</a> for instructions on how to import the component.  </p>
 
-  ### NarrowSidebar
-  <ArgsTable of={NarrowSidebar} />
+  <h3>NarrowSidebar</h3>
+  <ArgsTable of={NarrowSidebar}/>
 
-  ### Header
+  <h3>Header</h3>
   <ArgsTable of={Header}/>
 
-  ### Logotype
-  <ArgsTable of={Logotype}/>
-
-  ### Body
+  <h3>Body</h3>
   <ArgsTable of={Body}/>
 
-  ### Item
+  <h3>Item</h3>
   <ArgsTable of={Item}/>
 
-  ### Footer
+  <h3>Footer</h3>
   <ArgsTable of={Footer}/>
 
-  ### FooterButton
+  <h3>FooterButton</h3>
   <ArgsTable of={FooterButton}/>
 
-  ### UserAvatar
+  <h3>UserAvatar</h3>
   <ArgsTable of={UserAvatar}/>
 
-  ### CollapseButton
+  <h3>Logotype</h3>
+  <ArgsTable of={Logotype}/>
+
+  <h3>CollapseButton</h3>
   <ArgsTable of={CollapseButton}/>
 
   <h2>Accessibility</h2>
