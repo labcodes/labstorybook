@@ -25,7 +25,7 @@ import ButtonPlayground from "../playgrounds/ButtonPlayground";
   <div className="simple-tab__content content1">
     <h2>Overview</h2>
       <p>Buttons are used to initialize and trigger actions, link internal sections and point to external pages. Their primary use is triggering actions (e.g.: add, save, delete, confirmation prompts, etc.)</p>
-<p>Buttons can be composed of just a label or of an icon plus a label.</p>
+      <p>Buttons can be composed of just a label or of an icon plus a label.</p>
       <div className="doc-anatomy-block">
         <div class="columns">
           <div class="column">
@@ -44,12 +44,12 @@ import ButtonPlayground from "../playgrounds/ButtonPlayground";
             <h3>Borders</h3>
             <img src="docs/buttons/btn-borders.svg" alt="Button borders scheme"/>
             <p>All the buttons have a rounded corner radius of 4px on it's base background or border. Base and Focus borders should have 2px, and Hover borders should have 6px.</p>
-  </div>
+          </div>
           <div class="column">
             <h3>Paddings & Spacings</h3>
             <img src="docs/buttons/btn-spacing.svg" alt="Button spacing scheme"/>
             <p>Left and Right: 16px<br/>Top and Bottom: Flexible according to button size<br/>Internal: 8px</p>
-  </div>
+          </div>
         </div>
       </div>
     <h2>Interactive Demo</h2>
@@ -62,81 +62,81 @@ import ButtonPlayground from "../playgrounds/ButtonPlayground";
   <div className="simple-tab__content content2">
     <h2>Variations</h2>
       <p>Primary calls to action on a dialog or on a page should be represented by a <code>Button</code>. Secondary or related actions should be represented by an <code>OutlineButton</code>. A <code>TextButton</code> is recommend for tertiary actions.</p>
-<div class="columns">
-  <div class="column">
-    <table className="doc-btn-table">
-      <thead>
-        <tr>
-          <th><h4>Variant</h4></th>
-          <th><h4>Purpose</h4></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
+      <div class="columns">
+        <div class="column">
+          <table className="doc-btn-table">
+            <thead>
+              <tr>
+                <th><h4>Variant</h4></th>
+                <th><h4>Purpose</h4></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
                   <div class="doc-buttons"><Button text="Button" /></div>
                   <div class="doc-buttons"><Button text="Button" icon="reload" /></div>
-          </td>
+                </td>
                 <td><p><strong>Button:</strong> Primary call to action or trigger on the page or modal. Use it to highlight the strongest call to action on a page. Default buttons should only appear once per screen area. Not every screen requires a default button.</p></td>
-        </tr>
-        <tr>
-          <td>
-            <div className="doc-buttons"><OutlineButton text="Outline" /></div>
-            <div className="doc-buttons"><OutlineButton text="Outline" icon="reload" /></div>
-          </td>
+              </tr>
+              <tr>
+                <td>
+                  <div className="doc-buttons"><OutlineButton text="Outline" /></div>
+                  <div className="doc-buttons"><OutlineButton text="Outline" icon="reload" /></div>
+                </td>
                 <td><p><strong>OutlineButton:</strong> Secondary actions or triggers on each page. Prefer this one to the default one, specially on a page with lots of buttons.</p></td>
-        </tr>
-        <tr>
-          <td>
-            <div className="doc-buttons"><TextButton text="Text" /></div>
-            <div className="doc-buttons"><TextButton text="Text" icon="reload" /></div>
-          </td>
+              </tr>
+              <tr>
+                <td>
+                  <div className="doc-buttons"><TextButton text="Text" /></div>
+                  <div className="doc-buttons"><TextButton text="Text" icon="reload" /></div>
+                </td>
                 <td><p><strong>TextButton:</strong> Tertiary or less important actions or triggers. Use it to connect internal pages or to trigger internal functions of a component.</p></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-    <div class="column">
-    <table className="doc-btn-table">
-      <thead>
-        <tr>
-          <th><h4>Size</h4></th>
-          <th><h4>Purpose</h4></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class="doc-buttons"><Button text="Small" size="small" /></div>
-          </td>
-          <td>
-            <p><strong>Small:</strong> Use it when there is not enough vertical space.<br/>
-            <strong><span class="u-color-red-60">Never use it on touch applications.</span></strong><br/>
-            <strong>Height:</strong> 32px</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="doc-buttons"><Button text="Normal" /></div>
-          </td>
-          <td>
-            <p><strong>Normal:</strong> For use in day-to-day situations.<br/>
-            <strong>Height:</strong> 40px</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="doc-buttons"><Button text="Large" size="large" /></div>
-          </td>
-          <td>
-            <p><strong>Large:</strong> Use large buttons on modals, dialogs and touch applications.<br/>
-            <strong>Height:</strong> 48px</p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+          <div class="column">
+          <table className="doc-btn-table">
+            <thead>
+              <tr>
+                <th><h4>Size</h4></th>
+                <th><h4>Purpose</h4></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="doc-buttons"><Button text="Small" size="small" /></div>
+                </td>
+                <td>
+                  <p><strong>Small:</strong> Use it when there is not enough vertical space.<br/>
+                  <strong><span class="u-color-red-60">Never use it on touch applications.</span></strong><br/>
+                  <strong>Height:</strong> 32px</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="doc-buttons"><Button text="Normal" /></div>
+                </td>
+                <td>
+                  <p><strong>Normal:</strong> For use in day-to-day situations.<br/>
+                  <strong>Height:</strong> 40px</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="doc-buttons"><Button text="Large" size="large" /></div>
+                </td>
+                <td>
+                  <p><strong>Large:</strong> Use large buttons on modals, dialogs and touch applications.<br/>
+                  <strong>Height:</strong> 48px</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     <h2>Theming</h2> 
       <p>When using a purple theme, the component will be styled accordingly.</p>
       <img src="/docs/buttons/btn-theme.png" />
@@ -149,262 +149,49 @@ import ButtonPlayground from "../playgrounds/ButtonPlayground";
       <li>Use <code>confirmation-invert</code> when the primary action is over a <code>green-60</code> background.</li>
     </ul>
 
-<div className="simple-tab__content content3">
-  <h2>Interactive Demo</h2>
-  <p>This demo lets you preview the button component, its variations, and configuration options.</p>
-
-  <ButtonPlayground />
-</div>
-
-<h2>Prop API</h2>
-<p>Go to <a href="/?path=/docs/getting-started-setup-confetti--page">Setup</a> for instructions on how to import the component.  </p>
-<ArgsTable of={Button} />
-
-## Anatomy
-
-<div class="columns">
-  <div class="column">
-    <h5>Field elements</h5><br/>
-    <img src="docs/buttons/btn-field.svg" alt="Buttons field elements"/>
-  </div>
-  <div class="column">
-    <br/>
-    <ol>
-      <li>Label</li>
-      <li>Icon (optional)</li>
-      <li>Base background (invisible on Outline and Text variations)</li>
-      <li>Base border</li>
-      <li>Focus border</li>
-      <li>Hover border</li>
-    </ol>
-  </div>
-  <div class="column">
-    <h5>Borders</h5><br/><br/>
-    <img src="docs/buttons/btn-borders.svg" alt="Button borders scheme"/><br/><br/>
-    <p>All the buttons have a rounded corner radius of 4px on it's base background or border. Base and Focus borders should have 2px, and Hover borders should have 6px.</p>
-  </div>
-  <div class="column">
-    <h5>Paddings & Spacings</h5><br/><br/>
-    <img src="docs/buttons/btn-spacing.svg" alt="Button spacing scheme"/><br/><br/>
-    <p>Left and Right: 16px<br/>Top and Bottom: Flexible according to button size<br/>Internal: 8px</p>
-  </div>
-</div>
-
-## States and Styles
-
-### Default
-
-<Canvas>
-  <Story name="Default Button">
-    <Fragment>
-      <div className="doc-buttons">
-      <Button text="Normal" />
-      </div>
-      <div className="doc-buttons">
-      <Button text="Normal disabled" disabled />
-      </div>
-      <div className="doc-buttons">
-        <Button text="Large" size="large" />
-      </div>
-      <div className="doc-buttons">
-        <Button text="Large disabled" size="large" disabled />
-      </div>
-      <div className="doc-buttons">
-        <Button text="Small" size="small" />
-      </div>
-      <div className="doc-buttons">
-        <Button text="Small disabled" size="small" disabled />
-      </div>
-    </Fragment>
-  </Story>
-</Canvas>
-
-#### Default with icons
-
-<Canvas>
+  <Canvas>
     <Story name="Skins">
-    <Fragment>
-      <div className="doc-buttons">
+      <Fragment>
+        <div className="doc-buttons">
           <Button text="Dark" icon="reload" skin="dark" />
-      </div>
-      <div className="doc-buttons">
+        </div>
+        <div className="doc-buttons">
           <Button text="Destructive" skin="destructive" icon="reload" />
-      </div>
-      <div className="doc-buttons">
-        <Button text="Small" icon="reload" size="small" />
-      </div>
-      <div className="doc-buttons">
-        <Button text="Small disabled" icon="reload" size="small" disabled />
-      </div>
-    </Fragment>
-  </Story>
-</Canvas>
-
-#### Skins
-
-Use the mineral or white skins for primary actions on <b>toasts</b> and <b>banners</b>.
-
-You can also use <b>Message Colors</b> on labels to place these buttons also in background colored <b>notifications</b>.
-
-<Canvas>
-  <Story name="Default Button Skins">
-    <Fragment>
-      <div className="doc-buttons">
-        <Button text="Dark" skin="dark" />
-      </div>
-      <div className="doc-buttons">
-        <Button text="Warning" skin="warning" />
-      </div>
-      <div className="doc-buttons">
-        <Button text="Destructive" skin="destructive" />
-      </div>
-      <br />
-      <div className="doc-buttons doc-buttons--light">
-        <Button text="Light" skin="light" />
-      </div>
-      <div className="doc-buttons doc-buttons--warning">
-        <Button text="Warning" skin="warning-invert" />
-      </div>
-      <div className="doc-buttons doc-buttons--destructive">
-        <Button text="Destructive" skin="destructive-invert" />
-      </div>
-      <div className="doc-buttons doc-buttons--confirmation">
-        <Button text="Confirmation" skin="confirmation-invert" />
-      </div>
-    </Fragment>
-  </Story>
-</Canvas>
-
-#### Skins with icons
-
-<Canvas>
-  <Story name="Default Button Skins icons">
-    <Fragment>
-      <div className="doc-buttons">
-        <Button text="Dark" icon="reload" skin="dark" />
-      </div>
-      <div className="doc-buttons">
-        <Button text="Warning" skin="warning" icon="reload"  />
-      </div>
-      <div className="doc-buttons">
-        <Button text="Destructive" skin="destructive" icon="reload" />
-      </div>
-      <br />
-      <div className="doc-buttons doc-buttons--light">
-        <Button text="Light" icon="reload" skin="light" />
-      </div>
-      <div className="doc-buttons doc-buttons--warning">
-        <Button text="Warning" icon="reload" skin="warning-invert" />
-      </div>
-      <div className="doc-buttons doc-buttons--destructive">
-        <Button text="Destructive" icon="reload" skin="destructive-invert" />
-      </div>
+        </div>
+        <div className="doc-buttons">
+        <br />
+          <Button text="Warning" skin="warning" icon="reload"  />
+        </div>
+        <br />
+        <div className="doc-buttons doc-buttons--light">
+          <Button text="Light" icon="reload" skin="light" />
+        </div>
+        <div className="doc-buttons doc-buttons--destructive">
+          <Button text="Destructive" icon="reload" skin="destructive-invert" />
+        </div>
         <div className="doc-buttons doc-buttons--warning">
           <Button text="Warning" icon="reload" skin="warning-invert" />
         </div>
-      <div className="doc-buttons doc-buttons--confirmation">
-        <Button text="Confirmation" icon="reload" skin="confirmation-invert" />
-      </div>
+        <div className="doc-buttons doc-buttons--confirmation">
+          <Button text="Confirmation" icon="reload" skin="confirmation-invert" />
+        </div>
         <br />
-      <div className="doc-buttons">
+        <div className="doc-buttons">
           <OutlineButton text="Dark" icon="reload" skin="dark" />
-      </div>
-      <div className="doc-buttons">
+        </div>
+        <div className="doc-buttons">
           <TextButton text="Dark" icon="reload" skin="dark" />
-      </div>
+        </div>
         <br />
-      <div className="doc-buttons doc-buttons--light">
-        <OutlineButton text="Light" icon="reload" skin="light" />
-      </div>
-      <div className="doc-buttons">
-        <OutlineButton text="Dark" icon="reload" skin="dark" />
-      </div>
-    </Fragment>
-  </Story>
-</Canvas>
-
-### Text
-
-<Canvas>
-  <Story name="Text Button">
-    <Fragment>
-      <div className="doc-buttons">
-        <TextButton text="Normal" />
-      </div>
-      <div className="doc-buttons">
-        <TextButton text="Normal disabled" disabled />
-      </div>
-      <div className="doc-buttons">
-        <TextButton text="Large" size="large" />
-      </div>
-      <div className="doc-buttons">
-        <TextButton text="Large disabled" size="large" disabled />
-      </div>
-      <div className="doc-buttons">
-        <TextButton text="Small" size="small" />
-      </div>
-      <div className="doc-buttons">
-        <TextButton text="Small disabled" size="small" disabled />
-      </div>
-    </Fragment>
-  </Story>
-</Canvas>
-
-### Text with icon
-
-<Canvas>
-  <Story name="Text Button icon">
-    <Fragment>
-      <div className="doc-buttons">
-        <TextButton text="Normal" icon="reload" />
-      </div>
-      <div className="doc-buttons">
-        <TextButton text="Normal disabled" icon="reload" disabled />
-      </div>
-      <div className="doc-buttons">
-        <TextButton text="Large" icon="reload" size="large" />
-      </div>
-      <div className="doc-buttons">
-        <TextButton text="Large disabled" icon="reload" size="large" disabled />
-      </div>
-      <div className="doc-buttons">
-        <TextButton text="Small" icon="reload" size="small" />
-      </div>
-      <div className="doc-buttons">
-        <Button text="Small disabled" icon="reload" size="small" disabled />
-      </div>
-    </Fragment>
-  </Story>
-</Canvas>
-
-#### Skins
-
-Use the mineral or white skins for secondary actions on <b>notifications</b> and <b>dialogs</b>.
-
-<Canvas>
-  <Story name="Text Button Skins">
-    <Fragment>
-      <div className="doc-buttons doc-buttons--light">
-        <TextButton text="Light" skin="light" />
-      </div>
-      <div className="doc-buttons">
-        <TextButton text="Dark" skin="dark" />
-      </div>
-    </Fragment>
-  </Story>
-</Canvas>
-
-#### Skin with icon
-
-<Canvas>
-  <Story name="Text Button Skins icon">
-    <Fragment>
-      <div className="doc-buttons doc-buttons--light">
+        <div className="doc-buttons doc-buttons--light">
+          <OutlineButton text="Light" icon="reload" skin="light" />
+        </div>
+        <div className="doc-buttons doc-buttons--light">
           <TextButton text="Light" icon="reload" skin="light" />
-      </div>
-    </Fragment>
-  </Story>
-</Canvas>
+        </div>
+      </Fragment>
+    </Story>
+  </Canvas>
 
   <h2>Button positioning and order</h2>
     <p><code>Button</code> always appear on the right of modals, dialogs, forms and most of UI parts. <code>OutlineButton</code> and <code>TextButton</code> appear and pile to the left of <code>Button</code>.</p>
@@ -414,21 +201,21 @@ Use the mineral or white skins for secondary actions on <b>notifications</b> and
       <li>Use full-width buttons for dialogs and side panels.</li>
     </ul>
 
-<Canvas>
-  <Story name="Full-width Button">
-    <Fragment>
-        <div className="doc-buttons--block">
-          <Button text="Small Button" size="small" fullWidth/>
-        </div>
-        <div className="doc-buttons--block">
-          <TextButton text="Normal Text Button" size="normal" fullWidth/>
-        </div>
-        <div className="doc-buttons--block">
-          <OutlineButton text="Large Outline Button" size="large" fullWidth/>
-        </div>
-    </Fragment>
-  </Story>
-</Canvas>
+  <Canvas>
+    <Story name="Full-width Button">
+      <Fragment>
+          <div className="doc-buttons--block">
+            <Button text="Small Button" size="small" fullWidth/>
+          </div>
+          <div className="doc-buttons--block">
+            <TextButton text="Normal Text Button" size="normal" fullWidth/>
+          </div>
+          <div className="doc-buttons--block">
+            <OutlineButton text="Large Outline Button" size="large" fullWidth/>
+          </div>
+      </Fragment>
+    </Story>
+  </Canvas>
 
   <h2>Labels</h2>
   <p>Button labels must say what will happen when the user interacts with it.</p>
