@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Button, OutlineButton, TextButton } from "../Buttons";
+import { Button, OutlineButton, TextButton } from "../Button";
 import { CardContext } from "./contexts";
 
 export default class DoubleAction extends React.Component {
