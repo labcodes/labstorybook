@@ -16,10 +16,7 @@ import { thumbSrcOptions, iconOptions } from "../playgrounds/assets";
 <nav className="docs-content">
   <div class="simple-tab-wrapper"></div>
   <input className="simple-tab" type="radio" name="colors-tab" id="tab1" defaultChecked />
-  <label htmlFor="tab1">Design</label>
-
-  <input className="simple-tab" type="radio" name="colors-tab" id="tab2" />
-  <label htmlFor="tab2">Accessibility</label>
+  <label htmlFor="tab1">Code</label>
 </nav>
 
 <div class="simple-tab__content content1">
@@ -69,6 +66,25 @@ import { thumbSrcOptions, iconOptions } from "../playgrounds/assets";
     </div>
   </div>
 
+  <h2>Interactive demo</h2>
+  <p>This demo lets you preview the component, its variations, and configuration options.</p>
+  <TagPlayground />
+
+  <h2>Prop API</h2>
+  <p>Go to <a href="/?path=/docs/getting-started-setup-confetti--page">Setup</a> for instructions on how to import the component.</p>
+
+  <h3>SimpleTag</h3>
+  <ArgsTable of={SimpleTag} />
+
+  <h3>TogglableTag</h3>
+  <ArgsTable of={TogglableTag} />
+
+  <h3>RemovableTag</h3>
+  <ArgsTable of={RemovableTag} />
+
+  <h3>DropdownTag</h3>
+  <ArgsTable of={DropdownTag} />
+
   <h2>Variations</h2>
   <div>
     <div class="columns">
@@ -104,18 +120,7 @@ import { thumbSrcOptions, iconOptions } from "../playgrounds/assets";
   </div>
 </div>
 
-<h2>Interactive Demo</h2>
-
-  <Canvas>
-    <Story name="InteractiveTagDemo">
-      <Fragment>
-        <TagPlayground />
-      </Fragment>
-    </Story>
-  </Canvas>
-
-<h2>Style</h2>
-<p>Tags have two styles settings. Use <code>outline</code> to use borders instead of a filled background. Use <code>skin="vivid"</code> to display more vivid colors.</p>
+## Style
 
 <h3>Default tag style</h3>
 <p>If no color setting is used, the tag will be displayed with a mineral fill background using <code>skin="pale"</code>.</p>
@@ -500,18 +505,3 @@ import { thumbSrcOptions, iconOptions } from "../playgrounds/assets";
     </Fragment>
   </Story>
 </Canvas>
-
-<h2>Prop API docs</h2>
-<p>Here's the list of props based on the component's prop types definitions.</p>
-
-<h3>SimpleTag</h3>
-<ArgsTable of={SimpleTag} />
-
-<h3>TogglableTag</h3>
-<ArgsTable of={TogglableTag} />
-
-<h3>RemovableTag</h3>
-<ArgsTable of={RemovableTag} />
-
-<h3>DropdownTag</h3>
-<ArgsTable of={DropdownTag} />
