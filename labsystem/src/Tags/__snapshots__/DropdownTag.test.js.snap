@@ -5,7 +5,8 @@ exports[`DropdownTag render as outline 1`] = `
   className="lab-tag lab-tag--dropdown lab-tag--outline lab-tag--pale"
   onClick={[Function]}
   onKeyPress={[Function]}
-  role="presentation"
+  role="button"
+  tabIndex="0"
 >
   Test render outline DropdownTag
   <span
@@ -23,7 +24,8 @@ exports[`DropdownTag renders as disabled 1`] = `
   className="lab-tag lab-tag--dropdown lab-tag--disabled lab-tag--pale"
   onClick={[Function]}
   onKeyPress={[Function]}
-  role="presentation"
+  role="button"
+  tabIndex="0"
 >
   Test render disabled DropdownTag
   <span
@@ -41,7 +43,8 @@ exports[`DropdownTag renders with a pink color 1`] = `
   className="lab-tag lab-tag--dropdown lab-tag--pink-pale"
   onClick={[Function]}
   onKeyPress={[Function]}
-  role="presentation"
+  role="button"
+  tabIndex="0"
 >
   Test render pink DropdownTag
   <span
@@ -59,7 +62,8 @@ exports[`DropdownTag renders with base props 1`] = `
   className="lab-tag lab-tag--dropdown lab-tag--pale"
   onClick={[Function]}
   onKeyPress={[Function]}
-  role="presentation"
+  role="button"
+  tabIndex="0"
 >
   Test render DropdownTag
   <span
