@@ -12,18 +12,6 @@ describe("SimpleTag", () => {
     expect(renderedComponent).toMatchSnapshot();
   });
 
-  it("renders as expected with disabled as true", async () => {
-    const renderedComponent = renderer
-      .create(<SimpleTag text="Test render disabled SimpleTag" disabled />)
-      .toJSON();
-    expect(renderedComponent).toMatchSnapshot();
-
-    const wrapper = shallow(
-      <SimpleTag text="Test disabled SimpleTag" disabled />
-    ).html();
-    expect(wrapper).toContain("lab-tag--disabled");
-  });
-
   it("renders as expected with outline as true", async () => {
     const renderedComponent = renderer
       .create(<SimpleTag text="Test render outline SimpleTag" isOutline />)

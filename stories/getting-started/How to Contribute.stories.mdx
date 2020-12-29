@@ -1,0 +1,70 @@
+import { Fragment } from 'react';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+<Meta title="Getting started/How to Contribute" />
+
+<div class="docs-title">
+  <div>
+    <h1 class="docs-title__text">How to Contribute</h1>
+  </div>
+</div>
+
+<div class="docs-content">
+
+  <div class="columns">
+    <div class="column">
+      <h2>Getting started</h2>
+      <p>If you're not an active developer on the Confetti team, to start contributing, please fork our <a target="_blank" rel="noopener" href="https://github.com/labcodes/labstorybook/">source code on Github</a>. If you are, you'll already have access to the main repo, so forget about forks. Currently, the codebase contains both the <a target="_blank" rel="noopener" href="/?path=/docs/getting-started-setup-storybook--page">Storybook</a> and the <a target="_blank" rel="noopener" href="/?path=/docs/getting-started-setup-confetti--page">Confetti's</a> own source code, so please read the docs.</p>
+      <h2>Branching model</h2>
+      <p>We currently use Trunk based development for contributions</p>
+      <p><a target="_blank" rel="noopener" href="https://trunkbaseddevelopment.com/5-min-overview/">Trunk based</a> repositories have only one permanent branch: <code>master</code>. From it, we can create <code>feature</code> and <code>hotfix</code> branches.</p>
+      <p>The only main rule is that <code>master</code> should always, <strong>always</strong> be stable. For that, be sure to run the tests (details on how to are in the <a target="_blank" rel="noopener" href="/?path=/docs/getting-started-setup--page">Setup docs</a>) before pushing your code and never push with the <code>--no-validate</code> flag, unless specifically being asked to.</p>
+      <p>Let's detail the branches and their roles:</p>
+      <h3>Feature branches</h3>
+      <table>
+      <thead>
+      <tr>
+      <th>Branches off of</th>
+      <th>Merges on</th>
+      <th>Naming</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td><code>your-fork:master</code></td>
+      <td><code>master</code></td>
+      <td><code>feature/[description-of-your-feature]</code></td>
+      </tr>
+      </tbody>
+      </table>
+      <p>Feature branches are used to develop new features for an upcoming or distant future release. If you're contributing with a feature or with a non-urgent bugfix, this is the type of branch we recommend you to use. They should exist as long as the feature is in development, and, in this case, should be as short-lived as possible. When the feature is done, open the PR for our main codebase, to the master branch, for review. After reviewed, it will at some point be merged back into branch <code>master</code>.</p>
+      <h3>Hotfix branches</h3>
+      <table>
+      <thead>
+      <tr>
+      <th>Branches off of</th>
+      <th>Merges on</th>
+      <th>Naming</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td><code>your-fork:master</code></td>
+      <td><code>master</code></td>
+      <td><code>hotfix/[description-of-your-hotfix]</code></td>
+      </tr>
+      </tbody>
+      </table>
+      <p>Yes, it's mostly the same kind of branch as the feature ones, but used for emergency purposes. It has a different name, so that we can track on the git history what was a hotfix and what was a feature. </p>
+      <p>If you're not from Labcodes or is not closely involved with the development of Confetti, we'd recommend never to use this type of branch.</p>
+    </div>
+  </div>
+
+  <div class="columns">
+    <div class="column">
+      <h2>Styling conventions</h2>
+      <p>In this project, we use our own CSS guidelines, based on a flavor of BEM. Please take some time to read our <a target="_blank" rel="noopener" href="https://paper.dropbox.com/doc/CSS-Guidelines-ZlPI0Lh6I38ZVFn8yY579">guidelines</a> before contributing with CSS code for the UI.</p>
+    </div>
+  </div>
+
+</div>

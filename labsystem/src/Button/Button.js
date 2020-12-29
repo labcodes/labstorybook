@@ -4,8 +4,11 @@ import AbstractButton from "./AbstractButton";
 
 export default class Button extends React.Component {
   static propTypes = {
+    /** This is the button label. */
     text: PropTypes.string.isRequired,
+    /** Sets a special color skin to the button. */
     skin: PropTypes.oneOf([
+      "",
       "light",
       "dark",
       "warning",
@@ -14,10 +17,15 @@ export default class Button extends React.Component {
       "destructive-invert",
       "confirmation-invert",
     ]),
+    /** Sets the icon related to the button label. Default state: no icon. */
     icon: PropTypes.string,
+    /** Sets the button's height. Small = 32px, Normal = 40px, Large = 48px. */
     size: PropTypes.oneOf(["normal", "small", "large"]),
+    /** Makes the button disabled, cancelling the onClick handler. */
     disabled: PropTypes.bool,
+    /** Action to be executed when the button is clicked. */
     onClick: PropTypes.func,
+    /** Makes the button expand to its container's full width. */
     fullWidth: PropTypes.bool,
   };
 
@@ -26,7 +34,7 @@ export default class Button extends React.Component {
     icon: undefined,
     size: "normal",
     disabled: false,
-    onClick: undefined,
+    onClick: () => {},
     fullWidth: false,
   };
 

@@ -5,10 +5,17 @@ import Icon from "../Icon";
 
 export default class AbstractButton extends React.Component {
   static propTypes = {
+    /** HTML type of the Button. */
     type: PropTypes.oneOf(["button", "submit", "reset"]),
-    text: PropTypes.string.isRequired,
+    /** Button style variation. */
     variant: PropTypes.oneOf(["default", "outline", "text"]),
+    /** This is the button label. */
+    text: PropTypes.string.isRequired,
+    /** Sets the icon related to the button label. Default state: no icon. */
+    icon: PropTypes.string,
+    /** Sets a special color skin to the button. */
     skin: PropTypes.oneOf([
+      "",
       "light",
       "dark",
       "warning",
@@ -17,21 +24,24 @@ export default class AbstractButton extends React.Component {
       "destructive-invert",
       "confirmation-invert",
     ]),
-    icon: PropTypes.string,
+    /** Sets the button's height. Small = 32px, Normal = 40px, Large = 48px. */
     size: PropTypes.oneOf(["normal", "small", "large"]),
+    /** Makes the button disabled, cancelling the onClick handler. */
     disabled: PropTypes.bool,
+    /** Action to be executed when the button is clicked. */
     onClick: PropTypes.func,
+    /** Makes the button expand to its container's full width. */
     fullWidth: PropTypes.bool,
   };
 
   static defaultProps = {
     type: "button",
     variant: "default",
-    skin: undefined,
+    skin: "",
     icon: undefined,
     size: "normal",
     disabled: false,
-    onClick: undefined,
+    onClick: () => {},
     fullWidth: false,
   };
 
@@ -49,10 +59,10 @@ export default class AbstractButton extends React.Component {
     );
   };
 
-  handleOnClick = (e) => {
+  handleOnClick = (event) => {
     const { onClick } = this.props;
     if (!isUndefined(onClick)) {
-      onClick(e);
+      onClick(event);
     }
   };
 

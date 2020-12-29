@@ -1,8 +1,8 @@
 {
   "name": "labsystem",
-  "version": "0.1.0",
+  "version": "0.1.0-alpha",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "jest",
     "prepack": "babel src -d dist --ignore 'src/**/*.test.js'",

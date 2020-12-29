@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 export default class Header extends React.Component {
   static propTypes = {
+    /** Components that will be rendered in the Header. */
     children: PropTypes.node,
   };
 
