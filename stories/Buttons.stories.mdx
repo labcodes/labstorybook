@@ -24,11 +24,44 @@ import ButtonPlayground from "../playgrounds/ButtonPlayground";
 
   <div className="simple-tab__content content1">
     <h2>Overview</h2>
+      <p>Buttons are used to initialize and trigger actions, link internal sections and point to external pages. Their primary use is triggering actions (e.g.: add, save, delete, confirmation prompts, etc.)</p>
 <p>Buttons can be composed of just a label or of an icon plus a label.</p>
+      <div className="doc-anatomy-block">
+        <div class="columns">
+          <div class="column">
+            <h3>Field elements</h3>
+            <img src="docs/buttons/btn-field.svg" alt="Buttons field elements"/>
+            <ol>
+              <li>Label</li>
+              <li>Icon (optional)</li>
+              <li>Base background (invisible on Outline and Text variations)</li>
+              <li>Base border</li>
+              <li>Focus border</li>
+              <li>Hover border</li>
+            </ol>
+          </div>
+          <div class="column">
+            <h3>Borders</h3>
+            <img src="docs/buttons/btn-borders.svg" alt="Button borders scheme"/>
+            <p>All the buttons have a rounded corner radius of 4px on it's base background or border. Base and Focus borders should have 2px, and Hover borders should have 6px.</p>
   </div>
+          <div class="column">
+            <h3>Paddings & Spacings</h3>
+            <img src="docs/buttons/btn-spacing.svg" alt="Button spacing scheme"/>
+            <p>Left and Right: 16px<br/>Top and Bottom: Flexible according to button size<br/>Internal: 8px</p>
+  </div>
+        </div>
+      </div>
+    <h2>Interactive Demo</h2>
+      <p>This demo lets you preview the button component, its variations, and configuration options.</p>
+      <ButtonPlayground />
+    <h2>Prop API</h2>
+      <p>Go to <a href="/?path=/docs/getting-started-setup-confetti--page">Setup</a> for instructions on how to import the component.</p>
+      <ArgsTable of={Button} />
   </div>
   <div className="simple-tab__content content2">
     <h2>Variations</h2>
+      <p>Primary calls to action on a dialog or on a page should be represented by a <code>Button</code>. Secondary or related actions should be represented by an <code>OutlineButton</code>. A <code>TextButton</code> is recommend for tertiary actions.</p>
 <div class="columns">
   <div class="column">
     <table className="doc-btn-table">
@@ -454,7 +487,13 @@ Use the mineral or white skins for secondary actions on <b>notifications</b> and
   </Story>
 </Canvas>
 
-#### Full-width
+  <h2>Button positioning and order</h2>
+    <p><code>Button</code> always appear on the right of modals, dialogs, forms and most of UI parts. <code>OutlineButton</code> and <code>TextButton</code> appear and pile to the left of <code>Button</code>.</p>
+    <ul>
+      <li>Use right-aligned buttons primarily and if the main response advances the user through a screenflow (from left to the right).</li>
+      <li>Use left-aligned buttons to place actions at bottom of lists, comparative collums, tabled layouts, multiple content collumned layouts.</li>
+      <li>Use full-width buttons for dialogs and side panels.</li>
+    </ul>
 
 <Canvas>
   <Story name="Full-width Button">
@@ -472,9 +511,21 @@ Use the mineral or white skins for secondary actions on <b>notifications</b> and
   </Story>
 </Canvas>
 
-## Prop API docs
-
-Here's the list of props based on the component's prop types definitions.
-<ArgsTable of={Button} />
-
+  <h2>Labels</h2>
+  <p>Button labels must say what will happen when the user interacts with it.</p>
+  <ul>
+    <li>Use sentence case (only the first word in a phrase and any proper nouns capitalized)</li>
+    <li>Make them as short as possible (max. of 3 words)</li>
+    <li>Clearly explain what happens when the button is clicked.</li>
+  </ul>
+  <h2>Icon use</h2>
+  <ul>
+    <li>Use an icon to add meaning to the button's action, function or to indicate triggers as "open external link".</li>
+    <li>The icon must be directly related to the action that the user is taking. <span class="u-color-cyan-60">Don't hesitate to create a new icon when it is necessary.</span></li>
+    <li>Use icon frames of 16px within buttons.</li>
+    <li>Icons should always appear to the left of the label.</li>
+    <li>Always use the same color value as the label within a button. Icon follows label with equal emphasys.</li>
+  </ul>
+  <p><span class="u-color-pink-60">An only icon button is represented by a pictogram. Use it on extreme situations. Make sure the drawing is clear and communicate in one glance what action it triggers.</span></p>
+  </div>
 </div>
