@@ -60,4 +60,11 @@ describe("TextButton", () => {
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
   });
+
+  it("renders with full width", async () => {
+    const mountedComponent = mount(
+      <TextButton text="Test fullWidth Button" fullWidth />
+    );
+    expect(mountedComponent.find(".lab-btn--block")).toHaveLength(1);
+  });
 });
