@@ -6,6 +6,7 @@ import { CardContext } from "./contexts";
 
 export default class DoubleAction extends React.Component {
   static propTypes = {
+    /** Sets button's attributes: label, action to be executed when the button is clicked, whether it is disabled or not, and the icon. */
     actionsProps: PropTypes.arrayOf(
       PropTypes.exact({
         text: PropTypes.string.isRequired,
@@ -14,8 +15,11 @@ export default class DoubleAction extends React.Component {
         icon: PropTypes.string,
       })
     ).isRequired,
+    /** Sets buttons's height. Small = 32px, Normal = 40px, Large = 48px. */
     size: PropTypes.oneOf(["normal", "small", "large"]),
+    /** Sets whether buttons will pile on top of each other or be on the same line. */
     isHorizontal: PropTypes.bool,
+    /** Sets buttons to be Text Buttons. */
     isText: PropTypes.bool,
   };
 
