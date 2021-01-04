@@ -5,14 +5,13 @@ import EmailInput from "../labsystem/src/Input/EmailInput";
 import PasswordInput from "../labsystem/src/Input/PasswordInput";
 
 import Toggle from "../labsystem/src/Toggle";
+import Radio from "../labsystem/src/Radio";
 
 export default class TextInputPlayground extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      textValue: "",
-      emailValue: "",
-      passwordValue: "",
+
+    this.initialState = {
       label: "Label example",
       icon: "",
       iconColor: "mineral-70",
@@ -23,8 +22,24 @@ export default class TextInputPlayground extends React.Component {
       disabled: false,
       required: false,
       isValid: true,
+      currentComponent: "TextInput",
+      availableComponents: {
+        TextInput,
+        EmailInput,
+        PasswordInput,
+      },
     };
+
+    this.state = { ...this.initialState };
   }
+
+  handleCurrentComponent = (event) => {
+    const { value } = event.target;
+    this.setState({
+      ...this.initialState,
+      currentComponent: value,
+    });
+  };
 
   handlePropChangeText = (event) => {
     const { id, value } = event.target;
@@ -36,11 +51,10 @@ export default class TextInputPlayground extends React.Component {
     this.setState({ [id]: checked });
   };
 
-  render() {
+  renderCurrentComponent = () => {
     const {
-      textValue,
-      emailValue,
-      passwordValue,
+      availableComponents,
+      currentComponent,
       label,
       disabled,
       icon,
@@ -51,6 +65,39 @@ export default class TextInputPlayground extends React.Component {
       customErrorMsg,
       required,
       isValid,
+    } = this.state;
+    const Component = availableComponents[currentComponent];
+
+    return (
+      <Component
+        id="textValue"
+        label={label}
+        icon={icon}
+        iconColor={iconColor}
+        helpMessage={helpMessage}
+        prefix={prefix}
+        suffix={suffix}
+        customErrorMsg={customErrorMsg}
+        required={required}
+        isValid={isValid}
+        {...(disabled ? { disabled } : undefined)}
+      />
+    );
+  };
+
+  render() {
+    const {
+      label,
+      disabled,
+      iconColor,
+      helpMessage,
+      prefix,
+      suffix,
+      customErrorMsg,
+      required,
+      isValid,
+
+      currentComponent,
     } = this.state;
 
     const iconOptions = [
@@ -96,59 +143,40 @@ export default class TextInputPlayground extends React.Component {
     return (
       <div className="columns lab-playground">
         <div className="column lab-playground__component">
-          <span className="lab-playground__item">
-            <h3>TextInput</h3>
-            <TextInput
-              defaultValue={textValue}
-              id="textValue"
-              label={label}
-              icon={icon}
-              iconColor={iconColor}
-              helpMessage={helpMessage}
-              prefix={prefix}
-              suffix={suffix}
-              customErrorMsg={customErrorMsg}
-              required={required}
-              isValid={isValid}
-              onChange={this.handlePropChangeText}
-              {...(disabled ? { disabled } : undefined)}
-            />
-          </span>
-
-          <h3>EmailInput</h3>
-          <EmailInput
-            defaultValue={emailValue}
-            id="emailValue"
-            label={label}
-            icon={icon}
-            iconColor={iconColor}
-            helpMessage={helpMessage}
-            prefix={prefix}
-            suffix={suffix}
-            customErrorMsg={customErrorMsg}
-            required={required}
-            onChange={this.handlePropChangeText}
-            {...(disabled ? { disabled } : undefined)}
-          />
-
-          <h3>PasswordInput</h3>
-          <PasswordInput
-            defaultValue={passwordValue}
-            id="passwordValue"
-            label={label}
-            helpMessage={helpMessage}
-            prefix={prefix}
-            suffix={suffix}
-            customErrorMsg={customErrorMsg}
-            required={required}
-            isValid={isValid}
-            onChange={this.handlePropChangeText}
-            {...(disabled ? { disabled } : undefined)}
-          />
+          {this.renderCurrentComponent()}
         </div>
 
         <div className="column lab-playground__configs">
           <h3>Prop Settings</h3>
+          <div className="lab-playground__item">
+            <strong>Variation: </strong>
+            <fieldset>
+              <Radio
+                id="TextInput"
+                label="TextInput"
+                name="ButtonVariationRadio"
+                value="TextInput"
+                onChange={this.handleCurrentComponent}
+                checked={currentComponent === "TextInput"}
+              />
+              <Radio
+                id="EmailInput"
+                label="EmailInput"
+                name="ButtonVariationRadio"
+                value="EmailInput"
+                onChange={this.handleCurrentComponent}
+                checked={currentComponent === "EmailInput"}
+              />
+              <Radio
+                id="PasswordInput"
+                label="PasswordInput"
+                name="ButtonVariationRadio"
+                value="PasswordInput"
+                onChange={this.handleCurrentComponent}
+                checked={currentComponent === "PasswordInput"}
+              />
+            </fieldset>
+          </div>
           <span className="lab-playground__item">
             <TextInput
               label="Label"
@@ -223,18 +251,26 @@ export default class TextInputPlayground extends React.Component {
             <p>
               <strong>Required</strong>
             </p>
-            <Toggle name="required" handleToggle={this.handlePropChangeBool} />
+            <Toggle
+              value={required}
+              name="required"
+              handleToggle={this.handlePropChangeBool}
+            />
             <p>
               <strong>Disabled</strong>
             </p>
-            <Toggle name="disabled" handleToggle={this.handlePropChangeBool} />
+            <Toggle
+              value={disabled}
+              name="disabled"
+              handleToggle={this.handlePropChangeBool}
+            />
             <p>
               <strong>isValid</strong>
             </p>
             <Toggle
               name="isValid"
+              value={isValid}
               handleToggle={this.handlePropChangeBool}
-              defaultValue
             />
           </span>
         </div>
