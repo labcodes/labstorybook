@@ -43,17 +43,21 @@ import TextInputPlayground from '../playgrounds/TextInputPlayground';
 <p><strong>Prefix and Suffix elements</strong></p>
 <img src="docs/anatomy-02.png" alt="Prefix and suffix input anatomy" />
 
-<h2>Interactive Demo</h2>
+<h2>Interactive demo</h2>
+<p>This demo lets you preview the component, its variations, and configuration options.</p>
+<TextInputPlayground />
 
-<Canvas>
-  <Story name="Input Playground">
-  <Fragment>
-    <div>
-      <TextInputPlayground />
-    </div>
-  </Fragment>
-  </Story>
-</Canvas>
+<h2>Prop API</h2>
+<p>Go to <a href="/?path=/docs/getting-started-setup-confetti--page">Setup</a> for instructions on how to import the component.</p>
+
+### TextInput
+<ArgsTable of={TextInput} />
+
+### EmailInput
+<ArgsTable of={EmailInput} />
+
+### PasswordInput
+<ArgsTable of={PasswordInput} />
 
 <h2>Examples</h2>
 <h3>Default Input</h3>
@@ -206,17 +210,5 @@ import TextInputPlayground from '../playgrounds/TextInputPlayground';
   </Fragment>
   </Story>
 </Canvas>
-
-<h2>Prop API docs</h2>
-<p>Here's the list of props based on the component's prop types definitions.</p>
-
-<h3>TextInput</h3>
-<ArgsTable of={TextInput} />
-
-<h3>EmailInput</h3>
-<ArgsTable of={EmailInput} />
-
-<h3>PasswordInput</h3>
-<ArgsTable of={PasswordInput} />
 
 </div>

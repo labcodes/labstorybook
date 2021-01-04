@@ -1,0 +1,71 @@
+import { Fragment } from 'react';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+
+import {
+  OutlineCard,
+  FilledCard,
+  OutlineFilledCard,
+  CardImage,
+  CardHeader,
+  CardDivider,
+  LinkAction,
+  DoubleAction,
+} from '../labsystem/src/Card/';
+import CardPlayground from '../playgrounds/CardPlayground';
+
+<Meta title="Components/Card" component={OutlineCard} />
+
+<div class="docs-title">
+  <div>
+    <h1 class="docs-title__text">Card</h1>
+  </div>
+</div>
+
+<div class="docs-content">
+  <p>Here will go the docs for the card components</p>
+
+#### Interactive demo
+This demo lets you preview the checkbox component, its variations, and configuration options.
+
+<Story name="InteractiveDemo">
+  <Fragment>
+    <CardPlayground />
+  </Fragment>
+</Story>
+
+## Prop API docs
+Here's the list of props based on the components' prop types definitions.
+
+### OutlineCard
+
+<Props of={OutlineCard} />
+
+### FilledCard
+
+<Props of={FilledCard} />
+
+### OutlineFilledCard
+
+<Props of={OutlineFilledCard} />
+
+### CardImage
+
+<Props of={CardImage} />
+
+### CardHeader
+
+<Props of={CardHeader} />
+
+### CardDivider
+
+<Props of={CardDivider} />
+
+### LinkAction
+
+<Props of={LinkAction} />
+
+### DoubleAction
+
+<Props of={DoubleAction} />
+
+</div>

@@ -31,6 +31,13 @@ $tag-all-colors: (
   "orange": map-get($support-palette, "orange"),
 );
 
+// Card
+$card-colors: (
+  "teal": $teal-palette,
+  "purple": $purple-palette,
+  "mineral": $mineral-palette,
+  "white": $white-palette,
+);
 //Sidebar
 $sidebar-colors: (
   "teal": $teal-palette,
