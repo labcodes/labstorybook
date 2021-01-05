@@ -6,14 +6,23 @@ import { SimpleTag } from "../Tags";
 
 export default class CardHeader extends React.Component {
   static propTypes = {
+    /** Sets card's title. */
     title: PropTypes.string,
+    /** Sets a className for card's title. */
     titleClassName: PropTypes.string,
+    /** Sets card's subtitle. */
     subtitle: PropTypes.string,
+    /** Sets a className for card's subtitle. */
     subtitleClassName: PropTypes.string,
+    /** Sets card's category. */
     categoryText: PropTypes.string,
+    /** Sets card's label. */
     categoryLabelText: PropTypes.string,
+    /** Sets card's category icon. */
     categoryIcon: PropTypes.string,
+    /** Sets card's category badge color. */
     categoryColor: PropTypes.oneOf(["mineral", "teal", "purple"]),
+    /** Sets whether the header will go over the image or not. */
     isOverlay: PropTypes.bool,
   };
 

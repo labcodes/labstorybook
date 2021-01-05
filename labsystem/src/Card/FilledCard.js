@@ -4,10 +4,15 @@ import { CardContext } from "./contexts";
 
 export default class FilledCard extends React.Component {
   static propTypes = {
+    /** Components that will be rendered in the Filled Card (CardImage, CardHeader, CardAction, etc.) */
     children: PropTypes.node.isRequired,
+    /** Sets Filled Card's colors (mostly background colors) based on the chosen palette.  */
     color: PropTypes.oneOf(["white", "mineral", "teal", "purple"]).isRequired,
+    /** Sets the skin of the rendered Filled Card. */
     skin: PropTypes.oneOf(["pale", "vivid"]).isRequired,
+    /** Sets horizontal layout. It changes the position of CardImage. */
     isHorizontal: PropTypes.bool,
+    /** Reduces paddings and margins on Card layout. */
     isCompact: PropTypes.bool,
   };
 

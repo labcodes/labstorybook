@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 export default class CardDivider extends React.Component {
   static propTypes = {
+    /** Sets whether the divider has the card's full width. */
     isOverflowed: PropTypes.bool,
   };
 
