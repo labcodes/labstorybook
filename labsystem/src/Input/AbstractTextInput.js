@@ -38,13 +38,10 @@ export default class AbstractTextInput extends React.Component {
     onChange: PropTypes.func,
     /** Callback action to be executed when the Input's Icon is clicked. */
     onIconClick: PropTypes.func,
-    /** Add a class name to make custom changes */
-    className: PropTypes.string,
   };
 
   static defaultProps = {
     type: "text",
-    className: "",
     disabled: false,
     defaultValue: undefined,
     value: undefined,
@@ -183,7 +180,7 @@ export default class AbstractTextInput extends React.Component {
       onIconClick,
     } = this.props;
 
-    let { className } = this.props;
+    let className = "";
 
     const { localValue, localIsValid } = this.state;
     if (disabled) {
