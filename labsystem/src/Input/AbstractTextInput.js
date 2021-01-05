@@ -199,6 +199,7 @@ export default class AbstractTextInput extends React.Component {
               `${suffix ? `lab-input__field--suffixed ` : ``}`
             }
             id={id}
+            name={id}
             type={type}
             value={localValue}
             ref={this.inputRef}
