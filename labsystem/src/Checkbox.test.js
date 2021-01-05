@@ -169,6 +169,8 @@ describe("Checkbox", () => {
       />
     );
 
+    // eslint-disable-next-line prettier/prettier
+    expect(mountedComponent.find("input").find({ checked: true })).toHaveLength(1);
     expect(
       mountedComponent
         .find(Icon)
@@ -191,6 +193,9 @@ describe("Checkbox", () => {
     );
 
     expect(
+      mountedComponent.find("input").find({ checked: false })
+    ).toHaveLength(1);
+    expect(
       mountedComponent.find(
         Icon,
         ".lab-icon",
@@ -206,6 +211,9 @@ describe("Checkbox", () => {
       <Checkbox name="test-checkbox" id="test-checkbox" label="test checkbox" />
     );
 
+    expect(
+      mountedComponent.find("input").find({ checked: false })
+    ).toHaveLength(1);
     expect(
       mountedComponent.find(
         Icon,
@@ -241,6 +249,9 @@ describe("Checkbox", () => {
     );
 
     expect(
+      mountedComponent.find("input").find({ checked: false })
+    ).toHaveLength(1);
+    expect(
       mountedComponent.find(
         Icon,
         ".lab-icon",
@@ -250,6 +261,8 @@ describe("Checkbox", () => {
       )
     ).toHaveLength(0);
     mountedComponent.find("input").at(0).simulate("change");
+    // eslint-disable-next-line prettier/prettier
+    expect(mountedComponent.find("input").find({ checked: true })).toHaveLength(1);
     expect(
       mountedComponent
         .find(Icon)
@@ -273,6 +286,9 @@ describe("Checkbox", () => {
     );
 
     expect(
+      mountedComponent.find("input").find({ checked: false })
+    ).toHaveLength(1);
+    expect(
       mountedComponent.find(
         Icon,
         ".lab-icon",
@@ -285,6 +301,8 @@ describe("Checkbox", () => {
 
     mountedComponent.find("input").at(0).simulate("change", { test: "event" });
 
+    // eslint-disable-next-line prettier/prettier
+    expect(mountedComponent.find("input").find({ checked: true })).toHaveLength(1);
     expect(
       mountedComponent
         .find(Icon)
