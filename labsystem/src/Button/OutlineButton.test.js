@@ -58,4 +58,18 @@ describe("OutlineButton", () => {
     shallowedButton.simulate("click");
     expect(mockOnClick.mock.calls.length).toEqual(1);
   });
+
+  it("renders as expected if full width", async () => {
+    const renderedComponent = renderer
+      .create(<OutlineButton text="Test Outline fullWidth Button" fullWidth />)
+      .toJSON();
+    expect(renderedComponent).toMatchSnapshot();
+  });
+
+  it("renders with full width", async () => {
+    const mountedComponent = mount(
+      <OutlineButton text="Test fullWidth Button" fullWidth />
+    );
+    expect(mountedComponent.find(".lab-btn--block")).toHaveLength(1);
+  });
 });

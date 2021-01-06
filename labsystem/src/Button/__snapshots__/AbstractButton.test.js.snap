@@ -18,7 +18,7 @@ exports[`AbstractButton renders with base props for outline variant 1`] = `
   type="button"
 >
   
-  Test Default Button
+  Test Outline Button
 </button>
 `;
 
@@ -29,6 +29,6 @@ exports[`AbstractButton renders with base props for text variant 1`] = `
   type="button"
 >
   
-  Test Default Button
+  Test Text Button
 </button>
 `;
