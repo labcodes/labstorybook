@@ -191,7 +191,7 @@ export default class AbstractTextInput extends React.Component {
 
     return (
       <React.Fragment>
-        <div className={`lab-input ${className || ""}`}>
+        <div className={`lab-input ${className}`}>
           <input
             className={
               `lab-input__field ` +
