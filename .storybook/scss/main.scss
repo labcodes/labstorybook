@@ -1,6 +1,14 @@
+// Bulma Grid
+@import "../../labsystem/node_modules/bulma/sass/utilities/all";
+@import "../../labsystem/node_modules/bulma/sass/grid/all";
+
 @import "../../labsystem/scss/variables/all";
 @import "../../labsystem/scss/utilities/all";
+@import "../../labsystem/scss/base/titles";
 
+@import "../../playgrounds/scss/playgrounds";
+
+@import "doc-base";
 @import "doc-header";
 @import "doc-buttons";
 @import "doc-link";
@@ -11,9 +19,9 @@
 @import "doc-radio";
 @import "doc-tooltip";
 @import "doc-utils";
-@import "doc-search";
 @import "doc-principles";
-@import "../../playgrounds/scss/playgrounds";
+@import "doc-narrow-sidebar";
+@import "doc-search";
 
 * {
   box-sizing: border-box;

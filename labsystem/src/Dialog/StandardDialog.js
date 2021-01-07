@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import Icon from "../Icon";
-import { Button, OutlineButton } from "../Buttons";
+import { Button, OutlineButton } from "../Button";
 import DialogWrapper from "./DialogWrapper";
 
 export default class StandardDialog extends React.Component {
@@ -87,15 +87,9 @@ export default class StandardDialog extends React.Component {
         handleClose={handleClose}
         isOpen={isOpen}
         isModal={isModal}
+        isLarge={isLarge}
       >
-        <div
-          className={
-            `lab-dialog lab-dialog--standard` +
-            `${isLarge ? ` lab-dialog--large` : ""}`
-          }
-          role="dialog"
-          aria-modal="true"
-        >
+        <div className="lab-dialog__content" role="dialog" aria-modal="true">
           <button
             type="button"
             className="lab-dialog__mobile-close-button"
@@ -103,7 +97,7 @@ export default class StandardDialog extends React.Component {
             onTouchStart={this.handleTouchStart}
             onTouchEnd={this.handleTouchEnd}
           >
-            <Icon type="collapse-open" size="petit" />
+            <Icon type="collapse-open" />
           </button>
 
           <div className="lab-dialog__header">
@@ -113,11 +107,11 @@ export default class StandardDialog extends React.Component {
               type="button"
               onClick={handleClose}
             >
-              <Icon type="remove" />
+              <Icon type="remove" className="lab-dialog__close-button-icon" />
             </button>
           </div>
 
-          <p className="lab-dialog__content">{content}</p>
+          <p className="lab-dialog__body">{content}</p>
 
           <div className="lab-dialog__footer">
             {outlineButtonProps ? (

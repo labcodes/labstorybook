@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 
 import StandardSearch from '../labsystem/src/Search/StandardSearch';
 import InlineSearch from '../labsystem/src/Search/InlineSearch';
@@ -29,22 +29,22 @@ It's a standard input linked to a search button. It should be used when the desi
 emphasis in the search funcionality. This search suggests results in an autocomplete dropdown and, for more detailed answers,
 it can take the user to another page.
 
-<Preview>
+<Canvas>
   <Story name="Standard Search">
     <StandardSearch />
   </Story>
-</Preview>
+</Canvas>
 
 ## Inline Search
 
 Similar to the <a href="https://labstorybook-master.netlify.app/?path=/docs/components-text-input">text with trailing icon input</a>. It should be used when the design needs a more compact and clean
 component. This search works filtering the results and showing them simultaneously as the user types.
 
-<Preview>
+<Canvas>
   <Story name="Inline Search">
     <InlineSearch />
   </Story>
-</Preview>
+</Canvas>
 
 ## Behavior
 <div class="columns">

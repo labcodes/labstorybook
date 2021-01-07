@@ -6,13 +6,21 @@ import Icon from "../Icon";
 
 export default class RemovableTag extends React.Component {
   static propTypes = {
+    /** This is the Tag's text. */
     text: PropTypes.string.isRequired,
+    /** Source of the thumbnail to be rendered. Won't render a thumbnail if not passed to the component. */
     thumbSrc: PropTypes.string,
+    /** Type of the icon to be rendered. Won't render an icon if not passed to the component. */
     icon: PropTypes.string,
+    /** Sets Tag's color. */
     color: PropTypes.string,
+    /** Skin of the the rendered Tag. */
     skin: PropTypes.string,
+    /** Sets an outline style. */
     isOutline: PropTypes.bool,
+    /** Disables the Tag component. */
     disabled: PropTypes.bool,
+    /** Callback to be executed when the Tag is clicked. */
     onClick: PropTypes.func,
   };
 

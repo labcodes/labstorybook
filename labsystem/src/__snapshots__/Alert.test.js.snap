@@ -5,7 +5,7 @@ exports[`Alert renders with base props 1`] = `
   className="lab-alert lab-alert--error"
 >
   <span
-    className="lab-icon lab-icon--lupe lab-icon--mineral-70 lab-alert__icon"
+    className="lab-icon lab-icon--magnifying-glass lab-icon--mineral-70 lab-alert__icon"
   />
   <span
     className="lab-alert__message"

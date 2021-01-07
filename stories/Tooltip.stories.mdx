@@ -1,8 +1,8 @@
 import { Fragment } from "react";
-import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
 
 import Tooltip from "../labsystem/src/Tooltip";
-import OutlineButton from "../labsystem/src/Buttons/OutlineButton";
+import OutlineButton from "../labsystem/src/Button/OutlineButton";
 import Icon from "../labsystem/src/Icon";
 
 <Meta title="Components/Tooltip" />
@@ -38,11 +38,9 @@ import Icon from "../labsystem/src/Icon";
 <h2>Anatomy</h2>
 <div class="columns">
     <div class="column">
-        <img src="docs/tooltip/tooltip-anatomy.png" />
+        <img src="docs/tooltip/tooltip-anatomy.png" alt="Tooltip anatomy" />
     </div>
     <div class="column">
-        <br />
-        <br />
         <ol>
          <li>Text</li>
          <li>Border (2px)</li>
@@ -59,13 +57,13 @@ import Icon from "../labsystem/src/Icon";
 </div>
 
 
-## Colors
+<h2>Colors</h2>
 
 The tooltips color is defined in the `scss/variables/_settings.scss` file, and can be Black, Teal or Purple. Avoid using Purple tooltips if the project theme is Teal, and vice versa.
 
-<img src="docs/tooltip/examples/colors.png" />
+<img src="docs/tooltip/examples/colors.png" alt="Available colors for tooltips" />
 
-## Behavior
+<h2>Behavior</h2>
 
 A tooltip is displayed upon hovering over it (desktop). It is not displayed on mobile.
 Continuously display the tooltip as long as the user hovers over the element.
@@ -74,12 +72,12 @@ Continuously display the tooltip as long as the user hovers over the element.
     <div class="column">
         <div class="columns">
             <div class="column">
-                <img src="docs/tooltip/examples/edge do.png" />
-                <img src="docs/tooltip/examples/edge dont.png" />
+                <img src="docs/tooltip/examples/edge do.png" alt="Good example of how to use a tooltip" />
+                <img src="docs/tooltip/examples/edge dont.png" alt="Bad example of how to use a tooltip" />
             </div>
             <div class="column">
-                <img src="docs/tooltip/examples/sidebar do.png" />
-                <img src="docs/tooltip/examples/sidebar dont.png" />
+                <img src="docs/tooltip/examples/sidebar do.png" alt="Good example of how to use a tooltip" />
+                <img src="docs/tooltip/examples/sidebar dont.png" alt="Bad example of how to use a tooltip" />
             </div>
         </div>
     </div>
@@ -99,11 +97,11 @@ Continuously display the tooltip as long as the user hovers over the element.
 </div>
 
 
-## Placement
+<h2>Placement</h2>
 
 Tooltips placement relative to the target is defined by the user through props, and can have one of the 12 following values:
 
-<Preview>
+<Canvas>
   <Story name="Placement">
     <Fragment>
       <div className="columns docs-tooltip">
@@ -150,7 +148,7 @@ Tooltips placement relative to the target is defined by the user through props, 
             <OutlineButton
                 onClick={undefined}
                 size="large"
-                text="top-start"
+                text="right-start"
               />
           </Tooltip>
         </div>
@@ -161,7 +159,7 @@ Tooltips placement relative to the target is defined by the user through props, 
             <OutlineButton
                 onClick={undefined}
                 size="large"
-                text="top-start"
+                text="left"
               />
           </Tooltip>
         </div>
@@ -226,13 +224,13 @@ Tooltips placement relative to the target is defined by the user through props, 
       </div>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
-## Long texts
+<h2>Long texts</h2>
 
 Tooltip text should not be longer than 180 characters and 3 lines. A warn will be thrown in the console if the 180 chars limit is crossed.
 
-<Preview>
+<Canvas>
   <Story name="LongText">
     <Fragment>
       <Tooltip
@@ -247,13 +245,13 @@ Tooltip text should not be longer than 180 characters and 3 lines. A warn will b
       </Tooltip>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
-## Icon
+<h2>Icon</h2>
 
 Tooltip can also be triggered by an Icon or other elements.
 
-<Preview>
+<Canvas>
   <Story name="Icon">
     <Fragment>
       <Tooltip
@@ -262,19 +260,19 @@ Tooltip can also be triggered by an Icon or other elements.
         placement="right">
           <Icon
             type="key"
-            color="teal60"
+            color="teal-60"
           />
       </Tooltip>
     </Fragment>
   </Story>
-</Preview>
+</Canvas>
 
-## Prop API docs
+<h2>Prop API docs</h2>
 
 Here's the list of props based on the component's prop types definitions.
 
-### Tooltip
+<h3>Tooltip</h3>
 
-<Props of={Tooltip} />
+<ArgsTable of={Tooltip} />
 
 </div>

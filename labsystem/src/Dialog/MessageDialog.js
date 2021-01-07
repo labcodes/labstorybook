@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import DialogWrapper from "./DialogWrapper";
-import { Button, OutlineButton } from "../Buttons";
+import { Button, OutlineButton } from "../Button";
 import Icon from "../Icon";
 
 export default class MessageDialog extends React.Component {
@@ -88,47 +88,46 @@ export default class MessageDialog extends React.Component {
         handleClose={handleClose}
         isOpen={isOpen}
         isModal={isModal}
+        isLarge={isLarge}
+        isMessageDialog
       >
         <div
-          className={
-            `lab-dialog lab-dialog--message` +
-            `${isLarge ? ` lab-dialog--large` : ""}`
-          }
+          className="lab-dialog__content lab-dialog__content--message"
           role="dialog"
           aria-modal="true"
         >
           <button
             type="button"
-            className="lab-dialog__mobile-close-button"
+            className="lab-dialog__mobile-close-button lab-dialog__mobile-close-button--message"
             onClick={handleClose}
             onTouchStart={this.handleTouchStart}
             onTouchEnd={this.handleTouchEnd}
           >
-            <Icon type="collapse-open" size="petit" />
+            <Icon type="collapse-open" />
           </button>
           <div className="lab-dialog__header lab-dialog__header--message">
             <button
-              className="lab-dialog__close-button"
+              className="lab-dialog__close-button lab-dialog__close-button--message"
               type="button"
               onClick={handleClose}
             >
-              <Icon type="remove" />
+              <Icon type="remove" className="lab-dialog__close-button-icon" />
             </button>
           </div>
 
-          <div className="lab-dialog__icon">
-            <Icon type={icon} color="black-75" />
+          <div className="lab-dialog__icon-wrapper">
+            <Icon type={icon} className="lab-dialog__icon" />
           </div>
 
           <div className="lab-dialog__title lab-dialog__title--message">
             {title}
           </div>
 
-          <div className="lab-dialog__content lab-dialog__content--message">
+          <div className="lab-dialog__body lab-dialog__body--message">
             {content}
           </div>
 
-          <div className="lab-dialog__footer">
+          <div className="lab-dialog__footer lab-dialog__footer--message">
             {outlineButtonProps ? (
               <OutlineButton
                 size="normal"

@@ -5,6 +5,8 @@ import Banner from "../labsystem/src/Banner";
 import Alert from "../labsystem/src/Alert";
 import { iconOptions } from "./assets";
 
+import TextInput from "../labsystem/src/Input/TextInput";
+
 export default class SystemMessagesPlayground extends React.Component {
   constructor(props) {
     super(props);
@@ -16,11 +18,43 @@ export default class SystemMessagesPlayground extends React.Component {
       },
       currentComponent: "Banner",
 
-      selectedText: "edit me",
-      selectedIcon: "arrow-down",
+      selectedText: "This is a system message",
+      selectedIcon: "eye-opened",
       selectedButtonText: "",
     };
   }
+
+  handleCurrentComponentChange = (event) => {
+    const { value } = event.target;
+    this.setState({
+      currentComponent: value,
+    });
+  };
+
+  handleTextPropChange = (event) => {
+    const { id, value } = event.target;
+    this.setState({ [id]: !isEmpty(value) ? value : "edit me" });
+  };
+
+  handleButtonTextPropChange = (event) => {
+    const { id, value } = event.target;
+    this.setState({ [id]: upperCase(value) });
+  };
+
+  handleIconPropChange = (event) => {
+    const { id, value } = event.target;
+    this.setState({ [id]: !isEmpty(value) ? value : "edit me" });
+  };
+
+  handleButtonTextPropChange = (event) => {
+    const { id, value } = event.target;
+    this.setState({ [id]: upperCase(value) });
+  };
+
+  handleIconPropChange = (event) => {
+    const { id, value } = event.target;
+    this.setState({ [id]: value });
+  };
 
   renderCurrentComponent = () => {
     const {
@@ -33,10 +67,7 @@ export default class SystemMessagesPlayground extends React.Component {
     const Component = availableComponents[currentComponent];
 
     return (
-      <>
-        <h4>
-          <strong>{currentComponent}</strong>
-        </h4>
+      <React.Fragment>
         <Component
           text={selectedText}
           icon={selectedIcon}
@@ -47,30 +78,8 @@ export default class SystemMessagesPlayground extends React.Component {
             },
           }}
         />
-      </>
+      </React.Fragment>
     );
-  };
-
-  handleCurrentComponentChange = (e) => {
-    const { value } = e.target;
-    this.setState({
-      currentComponent: value,
-    });
-  };
-
-  handleTextPropChange = (e) => {
-    const { id, value } = e.target;
-    this.setState({ [id]: !isEmpty(value) ? value : "edit me" });
-  };
-
-  handleButtonTextPropChange = (e) => {
-    const { id, value } = e.target;
-    this.setState({ [id]: upperCase(value) });
-  };
-
-  handleIconPropChange = (e) => {
-    const { id, value } = e.target;
-    this.setState({ [id]: value });
   };
 
   render() {
@@ -78,12 +87,12 @@ export default class SystemMessagesPlayground extends React.Component {
 
     return (
       <div className="columns lab-playground">
-        <div className="column lab-plyground__component">
+        <div className="column lab-playground__component">
           {this.renderCurrentComponent()}
         </div>
 
         <div className="column lab-playground__configs">
-          <h4>Configurations</h4>
+          <h3>Prop Settings</h3>
 
           <span className="lab-playground__item">
             <label htmlFor="currentComponent">
@@ -97,23 +106,10 @@ export default class SystemMessagesPlayground extends React.Component {
               </select>
             </label>
           </span>
-          <br />
-
-          <span className="lab-playground__item">
-            <label htmlFor="selectedText">
-              <strong>text: </strong>
-              <input
-                id="selectedText"
-                onChange={this.handleTextPropChange}
-                placeholder="Insert text"
-              />
-            </label>
-          </span>
-          <br />
 
           <span className="lab-playground__item">
             <label htmlFor="selectedIcon">
-              <strong>icon: </strong>
+              <strong>Icon: </strong>
               <select
                 id="selectedIcon"
                 value={selectedIcon}
@@ -127,17 +123,22 @@ export default class SystemMessagesPlayground extends React.Component {
               </select>
             </label>
           </span>
-          <br />
 
           <span className="lab-playground__item">
-            <label htmlFor="selectedButtonText">
-              <strong>buttonText: </strong>
-              <input
-                id="selectedButtonText"
-                onChange={this.handleButtonTextPropChange}
-                placeholder="Inser text"
-              />
-            </label>
+            <TextInput
+              label="Message"
+              id="selectedText"
+              defaultValue="This is a system message"
+              onChange={this.handleTextPropChange}
+            />
+          </span>
+
+          <span className="lab-playground__item">
+            <TextInput
+              label="Button text"
+              id="selectedButtonText"
+              onChange={this.handleButtonTextPropChange}
+            />
           </span>
         </div>
       </div>

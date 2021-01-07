@@ -2,9 +2,9 @@ import React from "react";
 import { isEmpty } from "lodash";
 
 import TextInput from "../labsystem/src/Input/TextInput";
-import Checkbox from "../labsystem/src/Checkbox";
+import Toggle from "../labsystem/src/Toggle";
 import { StandardDialog, MessageDialog } from "../labsystem/src/Dialog";
-import { Button } from "../labsystem/src/Buttons";
+import { Button } from "../labsystem/src/Button";
 import { iconOptions } from "./assets";
 
 export default class DialogPlayground extends React.Component {
@@ -18,6 +18,7 @@ export default class DialogPlayground extends React.Component {
       selectedOutlineButtonText: "Click me too!",
       selectedIcon: "star",
       selectedIsModal: false,
+      selectedIsLarge: false,
     };
 
     this.state = {
@@ -93,15 +94,13 @@ export default class DialogPlayground extends React.Component {
       selectedIcon,
       modalIsOpen,
       selectedIsModal,
+      selectedIsLarge,
     } = this.state;
     const Component = availableComponents[currentComponent];
 
     return (
       <React.Fragment>
-        <h4>
-          <strong>{currentComponent}</strong>
-        </h4>
-        <Button text="Show Modal" onClick={this.showModal} />
+        <Button text="Open Dialog" onClick={this.showModal} />
         <Component
           icon={selectedIcon}
           title={selectedTitle}
@@ -109,6 +108,7 @@ export default class DialogPlayground extends React.Component {
           handleClose={this.handleModalClose}
           isOpen={modalIsOpen}
           isModal={selectedIsModal}
+          isLarge={selectedIsLarge}
           buttonProps={{
             text: selectedButtonText,
             onClick: () => alert(selectedButtonResponseText),
@@ -136,6 +136,7 @@ export default class DialogPlayground extends React.Component {
       selectedButtonText,
       selectedOutlineButtonText,
       selectedIsModal,
+      selectedIsLarge,
       windowIsSmall,
       modalIsOpen,
     } = this.state;
@@ -147,7 +148,7 @@ export default class DialogPlayground extends React.Component {
         </div>
 
         <div className="column lab-playground__configs">
-          <h4>Configurations</h4>
+          <h3>Prop Settings</h3>
 
           <span className="lab-playground__item">
             <label htmlFor="currentComponent">
@@ -212,20 +213,32 @@ export default class DialogPlayground extends React.Component {
           <br />
 
           {!windowIsSmall ? (
-            <>
+            <React.Fragment>
               <span className="lab-playground__item">
-                <Checkbox
+                <p>
+                  <strong>isModal</strong>
+                </p>
+                <Toggle
                   name="selectedIsModal"
-                  id="selectedIsModal"
-                  onChange={this.handleBoolPropChange}
-                  checked={selectedIsModal}
-                  label="isModal"
-                  disabled={modalIsOpen}
+                  label="selectedIsModal"
+                  value={selectedIsModal}
+                  handleToggle={this.handleBoolPropChange}
                 />
               </span>
-              <br />
-            </>
+            </React.Fragment>
           ) : null}
+
+          <span className="lab-playground__item">
+            <p>
+              <strong>isLarge</strong>
+            </p>
+            <Toggle
+              name="selectedIsLarge"
+              label="selectedIsLarge"
+              value={selectedIsLarge}
+              handleToggle={this.handleBoolPropChange}
+            />
+          </span>
 
           {currentComponent === "MessageDialog" ? (
             <span className="lab-playground__item">

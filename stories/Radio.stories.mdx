@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 
 import Radio from '../labsystem/src/Radio';
 import RadioPlayground from '../playgrounds/RadioPlayground';
@@ -14,87 +14,76 @@ import RadioPlayground from '../playgrounds/RadioPlayground';
 </div>
 
 <div class="docs-content">
-    <p>Radio is a type of selector that is used when we have a list of options, and only one option can be selected.
-    </p>
+  <p>Radio is a type of selector that is used when we have a list of options, and only one option can be selected.</p>
 
-##### Acessibility
-  Striving to keep our forms accessible, we recommend to use this type of component by using the `fieldset` tag to nest a group of 
+## Acessibility
+  Striving to keep our forms accessible, we recommend to use this type of component by using the `fieldset` tag to nest a group of
   selectors and the `legend` tag to identify the heading of the group.
   These elements works indicating to screen readers that a group of form fields relate to each other.
 
-<h4>Anatomy</h4>
-<div class="columns">
+  <h2>Anatomy</h2>
+  <div class="columns">
     <div class="column">
-        <img src="docs/radio/radio-anatomy.png" />
+        <img src="docs/radio/radio-anatomy.png" alt="Radio button anatomy" />
     </div>
     <div class="column">
-        <br />
-        <br />
-        <ol>
-         <li>Radio border</li>
-         <li>Radio selection indicator</li>
-         <li>Hover stroke</li>
-         <li>Base container stroke</li>
-         <li>Focus stroke</li>
-        </ol>
+      <ol>
+        <li>Radio border</li>
+        <li>Radio selection indicator</li>
+        <li>Hover stroke</li>
+        <li>Base container stroke</li>
+        <li>Focus stroke</li>
+      </ol>
     </div>
-</div>
+  </div>
 
-#### Interactive demo
-  This demo lets you preview the radio component, its variations, and configuration options.
-  <Preview>
-    <Story name="InteractiveDemo">
+  <h2>Interactive demo</h2>
+  <p>This demo lets you preview the radio component, its variations, and configuration options.</p>
+
+## Interactive demo
+  This demo lets you preview the component, its variations, and configuration options.
+  <RadioPlayground />
+
+  <h2>Behavior</h2>
+  <ol>
+    <li>Choose an option</li>
+    <li>Click on it and the chosen option will be selected</li>
+    <li>If another option is selected, the previous one will be deselected</li>
+  </ol>
+
+  <Canvas>
+    <Story name="Radio">
       <Fragment>
-        <RadioPlayground />
+        <fieldset>
+          <Radio id="radio-1" label="Idle" name="radio" value="" />
+          <br />
+          <Radio id="radio-2" label="Idle" name="radio" value="" />
+          <br />
+          <Radio id="radio-3" label="Disabled" name="radio" disabled value="" />
+          <br />
+          <Radio id="radio-4" label="Disabled" name="radio-disabled" checked disabled value="" />
+        </fieldset>
       </Fragment>
     </Story>
-  </Preview>
+  </Canvas>
 
+  <h2>Styles</h2>
+  <p>Checkboxes can also be used in the purple theme</p>
 
-#### Radio
-
-
-<Preview>
-  <Story name="Radio">
+  <Canvas>
+    <Story name="Styles">
     <Fragment>
       <fieldset>
-        <Radio id="radio-1" label="Idle" name="radio" value="" />
+        <Radio className="lab-radio--purple" id="radio-5" label="Idle" name="radio2" value="" />
         <br />
-        <Radio id="radio-2" label="Idle" name="radio" value="" />
-        <br />
-        <Radio id="radio-3" label="Disabled" name="radio" disabled value="" />
-        <br />
-        <Radio id="radio-4" label="Disabled" name="radio-disabled" checked disabled value="" />
+        <Radio className="lab-radio--purple" id="radio-6" label="Idle" name="radio2" value="" />
       </fieldset>
     </Fragment>
-  </Story>
-</Preview>
+    </Story>
+  </Canvas>
 
-#### Behavior
-1. Choose an option
-2. Click on it and the chosen option will be selected
-3. If another option is selected, the previous one will be deselected
-<br />
-<br />
-
-#### Styles
-Checkboxes can also be used in the purple theme
-<Preview>
-  <Story name="Styles">
-  <Fragment>
-    <fieldset>
-      <Radio className="lab-radio--purple" id="radio-5" label="Idle" name="radio2" value="" />
-      <br />
-      <Radio className="lab-radio--purple" id="radio-6" label="Idle" name="radio2" value="" />
-    </fieldset>
-  </Fragment>
-  </Story>
-</Preview>
-
-## Prop API docs
-
-  Here's the list of props based on the component's prop types definitions.
-  ### Radio
-  <Props of={Radio} />
+  <h2>Prop API docs</h2>
+  <p>Here's the list of props based on the component's prop types definitions.</p>
+  <ArgsTable of={Radio} />
 
 </div>
