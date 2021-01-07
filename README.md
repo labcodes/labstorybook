@@ -40,7 +40,7 @@ We currently use Trunk based development for contributions
 
 [Trunk based](https://trunkbaseddevelopment.com/5-min-overview/) repositories have only one permanent branch: `master`. From it, we can create `feature` and `hotfix` branches.
 
-The only main rule is that `master` should always, **always** stable. For that, be sure to run the tests (details on how to are in the [Setup docs](/?path=/docs/getting-started-setup--page)) before pushing your code and never push with the `--no-validate` flag, unless specifically being asked to.
+The only main rule is that `master` should always, **always** be stable. For that, be sure to run the tests (details on how to are in the [Setup docs](/?path=/docs/getting-started-setup--page)) before pushing your code and never push with the `--no-validate` flag, unless specifically being asked to.
 
 Let's detail the branches and their roles:
 

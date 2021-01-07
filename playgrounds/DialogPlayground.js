@@ -213,7 +213,7 @@ export default class DialogPlayground extends React.Component {
           <br />
 
           {!windowIsSmall ? (
-            <>
+            <React.Fragment>
               <span className="lab-playground__item">
                 <p>
                   <strong>isModal</strong>
@@ -225,7 +225,7 @@ export default class DialogPlayground extends React.Component {
                   handleToggle={this.handleBoolPropChange}
                 />
               </span>
-            </>
+            </React.Fragment>
           ) : null}
 
           <span className="lab-playground__item">
