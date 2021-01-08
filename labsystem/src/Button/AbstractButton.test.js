@@ -1,5 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
+import { shallow } from "enzyme";
 
 import AbstractButton from "./AbstractButton";
 
@@ -23,5 +24,20 @@ describe("AbstractButton", () => {
       .create(<AbstractButton variant="text" text="Test Text Button" />)
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
+  });
+
+  it("doesn't call onClick if ariaDisabled", async () => {
+    const mockOnClick = jest.fn();
+    const shallowedComponent = shallow(
+      <AbstractButton
+        ariaDisabled
+        onClick={mockOnClick}
+        variant="text"
+        text="Test Text Button"
+      />
+    );
+    expect(mockOnClick.mock.calls.length).toEqual(0);
+    shallowedComponent.find("button").simulate("click");
+    expect(mockOnClick.mock.calls.length).toEqual(0);
   });
 });

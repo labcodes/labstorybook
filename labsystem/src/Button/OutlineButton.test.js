@@ -59,6 +59,20 @@ describe("OutlineButton", () => {
     expect(mockOnClick.mock.calls.length).toEqual(1);
   });
 
+  it("doesn't call onClick if ariaDisabled", async () => {
+    const mockOnClick = jest.fn();
+    const mountedComponent = mount(
+      <OutlineButton
+        ariaDisabled
+        onClick={mockOnClick}
+        text="Test Outl Button"
+      />
+    );
+    expect(mockOnClick.mock.calls.length).toEqual(0);
+    mountedComponent.find("button").simulate("click");
+    expect(mockOnClick.mock.calls.length).toEqual(0);
+  });
+
   it("renders as expected if full width", async () => {
     const renderedComponent = renderer
       .create(<OutlineButton text="Test Outline fullWidth Button" fullWidth />)
