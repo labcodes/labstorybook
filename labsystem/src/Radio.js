@@ -13,12 +13,12 @@ export default class Radio extends React.Component {
     name: PropTypes.string.isRequired,
     /** Text that will be rendered as the Radio's label. */
     label: PropTypes.string.isRequired,
-    /** Disables the Input component. */
+    /** Disables the Radio. Will be read by screen readers. When true, will override `disabled`. */
+    ariaDisabled: PropTypes.bool,
+    /** Disables the Radio. Won't be read by screen readers. */
     disabled: PropTypes.bool,
     /** Defines if the Radio is currently checked. */
     checked: PropTypes.bool,
-    /** Defines if the Radio is initialized as "checked". */
-    defaultChecked: PropTypes.bool,
     /** Callback action to be executed when the Radio current value changes. */
     onChange: PropTypes.func,
     /** Value that will specify the HTML `value` attribute of an `<input>` element. */
@@ -29,6 +29,7 @@ export default class Radio extends React.Component {
 
   static defaultProps = {
     disabled: false,
+    ariaDisabled: false,
     checked: undefined,
     className: undefined,
     onChange: () => {},
@@ -42,7 +43,16 @@ export default class Radio extends React.Component {
   };
 
   render() {
-    const { className, id, label, disabled, checked, name, value } = this.props;
+    const {
+      className,
+      id,
+      label,
+      disabled,
+      ariaDisabled,
+      checked,
+      name,
+      value,
+    } = this.props;
 
     return (
       <React.Fragment>
@@ -53,8 +63,9 @@ export default class Radio extends React.Component {
           checked={checked}
           name={name}
           value={value}
-          onChange={this.handleOnChange}
-          {...(disabled ? { disabled } : undefined)}
+          onChange={!ariaDisabled ? this.handleOnChange : () => {}}
+          disabled={(!ariaDisabled && disabled) || undefined}
+          aria-disabled={ariaDisabled || undefined}
         />
         <label className="lab-radio__label" htmlFor={id}>
           <span className="lab-radio__container" />
