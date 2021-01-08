@@ -13,9 +13,10 @@ import Toggle from '../labsystem/src/Toggle';
 
 <div class="docs-content">
 
-The `Toggle` component might receive up to five inputs as props, where the `color` and `name` parameters are the only required ones.
+The `Toggle` component might receive up to six inputs as props, where the `color` and `name` parameters are the only required ones.
 - `name`: should be an unique identifier and works as the `id` of the `input` tag within the component; it's also an important accessibility tool
 - `color`: defines the Toggle color
+- `ariaDisabled`: sets the Toggle component as disabled; includes functionality and styles
 - `disabled`: sets the Toggle component as disabled; includes functionality and styles
 - `defaultValue`: you can set a default value for the toggle to start with; it normally starts as `false`
 - `value`: you might need to set the component value from outside the component; if so, the internal logic to handle the component value won't be used
@@ -49,8 +50,12 @@ Togge can be disabled and, at the same time receive, a `defaultValue`:
 <Canvas>
   <Story name="Sample Toggle Disabled">
     <Fragment>
+      <p>disabled:</p>
       <Toggle name="sample-toggle-disabled-off" disabled /><br /><br />
       <Toggle name="sample-toggle-disabled-on" disabled defaultValue={true} />
+      <p>ariaDisabled:</p>
+      <Toggle name="sample-toggle-aria-disabled-off" ariaDisabled /><br /><br />
+      <Toggle name="sample-toggle-aria-disabled-on" ariaDisabled defaultValue={true} />
     </Fragment>
   </Story>
 </Canvas>
