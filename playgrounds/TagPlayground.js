@@ -25,6 +25,7 @@ export default class TagPlayground extends React.Component {
       selectedColor: "mineral",
       selectedSkin: "pale",
       selectedIsDisabled: false,
+      selectedAriaDisabled: false,
       selectedIsOutline: false,
       selectedIcon: "",
       selectedThumbSrc: "",
@@ -100,6 +101,7 @@ export default class TagPlayground extends React.Component {
       selectedColor,
       selectedSkin,
       selectedIsDisabled,
+      selectedAriaDisabled,
       selectedIsOutline,
       selectedIcon,
       selectedThumbSrc,
@@ -121,6 +123,7 @@ export default class TagPlayground extends React.Component {
             color={selectedColor}
             skin={selectedSkin}
             disabled={selectedIsDisabled}
+            ariaDisabled={selectedAriaDisabled}
             isOutline={selectedIsOutline}
             icon={selectedIcon}
             thumbSrc={selectedThumbSrc}
@@ -143,6 +146,8 @@ export default class TagPlayground extends React.Component {
       selectedThumbSrc,
       isIconInputDisabled,
       isThumbSrcInputDisabled,
+      selectedIsDisabled,
+      selectedAriaDisabled,
     } = this.state;
 
     return (
@@ -208,9 +213,17 @@ export default class TagPlayground extends React.Component {
           <span className="lab-playground__item">
             <fieldset>
               <Checkbox
+                id="selectedAriaDisabled"
+                label="AriaDisabled"
+                name="selectedAriaDisabled"
+                value={selectedAriaDisabled}
+                onChange={this.handleBoolPropChange}
+              />
+              <Checkbox
                 id="selectedIsDisabled"
                 label="Disabled"
                 name="disabled"
+                value={selectedIsDisabled}
                 onChange={this.handleBoolPropChange}
               />
               {currentComponent !== "TogglableTag" ? (

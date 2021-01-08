@@ -1,3 +1,4 @@
+import { mount, shallow } from "enzyme";
 import React from "react";
 import renderer from "react-test-renderer";
 
@@ -36,5 +37,27 @@ describe("AbstractTag", () => {
       )
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
+  });
+
+  it("triggers onClick", async () => {
+    const mockOnClick = jest.fn();
+    const mountedComponent = shallow(
+      <AbstractTag text="Test SimpleTag" onClick={mockOnClick} />
+    );
+
+    expect(mockOnClick).not.toBeCalled();
+    mountedComponent.find("span").at(0).simulate("click", { test: "event" });
+    expect(mockOnClick).toBeCalledWith({ test: "event" });
+  });
+
+  it("doesn't trigger onClick if ariaDisabled", async () => {
+    const mockOnClick = jest.fn();
+    const mountedComponent = shallow(
+      <AbstractTag ariaDisabled text="Test SimpleTag" onClick={mockOnClick} />
+    );
+
+    expect(mockOnClick).not.toBeCalled();
+    mountedComponent.find("span").at(0).simulate("click");
+    expect(mockOnClick).not.toBeCalled();
   });
 });

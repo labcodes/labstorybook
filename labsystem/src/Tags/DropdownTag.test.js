@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import { shallow } from "enzyme";
+import { mount, shallow } from "enzyme";
 
 import DropdownTag from "./DropdownTag";
 
@@ -60,5 +60,16 @@ describe("DropdownTag", () => {
     expect(mockOnClick.mock.calls.length).toEqual(0);
     shallowedDropdownTag.simulate("click");
     expect(mockOnClick.mock.calls.length).toEqual(1);
+  });
+
+  it("doesn't trigger onClick if ariaDisabled", async () => {
+    const mockOnClick = jest.fn();
+    const mountedComponent = mount(
+      <DropdownTag ariaDisabled text="Test" onClick={mockOnClick} />
+    );
+
+    expect(mockOnClick).not.toBeCalled();
+    mountedComponent.find("span").at(0).simulate("click");
+    expect(mockOnClick).not.toBeCalled();
   });
 });
