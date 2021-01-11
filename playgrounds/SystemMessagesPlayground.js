@@ -5,6 +5,7 @@ import Banner from "../labsystem/src/Banner";
 import Alert from "../labsystem/src/Alert";
 import { iconOptions } from "./assets";
 
+import Radio from "../labsystem/src/Radio";
 import TextInput from "../labsystem/src/Input/TextInput";
 
 export default class SystemMessagesPlayground extends React.Component {
@@ -20,6 +21,7 @@ export default class SystemMessagesPlayground extends React.Component {
 
       selectedText: "This is a system message",
       selectedIcon: "eye-opened",
+      selectedType: "info",
       selectedButtonText: "",
     };
   }
@@ -46,15 +48,10 @@ export default class SystemMessagesPlayground extends React.Component {
     this.setState({ [id]: !isEmpty(value) ? value : "edit me" });
   };
 
-  handleButtonTextPropChange = (event) => {
-    const { id, value } = event.target;
-    this.setState({ [id]: upperCase(value) });
-  };
-
-  handleIconPropChange = (event) => {
-    const { id, value } = event.target;
-    this.setState({ [id]: value });
-  };
+  handleType = (event) => {
+    const { value } = event.target;
+    this.setState({ selectedType: value });
+  }
 
   renderCurrentComponent = () => {
     const {
@@ -63,6 +60,7 @@ export default class SystemMessagesPlayground extends React.Component {
       selectedText,
       selectedIcon,
       selectedButtonText,
+      selectedType,
     } = this.state;
     const Component = availableComponents[currentComponent];
 
@@ -71,6 +69,7 @@ export default class SystemMessagesPlayground extends React.Component {
         <Component
           text={selectedText}
           icon={selectedIcon}
+          type={selectedType}
           buttonProps={{
             text: selectedButtonText,
             onClick: () => {
@@ -83,7 +82,7 @@ export default class SystemMessagesPlayground extends React.Component {
   };
 
   render() {
-    const { availableComponents, selectedIcon } = this.state;
+    const { currentComponent, selectedIcon, selectedType } = this.state;
 
     return (
       <div className="columns lab-playground">
@@ -95,16 +94,55 @@ export default class SystemMessagesPlayground extends React.Component {
           <h3>Prop Settings</h3>
 
           <span className="lab-playground__item">
-            <label htmlFor="currentComponent">
-              <strong>type: </strong>
-              <select onChange={this.handleCurrentComponentChange}>
-                {Object.keys(availableComponents).map((option) => (
-                  <option key={option} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-            </label>
+            <fieldset>
+              <legend>Variation</legend>
+              <Radio
+                id="Banner"
+                name="variation"
+                label="Banner"
+                value="Banner"
+                checked={currentComponent === "Banner"}
+                onChange={this.handleCurrentComponentChange}
+              />
+              <Radio
+                id="Alert"
+                name="variation"
+                label="Alert"
+                value="Alert"
+                checked={currentComponent === "Alert"}
+                onChange={this.handleCurrentComponentChange}
+              />
+            </fieldset>
+          </span>
+
+          <span className="lab-playground__item">
+            <fieldset>
+              <legend>Type</legend>
+              <Radio
+                id="info"
+                name="type"
+                label="info"
+                value="info"
+                checked={selectedType === "info"}
+                onChange={this.handleType}
+              />
+              <Radio
+                id="warn"
+                name="type"
+                label="warn"
+                value="warn"
+                checked={selectedType === "warn"}
+                onChange={this.handleType}
+              />
+              <Radio
+                id="error"
+                name="type"
+                label="error"
+                value="error"
+                checked={selectedType === "error"}
+                onChange={this.handleType}
+              />
+            </fieldset>
           </span>
 
           <span className="lab-playground__item">
