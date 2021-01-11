@@ -148,6 +148,7 @@ export default class TagPlayground extends React.Component {
       availableComponents,
       currentComponent,
       selectedText,
+      selectedColor,
       selectedIcon,
       selectedSkin,
       selectedThumbSrc,
@@ -190,7 +191,11 @@ export default class TagPlayground extends React.Component {
           <span className="lab-playground__item">
             <label htmlFor="selectedColor">
               <strong>color: </strong>
-              <select id="selectedColor" onChange={this.handleTextPropChange}>
+              <select
+                id="selectedColor"
+                value={selectedColor}
+                onChange={this.handleTextPropChange}
+              >
                 {colorOptions.map((item) => (
                   <option value={item} key={`color-${item}`}>
                     {item}
@@ -234,18 +239,14 @@ export default class TagPlayground extends React.Component {
                 handleToggle={this.handleBoolPropChange}
                 value={selectedIsDisabled}
               />
-              {currentComponent !== "TogglableTag" ? (
-                <React.Fragment>
-                  <p>
-                    <strong>isOutline</strong>
-                  </p>
-                  <Toggle
-                    name="selectedIsOutline"
-                    handleToggle={this.handleBoolPropChange}
-                    value={selectedIsOutline}
-                  />
-                </React.Fragment>
-              ) : null}
+              <p>
+                <strong>isOutline</strong>
+              </p>
+              <Toggle
+                name="selectedIsOutline"
+                handleToggle={this.handleBoolPropChange}
+                value={selectedIsOutline}
+              />
             </span>
           </span>
 
@@ -254,7 +255,7 @@ export default class TagPlayground extends React.Component {
             <>
               <span className="lab-playground__item">
                 <fieldset>
-                  <legend>Thumbnail</legend>
+                  <legend>Left element</legend>
                   <Radio
                     id="none"
                     name="selectedThumbSrc"
