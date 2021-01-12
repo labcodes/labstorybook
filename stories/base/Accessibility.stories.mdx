@@ -37,7 +37,14 @@ import { Button, OutlineButton, TextButton } from '../../labsystem/src/Button';
     <li><a href="https://labcodes-wiki.herokuapp.com/best-practices/accessibility/">Labcodes' Web Accessibility Guide</a></li>
     <li>World Wide Web Consortium (W3C)‘s <a href="https://www.w3.org/WAI/">Web Accessibility Initiative</a> (WAI)</li>
     <li><a href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guidelines</a></li>
+    <li><a href="https://www.youtube.com/watch?v=bUeqVNX3oLE">Video on disabled and aria-disabled elements</a></li>
   </ul>
+
+  <h2><code>aria-disabled</code> vs <code>disabled</code></h2>
+  <p>All of our inputs and buttons have <code>disabled</code> and <code>ariaDisabled</code> props. We made both available because setting them as <code>disabled</code> maked them unreadable by screen readers, and it could lead some visually impaired users to not know what are the available options.</p>
+  <p>Whenever any of our components are set with <code>ariaDisabled</code>, they are functionally identical to their <code>disabled</code> counterparts, with the exception that they will be read by screen readers, so we <strong>strongly</strong> suggest using them whenever possible.</p>
+  <p>For specific cases, like elements that can be skipped to finish a task and don’t add information to the context, you may opt to use <code>disabled</code>, so that they can be skipped in tab order.</p>
+  <p>Also, when using these props on forms, consider using <code>aria-live</code> and <code>aria-describedby</code> to improve the experience on screen readers. References can be found on <a href="https://www.w3.org/TR/2017/REC-wai-aria-1.1-20171214/#aria-disabled">W3C's website</a> and <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/WAI-ARIA_basics">MDN docs</a></p>
   </div>
 
   <div className="simple-tab__content content2">
