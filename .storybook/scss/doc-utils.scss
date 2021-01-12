@@ -28,6 +28,12 @@
   background-color: $mineral-10;
   border-radius: 4px;
   padding: 16px;
+  
+  &__list {
+    > li {
+      margin-block-end: 0;
+    }
+  }
 }
 
 // Typography colors

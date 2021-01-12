@@ -1,5 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`TextButton renders as expected if full width 1`] = `
+<button
+  className="lab-btn lab-btn--text lab-btn--normal lab-btn--block"
+  onClick={[Function]}
+  type="button"
+>
+  
+  Test Text fullWidth Button
+</button>
+`;
+
 exports[`TextButton renders as expected when passing a dark skin 1`] = `
 <button
   className="lab-btn lab-btn--text lab-btn--normal lab-btn--dark"

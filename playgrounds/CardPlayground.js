@@ -13,6 +13,7 @@ import {
   DoubleAction,
 } from "../labsystem/src/Card";
 import Toggle from "../labsystem/src/Toggle";
+import Radio from "../labsystem/src/Radio";
 import TextInput from "../labsystem/src/Input/TextInput";
 import Icon from "../labsystem/src/Icon";
 
@@ -232,64 +233,55 @@ export default class CardPlayground extends React.Component {
           <h4>Configurations</h4>
 
           <span className="lab-playground__item">
-            <label htmlFor="currentComponent">
-              Component
-              <br />
-              <select
-                name="currentComponent"
-                value={currentComponent}
-                onChange={this.changeCardComponent}
-              >
-                {Object.keys(availableComponents).map((option) => (
-                  <option key={option} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-            </label>
+            <fieldset>
+              <legend>Component</legend>
+              {Object.keys(availableComponents).map((component) => (
+                <Radio
+                  key={component}
+                  id={component}
+                  name="currentComponent"
+                  label={component}
+                  value={component}
+                  checked={currentComponent === component}
+                  onChange={this.changeCardComponent}
+                />
+              ))}
+            </fieldset>
           </span>
 
           <span className="lab-playground__item">
-            <label htmlFor="selectedColor">
-              Color
-              <br />
-              <select
-                name="selectedColor"
-                value={selectedColor}
-                onChange={this.handleInputChange}
-              >
-                {color.type.value.map((option) => (
-                  <option
-                    key={this.formatPropString(option.value)}
-                    value={this.formatPropString(option.value)}
-                  >
-                    {this.formatPropString(option.value)}
-                  </option>
-                ))}
-              </select>
-            </label>
+            <fieldset>
+              <legend>Color</legend>
+              {color.type.value.map((color) => (
+                <Radio
+                  key={this.formatPropString(color.value)}
+                  id={this.formatPropString(color.value)}
+                  name="selectedColor"
+                  label={this.formatPropString(color.value)}
+                  value={this.formatPropString(color.value)}
+                  checked={selectedColor === this.formatPropString(color.value)}
+                  onChange={this.handleInputChange}
+                />
+              ))}
+            </fieldset>
           </span>
 
           {skin ? (
             <span className="lab-playground__item">
-              <label htmlFor="selectedSkin">
-                Skin
-                <br />
-                <select
-                  name="selectedSkin"
-                  value={selectedSkin}
-                  onChange={this.handleInputChange}
-                >
-                  {skin.type.value.map((option) => (
-                    <option
-                      key={this.formatPropString(option.value)}
-                      value={this.formatPropString(option.value)}
-                    >
-                      {this.formatPropString(option.value)}
-                    </option>
-                  ))}
-                </select>
-              </label>
+              <fieldset>
+                <legend>Skin</legend>
+                {skin.type.value.map((skin) => (
+                  <Radio
+                    key={this.formatPropString(skin.value)}
+                    id={this.formatPropString(skin.value)}
+                    name="selectedSkin"
+                    label={this.formatPropString(skin.value)}
+                    value={this.formatPropString(skin.value)}
+                    checked={selectedSkin === this.formatPropString(skin.value)}
+                    onChange={this.handleInputChange}
+                  />
+                ))}
+              </fieldset>
             </span>
           ) : null}
 
@@ -315,29 +307,17 @@ export default class CardPlayground extends React.Component {
 
           <span className="lab-playground__item" style={{ width: "100%" }}>
             <label htmlFor="cardBodyHTML">
-              <span
-                style={{ cursor: "pointer", display: "flex" }}
-                onClick={() => this.handleToggleFor("showCardBodyHTML")}
-              >
-                Body HTML
-                <Icon
-                  type={showCardBodyHTML ? "collapse-open" : "collapse-closed"}
-                />
-              </span>
-              {showCardBodyHTML ? (
-                <React.Fragment>
-                  <textarea
-                    style={{
-                      width: "100%",
-                      minHeight: "100px",
-                      resize: "none",
-                    }}
-                    name="cardBodyHTML"
-                    value={cardBodyHTML}
-                    onChange={this.handleInputChange}
-                  />
-                </React.Fragment>
-              ) : null}
+              Body HTML
+              <textarea
+                style={{
+                  width: "100%",
+                  minHeight: "100px",
+                  resize: "none",
+                }}
+                name="cardBodyHTML"
+                value={cardBodyHTML}
+                onChange={this.handleInputChange}
+              />
             </label>
           </span>
 
@@ -473,37 +453,37 @@ export default class CardPlayground extends React.Component {
 
           <h6>CardAction</h6>
           <span className="lab-playground__item">
-            <label htmlFor="currentCardAction">
-              Component
-              <br />
-              <select
-                name="currentCardAction"
-                value={currentCardAction}
-                onChange={this.handleInputChange}
-              >
-                {Object.keys(availableCardActions).map((option) => (
-                  <option key={option} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-            </label>
+            <fieldset>
+              <legend>Action Type</legend>
+              {Object.keys(availableCardActions).map((component) => (
+                <Radio
+                  key={component}
+                  id={component}
+                  name="currentCardAction"
+                  label={component}
+                  value={component}
+                  checked={currentCardAction === component}
+                  onChange={this.handleInputChange}
+                />
+              ))}
+            </fieldset>
           </span>
 
           <span className="lab-playground__item">
-            <label htmlFor="currentCardActionSize">
-              size
-              <br />
-              <select
-                name="currentCardActionSize"
-                value={currentCardActionSize}
-                onChange={this.handleInputChange}
-              >
-                <option value="small">small</option>
-                <option value="normal">normal</option>
-                <option value="large">large</option>
-              </select>
-            </label>
+            <fieldset>
+              <legend>Button Size</legend>
+              {["small", "normal", "large"].map((size) => (
+                <Radio
+                  key={size}
+                  id={size}
+                  name="currentCardActionSize"
+                  label={size}
+                  value={size}
+                  checked={currentCardActionSize === size}
+                  onChange={this.handleInputChange}
+                />
+              ))}
+            </fieldset>
           </span>
 
           <span className="lab-playground__item">

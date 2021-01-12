@@ -3,7 +3,7 @@ import React from "react";
 import Radio from "../labsystem/src/Radio";
 
 import TextInput from "../labsystem/src/Input/TextInput";
-import Checkbox from "../labsystem/src/Checkbox";
+import Toggle from "../labsystem/src/Toggle";
 
 export default class RadioPlayground extends React.Component {
   constructor(props) {
@@ -102,20 +102,22 @@ export default class RadioPlayground extends React.Component {
               />
             </span>
             <span className="lab-playground__item">
-              <fieldset>
-                <Checkbox
-                  id="disabled1"
-                  label="Disable Option 1"
-                  name="disabled"
-                  onChange={this.handleDisabled1}
-                />
-                <Checkbox
-                  id="disabled2"
-                  label="Disable Option 2"
-                  name="checked"
-                  onChange={this.handleDisabled2}
-                />
-              </fieldset>
+              <p>
+                <strong>Disable Option 1</strong>
+              </p>
+              <Toggle
+                value={disabled1}
+                name="disabled1"
+                handleToggle={this.handleDisabled1}
+              />
+              <p>
+                <strong>Disable Option 2</strong>
+              </p>
+              <Toggle
+                value={disabled2}
+                name="disabled2"
+                handleToggle={this.handleDisabled2}
+              />
             </span>
           </div>
         </div>
