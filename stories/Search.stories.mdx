@@ -6,13 +6,13 @@ import InlineSearch from '../labsystem/src/Search/InlineSearch';
 
 <Meta title="Components/Search" component={StandardSearch} />
 
-<div class="docs-title docs-title--with-tab">
+<div className="docs-title docs-title--with-tab">
   <div>
-    <h1 class="docs-title__text">Search</h1>
+    <h1 className="docs-title__text">Search</h1>
   </div>
 </div>
 
-<div class="docs-content">
+<div className="docs-content">
     <div className="simple-tab-wrapper"></div>
 
   <input className="simple-tab" type="radio" name="type-tab" id="tab1" defaultChecked/>
@@ -27,8 +27,8 @@ import InlineSearch from '../labsystem/src/Search/InlineSearch';
         of search components: Standard and Inline.
       </p>
     <div className="doc-anatomy-block">
-        <div class="columns">
-          <div class="column">
+        <div className="columns">
+          <div className="column">
             <h4>Field elements</h4>
             <img src="docs/search/search-input.png" alt="Buttons field elements"/>
             <ol>
@@ -37,7 +37,7 @@ import InlineSearch from '../labsystem/src/Search/InlineSearch';
               <li>Search Button area</li>
             </ol>
           </div>
-          <div class="column">
+          <div className="column">
             <br />
             <br />
             <img src="docs/search/search-inline.png" alt="Button borders scheme"/>
@@ -83,8 +83,8 @@ import InlineSearch from '../labsystem/src/Search/InlineSearch';
 
 <div className="simple-tab__content content2">
   <h2>Behavior</h2>
-  <div class="columns">
-    <div class="column">
+  <div className="columns">
+    <div className="column">
       <h3>Standard Search</h3>
       <ol>
         <li>If the page have the search funcionality as the main purpose, the seach field should be focused by default. If not, focus to activate it. </li>
@@ -95,7 +95,7 @@ import InlineSearch from '../labsystem/src/Search/InlineSearch';
         <li>Click outside the component if you want to unfocus the input without triggering the search action, but keeping the typed text. </li>
       </ol>
     </div>
-    <div class="column">
+    <div className="column">
       <h3>Inline Search</h3>
       <ol>
         <li>Focus the inline seach field.</li>
@@ -107,9 +107,8 @@ import InlineSearch from '../labsystem/src/Search/InlineSearch';
     </div>
   </div>
 
-  ## Theming
-
-  For Search component, you can also use purple theme. The theme must be selected by changing the value of the `$input-theme` variable in the `scss/variables/_settings.scss`.
+  <h2>Theming</h2>
+  <p>For Search component, you can also use purple theme. The theme must be selected by changing the value of the <code>$input-theme</code> variable in the <code>scss/variables/_settings.scss</code>.</p>
 
   <img src="docs/search/search-purple.png" alt="StandardSearch and InlineSearch using purple theme"/>
 

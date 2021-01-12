@@ -7,13 +7,13 @@ import { thumbSrcOptions, iconOptions } from "../playgrounds/assets";
 
 <Meta title="Components/Tag" component={SimpleTag} />
 
-<div class="docs-title docs-title--with-tab">
+<div className="docs-title docs-title--with-tab">
   <div>
-    <h1 class="docs-title__text">Tag</h1>
+    <h1 className="docs-title__text">Tag</h1>
   </div>
 </div>
 
-<div class="docs-content">
+<div className="docs-content">
   <div className="simple-tab-wrapper"></div>
 
   <input className="simple-tab" type="radio" name="type-tab" id="tab1" defaultChecked/>
@@ -22,24 +22,24 @@ import { thumbSrcOptions, iconOptions } from "../playgrounds/assets";
   <input className="simple-tab" type="radio" name="type-tab" id="tab2" />
   <label htmlFor="tab2">Usage</label>
 
-  <div class="simple-tab__content content1">
+  <div className="simple-tab__content content1">
     <h2>Overview</h2>
     <p>A tag is a compact component that represents an input entity, element attribute or action. It is used to bring attention to a relevant information in a compact and discrete format.</p>
     <div className="doc-anatomy-block">
-      <div class="columns">
-        <div class="column">
+      <div className="columns">
+        <div className="column">
         </div>
-        <div class="column">
+        <div className="column">
         </div>
       </div>
-      <div class="columns">
-        <div class="column">
+      <div className="columns">
+        <div className="column">
           <p><strong>Elements</strong></p>
-          <div class="columns">
-            <div class="column is-half">
+          <div className="columns">
+            <div className="column is-half">
               <img src="docs/tag/anatomy.png" alt="Tag anatomy" />
             </div>
-            <div class="column is-half">
+            <div className="column is-half">
               <ol>
                 <li>Container</li>
                 <li>Left element (optional and customizable)</li>
@@ -49,13 +49,13 @@ import { thumbSrcOptions, iconOptions } from "../playgrounds/assets";
             </div>
           </div>
         </div>
-        <div class="column">
+        <div className="column">
           <p><strong>Borders & shadows</strong></p>
-          <div class="columns">
-            <div class="column is-half">
+          <div className="columns">
+            <div className="column is-half">
               <img src="docs/tag/borders.png" alt="Tag's borders and shadows" />
             </div>
-            <div class="column is-half">
+            <div className="column is-half">
               <ol start="5">
                 <li>Border</li>
                 <li>Focus shadow</li>
@@ -86,29 +86,29 @@ import { thumbSrcOptions, iconOptions } from "../playgrounds/assets";
     <p><strong>There are 4 types of tags. Tags can have 2 different styles of multiple colors. Each style might have 2 distinct shades.</strong></p>
     <p><em>* Even though all types can be used accross the application, <strong>only one style can be used within the same context.</strong> Accross the application, use styles wisely in order to preserve consistancy and avoid user confusion.</em></p>
     <div>
-      <div class="columns">
-        <div class="column">
+      <div className="columns">
+        <div className="column">
           <h3>Simple tag</h3>
           <p>Used to represent categories like status, type, etc. <strong>No actions are allowed for this type</strong>, focus is the only state styled. Supports the left element <code>icon</code> or <code>thumbSrc</code> but doesn't support a right one.</p>
           <SimpleTag text="Simple tag" />
           <SimpleTag text="Simple tag" icon={iconOptions[1]}/>
           <SimpleTag text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
         </div>
-        <div class="column">
+        <div className="column">
           <h3>Dropdown tag</h3>
           <p>Used to switch between categories represented using a simple tag. Supports the left element <code>icon</code> and has a dropdown arrow to the right.<br /><br /></p>
           <DropdownTag text="Dropdown" />
           <DropdownTag text="Dropdown" icon={iconOptions[1]}/>
         </div>
       </div>
-      <div class="columns">
-        <div class="column">
+      <div className="columns">
+        <div className="column">
           <h3>Togglable tag</h3>
           <p>Used to represent single or multiple selection from a set. Do not support a right element and has a not-customizable left element.</p>
           <TogglableTag text="Togglable" />
           <TogglableTag text="Togglable" isOn />
         </div>
-        <div class="column">
+        <div className="column">
           <h3>Removable tag</h3>
           <p>Used as an entity of a picked or typed item, often within a field. Supports the left element <code>icon</code> or <code>thumbSrc</code> and has a remove button to the right.</p>
           <RemovableTag text="Removable" />

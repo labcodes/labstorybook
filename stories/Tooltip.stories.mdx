@@ -7,18 +7,18 @@ import Icon from "../labsystem/src/Icon";
 
 <Meta title="Components/Tooltip" />
 
-<div class="docs-title">
+<div className="docs-title">
   <div>
-    <h1 class="docs-title__text">Tooltip</h1>
+    <h1 className="docs-title__text">Tooltip</h1>
   </div>
 </div>
 
-<div class="docs-content">
+<div className="docs-content">
   <p>Tooltips display support text when users hover over, focus on, or tap an element.</p>
 
 
-<div class="columns">
-  <div class="column">
+<div className="columns">
+  <div className="column">
     <ol>
       <li>Describes differences between similar elements</li>
       <li>Distinguishes actions with related iconography</li>
@@ -26,21 +26,21 @@ import Icon from "../labsystem/src/Icon";
       <li>Displays full information of ellipse texts</li>
     </ol>
   </div>
-  <div class="column">
+  <div className="column">
     <ol>
-      <li class="li--red">Don’t use tooltips to restate visible UI text</li>
-      <li class="li--red">Don't use tooltips to display hidden actions</li>
-      <li class="li--red">Don’t display rich text and imagery on tooltips</li>
+      <li className="li--red">Don’t use tooltips to restate visible UI text</li>
+      <li className="li--red">Don't use tooltips to display hidden actions</li>
+      <li className="li--red">Don’t display rich text and imagery on tooltips</li>
     </ol>
   </div>
 </div>
 
 <h2>Anatomy</h2>
-<div class="columns">
-    <div class="column">
+<div className="columns">
+    <div className="column">
         <img src="docs/tooltip/tooltip-anatomy.png" alt="Tooltip anatomy" />
     </div>
-    <div class="column">
+    <div className="column">
         <ol>
          <li>Text</li>
          <li>Border (2px)</li>
@@ -51,8 +51,8 @@ import Icon from "../labsystem/src/Icon";
 
 <div>
   <ul>
-    <li class="li--red">No more than 12 words or 65 characters per line</li>
-    <li class="li--red">No more than 3 lines of text</li>
+    <li className="li--red">No more than 12 words or 65 characters per line</li>
+    <li className="li--red">No more than 3 lines of text</li>
   </ul>
 </div>
 
@@ -68,20 +68,20 @@ The tooltips color is defined in the `scss/variables/_settings.scss` file, and c
 A tooltip is displayed upon hovering over it (desktop). It is not displayed on mobile.
 Continuously display the tooltip as long as the user hovers over the element.
 
-<div class="columns">
-    <div class="column">
-        <div class="columns">
-            <div class="column">
+<div className="columns">
+    <div className="column">
+        <div className="columns">
+            <div className="column">
                 <img src="docs/tooltip/examples/edge do.png" alt="Good example of how to use a tooltip" />
                 <img src="docs/tooltip/examples/edge dont.png" alt="Bad example of how to use a tooltip" />
             </div>
-            <div class="column">
+            <div className="column">
                 <img src="docs/tooltip/examples/sidebar do.png" alt="Good example of how to use a tooltip" />
                 <img src="docs/tooltip/examples/sidebar dont.png" alt="Bad example of how to use a tooltip" />
             </div>
         </div>
     </div>
-    <div class="column">
+    <div className="column">
         <ol>
          <li>It appears above and in the center of click targets* (default) and stay in place while cursor moves within the target </li>
          <ol type="a">
@@ -92,7 +92,7 @@ Continuously display the tooltip as long as the user hovers over the element.
          <li>Over 150ms, tooltips fade in and scale up using the deceleration curve. They fade out over 75ms.</li>
         </ol>
         <br />
-        <p class="li--red"><em>* When close to screen limits, keep the position of the tooltip visible with margins of 12px for all sides.</em></p>
+        <p className="li--red"><em>* When close to screen limits, keep the position of the tooltip visible with margins of 12px for all sides.</em></p>
     </div>
 </div>
 
