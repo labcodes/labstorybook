@@ -2,20 +2,17 @@ import React from "react";
 import { isEmpty } from "lodash";
 
 import TextInput from "../labsystem/src/Input/TextInput";
-import Checkbox from "../labsystem/src/Checkbox";
+import Toggle from "../labsystem/src/Toggle";
+import Radio from "../labsystem/src/Radio";
 
+import { Button } from "../labsystem/src/Button";
 import {
   SimpleTag,
   TogglableTag,
   RemovableTag,
   DropdownTag,
 } from "../labsystem/src/Tags";
-import {
-  colorOptions,
-  skinOptions,
-  iconOptions,
-  thumbSrcOptions,
-} from "./assets";
+import { colorOptions, iconOptions } from "./assets";
 
 export default class TagPlayground extends React.Component {
   constructor(props) {
@@ -28,7 +25,7 @@ export default class TagPlayground extends React.Component {
       selectedAriaDisabled: false,
       selectedIsOutline: false,
       selectedIcon: "",
-      selectedThumbSrc: "",
+      selectedThumbSrc: "none",
       removableTagIsOn: true,
       togglableTagIsOn: false,
     };
@@ -43,7 +40,6 @@ export default class TagPlayground extends React.Component {
       currentComponent: "SimpleTag",
       ...this.initialState,
       isIconInputDisabled: false,
-      isThumbSrcInputDisabled: false,
     };
   }
 
@@ -65,11 +61,14 @@ export default class TagPlayground extends React.Component {
     this.setState({ [id]: checked });
   };
 
+  handleRadioPropChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  };
+
   handleIconPropChange = (event) => {
     const { id, value } = event.target;
     this.setState({ [id]: value });
-    // Deactivate `thumb` if has an `icon`
-    this.setState({ isThumbSrcInputDisabled: !isEmpty(value) });
   };
 
   handleThumbSrcPropChange = (event) => {
@@ -125,8 +124,18 @@ export default class TagPlayground extends React.Component {
             disabled={selectedIsDisabled}
             ariaDisabled={selectedAriaDisabled}
             isOutline={selectedIsOutline}
-            icon={selectedIcon}
-            thumbSrc={selectedThumbSrc}
+            icon={
+              selectedThumbSrc === "icon" &&
+              currentComponent !== "TogglableTag" &&
+              selectedIcon
+                ? selectedIcon
+                : undefined
+            }
+            thumbSrc={
+              selectedThumbSrc === "thumbnail"
+                ? "https://avatars3.githubusercontent.com/u/1887591?s=400&u=ba45b6433752099210bf180b4448fb82e015c3a8&v=4"
+                : undefined
+            }
             isOn={togglableTagIsOn}
             onClick={handleClick}
           />
@@ -142,12 +151,14 @@ export default class TagPlayground extends React.Component {
       availableComponents,
       currentComponent,
       selectedText,
+      selectedColor,
       selectedIcon,
+      selectedSkin,
       selectedThumbSrc,
       isIconInputDisabled,
-      isThumbSrcInputDisabled,
       selectedIsDisabled,
       selectedAriaDisabled,
+      selectedIsOutline,
     } = this.state;
 
     return (
@@ -184,7 +195,11 @@ export default class TagPlayground extends React.Component {
           <span className="lab-playground__item">
             <label htmlFor="selectedColor">
               <strong>color: </strong>
-              <select id="selectedColor" onChange={this.handleTextPropChange}>
+              <select
+                id="selectedColor"
+                value={selectedColor}
+                onChange={this.handleTextPropChange}
+              >
                 {colorOptions.map((item) => (
                   <option value={item} key={`color-${item}`}>
                     {item}
@@ -196,93 +211,121 @@ export default class TagPlayground extends React.Component {
 
           {currentComponent !== "TogglableTag" ? (
             <span className="lab-playground__item">
-              <label htmlFor="selectedSkin">
-                <strong>skin: </strong>
-                <select id="selectedSkin" onChange={this.handleTextPropChange}>
-                  {skinOptions.map((item) => (
-                    <option value={item} key={`skin-${item}`}>
-                      {item}
-                    </option>
-                  ))}
-                </select>
-              </label>
+              <fieldset>
+                <legend>Skin</legend>
+                <Radio
+                  id="pale"
+                  name="selectedSkin"
+                  label="Pale"
+                  value="pale"
+                  checked={selectedSkin === "pale"}
+                  onChange={this.handleRadioPropChange}
+                />
+                <Radio
+                  id="vivid"
+                  name="selectedSkin"
+                  label="Vivid"
+                  value="vivid"
+                  checked={selectedSkin === "vivid"}
+                  onChange={this.handleRadioPropChange}
+                />
+              </fieldset>
             </span>
           ) : null}
-          <br />
 
           <span className="lab-playground__item">
-            <fieldset>
-              <Checkbox
-                id="selectedAriaDisabled"
-                label="AriaDisabled"
-                name="selectedAriaDisabled"
-                value={selectedAriaDisabled}
-                onChange={this.handleBoolPropChange}
-              />
-              <Checkbox
-                id="selectedIsDisabled"
-                label="Disabled"
-                name="disabled"
-                value={selectedIsDisabled}
-                onChange={this.handleBoolPropChange}
-              />
-              {currentComponent !== "TogglableTag" ? (
-                <Checkbox
-                  id="selectedIsOutline"
-                  label="isOutline"
-                  name="isOutline"
-                  onChange={this.handleBoolPropChange}
-                />
-              ) : null}
-            </fieldset>
-          </span>
-
-          {currentComponent !== "TogglableTag" ? (
             <span className="lab-playground__item">
-              <label htmlFor="selectedIcon">
-                <strong>icon: </strong>
-                <select
-                  id="selectedIcon"
-                  value={selectedIcon}
-                  onChange={this.handleIconPropChange}
-                  disabled={isIconInputDisabled}
-                >
-                  {iconOptions.map((item) => (
-                    <option value={item} key={`icon-${item}`}>
-                      {!isEmpty(item) ? item : "none"}
-                    </option>
-                  ))}
-                </select>
-              </label>
+              <p>
+                <strong>Disabled</strong>
+              </p>
+              <Toggle
+                name="selectedIsDisabled"
+                handleToggle={this.handleBoolPropChange}
+                value={selectedIsDisabled}
+              />
+              <p>
+                <strong>AriaDisabled</strong>
+              </p>
+              <Toggle
+                name="selectedAriaDisabled"
+                handleToggle={this.handleBoolPropChange}
+                value={selectedAriaDisabled}
+              />
+              <p>
+                <strong>isOutline</strong>
+              </p>
+              <Toggle
+                name="selectedIsOutline"
+                handleToggle={this.handleBoolPropChange}
+                value={selectedIsOutline}
+              />
             </span>
-          ) : null}
+          </span>
 
           {currentComponent !== "TogglableTag" &&
           currentComponent !== "DropdownTag" ? (
-            <span className="lab-playground__item">
-              <label htmlFor="selectedThumbSrc">
-                <strong>thumbSrc: </strong>
-                <select
-                  id="selectedThumbSrc"
-                  value={selectedThumbSrc}
-                  onChange={this.handleThumbSrcPropChange}
-                  disabled={isThumbSrcInputDisabled}
-                >
-                  {thumbSrcOptions.map((item, index) => (
-                    <option value={item} key={`thumbSrc-${item}`}>
-                      {!isEmpty(item) ? `Option ${index}` : "none"}
-                    </option>
-                  ))}
-                </select>
-              </label>
-            </span>
+            <>
+              <span className="lab-playground__item">
+                <fieldset>
+                  <legend>Left element</legend>
+                  <Radio
+                    id="none"
+                    name="selectedThumbSrc"
+                    label="None"
+                    value="none"
+                    checked={selectedThumbSrc === "none"}
+                    onChange={this.handleRadioPropChange}
+                  />
+                  <Radio
+                    id="thumbnail"
+                    name="selectedThumbSrc"
+                    label="Thumbnail"
+                    value="thumbnail"
+                    checked={selectedThumbSrc === "thumbnail"}
+                    onChange={this.handleRadioPropChange}
+                  />
+                  {currentComponent !== "TogglableTag" ? (
+                    <Radio
+                      id="icon"
+                      name="selectedThumbSrc"
+                      label="Icon"
+                      value="icon"
+                      checked={selectedThumbSrc === "icon"}
+                      onChange={this.handleRadioPropChange}
+                    />
+                  ) : null}
+                </fieldset>
+              </span>
+              {currentComponent !== "TogglableTag" &&
+              selectedThumbSrc === "icon" ? (
+                <span className="lab-playground__item">
+                  <label htmlFor="selectedIcon">
+                    <strong>icon: </strong>
+                    <select
+                      id="selectedIcon"
+                      value={selectedIcon}
+                      onChange={this.handleIconPropChange}
+                      disabled={isIconInputDisabled}
+                    >
+                      {iconOptions.map((item) => (
+                        <option value={item} key={`icon-${item}`}>
+                          {!isEmpty(item) ? item : "none"}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                </span>
+              ) : null}
+            </>
           ) : null}
 
           {currentComponent === "RemovableTag" ? (
             <span className="lab-playground__item">
-              <button type="button" onClick={this.handleRestoreRemovableTag}>
-                <strong>Restore</strong>
-              </button>
+              <Button
+                text="Restore"
+                fullWidth
+                onClick={this.handleRestoreRemovableTag}
+              />
             </span>
           ) : null}
         </div>
