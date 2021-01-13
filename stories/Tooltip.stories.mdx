@@ -7,268 +7,282 @@ import Icon from "../labsystem/src/Icon";
 
 <Meta title="Components/Tooltip" />
 
-<div className="docs-title">
+<div className="docs-title docs-title--with-tab">
   <div>
     <h1 className="docs-title__text">Tooltip</h1>
   </div>
 </div>
 
 <div className="docs-content">
+  <div className="simple-tab-wrapper"></div>
+  <input className="simple-tab" type="radio" name="type-tab" id="tab1" defaultChecked/>
+  <label htmlFor="tab1">Code</label>
+
+  <input className="simple-tab" type="radio" name="type-tab" id="tab2" />
+  <label htmlFor="tab2">Usage</label>
+
+  <div className="simple-tab__content content1">
+  <h2>Overview</h2>
   <p>Tooltips display support text when users hover over, focus on, or tap an element.</p>
-
-
-<div className="columns">
-  <div className="column">
-    <ol>
-      <li>Describes differences between similar elements</li>
-      <li>Distinguishes actions with related iconography</li>
-      <li>Provides advanced tips such as keyboard shortcuts</li>
-      <li>Displays full information of ellipse texts</li>
-    </ol>
-  </div>
-  <div className="column">
-    <ol>
-      <li className="li--red">Don’t use tooltips to restate visible UI text</li>
-      <li className="li--red">Don't use tooltips to display hidden actions</li>
-      <li className="li--red">Don’t display rich text and imagery on tooltips</li>
-    </ol>
-  </div>
-</div>
-
-<h2>Anatomy</h2>
-<div className="columns">
+  <div className="columns">
     <div className="column">
-        <img src="docs/tooltip/tooltip-anatomy.png" alt="Tooltip anatomy" />
+      <p><strong>Do</strong></p>
+      <ol>
+        <li>Describes differences between similar elements</li>
+        <li>Distinguishes actions with related iconography</li>
+        <li>Provides advanced tips such as keyboard shortcuts</li>
+        <li>Displays full information of ellipse texts</li>
+      </ol>
     </div>
     <div className="column">
-        <ol>
-         <li>Text</li>
-         <li>Border (2px)</li>
-         <li>Background</li>
+      <p><strong>Don't</strong></p>
+      <ol>
+        <li className="li--red">Don’t use tooltips to restate visible UI text</li>
+        <li className="li--red">Don't use tooltips to display hidden actions</li>
+        <li className="li--red">Don’t display rich text and imagery on tooltips</li>
+      </ol>
+    </div>
+  </div>
+
+  <div className="doc-anatomy-block">
+    <div className="columns">
+      <div className="column">
+          <img src="docs/tooltip/tooltip-anatomy.png" alt="Tooltip anatomy" />
+      </div>
+      <div className="column">
+          <ol className="doc-anatomy-block__list">
+            <li>Text</li>
+            <li>Border (2px)</li>
+            <li>Background</li>
+          </ol>
+          <ul className="doc-anatomy-block__list">
+            <li className="li--red">No more than 12 words or 65 characters per line</li>
+            <li className="li--red">No more than 3 lines of text</li>
+          </ul>
+      </div>
+    </div>
+  </div>
+
+  <h2>Demo</h2>
+
+  <Canvas>
+    <Story name="Demo tooltip">
+      <Fragment>
+        <Tooltip
+          id="tooltip-long-text"
+          text="Example of tooltip message."
+          placement="right">
+            <OutlineButton
+              onClick={undefined}
+              size="normal"
+              text="tooltip trigger"
+            />
+        </Tooltip>
+      </Fragment>
+    </Story>
+  </Canvas>
+
+  <h2>Prop API</h2>
+  <p>Go to <a href="/?path=/docs/getting-started-setup-confetti--page">Setup</a> for instructions on how to import the component.</p>
+  <ArgsTable of={Tooltip} />
+  </div>
+
+  <div className="simple-tab__content content2">
+  <h2>Behavior</h2>
+  <p>A tooltip is displayed upon hovering over it (desktop). It is not displayed on mobile. Continuously display the tooltip as long as the user hovers over the element.</p>
+
+  <div className="columns">
+    <div className="column">
+      <img src="docs/tooltip/examples/edge do.png" alt="Good example of how to use a tooltip" />
+      <img src="docs/tooltip/examples/edge dont.png" alt="Bad example of how to use a tooltip" />
+      <img src="docs/tooltip/examples/sidebar do.png" alt="Good example of how to use a tooltip" />
+      <img src="docs/tooltip/examples/sidebar dont.png" alt="Bad example of how to use a tooltip" />
+    </div>
+    <div className="column">
+      <ol>
+        <li>It appears above and in the center of click targets* (default) and stay in place while cursor moves within the target </li>
+        <ol type="a">
+            <li>Tooltip disappears when cursor moves out of the target</li>
+            <li>Tooltip remains while cursor moves within the target</li>
         </ol>
+        <li>On sidebars, it should display either from the left or the right of click targets</li>
+        <li>Over 150ms, tooltips fade in and scale up using the deceleration curve. They fade out over 75ms.</li>
+      </ol>
+      <p className="li--red"><em>* When close to screen limits, keep the position of the tooltip visible with margins of 12px for all sides.</em></p>
     </div>
-</div>
+  </div>
 
-<div>
-  <ul>
-    <li className="li--red">No more than 12 words or 65 characters per line</li>
-    <li className="li--red">No more than 3 lines of text</li>
-  </ul>
-</div>
+  <h2>Theming</h2> 
+  <p>The tooltips color is defined in the <code>scss/variables/_settings.scss</code> file, and can be Black, Teal or Purple. Avoid using Purple tooltips if the project theme is Teal, and vice versa.</p>
+  <img src="docs/tooltip/examples/colors.png" alt="Available colors for tooltips" />
 
+  <h2>Special Guidelines</h2>
+  <h3>Placement</h3>
+  <p>Tooltips placement relative to the target is defined by the user through props, and can have one of the 12 following values:</p>
 
-<h2>Colors</h2>
-
-The tooltips color is defined in the `scss/variables/_settings.scss` file, and can be Black, Teal or Purple. Avoid using Purple tooltips if the project theme is Teal, and vice versa.
-
-<img src="docs/tooltip/examples/colors.png" alt="Available colors for tooltips" />
-
-<h2>Behavior</h2>
-
-A tooltip is displayed upon hovering over it (desktop). It is not displayed on mobile.
-Continuously display the tooltip as long as the user hovers over the element.
-
-<div className="columns">
-    <div className="column">
-        <div className="columns">
+  <Canvas>
+    <Story name="Placement">
+      <Fragment>
+        <div className="columns docs-tooltip">
             <div className="column">
-                <img src="docs/tooltip/examples/edge do.png" alt="Good example of how to use a tooltip" />
-                <img src="docs/tooltip/examples/edge dont.png" alt="Bad example of how to use a tooltip" />
+              <Tooltip id="tooltip-top-start" text="top-start" placement="top-start">
+                <OutlineButton
+                  onClick={undefined}
+                  size="large"
+                  text="top-start"
+                />
+              </Tooltip>
             </div>
             <div className="column">
-                <img src="docs/tooltip/examples/sidebar do.png" alt="Good example of how to use a tooltip" />
-                <img src="docs/tooltip/examples/sidebar dont.png" alt="Bad example of how to use a tooltip" />
+              <Tooltip id="tooltip-top" text="top" placement="top">
+                <OutlineButton
+                  onClick={undefined}
+                  size="large"
+                  text="top"
+                />
+              </Tooltip>
+            </div>
+            <div className="column">
+              <Tooltip id="tooltip-top-end" text="top-end" placement="top-end">
+                <OutlineButton
+                  onClick={undefined}
+                  size="large"
+                  text="top-end"
+                />
+              </Tooltip>
             </div>
         </div>
-    </div>
-    <div className="column">
-        <ol>
-         <li>It appears above and in the center of click targets* (default) and stay in place while cursor moves within the target </li>
-         <ol type="a">
-             <li>Tooltip disappears when cursor moves out of the target</li>
-             <li>Tooltip remains while cursor moves within the target</li>
-        </ol>
-         <li>On sidebars, it should display either from the left or the right of click targets</li>
-         <li>Over 150ms, tooltips fade in and scale up using the deceleration curve. They fade out over 75ms.</li>
-        </ol>
-        <br />
-        <p className="li--red"><em>* When close to screen limits, keep the position of the tooltip visible with margins of 12px for all sides.</em></p>
-    </div>
-</div>
-
-
-<h2>Placement</h2>
-
-Tooltips placement relative to the target is defined by the user through props, and can have one of the 12 following values:
-
-<Canvas>
-  <Story name="Placement">
-    <Fragment>
-      <div className="columns docs-tooltip">
-          <div className="column">
-            <Tooltip id="tooltip-top-start" text="top-start" placement="top-start">
+        <div className="columns space-between docs-tooltip">
+          <div className="column left">
+            <Tooltip id="tooltip-left-start" text="left-start" placement="left-start">
               <OutlineButton
-                onClick={undefined}
-                size="large"
-                text="top-start"
-              />
+                  onClick={undefined}
+                  size="large"
+                  text="left-start"
+                />
             </Tooltip>
           </div>
-          <div className="column">
-            <Tooltip id="tooltip-top" text="top" placement="top">
+          <div className="column right">
+            <Tooltip id="tooltip-right-start" text="right-start" placement="right-start">
               <OutlineButton
-                onClick={undefined}
-                size="large"
-                text="top"
-              />
+                  onClick={undefined}
+                  size="large"
+                  text="right-start"
+                />
             </Tooltip>
           </div>
-          <div className="column">
-            <Tooltip id="tooltip-top-end" text="top-end" placement="top-end">
+        </div>
+        <div className="columns space-between docs-tooltip">
+          <div className="column left">
+            <Tooltip id="tooltip-left" text="left" placement="left" >
               <OutlineButton
-                onClick={undefined}
-                size="large"
-                text="top-end"
-              />
+                  onClick={undefined}
+                  size="large"
+                  text="left"
+                />
             </Tooltip>
           </div>
-      </div>
-      <div className="columns space-between docs-tooltip">
-        <div className="column left">
-          <Tooltip id="tooltip-left-start" text="left-start" placement="left-start">
-            <OutlineButton
-                onClick={undefined}
-                size="large"
-                text="left-start"
-              />
-          </Tooltip>
-        </div>
-        <div className="column right">
-          <Tooltip id="tooltip-right-start" text="right-start" placement="right-start">
-            <OutlineButton
-                onClick={undefined}
-                size="large"
-                text="right-start"
-              />
-          </Tooltip>
-        </div>
-      </div>
-      <div className="columns space-between docs-tooltip">
-        <div className="column left">
-          <Tooltip id="tooltip-left" text="left" placement="left" >
-            <OutlineButton
-                onClick={undefined}
-                size="large"
-                text="left"
-              />
-          </Tooltip>
-        </div>
-        <div className="column right">
-          <Tooltip id="tooltip-right" text="right" placement="right">
-            <OutlineButton
-                onClick={undefined}
-                size="large"
-                text="right"
-              />
-          </Tooltip>
-        </div>
-      </div>
-      <div className="columns space-between docs-tooltip">
-        <div className="column left">
-          <Tooltip id="tooltip-left-end" text="left-end" placement="left-end" >
-            <OutlineButton
-                onClick={undefined}
-                size="large"
-                text="left-end"
-              />
-          </Tooltip>
-        </div>
-        <div className="column right">
-          <Tooltip id="tooltip-right-end" text="right-end" placement="right-end">
-            <OutlineButton
-                onClick={undefined}
-                size="large"
-                text="right-end"
-              />
-          </Tooltip>
-        </div>
-      </div>
-      <div className="columns docs-tooltip">
-          <div className="column">
-            <Tooltip id="tooltip-bottom-start" text="bottom-start" placement="bottom-start">
+          <div className="column right">
+            <Tooltip id="tooltip-right" text="right" placement="right">
               <OutlineButton
-                onClick={undefined}
-                size="large"
-                text="bottom-start"
-              />
+                  onClick={undefined}
+                  size="large"
+                  text="right"
+                />
             </Tooltip>
           </div>
-          <div className="column">
-            <Tooltip id="tooltip-bottom" text="bottom" placement="bottom">
+        </div>
+        <div className="columns space-between docs-tooltip">
+          <div className="column left">
+            <Tooltip id="tooltip-left-end" text="left-end" placement="left-end" >
               <OutlineButton
-                onClick={undefined}
-                size="large"
-                text="bottom"
-              />
+                  onClick={undefined}
+                  size="large"
+                  text="left-end"
+                />
             </Tooltip>
           </div>
-          <div className="column">
-            <Tooltip id="tooltip-bottom-end" text="bottom-end" placement="bottom-end">
+          <div className="column right">
+            <Tooltip id="tooltip-right-end" text="right-end" placement="right-end">
               <OutlineButton
-                onClick={undefined}
-                size="large"
-                text="bottom-end"
-              />
+                  onClick={undefined}
+                  size="large"
+                  text="right-end"
+                />
             </Tooltip>
           </div>
-      </div>
-    </Fragment>
-  </Story>
-</Canvas>
+        </div>
+        <div className="columns docs-tooltip">
+            <div className="column">
+              <Tooltip id="tooltip-bottom-start" text="bottom-start" placement="bottom-start">
+                <OutlineButton
+                  onClick={undefined}
+                  size="large"
+                  text="bottom-start"
+                />
+              </Tooltip>
+            </div>
+            <div className="column">
+              <Tooltip id="tooltip-bottom" text="bottom" placement="bottom">
+                <OutlineButton
+                  onClick={undefined}
+                  size="large"
+                  text="bottom"
+                />
+              </Tooltip>
+            </div>
+            <div className="column">
+              <Tooltip id="tooltip-bottom-end" text="bottom-end" placement="bottom-end">
+                <OutlineButton
+                  onClick={undefined}
+                  size="large"
+                  text="bottom-end"
+                />
+              </Tooltip>
+            </div>
+        </div>
+      </Fragment>
+    </Story>
+  </Canvas>
 
-<h2>Long texts</h2>
+  <h3>Long texts</h3>
+  <p>Tooltip text should not be longer than 180 characters and 3 lines. A warn will be thrown in the console if the 180 chars limit is crossed.</p>
 
-Tooltip text should not be longer than 180 characters and 3 lines. A warn will be thrown in the console if the 180 chars limit is crossed.
+  <Canvas>
+    <Story name="LongText">
+      <Fragment>
+        <Tooltip
+          id="tooltip-long-text"
+          text="Lorem ipsum dolor sit amet, has integre virtute consequat at. Sit quodsi gloriatur efficiantur in, quas inermis menandri ex vix. Sit quodsi gloriatur efficiantur in, quas inermis."
+          placement="right">
+            <OutlineButton
+              onClick={undefined}
+              size="normal"
+              text="bottom"
+            />
+        </Tooltip>
+      </Fragment>
+    </Story>
+  </Canvas>
 
-<Canvas>
-  <Story name="LongText">
-    <Fragment>
-      <Tooltip
-        id="tooltip-long-text"
-        text="Lorem ipsum dolor sit amet, has integre virtute consequat at. Sit quodsi gloriatur efficiantur in, quas inermis menandri ex vix. Sit quodsi gloriatur efficiantur in, quas inermis."
-        placement="right">
-          <OutlineButton
-            onClick={undefined}
-            size="normal"
-            text="bottom"
-          />
-      </Tooltip>
-    </Fragment>
-  </Story>
-</Canvas>
+  <h3>Icon</h3>
+  <p>Tooltip can also be triggered by an Icon or other elements.</p>
 
-<h2>Icon</h2>
+  <Canvas>
+    <Story name="Icon">
+      <Fragment>
+        <Tooltip
+          id="tooltip-icon"
+          text="Tooltip triggered by an Icon"
+          placement="right">
+            <Icon
+              type="key"
+              color="teal-60"
+            />
+        </Tooltip>
+      </Fragment>
+    </Story>
+  </Canvas>
 
-Tooltip can also be triggered by an Icon or other elements.
-
-<Canvas>
-  <Story name="Icon">
-    <Fragment>
-      <Tooltip
-        id="tooltip-icon"
-        text="Tooltip triggered by an Icon"
-        placement="right">
-          <Icon
-            type="key"
-            color="teal-60"
-          />
-      </Tooltip>
-    </Fragment>
-  </Story>
-</Canvas>
-
-<h2>Prop API</h2>
-<p>Go to <a href="/?path=/docs/getting-started-setup-confetti--page">Setup</a> for instructions on how to import the component.</p>
-<ArgsTable of={Tooltip} />
-
+  </div>
 </div>
