@@ -6,205 +6,198 @@ import Badge from '../labsystem/src/Badge';
 
 <Meta title="Components/Icons & Badges" component={Icon} />
 
-<div className="docs-title">
+<div className="docs-title docs-title--with-tab">
   <div>
     <h1 className="docs-title__text">Icons & Badges</h1>
   </div>
 </div>
 
 <div className="docs-content">
+  <div className="simple-tab-wrapper"></div>
+  <input className="simple-tab" type="radio" name="type-tab" id="tab1" defaultChecked/>
+  <label htmlFor="tab1">Code</label>
 
-The `Icon` and `Badge` components have similar behavior.
+  <input className="simple-tab" type="radio" name="type-tab" id="tab2" />
+  <label htmlFor="tab2">Usage</label>
 
-Both receive two inputs as props, where `type` indicates which symbol to show, while `color` defines its color.
-`Badge` receives an extra prop `wrapperColor`, since the background color is different from the symbol color.
-Also, the `size` option is available only for `Icon`
+  <div className="simple-tab__content content1">
+  <h2>Overview</h2>
+  <p>Will display what is this component about with a simple intro text like: "Radio is a type of selector that is used when we have a list of options, and only one option can be selected."</p>
+  
+  <p>The <code>Icon</code> and <code>Badge</code> components have similar behavior.</p>
+  <p>Both receive two inputs as props, where <code>type</code> indicates which symbol to show, while <code>color</code> defines its color. <code>Badge</code> receives an extra prop <code>wrapperColor</code>, since the background color is different from the symbol color. Also, the <code>size</code> option is available only for <code>Icon</code></p>
 
-<h2>Sample Icons</h2>
+  <h2>Demo</h2>
 
-Icons can be used as shown in the examples below:
+  <Canvas>
+    <Story name="Demo icons and badges">
+      <Icon type='arrow-left' color="teal-40" />
+      <Icon type='arrow-left' color="teal-40" size="petit" />
+      <Icon type='arrow-left' color="teal-40" size="small" />
+      <Badge type='harvest' wrapperColor="teal-40" color="white" />
+      <Badge type='harvest' wrapperColor="purple-40" color="white" />
+      <Badge type='harvest' color="mineral-40" wrapperColor="mineral-10" />
+    </Story>
+  </Canvas>
 
-<h3>Arrow Left - Sizes</h3>
+  <h2>Prop API</h2>
+  <p>Go to <a href="/?path=/docs/getting-started-setup-confetti--page">Setup</a> for instructions on how to import the component.</p>
 
-<Canvas>
-  <Story name="Sample Icon - Sizes">
-    <Icon type='arrow-left' color="teal-40" />
-    <Icon type='arrow-left' color="teal-40" size="petit" />
-    <Icon type='arrow-left' color="teal-40" size="small" />
-  </Story>
-</Canvas>
+  <h3>Icon</h3>
+  <ArgsTable of={Icon} />
 
-<h2>Sample Badges</h2>
+  <h3>Badge</h3>
+  <ArgsTable of={Badge} />
+  </div>
 
-Badges can be used as shown in the examples below:
+  <div className="simple-tab__content content2">
+  <h2>Types and Colors</h2>
+  <h3>Icons</h3>
+  <p>All the available Icons are shown below. You can use them with all the colors available on the design system.</p>
 
-<h3>Harvest - Wrapper Colors</h3>
+  <h4>Teal</h4>
 
-<Canvas>
-  <Story name="Sample Badge - Wrapper Colors">
-    <Badge type='harvest' wrapperColor="teal-40" color="white" />
-    <Badge type='harvest' wrapperColor="purple-40" color="white" />
-    <Badge type='harvest' color="mineral-40" wrapperColor="mineral-10" />
-  </Story>
-</Canvas>
+  <Canvas>
+    <Story name="Icon Teal">
+      <Fragment>
+        <Icon type='arrow-left' color="teal-40"/>
+        <Icon type='dropdown-closed' color="teal-40"/>
+        <Icon type='remove' color="teal-40"/>
+        <Icon type='eye-opened' color="teal-40"/>
+        <Icon type='logout' color="teal-40"/>
+        <Icon type='edit' color="teal-40"/>
+        <Icon type='arrow-fill-right' color="teal-40"/>
+        <br />
+        <Icon type='arrow-right' color="teal-40"/>
+        <Icon type='dropdown-open' color="teal-40"/>
+        <Icon type='plus' color="teal-40"/>
+        <Icon type='eye-closed' color="teal-40"/>
+        <Icon type='track' color="teal-40"/>
+        <Icon type='key' color="teal-40"/>
+        <Icon type='arrow-fill-left' color="teal-40"/>
+        <br />
+        <Icon type='arrow-top' color="teal-40"/>
+        <Icon type='collapse-closed' color="teal-40"/>
+        <Icon type='minus' color="teal-40"/>
+        <Icon type='magnifying-glass' color="teal-40"/>
+        <Icon type='calendar' color="teal-40"/>
+        <Icon type='upload' color="teal-40"/>
+        <Icon type='chevron-right' color="teal-40"/>
+        <br />
+        <Icon type='arrow-down' color="teal-40"/>
+        <Icon type='collapse-open' color="teal-40"/>
+        <Icon type='check' color="teal-40"/>
+        <Icon type='trash' color="teal-40"/>
+        <Icon type='coin' color="teal-40"/>
+        <Icon type='reload' color="teal-40"/>
+        <Icon type='chevron-left' color="teal-40"/>
+        <br />
+        <Icon type='sort' color="teal-40" />
+        <Icon type='menu-expand' color="teal-40" />
+        <Icon type='menu-collapse' color="teal-40" />
+        <Icon type='menu-default' color="teal-40" />
+        <Icon type='external' color="teal-40" />
+        <Icon type='wallet' color="teal-40" />
+        <Icon type='workspace' color="teal-40" />
+      </Fragment>
+    </Story>
+  </Canvas>
 
-<h2>Icon Colors</h2>
+  <h4>Purple</h4>
 
-All the available Icons are shown below. You can use them with all the colors available on the design system.
+  <Canvas>
+    <Story name="Icon Mineral 70">
+      <Fragment>
+        <Icon type='arrow-left' color="purple-60"/>
+        <Icon type='dropdown-closed' color="purple-60"/>
+        <Icon type='remove' color="purple-60"/>
+        <Icon type='eye-opened' color="purple-60"/>
+        <Icon type='logout' color="purple-60"/>
+        <Icon type='edit' color="purple-60"/>
+        <Icon type='arrow-fill-right' color="purple-60"/>
+        <br />
+        <Icon type='arrow-right' color="purple-60"/>
+        <Icon type='dropdown-open' color="purple-60"/>
+        <Icon type='plus' color="purple-60"/>
+        <Icon type='eye-closed' color="purple-60"/>
+        <Icon type='track' color="purple-60"/>
+        <Icon type='key' color="purple-60"/>
+        <Icon type='arrow-fill-left' color="purple-60"/>
+        <br />
+        <Icon type='arrow-top' color="purple-60"/>
+        <Icon type='collapse-closed' color="purple-60"/>
+        <Icon type='minus' color="purple-60"/>
+        <Icon type='magnifying-glass' color="purple-60"/>
+        <Icon type='calendar' color="purple-60"/>
+        <Icon type='upload' color="purple-60"/>
+        <Icon type='chevron-right' color="purple-60"/>
+        <br />
+        <Icon type='arrow-down' color="purple-60"/>
+        <Icon type='collapse-open' color="purple-60"/>
+        <Icon type='check' color="purple-60"/>
+        <Icon type='trash' color="purple-60"/>
+        <Icon type='coin' color="purple-60"/>
+        <Icon type='reload' color="purple-60"/>
+        <Icon type='chevron-left' color="purple-60"/>
+        <br />
+        <Icon type='sort' color="purple-60" />
+        <Icon type='menu-expand' color="purple-60" />
+        <Icon type='menu-collapse' color="purple-60" />
+        <Icon type='menu-default' color="purple-60" />
+        <Icon type='external' color="purple-60" />
+        <Icon type='wallet' color="purple-60" />
+        <Icon type='workspace' color="purple-60" />
+      </Fragment>
+    </Story>
+  </Canvas>
 
-<h3>Icon - Teal</h3>
+  <h3>Badges</h3>
+  <p>All the available Badges are shown below. You can use all the colors available on the design system for the props `color` and `wrapperColor`.</p>
 
-<Canvas>
-  <Story name="Icon Teal">
-    <Fragment>
-      <Icon type='arrow-left' color="teal-40"/>
-      <Icon type='dropdown-closed' color="teal-40"/>
-      <Icon type='remove' color="teal-40"/>
-      <Icon type='eye-opened' color="teal-40"/>
-      <Icon type='logout' color="teal-40"/>
-      <Icon type='edit' color="teal-40"/>
-      <Icon type='arrow-fill-right' color="teal-40"/>
-      <br />
-      <Icon type='arrow-right' color="teal-40"/>
-      <Icon type='dropdown-open' color="teal-40"/>
-      <Icon type='plus' color="teal-40"/>
-      <Icon type='eye-closed' color="teal-40"/>
-      <Icon type='track' color="teal-40"/>
-      <Icon type='key' color="teal-40"/>
-      <Icon type='arrow-fill-left' color="teal-40"/>
-      <br />
-      <Icon type='arrow-top' color="teal-40"/>
-      <Icon type='collapse-closed' color="teal-40"/>
-      <Icon type='minus' color="teal-40"/>
-      <Icon type='magnifying-glass' color="teal-40"/>
-      <Icon type='calendar' color="teal-40"/>
-      <Icon type='upload' color="teal-40"/>
-      <Icon type='chevron-right' color="teal-40"/>
-      <br />
-      <Icon type='arrow-down' color="teal-40"/>
-      <Icon type='collapse-open' color="teal-40"/>
-      <Icon type='check' color="teal-40"/>
-      <Icon type='trash' color="teal-40"/>
-      <Icon type='coin' color="teal-40"/>
-      <Icon type='reload' color="teal-40"/>
-      <Icon type='chevron-left' color="teal-40"/>
-      <br />
-      <Icon type='sort' color="teal-40" />
-      <Icon type='menu-expand' color="teal-40" />
-      <Icon type='menu-collapse' color="teal-40" />
-      <Icon type='menu-default' color="teal-40" />
-      <Icon type='external' color="teal-40" />
-      <Icon type='wallet' color="teal-40" />
-      <Icon type='workspace' color="teal-40" />
-    </Fragment>
-  </Story>
-</Canvas>
+  <h4>Teal</h4>
 
-<h3>Icon - Purple</h3>
+  <Canvas>
+    <Story name="Badge Teal">
+      <Fragment>
+        <Badge type='harvest' wrapperColor="teal-40" color="white"/>
+        <Badge type='ponto' wrapperColor="teal-40" color="white"/>
+        <Badge type='meta' wrapperColor="teal-40" color="white"/>
+        <br />
+        <Badge type='star' wrapperColor="teal-40" color="white"/>
+        <Badge type='floating-add' wrapperColor="teal-40" color="white"/>
+      </Fragment>
+    </Story>
+  </Canvas>
 
-<Canvas>
-  <Story name="Icon Mineral 70">
-    <Fragment>
-      <Icon type='arrow-left' color="purple-60"/>
-      <Icon type='dropdown-closed' color="purple-60"/>
-      <Icon type='remove' color="purple-60"/>
-      <Icon type='eye-opened' color="purple-60"/>
-      <Icon type='logout' color="purple-60"/>
-      <Icon type='edit' color="purple-60"/>
-      <Icon type='arrow-fill-right' color="purple-60"/>
-      <br />
-      <Icon type='arrow-right' color="purple-60"/>
-      <Icon type='dropdown-open' color="purple-60"/>
-      <Icon type='plus' color="purple-60"/>
-      <Icon type='eye-closed' color="purple-60"/>
-      <Icon type='track' color="purple-60"/>
-      <Icon type='key' color="purple-60"/>
-      <Icon type='arrow-fill-left' color="purple-60"/>
-      <br />
-      <Icon type='arrow-top' color="purple-60"/>
-      <Icon type='collapse-closed' color="purple-60"/>
-      <Icon type='minus' color="purple-60"/>
-      <Icon type='magnifying-glass' color="purple-60"/>
-      <Icon type='calendar' color="purple-60"/>
-      <Icon type='upload' color="purple-60"/>
-      <Icon type='chevron-right' color="purple-60"/>
-      <br />
-      <Icon type='arrow-down' color="purple-60"/>
-      <Icon type='collapse-open' color="purple-60"/>
-      <Icon type='check' color="purple-60"/>
-      <Icon type='trash' color="purple-60"/>
-      <Icon type='coin' color="purple-60"/>
-      <Icon type='reload' color="purple-60"/>
-      <Icon type='chevron-left' color="purple-60"/>
-      <br />
-      <Icon type='sort' color="purple-60" />
-      <Icon type='menu-expand' color="purple-60" />
-      <Icon type='menu-collapse' color="purple-60" />
-      <Icon type='menu-default' color="purple-60" />
-      <Icon type='external' color="purple-60" />
-      <Icon type='wallet' color="purple-60" />
-      <Icon type='workspace' color="purple-60" />
-    </Fragment>
-  </Story>
-</Canvas>
+  <h4>Purple</h4>
 
-<h2>Badge Colors</h2>
+  <Canvas>
+    <Story name="Badge Mineral 70">
+      <Fragment>
+        <Badge type='harvest' wrapperColor="purple-60" color="white"/>
+        <Badge type='ponto' wrapperColor="purple-60" color="white"/>
+        <Badge type='meta' wrapperColor="purple-60" color="white"/>
+        <br />
+        <Badge type='star' wrapperColor="purple-60" color="white"/>
+        <Badge type='floating-add' wrapperColor="purple-60" color="white"/>
+      </Fragment>
+    </Story>
+  </Canvas>
 
-All the available Badges are shown below. You can use all the colors available on the design system for the props `color` and `wrapperColor`.
+  <h4>Mineral 20</h4>
 
-<h3>Badge - Teal</h3>
+  <Canvas>
+    <Story name="Badge Mineral 20">
+      <Fragment>
+        <Badge type='harvest' color="mineral-30" wrapperColor="mineral-10" />
+        <Badge type='ponto' color="mineral-30" wrapperColor="mineral-10" />
+        <Badge type='meta' color="mineral-30" wrapperColor="mineral-10" />
+        <br />
+        <Badge type='star' color="mineral-30" wrapperColor="mineral-10" />
+        <Badge type='floating-add' color="mineral-30" wrapperColor="mineral-10" />
+      </Fragment>
+    </Story>
+  </Canvas>
 
-<Canvas>
-  <Story name="Badge Teal">
-    <Fragment>
-      <Badge type='harvest' wrapperColor="teal-40" color="white"/>
-      <Badge type='ponto' wrapperColor="teal-40" color="white"/>
-      <Badge type='meta' wrapperColor="teal-40" color="white"/>
-      <br />
-      <Badge type='star' wrapperColor="teal-40" color="white"/>
-      <Badge type='floating-add' wrapperColor="teal-40" color="white"/>
-    </Fragment>
-  </Story>
-</Canvas>
-
-<h3>Badge - Purple</h3>
-
-<Canvas>
-  <Story name="Badge Mineral 70">
-    <Fragment>
-      <Badge type='harvest' wrapperColor="purple-60" color="white"/>
-      <Badge type='ponto' wrapperColor="purple-60" color="white"/>
-      <Badge type='meta' wrapperColor="purple-60" color="white"/>
-      <br />
-      <Badge type='star' wrapperColor="purple-60" color="white"/>
-      <Badge type='floating-add' wrapperColor="purple-60" color="white"/>
-    </Fragment>
-  </Story>
-</Canvas>
-
-<h3>Badge - Mineral 20</h3>
-
-<Canvas>
-  <Story name="Badge Mineral 20">
-    <Fragment>
-      <Badge type='harvest' color="mineral-30" wrapperColor="mineral-10" />
-      <Badge type='ponto' color="mineral-30" wrapperColor="mineral-10" />
-      <Badge type='meta' color="mineral-30" wrapperColor="mineral-10" />
-      <br />
-      <Badge type='star' color="mineral-30" wrapperColor="mineral-10" />
-      <Badge type='floating-add' color="mineral-30" wrapperColor="mineral-10" />
-    </Fragment>
-  </Story>
-</Canvas>
-
-<h2>Prop API</h2>
-<p>Go to <a href="/?path=/docs/getting-started-setup-confetti--page">Setup</a> for instructions on how to import the component.  </p>
-
-### Icon
-<ArgsTable of={Icon} />
-
-<h3>Badge</h3>
-
-<ArgsTable of={Badge} />
-
+  </div>
 </div>
