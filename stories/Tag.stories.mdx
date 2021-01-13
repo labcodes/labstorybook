@@ -83,20 +83,20 @@ import { thumbSrcOptions, iconOptions } from "../playgrounds/assets";
 
   <div className="simple-tab__content content2">
     <h2>Variations</h2>
-    <p><strong>There are 4 types of tags. Tags can have 2 different styles of multiple colors. Each style might have 2 distinct shades.</strong></p>
-    <p><em>* Even though all types can be used accross the application, <strong>only one style can be used within the same context.</strong> Accross the application, use styles wisely in order to preserve consistancy and avoid user confusion.</em></p>
+    <p><strong>There are four types of tags: simple, dropdown, togglable, and removable tags. They can have two different styles (default and outline) and multiple colors. Besides that, each color has two different skins: pale and vivid. Skins represent the shade of a color.</strong></p>
+    <p><em>* Even though all types can be used across the application, <strong>only one style can be used within the same context.</strong> Across the application, use styles wisely to preserve consistency and avoid user confusion.</em></p>
     <div>
       <div className="columns">
         <div className="column">
           <h3>Simple tag</h3>
-          <p>Used to represent categories like status, type, etc. <strong>No actions are allowed for this type</strong>, focus is the only state styled. Supports the left element <code>icon</code> or <code>thumbSrc</code> but doesn't support a right one.</p>
+          <p>It is used to represent categories like status, type, etc. <strong>No actions are allowed for this type</strong>, and focus is the only state styled. Supports the left element <code>icon</code> or <code>thumbSrc</code> but doesn't support the right one.</p>
           <SimpleTag text="Simple tag" />
           <SimpleTag text="Simple tag" icon={iconOptions[1]}/>
           <SimpleTag text="Simple tag" thumbSrc={thumbSrcOptions[1]} />
         </div>
         <div className="column">
           <h3>Dropdown tag</h3>
-          <p>Used to switch between categories represented using a simple tag. Supports the left element <code>icon</code> and has a dropdown arrow to the right.<br /><br /></p>
+          <p>It is used to switch between categories represented using a simple tag. It supports the left element <code>icon</code> and has a dropdown arrow to the right.<br /><br /></p>
           <DropdownTag text="Dropdown" />
           <DropdownTag text="Dropdown" icon={iconOptions[1]}/>
         </div>
@@ -104,13 +104,13 @@ import { thumbSrcOptions, iconOptions } from "../playgrounds/assets";
       <div className="columns">
         <div className="column">
           <h3>Togglable tag</h3>
-          <p>Used to represent single or multiple selection from a set. Do not support a right element and has a not-customizable left element.</p>
+          <p>It is used to represent single or multiple selections from a set. Do not support the right element and has a not-customizable left element.</p>
           <TogglableTag text="Togglable" />
           <TogglableTag text="Togglable" isOn />
         </div>
         <div className="column">
           <h3>Removable tag</h3>
-          <p>Used as an entity of a picked or typed item, often within a field. Supports the left element <code>icon</code> or <code>thumbSrc</code> and has a remove button to the right.</p>
+          <p>It is used as an entity of a picked or typed item, often within a field. It supports the left element <code>icon</code> or <code>thumbSrc</code> and has a remove button to the right.</p>
           <RemovableTag text="Removable" />
           <RemovableTag text="Removable" icon={iconOptions[1]} />
           <RemovableTag text="Removable" thumbSrc={thumbSrcOptions[1]} />
@@ -136,7 +136,7 @@ import { thumbSrcOptions, iconOptions } from "../playgrounds/assets";
   </Canvas>
 
   <h3>Outline</h3>
-    <p>Using <code>outline</code> will display a tag with white background and 2px border.</p>
+    <p>Using <code>outline</code> will display a tag with <code>white</code> background and <code>2px</code> border.</p>
 
   <Canvas>
     <Story name="Outline sample">

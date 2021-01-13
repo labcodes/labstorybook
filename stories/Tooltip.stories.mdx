@@ -89,7 +89,7 @@ import Icon from "../labsystem/src/Icon";
 
   <div className="simple-tab__content content2">
   <h2>Behavior</h2>
-  <p>A tooltip is displayed upon hovering over it (desktop). It is not displayed on mobile. Continuously display the tooltip as long as the user hovers over the element.</p>
+  <p>On desktop, a tooltip is displayed upon hovering over it. It is not displayed on mobile. Continuously display the tooltip as long as the user hovers over the element.</p>
 
   <div className="columns">
     <div className="column">
@@ -100,15 +100,15 @@ import Icon from "../labsystem/src/Icon";
     </div>
     <div className="column">
       <ol>
-        <li>It appears above and in the center of click targets* (default) and stay in place while cursor moves within the target </li>
+        <li>By default the tooltip appears above and in the center of click targets* and stays in place while the cursor moves within the target</li>
         <ol type="a">
-            <li>Tooltip disappears when cursor moves out of the target</li>
-            <li>Tooltip remains while cursor moves within the target</li>
+            <li>Tooltip disappears when the cursor moves out of the target</li>
+            <li>Tooltip remains while the cursor moves within the target</li>
         </ol>
         <li>On sidebars, it should display either from the left or the right of click targets</li>
         <li>Over 150ms, tooltips fade in and scale up using the deceleration curve. They fade out over 75ms.</li>
       </ol>
-      <p className="li--red"><em>* When close to screen limits, keep the position of the tooltip visible with margins of 12px for all sides.</em></p>
+      <p className="li--red"><em>* When close to screen limits, keep tooltip position visible with margins of 12px for all sides.</em></p>
     </div>
   </div>
 
@@ -118,7 +118,7 @@ import Icon from "../labsystem/src/Icon";
 
   <h2>Special Guidelines</h2>
   <h3>Placement</h3>
-  <p>Tooltips placement relative to the target is defined by the user through props, and can have one of the 12 following values:</p>
+  <p>Tooltips placement relative to the target is defined by the user through props, and can have one of the 12 following values. The default value is <code>top</code>.</p>
 
   <Canvas>
     <Story name="Placement">

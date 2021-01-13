@@ -22,7 +22,7 @@ import Toggle from '../labsystem/src/Toggle';
 
   <div className="simple-tab__content content1">
     <h2>Overview</h2>
-    <p>Toggle is a selection controls that allows the user to choose a single option at a time. It works as an on/off switch.</p>
+    <p>Toggle is a selection control that allows the user to choose a single option at a time. It works as an on/off switch.</p>
     <div className="columns">
       <div className="doc-anatomy-block">
         <div className="columns">
@@ -41,17 +41,16 @@ import Toggle from '../labsystem/src/Toggle';
           </div>
       </div>
     </div>
-   <h2>Interactive demo</h2>
-    <p>This demo lets you preview the checkbox component, its variations, and configuration options.</p>
+   <h2>Demo</h2>
 
-<Canvas>
-  <Story name="Sample Toggle">
-    <Toggle name="sample-toggle-1" />
-  </Story>
-</Canvas>
+  <Canvas>
+    <Story name="Sample Toggle">
+      <Toggle name="sample-toggle-1" />
+    </Story>
+  </Canvas>
 
 <h2>Prop API</h2>
-<p>The <code>Toggle</code> component might receive up to five inputs as props, where the <code>color</code> and <code>name</code> parameters are the only required ones</p>
+<p>The <code>Toggle</code> component might receive up to six inputs as props, where the <code>color</code> and <code>name</code> parameters are the only required ones.</p>
 <p>Go to <a href="/?path=/docs/getting-started-setup-confetti--page">Setup</a> for instructions on how to import the component.</p>
 <ArgsTable of={Toggle} />
 
@@ -68,7 +67,7 @@ import Toggle from '../labsystem/src/Toggle';
 </Canvas>
 
 <h2>Toggle Disabled</h2>
-Toggle can be disabled and, at the same time receive, a <code>defaultValue</code>:
+<p>Toggle can be disabled and, at the same time receive, a <code>defaultValue</code>:</p>
 
 <Canvas>
   <Story name="Sample Toggle Disabled">
