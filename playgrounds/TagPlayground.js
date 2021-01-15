@@ -235,22 +235,26 @@ export default class TagPlayground extends React.Component {
 
           <span className="lab-playground__item">
             <span className="lab-playground__item">
-              <p>
-                <strong>Disabled</strong>
-              </p>
-              <Toggle
-                name="selectedIsDisabled"
-                handleToggle={this.handleBoolPropChange}
-                value={selectedIsDisabled}
-              />
-              <p>
-                <strong>AriaDisabled</strong>
-              </p>
-              <Toggle
-                name="selectedAriaDisabled"
-                handleToggle={this.handleBoolPropChange}
-                value={selectedAriaDisabled}
-              />
+              {currentComponent !== "SimpleTag" ? (
+                <React.Fragment>
+                  <p>
+                    <strong>Disabled</strong>
+                  </p>
+                  <Toggle
+                    name="selectedIsDisabled"
+                    handleToggle={this.handleBoolPropChange}
+                    value={selectedIsDisabled}
+                  />
+                  <p>
+                    <strong>AriaDisabled</strong>
+                  </p>
+                  <Toggle
+                    name="selectedAriaDisabled"
+                    handleToggle={this.handleBoolPropChange}
+                    value={selectedAriaDisabled}
+                  />
+                </React.Fragment>
+              ) : null}
               <p>
                 <strong>isOutline</strong>
               </p>
