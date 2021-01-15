@@ -6,87 +6,70 @@ import CheckboxPlayground from '../playgrounds/CheckboxPlayground';
 
 <Meta title="Components/Checkbox" />
 
-<div class="docs-title">
+<div className="docs-title docs-title--with-tab">
   <div>
-    <h1 class="docs-title__text">Checkbox</h1>
+    <h1 className="docs-title__text">Checkbox</h1>
   </div>
 </div>
 
-<div class="docs-content">
-  <p>Checkboxes are selection controls that allows the user to select options.
-  They should be used when we have a list of options that can be multiple selected.
-  </p>
+<div className="docs-content">
+  <div className="simple-tab-wrapper"></div>
 
-  <h2>Acessibility</h2>
-  <p>Striving to keep our forms accessible, we recommend to use this type of component by using the `fieldset` tag to nest a group of selectors and the `legend` tag to identify the heading of the group. These elements works indicating to screen readers that a group of form fields relate to each other.</p>
+  <input className="simple-tab" type="radio" name="type-tab" id="tab1" defaultChecked/>
+  <label htmlFor="tab1">Code</label>
 
-  <h2>Anatomy</h2>
-  <div class="columns">
-      <div class="column">
-          <img src="docs/checkbox/checkbox-anatomy.png" alt="Checkbox anatomy"/>
-      </div>
-      <div class="column">
-          <ol>
-            <li>Checkbox container</li>
-            <li>Checkbox icon status indicator</li>
-            <li>Hover stroke</li>
-            <li>Base container stroke</li>
-            <li>Focus stroke</li>
-          </ol>
-      </div>
+  <input className="simple-tab" type="radio" name="type-tab" id="tab2" />
+  <label htmlFor="tab2">Usage</label>
+
+  <div className="simple-tab__content content1">
+  <h2>Overview</h2>
+  <p>Checkboxes are selection controls that allows the user to select options. They should be used when we have a list of options that can be multiple selected.</p>
+
+  <div className="columns doc-anatomy-block">
+    <div className="column">
+      <img src="docs/checkbox/checkbox-anatomy.png" alt="Checkbox anatomy"/>
+    </div>
+    <div className="column">
+      <ol>
+        <li>Checkbox container</li>
+        <li>Checkbox icon status indicator</li>
+        <li>Hover stroke</li>
+        <li>Base container stroke</li>
+        <li>Focus stroke</li>
+      </ol>
+    </div>
   </div>
 
   <h2>Interactive demo</h2>
   <p>This demo lets you preview the checkbox component, its variations, and configuration options.</p>
+  <CheckboxPlayground />
 
-<h2>Interactive demo</h2>
-<p>This demo lets you preview the component, its variations, and configuration options.</p>
-<CheckboxPlayground />
+  <h2>Acessibility</h2>
+  <p>Striving to keep our forms accessible, we recommend to use this type of component
+    by using the <code>fieldset</code> tag to nest a group of selectors and the <code>legend</code> tag to identify the heading of the group.
+    These elements works indicating to screen readers that a group of form fields relate to each other.
+  </p>
 
-<h2>Prop API</h2>
-<p>Go to <a href="/?path=/docs/getting-started-setup-confetti--page">Setup</a> for instructions on how to import the component.  </p>
-<ArgsTable of={Checkbox} />
+  <h2>Prop API</h2>
+  <p>Go to <a href="/?path=/docs/getting-started-setup-confetti--page">Setup</a> for instructions on how to import the component.  </p>
+  <ArgsTable of={Checkbox} />
+  </div>
 
-#### Checkbox
+  <div className="simple-tab__content content2">
+  <h2>Theming</h2>
+  <p>The checkbox color is defined in the <code>scss/variables/_settings.scss</code> file, and can be Teal or Purple. Avoid using purple checkboxes if the project theme is teal, and vice versa.</p>
 
-<Canvas>
-  <Story name="Checkbox">
+  <Canvas>
+    <Story name="Styles">
     <Fragment>
-        <fieldset>
-          <Checkbox id="checkbox-1" label="Idle" name="checkbox" defaultChecked />
-          <br />
-          <Checkbox id="checkbox-2" label="Indeterminate" name="checkbox" indeterminate defaultChecked />
-          <br />
-          <Checkbox id="checkbox-3" label="Disabled Checked" name="checkbox" checked disabled/>
-          <br />
-          <Checkbox id="checkbox-4" label="Disabled Idle" name="checkbox" disabled />
-          <br />
-          <Checkbox id="checkbox-5" label="AriaDisabled Checked" name="checkbox" checked ariaDisabled/>
-          <br />
-          <Checkbox id="checkbox-6" label="AriaDisabled Idle" name="checkbox" ariaDisabled />
-        </fieldset>
+      <fieldset>
+        <Checkbox className='lab-checkbox--purple' id="checkbox-5" label="Idle" name="checkbox2" />
+        <br />
+        <Checkbox className='lab-checkbox--purple' id="checkbox-6" label="Indeterminate" name="checkbox2" indeterminate />
+      </fieldset>
     </Fragment>
-  </Story>
-</Canvas>
+    </Story>
+  </Canvas>
 
-<h2>Styles</h2>
-<p>Checkboxes can also be used in the purple theme</p>
-
-<Canvas>
-  <Story name="Styles">
-  <Fragment>
-    <fieldset>
-      <Checkbox className='lab-checkbox--purple' id="checkbox-5" label="Idle" name="checkbox2" />
-      <br />
-      <Checkbox className='lab-checkbox--purple' id="checkbox-6" label="Indeterminate" name="checkbox2" indeterminate />
-    </fieldset>
-  </Fragment>
-  </Story>
-</Canvas>
-
-<h2>Prop API docs</h2>
-<p>Here's the list of props based on the component's prop types definitions.</p>
-
-<ArgsTable of={Checkbox} />
-
+  </div>
 </div>
