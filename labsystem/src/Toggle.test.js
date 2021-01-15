@@ -71,19 +71,19 @@ describe("Toggle", () => {
 
   it("doesn't trigger onChange if ariaDisabled", async () => {
     const mockHandleToggle = jest.fn();
-    const shallowedComponent = shallow(
+    const shallowComponent = shallow(
       <Toggle ariaDisabled handleToggle={mockHandleToggle} name="test-toggle" />
     );
 
-    expect(shallowedComponent.find({ checked: false })).toHaveLength(1);
+    expect(shallowComponent.find({ checked: false })).toHaveLength(1);
     expect(mockHandleToggle).not.toBeCalled();
 
-    shallowedComponent
+    shallowComponent
       .find("input")
       .at(0)
       .simulate("change", { test: "event" });
 
-    expect(shallowedComponent.find({ checked: false })).toHaveLength(1);
+    expect(shallowComponent.find({ checked: false })).toHaveLength(1);
     expect(mockHandleToggle).not.toBeCalled();
   });
 });

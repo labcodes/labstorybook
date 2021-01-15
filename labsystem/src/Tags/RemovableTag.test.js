@@ -59,11 +59,11 @@ describe("RemovableTag", () => {
 
   it("calls prop.onClick when clicked", async () => {
     const mockOnClick = jest.fn();
-    const shallowedRemovableTag = shallow(
+    const shallowRemovableTag = shallow(
       <RemovableTag text="Test click on RemovableTag" onClick={mockOnClick} />
     );
     expect(mockOnClick.mock.calls.length).toEqual(0);
-    shallowedRemovableTag.simulate("click");
+    shallowRemovableTag.simulate("click");
     expect(mockOnClick.mock.calls.length).toEqual(1);
   });
 

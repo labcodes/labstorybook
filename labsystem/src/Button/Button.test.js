@@ -47,10 +47,10 @@ describe("Button", () => {
 
   it("calls props.onClick when clicked", async () => {
     const mockOnClick = jest.fn();
-    const shallowedButton = shallow(
+    const shallowButton = shallow(
       <Button text="Test Click on Default Button" onClick={mockOnClick} />
     );
-    shallowedButton.simulate("click");
+    shallowButton.simulate("click");
     expect(mockOnClick.mock.calls.length).toEqual(1);
   });
 

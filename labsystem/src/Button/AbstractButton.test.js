@@ -28,7 +28,7 @@ describe("AbstractButton", () => {
 
   it("doesn't call onClick if ariaDisabled", async () => {
     const mockOnClick = jest.fn();
-    const shallowedComponent = shallow(
+    const shallowComponent = shallow(
       <AbstractButton
         ariaDisabled
         onClick={mockOnClick}
@@ -37,7 +37,7 @@ describe("AbstractButton", () => {
       />
     );
     expect(mockOnClick.mock.calls.length).toEqual(0);
-    shallowedComponent.find("button").simulate("click");
+    shallowComponent.find("button").simulate("click");
     expect(mockOnClick.mock.calls.length).toEqual(0);
   });
 });

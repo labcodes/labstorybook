@@ -54,11 +54,11 @@ describe("DropdownTag", () => {
 
   it("calls prop.onClick when clicked", async () => {
     const mockOnClick = jest.fn();
-    const shallowedDropdownTag = shallow(
+    const shallowDropdownTag = shallow(
       <DropdownTag text="Test render " onClick={mockOnClick} />
     );
     expect(mockOnClick.mock.calls.length).toEqual(0);
-    shallowedDropdownTag.simulate("click");
+    shallowDropdownTag.simulate("click");
     expect(mockOnClick.mock.calls.length).toEqual(1);
   });
 

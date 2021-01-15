@@ -76,7 +76,7 @@ describe("Radio", () => {
 
   it("doesn't trigger onChange if ariaDisabled", async () => {
     const mockOnChange = jest.fn();
-    const shallowedComponent = shallow(
+    const shallowComponent = shallow(
       <Radio
         ariaDisabled
         onChange={mockOnChange}
@@ -88,17 +88,17 @@ describe("Radio", () => {
     );
 
     expect(
-      shallowedComponent.find("input[type='radio']").is("[checked]")
+      shallowComponent.find("input[type='radio']").is("[checked]")
     ).toBeFalsy();
     expect(mockOnChange).not.toBeCalled();
 
-    shallowedComponent
+    shallowComponent
       .find("input")
       .at(0)
       .simulate("change", { test: "event" });
 
     expect(
-      shallowedComponent.find("input[type='radio']").is("[checked]")
+      shallowComponent.find("input[type='radio']").is("[checked]")
     ).toBeFalsy();
     expect(mockOnChange).not.toBeCalled();
   });
