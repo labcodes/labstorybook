@@ -92,10 +92,7 @@ describe("Radio", () => {
     ).toBeFalsy();
     expect(mockOnChange).not.toBeCalled();
 
-    shallowComponent
-      .find("input")
-      .at(0)
-      .simulate("change", { test: "event" });
+    shallowComponent.find("input").at(0).simulate("change", { test: "event" });
 
     expect(
       shallowComponent.find("input[type='radio']").is("[checked]")

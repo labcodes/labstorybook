@@ -169,7 +169,6 @@ describe("Checkbox", () => {
       />
     );
 
-    // eslint-disable-next-line prettier/prettier
     expect(mountedComponent.find("input").find({ checked: true })).toHaveLength(
       1
     );
@@ -263,7 +262,6 @@ describe("Checkbox", () => {
       )
     ).toHaveLength(0);
     mountedComponent.find("input").at(0).simulate("change");
-    // eslint-disable-next-line prettier/prettier
     expect(mountedComponent.find("input").find({ checked: true })).toHaveLength(
       1
     );
@@ -305,7 +303,6 @@ describe("Checkbox", () => {
 
     mountedComponent.find("input").at(0).simulate("change", { test: "event" });
 
-    // eslint-disable-next-line prettier/prettier
     expect(mountedComponent.find("input").find({ checked: true })).toHaveLength(
       1
     );

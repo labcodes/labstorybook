@@ -78,10 +78,7 @@ describe("Toggle", () => {
     expect(shallowComponent.find({ checked: false })).toHaveLength(1);
     expect(mockHandleToggle).not.toBeCalled();
 
-    shallowComponent
-      .find("input")
-      .at(0)
-      .simulate("change", { test: "event" });
+    shallowComponent.find("input").at(0).simulate("change", { test: "event" });
 
     expect(shallowComponent.find({ checked: false })).toHaveLength(1);
     expect(mockHandleToggle).not.toBeCalled();
