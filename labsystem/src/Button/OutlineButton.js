@@ -6,6 +6,8 @@ export default class OutlineButton extends React.Component {
   static propTypes = {
     /** This is the button label. */
     text: PropTypes.string.isRequired,
+    /** HTML type of the Button. */
+    type: PropTypes.oneOf(["button", "submit", "reset"]),
     /** Sets a special color skin to the button. */
     skin: PropTypes.oneOf(["", "light", "dark"]),
     /** Sets the icon related to the button label. Default state: no icon. */
@@ -21,8 +23,9 @@ export default class OutlineButton extends React.Component {
   };
 
   static defaultProps = {
-    skin: "",
+    skin: undefined,
     icon: undefined,
+    type: "button",
     size: "normal",
     disabled: false,
     onClick: () => {},
@@ -30,11 +33,21 @@ export default class OutlineButton extends React.Component {
   };
 
   render() {
-    const { text, skin, icon, size, disabled, onClick, fullWidth } = this.props;
+    const {
+      text,
+      type,
+      skin,
+      icon,
+      size,
+      disabled,
+      onClick,
+      fullWidth,
+    } = this.props;
     return (
       <AbstractButton
         variant="outline"
         text={text}
+        type={type}
         skin={skin}
         icon={icon}
         size={size}

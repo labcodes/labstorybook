@@ -66,6 +66,7 @@ export default class Toggle extends React.Component {
         <input
           type="checkbox"
           id={name}
+          name={name}
           className="lab-toggle__input"
           checked={isChecked}
           onChange={this.handleOnChange}

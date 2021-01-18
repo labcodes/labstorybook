@@ -14,6 +14,7 @@ exports[`Toggle renders as expected when passing a different color 1`] = `
     className="lab-toggle__input"
     disabled={true}
     id="test-toggle"
+    name="test-toggle"
     onChange={[Function]}
     type="checkbox"
   />
@@ -37,6 +38,7 @@ exports[`Toggle renders as expected when passing disabled as true 1`] = `
     className="lab-toggle__input"
     disabled={true}
     id="test-toggle"
+    name="test-toggle"
     onChange={[Function]}
     type="checkbox"
   />
@@ -59,6 +61,7 @@ exports[`Toggle renders with base props 1`] = `
     checked={false}
     className="lab-toggle__input"
     id="test-toggle"
+    name="test-toggle"
     onChange={[Function]}
     type="checkbox"
   />
