@@ -26,7 +26,7 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
 .lab-tag {
   height: 24px;
   margin: $spacing-1; //think if this should be here or not
-  padding: 0 $spacing-04;
+  padding: 0 $spacing-4;
   font-size: $tag-font-size;
   line-height: $tag-line-heigt;
   font-weight: $weight-bold;

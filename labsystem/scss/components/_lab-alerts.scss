@@ -10,7 +10,7 @@ $alerts-line-height: 20px;
   align-items: center;
   justify-content: flex-end;
   margin: $spacing-1 0;
-  padding: $spacing-3 $spacing-04;
+  padding: $spacing-3 $spacing-4;
   color: $mineral-70;
   border-radius: 8px;
 
@@ -42,7 +42,7 @@ $alerts-line-height: 20px;
 
 // Elements
 .lab-alert__icon {
-  margin-right: $spacing-04;
+  margin-right: $spacing-4;
   display: none;
 
   @include from($tablet) {
@@ -70,7 +70,7 @@ $alerts-line-height: 20px;
 
   @include from($tablet) {
     margin-top: unset;
-    margin-left: $spacing-04;
+    margin-left: $spacing-4;
   }
 }
 

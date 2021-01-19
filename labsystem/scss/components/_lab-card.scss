@@ -1,7 +1,7 @@
 @use "sass:map";
 
 $card-default-padding: $spacing-05;
-$card-compact-padding: $spacing-3 $spacing-04;
+$card-compact-padding: $spacing-3 $spacing-4;
 
 // Layout
 .lab-card {
@@ -215,7 +215,7 @@ p:not(.lab-card-title):not(.lab-card-subtitle):not(.lab-card-category) {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: $spacing-04;
+  margin-top: $spacing-4;
   font-size: $font-size-4;
   color: $mineral-80;
 
