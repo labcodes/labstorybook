@@ -229,7 +229,7 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
       left: 6px;
       right: 6px;
       bottom: 6px;
-      border-radius: $radius-03;
+      border-radius: $radius-2;
 
       @include from($tablet) {
         margin-right: 0;
@@ -298,7 +298,7 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
   border: $border-default transparent;
   padding: $spacing-1 $spacing-3;
   margin-left: 28px;
-  border-radius: $radius-03;
+  border-radius: $radius-2;
   font-size: $font-size-4;
 
   @include from($tablet) {

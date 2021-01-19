@@ -46,7 +46,7 @@ $card-compact-padding: $spacing-3 $spacing-4;
       padding-left: calc(33% + 2 * #{$card-default-padding});
 
       .lab-card-image {
-        border-radius: $radius-03;
+        border-radius: $radius-2;
         position: absolute;
         margin: 0;
         max-width: calc(33%);
@@ -61,7 +61,7 @@ $card-compact-padding: $spacing-3 $spacing-4;
         left: 0;
         border-top-right-radius: unset;
         border-bottom-right-radius: unset;
-        border-bottom-left-radius: $radius-03;
+        border-bottom-left-radius: $radius-2;
         max-width: calc(33% + #{$card-default-padding});
         height: 100%;
         margin: 0;
@@ -79,8 +79,8 @@ $card-compact-padding: $spacing-3 $spacing-4;
           left: 0;
           top: 0;
           height: 100%;
-          border-top-left-radius: $radius-03;
-          border-bottom-left-radius: $radius-03;
+          border-top-left-radius: $radius-2;
+          border-bottom-left-radius: $radius-2;
         }
       }
     }
@@ -89,7 +89,7 @@ $card-compact-padding: $spacing-3 $spacing-4;
 
 // Elements
 .lab-card-image {
-  border-radius: $radius-03;
+  border-radius: $radius-2;
   max-width: 100%;
   margin-bottom: $spacing-3;
 
@@ -109,8 +109,8 @@ $card-compact-padding: $spacing-3 $spacing-4;
   &.lab-card-header--overlay {
     position: absolute;
     width: 100%;
-    border-top-left-radius: $radius-03;
-    border-top-right-radius: $radius-03;
+    border-top-left-radius: $radius-2;
+    border-top-right-radius: $radius-2;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.87) 0%, rgba(0, 0, 0, 0.1) 100%);
     margin-top: -$card-default-padding;
     margin-left: -$card-default-padding;
