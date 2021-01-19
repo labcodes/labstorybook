@@ -45,7 +45,7 @@ import Toggle from '../labsystem/src/Toggle';
 
   <Canvas>
     <Story name="Sample Toggle">
-      <Toggle name="sample-toggle-1" />
+      <Toggle id="sample-toggle-1" name="sample-toggle-1" />
     </Story>
   </Canvas>
 
@@ -61,7 +61,7 @@ import Toggle from '../labsystem/src/Toggle';
 
 <Canvas>
   <Story name="Sample Toggle Themes">
-      <Toggle name="sample-toggle-purple" color="purple" defaultValue={true} /><br /><br />
+      <Toggle id="sample-toggle-purple" name="sample-toggle-purple" color="purple" defaultValue={true} /><br /><br />
   </Story>
 </Canvas>
 
@@ -71,8 +71,8 @@ import Toggle from '../labsystem/src/Toggle';
 <Canvas>
   <Story name="Sample Toggle Disabled">
     <Fragment>
-      <Toggle name="sample-toggle-disabled-off" disabled /><br /><br />
-      <Toggle name="sample-toggle-disabled-on" disabled defaultValue={true} />
+      <Toggle id="sample-toggle-disabled-off" name="sample-toggle-disabled-off" disabled /><br /><br />
+      <Toggle id="sample-toggle-disabled-on" name="sample-toggle-disabled-on" disabled defaultValue={true} />
     </Fragment>
   </Story>
 </Canvas>
