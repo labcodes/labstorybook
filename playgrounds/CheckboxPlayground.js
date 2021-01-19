@@ -1,7 +1,8 @@
 /* eslint-disable react/jsx-fragments */
 import React from "react";
-import Checkbox from "../labsystem/src/Checkbox";
 
+import Radio from "../labsystem/src/Radio";
+import Checkbox from "../labsystem/src/Checkbox";
 import TextInput from "../labsystem/src/Input/TextInput";
 import Toggle from "../labsystem/src/Toggle";
 
@@ -11,8 +12,7 @@ export default class CheckboxPlayground extends React.Component {
     this.state = {
       label: "This is a checkbox",
       disabled: false,
-      checked: undefined,
-      indeterminate: false,
+      appearance: "unchecked",
       className: undefined,
     };
   }
@@ -27,15 +27,13 @@ export default class CheckboxPlayground extends React.Component {
     this.setState({ [id]: checked });
   };
 
+  handleAppearance = (event) => {
+    const { value } = event.target;
+    this.setState({ appearance: value });
+  };
+
   render() {
-    const {
-      theme,
-      label,
-      disabled,
-      checked,
-      indeterminate,
-      className,
-    } = this.state;
+    const { theme, label, disabled, appearance, className } = this.state;
 
     return (
       <React.Fragment>
@@ -47,8 +45,8 @@ export default class CheckboxPlayground extends React.Component {
               theme={theme}
               label={label}
               {...(disabled ? { disabled } : undefined)}
-              checked={checked}
-              indeterminate={indeterminate}
+              checked={appearance !== "unchecked"}
+              indeterminate={appearance === "indeterminate"}
               className={className}
               onChange={this.handleChecked}
             />
@@ -79,18 +77,33 @@ export default class CheckboxPlayground extends React.Component {
               <Toggle name="disabled" handleToggle={this.handlePropBool} />
             </span>
             <span className="lab-playground__item">
-              <Checkbox
-                id="checked"
-                label="Checked"
-                name="checked"
-                onChange={this.handlePropBool}
-              />
-              <Checkbox
-                id="indeterminate"
-                label="Indeterminate"
-                name="indeterminate"
-                onChange={this.handlePropBool}
-              />
+              <fieldset>
+                <legend>Appearance</legend>
+                <Radio
+                  id="unchecked"
+                  name="appearance"
+                  label="Unchecked"
+                  value="unchecked"
+                  checked={appearance === "unchecked"}
+                  onChange={this.handleAppearance}
+                />
+                <Radio
+                  id="checked"
+                  name="appearance"
+                  label="Checked"
+                  value="checked"
+                  checked={appearance === "checked"}
+                  onChange={this.handleAppearance}
+                />
+                <Radio
+                  id="indeterminate"
+                  name="appearance"
+                  label="Indeterminate"
+                  value="indeterminate"
+                  checked={appearance === "indeterminate"}
+                  onChange={this.handleAppearance}
+                />
+              </fieldset>
             </span>
           </div>
         </div>

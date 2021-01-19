@@ -270,7 +270,7 @@ $vivid-sidebar-all-colors: (
   &:active {
     background-color: $white-75;
 
-    .lab-icon {
+    .lab-icon--menu-expand {
       background-color: map-get($narrow-sidebar-theme, "70");
     }
   }
@@ -326,7 +326,8 @@ $vivid-sidebar-all-colors: (
 
         &:hover {
           color: $white;
-          .lab-icon {
+
+          .lab-narrow-sidebar__item-icon {
             background-color: $white;
           }
         }

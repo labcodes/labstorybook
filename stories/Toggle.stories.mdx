@@ -5,46 +5,68 @@ import Toggle from '../labsystem/src/Toggle';
 
 <Meta title="Components/Toggle" component={Toggle} />
 
-<div class="docs-title">
+<div className="docs-title docs-title--with-tab">
   <div>
-    <h1 class="docs-title__text">Toggle</h1>
+    <h1 className="docs-title__text">Toggle</h1>
   </div>
 </div>
 
-<div class="docs-content">
+<div className="docs-content">
+  <div className="simple-tab-wrapper"></div>
 
-The `Toggle` component might receive up to five inputs as props, where the `color` and `name` parameters are the only required ones.
-- `name`: should be an unique identifier and works as the `id` of the `input` tag within the component; it's also an important accessibility tool
-- `color`: defines the Toggle color
-- `disabled`: sets the Toggle component as disabled; includes functionality and styles
-- `defaultValue`: you can set a default value for the toggle to start with; it normally starts as `false`
-- `value`: you might need to set the component value from outside the component; if so, the internal logic to handle the component value won't be used
-- `handleToggle`: you might need to perform other actions when the component value changes; use this param to pass a function that's gonna be called on value changes
+  <input className="simple-tab" type="radio" name="type-tab" id="tab1" defaultChecked/>
+  <label htmlFor="tab1">Code</label>
 
-## Sample Toggle
-Toggle can be used as shown in the example below:
+  <input className="simple-tab" type="radio" name="type-tab" id="tab2" />
+  <label htmlFor="tab2">Usage</label>
 
+  <div className="simple-tab__content content1">
+    <h2>Overview</h2>
+    <p>Toggle is a selection control that allows the user to choose a single option at a time. It works as an on/off switch.</p>
+    <div className="columns">
+      <div className="doc-anatomy-block">
+        <div className="columns">
+          <div className="column">
+            <img src="docs/toggle/toggle-anatomy.png" alt="Toggle anatomy"/>
+          </div>
+          <div className="column">
+              <ol>
+                <li>Switcher</li>
+                <li>Toggle border</li>
+                <li>Toggle background</li>
+                <li>Base container stroke</li>
+                <li>Focus stroke</li>
+              </ol>
+          </div>
+          </div>
+      </div>
+    </div>
+   <h2>Demo</h2>
 
-<Canvas>
-  <Story name="Sample Toggle">
-    <Toggle name="sample-toggle-1" />
-  </Story>
-</Canvas>
+  <Canvas>
+    <Story name="Sample Toggle">
+      <Toggle name="sample-toggle-1" />
+    </Story>
+  </Canvas>
 
-## Toggle themes
-Toggle can be used in the following themes:
+<h2>Prop API</h2>
+<p>Go to <a href="/?path=/docs/getting-started-setup-confetti--page">Setup</a> for instructions on how to import the component.</p>
+<ArgsTable of={Toggle} />
+
+</div>
+
+<div className="simple-tab__content content2">
+  <h2>Theming</h2>
+  <p>The toggle color is defined in the <code>scss/variables/_settings.scss</code> file, and can be Teal or Purple. Avoid using purple toggles if the project theme is teal, and vice versa.</p>
 
 <Canvas>
   <Story name="Sample Toggle Themes">
-    <Fragment>
-      <Toggle name="sample-toggle-teal" color="teal"/><br /><br />
       <Toggle name="sample-toggle-purple" color="purple" defaultValue={true} /><br /><br />
-    </Fragment>
   </Story>
 </Canvas>
 
-## Toggle Disabled
-Togge can be disabled and, at the same time receive, a `defaultValue`:
+<h2>Toggle Disabled</h2>
+<p>Toggle can be disabled and, at the same time receive, a <code>defaultValue</code>:</p>
 
 <Canvas>
   <Story name="Sample Toggle Disabled">
@@ -55,10 +77,5 @@ Togge can be disabled and, at the same time receive, a `defaultValue`:
   </Story>
 </Canvas>
 
-## Prop API docs
-
-Here's the list of props based on the component's prop types definitions.
-### Toggle
-<ArgsTable of={Toggle} />
-
+</div>
 </div>

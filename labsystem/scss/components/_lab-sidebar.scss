@@ -390,7 +390,8 @@ $vivid-bg: map-get($narrow-sidebar-theme, "60");
 
     &:hover {
       color: $white;
-      .lab-icon {
+
+      .lab-narrow-sidebar__item-icon {
         background-color: $white;
       }
     }

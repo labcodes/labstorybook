@@ -4,32 +4,35 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import Radio from '../labsystem/src/Radio';
 import RadioPlayground from '../playgrounds/RadioPlayground';
 
-
 <Meta title="Components/Radio" />
 
-<div class="docs-title">
+<div className="docs-title docs-title--with-tab">
   <div>
-    <h1 class="docs-title__text">Radio</h1>
+    <h1 className="docs-title__text">Radio</h1>
   </div>
 </div>
 
-<div class="docs-content">
+<div className="docs-content">
+  <div className="simple-tab-wrapper"></div>
+
+  <input className="simple-tab" type="radio" name="type-tab" id="tab1" defaultChecked/>
+  <label htmlFor="tab1">Code</label>
+
+  <input className="simple-tab" type="radio" name="type-tab" id="tab2" />
+  <label htmlFor="tab2">Usage</label>
+
+  <div className="simple-tab__content content1">
+  <h2>Overview</h2>
   <p>Radio is a type of selector that is used when we have a list of options, and only one option can be selected.</p>
 
-## Acessibility
-  Striving to keep our forms accessible, we recommend to use this type of component by using the `fieldset` tag to nest a group of
-  selectors and the `legend` tag to identify the heading of the group.
-  These elements works indicating to screen readers that a group of form fields relate to each other.
-
-  <h2>Anatomy</h2>
-  <div class="columns">
-    <div class="column">
-        <img src="docs/radio/radio-anatomy.png" alt="Radio button anatomy" />
+  <div className="columns doc-anatomy-block">
+    <div className="column">
+      <img src="docs/checkbox/checkbox-anatomy.png" alt="Checkbox anatomy"/>
     </div>
-    <div class="column">
-      <ol>
-        <li>Radio border</li>
-        <li>Radio selection indicator</li>
+    <div className="column">
+      <ol className="doc-anatomy-block__list">
+        <li>Checkbox container</li>
+        <li>Checkbox icon status indicator</li>
         <li>Hover stroke</li>
         <li>Base container stroke</li>
         <li>Focus stroke</li>
@@ -38,12 +41,20 @@ import RadioPlayground from '../playgrounds/RadioPlayground';
   </div>
 
   <h2>Interactive demo</h2>
-  <p>This demo lets you preview the radio component, its variations, and configuration options.</p>
-
-## Interactive demo
-  This demo lets you preview the component, its variations, and configuration options.
+  <p>This demo lets you preview the component, its variations, and configuration options.</p>
   <RadioPlayground />
 
+  <h2>Accessibility</h2>
+  <p>Striving to keep our forms accessible, we recommend to use this type of component by using the <code>fieldset</code> tag to nest a group of selectors and the <code>legend</code> tag to identify the heading of the group.</p>
+  <p>These elements works indicating to screen readers that a group of form fields relate to each other.</p>
+
+  <h2>Prop API</h2>
+  <p>Go to <a href="/?path=/docs/getting-started-setup-confetti--page">Setup</a> for instructions on how to import the component.  </p>
+  <ArgsTable of={Radio} />
+
+  </div>
+
+  <div className="simple-tab__content content2">
   <h2>Behavior</h2>
   <ol>
     <li>Choose an option</li>
@@ -51,39 +62,20 @@ import RadioPlayground from '../playgrounds/RadioPlayground';
     <li>If another option is selected, the previous one will be deselected</li>
   </ol>
 
+  <h2>Theming</h2>
+  <p>The radio button color is defined in the <code>scss/variables/_settings.scss</code> file, and can be Teal or Purple. Avoid using purple radio buttons if the project theme is teal, and vice versa.</p>
+
   <Canvas>
-    <Story name="Radio">
+    <Story name="Styles">
       <Fragment>
         <fieldset>
-          <Radio id="radio-1" label="Idle" name="radio" value="" />
+          <Radio className="lab-radio--purple" id="radio-5" label="Idle" name="radio2" value="" />
           <br />
-          <Radio id="radio-2" label="Idle" name="radio" value="" />
-          <br />
-          <Radio id="radio-3" label="Disabled" name="radio" disabled value="" />
-          <br />
-          <Radio id="radio-4" label="Disabled" name="radio-disabled" checked disabled value="" />
+          <Radio className="lab-radio--purple" id="radio-6" label="Idle" name="radio2" value="" />
         </fieldset>
       </Fragment>
     </Story>
   </Canvas>
 
-  <h2>Styles</h2>
-  <p>Checkboxes can also be used in the purple theme</p>
-
-  <Canvas>
-    <Story name="Styles">
-    <Fragment>
-      <fieldset>
-        <Radio className="lab-radio--purple" id="radio-5" label="Idle" name="radio2" value="" />
-        <br />
-        <Radio className="lab-radio--purple" id="radio-6" label="Idle" name="radio2" value="" />
-      </fieldset>
-    </Fragment>
-    </Story>
-  </Canvas>
-
-  <h2>Prop API docs</h2>
-  <p>Here's the list of props based on the component's prop types definitions.</p>
-  <ArgsTable of={Radio} />
-
+  </div>
 </div>
