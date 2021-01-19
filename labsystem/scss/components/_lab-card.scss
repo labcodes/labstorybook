@@ -1,7 +1,7 @@
 @use "sass:map";
 
 $card-default-padding: $spacing-05;
-$card-compact-padding: $spacing-03 $spacing-04;
+$card-compact-padding: $spacing-3 $spacing-04;
 
 // Layout
 .lab-card {
@@ -91,7 +91,7 @@ $card-compact-padding: $spacing-03 $spacing-04;
 .lab-card-image {
   border-radius: $radius-03;
   max-width: 100%;
-  margin-bottom: $spacing-03;
+  margin-bottom: $spacing-3;
 
   &:first-child {
     border-bottom-left-radius: unset;
@@ -104,7 +104,7 @@ $card-compact-padding: $spacing-03 $spacing-04;
 }
 
 .lab-card-header {
-  margin-bottom: $spacing-03;
+  margin-bottom: $spacing-3;
 
   &.lab-card-header--overlay {
     position: absolute;
@@ -174,7 +174,7 @@ $card-compact-padding: $spacing-03 $spacing-04;
 p:not(.lab-card-title):not(.lab-card-subtitle):not(.lab-card-category) {
   color: $black-75;
   margin-top: unset;
-  margin-bottom: $spacing-03;
+  margin-bottom: $spacing-3;
 }
 
 .lab-card-divider {
@@ -194,7 +194,7 @@ p:not(.lab-card-title):not(.lab-card-subtitle):not(.lab-card-category) {
   display: flex;
   justify-content: center;
   margin-top: $spacing-05;
-  margin-bottom: $spacing-03;
+  margin-bottom: $spacing-3;
   font-size: $font-size-4;
   color: $mineral-80;
 
@@ -220,7 +220,7 @@ p:not(.lab-card-title):not(.lab-card-subtitle):not(.lab-card-category) {
   color: $mineral-80;
 
   .lab-btn:first-child {
-    margin-bottom: $spacing-03;
+    margin-bottom: $spacing-3;
   }
 
   &.lab-card-double-action--horizontal {

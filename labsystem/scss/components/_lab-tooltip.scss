@@ -23,7 +23,7 @@ $tooltip-border-color: map-get($tooltip-theme, "80");
 }
 
 .lab-tooltip__text {
-    padding: $spacing-1 $spacing-03;
+    padding: $spacing-1 $spacing-3;
     box-sizing: border-box;
     border-radius: $radius-02;
     display: none;

@@ -60,7 +60,7 @@ $remove-icon-focus: map-get($search-theme, "30");
     position: relative;
     z-index: 99;
     width: 320px;
-    margin-top: $spacing-03;
+    margin-top: $spacing-3;
     box-sizing: border-box;
     border-radius: $radius-02;
 
@@ -156,7 +156,7 @@ $remove-icon-focus: map-get($search-theme, "30");
     @include remove-delete-icon-search-input;
     position: relative;
     width: 320px;
-    margin-top: $spacing-03;
+    margin-top: $spacing-3;
     box-sizing: border-box;
     border-radius: $radius-02;
 

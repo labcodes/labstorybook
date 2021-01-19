@@ -210,7 +210,7 @@ $input-border-disabled: $mineral-30;
 
   .lab-input__field:focus ~ &,
   .lab-input__field:not(:placeholder-shown) ~ & {
-    top: -$spacing-03;
+    top: -$spacing-3;
     left: $spacing-2;
 
     .lab-input__prefix {
