@@ -1,7 +1,7 @@
 @use 'sass:map';
 
 $radius-default: 60px;
-$border-default: $border-01;
+$border-default: $border-2;
 
 // Default Colors (Pale)
 $item-focus-color: map-get($narrow-sidebar-theme, "30");

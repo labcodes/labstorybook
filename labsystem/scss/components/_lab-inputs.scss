@@ -69,14 +69,14 @@ $input-border-disabled: $mineral-30;
   .lab-input__field:invalid:focus + .lab-input__borders,
   .lab-input__field:invalid:not(:placeholder-shown):focus + .lab-input__borders {
     @include border-shadow(focus, $input-shadow-invalid-focus);
-    border: $border-01 $input-main-invalid;
+    border: $border-2 $input-main-invalid;
     outline: none;
   }
 
   // Input invalid focus-hover
   .lab-input__field:invalid:hover:focus + .lab-input__borders {
     @include border-shadow(focus-hover, $input-shadow-invalid-focus, $input-background-invalid);
-    border: $border-01 $input-main-invalid;
+    border: $border-2 $input-main-invalid;
   }
 
   // Input invalid hover
@@ -149,7 +149,7 @@ $input-border-disabled: $mineral-30;
   right: 0;
   left: 0;
   height: $input-height;
-  border: $border-01 $input-border-unfilled-idle;
+  border: $border-2 $input-border-unfilled-idle;
   border-radius: $radius-1;
   pointer-events: none;
   transition: border $duration-base ease, box-shadow $duration-base ease;
@@ -183,7 +183,7 @@ $input-border-disabled: $mineral-30;
   .lab-input__field:disabled + &,
   .lab-input__field:not(:placeholder-shown):disabled + & {
     color: $black-75;
-    border: $border-01 $input-border-disabled;
+    border: $border-2 $input-border-disabled;
     box-shadow: none;
   }
 }
