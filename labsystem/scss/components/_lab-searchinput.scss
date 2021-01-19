@@ -176,7 +176,7 @@ $remove-icon-focus: map-get($search-theme, "30");
 
     &~ .lab-search__field {
         padding-left: $spacing-6;
-        padding-right: $spacing-07;
+        padding-right: $spacing-8;
     }
 
     .lab-search__field:focus ~ & {
