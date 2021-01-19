@@ -91,6 +91,11 @@ li.sbdocs-li {
   color: $black-75;
   text-rendering: $render-mode;
   letter-spacing: $letter-spacing;
+  font-variant-numeric: $font-aligned-numbers;
+
+  &::marker {
+    font-variant-numeric: $font-aligned-numbers $font-tabular-numbers;
+  }
 
   strong {
     font-weight: $title-strong-weight;
