@@ -6,7 +6,7 @@ export default class Toggle extends React.Component {
   static propTypes = {
     /** Text that will serve as unique identifier. It's also an important accessibility tool. */
     id: PropTypes.string.isRequired,
-    /** Text that will serve as unique identifier. It's also an important accessibility tool. */
+    /** Text that will specify the HTML `name` attribute of an `<input>` element. */
     name: PropTypes.string.isRequired,
     /** Defines a static value for the Toggle. If set, internal logic is deactivated. */
     value: PropTypes.bool,
