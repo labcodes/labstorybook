@@ -8,14 +8,6 @@ $render-mode: optimizeLegibility !default;
 $letter-spacing: 0 !default;
 
 /*
- * The font-feature-settings property controls advanced typographic settings.
- * pnum: Proportional figures. Replaces numerals with glyphs of proportional width.
- * lnum: Lining figures. Replaces numerals with glyphs meant to fit better in all-capitals text.
- * tnum: Tabular figures. Replaces numerals with glyphs of uniform width.
- * ordn: Ordinals. Replaces characters with ordinal forms for use after numbers.
-*/
-
-/*
  * The font-variant-numeric property controls the usage of alternate glyphs for numbers, fractions, and ordinal markers.
  * Values:
  * ordinal: Ordinals. Replaces characters with ordinal forms for use after numbers.
@@ -28,11 +20,11 @@ $letter-spacing: 0 !default;
  *   proportional-nums activating the set of figures where numbers are not all of the same size. It corresponds to the OpenType values pnum.
  *   tabular-nums activating the set of figures where numbers are all of the same size, allowing them to be easily aligned like in tables. It corresponds to the OpenType values tnum.
 */
-$font-variant-numeric-lining: lining-nums;
-$font-variant-numeric-oldstyle: oldstyle-nums;
-$font-variant-numeric-tabular: tabular-nums;
-$font-variant-numeric-proportional: proportional-nums;
-$font-variant-numeric-ordinal: ordinal;
+$font-aligned-numbers: lining-nums;
+$font-oldstyle-numbers: oldstyle-nums;
+$font-tabular-numbers: tabular-nums;
+$font-proportional-numbers: proportional-nums;
+$font-ordinal-numbers: ordinal;
 
 $font-size-1: 0.75rem !default; //12px
 $font-size-2: 0.875rem !default; //14px
