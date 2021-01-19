@@ -61,7 +61,7 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
   width: 24px;
   height: 24px;
   border-radius: 12px;
-  margin-right: calc(#{$spacing-02} - #{$tag-border});
+  margin-right: calc(#{$spacing-2} - #{$tag-border});
 }
 
 /* 
@@ -109,7 +109,7 @@ $tag-vivid-hover-color: mix($tag-vivid-color, black, 50%);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: $spacing-02;
+  margin-left: $spacing-2;
   width: 16px;
   height: 16px;
   background-color: white;

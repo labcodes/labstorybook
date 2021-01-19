@@ -131,7 +131,7 @@ $card-compact-padding: $spacing-03 $spacing-04;
     .lab-card-category__color {
       width: 16px;
       height: 8px;
-      margin-right: $spacing-02;
+      margin-right: $spacing-2;
       border-radius: $radius-02;
 
       @each $name, $palette in $all-colors {

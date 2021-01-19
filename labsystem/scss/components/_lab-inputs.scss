@@ -211,7 +211,7 @@ $input-border-disabled: $mineral-30;
   .lab-input__field:focus ~ &,
   .lab-input__field:not(:placeholder-shown) ~ & {
     top: -$spacing-03;
-    left: $spacing-02;
+    left: $spacing-2;
 
     .lab-input__prefix {
       height: 0;
@@ -267,7 +267,7 @@ $input-border-disabled: $mineral-30;
   outline: none;
   border-radius: 2px;
   background-color: transparent;
-  margin: 0 $spacing-02;
+  margin: 0 $spacing-2;
   &:focus {
     @include border-shadow(focus, $input-shadow-filled-focus);
   }
@@ -288,8 +288,8 @@ $input-border-disabled: $mineral-30;
 // The icon color change according to it's input state.
 .lab-input__required-icon {
   position: absolute;
-  top: -$spacing-02;
-  right: -$spacing-02;
+  top: -$spacing-2;
+  right: -$spacing-2;
   z-index: 2;
   display: inline-block;
   width: $input-icon-size;
