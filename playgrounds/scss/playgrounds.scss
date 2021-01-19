@@ -1,5 +1,5 @@
 .lab-playground {
-  margin: $spacing-05 0 !important;
+  margin: $spacing-5 0 !important;
   border: 2px solid $mineral-10;
   border-radius: $radius-03;
 
@@ -28,7 +28,7 @@
   .lab-playground__item {
     display: flex;
     flex-direction: column;
-    margin: $spacing-05 $spacing-1;
+    margin: $spacing-5 $spacing-1;
 
     p {
       margin: $spacing-1 0;

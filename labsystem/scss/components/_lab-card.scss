@@ -1,6 +1,6 @@
 @use "sass:map";
 
-$card-default-padding: $spacing-05;
+$card-default-padding: $spacing-5;
 $card-compact-padding: $spacing-3 $spacing-4;
 
 // Layout
@@ -155,7 +155,7 @@ $card-compact-padding: $spacing-3 $spacing-4;
     font-size: $font-size-4;
     font-weight: $weight-bold;
     color: $mineral-80;
-    line-height: $spacing-05;
+    line-height: $spacing-5;
     margin-top: 0;
     margin-bottom: $spacing-1;
   }
@@ -193,7 +193,7 @@ p:not(.lab-card-title):not(.lab-card-subtitle):not(.lab-card-category) {
 .lab-card-link-action {
   display: flex;
   justify-content: center;
-  margin-top: $spacing-05;
+  margin-top: $spacing-5;
   margin-bottom: $spacing-3;
   font-size: $font-size-4;
   color: $mineral-80;
