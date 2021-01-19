@@ -205,7 +205,7 @@ export default class AbstractTextInput extends React.Component {
             ref={this.inputRef}
             onChange={this.handleOnChange}
             autoComplete="off"
-            placeholder="" // required for label placement
+            placeholder=" " // required for label placement
             {...(required ? { required } : undefined)}
             {...(disabled ? { disabled } : undefined)}
           />
