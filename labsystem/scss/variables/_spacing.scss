@@ -4,7 +4,6 @@ $baseline: 4px;
 /*
 Spacing variables for components
 */
-$spacing-09: 3.25rem; //52px
 $spacing-10: 3.75rem; //60px
 
 // Spacing --- New tokens using calc on baseline 4px grid
@@ -18,6 +17,7 @@ $spacing-7: (7 * $baseline); // 28px
 $spacing-8: (8 * $baseline); // 32px
 $spacing-9: (9 * $baseline); // 36px
 $spacing-010: (10 * $baseline); // 40px
+$spacing-13: (13 * $baseline); // 52px
 $spacing-12: (12 * $baseline); // 48px
 $spacing-15: (15 * $baseline); // 60px
 $spacing-18: (18 * $baseline); // 72px

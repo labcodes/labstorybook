@@ -65,7 +65,7 @@ $remove-icon-focus: map-get($search-theme, "30");
     border-radius: $radius-02;
 
     .lab-search__remove-icon {
-        margin-right: $spacing-09;
+        margin-right: $spacing-13;
         opacity: 0;
         cursor: none;
     }
@@ -161,7 +161,7 @@ $remove-icon-focus: map-get($search-theme, "30");
     border-radius: $radius-02;
 
     .lab-search__field {
-        padding-left: $spacing-09;
+        padding-left: $spacing-13;
     }
  }
 
