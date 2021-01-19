@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import { shallow } from "enzyme";
+import { mount, shallow } from "enzyme";
 
 import RemovableTag from "./RemovableTag";
 
@@ -59,12 +59,23 @@ describe("RemovableTag", () => {
 
   it("calls prop.onClick when clicked", async () => {
     const mockOnClick = jest.fn();
-    const shallowedRemovableTag = shallow(
+    const shallowRemovableTag = shallow(
       <RemovableTag text="Test click on RemovableTag" onClick={mockOnClick} />
     );
     expect(mockOnClick.mock.calls.length).toEqual(0);
-    shallowedRemovableTag.simulate("click");
+    shallowRemovableTag.simulate("click");
     expect(mockOnClick.mock.calls.length).toEqual(1);
+  });
+
+  it("doesn't trigger onClick if ariaDisabled", async () => {
+    const mockOnClick = jest.fn();
+    const mountedComponent = mount(
+      <RemovableTag ariaDisabled text="Test" onClick={mockOnClick} />
+    );
+
+    expect(mockOnClick).not.toBeCalled();
+    mountedComponent.find("span").at(0).simulate("click");
+    expect(mockOnClick).not.toBeCalled();
   });
 
   it("does not render if passing both `thumb` and `icon`", async () => {

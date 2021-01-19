@@ -10,7 +10,9 @@ export default class AbstractSearch extends React.Component {
     id: PropTypes.string,
     /** Defines a default value for the Search initialization. */
     defaultValue: PropTypes.string,
-    /** Disables the Search. */
+    /** Disables the Search. Will be read by screen readers. When true, will override `disabled`. */
+    ariaDisabled: PropTypes.bool,
+    /** Disables the Search. Won't be read by screen readers. */
     disabled: PropTypes.bool,
     /** Text that will be rendered inside the Search field. */
     value: PropTypes.string,
@@ -30,6 +32,7 @@ export default class AbstractSearch extends React.Component {
     id: undefined,
     defaultValue: undefined,
     disabled: false,
+    ariaDisabled: false,
     value: undefined,
     onChange: () => {},
     onSearch: () => {},
@@ -100,7 +103,7 @@ export default class AbstractSearch extends React.Component {
   };
 
   render() {
-    const { id, disabled, placeholder, type } = this.props;
+    const { id, disabled, ariaDisabled, placeholder, type } = this.props;
 
     const { localValue } = this.state;
 
@@ -117,29 +120,32 @@ export default class AbstractSearch extends React.Component {
         >
           <input
             className="lab-search__field"
-            id={id}
             type="search"
+            autoComplete="off"
+            id={id}
             value={localValue}
             ref={this.searchRef}
-            onChange={this.handleOnChange}
-            autoComplete="off"
-            onKeyDown={this.handleKeyPress}
-            {...(disabled ? { disabled } : undefined)}
+            onChange={!ariaDisabled ? this.handleOnChange : () => {}}
+            onKeyDown={!ariaDisabled ? this.handleKeyPress : () => {}}
+            disabled={(!ariaDisabled && disabled) || undefined}
+            aria-disabled={ariaDisabled || undefined}
             {...(placeholder ? { placeholder } : "")}
           />
 
           <div className="lab-search__borders" />
           <TrailingIcon
             onClear={this.handleOnClear}
-            {...(disabled ? { disabled } : undefined)}
+            disabled={(!ariaDisabled && disabled) || undefined}
+            ariaDisabled={ariaDisabled || undefined}
           />
           {type === "standard" ? (
             <StandardSearchIcon
               handleOnSearch={this.handleOnSearch}
-              {...(disabled ? { disabled } : undefined)}
+              disabled={(!ariaDisabled && disabled) || undefined}
+              ariaDisabled={ariaDisabled || undefined}
             />
           ) : (
-            <InlineSearchIcon {...(disabled ? { disabled } : undefined)} />
+            <InlineSearchIcon disabled={ariaDisabled || disabled} />
           )}
         </div>
       </div>
@@ -150,7 +156,7 @@ export default class AbstractSearch extends React.Component {
 // ----- Auxiliary components ----- //
 
 function TrailingIcon(props) {
-  const { onClear, disabled } = props;
+  const { onClear, disabled, ariaDisabled } = props;
   let className = "lab-search__remove-icon";
   if (!onClear) {
     className += " lab-input__icon--disabled"; // check this out
@@ -160,8 +166,9 @@ function TrailingIcon(props) {
     <button
       type="button"
       className={className}
-      onClick={onClear}
-      {...(disabled ? { disabled } : undefined)}
+      onClick={!ariaDisabled ? onClear : () => {}}
+      disabled={(!ariaDisabled && disabled) || undefined}
+      aria-disabled={ariaDisabled || undefined}
     >
       <Icon type="remove" color="mineral-40" />
     </button>
@@ -171,22 +178,25 @@ function TrailingIcon(props) {
 TrailingIcon.propTypes = {
   onClear: PropTypes.func,
   disabled: PropTypes.bool,
+  ariaDisabled: PropTypes.bool,
 };
 
 TrailingIcon.defaultProps = {
   onClear: undefined,
   disabled: false,
+  ariaDisabled: false,
 };
 
 function StandardSearchIcon(props) {
-  const { disabled, handleOnSearch } = props;
+  const { disabled, ariaDisabled, handleOnSearch } = props;
   return (
     <React.Fragment>
       <button
         type="button"
         className="lab-standard-search__button"
-        onClick={handleOnSearch}
-        {...(disabled ? { disabled } : undefined)}
+        onClick={!ariaDisabled ? handleOnSearch : () => {}}
+        disabled={(!ariaDisabled && disabled) || undefined}
+        aria-disabled={ariaDisabled || undefined}
       >
         <Icon
           className="lab-standard-search__icon"
@@ -201,11 +211,13 @@ function StandardSearchIcon(props) {
 
 StandardSearchIcon.propTypes = {
   disabled: PropTypes.bool,
+  ariaDisabled: PropTypes.bool,
   handleOnSearch: PropTypes.func,
 };
 
 StandardSearchIcon.defaultProps = {
   disabled: false,
+  ariaDisabled: false,
   handleOnSearch: undefined,
 };
 

@@ -9,7 +9,9 @@ export default class TextInput extends React.Component {
     id: PropTypes.string.isRequired,
     /** The Input's text label. */
     label: PropTypes.string.isRequired,
-    /** Sets the text input to disabled, refusing interactions. */
+    /** Disables the text input. Will be read by screen readers. When true, will override `disabled`. */
+    ariaDisabled: PropTypes.bool,
+    /** Disables the text input. Won't be read by screen readers. */
     disabled: PropTypes.bool,
     /** Defines a default value for the Input initialization. */
     defaultValue: PropTypes.string,
@@ -39,6 +41,7 @@ export default class TextInput extends React.Component {
 
   static defaultProps = {
     disabled: false,
+    ariaDisabled: false,
     defaultValue: undefined,
     value: undefined,
     icon: undefined,
@@ -70,6 +73,7 @@ export default class TextInput extends React.Component {
       onChange,
       onIconClick,
       disabled,
+      ariaDisabled,
     } = this.props;
 
     return (
@@ -89,7 +93,8 @@ export default class TextInput extends React.Component {
         customErrorMsg={customErrorMsg}
         onChange={onChange}
         onIconClick={onIconClick}
-        {...(disabled ? { disabled } : undefined)}
+        disabled={(!ariaDisabled && disabled) || undefined}
+        ariaDisabled={ariaDisabled || undefined}
       />
     );
   }

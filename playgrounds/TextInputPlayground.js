@@ -20,6 +20,7 @@ export default class TextInputPlayground extends React.Component {
       suffix: "",
       customErrorMsg: "",
       disabled: false,
+      ariaDisabled: false,
       required: false,
       isValid: true,
       currentComponent: "TextInput",
@@ -57,6 +58,7 @@ export default class TextInputPlayground extends React.Component {
       currentComponent,
       label,
       disabled,
+      ariaDisabled,
       icon,
       iconColor,
       helpMessage,
@@ -80,7 +82,8 @@ export default class TextInputPlayground extends React.Component {
         customErrorMsg={customErrorMsg}
         required={required}
         isValid={isValid}
-        {...(disabled ? { disabled } : undefined)}
+        disabled={disabled}
+        ariaDisabled={ariaDisabled}
       />
     );
   };
@@ -89,6 +92,7 @@ export default class TextInputPlayground extends React.Component {
     const {
       label,
       disabled,
+      ariaDisabled,
       iconColor,
       helpMessage,
       prefix,
@@ -262,6 +266,14 @@ export default class TextInputPlayground extends React.Component {
             <Toggle
               value={disabled}
               name="disabled"
+              handleToggle={this.handlePropChangeBool}
+            />
+            <p>
+              <strong>AriaDisabled</strong>
+            </p>
+            <Toggle
+              value={ariaDisabled}
+              name="ariaDisabled"
               handleToggle={this.handlePropChangeBool}
             />
             <p>

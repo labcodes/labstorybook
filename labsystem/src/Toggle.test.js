@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import React from "react";
-import { mount } from "enzyme";
+import { mount, shallow } from "enzyme";
 import renderer from "react-test-renderer";
 
 import Toggle from "./Toggle";
@@ -79,5 +79,25 @@ describe("Toggle", () => {
     expect(mockHandleToggle).toBeCalledWith(
       expect.objectContaining({ test: "event" })
     );
+  });
+
+  it("doesn't trigger onChange if ariaDisabled", async () => {
+    const mockHandleToggle = jest.fn();
+    const shallowComponent = shallow(
+      <Toggle
+        ariaDisabled
+        handleToggle={mockHandleToggle}
+        id="test-toggle"
+        name="test-toggle"
+      />
+    );
+
+    expect(shallowComponent.find({ checked: false })).toHaveLength(1);
+    expect(mockHandleToggle).not.toBeCalled();
+
+    shallowComponent.find("input").at(0).simulate("change", { test: "event" });
+
+    expect(shallowComponent.find({ checked: false })).toHaveLength(1);
+    expect(mockHandleToggle).not.toBeCalled();
   });
 });

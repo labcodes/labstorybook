@@ -110,4 +110,49 @@ describe("AbstractSearch", () => {
     componentInline.find("input").at(0).simulate("keydown", { keyCode: 13 });
     expect(onSearchInline).toBeCalled();
   });
+
+  it("doesn't clear the input and calls onClear prop when ariaDisabled", async () => {
+    const onClearFn = jest.fn();
+    const component = mount(
+      <AbstractSearch
+        type="standard"
+        ariaDisabled
+        defaultValue="default"
+        onClear={onClearFn}
+      />
+    );
+
+    expect(component.find("input").render().attr("value")).toBe("default");
+    component.find(".lab-search__remove-icon").at(0).simulate("click");
+    expect(component.find("input").render().attr("value")).toBe("default");
+    expect(onClearFn).not.toBeCalled();
+  });
+
+  it("doesn't call onSearch prop when ariaDisabled and clicked", async () => {
+    const onSearchFn = jest.fn();
+    const component = mount(
+      <AbstractSearch
+        ariaDisabled
+        type="standard"
+        defaultValue="default"
+        onSearch={onSearchFn}
+      />
+    );
+    component.find(".lab-standard-search__button").at(0).simulate("click");
+    expect(onSearchFn).not.toBeCalled();
+  });
+
+  it("doesn't call onSearch prop when ariaDisabled and the enter key is pressed down", async () => {
+    const onSearchStandard = jest.fn();
+    const componentStandard = mount(
+      <AbstractSearch
+        ariaDisabled
+        type="standard"
+        defaultValue="default"
+        onSearch={onSearchStandard}
+      />
+    );
+    componentStandard.find("input").at(0).simulate("keydown", { keyCode: 13 });
+    expect(onSearchStandard).not.toBeCalled();
+  });
 });

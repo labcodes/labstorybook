@@ -301,4 +301,30 @@ describe("AbstractTextInput", () => {
       1
     );
   });
+
+  it("doesn't trigger onChange if ariaDisabled", async () => {
+    const mockOnChange = jest.fn();
+    const mountedComponent = mount(
+      <AbstractTextInput
+        ariaDisabled
+        id="testInput"
+        label="Test Input"
+        name="testName"
+        defaultValue="default"
+        onChange={mockOnChange}
+      />
+    );
+
+    expect(mountedComponent.find("input").render().attr("value")).toBe(
+      "default"
+    );
+    expect(mockOnChange).not.toBeCalled();
+
+    mountedComponent.find("input").at(0).simulate("change", { test: "event" });
+
+    expect(mountedComponent.find("input").render().attr("value")).toBe(
+      "default"
+    );
+    expect(mockOnChange).not.toBeCalled();
+  });
 });

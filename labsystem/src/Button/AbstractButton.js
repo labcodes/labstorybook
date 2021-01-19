@@ -26,7 +26,9 @@ export default class AbstractButton extends React.Component {
     ]),
     /** Sets the button's height. Small = 32px, Normal = 40px, Large = 48px. */
     size: PropTypes.oneOf(["normal", "small", "large"]),
-    /** Makes the button disabled, cancelling the onClick handler. */
+    /** Disables the Button. Will be read by screen readers. When true, will override `disabled`. */
+    ariaDisabled: PropTypes.bool,
+    /** Disables the Button. Won't be read by screen readers. */
     disabled: PropTypes.bool,
     /** Action to be executed when the button is clicked. */
     onClick: PropTypes.func,
@@ -41,6 +43,7 @@ export default class AbstractButton extends React.Component {
     icon: undefined,
     size: "normal",
     disabled: false,
+    ariaDisabled: false,
     onClick: () => {},
     fullWidth: false,
   };
@@ -67,7 +70,16 @@ export default class AbstractButton extends React.Component {
   };
 
   render() {
-    const { type, text, variant, skin, size, disabled, fullWidth } = this.props;
+    const {
+      type,
+      text,
+      variant,
+      skin,
+      size,
+      disabled,
+      fullWidth,
+      ariaDisabled,
+    } = this.props;
     return (
       <button
         // eslint-disable-next-line react/button-has-type
@@ -78,8 +90,9 @@ export default class AbstractButton extends React.Component {
           `${skin ? ` lab-btn--${skin}` : ""}` +
           `${fullWidth ? ` lab-btn--block` : ""}`
         }
-        onClick={this.handleOnClick}
-        disabled={disabled || undefined}
+        onClick={!ariaDisabled ? this.handleOnClick : () => {}}
+        disabled={(!ariaDisabled && disabled) || undefined}
+        aria-disabled={ariaDisabled || undefined}
       >
         {this.icon()}
         {text}

@@ -18,7 +18,9 @@ export default class AbstractTag extends React.Component {
     skin: PropTypes.string,
     /** Sets an outline style. */
     isOutline: PropTypes.bool,
-    /** Disables the Tag component. */
+    /** Disables the Tag. Will be read by screen readers. When true, will override `disabled`. */
+    ariaDisabled: PropTypes.bool,
+    /** Disables the Tag. Won't be read by screen readers. */
     disabled: PropTypes.bool,
     /** Action to be executed when the Tag is clicked. */
     onClick: PropTypes.func,
@@ -32,6 +34,7 @@ export default class AbstractTag extends React.Component {
     color: "",
     skin: "pale",
     disabled: false,
+    ariaDisabled: false,
     onClick: () => {},
   };
 
@@ -49,6 +52,7 @@ export default class AbstractTag extends React.Component {
     const {
       text,
       disabled,
+      ariaDisabled,
       isOutline,
       skin,
       color,
@@ -61,11 +65,11 @@ export default class AbstractTag extends React.Component {
       <span
         className={
           `lab-tag ${className}` +
-          `${disabled ? ` lab-tag--disabled` : ""}` +
+          `${disabled || ariaDisabled ? ` lab-tag--disabled` : ""}` +
           `${isOutline ? ` lab-tag--outline` : ""}` +
           `${color ? ` lab-tag--${color}-${skin}` : ` lab-tag--${skin}`}`
         }
-        onClick={this.handleEvent}
+        onClick={!(ariaDisabled || disabled) ? this.handleEvent : () => {}}
         onKeyPress={this.handleEvent}
         role="button"
         tabIndex="0"

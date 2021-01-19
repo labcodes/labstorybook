@@ -14,7 +14,9 @@ export default class Checkbox extends React.Component {
     name: PropTypes.string.isRequired,
     /** This is the checkbox's label. */
     label: PropTypes.string.isRequired,
-    /** Disables the checkbox. */
+    /** Disables the Checkbox. Will be read by screen readers. When true, will override `disabled`. */
+    ariaDisabled: PropTypes.bool,
+    /** Disables the Checkbox. Won't be read by screen readers. */
     disabled: PropTypes.bool,
     /** Defines if the Checkbox is currently checked. */
     checked: PropTypes.bool,
@@ -32,8 +34,9 @@ export default class Checkbox extends React.Component {
 
   static defaultProps = {
     disabled: false,
+    ariaDisabled: false,
     checked: undefined,
-    value: null,
+    value: undefined,
     indeterminate: false,
     defaultChecked: undefined,
     className: undefined,
@@ -99,6 +102,7 @@ export default class Checkbox extends React.Component {
       name,
       className,
       label,
+      ariaDisabled,
       disabled,
       indeterminate,
       value,
@@ -115,16 +119,17 @@ export default class Checkbox extends React.Component {
           id={id}
           name={name}
           checked={localChecked}
-          onChange={this.handleOnChange}
+          onChange={!ariaDisabled ? this.handleOnChange : () => {}}
+          disabled={(!ariaDisabled && disabled) || undefined}
+          aria-disabled={ariaDisabled || undefined}
           {...(value ? { value } : undefined)}
-          {...(disabled ? { disabled } : undefined)}
         />
         <label className="lab-checkbox__label" htmlFor={id}>
           <span className="lab-checkbox__box">
             {localChecked || indeterminate ? (
               <Icon
                 type={indeterminate ? "minus" : "check"}
-                color={disabled ? "mineral-40" : "white"}
+                color={ariaDisabled || disabled ? "mineral-40" : "white"}
                 size="small"
               />
             ) : null}

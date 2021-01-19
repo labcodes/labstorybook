@@ -23,7 +23,9 @@ export default class Button extends React.Component {
     icon: PropTypes.string,
     /** Sets the button's height. Small = 32px, Normal = 40px, Large = 48px. */
     size: PropTypes.oneOf(["normal", "small", "large"]),
-    /** Makes the button disabled, cancelling the onClick handler. */
+    /** Disables the Button. Will be read by screen readers. When true, will override `disabled`. */
+    ariaDisabled: PropTypes.bool,
+    /** Disables the onClick handler. */
     disabled: PropTypes.bool,
     /** Action to be executed when the button is clicked. */
     onClick: PropTypes.func,
@@ -37,6 +39,7 @@ export default class Button extends React.Component {
     type: "button",
     size: "normal",
     disabled: false,
+    ariaDisabled: false,
     onClick: () => {},
     fullWidth: false,
   };
@@ -51,6 +54,7 @@ export default class Button extends React.Component {
       disabled,
       onClick,
       fullWidth,
+      ariaDisabled,
     } = this.props;
     return (
       <AbstractButton
@@ -61,6 +65,7 @@ export default class Button extends React.Component {
         icon={icon}
         size={size}
         disabled={disabled}
+        ariaDisabled={ariaDisabled}
         onClick={onClick}
         fullWidth={fullWidth}
       />

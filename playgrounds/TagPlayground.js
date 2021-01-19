@@ -22,6 +22,7 @@ export default class TagPlayground extends React.Component {
       selectedColor: "mineral",
       selectedSkin: "pale",
       selectedIsDisabled: false,
+      selectedAriaDisabled: false,
       selectedIsOutline: false,
       selectedIcon: "",
       selectedThumbSrc: "none",
@@ -99,6 +100,7 @@ export default class TagPlayground extends React.Component {
       selectedColor,
       selectedSkin,
       selectedIsDisabled,
+      selectedAriaDisabled,
       selectedIsOutline,
       selectedIcon,
       selectedThumbSrc,
@@ -120,6 +122,7 @@ export default class TagPlayground extends React.Component {
             color={selectedColor}
             skin={selectedSkin}
             disabled={selectedIsDisabled}
+            ariaDisabled={selectedAriaDisabled}
             isOutline={selectedIsOutline}
             icon={
               selectedThumbSrc === "icon" &&
@@ -154,6 +157,7 @@ export default class TagPlayground extends React.Component {
       selectedThumbSrc,
       isIconInputDisabled,
       selectedIsDisabled,
+      selectedAriaDisabled,
       selectedIsOutline,
     } = this.state;
 
@@ -231,14 +235,26 @@ export default class TagPlayground extends React.Component {
 
           <span className="lab-playground__item">
             <span className="lab-playground__item">
-              <p>
-                <strong>Disabled</strong>
-              </p>
-              <Toggle
-                name="selectedIsDisabled"
-                handleToggle={this.handleBoolPropChange}
-                value={selectedIsDisabled}
-              />
+              {currentComponent !== "SimpleTag" ? (
+                <React.Fragment>
+                  <p>
+                    <strong>Disabled</strong>
+                  </p>
+                  <Toggle
+                    name="selectedIsDisabled"
+                    handleToggle={this.handleBoolPropChange}
+                    value={selectedIsDisabled}
+                  />
+                  <p>
+                    <strong>AriaDisabled</strong>
+                  </p>
+                  <Toggle
+                    name="selectedAriaDisabled"
+                    handleToggle={this.handleBoolPropChange}
+                    value={selectedAriaDisabled}
+                  />
+                </React.Fragment>
+              ) : null}
               <p>
                 <strong>isOutline</strong>
               </p>

@@ -6,11 +6,12 @@ import { CardContext } from "./contexts";
 
 export default class DoubleAction extends React.Component {
   static propTypes = {
-    /** Sets button's attributes: label, action to be executed when the button is clicked, whether it is disabled or not, and the icon. */
+    /** Sets button's attributes: label, action to be executed when the button is clicked, whether it is disabled/ariaDisabled or not, and the icon. */
     actionsProps: PropTypes.arrayOf(
       PropTypes.exact({
         text: PropTypes.string.isRequired,
         onClick: PropTypes.func.isRequired,
+        ariaDisabled: PropTypes.bool,
         disabled: PropTypes.bool,
         icon: PropTypes.string,
       })
@@ -76,10 +77,38 @@ export default class DoubleAction extends React.Component {
               ${isHorizontal ? " lab-card-double-action--horizontal" : ""}
             `}
           >
-            {actionsProps.map(({ text, onClick, icon, disabled }, index) => {
-              if (isText) {
+            {actionsProps.map(
+              ({ text, onClick, icon, disabled, ariaDisabled }, index) => {
+                if (isText) {
+                  return (
+                    <TextButton
+                      key={text}
+                      text={text}
+                      onClick={onClick}
+                      size={size}
+                      skin={this.getButtonSkinFromCardContext(context)}
+                      {...(icon ? { icon } : undefined)}
+                      {...(disabled ? { disabled } : undefined)}
+                      {...(ariaDisabled ? { ariaDisabled } : undefined)}
+                    />
+                  );
+                }
+                if (index === 0) {
+                  return (
+                    <Button
+                      key={text}
+                      text={text}
+                      onClick={onClick}
+                      size={size}
+                      skin={this.getButtonSkinFromCardContext(context)}
+                      {...(icon ? { icon } : undefined)}
+                      {...(disabled ? { disabled } : undefined)}
+                      {...(ariaDisabled ? { ariaDisabled } : undefined)}
+                    />
+                  );
+                }
                 return (
-                  <TextButton
+                  <OutlineButton
                     key={text}
                     text={text}
                     onClick={onClick}
@@ -87,34 +116,11 @@ export default class DoubleAction extends React.Component {
                     skin={this.getButtonSkinFromCardContext(context)}
                     {...(icon ? { icon } : undefined)}
                     {...(disabled ? { disabled } : undefined)}
+                    {...(ariaDisabled ? { ariaDisabled } : undefined)}
                   />
                 );
               }
-              if (index === 0) {
-                return (
-                  <Button
-                    key={text}
-                    text={text}
-                    onClick={onClick}
-                    size={size}
-                    skin={this.getButtonSkinFromCardContext(context)}
-                    {...(icon ? { icon } : undefined)}
-                    {...(disabled ? { disabled } : undefined)}
-                  />
-                );
-              }
-              return (
-                <OutlineButton
-                  key={text}
-                  text={text}
-                  onClick={onClick}
-                  size={size}
-                  skin={this.getButtonSkinFromCardContext(context)}
-                  {...(icon ? { icon } : undefined)}
-                  {...(disabled ? { disabled } : undefined)}
-                />
-              );
-            })}
+            )}
           </section>
         )}
       </CardContext.Consumer>
