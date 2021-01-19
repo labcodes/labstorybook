@@ -364,7 +364,7 @@ $input-border-disabled: $mineral-30;
   text-align: center;
   pointer-events: none;
   background-color: $mineral-10;
-  border-radius: $radius-01;
+  border-radius: $radius-05;
 
   .lab-input__field--prefixed:focus ~ &,
   .lab-input__field--suffixed:focus ~ & {
