@@ -47,12 +47,12 @@ $input-border-disabled: $mineral-30;
 
 .lab-input--disabled {
   background-color: $mineral-10;
-  border-radius: $radius-02;
+  border-radius: $radius-1;
 }
 
 .lab-input--invalid {
   background-color: $input-background-invalid;
-  border-radius: $radius-02;
+  border-radius: $radius-1;
 
   .lab-input__field:invalid {
     background-color: $input-background-invalid;
@@ -150,7 +150,7 @@ $input-border-disabled: $mineral-30;
   left: 0;
   height: $input-height;
   border: $border-01 $input-border-unfilled-idle;
-  border-radius: $radius-02;
+  border-radius: $radius-1;
   pointer-events: none;
   transition: border $duration-base ease, box-shadow $duration-base ease;
   // Input filled

@@ -34,7 +34,7 @@ $remove-icon-focus: map-get($search-theme, "30");
 
 .lab-search--disabled {
   background-color: $mineral-10;
-  border-radius: $radius-02;
+  border-radius: $radius-1;
 }
 
 .lab-search__field {
@@ -62,7 +62,7 @@ $remove-icon-focus: map-get($search-theme, "30");
     width: 320px;
     margin-top: $spacing-3;
     box-sizing: border-box;
-    border-radius: $radius-02;
+    border-radius: $radius-1;
 
     .lab-search__remove-icon {
         margin-right: $spacing-13;
@@ -141,7 +141,7 @@ $remove-icon-focus: map-get($search-theme, "30");
     width: 8px;
     height: 36px;
     background-color: $white;
-    border-radius: $radius-02;
+    border-radius: $radius-1;
 
     .lab-search__field:disabled ~ & {
         background-color: $search-separator-disabled;               
@@ -158,7 +158,7 @@ $remove-icon-focus: map-get($search-theme, "30");
     width: 320px;
     margin-top: $spacing-3;
     box-sizing: border-box;
-    border-radius: $radius-02;
+    border-radius: $radius-1;
 
     .lab-search__field {
         padding-left: $spacing-13;
