@@ -9,7 +9,9 @@ export default class PasswordInput extends React.Component {
     id: PropTypes.string.isRequired,
     /** The Input's text label. */
     label: PropTypes.string.isRequired,
-    /** Disables the text input. */
+    /** Disables the text input. Will be read by screen readers. When true, will override `disabled`. */
+    ariaDisabled: PropTypes.bool,
+    /** Disables the text input. Won't be read by screen readers. */
     disabled: PropTypes.bool,
     /** Defines a default value for the Input initialization. */
     defaultValue: PropTypes.string,
@@ -33,6 +35,7 @@ export default class PasswordInput extends React.Component {
 
   static defaultProps = {
     disabled: false,
+    ariaDisabled: false,
     defaultValue: undefined,
     value: undefined,
     required: false,
@@ -72,6 +75,7 @@ export default class PasswordInput extends React.Component {
       customErrorMsg,
       onChange,
       disabled,
+      ariaDisabled,
     } = this.props;
 
     return (
@@ -90,7 +94,8 @@ export default class PasswordInput extends React.Component {
         isValid={isValid}
         customErrorMsg={customErrorMsg}
         onChange={onChange}
-        {...(disabled ? { disabled } : undefined)}
+        disabled={(!ariaDisabled && disabled) || undefined}
+        ariaDisabled={ariaDisabled || undefined}
       />
     );
   }

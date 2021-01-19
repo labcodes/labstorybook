@@ -67,7 +67,8 @@ $input-border-disabled: $mineral-30;
 
   // Input filled and not filled invalid focus
   .lab-input__field:invalid:focus + .lab-input__borders,
-  .lab-input__field:invalid:not(:placeholder-shown):focus + .lab-input__borders {
+  .lab-input__field:invalid:not(:placeholder-shown):focus
+    + .lab-input__borders {
     @include border-shadow(focus, $input-shadow-invalid-focus);
     border: $border-01 $input-main-invalid;
     outline: none;
@@ -75,7 +76,11 @@ $input-border-disabled: $mineral-30;
 
   // Input invalid focus-hover
   .lab-input__field:invalid:hover:focus + .lab-input__borders {
-    @include border-shadow(focus-hover, $input-shadow-invalid-focus, $input-background-invalid);
+    @include border-shadow(
+      focus-hover,
+      $input-shadow-invalid-focus,
+      $input-background-invalid
+    );
     border: $border-01 $input-main-invalid;
   }
 
@@ -86,17 +91,26 @@ $input-border-disabled: $mineral-30;
 
   //Change label when input is invalid or when is filled and invalid
   .lab-input__field:focus:invalid ~ .lab-input__label-wrapper .lab-input__label,
-  .lab-input__field:not(:placeholder-shown):invalid ~ .lab-input__label-wrapper .lab-input__label {
+  .lab-input__field:not(:placeholder-shown):invalid
+    ~ .lab-input__label-wrapper
+    .lab-input__label {
     color: $input-main-invalid;
     background: rgb(255, 255, 255);
-    background: linear-gradient(360deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 1) 30%);
+    background: linear-gradient(
+      360deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, 1) 30%
+    );
   }
 
   // Input filled invalid on all states
   .lab-input__field:invalid ~ .lab-input__required-icon,
-  .lab-input__field:not(:placeholder-shown):invalid:hover ~ .lab-input__required-icon,
-  .lab-input__field:not(:placeholder-shown):invalid:focus ~ .lab-input__required-icon,
-  .lab-input__field:not(:placeholder-shown):invalid:focus:hover ~ .lab-input__required-icon {
+  .lab-input__field:not(:placeholder-shown):invalid:hover
+    ~ .lab-input__required-icon,
+  .lab-input__field:not(:placeholder-shown):invalid:focus
+    ~ .lab-input__required-icon,
+  .lab-input__field:not(:placeholder-shown):invalid:focus:hover
+    ~ .lab-input__required-icon {
     background-color: $input-main-invalid;
   }
 
@@ -108,7 +122,8 @@ $input-border-disabled: $mineral-30;
   }
 
   // Message
-  .lab-input__field:not(:placeholder-shown):invalid ~ .lab-input__message--error {
+  .lab-input__field:not(:placeholder-shown):invalid
+    ~ .lab-input__message--error {
     opacity: 1;
   }
 }
@@ -132,9 +147,12 @@ $input-border-disabled: $mineral-30;
   // we are forcing it to be zero, so that the input fills the available space
   min-width: 0;
 
-  &:disabled {
+  &:disabled,
+  &[aria-disabled] {
     color: $black-75;
     background-color: $mineral-10;
+    pointer-events: none;
+    cursor: default;
   }
 
   &--suffixed {
@@ -176,15 +194,23 @@ $input-border-disabled: $mineral-30;
   // Input focus hover
   .lab-input__field:hover:focus + & {
     border: 2px solid $input-border-filled-focus-hover;
-    @include border-shadow(focus-hover, $input-shadow-filled-focus, $input-shadow-filled-hover);
+    @include border-shadow(
+      focus-hover,
+      $input-shadow-filled-focus,
+      $input-shadow-filled-hover
+    );
   }
 
   // Input disabled
   .lab-input__field:disabled + &,
-  .lab-input__field:not(:placeholder-shown):disabled + & {
+  .lab-input__field:not(:placeholder-shown):disabled + &,
+  .lab-input__field[aria-disabled] + &,
+  .lab-input__field:not(:placeholder-shown)[aria-disabled] + & {
     color: $black-75;
     border: $border-01 $input-border-disabled;
     box-shadow: none;
+    pointer-events: none;
+    cursor: default;
   }
 }
 
@@ -243,17 +269,32 @@ $input-border-disabled: $mineral-30;
   }
 
   //Change label when prefixed input is focused or when is filled
-  .lab-input__field--prefixed:not(:placeholder-shown) ~ .lab-input__label-wrapper &,
+  .lab-input__field--prefixed:not(:placeholder-shown)
+    ~ .lab-input__label-wrapper
+    &,
   .lab-input__field--prefixed:focus ~ .lab-input__label-wrapper & {
     background: rgb(255, 255, 255);
-    background: linear-gradient(360deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 1) 30%);
+    background: linear-gradient(
+      360deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, 1) 30%
+    );
   }
 
   //Change label when input is disabled
-  .lab-input__field:not(:placeholder-shown):disabled ~ .lab-input__label-wrapper & {
+  .lab-input__field:not(:placeholder-shown):disabled
+    ~ .lab-input__label-wrapper
+    &,
+  .lab-input__field:not(:placeholder-shown)[aria-disabled]
+    ~ .lab-input__label-wrapper
+    & {
     color: $input-border-unfilled-idle;
     background: rgb(255, 255, 255);
-    background: linear-gradient(360deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 1) 30%);
+    background: linear-gradient(
+      360deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, 1) 30%
+    );
   }
 }
 
@@ -272,7 +313,8 @@ $input-border-disabled: $mineral-30;
     @include border-shadow(focus, $input-shadow-filled-focus);
   }
 
-  .lab-input__field:not(:placeholder-shown):disabled ~ &:focus {
+  .lab-input__field:not(:placeholder-shown):disabled ~ &:focus,
+  .lab-input__field:not(:placeholder-shown)[aria-disabled] ~ &:focus {
     cursor: default;
     box-shadow: none;
   }
@@ -376,6 +418,8 @@ $input-border-disabled: $mineral-30;
     background-color: $input-background-prefix-filled;
   }
 
+  .lab-input__field--prefixed[aria-disabled] ~ &,
+  .lab-input__field--suffixed[aria-disabled] ~ &,
   .lab-input__field--prefixed:disabled ~ &,
   .lab-input__field--suffixed:disabled ~ & {
     background-color: $mineral-20;
