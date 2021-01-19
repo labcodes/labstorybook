@@ -9,7 +9,7 @@ $alerts-line-height: 20px;
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-end;
-  margin: $spacing-01 0;
+  margin: $spacing-1 0;
   padding: $spacing-03 $spacing-04;
   color: $mineral-70;
   border-radius: 8px;
@@ -66,7 +66,7 @@ $alerts-line-height: 20px;
 }
 
 .lab-alert__button {
-  margin-top: $spacing-01;
+  margin-top: $spacing-1;
 
   @include from($tablet) {
     margin-top: unset;

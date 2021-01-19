@@ -39,7 +39,7 @@ $remove-icon-focus: map-get($search-theme, "30");
 
 .lab-search__field {
     @extend .lab-input__field;
-    padding-right: $spacing-01;
+    padding-right: $spacing-1;
 
     &:not(:placeholder-shown) ~ .lab-search__remove-icon {
         opacity: 1;
