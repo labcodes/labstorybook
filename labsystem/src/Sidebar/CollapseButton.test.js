@@ -14,8 +14,8 @@ describe("CollapseButton", () => {
 
   it("calls props.onClick when clicked", async () => {
     const mockOnClick = jest.fn();
-    const shallowedButton = shallow(<CollapseButton onClick={mockOnClick} />);
-    shallowedButton.simulate("click");
+    const shallowButton = shallow(<CollapseButton onClick={mockOnClick} />);
+    shallowButton.simulate("click");
     expect(mockOnClick.mock.calls.length).toEqual(1);
   });
 });

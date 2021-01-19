@@ -18,7 +18,9 @@ export default class RemovableTag extends React.Component {
     skin: PropTypes.string,
     /** Sets an outline style. */
     isOutline: PropTypes.bool,
-    /** Disables the Tag component. */
+    /** Disables the Tag. Will be read by screen readers. When true, will override `disabled`. */
+    ariaDisabled: PropTypes.bool,
+    /** Disables the Tag. Won't be read by screen readers. */
     disabled: PropTypes.bool,
     /** Callback to be executed when the Tag is clicked. */
     onClick: PropTypes.func,
@@ -31,6 +33,7 @@ export default class RemovableTag extends React.Component {
     skin: "pale",
     isOutline: false,
     disabled: false,
+    ariaDisabled: false,
     onClick: () => {},
   };
 
@@ -91,6 +94,7 @@ export default class RemovableTag extends React.Component {
       skin,
       isOutline,
       disabled,
+      ariaDisabled,
       onClick,
     } = this.props;
     return (
@@ -104,7 +108,8 @@ export default class RemovableTag extends React.Component {
         color={color}
         skin={skin}
         isOutline={isOutline}
-        disabled={disabled}
+        disabled={!ariaDisabled && disabled}
+        ariaDisabled={ariaDisabled}
         onClick={onClick}
         renderPrefix={this.thumb() || this.icon()}
         renderSuffix={this.removeIcon()}

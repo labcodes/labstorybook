@@ -47,11 +47,21 @@ describe("Button", () => {
 
   it("calls props.onClick when clicked", async () => {
     const mockOnClick = jest.fn();
-    const shallowedButton = shallow(
+    const shallowButton = shallow(
       <Button text="Test Click on Default Button" onClick={mockOnClick} />
     );
-    shallowedButton.simulate("click");
+    shallowButton.simulate("click");
     expect(mockOnClick.mock.calls.length).toEqual(1);
+  });
+
+  it("doesn't call onClick if ariaDisabled", async () => {
+    const mockOnClick = jest.fn();
+    const mountedComponent = mount(
+      <Button ariaDisabled onClick={mockOnClick} text="Test Default Button" />
+    );
+    expect(mockOnClick.mock.calls.length).toEqual(0);
+    mountedComponent.find("button").simulate("click");
+    expect(mockOnClick.mock.calls.length).toEqual(0);
   });
 
   it("renders as expected if full width", async () => {

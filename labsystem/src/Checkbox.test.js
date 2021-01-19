@@ -169,8 +169,9 @@ describe("Checkbox", () => {
       />
     );
 
-    // eslint-disable-next-line prettier/prettier
-    expect(mountedComponent.find("input").find({ checked: true })).toHaveLength(1);
+    expect(mountedComponent.find("input").find({ checked: true })).toHaveLength(
+      1
+    );
     expect(
       mountedComponent
         .find(Icon)
@@ -261,8 +262,9 @@ describe("Checkbox", () => {
       )
     ).toHaveLength(0);
     mountedComponent.find("input").at(0).simulate("change");
-    // eslint-disable-next-line prettier/prettier
-    expect(mountedComponent.find("input").find({ checked: true })).toHaveLength(1);
+    expect(mountedComponent.find("input").find({ checked: true })).toHaveLength(
+      1
+    );
     expect(
       mountedComponent
         .find(Icon)
@@ -301,8 +303,9 @@ describe("Checkbox", () => {
 
     mountedComponent.find("input").at(0).simulate("change", { test: "event" });
 
-    // eslint-disable-next-line prettier/prettier
-    expect(mountedComponent.find("input").find({ checked: true })).toHaveLength(1);
+    expect(mountedComponent.find("input").find({ checked: true })).toHaveLength(
+      1
+    );
     expect(
       mountedComponent
         .find(Icon)
@@ -313,5 +316,30 @@ describe("Checkbox", () => {
         .find(".lab-icon--small")
     ).toHaveLength(1);
     expect(mockOnChange).toBeCalled();
+  });
+
+  it("doesn't trigger onChange if ariaDisabled", async () => {
+    const mockOnChange = jest.fn();
+    const mountedComponent = mount(
+      <Checkbox
+        ariaDisabled
+        name="test-checkbox"
+        id="test-checkbox"
+        label="test checkbox"
+        onChange={mockOnChange}
+      />
+    );
+
+    expect(
+      mountedComponent.find("input").find({ checked: false })
+    ).toHaveLength(1);
+    expect(mockOnChange).not.toBeCalled();
+
+    mountedComponent.find("input").at(0).simulate("change", { test: "event" });
+
+    expect(
+      mountedComponent.find("input").find({ checked: false })
+    ).toHaveLength(1);
+    expect(mockOnChange).not.toBeCalled();
   });
 });

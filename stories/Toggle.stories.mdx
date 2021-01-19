@@ -57,11 +57,11 @@ import Toggle from '../labsystem/src/Toggle';
 
 <div className="simple-tab__content content2">
   <h2>Theming</h2>
-  <p>The toggle color is defined in the <code>scss/variables/_settings.scss</code> file, and can be Teal or Purple. Avoid using purple toggles if the project theme is teal, and vice versa.</p>
+  <p>The toggle color is  passwd via the <code>color</code> prop. Avoid using purple toggles if the project theme is teal, and vice versa.</p>
 
 <Canvas>
   <Story name="Sample Toggle Themes">
-      <Toggle name="sample-toggle-purple" color="purple" defaultValue={true} /><br /><br />
+      <Toggle name="sample-toggle-purple" color="purple" defaultValue={true} />
   </Story>
 </Canvas>
 
@@ -71,8 +71,12 @@ import Toggle from '../labsystem/src/Toggle';
 <Canvas>
   <Story name="Sample Toggle Disabled">
     <Fragment>
+      <p>disabled:</p>
       <Toggle name="sample-toggle-disabled-off" disabled /><br /><br />
       <Toggle name="sample-toggle-disabled-on" disabled defaultValue={true} />
+      <p>ariaDisabled:</p>
+      <Toggle name="sample-toggle-aria-disabled-off" ariaDisabled /><br /><br />
+      <Toggle name="sample-toggle-aria-disabled-on" ariaDisabled defaultValue={true} />
     </Fragment>
   </Story>
 </Canvas>

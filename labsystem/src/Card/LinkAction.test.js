@@ -14,11 +14,11 @@ describe("LinkAction", () => {
 
   it("calls props.onClick when clicked", async () => {
     const mockOnClick = jest.fn();
-    const shallowedLinkAction = shallow(
+    const shallowLinkAction = shallow(
       <LinkAction text="test" onClick={mockOnClick} />
     );
     expect(mockOnClick.mock.calls.length).toEqual(0);
-    shallowedLinkAction.find("a").simulate("click");
+    shallowLinkAction.find("a").simulate("click");
     expect(mockOnClick.mock.calls.length).toEqual(1);
   });
 
