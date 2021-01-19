@@ -6,6 +6,8 @@ export default class Button extends React.Component {
   static propTypes = {
     /** This is the button label. */
     text: PropTypes.string.isRequired,
+    /** HTML type of the Button. */
+    type: PropTypes.oneOf(["button", "submit", "reset"]),
     /** Sets a special color skin to the button. */
     skin: PropTypes.oneOf([
       "",
@@ -34,6 +36,7 @@ export default class Button extends React.Component {
   static defaultProps = {
     skin: undefined,
     icon: undefined,
+    type: "button",
     size: "normal",
     disabled: false,
     ariaDisabled: false,
@@ -44,6 +47,7 @@ export default class Button extends React.Component {
   render() {
     const {
       text,
+      type,
       skin,
       icon,
       size,
@@ -56,6 +60,7 @@ export default class Button extends React.Component {
       <AbstractButton
         variant="default"
         text={text}
+        type={type}
         skin={skin}
         icon={icon}
         size={size}

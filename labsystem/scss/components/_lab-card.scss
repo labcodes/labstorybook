@@ -171,7 +171,7 @@ $card-compact-padding: $spacing-03 $spacing-04;
 }
 
 // Body
-p:not(.lab-card-title):not(.lab-card-subtitle):not(.lab-card-category) {
+.lab-card p:not(.lab-card-title):not(.lab-card-subtitle):not(.lab-card-category) {
   color: $black-75;
   margin-top: unset;
   margin-bottom: $spacing-03;

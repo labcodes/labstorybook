@@ -6,6 +6,8 @@ export default class TextButton extends React.Component {
   static propTypes = {
     /** This is the button label. */
     text: PropTypes.string.isRequired,
+    /** HTML type of the Button. */
+    type: PropTypes.oneOf(["button", "submit", "reset"]),
     /** Sets a special color skin to the button. */
     skin: PropTypes.oneOf(["", "light", "dark"]),
     /** Sets the icon related to the button label. Default state: no icon. */
@@ -23,8 +25,9 @@ export default class TextButton extends React.Component {
   };
 
   static defaultProps = {
-    skin: "",
+    skin: undefined,
     icon: undefined,
+    type: "button",
     size: "normal",
     disabled: false,
     ariaDisabled: false,
@@ -35,6 +38,7 @@ export default class TextButton extends React.Component {
   render() {
     const {
       text,
+      type,
       skin,
       icon,
       size,
@@ -47,6 +51,7 @@ export default class TextButton extends React.Component {
       <AbstractButton
         variant="text"
         text={text}
+        type={type}
         skin={skin}
         icon={icon}
         size={size}

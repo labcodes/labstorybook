@@ -209,6 +209,7 @@ export default class AbstractTextInput extends React.Component {
             ref={this.inputRef}
             onChange={!ariaDisabled ? this.handleOnChange : () => {}}
             autoComplete="off"
+            placeholder=" " // required for label placement
             disabled={(!ariaDisabled && disabled) || undefined}
             aria-disabled={ariaDisabled || undefined}
             required={required || undefined}
