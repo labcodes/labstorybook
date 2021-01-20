@@ -1,0 +1,38 @@
+.doc-caption {
+  color: $black-75;
+  font-size: $font-size-5;
+  margin-block-end: $spacing-03;
+  font-family: $family-sans-serif;
+  font-weight: $weight-semibold;
+  text-align: left;
+}
+
+.doc-table {
+  width: 100%;
+
+  th, tr, td {
+    border-left: none !important; 
+    border-right: none !important; 
+    border-top: none !important;
+    padding-left: 0 !important;
+  }
+
+  th {
+      border-bottom-color: $black-75 !important;
+  }
+}
+
+.doc-table .doc-table__head {
+  text-align: left;
+}
+
+.doc-table .doc-table__body {
+  tr:nth-child(even) {
+    background: transparent;
+  }
+}
+
+.doc-message_elements {
+  background-color: $black-50;
+  padding: $spacing-04;
+}

@@ -27,33 +27,17 @@ import DialogPlayground from "../playgrounds/DialogPlayground";
         <div className="column">
           <p>Dialogs are used to display content in a secondary window that appears in a layer above the main view. It should always be triggered by a user action, not surprising by popping up.</p>
           <p>It might be used for messages that should be read with attention and, sometimes, blocks the interaction with the rest of the page as a <strong>modal</strong>. This type of use interrupts the user experience flow on the underlying page and can be perceived as annoying if used without purpose.</p>
-          <p><strong>Modal</strong></p>
-          <p>
-          When active, blocks the user's workflow untill the dialog modal task is completed or dismissed. The underlying page is obscured to show its block.</p>
-          <p><strong>Modeless</strong></p>
-          <p>
-          Is a dialog used for elective tasks related to the page main context, but it doesn't block the on-page content.</p>
-        <div className="doc-em-block">
-          <p>Currently, we only use modal dialogs in our apps. Nevertheless, it's important to know that modeless dialogs are more recommended and should be considered for further contexts. We can add them in the future as needed.</p>
-        </div>
       </div>
       <div className="column">
-        <p>Currently there are <strong>two variations of dialogs</strong>:</p>
-        <p><strong>Standard Dialog</strong></p>
-        <p>
-        Standard Dialog is used to show brief content that is usually more important than the one in the page and sometimes presents a call to action that must be completed to close the modal.</p>
-        <p><strong>Message Dialog</strong></p>
-        <p>
-        This component is often used to communicate a short message or to  confirm an action a user has taken. Normally, contains just a single button, and an icon to illustrate the message.</p>
-        <p><strong>WHEN TO USE</strong></p>
-        <table>
-          <thead>
+        <table className="doc-table">
+          <caption className="doc-caption">When to use</caption>
+          <thead className="doc-table doc-table__head">
             <tr>
               <th>Component</th>
               <th>Mesage Priority</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="doc-table doc-table__body">
             <tr>
               <td>Dialog</td>
               <td>High</td>
@@ -85,7 +69,7 @@ import DialogPlayground from "../playgrounds/DialogPlayground";
             </div>
             <div className="column">
               <h3>Message Dialog</h3>
-              <img src="docs/dialog/message_elements.png" alt="Message dialog elements"/>
+              <img className="doc-message_elements" src="docs/dialog/message_elements.png" alt="Message dialog elements"/>
               <ol>
                 <li>Message dialog container</li>
                 <li>Header area</li>
@@ -112,50 +96,35 @@ import DialogPlayground from "../playgrounds/DialogPlayground";
       <div className="columns">
         <div className="column">
           <h3>Standard Dialog</h3>
+          <p>Standard Dialog is used to show brief content that is usually more important than the one in the page and sometimes presents a call to action that must be completed to close the modal.</p>
           <img src="docs/dialog/standard_dialog.png" alt="Standard dialog"/>
         </div>
         <div className="column">
           <h3>Message Dialog</h3>
+          <p>This component is often used to communicate a short message or to  confirm an action a user has taken. Normally, contains just a single button, and an icon to illustrate the message.</p>
           <img src="docs/dialog/message_dialog.png" alt="Message dialog"/>
         </div>
       </div>
       <div className="columns">
         <div className="column">
           <h3>Modal</h3>
+          <p>When active, blocks the user's workflow untill the dialog modal task is completed or dismissed. The underlying page is obscured to show its block.</p>
           <img src="docs/dialog/modal.png" alt="Modal"/>
         </div>
         <div className="column">
           <h3>Modeless</h3>
+          <p>Is a dialog used for elective tasks related to the page main context, but it doesn't block the on-page content.</p>
           <img src="docs/dialog/modeless.png" alt="Modeless"/>
         </div>
       </div>
     <h3>Mobile</h3>
-    <p><em>Dialogs are always displayed as modal on mobile devices.</em></p>
+    <p>Dialogs are always displayed as modal on mobile devices.</p>
     <div className="columns">
       <div className="column">
         <img src="docs/dialog/standard_mobile.png" alt="Standard dialog mobile"/>
       </div>
       <div className="column">
         <img src="docs/dialog/standard_full-width_mobile.png" alt="Standard full width dialog mobile "/>
-      </div>
-      <div className="column">
-        <img src="docs/dialog/message_mobile.png" alt="Message dialog mobile"/>
-      </div>
-    </div>
-    <div className="columns">
-      <div className="column">
-        <div className="columns">
-          <div className="column">
-            <p><strong>BUTTON POSITIONING</strong></p>
-          </div>
-          <div className="column">
-            <p>Default buttons always appears on the right on dialogs. Ghost and text buttons appears and pile to the left of the default button, with 16px distance.</p>
-            <p>For message dialogs with one button only, use a full-width button.</p>
-          </div>
-        </div>
-      </div>
-      <div className="column">
-        <img src="docs/dialog/button_position.png" alt="Button positioning"/>
       </div>
     </div>
     <h2>Sizes</h2>
@@ -171,7 +140,7 @@ import DialogPlayground from "../playgrounds/DialogPlayground";
                 <p><strong>DESKTOP</strong></p>
                 <p><strong>Default</strong>: 520px width</p>
                 <p><strong>Large</strong>: 768px width</p>
-                <p><em>Same sizing for both Standard and Message Dialogs</em></p>
+                <p className="doc-p-alert">Same sizing for both Standard and Message Dialogs</p>
               </div>
               <div className="column">
                 <p><strong>MOBILE</strong></p>
@@ -206,31 +175,6 @@ import DialogPlayground from "../playgrounds/DialogPlayground";
         <div className="doc-em-block">
           <p>If the mobile modal content doesn't fit the modal height, then the section should scroll vertically. Depending of the content, the designer should pick what elements will remain fixed, with no scrolling.</p>
         </div>
-      </div>
-    </div>
-    <div className="columns">
-      <div className="column">
-        <p><strong>MODAL SCROLL INTERACTION</strong></p>
-        <p>When the standard mobile dialog have so much information that scrolling is necessary, the container first opens with a 70% viewport height, with a collapse open icon at the top of it, instead of a collapse close icon. To open the hidden content, the user should swipe up to enlarge the dialog. To dismiss, the user can either click outside the component, or swipe down, as the icon suggests.</p>
-      </div>
-      <div className="column">
-        <img src="docs/dialog/swipe_up.png" alt="Swipe up"/>
-      </div>
-      <div className="column">
-        <img src="docs/dialog/swipe_down.png" alt="Swipe down"/>
-      </div>
-    </div>
-    <h2>Styles</h2>
-    <div className="columns">
-      <div className="column">
-        <p>For Dialogs, you can change the icon and title colors for matching the theme. Buttons should match the theme as well.</p>
-        <img src="docs/dialog/purple_style.png" alt="Purple style"/>
-      </div>
-      <div className="column">
-        <img src="docs/dialog/standard_purple.png" alt="Standard Dialog Purple"/>
-      </div>
-      <div className="column">
-        <img src="docs/dialog/message_purple.png" alt="Message Dialog Purple"/>
       </div>
     </div>
   </div>
