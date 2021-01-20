@@ -25,7 +25,9 @@
 }
 
 .doc-anatomy-block {
-  background-color: $mineral-10;
+  background-color: $white;
+  border: 1px solid $mineral-20;
+  box-shadow: $mineral-20 0 1px 3px 0;
   border-radius: 4px;
   padding: 16px;
   
