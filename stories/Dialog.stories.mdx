@@ -25,13 +25,13 @@ import DialogPlayground from "../playgrounds/DialogPlayground";
     <h2>Overview</h2>
       <div className="columns">
         <div className="column">
-          <p>Dialogs are components used to display content in a secondary window that appears in a layer above the main window. It should always be triggered by a user's action, not surprising by popping up.</p>
-          <p>It might be used for messages that should be read with attention and, sometimes, blocks the interaction with the rest of the page. In this case, this type of component interrupts user experience flow on the underlying page and it could be perceived as annoying if it's not used when really necessary. We can have 2 types of Dialogs:</p>
-          <p><strong>Modal</strong>
-          <br/>
+          <p>Dialogs are used to display content in a secondary window that appears in a layer above the main view. It should always be triggered by a user action, not surprising by popping up.</p>
+          <p>It might be used for messages that should be read with attention and, sometimes, blocks the interaction with the rest of the page as a <strong>modal</strong>. This type of use interrupts the user experience flow on the underlying page and can be perceived as annoying if used without purpose.</p>
+          <p><strong>Modal</strong></p>
+          <p>
           When active, blocks the user's workflow untill the dialog modal task is completed or dismissed. The underlying page is obscured to show its block.</p>
-          <p><strong>Modeless</strong>
-          <br/>
+          <p><strong>Modeless</strong></p>
+          <p>
           Is a dialog used for elective tasks related to the page main context, but it doesn't block the on-page content.</p>
         <div className="doc-em-block">
           <p>Currently, we only use modal dialogs in our apps. Nevertheless, it's important to know that modeless dialogs are more recommended and should be considered for further contexts. We can add them in the future as needed.</p>
@@ -39,11 +39,11 @@ import DialogPlayground from "../playgrounds/DialogPlayground";
       </div>
       <div className="column">
         <p>Currently there are <strong>two variations of dialogs</strong>:</p>
-        <p><strong>Standard Dialog</strong>
-        <br/>
+        <p><strong>Standard Dialog</strong></p>
+        <p>
         Standard Dialog is used to show brief content that is usually more important than the one in the page and sometimes presents a call to action that must be completed to close the modal.</p>
-        <p><strong>Message Dialog</strong>
-        <br/>
+        <p><strong>Message Dialog</strong></p>
+        <p>
         This component is often used to communicate a short message or to  confirm an action a user has taken. Normally, contains just a single button, and an icon to illustrate the message.</p>
         <p><strong>WHEN TO USE</strong></p>
         <table>
@@ -71,10 +71,9 @@ import DialogPlayground from "../playgrounds/DialogPlayground";
       </div>
       </div>
       <div className="doc-anatomy-block">
-        <h3>Anatomy</h3>
           <div className="columns">
             <div className="column">
-              <p><strong>Standard</strong></p>
+              <h3>Standard Dialog</h3>
               <img src="docs/dialog/standard_elements.png" alt="Standard dialog elements"/>
               <ol>
                 <li>Header title</li>
@@ -85,7 +84,7 @@ import DialogPlayground from "../playgrounds/DialogPlayground";
               </ol>
             </div>
             <div className="column">
-              <p><strong>Message</strong></p>
+              <h3>Message Dialog</h3>
               <img src="docs/dialog/message_elements.png" alt="Message dialog elements"/>
               <ol>
                 <li>Message dialog container</li>
@@ -112,26 +111,26 @@ import DialogPlayground from "../playgrounds/DialogPlayground";
     <h2>Variations</h2>
       <div className="columns">
         <div className="column">
-          <p><strong>Standard Dialog</strong></p>
+          <h3>Standard Dialog</h3>
           <img src="docs/dialog/standard_dialog.png" alt="Standard dialog"/>
         </div>
         <div className="column">
-          <p><strong>Message Dialog</strong></p>
+          <h3>Message Dialog</h3>
           <img src="docs/dialog/message_dialog.png" alt="Message dialog"/>
         </div>
       </div>
       <div className="columns">
         <div className="column">
-          <p><strong>Modal</strong></p>
+          <h3>Modal</h3>
           <img src="docs/dialog/modal.png" alt="Modal"/>
         </div>
         <div className="column">
-          <p><strong>Modeless</strong></p>
+          <h3>Modeless</h3>
           <img src="docs/dialog/modeless.png" alt="Modeless"/>
         </div>
       </div>
-    <p><strong>MOBILE</strong></p>
-    <p><em>For mobile, dialogs should be used as modal.</em></p>
+    <h3>Mobile</h3>
+    <p><em>Dialogs are always displayed as modal on mobile devices.</em></p>
     <div className="columns">
       <div className="column">
         <img src="docs/dialog/standard_mobile.png" alt="Standard dialog mobile"/>
@@ -162,16 +161,16 @@ import DialogPlayground from "../playgrounds/DialogPlayground";
     <h2>Sizes</h2>
       <div className="columns">
         <div className="column">
-          <p>Standard Dialogs should be displayed centered on the viewport, for desktop, and aligned at the bottom, for mobile. Its sizes varies with the context. They can have differents width: <strong>default and large, for desktop, and full width, for mobile.</strong></p>
-          <p>Message Dialogs should have the same size and positioning as Standard Dialogs, for Desktop. In mobile screens, this component should have a differente sizing and should be displayered centered on the viewport.</p>
+          <p>All Dialogs can have two different widths from tablet-up: <strong>default or large</strong>.</p>
+          <p>On mobile, Standard Dialogs are always full-width growing vertically from bottom-up, whereas Message Dialogs are centered and takes 90% of the viewport's width and 60% of its height.</p>
         </div>
         <div className="column">
           <div className="doc-em-block">
             <div className="columns">
               <div className="column">
                 <p><strong>DESKTOP</strong></p>
-                <p><strong>Default</strong>: 520 px width</p>
-                <p><strong>Large</strong>: 768 px width</p>
+                <p><strong>Default</strong>: 520px width</p>
+                <p><strong>Large</strong>: 768px width</p>
                 <p><em>Same sizing for both Standard and Message Dialogs</em></p>
               </div>
               <div className="column">
@@ -181,25 +180,24 @@ import DialogPlayground from "../playgrounds/DialogPlayground";
               </div>
             </div>
           </div>
-          <p><em>The height grows varying to the content, but the mobile scroll full-width has a maxium limit.</em></p>
         </div>
       </div>
     <h2>Behavior</h2>
     <div className="columns">
       <div className="column">
-        <p><strong>MODAL</strong></p>
+        <h3>Modal</h3>
         <p><strong>Focus</strong></p>
         <p>When a modal is opened, a curtain overlay (Black 50) should cover the on-page content, providing focus to the content showed in the dialog. This also indicate to the user that he can't interact with the underlying page.</p>
         <p><strong>Dismissing</strong></p>
         <p>By default, modals can be dismissed by clicking on the “x” in the right corner of the container. It also can be closed by clicking in one of the call to action buttons (if the modal have some). ‘Esc’ key should close the window, the same as a click outside the modal.</p>
-        <p><strong>MODELESS</strong></p>
+        <h3>Modeless</h3>
         <p><strong>Focus</strong></p>
         <p>When a dialog opens, initial focus should stay on the first element that allows user input. Despite that, the underlying page still remains free to interact.</p>
         <p><strong>Dismissing</strong></p>
         <p>Modeless dialogs can be dismissed by clicking on the “x” in the right corner of the container. ‘Esc’ key should close the window as well.</p>
       </div>
       <div className="column">
-        <p><strong>MOBILE</strong></p>
+        <h3>MOBILE</h3>
         <p><em>Message Dialogs behaves on mobile just as the desktop versions of its modals, except the it doesn't support the "esc” keyboard interaction. A slightly difference of interaction will happen on full-width version as the following text explicits.</em></p>
         <p><strong>Focus</strong></p>
         <p>When a modal is opened, a curtain overlay (Black 50) should cover the on-page content, and the container should appears in a animation from bottom to top (0.25s) providing focus to the content showed in the dialog. This also indicate to the user that he can't interact with the underlying page.</p>
