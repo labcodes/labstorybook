@@ -31,88 +31,52 @@ import CardPlayground from '../playgrounds/CardPlayground';
   <label htmlFor="tab2">Usage</label>
 
   <div className="simple-tab__content content1">
-
-  <h2>Overview</h2>
-  <p>
-    A card is an overview of a single subject content and an entry point for more detailed information with or 
-    without actions. It helps to present information in consumable chunks and scales easily in responsive or adaptive design frameworks.
-  </p>
-  <div className="doc-anatomy-block">
-    <div className="columns">
-      <div className="column">
-        <img src="docs/card/card-anatomy.png" alt="Cards Anatomy"/>
-        <ol>
-          <li>Header
-            <br /> a) Category / Label area
-            <br /> b) Title area
-          </li>
-          <li>Body
-            <br /> a) Image (Optional)
-            <br /> b) Text content
-          </li>
-          <li>Action area (Optional)</li>
-        </ol>
-      </div>
-      <div className="column">
-        <img src="docs/card/card-anatomy-02.png" alt="Cards border anatomy"/>
-        <ol>
-          <li>Base stroke (2px inside)</li>
-          <li>Focus stroke (2px outside)</li>
-          <li>Hover stroke (6px outside)</li>
-        </ol>
-        <br />
-        <div className="doc-em-block">
-          <p><strong>Card base structure & pieces</strong></p>
-          <p>A card must have at least 1 header and 1 body element, all other elements are optional and may change size settings.</p>
+    <h2>Overview</h2>
+    <p>A card is an overview of a single subject content and an entry point for more detailed information with or without actions. It helps to present information in consumable chunks and scales easily in responsive or adaptive design frameworks.</p>
+    <div className="doc-anatomy-block">
+      <div className="columns">
+        <div className="column">
+          <img src="docs/card/card-anatomy.png" alt="Cards Anatomy"/>
+        </div>
+        <div className="column">
+          <ol>
+            <li>CardHeader (mandatory)</li>
+            <p>a) Category / Label area</p>
+            <p>b) Title area</p>
+            <li>CardImage</li>
+            <li>Children (mandatory)</li>
+            <li>Action area</li>
+          </ol>
+          <div className="doc-em-block">
+            <p><strong>Card base structure & pieces</strong></p>
+            <p>A card must have at least 1 header and 1 body element, all other elements are optional and may change size settings.</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <h2>Interactive Demo</h2>
-  <p>This demo lets you preview the card component, its variations, and configuration options.</p>   
-
-<Story name="InteractiveDemo">
-  <Fragment>
+    <h2>Interactive Demo</h2>
+    <p>This demo lets you preview the card component, its variations, and configuration options.</p>   
     <CardPlayground />
-  </Fragment>
-</Story>
-
-  <h2>Prop API docs</h2>
-  <p>Here's the list of props based on the components' prop types definitions.</p>
-  <h3> OutlineCard</h3>
-
-<Props of={OutlineCard} />
-
-  <h3>FilledCard</h3>
-
-<Props of={FilledCard} />
-
-  <h3>OutlineFilledCard</h3>
-
-<Props of={OutlineFilledCard} />
-
-  <h3>CardImage</h3>
-
-<Props of={CardImage} />
-
-  <h3>CardHeader</h3>
-
-<Props of={CardHeader} />
-
-  <h3>CardDivider</h3>
-
-<Props of={CardDivider} />
-
-  <h3>LinkAction</h3>
-
-<Props of={LinkAction} />
-
-  <h3>DoubleAction</h3>
-
-<Props of={DoubleAction} />
-
-</div>
-<div className="simple-tab__content content2">
+    <h2>Prop API docs</h2>
+    <p>Here's the list of props based on the components' prop types definitions.</p>
+    <h3> OutlineCard</h3>
+    <Props of={OutlineCard} />
+    <h3>FilledCard</h3>
+    <Props of={FilledCard} />
+    <h3>OutlineFilledCard</h3>
+    <Props of={OutlineFilledCard} />
+    <h3>CardImage</h3>
+    <Props of={CardImage} />
+    <h3>CardHeader</h3>
+    <Props of={CardHeader} />
+    <h3>CardDivider</h3>
+    <Props of={CardDivider} />
+    <h3>LinkAction</h3>
+    <Props of={LinkAction} />
+    <h3>DoubleAction</h3>
+    <Props of={DoubleAction} />
+  </div>
+  <div className="simple-tab__content content2">
     <h2> Size and Responsiveness </h2>
     <p><span className="u-color-pink-60">Distance between cards: 16px</span></p>
     <div className="columns">
@@ -124,13 +88,9 @@ import CardPlayground from '../playgrounds/CardPlayground';
     <div className="columns">
       <div className="column is-full">
         <p><strong>Tablet:</strong> 4-12 columns</p>
-        <img src="docs/card/tablet.png" alt="Card responsive size and placement examples for tablet. Min 4 columns, max 12 columns."/>
-        <br />
+        <img src="docs/card/tablet.png" alt="Card responsive size and placement examples for tablet. Min 4 columns, max 12 columns." />
         <div className="doc-em-block">
-          <p>
-              From tablet-portrait-up you can choose between a vertical or horizontal layout, but mobile only allow the vertical one. 
-              Therefore, if a horizontal card is used, it should change to the vertical layout for screens smaller than 600px. Both of them have the same anatomy elements varying only on image placement.
-          </p>
+          <p>From tablet-portrait-up you can choose between a vertical or horizontal layout, but mobile only allow the vertical one. Therefore, if a horizontal card is used, it should change to the vertical layout for screens smaller than 600px. Both of them have the same anatomy elements varying only on image placement.</p>
         </div>
       </div>
     </div>
@@ -141,11 +101,11 @@ import CardPlayground from '../playgrounds/CardPlayground';
       </div>
     </div>
     <h2>Styles</h2>
-      <p>Outline Cards may be used over any page background color. For Filled Cards make sure to have at least a difference of 10 between card's and page's background shades.</p>
-      <img src="docs/card/combinations-01.png" alt="Card and Background shades combination"/>
-      <img src="docs/card/combinations-02.png" alt="Card and Background shades combination"/>
-      <img src="docs/card/combinations-03.png" alt="Card and Background shades combination"/>
-      <img src="docs/card/combinations-04.png" alt="Card and Background shades combination"/>
-      <img src="docs/card/combinations-05.png" alt="Card and Background shades combination"/>
+    <p>Outline Cards may be used over any page background color. For Filled Cards make sure to have at least a difference of 10 between card's and page's background shades.</p>
+    <img src="docs/card/combinations-01.png" alt="Card and Background shades combination"/>
+    <img src="docs/card/combinations-02.png" alt="Card and Background shades combination"/>
+    <img src="docs/card/combinations-03.png" alt="Card and Background shades combination"/>
+    <img src="docs/card/combinations-04.png" alt="Card and Background shades combination"/>
+    <img src="docs/card/combinations-05.png" alt="Card and Background shades combination"/>
   </div>
 </div>
