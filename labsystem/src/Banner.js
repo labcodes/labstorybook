@@ -62,7 +62,7 @@ export default class Banner extends React.Component {
         {this.icon()}
         <span className="lab-banner__message">{text}</span>
         <span
-          className="lab-alert__button"
+          className="lab-banner__button"
           onClick={this.handleClick}
           role="presentation"
         >

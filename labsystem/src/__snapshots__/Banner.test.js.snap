@@ -13,7 +13,7 @@ exports[`Banner renders with base props 1`] = `
     Info Banner
   </span>
   <span
-    className="lab-alert__button"
+    className="lab-banner__button"
     onClick={[Function]}
     role="presentation"
   />
@@ -33,7 +33,7 @@ exports[`Banner renders with button 1`] = `
     Warn Banner with button
   </span>
   <span
-    className="lab-alert__button"
+    className="lab-banner__button"
     onClick={[Function]}
     role="presentation"
   >
