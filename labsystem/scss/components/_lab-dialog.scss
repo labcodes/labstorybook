@@ -93,7 +93,7 @@
 
 // Modal overlay
 .lab-dialog-overlay {
-  z-index: 2;
+  z-index: 9;
   display: flex;
   position: fixed;
   top: 0;
@@ -112,7 +112,7 @@
 
 // Global style
 .lab-dialog {
-  z-index: 2;
+  z-index: 9;
   position: fixed;
   font-family: $font-primary;
   -webkit-font-smoothing: antialiased;
