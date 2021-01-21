@@ -56,3 +56,14 @@
 .doc-pink {
   color: $pink-60;
 }
+
+.doc-em-block .doc-p-alert {
+  color: $pink-60 !important;
+  background-color: $white;
+  font-weight: $weight-medium !important;
+  font-size: $font-size-2 !important;
+  padding-left: $spacing-01;
+  padding-right: $spacing-01;
+  border-radius: $spacing-01;
+  width: fit-content;
+}

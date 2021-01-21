@@ -1,30 +1,180 @@
-import { Fragment } from "react";
-import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Fragment } from 'react';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 
 import { StandardDialog, MessageDialog } from "../labsystem/src/Dialog";
 import DialogPlayground from "../playgrounds/DialogPlayground";
 
-import { iconOptions } from "../playgrounds/assets";
-
 <Meta title="Components/Dialog" />
 
-<header className="docs-title">
+<div class="docs-title docs-title--with-tab">
   <div>
-    <h1 className="docs-title__text">Dialog</h1>
+    <h1 class="docs-title__text">Dialog</h1>
   </div>
-</header>
+</div>
 
-<div className="docs-content">
-  <p>This is the start of Dialog's documentation.</p>
+<div class="docs-content">
+  <div className="simple-tab-wrapper"></div>
+  <input className="simple-tab" type="radio" name="type-tab" id="tab1" defaultChecked/>
+  <label htmlFor="tab1">Code</label>
 
-  <h2>Interactive demo</h2>
-  <p>This demo lets you preview the component, its variations, and configuration options.</p>
+  <input className="simple-tab" type="radio" name="type-tab" id="tab2" />
+  <label htmlFor="tab2">Usage</label>
 
-  <DialogPlayground />
+  <div className="simple-tab__content content1">
+    <h2>Overview</h2>
+      <div className="columns">
+        <div className="column">
+          <p>Dialogs are used to display content in a secondary window that appears in a layer above the main view. It should always be triggered by a user action, not surprising by popping up.</p>
+          <p>It might be used for messages that should be read with attention and, sometimes, blocks the interaction with the rest of the page as a <strong>modal</strong>. This type of use interrupts the user experience flow on the underlying page and can be perceived as annoying if used without purpose.</p>
+      </div>
+      <div className="column">
+        <table className="doc-table">
+          <caption className="doc-caption">When to use</caption>
+          <thead className="doc-table doc-table__head">
+            <tr>
+              <th>Component</th>
+              <th>Mesage Priority</th>
+            </tr>
+          </thead>
+          <tbody className="doc-table doc-table__body">
+            <tr>
+              <td>Dialog</td>
+              <td>High</td>
+            </tr>
+            <tr>
+              <td>Alert</td>
+              <td>Medium</td>
+            </tr>
+            <tr>
+              <td>Toast</td>
+              <td>Low</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+      <div className="doc-anatomy-block">
+          <div className="columns">
+            <div className="column">
+              <h3>Standard Dialog</h3>
+              <img src="docs/dialog/standard_elements.png" alt="Standard dialog elements"/>
+              <ol>
+                <li>Header title</li>
+                <li>Close trigger</li>
+                <li>Standard dialog container</li>
+                <li>Content area</li>
+                <li>Button area</li>
+              </ol>
+            </div>
+            <div className="column">
+              <h3>Message Dialog</h3>
+              <img className="doc-message_elements" src="docs/dialog/message_elements.png" alt="Message dialog elements"/>
+              <ol>
+                <li>Message dialog container</li>
+                <li>Header area</li>
+                <li>Content area</li>
+                <li>Button area</li>
+                <li>Curtain overlay (only for modal)</li>
+              </ol>
+            </div>
+          </div>
+      </div>
+    <h2>Interactive demo</h2>
+    <p>This demo lets you preview the component, its variations, and configuration options.</p>
+    <DialogPlayground />
+    <h2>Prop API</h2>
+    <p>Go to <a href="/?path=/docs/getting-started-setup-confetti--page">Setup</a> for instructions on how to import the component.</p>
+    <h3>Standard Dialog</h3>
+    <ArgsTable of={StandardDialog} />
+    <h3>Message Dialog</h3>
+    <ArgsTable of={MessageDialog} />
+  </div>
 
-## Standard Dialog
-  <ArgsTable of={StandardDialog} />
-
-## Message Dialog
-  <ArgsTable of={MessageDialog} />
+  <div className="simple-tab__content content2">
+    <h2>Variations</h2>
+      <div className="columns">
+        <div className="column">
+          <h3>Standard Dialog</h3>
+          <p>Standard Dialog is used to show brief content that is usually more important than the one in the page and sometimes presents a call to action that must be completed to close the modal.</p>
+          <img src="docs/dialog/standard_dialog.png" alt="Standard dialog"/>
+        </div>
+        <div className="column">
+          <h3>Message Dialog</h3>
+          <p>This component is often used to communicate a short message or to  confirm an action a user has taken. Normally, contains just a single button, and an icon to illustrate the message.</p>
+          <img src="docs/dialog/message_dialog.png" alt="Message dialog"/>
+        </div>
+      </div>
+      <div className="columns">
+        <div className="column">
+          <h3>Modal</h3>
+          <p>When active, blocks the user's workflow untill the dialog modal task is completed or dismissed. The underlying page is obscured to show its block.</p>
+          <img src="docs/dialog/modal.png" alt="Modal"/>
+        </div>
+        <div className="column">
+          <h3>Modeless</h3>
+          <p>Is a dialog used for elective tasks related to the page main context, but it doesn't block the on-page content.</p>
+          <img src="docs/dialog/modeless.png" alt="Modeless"/>
+        </div>
+      </div>
+    <h3>Mobile</h3>
+    <p>Dialogs are always displayed as modal on mobile devices.</p>
+    <div className="columns">
+      <div className="column">
+        <img src="docs/dialog/standard_mobile.png" alt="Standard dialog mobile"/>
+      </div>
+      <div className="column">
+        <img src="docs/dialog/standard_full-width_mobile.png" alt="Standard full width dialog mobile "/>
+      </div>
+    </div>
+    <h2>Sizes</h2>
+      <div className="columns">
+        <div className="column">
+          <p>All Dialogs can have two different widths from tablet-up: <strong>default or large</strong>.</p>
+          <p>On mobile, Standard Dialogs are always full-width growing vertically from bottom-up, whereas Message Dialogs are centered and takes 90% of the viewport's width and 60% of its height.</p>
+        </div>
+        <div className="column">
+          <div className="doc-em-block">
+            <div className="columns">
+              <div className="column">
+                <p><strong>DESKTOP</strong></p>
+                <p><strong>Default</strong>: 520px width</p>
+                <p><strong>Large</strong>: 768px width</p>
+                <p className="doc-p-alert">Same sizing for both Standard and Message Dialogs</p>
+              </div>
+              <div className="column">
+                <p><strong>MOBILE</strong></p>
+                <p><strong>Standard</strong>: 100% width and maximum 90% height of screen size</p>
+                <p><strong>Message</strong>: 90% width and maximum 60% height of screen size</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <h2>Behavior</h2>
+    <div className="columns">
+      <div className="column">
+        <h3>Modal</h3>
+        <p><strong>Focus</strong></p>
+        <p>When a modal is opened, a curtain overlay (Black 50) should cover the on-page content, providing focus to the content showed in the dialog. This also indicate to the user that he can't interact with the underlying page.</p>
+        <p><strong>Dismissing</strong></p>
+        <p>By default, modals can be dismissed by clicking on the “x” in the right corner of the container. It also can be closed by clicking in one of the call to action buttons (if the modal have some). ‘Esc’ key should close the window, the same as a click outside the modal.</p>
+        <h3>Modeless</h3>
+        <p><strong>Focus</strong></p>
+        <p>When a dialog opens, initial focus should stay on the first element that allows user input. Despite that, the underlying page still remains free to interact.</p>
+        <p><strong>Dismissing</strong></p>
+        <p>Modeless dialogs can be dismissed by clicking on the “x” in the right corner of the container. ‘Esc’ key should close the window as well.</p>
+      </div>
+      <div className="column">
+        <h3>MOBILE</h3>
+        <p><em>Message Dialogs behaves on mobile just as the desktop versions of its modals, except the it doesn't support the "esc” keyboard interaction. A slightly difference of interaction will happen on full-width version as the following text explicits.</em></p>
+        <p><strong>Focus</strong></p>
+        <p>When a modal is opened, a curtain overlay (Black 50) should cover the on-page content, and the container should appears in a animation from bottom to top (0.25s) providing focus to the content showed in the dialog. This also indicate to the user that he can't interact with the underlying page.</p>
+        <p><strong>Dismissing</strong></p>
+        <p>The full-width mobile modal can be closed by swiping the container to the bottom, as the arrow icon at the top suggests. The interaction of the dismissing follows the swiping flow.</p>
+        <div className="doc-em-block">
+          <p>If the mobile modal content doesn't fit the modal height, then the section should scroll vertically. Depending of the content, the designer should pick what elements will remain fixed, with no scrolling.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
