@@ -1,5 +1,6 @@
 src
 samples
+PULL_REQUEST_TEMPLATE.md
 .babelrc
 .eslintrc.js
 .nvmrc
