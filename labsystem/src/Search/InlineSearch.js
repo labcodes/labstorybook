@@ -9,7 +9,9 @@ export default class InlineSearch extends React.Component {
     id: PropTypes.string,
     /** Defines a default value for the Search initialization. */
     defaultValue: PropTypes.string,
-    /** Disables the Search. */
+    /** Disables the Search. Will be read by screen readers. When true, will override `disabled`. */
+    ariaDisabled: PropTypes.bool,
+    /** Disables the Search. Won't be read by screen readers. */
     disabled: PropTypes.bool,
     /** Text that will be rendered inside the Input field. */
     value: PropTypes.string,
@@ -27,6 +29,7 @@ export default class InlineSearch extends React.Component {
     id: undefined,
     defaultValue: undefined,
     disabled: false,
+    ariaDisabled: false,
     value: undefined,
     onChange: () => {},
     onSearch: () => {},
@@ -39,6 +42,7 @@ export default class InlineSearch extends React.Component {
       id,
       defaultValue,
       disabled,
+      ariaDisabled,
       value,
       onChange,
       onSearch,
@@ -57,7 +61,8 @@ export default class InlineSearch extends React.Component {
           onSearch={onSearch}
           onClear={onClear}
           placeholder={placeholder}
-          {...(disabled ? { disabled } : undefined)}
+          disabled={(!ariaDisabled && disabled) || undefined}
+          ariaDisabled={ariaDisabled}
         />
       </div>
     );

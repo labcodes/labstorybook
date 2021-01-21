@@ -1,64 +1,103 @@
 /* eslint-disable no-console */
 import React from "react";
-import { shallow } from "enzyme";
+import { mount, shallow } from "enzyme";
 import renderer from "react-test-renderer";
 
 import Toggle from "./Toggle";
 
 describe("Toggle", () => {
   it("renders with base props", async () => {
-    expect(shallow(<Toggle name="test-toggle" />)).toBeTruthy();
-    const renderedComponent = renderer
-      .create(<Toggle name="test-toggle" />)
-      .toJSON();
+    const component = <Toggle id="test-toggle" name="test-toggle" />;
+    expect(mount(component)).toBeTruthy();
+    const renderedComponent = renderer.create(component).toJSON();
     expect(renderedComponent).toMatchSnapshot();
   });
 
   it("renders as expected when passing disabled as true", async () => {
     const renderedComponent = renderer
-      .create(<Toggle name="test-toggle" disabled />)
+      .create(<Toggle id="test-toggle" name="test-toggle" disabled />)
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
   });
 
   it("renders as expected when passing a different color", async () => {
     const renderedComponent = renderer
-      .create(<Toggle color="purple" name="test-toggle" disabled />)
+      .create(
+        <Toggle id="test-toggle" color="purple" name="test-toggle" disabled />
+      )
       .toJSON();
     expect(renderedComponent).toMatchSnapshot();
   });
 
-  it("inits state.localValue with defaultValue if defined", async () => {
-    let component = shallow(<Toggle name="test-toggle" defaultValue />);
-    expect(component.state().localValue).toBe(true);
+  it("initializes toggled if defaultValue is passed", async () => {
+    const mountedComponent = mount(
+      <Toggle id="test-toggle" name="test-toggle" defaultValue />
+    );
+    expect(mountedComponent.find({ checked: true })).toHaveLength(1);
+  });
 
-    component = shallow(<Toggle name="test-toggle" defaultValue={false} />);
-    expect(component.state().localValue).toBe(false);
+  it("initializes untoggled if defaultValue is passed as false", async () => {
+    const mountedComponent = mount(
+      <Toggle id="test-toggle" name="test-toggle" defaultValue={false} />
+    );
+    expect(mountedComponent.find({ checked: false })).toHaveLength(1);
+  });
 
-    component = shallow(<Toggle name="test-toggle" />);
-    expect(component.state().localValue).toBe(false);
+  it("initializes untoggled if defaultValue is not passed", async () => {
+    const mountedComponent = mount(
+      <Toggle id="test-toggle" name="test-toggle" />
+    );
+    expect(mountedComponent.find({ checked: false })).toHaveLength(1);
   });
 
   it("changes state when input changes", async () => {
-    const component = shallow(<Toggle name="test-toggle" />);
+    const mountedComponent = mount(
+      <Toggle id="test-toggle" name="test-toggle" />
+    );
 
-    expect(component.state().localValue).toBe(false);
-    component.find("input").at(0).simulate("change");
-    expect(component.state().localValue).toBe(true);
+    expect(mountedComponent.find({ checked: false })).toHaveLength(1);
+    mountedComponent.find("input").at(0).simulate("change");
+    expect(mountedComponent.find({ checked: true })).toHaveLength(1);
   });
 
   it("calls props.handleToggle passing event when input changes", async () => {
     const mockHandleToggle = jest.fn();
-    const component = shallow(
-      <Toggle name="test-toggle" handleToggle={mockHandleToggle} />
+    const mountedComponent = mount(
+      <Toggle
+        id="test-toggle"
+        name="test-toggle"
+        handleToggle={mockHandleToggle}
+      />
     );
 
-    expect(component.state().localValue).toBe(false);
+    expect(mountedComponent.find({ checked: false })).toHaveLength(1);
     expect(mockHandleToggle).not.toBeCalled();
 
-    component.find("input").at(0).simulate("change", { test: "event" });
+    mountedComponent.find("input").at(0).simulate("change", { test: "event" });
 
-    expect(component.state().localValue).toBe(true);
-    expect(mockHandleToggle).toBeCalledWith({ test: "event" });
+    expect(mountedComponent.find({ checked: true })).toHaveLength(1);
+    expect(mockHandleToggle).toBeCalledWith(
+      expect.objectContaining({ test: "event" })
+    );
+  });
+
+  it("doesn't trigger onChange if ariaDisabled", async () => {
+    const mockHandleToggle = jest.fn();
+    const shallowComponent = shallow(
+      <Toggle
+        ariaDisabled
+        handleToggle={mockHandleToggle}
+        id="test-toggle"
+        name="test-toggle"
+      />
+    );
+
+    expect(shallowComponent.find({ checked: false })).toHaveLength(1);
+    expect(mockHandleToggle).not.toBeCalled();
+
+    shallowComponent.find("input").at(0).simulate("change", { test: "event" });
+
+    expect(shallowComponent.find({ checked: false })).toHaveLength(1);
+    expect(mockHandleToggle).not.toBeCalled();
   });
 });

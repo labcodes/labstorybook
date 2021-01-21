@@ -15,6 +15,7 @@ export default class ButtonPlayground extends React.Component {
       selectedIcon: "",
       selectedSkin: "",
       selectedSize: "normal",
+      selectedAriaDisabled: false,
       selectedIsDisabled: false,
       fullWidth: false,
     };
@@ -82,6 +83,7 @@ export default class ButtonPlayground extends React.Component {
       selectedSkin,
       selectedSize,
       fullWidth,
+      selectedAriaDisabled,
       selectedIsDisabled,
     } = this.state;
     const Component = availableComponents[currentComponent];
@@ -95,6 +97,7 @@ export default class ButtonPlayground extends React.Component {
           size={selectedSize}
           {...(fullWidth ? { fullWidth } : undefined)}
           disabled={selectedIsDisabled}
+          ariaDisabled={selectedAriaDisabled}
         />
       </React.Fragment>
     );
@@ -108,6 +111,7 @@ export default class ButtonPlayground extends React.Component {
       selectedSkin,
       selectedSize,
       fullWidth,
+      selectedAriaDisabled,
       selectedIsDisabled,
     } = this.state;
 
@@ -233,6 +237,17 @@ export default class ButtonPlayground extends React.Component {
             <Toggle
               name="fullWidth"
               value={fullWidth}
+              handleToggle={this.handlePropChangeBool}
+            />
+          </div>
+
+          <div className="lab-playground__item">
+            <p>
+              <strong>ariaDisabled</strong>
+            </p>
+            <Toggle
+              name="selectedAriaDisabled"
+              value={selectedAriaDisabled}
               handleToggle={this.handlePropChangeBool}
             />
           </div>

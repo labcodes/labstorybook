@@ -6,6 +6,7 @@ import { SimpleTag, TogglableTag, RemovableTag, DropdownTag } from "./Tags";
 import NarrowSidebar from "./Sidebar";
 import Alert from "./Alert";
 import Badge from "./Badge";
+import Banner from "./Banner";
 import Checkbox from "./Checkbox";
 import Icon from "./Icon";
 import Radio from "./Radio";
@@ -28,6 +29,7 @@ export {
   DropdownTag,
   Alert,
   Badge,
+  Banner,
   Checkbox,
   Icon,
   Radio,

@@ -19,32 +19,35 @@ describe("PasswordInput", () => {
   });
 
   it("renders as type=password", async () => {
-    const component = mount(
+    const mountedComponent = mount(
       <PasswordInput id="testInput" label="Test Input" />
     );
-    expect(component.find("input[type='password']")).toHaveLength(1);
+    expect(mountedComponent.find("input[type='password']")).toHaveLength(1);
   });
 
   it("toggles password visibility when clicking the trailing icon", async () => {
-    const component = mount(
+    const mountedComponent = mount(
       <PasswordInput id="testInput" label="Test Input" />
     );
 
-    expect(component.state().showPassword).toBe(false);
-    const trailingIcon = component.find("Icon[type='eye-closed']");
+    expect(
+      mountedComponent.find("input").find({ type: "password" })
+    ).toHaveLength(1);
+    const trailingIcon = mountedComponent.find("Icon[type='eye-closed']");
     expect(trailingIcon).toHaveLength(1);
 
     trailingIcon.at(0).simulate("click");
 
-    expect(component.state().showPassword).toBe(true);
-    expect(component.find("input[type='text']")).toHaveLength(1);
-    expect(component.find("Icon[type='eye-opened']")).toHaveLength(1);
+    expect(mountedComponent.find("input").find({ type: "text" })).toHaveLength(
+      1
+    );
+    expect(mountedComponent.find("Icon[type='eye-opened']")).toHaveLength(1);
   });
 
   it("raises console.warn and sets state with value when passing value and defaultValue by props at the same time", async () => {
     console.warn = jest.fn();
 
-    const component = mount(
+    const mountedComponent = mount(
       <PasswordInput
         id="testInput"
         label="Test Input"
@@ -54,33 +57,33 @@ describe("PasswordInput", () => {
     );
 
     expect(console.warn).toBeCalled();
-    const inputElement = component.find("input");
+    const inputElement = mountedComponent.find("input");
     expect(inputElement.render().attr("value")).toBe("test value");
   });
 
   it("sets state with value if it is passed by props", async () => {
-    const component = mount(
+    const mountedComponent = mount(
       <PasswordInput id="testInput" label="Test Input" value="test value" />
     );
 
-    const inputElement = component.find("input");
+    const inputElement = mountedComponent.find("input");
     expect(inputElement.render().attr("value")).toBe("test value");
   });
 
   it("sets state with defaultValue if it is passed by props and value is not passed by props", async () => {
-    const component = mount(
+    const mountedComponent = mount(
       <PasswordInput
         id="testInput"
         label="Test Input"
         defaultValue="default value"
       />
     );
-    const inputElement = component.find("input");
+    const inputElement = mountedComponent.find("input");
     expect(inputElement.render().attr("value")).toBe("default value");
   });
 
   it("sets state with isValid if it is passed by props", async () => {
-    const component = mount(
+    const mountedComponent = mount(
       <PasswordInput
         id="testInput"
         label="Test Input"
@@ -88,11 +91,11 @@ describe("PasswordInput", () => {
         isValid={false}
       />
     );
-    expect(component.find(".lab-input--invalid")).toHaveLength(1);
+    expect(mountedComponent.find(".lab-input--invalid")).toHaveLength(1);
   });
 
   it("sets localIsValid to true if value is valid and change it if value validity changes", async () => {
-    const component = mount(
+    const mountedComponent = mount(
       <PasswordInput
         id="testInput"
         label="Test Input"
@@ -100,21 +103,21 @@ describe("PasswordInput", () => {
         required
       />
     );
-    expect(component.find(".lab-input--invalid")).toHaveLength(0);
+    expect(mountedComponent.find(".lab-input--invalid")).toHaveLength(0);
 
-    component.setProps({ value: "" });
-    component.update();
+    mountedComponent.setProps({ value: "" });
+    mountedComponent.update();
 
-    expect(component.find(".lab-input--invalid")).toHaveLength(1);
+    expect(mountedComponent.find(".lab-input--invalid")).toHaveLength(1);
 
-    component.setProps({ value: "valid@value.com" });
-    component.update();
+    mountedComponent.setProps({ value: "valid@value.com" });
+    mountedComponent.update();
 
-    expect(component.find(".lab-input--invalid")).toHaveLength(0);
+    expect(mountedComponent.find(".lab-input--invalid")).toHaveLength(0);
   });
 
   it("shows help text", async () => {
-    const component = mount(
+    const mountedComponent = mount(
       <PasswordInput
         id="testInput"
         label="Test Input"
@@ -124,20 +127,20 @@ describe("PasswordInput", () => {
       />
     );
 
-    expect(component.find(".lab-input__message--required").text()).toBe(
+    expect(mountedComponent.find(".lab-input__message--required").text()).toBe(
       "help message"
     );
 
-    component.setProps({ value: "" });
-    component.update();
+    mountedComponent.setProps({ value: "" });
+    mountedComponent.update();
 
-    expect(component.find(".lab-input__message--error").text()).toBe(
+    expect(mountedComponent.find(".lab-input__message--error").text()).toBe(
       "help message"
     );
   });
 
   it("shows custom error message when input is invalid", async () => {
-    const component = mount(
+    const mountedComponent = mount(
       <PasswordInput
         id="testInput"
         label="Test Input"
@@ -147,18 +150,18 @@ describe("PasswordInput", () => {
       />
     );
 
-    expect(component.find(".lab-input__message--error")).toHaveLength(0);
+    expect(mountedComponent.find(".lab-input__message--error")).toHaveLength(0);
 
-    component.setProps({ value: "" });
-    component.update();
+    mountedComponent.setProps({ value: "" });
+    mountedComponent.update();
 
-    expect(component.find(".lab-input__message--error").text()).toBe(
+    expect(mountedComponent.find(".lab-input__message--error").text()).toBe(
       "error message"
     );
   });
 
   it("changes localValue state when input changes", async () => {
-    const component = mount(
+    const mountedComponent = mount(
       <PasswordInput
         id="testInput"
         label="Test Input"
@@ -168,10 +171,10 @@ describe("PasswordInput", () => {
       />
     );
 
-    const inputElement = component.find("input");
+    const inputElement = mountedComponent.find("input");
     expect(inputElement.render().attr("value")).toBe("truthy value");
 
-    component
+    mountedComponent
       .find("input")
       .at(0)
       .simulate("change", {
@@ -186,7 +189,7 @@ describe("PasswordInput", () => {
   });
 
   it("sets input as invalid if it is required and is not filled, even if isValid is passed by props as true", async () => {
-    const component = mount(
+    const mountedComponent = mount(
       <PasswordInput
         id="testInput"
         label="Test Input"
@@ -196,9 +199,9 @@ describe("PasswordInput", () => {
       />
     );
 
-    expect(component.find(".lab-input--invalid")).toHaveLength(0);
+    expect(mountedComponent.find(".lab-input--invalid")).toHaveLength(0);
 
-    component
+    mountedComponent
       .find("input")
       .at(0)
       .simulate("change", {
@@ -209,9 +212,9 @@ describe("PasswordInput", () => {
         },
       });
 
-    expect(component.find(".lab-input--invalid")).toHaveLength(0);
+    expect(mountedComponent.find(".lab-input--invalid")).toHaveLength(0);
 
-    component
+    mountedComponent
       .find("input")
       .at(0)
       .simulate("change", {
@@ -222,7 +225,7 @@ describe("PasswordInput", () => {
         },
       });
 
-    expect(component.find(".lab-input--invalid")).toHaveLength(1);
+    expect(mountedComponent.find(".lab-input--invalid")).toHaveLength(1);
   });
 
   it("renders prefix when it is passed by props", async () => {
@@ -301,5 +304,31 @@ describe("PasswordInput", () => {
     expect(mountedComponent.find("span.lab-input__required-icon")).toHaveLength(
       1
     );
+  });
+
+  it("doesn't trigger onChange if ariaDisabled", async () => {
+    const mockOnChange = jest.fn();
+    const mountedComponent = mount(
+      <PasswordInput
+        ariaDisabled
+        id="testInput"
+        label="Test Input"
+        name="testName"
+        defaultValue="default"
+        onChange={mockOnChange}
+      />
+    );
+
+    expect(mountedComponent.find("input").render().attr("value")).toBe(
+      "default"
+    );
+    expect(mockOnChange).not.toBeCalled();
+
+    mountedComponent.find("input").at(0).simulate("change", { test: "event" });
+
+    expect(mountedComponent.find("input").render().attr("value")).toBe(
+      "default"
+    );
+    expect(mockOnChange).not.toBeCalled();
   });
 });

@@ -41,15 +41,16 @@ $text-bg-active: map-get($button-theme, "20");
   &:active,
   &:focus:hover,
   &:focus:active,
-  &:disabled {
+  &:disabled,
+  &[aria-disabled] {
     outline: none;
   }
-  
+
   &:active {
     transform: translateY(2px);
   }
 
-  &:disabled {
+  &:disabled, &[aria-disabled] {
     pointer-events: none;
     cursor: default;
   }
@@ -58,7 +59,7 @@ $text-bg-active: map-get($button-theme, "20");
 // Button elements
 
 // Button icon is scaled to 16x16px but it still occupies 24x24px, having a "native" margin of 4px.
-// We apply negative margin-left to remove this space and adds margin-right to match the expected 
+// We apply negative margin-left to remove this space and adds margin-right to match the expected
 // 8px spacing between icon and text on button.
 .lab-btn__icon {
   margin-right: 4px;
@@ -118,6 +119,7 @@ $text-bg-active: map-get($button-theme, "20");
   }
 
   &:disabled,
+  &[aria-disabled],
   &.lab-btn--dark:disabled,
   &.lab-btn--light:disabled,
   &.lab-btn--warning:disabled,
@@ -292,13 +294,13 @@ $text-bg-active: map-get($button-theme, "20");
     color: $white;
     background-color: $red-60;
     border-color: $red-60;
-    
+
     &:hover {
       @include border-shadow(hover, $red-20);
       background-color: $red-60;
       border-color: $red-60;
     }
-    
+
     &:focus {
       @include border-shadow(focus, $red-60);
       background-color: $red-60;
@@ -308,13 +310,13 @@ $text-bg-active: map-get($button-theme, "20");
     &:active {
       background: mix($red-60, black, 50%);
     }
-    
+
     &:focus:hover {
       @include border-shadow(focus-hover, $red-60, $red-20);
       background-color: $red-60;
       border-color: $white;
     }
-    
+
     &:focus:active {
       background: mix($red-60, black, 50%);
       border-color: $white;
@@ -435,6 +437,7 @@ $text-bg-active: map-get($button-theme, "20");
   }
 
   &:disabled,
+  &[aria-disabled],
   &.lab-btn--dark:disabled {
     color: $mineral-30;
     border-color: $mineral-20;
@@ -572,6 +575,7 @@ $text-bg-active: map-get($button-theme, "20");
   }
 
   &:disabled,
+  &[aria-disabled],
   &.lab-btn--light:disabled {
     color: $mineral-30;
 

@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import { shallow } from "enzyme";
+import { mount, shallow } from "enzyme";
 
 import TogglableTag from "./TogglableTag";
 
@@ -84,11 +84,22 @@ describe("TogglableTag", () => {
 
   it("calls prop.onClick when clicked", async () => {
     const mockOnClick = jest.fn();
-    const shallowedTogglableTag = shallow(
+    const shallowTogglableTag = shallow(
       <TogglableTag text="Test click on TogglableTag" onClick={mockOnClick} />
     );
     expect(mockOnClick.mock.calls.length).toEqual(0);
-    shallowedTogglableTag.simulate("click");
+    shallowTogglableTag.simulate("click");
     expect(mockOnClick.mock.calls.length).toEqual(1);
+  });
+
+  it("doesn't trigger onClick if ariaDisabled", async () => {
+    const mockOnClick = jest.fn();
+    const mountedComponent = mount(
+      <TogglableTag ariaDisabled text="Test" onClick={mockOnClick} />
+    );
+
+    expect(mockOnClick).not.toBeCalled();
+    mountedComponent.find("span").at(0).simulate("click");
+    expect(mockOnClick).not.toBeCalled();
   });
 });

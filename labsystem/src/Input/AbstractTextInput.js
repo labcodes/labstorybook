@@ -12,7 +12,9 @@ export default class AbstractTextInput extends React.Component {
     id: PropTypes.string.isRequired,
     /** The Input's text label. */
     label: PropTypes.string.isRequired,
-    /** Disables the text input. */
+    /** Disables the text input. Will be read by screen readers. When true, will override `disabled`. */
+    ariaDisabled: PropTypes.bool,
+    /** Disables the text input. Won't be read by screen readers. */
     disabled: PropTypes.bool,
     /** Defines a default value for the Input initialization. */
     defaultValue: PropTypes.string,
@@ -38,14 +40,12 @@ export default class AbstractTextInput extends React.Component {
     onChange: PropTypes.func,
     /** Callback action to be executed when the Input's Icon is clicked. */
     onIconClick: PropTypes.func,
-    /** Add a class name to make custom changes */
-    className: PropTypes.string,
   };
 
   static defaultProps = {
     type: "text",
-    className: "",
     disabled: false,
+    ariaDisabled: false,
     defaultValue: undefined,
     value: undefined,
     icon: undefined,
@@ -173,6 +173,7 @@ export default class AbstractTextInput extends React.Component {
       id,
       label,
       disabled,
+      ariaDisabled,
       icon,
       iconColor,
       required,
@@ -183,10 +184,10 @@ export default class AbstractTextInput extends React.Component {
       onIconClick,
     } = this.props;
 
-    let { className } = this.props;
+    let className = "";
 
     const { localValue, localIsValid } = this.state;
-    if (disabled) {
+    if (ariaDisabled || disabled) {
       className += " lab-input--disabled";
     } else if (!localIsValid) {
       className += " lab-input--invalid";
@@ -194,7 +195,7 @@ export default class AbstractTextInput extends React.Component {
 
     return (
       <React.Fragment>
-        <div className={`lab-input ${className || ""}`}>
+        <div className={`lab-input ${className}`}>
           <input
             className={
               `lab-input__field ` +
@@ -202,13 +203,16 @@ export default class AbstractTextInput extends React.Component {
               `${suffix ? `lab-input__field--suffixed ` : ``}`
             }
             id={id}
+            name={id}
             type={type}
             value={localValue}
             ref={this.inputRef}
-            onChange={this.handleOnChange}
+            onChange={!ariaDisabled ? this.handleOnChange : () => {}}
             autoComplete="off"
-            {...(required ? { required } : undefined)}
-            {...(disabled ? { disabled } : undefined)}
+            placeholder=" " // required for label placement
+            disabled={(!ariaDisabled && disabled) || undefined}
+            aria-disabled={ariaDisabled || undefined}
+            required={required || undefined}
           />
           <div className="lab-input__borders" />
           {this.prefixArea()}
@@ -225,7 +229,8 @@ export default class AbstractTextInput extends React.Component {
               icon={icon}
               iconColor={iconColor}
               onIconClick={onIconClick}
-              {...(disabled ? { disabled } : undefined)}
+              disabled={(!ariaDisabled && disabled) || undefined}
+              ariaDisabled={ariaDisabled || undefined}
             />
           ) : null}
           {this.requiredIcon()}
@@ -244,14 +249,16 @@ export default class AbstractTextInput extends React.Component {
 // ----- Auxiliary components ----- //
 
 function TrailingIcon(props) {
-  const { icon, iconColor, onIconClick, disabled } = props;
+  const { icon, iconColor, onIconClick, disabled, ariaDisabled } = props;
   return (
     <button
       type="button"
       className={`lab-input__icon${
         disabled ? ` lab-input__icon--disabled` : ``
       }`}
-      onClick={disabled ? null : onIconClick}
+      onClick={!ariaDisabled ? onIconClick : () => {}}
+      disabled={(!ariaDisabled && disabled) || undefined}
+      aria-disabled={ariaDisabled || undefined}
     >
       <Icon type={icon} color={iconColor} />
     </button>
@@ -263,12 +270,14 @@ TrailingIcon.propTypes = {
   iconColor: PropTypes.string,
   onIconClick: PropTypes.func,
   disabled: PropTypes.bool,
+  ariaDisabled: PropTypes.bool,
 };
 
 TrailingIcon.defaultProps = {
   iconColor: "mineral-70",
   onIconClick: () => {},
-  disabled: undefined,
+  disabled: false,
+  ariaDisabled: false,
 };
 
 function TextInputMessage(props) {

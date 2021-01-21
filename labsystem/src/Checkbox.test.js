@@ -4,6 +4,7 @@ import { mount } from "enzyme";
 import renderer from "react-test-renderer";
 
 import Checkbox from "./Checkbox";
+import Icon from "./Icon";
 
 describe("Checkbox", () => {
   const originalWarn = console.warn;
@@ -158,8 +159,8 @@ describe("Checkbox", () => {
     expect(renderedComponent).toMatchSnapshot();
   });
 
-  it("inits state.localChecked with defaultChecked if defined", async () => {
-    let component = mount(
+  it("initializes checked if defaultChecked is passed", async () => {
+    const mountedComponent = mount(
       <Checkbox
         name="test-checkbox"
         id="test-checkbox"
@@ -167,9 +168,23 @@ describe("Checkbox", () => {
         defaultChecked
       />
     );
-    expect(component.state().localChecked).toBe(true);
 
-    component = mount(
+    expect(mountedComponent.find("input").find({ checked: true })).toHaveLength(
+      1
+    );
+    expect(
+      mountedComponent
+        .find(Icon)
+        .find("span")
+        .find(".lab-icon")
+        .find(".lab-icon--check")
+        .find(".lab-icon--white")
+        .find(".lab-icon--small")
+    ).toHaveLength(1);
+  });
+
+  it("initializes unchecked if defaultChecked is passed as false", async () => {
+    const mountedComponent = mount(
       <Checkbox
         name="test-checkbox"
         id="test-checkbox"
@@ -177,45 +192,93 @@ describe("Checkbox", () => {
         defaultChecked={false}
       />
     );
-    expect(component.state().localChecked).toBe(false);
 
-    component = mount(
+    expect(
+      mountedComponent.find("input").find({ checked: false })
+    ).toHaveLength(1);
+    expect(
+      mountedComponent.find(
+        Icon,
+        ".lab-icon",
+        ".lab-icon--check",
+        ".lab-icon--white",
+        ".lab-icon--small"
+      )
+    ).toHaveLength(0);
+  });
+
+  it("initializes unchecked if defaultChecked is not passed", async () => {
+    const mountedComponent = mount(
       <Checkbox name="test-checkbox" id="test-checkbox" label="test checkbox" />
     );
-    expect(component.state().localChecked).toBe(false);
+
+    expect(
+      mountedComponent.find("input").find({ checked: false })
+    ).toHaveLength(1);
+    expect(
+      mountedComponent.find(
+        Icon,
+        ".lab-icon",
+        ".lab-icon--check",
+        ".lab-icon--white",
+        ".lab-icon--small"
+      )
+    ).toHaveLength(0);
   });
 
   it("sets input as indeterminate", async () => {
-    const component = mount(
+    const mountedComponent = mount(
       <Checkbox name="test-checkbox" id="test-checkbox" label="test checkbox" />
     );
 
-    expect(component.find("input[indeterminate]").length).toBeFalsy();
+    expect(mountedComponent.find("input[indeterminate]").length).toBeFalsy();
 
-    component.setProps({ indeterminate: true });
-    component.update();
+    mountedComponent.setProps({ indeterminate: true });
+    mountedComponent.update();
 
-    expect(component.find("input[indeterminate]")).toBeTruthy();
+    expect(mountedComponent.find("input[indeterminate]")).toBeTruthy();
 
-    component.setProps({ indeterminate: undefined });
-    component.update();
+    mountedComponent.setProps({ indeterminate: undefined });
+    mountedComponent.update();
 
-    expect(component.find("input[indeterminate]").length).toBeFalsy();
+    expect(mountedComponent.find("input[indeterminate]").length).toBeFalsy();
   });
 
   it("changes state when input changes", async () => {
-    const component = mount(
+    const mountedComponent = mount(
       <Checkbox name="test-checkbox" id="test-checkbox" label="test checkbox" />
     );
 
-    expect(component.state().localChecked).toBe(false);
-    component.find("input").at(0).simulate("change");
-    expect(component.state().localChecked).toBe(true);
+    expect(
+      mountedComponent.find("input").find({ checked: false })
+    ).toHaveLength(1);
+    expect(
+      mountedComponent.find(
+        Icon,
+        ".lab-icon",
+        ".lab-icon--check",
+        ".lab-icon--white",
+        ".lab-icon--small"
+      )
+    ).toHaveLength(0);
+    mountedComponent.find("input").at(0).simulate("change");
+    expect(mountedComponent.find("input").find({ checked: true })).toHaveLength(
+      1
+    );
+    expect(
+      mountedComponent
+        .find(Icon)
+        .find("span")
+        .find(".lab-icon")
+        .find(".lab-icon--check")
+        .find(".lab-icon--white")
+        .find(".lab-icon--small")
+    ).toHaveLength(1);
   });
 
   it("calls props.onChange passing event when input changes", async () => {
     const mockOnChange = jest.fn();
-    const component = mount(
+    const mountedComponent = mount(
       <Checkbox
         name="test-checkbox"
         id="test-checkbox"
@@ -224,12 +287,59 @@ describe("Checkbox", () => {
       />
     );
 
-    expect(component.state().localChecked).toBe(false);
+    expect(
+      mountedComponent.find("input").find({ checked: false })
+    ).toHaveLength(1);
+    expect(
+      mountedComponent.find(
+        Icon,
+        ".lab-icon",
+        ".lab-icon--check",
+        ".lab-icon--white",
+        ".lab-icon--small"
+      )
+    ).toHaveLength(0);
     expect(mockOnChange).not.toBeCalled();
 
-    component.find("input").at(0).simulate("change", { test: "event" });
+    mountedComponent.find("input").at(0).simulate("change", { test: "event" });
 
-    expect(component.state().localChecked).toBe(true);
+    expect(mountedComponent.find("input").find({ checked: true })).toHaveLength(
+      1
+    );
+    expect(
+      mountedComponent
+        .find(Icon)
+        .find("span")
+        .find(".lab-icon")
+        .find(".lab-icon--check")
+        .find(".lab-icon--white")
+        .find(".lab-icon--small")
+    ).toHaveLength(1);
     expect(mockOnChange).toBeCalled();
+  });
+
+  it("doesn't trigger onChange if ariaDisabled", async () => {
+    const mockOnChange = jest.fn();
+    const mountedComponent = mount(
+      <Checkbox
+        ariaDisabled
+        name="test-checkbox"
+        id="test-checkbox"
+        label="test checkbox"
+        onChange={mockOnChange}
+      />
+    );
+
+    expect(
+      mountedComponent.find("input").find({ checked: false })
+    ).toHaveLength(1);
+    expect(mockOnChange).not.toBeCalled();
+
+    mountedComponent.find("input").at(0).simulate("change", { test: "event" });
+
+    expect(
+      mountedComponent.find("input").find({ checked: false })
+    ).toHaveLength(1);
+    expect(mockOnChange).not.toBeCalled();
   });
 });

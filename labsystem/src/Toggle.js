@@ -5,12 +5,16 @@ import { isUndefined } from "lodash";
 export default class Toggle extends React.Component {
   static propTypes = {
     /** Text that will serve as unique identifier. It's also an important accessibility tool. */
+    id: PropTypes.string.isRequired,
+    /** Text that will specify the HTML `name` attribute of an `<input>` element. */
     name: PropTypes.string.isRequired,
     /** Defines a static value for the Toggle. If set, internal logic is deactivated. */
     value: PropTypes.bool,
     /** Defines the Toggle color. */
     color: PropTypes.oneOf(["teal", "purple"]),
-    /** Disables the Toggle component, keeping the value. */
+    /** Disables the Toggle. Will be read by screen readers. When true, will override `disabled`. */
+    ariaDisabled: PropTypes.bool,
+    /** Disables the Toggle. Won't be read by screen readers. */
     disabled: PropTypes.bool,
     /** Sets value to true by default. */
     defaultValue: PropTypes.bool,
@@ -21,6 +25,7 @@ export default class Toggle extends React.Component {
   static defaultProps = {
     color: "teal",
     disabled: false,
+    ariaDisabled: false,
     defaultValue: undefined,
     value: undefined,
     handleToggle: () => {},
@@ -50,7 +55,7 @@ export default class Toggle extends React.Component {
   };
 
   render() {
-    const { color, name, disabled, value } = this.props;
+    const { id, color, name, disabled, ariaDisabled, value } = this.props;
     const { localValue } = this.state;
     const isChecked = !isUndefined(value) ? value : localValue;
 
@@ -59,17 +64,19 @@ export default class Toggle extends React.Component {
         className={`
           lab-toggle
           ${color ? `lab-toggle--${color}` : ""}
-          ${disabled ? " lab-toggle--disabled" : ""}
+          ${disabled || ariaDisabled ? " lab-toggle--disabled" : ""}
         `}
         htmlFor={name}
       >
         <input
           type="checkbox"
-          id={name}
+          id={id}
+          name={name}
           className="lab-toggle__input"
           checked={isChecked}
-          onChange={this.handleOnChange}
-          {...(disabled ? { disabled } : undefined)}
+          onChange={!ariaDisabled ? this.handleOnChange : () => {}}
+          disabled={(!ariaDisabled && disabled) || undefined}
+          aria-disabled={ariaDisabled || undefined}
         />
         <span className="lab-toggle__slider" />
       </label>

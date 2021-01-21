@@ -1,5 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Button renders as expected if full width 1`] = `
+<button
+  className="lab-btn lab-btn--default lab-btn--normal lab-btn--block"
+  onClick={[Function]}
+  type="button"
+>
+  
+  Test Default fullWidth Button
+</button>
+`;
+
 exports[`Button renders as expected when passing a small size 1`] = `
 <button
   className="lab-btn lab-btn--default lab-btn--small"
