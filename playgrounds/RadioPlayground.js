@@ -106,16 +106,18 @@ export default class RadioPlayground extends React.Component {
                 <strong>Disable Option 1</strong>
               </p>
               <Toggle
-                value={disabled1}
+                id="disabled1"
                 name="disabled1"
+                value={disabled1}
                 handleToggle={this.handleDisabled1}
               />
               <p>
                 <strong>Disable Option 2</strong>
               </p>
               <Toggle
-                value={disabled2}
+                id="disabled2"
                 name="disabled2"
+                value={disabled2}
                 handleToggle={this.handleDisabled2}
               />
             </span>
