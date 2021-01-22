@@ -219,6 +219,7 @@ export default class DialogPlayground extends React.Component {
                   <strong>isModal</strong>
                 </p>
                 <Toggle
+                  id="selectedIsModal"
                   name="selectedIsModal"
                   label="selectedIsModal"
                   value={selectedIsModal}
@@ -233,6 +234,7 @@ export default class DialogPlayground extends React.Component {
               <strong>isLarge</strong>
             </p>
             <Toggle
+              id="selectedIsLarge"
               name="selectedIsLarge"
               label="selectedIsLarge"
               value={selectedIsLarge}

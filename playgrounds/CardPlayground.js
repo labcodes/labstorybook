@@ -289,6 +289,7 @@ export default class CardPlayground extends React.Component {
             isHorizontal
             <br />
             <Toggle
+              id="cardIsHorizontal"
               name="cardIsHorizontal"
               value={cardIsHorizontal}
               handleToggle={() => this.handleToggleFor("cardIsHorizontal")}
@@ -299,6 +300,7 @@ export default class CardPlayground extends React.Component {
             isCompact
             <br />
             <Toggle
+              id="cardIsCompact"
               name="cardIsCompact"
               value={cardIsCompact}
               handleToggle={() => this.handleToggleFor("cardIsCompact")}
@@ -327,6 +329,7 @@ export default class CardPlayground extends React.Component {
               isOverflowed
               <br />
               <Toggle
+                id="cardImageIsOverflowed"
                 name="cardImageIsOverflowed"
                 value={cardImageIsOverflowed}
                 handleToggle={() =>
@@ -340,6 +343,7 @@ export default class CardPlayground extends React.Component {
             Show it above the CardHeader
             <br />
             <Toggle
+              id="cardImageIsAboveHeader"
               name="cardImageIsAboveHeader"
               value={cardImageIsAboveHeader}
               handleToggle={() =>
@@ -371,6 +375,7 @@ export default class CardPlayground extends React.Component {
 
               <div className="lab-playground__item">
                 <Toggle
+                  id="cardHeaderIsOverlay"
                   name="cardHeaderIsOverlay"
                   value={cardHeaderIsOverlay}
                   handleToggle={() =>
@@ -433,6 +438,7 @@ export default class CardPlayground extends React.Component {
             isOverflowed
             <br />
             <Toggle
+              id="cardDividerIsOverflowed"
               name="cardDividerIsOverflowed"
               value={cardDividerIsOverflowed}
               handleToggle={() =>
@@ -445,6 +451,7 @@ export default class CardPlayground extends React.Component {
             Show divider
             <br />
             <Toggle
+              id="showDivider"
               name="showDivider"
               value={showDivider}
               handleToggle={() => this.handleToggleFor("showDivider")}
@@ -490,6 +497,7 @@ export default class CardPlayground extends React.Component {
             Show Card Actions
             <br />
             <Toggle
+              id="showCardActions"
               name="showCardActions"
               value={showCardActions}
               handleToggle={() => this.handleToggleFor("showCardActions")}
@@ -501,6 +509,7 @@ export default class CardPlayground extends React.Component {
               openNewTab
               <br />
               <Toggle
+                id="cardActionOpenNewTab"
                 name="cardActionOpenNewTab"
                 value={cardActionOpenNewTab}
                 handleToggle={() =>
@@ -516,6 +525,7 @@ export default class CardPlayground extends React.Component {
                 isHorizontal
                 <br />
                 <Toggle
+                  id="cardActionIsHorizontal"
                   name="cardActionIsHorizontal"
                   value={cardActionIsHorizontal}
                   handleToggle={() =>
@@ -527,6 +537,7 @@ export default class CardPlayground extends React.Component {
                 isText
                 <br />
                 <Toggle
+                  id="cardActionIsText"
                   name="cardActionIsText"
                   value={cardActionIsText}
                   handleToggle={() => this.handleToggleFor("cardActionIsText")}
@@ -536,6 +547,7 @@ export default class CardPlayground extends React.Component {
                 Disable buttons
                 <br />
                 <Toggle
+                  id="cardActionButtonsAreDisabled"
                   name="cardActionButtonsAreDisabled"
                   value={cardActionButtonsAreDisabled}
                   handleToggle={() =>

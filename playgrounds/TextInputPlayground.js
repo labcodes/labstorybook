@@ -256,30 +256,34 @@ export default class TextInputPlayground extends React.Component {
               <strong>Required</strong>
             </p>
             <Toggle
-              value={required}
+              id="required"
               name="required"
+              value={required}
               handleToggle={this.handlePropChangeBool}
             />
             <p>
               <strong>Disabled</strong>
             </p>
             <Toggle
-              value={disabled}
+              id="disabled"
               name="disabled"
+              value={disabled}
               handleToggle={this.handlePropChangeBool}
             />
             <p>
               <strong>AriaDisabled</strong>
             </p>
             <Toggle
-              value={ariaDisabled}
+              id="ariaDisabled"
               name="ariaDisabled"
+              value={ariaDisabled}
               handleToggle={this.handlePropChangeBool}
             />
             <p>
               <strong>isValid</strong>
             </p>
             <Toggle
+              id="isValid"
               name="isValid"
               value={isValid}
               handleToggle={this.handlePropChangeBool}

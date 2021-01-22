@@ -208,6 +208,7 @@ export default class NarrowSidebarPlayground extends React.Component {
             isVivid
             <br />
             <Toggle
+              id="isVivid"
               name="isVivid"
               label="isVivid"
               value={isVivid}
@@ -218,6 +219,7 @@ export default class NarrowSidebarPlayground extends React.Component {
             withDividers
             <br />
             <Toggle
+              id="withDividers"
               name="withDividers"
               label="withDividers"
               value={withDividers}
@@ -228,6 +230,7 @@ export default class NarrowSidebarPlayground extends React.Component {
             Show avatar in the header
             <br />
             <Toggle
+              id="useAvatarInHeader"
               name="useAvatarInHeader"
               label="useAvatarInHeader"
               value={useAvatarInHeader}

@@ -241,6 +241,7 @@ export default class TagPlayground extends React.Component {
                     <strong>Disabled</strong>
                   </p>
                   <Toggle
+                    id="selectedIsDisabled"
                     name="selectedIsDisabled"
                     handleToggle={this.handleBoolPropChange}
                     value={selectedIsDisabled}
@@ -249,6 +250,7 @@ export default class TagPlayground extends React.Component {
                     <strong>AriaDisabled</strong>
                   </p>
                   <Toggle
+                    id="selectedAriaDisabled"
                     name="selectedAriaDisabled"
                     handleToggle={this.handleBoolPropChange}
                     value={selectedAriaDisabled}
@@ -259,6 +261,7 @@ export default class TagPlayground extends React.Component {
                 <strong>isOutline</strong>
               </p>
               <Toggle
+                id="selectedIsOutline"
                 name="selectedIsOutline"
                 handleToggle={this.handleBoolPropChange}
                 value={selectedIsOutline}
