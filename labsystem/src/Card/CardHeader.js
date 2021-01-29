@@ -18,7 +18,7 @@ export default class CardHeader extends React.Component {
     categoryText: PropTypes.string,
     /** Sets card's label. */
     categoryLabelText: PropTypes.string,
-    /** Sets card's label color.*/
+    /** Sets card's label color. */
     categoryLabelColor: PropTypes.string,
     /** Sets card's category icon. */
     categoryIcon: PropTypes.string,
@@ -90,7 +90,9 @@ export default class CardHeader extends React.Component {
             {categoryText ? (
               <span className="lab-card-category__text">{categoryText}</span>
             ) : null}
-            {categoryLabelText ? <SimpleTag text={categoryLabelText} color={categoryLabelColor} /> : null}
+            {categoryLabelText ? (
+              <SimpleTag text={categoryLabelText} color={categoryLabelColor} />
+            ) : null}
           </p>
         ) : null}
         {title ? (
