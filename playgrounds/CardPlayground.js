@@ -37,6 +37,7 @@ export default class CardPlayground extends React.Component {
 
       cardImageIsOverflowed: false,
       cardImageIsAboveHeader: false,
+      hasCardImage: true,
 
       cardHeaderTitle: "Title text",
       cardHeaderTitleClassName: "custom-class",
@@ -81,6 +82,7 @@ export default class CardPlayground extends React.Component {
 
       cardImageIsOverflowed,
       cardImageIsAboveHeader,
+      hasCardImage,
 
       cardHeaderTitle,
       cardHeaderTitleClassName,
@@ -115,7 +117,7 @@ export default class CardPlayground extends React.Component {
         isHorizontal={cardIsHorizontal}
         isCompact={cardIsCompact}
       >
-        {cardImageIsAboveHeader ? (
+        {hasCardImage & cardImageIsAboveHeader ? (
           <CardImage
             src="/docs/card/card-image.jpg"
             alt="Labcodes offices' view"
@@ -138,7 +140,7 @@ export default class CardPlayground extends React.Component {
           }
           isOverlay={!cardIsHorizontal && cardHeaderIsOverlay}
         />
-        {!cardImageIsAboveHeader ? (
+        {hasCardImage & !cardImageIsAboveHeader ? (
           <CardImage
             src="/docs/card/card-image.jpg"
             alt="Labcodes offices' view"
@@ -202,6 +204,7 @@ export default class CardPlayground extends React.Component {
 
       cardImageIsOverflowed,
       cardImageIsAboveHeader,
+      hasCardImage,
 
       cardHeaderTitle,
       cardHeaderSubtitle,
@@ -307,6 +310,7 @@ export default class CardPlayground extends React.Component {
               name="cardIsHorizontal"
               value={cardIsHorizontal}
               handleToggle={() => this.handleToggleFor("cardIsHorizontal")}
+              disabled={!hasCardImage}
             />
           </span>
 
@@ -349,6 +353,7 @@ export default class CardPlayground extends React.Component {
                 handleToggle={() =>
                   this.handleToggleFor("cardImageIsOverflowed")
                 }
+                disabled={!hasCardImage}
               />
             </span>
           ) : null}
@@ -362,6 +367,20 @@ export default class CardPlayground extends React.Component {
               value={cardImageIsAboveHeader}
               handleToggle={() =>
                 this.handleToggleFor("cardImageIsAboveHeader")
+              }
+              disabled={!hasCardImage || cardIsHorizontal}
+            />
+          </span>
+
+          <span className="lab-playground__item">
+            Show image
+            <br />
+            <Toggle
+              id="hasCardImage"
+              name="hasCardImage"
+              value={hasCardImage}
+              handleToggle={() =>
+                this.handleToggleFor("hasCardImage")
               }
             />
           </span>
@@ -642,6 +661,10 @@ export default class CardPlayground extends React.Component {
     this.setState({ isCategoryIconInputDisabled: !isEmpty(value) });
   }
 
-  handleToggleFor = (stateKey) =>
+  handleToggleFor = (stateKey) => {
     this.setState({ [stateKey]: !this.state[stateKey] });
+    if (stateKey === "hasCardImage") {
+      this.setState({ cardIsHorizontal: !hasCardImage });
+    }
+  }
 }
