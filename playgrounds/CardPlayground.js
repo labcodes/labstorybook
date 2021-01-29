@@ -16,6 +16,9 @@ import Toggle from "../labsystem/src/Toggle";
 import Radio from "../labsystem/src/Radio";
 import TextInput from "../labsystem/src/Input/TextInput";
 import Icon from "../labsystem/src/Icon";
+import { colorOptions, iconOptions } from "./assets";
+
+import { isEmpty } from "lodash";
 
 export default class CardPlayground extends React.Component {
   constructor(props) {
@@ -41,8 +44,8 @@ export default class CardPlayground extends React.Component {
       cardHeaderSubtitleClassName: "custom-class",
       cardHeaderCategoryText: "Category",
       cardHeaderCategoryLabelText: "Label",
-      cardHeaderCategoryIcon: "star",
-      cardHeaderCategoryColor: "",
+      cardHeaderCategoryIcon: "",
+      cardHeaderCategoryColor: "mineral",
       cardHeaderIsOverlay: false,
 
       cardBodyHTML:
@@ -59,6 +62,9 @@ export default class CardPlayground extends React.Component {
       cardActionIsHorizontal: false,
       cardActionIsText: false,
       cardActionButtonsAreDisabled: false,
+      
+      isCategoryIconInputDisabled: true,
+      isCategoryColorInputDisabled: false,
     };
   }
 
@@ -215,6 +221,10 @@ export default class CardPlayground extends React.Component {
       cardActionIsHorizontal,
       cardActionIsText,
       cardActionButtonsAreDisabled,
+
+     isCategoryIconInputDisabled,
+     isCategoryColorInputDisabled,
+
     } = this.state;
     const {
       props: {
@@ -412,24 +422,41 @@ export default class CardPlayground extends React.Component {
                 />
               </div>
 
-              <div className="lab-playground__item">
-                <TextInput
-                  label="Category Icon"
-                  id="cardHeaderCategoryIcon"
-                  helpMessage="Leave empty to use category color"
-                  value={cardHeaderCategoryIcon}
-                  onChange={this.handleInputChange}
-                />
-              </div>
+              <span className="lab-playground__item">
+                <fieldset>
+                  <legend>Category Icon</legend>
+                  <select
+                    name="cardHeaderCategoryIcon"
+                    value={cardHeaderCategoryIcon}
+                    onChange={this.handleCategoryIconPropChange}
+                    disabled={isCategoryIconInputDisabled}
+                  >
+                    {iconOptions.map((item) => (
+                      <option value={item} key={`category_icon-${item}`}>
+                        {item}
+                      </option>
+                    ))}
+                  </select>
+                </fieldset>
+              </span>
 
-              <div className="lab-playground__item">
-                <TextInput
-                  label="Category Color"
-                  id="cardHeaderCategoryColor"
-                  value={cardHeaderCategoryColor}
-                  onChange={this.handleInputChange}
-                />
-              </div>
+              <span className="lab-playground__item">
+                <fieldset>
+                  <legend>Category Color</legend>
+                  <select
+                    name="cardHeaderCategoryColor"
+                    value={cardHeaderCategoryColor}
+                    onChange={this.handleCategoryColorPropChange}
+                    disabled={isCategoryColorInputDisabled}
+                  >
+                    {colorOptions.map((item) => (
+                      <option value={item} key={`category_color-${item}`}>
+                        {item}
+                      </option>
+                    ))}
+                  </select>
+                </fieldset>
+              </span>
             </React.Fragment>
           ) : null}
 
@@ -564,8 +591,8 @@ export default class CardPlayground extends React.Component {
 
   formatPropString = (string) => eval(string).replace('"', "");
 
-  changeCardComponent = (e) => {
-    const { value } = e.target;
+  changeCardComponent = (event) => {
+    const { value } = event.target;
     this.setState({
       currentComponent: value,
       selectedColor: "mineral",
@@ -573,14 +600,26 @@ export default class CardPlayground extends React.Component {
     });
   };
 
-  handleInputChange = (e) => {
-    const { name, id, value } = e.target;
+  handleInputChange = (event) => {
+    const { name, id, value } = event.target;
     if (name) {
       this.setState({ [name]: value });
     } else {
       this.setState({ [id]: value });
     }
   };
+
+  handleCategoryIconPropChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+    this.setState({ isCategoryColorInputDisabled: !isEmpty(value) });
+  };
+
+  handleCategoryColorPropChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value});
+    this.setState({ isCategoryIconInputDisabled: !isEmpty(value) });
+  }
 
   handleToggleFor = (stateKey) =>
     this.setState({ [stateKey]: !this.state[stateKey] });

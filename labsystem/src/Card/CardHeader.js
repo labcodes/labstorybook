@@ -21,7 +21,7 @@ export default class CardHeader extends React.Component {
     /** Sets card's category icon. */
     categoryIcon: PropTypes.string,
     /** Sets card's category badge color. */
-    categoryColor: PropTypes.oneOf(["mineral", "teal", "purple"]),
+    categoryColor: PropTypes.string,
     /** Sets whether the header will go over the image or not. */
     isOverlay: PropTypes.bool,
   };
