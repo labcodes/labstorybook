@@ -44,8 +44,9 @@ export default class CardPlayground extends React.Component {
       cardHeaderSubtitleClassName: "custom-class",
       cardHeaderCategoryText: "Category",
       cardHeaderCategoryLabelText: "Label",
-      cardHeaderCategoryIcon: "",
-      cardHeaderCategoryColor: "mineral",
+      cardHeaderCategoryLabelColor: "mineral",
+      cardHeaderCategoryIcon: "star",
+      cardHeaderCategoryColor: "",
       cardHeaderIsOverlay: false,
 
       cardBodyHTML:
@@ -63,8 +64,8 @@ export default class CardPlayground extends React.Component {
       cardActionIsText: false,
       cardActionButtonsAreDisabled: false,
       
-      isCategoryIconInputDisabled: true,
-      isCategoryColorInputDisabled: false,
+      isCategoryIconInputDisabled: false,
+      isCategoryColorInputDisabled: true,
     };
   }
 
@@ -87,6 +88,7 @@ export default class CardPlayground extends React.Component {
       cardHeaderSubtitleClassName,
       cardHeaderCategoryText,
       cardHeaderCategoryLabelText,
+      cardHeaderCategoryLabelColor,
       cardHeaderCategoryIcon,
       cardHeaderCategoryColor,
       cardHeaderIsOverlay,
@@ -127,6 +129,7 @@ export default class CardPlayground extends React.Component {
           subtitleClassName={cardHeaderSubtitleClassName}
           categoryText={cardHeaderCategoryText}
           categoryLabelText={cardHeaderCategoryLabelText}
+          categoryLabelColor={cardHeaderCategoryLabelColor}
           categoryIcon={
             cardHeaderCategoryColor.length ? undefined : cardHeaderCategoryIcon
           }
@@ -204,6 +207,7 @@ export default class CardPlayground extends React.Component {
       cardHeaderSubtitle,
       cardHeaderCategoryText,
       cardHeaderCategoryLabelText,
+      cardHeaderCategoryLabelColor,
       cardHeaderCategoryIcon,
       cardHeaderCategoryColor,
       cardHeaderIsOverlay,
@@ -451,6 +455,23 @@ export default class CardPlayground extends React.Component {
                   >
                     {colorOptions.map((item) => (
                       <option value={item} key={`category_color-${item}`}>
+                        {item}
+                      </option>
+                    ))}
+                  </select>
+                </fieldset>
+              </span>
+
+              <span className="lab-playground__item">
+                <fieldset>
+                  <legend>Category Label Color</legend>
+                  <select
+                    name="cardHeaderCategoryLabelColor"
+                    value={cardHeaderCategoryLabelColor}
+                    onChange={this.handleInputChange}
+                  >
+                    {colorOptions.map((item) => (
+                      <option value={item} key={`label_color-${item}`}>
                         {item}
                       </option>
                     ))}
