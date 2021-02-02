@@ -303,26 +303,28 @@ export default class CardPlayground extends React.Component {
           ) : null}
 
           <span className="lab-playground__item">
-            isHorizontal
-            <br />
-            <Toggle
-              id="cardIsHorizontal"
-              name="cardIsHorizontal"
-              value={cardIsHorizontal}
-              handleToggle={() => this.handleToggleFor("cardIsHorizontal")}
-              disabled={!hasCardImage}
-            />
+            <fieldset>
+              <legend>isHorizontal</legend>
+              <Toggle
+                id="cardIsHorizontal"
+                name="cardIsHorizontal"
+                value={cardIsHorizontal}
+                handleToggle={() => this.handleToggleFor("cardIsHorizontal")}
+                disabled={!hasCardImage}
+              />
+            </fieldset>
           </span>
 
           <span className="lab-playground__item">
-            isCompact
-            <br />
-            <Toggle
-              id="cardIsCompact"
-              name="cardIsCompact"
-              value={cardIsCompact}
-              handleToggle={() => this.handleToggleFor("cardIsCompact")}
-            />
+            <fieldset>
+              <legend>isCompact</legend>
+              <Toggle
+                id="cardIsCompact"
+                name="cardIsCompact"
+                value={cardIsCompact}
+                handleToggle={() => this.handleToggleFor("cardIsCompact")}
+              />
+            </fieldset>
           </span>
 
           <span className="lab-playground__item" style={{ width: "100%" }}>
@@ -344,45 +346,48 @@ export default class CardPlayground extends React.Component {
           <h6>CardImage</h6>
           {cardIsHorizontal ? (
             <span className="lab-playground__item">
-              isOverflowed
-              <br />
-              <Toggle
-                id="cardImageIsOverflowed"
-                name="cardImageIsOverflowed"
-                value={cardImageIsOverflowed}
-                handleToggle={() =>
-                  this.handleToggleFor("cardImageIsOverflowed")
-                }
-                disabled={!hasCardImage}
-              />
+              <fieldset>
+                <legend>isOverflowed</legend>
+                <Toggle
+                  id="cardImageIsOverflowed"
+                  name="cardImageIsOverflowed"
+                  value={cardImageIsOverflowed}
+                  handleToggle={() =>
+                    this.handleToggleFor("cardImageIsOverflowed")
+                  }
+                  disabled={!hasCardImage}
+                />
+              </fieldset>
             </span>
           ) : null}
 
           <span className="lab-playground__item">
-            Show it above the CardHeader
-            <br />
-            <Toggle
-              id="cardImageIsAboveHeader"
-              name="cardImageIsAboveHeader"
-              value={cardImageIsAboveHeader}
-              handleToggle={() =>
-                this.handleToggleFor("cardImageIsAboveHeader")
-              }
-              disabled={!hasCardImage || cardIsHorizontal}
-            />
+            <fieldset>
+              <legend>Show it above the CardHeader</legend>
+              <Toggle
+                id="cardImageIsAboveHeader"
+                name="cardImageIsAboveHeader"
+                value={cardImageIsAboveHeader}
+                handleToggle={() =>
+                  this.handleToggleFor("cardImageIsAboveHeader")
+                }
+                disabled={!hasCardImage || cardIsHorizontal}
+              />
+            </fieldset>
           </span>
 
           <span className="lab-playground__item">
-            Show image
-            <br />
-            <Toggle
-              id="hasCardImage"
-              name="hasCardImage"
-              value={hasCardImage}
-              handleToggle={() =>
-                this.handleToggleFor("hasCardImage")
-              }
-            />
+            <fieldset>
+              <legend>Show image</legend>
+              <Toggle
+                id="hasCardImage"
+                name="hasCardImage"
+                value={hasCardImage}
+                handleToggle={() =>
+                  this.handleToggleFor("hasCardImage")
+                }
+              />
+            </fieldset>
           </span>
 
           <h6>CardHeader</h6>
@@ -491,27 +496,29 @@ export default class CardPlayground extends React.Component {
 
           <h6>CardDivider</h6>
           <span className="lab-playground__item">
-            isOverflowed
-            <br />
-            <Toggle
-              id="cardDividerIsOverflowed"
-              name="cardDividerIsOverflowed"
-              value={cardDividerIsOverflowed}
-              handleToggle={() =>
-                this.handleToggleFor("cardDividerIsOverflowed")
-              }
-            />
+            <fieldset>
+              <legend>isOverflowed</legend>
+              <Toggle
+                id="cardDividerIsOverflowed"
+                name="cardDividerIsOverflowed"
+                value={cardDividerIsOverflowed}
+                handleToggle={() =>
+                  this.handleToggleFor("cardDividerIsOverflowed")
+                }
+              />
+            </fieldset>
           </span>
 
           <span className="lab-playground__item">
-            Show divider
-            <br />
-            <Toggle
-              id="showDivider"
-              name="showDivider"
-              value={showDivider}
-              handleToggle={() => this.handleToggleFor("showDivider")}
-            />
+            <fieldset>
+              <legend>Show divider</legend>
+              <Toggle
+                id="showDivider"
+                name="showDivider"
+                value={showDivider}
+                handleToggle={() => this.handleToggleFor("showDivider")}
+              />
+            </fieldset>
           </span>
 
           <h6>CardAction</h6>
@@ -550,70 +557,75 @@ export default class CardPlayground extends React.Component {
           </span>
 
           <span className="lab-playground__item">
-            Show Card Actions
-            <br />
-            <Toggle
-              id="showCardActions"
-              name="showCardActions"
-              value={showCardActions}
-              handleToggle={() => this.handleToggleFor("showCardActions")}
-            />
+            <fieldset>
+              <legend>Show Card Actions</legend>
+              <Toggle
+                id="showCardActions"
+                name="showCardActions"
+                value={showCardActions}
+                handleToggle={() => this.handleToggleFor("showCardActions")}
+              />
+            </fieldset>
           </span>
 
           {currentCardAction === "LinkAction" ? (
             <span className="lab-playground__item">
-              openNewTab
-              <br />
-              <Toggle
-                id="cardActionOpenNewTab"
-                name="cardActionOpenNewTab"
-                value={cardActionOpenNewTab}
-                handleToggle={() =>
-                  this.handleToggleFor("cardActionOpenNewTab")
-                }
-                disabled={!showCardActions}
-              />
+              <fieldset>
+                <legend>openNewTab</legend>
+                <Toggle
+                  id="cardActionOpenNewTab"
+                  name="cardActionOpenNewTab"
+                  value={cardActionOpenNewTab}
+                  handleToggle={() =>
+                    this.handleToggleFor("cardActionOpenNewTab")
+                  }
+                  disabled={!showCardActions}
+                />
+              </fieldset>
             </span>
           ) : null}
 
           {currentCardAction === "DoubleAction" ? (
             <React.Fragment>
               <span className="lab-playground__item">
-                isHorizontal
-                <br />
-                <Toggle
-                  id="cardActionIsHorizontal"
-                  name="cardActionIsHorizontal"
-                  value={cardActionIsHorizontal}
-                  handleToggle={() =>
-                    this.handleToggleFor("cardActionIsHorizontal")
-                  }
-                  disabled={!showCardActions}
-                />
+                <fieldset>
+                  <legend>isHorizontal</legend>
+                  <Toggle
+                    id="cardActionIsHorizontal"
+                    name="cardActionIsHorizontal"
+                    value={cardActionIsHorizontal}
+                    handleToggle={() =>
+                      this.handleToggleFor("cardActionIsHorizontal")
+                    }
+                    disabled={!showCardActions}
+                  />
+                </fieldset>
               </span>
               <span className="lab-playground__item">
-                isText
-                <br />
-                <Toggle
-                  id="cardActionIsText"
-                  name="cardActionIsText"
-                  value={cardActionIsText}
-                  handleToggle={() => this.handleToggleFor("cardActionIsText")}
-                  disabled={!showCardActions}
-                />
+                <fieldset>
+                  <legend>isText</legend>
+                  <Toggle
+                    id="cardActionIsText"
+                    name="cardActionIsText"
+                    value={cardActionIsText}
+                    handleToggle={() => this.handleToggleFor("cardActionIsText")}
+                    disabled={!showCardActions}
+                  />
+                </fieldset>
               </span>
               <span className="lab-playground__item">
-                Disable buttons
-                <br />
-                <Toggle
-                  id="cardActionButtonsAreDisabled"
-                  name="cardActionButtonsAreDisabled"
-                  value={cardActionButtonsAreDisabled}
-                  handleToggle={() =>
-                    this.handleToggleFor("cardActionButtonsAreDisabled")
-                  }
-                  disabled={!showCardActions}
-                />
+                <fieldset>
+                  <legend>Disable buttons</legend>
+                  <Toggle
+                    id="cardActionButtonsAreDisabled"
+                    name="cardActionButtonsAreDisabled"
+                    value={cardActionButtonsAreDisabled}
+                    handleToggle={() =>
+                      this.handleToggleFor("cardActionButtonsAreDisabled")
+                    }
+                    disabled={!showCardActions}
+                  />
+                </fieldset>
               </span>
             </React.Fragment>
           ) : null}
