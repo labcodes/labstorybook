@@ -343,7 +343,7 @@ export default class CardPlayground extends React.Component {
             </label>
           </span>
 
-          <h6>CardImage</h6>
+          <h4>CardImage</h4>
           {cardIsHorizontal ? (
             <span className="lab-playground__item">
               <fieldset>
@@ -390,7 +390,7 @@ export default class CardPlayground extends React.Component {
             </fieldset>
           </span>
 
-          <h6>CardHeader</h6>
+          <h4>CardHeader</h4>
           <React.Fragment>
             <div className="lab-playground__item">
               <TextInput
@@ -494,7 +494,7 @@ export default class CardPlayground extends React.Component {
             </span>
           </React.Fragment>
 
-          <h6>CardDivider</h6>
+          <h4>CardDivider</h4>
           <span className="lab-playground__item">
             <fieldset>
               <legend>isOverflowed</legend>
@@ -521,7 +521,7 @@ export default class CardPlayground extends React.Component {
             </fieldset>
           </span>
 
-          <h6>CardAction</h6>
+          <h4>CardAction</h4>
           <span className="lab-playground__item">
             <fieldset>
               <legend>Action Type</legend>
