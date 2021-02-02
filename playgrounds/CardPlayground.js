@@ -451,7 +451,7 @@ export default class CardPlayground extends React.Component {
                 >
                   {iconOptions.map((item) => (
                     <option value={item} key={`category_icon-${item}`}>
-                      {item}
+                      {!isEmpty(item) ? item : "none"}
                     </option>
                   ))}
                 </select>
@@ -469,7 +469,7 @@ export default class CardPlayground extends React.Component {
                 >
                   {colorOptions.map((item) => (
                     <option value={item} key={`category_color-${item}`}>
-                      {item}
+                      {!isEmpty(item) ? item : "none"}
                     </option>
                   ))}
                 </select>
