@@ -44,8 +44,8 @@ export default class CardPlayground extends React.Component {
       cardHeaderSubtitle: "Subtitle text is a little longer than the title",
       cardHeaderSubtitleClassName: "custom-class",
       cardHeaderCategoryText: "Category",
-      cardHeaderCategoryLabelText: "Label",
-      cardHeaderCategoryLabelColor: "mineral",
+      cardHeaderCategoryTagText: "Tag Text",
+      cardHeaderCategoryTagColor: "mineral",
       cardHeaderCategoryIcon: "star",
       cardHeaderCategoryColor: "",
       cardHeaderIsOverlay: false,
@@ -67,7 +67,7 @@ export default class CardPlayground extends React.Component {
       
       isCategoryIconInputDisabled: false,
       isCategoryColorInputDisabled: true,
-    };
+    }
   }
 
   renderCurrentComponent = () => {
@@ -89,8 +89,8 @@ export default class CardPlayground extends React.Component {
       cardHeaderSubtitle,
       cardHeaderSubtitleClassName,
       cardHeaderCategoryText,
-      cardHeaderCategoryLabelText,
-      cardHeaderCategoryLabelColor,
+      cardHeaderCategoryTagText,
+      cardHeaderCategoryTagColor,
       cardHeaderCategoryIcon,
       cardHeaderCategoryColor,
       cardHeaderIsOverlay,
@@ -130,8 +130,8 @@ export default class CardPlayground extends React.Component {
           subtitle={cardHeaderSubtitle}
           subtitleClassName={cardHeaderSubtitleClassName}
           categoryText={cardHeaderCategoryText}
-          categoryLabelText={cardHeaderCategoryLabelText}
-          categoryLabelColor={cardHeaderCategoryLabelColor}
+          categoryTagText={cardHeaderCategoryTagText}
+          categoryTagColor={cardHeaderCategoryTagColor}
           categoryIcon={
             cardHeaderCategoryColor.length ? undefined : cardHeaderCategoryIcon
           }
@@ -209,8 +209,8 @@ export default class CardPlayground extends React.Component {
       cardHeaderTitle,
       cardHeaderSubtitle,
       cardHeaderCategoryText,
-      cardHeaderCategoryLabelText,
-      cardHeaderCategoryLabelColor,
+      cardHeaderCategoryTagText,
+      cardHeaderCategoryTagColor,
       cardHeaderCategoryIcon,
       cardHeaderCategoryColor,
       cardHeaderIsOverlay,
@@ -407,19 +407,19 @@ export default class CardPlayground extends React.Component {
 
             <div className="lab-playground__item">
               <TextInput
-                label="Category Label Text"
-                id="cardHeaderCategoryLabelText"
-                value={cardHeaderCategoryLabelText}
+                label="Category Tag Text"
+                id="cardHeaderCategoryTagText"
+                value={cardHeaderCategoryTagText}
                 onChange={this.handleInputChange}
               />
             </div>
 
             <span className="lab-playground__item">
               <fieldset>
-                <legend>Category Label Color</legend>
+                <legend>Category Tag Color</legend>
                 <select
-                  name="cardHeaderCategoryLabelColor"
-                  value={cardHeaderCategoryLabelColor}
+                  name="cardHeaderCategoryTagColor"
+                  value={cardHeaderCategoryTagColor}
                   onChange={this.handleInputChange}
                 >
                   {colorOptions.slice(1).map((item) => (
