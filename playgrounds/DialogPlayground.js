@@ -138,7 +138,6 @@ export default class DialogPlayground extends React.Component {
       selectedIsModal,
       selectedIsLarge,
       windowIsSmall,
-      modalIsOpen,
     } = this.state;
 
     return (

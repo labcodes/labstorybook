@@ -30,7 +30,6 @@ export default class CardPlayground extends React.Component {
       selectedSkin: "pale",
       currentComponent: "OutlineCard",
       showHeaderConfigs: false,
-      showCardBodyHTML: false,
 
       cardIsHorizontal: false,
       cardIsCompact: false,
@@ -197,7 +196,6 @@ export default class CardPlayground extends React.Component {
       selectedColor,
       selectedSkin,
       showHeaderConfigs,
-      showCardBodyHTML,
 
       cardIsHorizontal,
       cardIsCompact,

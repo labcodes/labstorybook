@@ -51,7 +51,7 @@ export default class SystemMessagesPlayground extends React.Component {
   handleType = (event) => {
     const { value } = event.target;
     this.setState({ selectedType: value });
-  }
+  };
 
   renderCurrentComponent = () => {
     const {
