@@ -249,9 +249,10 @@ export default class CardPlayground extends React.Component {
         <div className="column lab-playground__configs">
           <h3>Prop Settings</h3>
 
+          <h4>Card Style</h4>
           <span className="lab-playground__item">
             <fieldset>
-              <legend>Component</legend>
+              <legend>Variation</legend>
               {Object.keys(availableComponents).map((component) => (
                 <Radio
                   key={component}
@@ -327,80 +328,8 @@ export default class CardPlayground extends React.Component {
             </fieldset>
           </span>
 
-          <span className="lab-playground__item" style={{ width: "100%" }}>
-            <label htmlFor="cardBodyHTML">
-              Body HTML
-              <textarea
-                style={{
-                  width: "100%",
-                  minHeight: "100px",
-                  resize: "none",
-                }}
-                name="cardBodyHTML"
-                value={cardBodyHTML}
-                onChange={this.handleInputChange}
-              />
-            </label>
-          </span>
-
-          <h4>CardImage</h4>
-          {cardIsHorizontal ? (
-            <span className="lab-playground__item">
-              <fieldset>
-                <legend>isOverflowed</legend>
-                <Toggle
-                  id="cardImageIsOverflowed"
-                  name="cardImageIsOverflowed"
-                  value={cardImageIsOverflowed}
-                  handleToggle={() =>
-                    this.handleToggleFor("cardImageIsOverflowed")
-                  }
-                  disabled={!hasCardImage}
-                />
-              </fieldset>
-            </span>
-          ) : null}
-
-          <span className="lab-playground__item">
-            <fieldset>
-              <legend>Show it above the CardHeader</legend>
-              <Toggle
-                id="cardImageIsAboveHeader"
-                name="cardImageIsAboveHeader"
-                value={cardImageIsAboveHeader}
-                handleToggle={() =>
-                  this.handleToggleFor("cardImageIsAboveHeader")
-                }
-                disabled={!hasCardImage || cardIsHorizontal}
-              />
-            </fieldset>
-          </span>
-
-          <span className="lab-playground__item">
-            <fieldset>
-              <legend>Show image</legend>
-              <Toggle
-                id="hasCardImage"
-                name="hasCardImage"
-                value={hasCardImage}
-                handleToggle={() =>
-                  this.handleToggleFor("hasCardImage")
-                }
-              />
-            </fieldset>
-          </span>
-
           <h4>CardHeader</h4>
           <React.Fragment>
-            <div className="lab-playground__item">
-              <TextInput
-                label="Title"
-                id="cardHeaderTitle"
-                value={cardHeaderTitle}
-                onChange={this.handleInputChange}
-              />
-            </div>
-
             <div className="lab-playground__item">
               <Toggle
                 id="cardHeaderIsOverlay"
@@ -411,6 +340,15 @@ export default class CardPlayground extends React.Component {
                 }
               />
               isOverlay
+            </div>
+
+            <div className="lab-playground__item">
+              <TextInput
+                label="Title"
+                id="cardHeaderTitle"
+                value={cardHeaderTitle}
+                onChange={this.handleInputChange}
+              />
             </div>
 
             <div className="lab-playground__item">
@@ -427,15 +365,6 @@ export default class CardPlayground extends React.Component {
                 label="Category Text"
                 id="cardHeaderCategoryText"
                 value={cardHeaderCategoryText}
-                onChange={this.handleInputChange}
-              />
-            </div>
-
-            <div className="lab-playground__item">
-              <TextInput
-                label="Category Label Text"
-                id="cardHeaderCategoryLabelText"
-                value={cardHeaderCategoryLabelText}
                 onChange={this.handleInputChange}
               />
             </div>
@@ -476,6 +405,15 @@ export default class CardPlayground extends React.Component {
               </fieldset>
             </span>
 
+            <div className="lab-playground__item">
+              <TextInput
+                label="Category Label Text"
+                id="cardHeaderCategoryLabelText"
+                value={cardHeaderCategoryLabelText}
+                onChange={this.handleInputChange}
+              />
+            </div>
+
             <span className="lab-playground__item">
               <fieldset>
                 <legend>Category Label Color</legend>
@@ -494,7 +432,82 @@ export default class CardPlayground extends React.Component {
             </span>
           </React.Fragment>
 
+          <h4>CardImage</h4>
+          <span className="lab-playground__item">
+            <fieldset>
+              <legend>Show image</legend>
+              <Toggle
+                id="hasCardImage"
+                name="hasCardImage"
+                value={hasCardImage}
+                handleToggle={() =>
+                  this.handleToggleFor("hasCardImage")
+                }
+                disabled={cardIsHorizontal}
+              />
+            </fieldset>
+          </span>
+
+            <span className="lab-playground__item">
+              <fieldset>
+                <legend>isOverflowed</legend>
+                <Toggle
+                  id="cardImageIsOverflowed"
+                  name="cardImageIsOverflowed"
+                  value={cardImageIsOverflowed}
+                  handleToggle={() =>
+                    this.handleToggleFor("cardImageIsOverflowed")
+                  }
+                  disabled={!hasCardImage || !cardIsHorizontal}
+                />
+              </fieldset>
+            </span>
+
+          <span className="lab-playground__item">
+            <fieldset>
+              <legend>Display on top</legend>
+              <Toggle
+                id="cardImageIsAboveHeader"
+                name="cardImageIsAboveHeader"
+                value={cardImageIsAboveHeader}
+                handleToggle={() =>
+                  this.handleToggleFor("cardImageIsAboveHeader")
+                }
+                disabled={!hasCardImage || cardIsHorizontal}
+              />
+            </fieldset>
+          </span>
+
+          <h4>Content</h4>
+          <span className="lab-playground__item" style={{ width: "100%" }}>
+            <label htmlFor="cardBodyHTML">
+              Children
+              <textarea
+                style={{
+                  width: "100%",
+                  minHeight: "100px",
+                  resize: "none",
+                }}
+                name="cardBodyHTML"
+                value={cardBodyHTML}
+                onChange={this.handleInputChange}
+              />
+            </label>
+          </span>
+
           <h4>CardDivider</h4>
+          <span className="lab-playground__item">
+            <fieldset>
+              <legend>Show divider</legend>
+              <Toggle
+                id="showDivider"
+                name="showDivider"
+                value={showDivider}
+                handleToggle={() => this.handleToggleFor("showDivider")}
+              />
+            </fieldset>
+          </span>
+
           <span className="lab-playground__item">
             <fieldset>
               <legend>isOverflowed</legend>
@@ -509,37 +522,37 @@ export default class CardPlayground extends React.Component {
             </fieldset>
           </span>
 
+          <h4>CardAction</h4>
           <span className="lab-playground__item">
             <fieldset>
-              <legend>Show divider</legend>
+              <legend>Show Card Actions</legend>
               <Toggle
-                id="showDivider"
-                name="showDivider"
-                value={showDivider}
-                handleToggle={() => this.handleToggleFor("showDivider")}
+                id="showCardActions"
+                name="showCardActions"
+                value={showCardActions}
+                handleToggle={() => this.handleToggleFor("showCardActions")}
               />
             </fieldset>
           </span>
 
-          <h4>CardAction</h4>
+          <span className="lab-playground__item">
           <span className="lab-playground__item">
             <fieldset>
-              <legend>Action Type</legend>
-              {Object.keys(availableCardActions).map((component) => (
+              <legend>Button Size</legend>
+              {["small", "normal", "large"].map((size) => (
                 <Radio
-                  key={component}
-                  id={component}
-                  name="currentCardAction"
-                  label={component}
-                  value={component}
-                  checked={currentCardAction === component}
+                  key={size}
+                  id={size}
+                  name="currentCardActionSize"
+                  label={size}
+                  value={size}
+                  checked={currentCardActionSize === size}
                   onChange={this.handleInputChange}
                 />
               ))}
             </fieldset>
           </span>
 
-          <span className="lab-playground__item">
             <fieldset>
               <legend>Button Size</legend>
               {["small", "normal", "large"].map((size) => (
@@ -558,32 +571,20 @@ export default class CardPlayground extends React.Component {
 
           <span className="lab-playground__item">
             <fieldset>
-              <legend>Show Card Actions</legend>
-              <Toggle
-                id="showCardActions"
-                name="showCardActions"
-                value={showCardActions}
-                handleToggle={() => this.handleToggleFor("showCardActions")}
-              />
+              <legend>Action Type</legend>
+              {Object.keys(availableCardActions).map((component) => (
+                <Radio
+                  key={component}
+                  id={component}
+                  name="currentCardAction"
+                  label={component}
+                  value={component}
+                  checked={currentCardAction === component}
+                  onChange={this.handleInputChange}
+                />
+              ))}
             </fieldset>
           </span>
-
-          {currentCardAction === "LinkAction" ? (
-            <span className="lab-playground__item">
-              <fieldset>
-                <legend>openNewTab</legend>
-                <Toggle
-                  id="cardActionOpenNewTab"
-                  name="cardActionOpenNewTab"
-                  value={cardActionOpenNewTab}
-                  handleToggle={() =>
-                    this.handleToggleFor("cardActionOpenNewTab")
-                  }
-                  disabled={!showCardActions}
-                />
-              </fieldset>
-            </span>
-          ) : null}
 
           {currentCardAction === "DoubleAction" ? (
             <React.Fragment>
