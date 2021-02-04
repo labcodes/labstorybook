@@ -447,21 +447,6 @@ export default class CardPlayground extends React.Component {
             </fieldset>
           </span>
 
-            <span className="lab-playground__item">
-              <fieldset>
-                <legend>isOverflowed</legend>
-                <Toggle
-                  id="cardImageIsOverflowed"
-                  name="cardImageIsOverflowed"
-                  value={cardImageIsOverflowed}
-                  handleToggle={() =>
-                    this.handleToggleFor("cardImageIsOverflowed")
-                  }
-                  disabled={!cardIsHorizontal}
-                />
-              </fieldset>
-            </span>
-
           <span className="lab-playground__item">
             <fieldset>
               <legend>Display on top</legend>
@@ -473,6 +458,21 @@ export default class CardPlayground extends React.Component {
                   this.handleToggleFor("cardImageIsAboveHeader")
                 }
                 disabled={!hasCardImage || cardIsHorizontal || cardHeaderIsOverlay}
+              />
+            </fieldset>
+          </span>
+
+          <span className="lab-playground__item">
+            <fieldset>
+              <legend>isOverflowed (for horizontal mode)</legend>
+              <Toggle
+                id="cardImageIsOverflowed"
+                name="cardImageIsOverflowed"
+                value={cardImageIsOverflowed}
+                handleToggle={() =>
+                  this.handleToggleFor("cardImageIsOverflowed")
+                }
+                disabled={!cardIsHorizontal}
               />
             </fieldset>
           </span>
