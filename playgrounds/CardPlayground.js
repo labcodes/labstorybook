@@ -456,7 +456,7 @@ export default class CardPlayground extends React.Component {
                   handleToggle={() =>
                     this.handleToggleFor("cardImageIsOverflowed")
                   }
-                  disabled={!hasCardImage || !cardIsHorizontal}
+                  disabled={!cardIsHorizontal}
                 />
               </fieldset>
             </span>
