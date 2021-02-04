@@ -327,8 +327,9 @@ export default class CardPlayground extends React.Component {
           </span>
 
           <h4>CardHeader</h4>
-          <React.Fragment>
-            <div className="lab-playground__item">
+          <span className="lab-playground__item">
+            <fieldset>
+              <legend>isOverlay</legend>
               <Toggle
                 id="cardHeaderIsOverlay"
                 name="cardHeaderIsOverlay"
@@ -338,98 +339,97 @@ export default class CardPlayground extends React.Component {
                 }
                 disabled={cardIsHorizontal}
               />
-              isOverlay
-            </div>
+            </fieldset>
+          </span>
 
-            <div className="lab-playground__item">
-              <TextInput
-                label="Title"
-                id="cardHeaderTitle"
-                value={cardHeaderTitle}
+          <div className="lab-playground__item">
+            <TextInput
+              label="Title"
+              id="cardHeaderTitle"
+              value={cardHeaderTitle}
+              onChange={this.handleInputChange}
+            />
+          </div>
+
+          <div className="lab-playground__item">
+            <TextInput
+              label="Subtitle"
+              id="cardHeaderSubtitle"
+              value={cardHeaderSubtitle}
+              onChange={this.handleInputChange}
+            />
+          </div>
+
+          <div className="lab-playground__item">
+            <TextInput
+              label="Category Text"
+              id="cardHeaderCategoryText"
+              value={cardHeaderCategoryText}
+              onChange={this.handleInputChange}
+            />
+          </div>
+
+          <span className="lab-playground__item">
+            <fieldset>
+              <legend>Category Icon</legend>
+              <select
+                name="cardHeaderCategoryIcon"
+                value={cardHeaderCategoryIcon}
+                onChange={this.handleCategoryIconPropChange}
+                disabled={isCategoryIconInputDisabled}
+              >
+                {iconOptions.map((item) => (
+                  <option value={item} key={`category_icon-${item}`}>
+                    {!isEmpty(item) ? item : "none"}
+                  </option>
+                ))}
+              </select>
+            </fieldset>
+          </span>
+
+          <span className="lab-playground__item">
+            <fieldset>
+              <legend>Category Color</legend>
+              <select
+                name="cardHeaderCategoryColor"
+                value={cardHeaderCategoryColor}
+                onChange={this.handleCategoryColorPropChange}
+                disabled={isCategoryColorInputDisabled}
+              >
+                {colorOptions.map((item) => (
+                  <option value={item} key={`category_color-${item}`}>
+                    {!isEmpty(item) ? item : "none"}
+                  </option>
+                ))}
+              </select>
+            </fieldset>
+          </span>
+
+          <div className="lab-playground__item">
+            <TextInput
+              label="Category Tag Text"
+              id="cardHeaderCategoryTagText"
+              value={cardHeaderCategoryTagText}
+              onChange={this.handleInputChange}
+            />
+          </div>
+
+          <span className="lab-playground__item">
+            <fieldset>
+              <legend>Category Tag Color</legend>
+              <select
+                name="cardHeaderCategoryTagColor"
+                value={cardHeaderCategoryTagColor}
                 onChange={this.handleInputChange}
-              />
-            </div>
-
-            <div className="lab-playground__item">
-              <TextInput
-                label="Subtitle"
-                id="cardHeaderSubtitle"
-                value={cardHeaderSubtitle}
-                onChange={this.handleInputChange}
-              />
-            </div>
-
-            <div className="lab-playground__item">
-              <TextInput
-                label="Category Text"
-                id="cardHeaderCategoryText"
-                value={cardHeaderCategoryText}
-                onChange={this.handleInputChange}
-              />
-            </div>
-
-            <span className="lab-playground__item">
-              <fieldset>
-                <legend>Category Icon</legend>
-                <select
-                  name="cardHeaderCategoryIcon"
-                  value={cardHeaderCategoryIcon}
-                  onChange={this.handleCategoryIconPropChange}
-                  disabled={isCategoryIconInputDisabled}
-                >
-                  {iconOptions.map((item) => (
-                    <option value={item} key={`category_icon-${item}`}>
-                      {!isEmpty(item) ? item : "none"}
-                    </option>
-                  ))}
-                </select>
-              </fieldset>
-            </span>
-
-            <span className="lab-playground__item">
-              <fieldset>
-                <legend>Category Color</legend>
-                <select
-                  name="cardHeaderCategoryColor"
-                  value={cardHeaderCategoryColor}
-                  onChange={this.handleCategoryColorPropChange}
-                  disabled={isCategoryColorInputDisabled}
-                >
-                  {colorOptions.map((item) => (
-                    <option value={item} key={`category_color-${item}`}>
-                      {!isEmpty(item) ? item : "none"}
-                    </option>
-                  ))}
-                </select>
-              </fieldset>
-            </span>
-
-            <div className="lab-playground__item">
-              <TextInput
-                label="Category Tag Text"
-                id="cardHeaderCategoryTagText"
-                value={cardHeaderCategoryTagText}
-                onChange={this.handleInputChange}
-              />
-            </div>
-
-            <span className="lab-playground__item">
-              <fieldset>
-                <legend>Category Tag Color</legend>
-                <select
-                  name="cardHeaderCategoryTagColor"
-                  value={cardHeaderCategoryTagColor}
-                  onChange={this.handleInputChange}
-                >
-                  {colorOptions.slice(1).map((item) => (
-                    <option value={item} key={`label_color-${item}`}>
-                      {item}
-                    </option>
-                  ))}
-                </select>
-              </fieldset>
-            </span>
-          </React.Fragment>
+              >
+                {colorOptions.slice(1).map((item) => (
+                  <option value={item} key={`label_color-${item}`}>
+                    {item}
+                  </option>
+                ))}
+              </select>
+            </fieldset>
+          </span>
 
           <h4>CardImage</h4>
           <span className="lab-playground__item">
@@ -464,7 +464,7 @@ export default class CardPlayground extends React.Component {
 
           <span className="lab-playground__item">
             <fieldset>
-              <legend>isOverflowed (for horizontal mode)</legend>
+              <legend>isOverflowed (require isHorizontal)</legend>
               <Toggle
                 id="cardImageIsOverflowed"
                 name="cardImageIsOverflowed"
@@ -518,6 +518,7 @@ export default class CardPlayground extends React.Component {
                 handleToggle={() =>
                   this.handleToggleFor("cardDividerIsOverflowed")
                 }
+                disabled={!showDivider}
               />
             </fieldset>
           </span>
@@ -536,7 +537,6 @@ export default class CardPlayground extends React.Component {
           </span>
 
           <span className="lab-playground__item">
-          <span className="lab-playground__item">
             <fieldset>
               <legend>Button Size</legend>
               {["small", "normal", "large"].map((size) => (
@@ -548,22 +548,7 @@ export default class CardPlayground extends React.Component {
                   value={size}
                   checked={currentCardActionSize === size}
                   onChange={this.handleInputChange}
-                />
-              ))}
-            </fieldset>
-          </span>
-
-            <fieldset>
-              <legend>Button Size</legend>
-              {["small", "normal", "large"].map((size) => (
-                <Radio
-                  key={size}
-                  id={size}
-                  name="currentCardActionSize"
-                  label={size}
-                  value={size}
-                  checked={currentCardActionSize === size}
-                  onChange={this.handleInputChange}
+                  disabled={!showCardActions}
                 />
               ))}
             </fieldset>
@@ -581,6 +566,7 @@ export default class CardPlayground extends React.Component {
                   value={component}
                   checked={currentCardAction === component}
                   onChange={this.handleInputChange}
+                  disabled={!showCardActions}
                 />
               ))}
             </fieldset>
@@ -671,6 +657,10 @@ export default class CardPlayground extends React.Component {
     this.setState({ [stateKey]: !this.state[stateKey] });
     if (stateKey === "hasCardImage") {
       this.setState({ cardIsHorizontal: !hasCardImage });
+    }
+    if (stateKey === "cardHeaderIsOverlay") {
+      this.setState({ hasCardImage: true });
+      this.setState({ cardImageIsAboveHeader: true });
     }
   }
 }
