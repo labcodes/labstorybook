@@ -489,6 +489,7 @@ export default class CardPlayground extends React.Component {
                 name="cardBodyHTML"
                 value={cardBodyHTML}
                 onChange={this.handleInputChange}
+                required
               />
             </label>
           </span>
