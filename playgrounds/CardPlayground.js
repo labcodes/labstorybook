@@ -336,6 +336,7 @@ export default class CardPlayground extends React.Component {
                 handleToggle={() =>
                   this.handleToggleFor("cardHeaderIsOverlay")
                 }
+                disabled={cardIsHorizontal}
               />
               isOverlay
             </div>
@@ -441,7 +442,7 @@ export default class CardPlayground extends React.Component {
                 handleToggle={() =>
                   this.handleToggleFor("hasCardImage")
                 }
-                disabled={cardIsHorizontal}
+                disabled={cardIsHorizontal || cardHeaderIsOverlay}
               />
             </fieldset>
           </span>
@@ -471,7 +472,7 @@ export default class CardPlayground extends React.Component {
                 handleToggle={() =>
                   this.handleToggleFor("cardImageIsAboveHeader")
                 }
-                disabled={!hasCardImage || cardIsHorizontal}
+                disabled={!hasCardImage || cardIsHorizontal || cardHeaderIsOverlay}
               />
             </fieldset>
           </span>
