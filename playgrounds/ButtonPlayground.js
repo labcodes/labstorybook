@@ -230,7 +230,7 @@ export default class ButtonPlayground extends React.Component {
             </fieldset>
           </div>
 
-          <div className="lab-playground__item">
+          <div className="lab-playground__inline-item">
             <fieldset>
               <legend>fullWidth</legend>
               <Toggle
@@ -242,7 +242,7 @@ export default class ButtonPlayground extends React.Component {
             </fieldset>
           </div>
 
-          <div className="lab-playground__item">
+          <div className="lab-playground__inline-item">
             <fieldset>
               <legend>ariaDisabled</legend>
               <Toggle
@@ -254,7 +254,7 @@ export default class ButtonPlayground extends React.Component {
             </fieldset>
           </div>
 
-          <div className="lab-playground__item">
+          <div className="lab-playground__inline-item">
             <fieldset>
               <legend>disabled</legend>
               <Toggle
