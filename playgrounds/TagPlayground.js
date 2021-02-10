@@ -237,35 +237,35 @@ export default class TagPlayground extends React.Component {
             <span className="lab-playground__item">
               {currentComponent !== "SimpleTag" ? (
                 <React.Fragment>
-                  <p>
-                    <strong>Disabled</strong>
-                  </p>
-                  <Toggle
-                    id="selectedIsDisabled"
-                    name="selectedIsDisabled"
-                    handleToggle={this.handleBoolPropChange}
-                    value={selectedIsDisabled}
-                  />
-                  <p>
-                    <strong>AriaDisabled</strong>
-                  </p>
-                  <Toggle
-                    id="selectedAriaDisabled"
-                    name="selectedAriaDisabled"
-                    handleToggle={this.handleBoolPropChange}
-                    value={selectedAriaDisabled}
-                  />
+                  <fieldset>
+                    <legend>Disabled</legend>
+                    <Toggle
+                      id="selectedIsDisabled"
+                      name="selectedIsDisabled"
+                      handleToggle={this.handleBoolPropChange}
+                      value={selectedIsDisabled}
+                    />
+                  </fieldset>
+                  <fieldset>
+                    <legend>AriaDisabled</legend>
+                    <Toggle
+                      id="selectedAriaDisabled"
+                      name="selectedAriaDisabled"
+                      handleToggle={this.handleBoolPropChange}
+                      value={selectedAriaDisabled}
+                    />
+                  </fieldset>
                 </React.Fragment>
               ) : null}
-              <p>
-                <strong>isOutline</strong>
-              </p>
-              <Toggle
-                id="selectedIsOutline"
-                name="selectedIsOutline"
-                handleToggle={this.handleBoolPropChange}
-                value={selectedIsOutline}
-              />
+              <fieldset>
+                <legend>isOutline</legend>
+                <Toggle
+                  id="selectedIsOutline"
+                  name="selectedIsOutline"
+                  handleToggle={this.handleBoolPropChange}
+                  value={selectedIsOutline}
+                />
+              </fieldset>
             </span>
           </span>
 
