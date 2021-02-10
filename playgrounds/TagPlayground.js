@@ -233,40 +233,42 @@ export default class TagPlayground extends React.Component {
             </span>
           ) : null}
 
-          <span className="lab-playground__item">
-            <span className="lab-playground__item">
-              {currentComponent !== "SimpleTag" ? (
-                <React.Fragment>
-                  <fieldset>
-                    <legend>Disabled</legend>
-                    <Toggle
-                      id="selectedIsDisabled"
-                      name="selectedIsDisabled"
-                      handleToggle={this.handleBoolPropChange}
-                      value={selectedIsDisabled}
-                    />
-                  </fieldset>
-                  <fieldset>
-                    <legend>AriaDisabled</legend>
-                    <Toggle
-                      id="selectedAriaDisabled"
-                      name="selectedAriaDisabled"
-                      handleToggle={this.handleBoolPropChange}
-                      value={selectedAriaDisabled}
-                    />
-                  </fieldset>
-                </React.Fragment>
-              ) : null}
-              <fieldset>
-                <legend>isOutline</legend>
-                <Toggle
-                  id="selectedIsOutline"
-                  name="selectedIsOutline"
-                  handleToggle={this.handleBoolPropChange}
-                  value={selectedIsOutline}
-                />
-              </fieldset>
-            </span>
+          {currentComponent !== "SimpleTag" ? (
+            <React.Fragment>
+              <span className="lab-playground__inline-item">
+                <fieldset>
+                  <legend>Disabled</legend>
+                  <Toggle
+                    id="selectedIsDisabled"
+                    name="selectedIsDisabled"
+                    handleToggle={this.handleBoolPropChange}
+                    value={selectedIsDisabled}
+                  />
+                </fieldset>
+              </span>
+              <span className="lab-playground__inline-item">
+                <fieldset>
+                  <legend>AriaDisabled</legend>
+                  <Toggle
+                    id="selectedAriaDisabled"
+                    name="selectedAriaDisabled"
+                    handleToggle={this.handleBoolPropChange}
+                    value={selectedAriaDisabled}
+                  />
+                </fieldset>
+              </span>
+            </React.Fragment>
+          ) : null}
+          <span className="lab-playground__inline-item">
+            <fieldset>
+              <legend>isOutline</legend>
+              <Toggle
+                id="selectedIsOutline"
+                name="selectedIsOutline"
+                handleToggle={this.handleBoolPropChange}
+                value={selectedIsOutline}
+              />
+            </fieldset>
           </span>
 
           {currentComponent !== "TogglableTag" &&
