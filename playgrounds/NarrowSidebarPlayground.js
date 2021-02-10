@@ -237,17 +237,18 @@ export default class NarrowSidebarPlayground extends React.Component {
               />
             </fieldset>
           </span>
-          <p
+          <span
+            className="lab-playground__item"
             onClick={() => this.handleToggleFor("showHeaderConfigs")}
             onKeyPress={() => this.handleToggleFor("showHeaderConfigs")}
-            style={{ cursor: "pointer", display: "flex" }}
+            style={{ cursor: "pointer", display: "flex", alignItems: "center" }}
             role="button"
           >
-            <strong>Header</strong>
+            <h4>Header</h4>
             <Icon
               type={showHeaderConfigs ? "collapse-open" : "collapse-closed"}
             />
-          </p>
+          </span>
           {showHeaderConfigs && useAvatarInHeader ? (
             <React.Fragment>
               <span className="lab-playground__item">
@@ -301,17 +302,18 @@ export default class NarrowSidebarPlayground extends React.Component {
               </span>
             </React.Fragment>
           ) : null}
-          <p
+          <span
+            className="lab-playground__item"
             onClick={() => this.handleToggleFor("showBodyConfigs")}
             onKeyPress={() => this.handleToggleFor("showBodyConfigs")}
-            style={{ cursor: "pointer", display: "flex" }}
+            style={{ cursor: "pointer", display: "flex", alignItems: "center" }}
             role="button"
           >
-            <strong>Body</strong>
+            <h4>Body</h4>
             <Icon
               type={showBodyConfigs ? "collapse-open" : "collapse-closed"}
             />
-          </p>
+          </span>
           {showBodyConfigs ? (
             <React.Fragment>
               <span className="lab-playground__item">
@@ -346,17 +348,18 @@ export default class NarrowSidebarPlayground extends React.Component {
           ) : (
             ""
           )}
-          <p
+          <span
+            className="lab-playground__item"
             onClick={() => this.handleToggleFor("showFooterConfigs")}
             onKeyPress={() => this.handleToggleFor("showFooterConfigs")}
-            style={{ cursor: "pointer", display: "flex" }}
+            style={{ cursor: "pointer", display: "flex", alignItems: "center" }}
             role="button"
           >
-            <strong>Footer</strong>
+            <h4>Footer</h4>
             <Icon
               type={showFooterConfigs ? "collapse-open" : "collapse-closed"}
             />
-          </p>
+          </span>
           {showFooterConfigs && !useAvatarInHeader ? (
             <React.Fragment>
               <span className="lab-playground__item">
