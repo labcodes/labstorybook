@@ -80,4 +80,10 @@
 .lab-playground__component {
   padding: $spacing-6;
   align-self: center;
+
+  legend {
+    font-family: $family-sans-serif;
+    font-weight: $weight-semibold;
+    color: $black-87;
+  }
 }
