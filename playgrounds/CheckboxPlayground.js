@@ -71,15 +71,15 @@ export default class CheckboxPlayground extends React.Component {
               />
             </span>
             <span className="lab-playground__item">
-              <p>
-                <strong>Disabled</strong>
-              </p>
-              <Toggle
-                id="disabled"
-                name="disabled"
-                value={disabled}
-                handleToggle={this.handlePropBool}
-              />
+              <fieldset>
+                <legend>Disabled</legend>
+                <Toggle
+                  id="disabled"
+                  name="disabled"
+                  value={disabled}
+                  handleToggle={this.handlePropBool}
+                />
+              </fieldset>
             </span>
             <span className="lab-playground__item">
               <fieldset>
