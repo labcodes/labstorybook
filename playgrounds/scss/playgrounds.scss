@@ -48,13 +48,16 @@
   }
 
   .lab-btn {
-    margin: 4px;
+    margin: $spacing-1;
   }
 
-  h4, h6 { margin: 0.4rem 0; }
+  h4, h6 { margin: $spacing-2 0; }
 }
 .lab-playground {
-  .lab-toggle { margin-right: 0.4rem; }
+  .lab-toggle { 
+    margin-right: $spacing-2; 
+    margin-top: $spacing-1; 
+  }
 }
 
 .lab-playground__component {
