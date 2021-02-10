@@ -213,7 +213,7 @@ export default class NarrowSidebarPlayground extends React.Component {
               />
             </fieldset>
           </span>
-          <span className="lab-playground__item">
+          <span className="lab-playground__inline-item">
             <fieldset>
               <legend>withDividers</legend>
               <Toggle
@@ -225,7 +225,7 @@ export default class NarrowSidebarPlayground extends React.Component {
               />
             </fieldset>
           </span>
-          <span className="lab-playground__item">
+          <span className="lab-playground__inline-item">
             <fieldset>
               <legend>Show avatar in the header</legend>
               <Toggle
