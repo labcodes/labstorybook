@@ -149,7 +149,7 @@ export default class DialogPlayground extends React.Component {
         <div className="column lab-playground__configs">
           <h3>Prop Settings</h3>
 
-          <span className="lab-playground__item">
+          <span className="lab-playground__inline-item">
             <label htmlFor="currentComponent">
               Variation
               <select onChange={this.handleCurrentComponentChange}>
@@ -161,6 +161,57 @@ export default class DialogPlayground extends React.Component {
               </select>
             </label>
           </span>
+
+          {currentComponent === "MessageDialog" ? (
+            <span className="lab-playground__inline-item">
+              <label htmlFor="selectedIcon">
+                Icon
+                <select
+                  id="selectedIcon"
+                  value={selectedIcon}
+                  onChange={this.handleIconPropChange}
+                >
+                  {iconOptions.slice(1).map((item) => (
+                    <option value={item} key={`icon-${item}`}>
+                      {item}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            </span>
+          ) : null}
+
+          <div>
+            {!windowIsSmall ? (
+              <React.Fragment>
+                <span className="lab-playground__inline-item">
+                  <fieldset>
+                    <legend>isModal</legend>
+                    <Toggle
+                      id="selectedIsModal"
+                      name="selectedIsModal"
+                      label="selectedIsModal"
+                      value={selectedIsModal}
+                      handleToggle={this.handleBoolPropChange}
+                    />
+                  </fieldset>
+                </span>
+              </React.Fragment>
+            ) : null}
+
+            <span className="lab-playground__inline-item">
+              <fieldset>
+                <legend>isLarge</legend>
+                <Toggle
+                  id="selectedIsLarge"
+                  name="selectedIsLarge"
+                  label="selectedIsLarge"
+                  value={selectedIsLarge}
+                  handleToggle={this.handleBoolPropChange}
+                />
+              </fieldset>
+            </span>
+          </div>
 
           <span className="lab-playground__item">
             <TextInput
@@ -204,55 +255,6 @@ export default class DialogPlayground extends React.Component {
               label="outlineButtonProps.text"
             />
           </span>
-
-          {!windowIsSmall ? (
-            <React.Fragment>
-              <span className="lab-playground__item">
-                <fieldset>
-                  <legend>isModal</legend>
-                  <Toggle
-                    id="selectedIsModal"
-                    name="selectedIsModal"
-                    label="selectedIsModal"
-                    value={selectedIsModal}
-                    handleToggle={this.handleBoolPropChange}
-                  />
-                </fieldset>
-              </span>
-            </React.Fragment>
-          ) : null}
-
-          <span className="lab-playground__item">
-            <fieldset>
-              <legend>isLarge</legend>
-              <Toggle
-                id="selectedIsLarge"
-                name="selectedIsLarge"
-                label="selectedIsLarge"
-                value={selectedIsLarge}
-                handleToggle={this.handleBoolPropChange}
-              />
-            </fieldset>
-          </span>
-
-          {currentComponent === "MessageDialog" ? (
-            <span className="lab-playground__item">
-              <label htmlFor="selectedIcon">
-                Icon
-                <select
-                  id="selectedIcon"
-                  value={selectedIcon}
-                  onChange={this.handleIconPropChange}
-                >
-                  {iconOptions.slice(1).map((item) => (
-                    <option value={item} key={`icon-${item}`}>
-                      {item}
-                    </option>
-                  ))}
-                </select>
-              </label>
-            </span>
-          ) : null}
         </div>
       </div>
     );
