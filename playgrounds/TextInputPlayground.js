@@ -173,7 +173,6 @@ export default class TextInputPlayground extends React.Component {
         <div className="column lab-playground__configs">
           <h3>Prop Settings</h3>
           <div className="lab-playground__item">
-            <strong>Variation: </strong>
             <fieldset>
               <legend>Variation</legend>
               <Radio
@@ -210,10 +209,9 @@ export default class TextInputPlayground extends React.Component {
               onChange={this.handlePropChangeText}
             />
           </span>
-          <span className="lab-playground__item">
+          <span className="lab-playground__inline-item">
             <label htmlFor="icon">
-              icon
-              <br />
+              Icon
               <select
                 name="icons"
                 id="icon"
@@ -227,15 +225,12 @@ export default class TextInputPlayground extends React.Component {
               </select>
             </label>
           </span>
-          <span className="lab-playground__item">
+          <span className="lab-playground__inline-item">
             <label htmlFor="iconColor">
               iconColor
               <select
                 name="iconColor"
                 id="iconColor"
-                type="text"
-                label="iconColor"
-                value={iconColor}
                 onChange={this.handlePropChangeText}
               >
                 {iconColorOptions.map((item) => (
