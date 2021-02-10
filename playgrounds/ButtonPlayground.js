@@ -233,39 +233,39 @@ export default class ButtonPlayground extends React.Component {
           </div>
 
           <div className="lab-playground__item">
-            <p>
-              <strong>full width</strong>
-            </p>
-            <Toggle
-              id="fullWidth"
-              name="fullWidth"
-              value={fullWidth}
-              handleToggle={this.handlePropChangeBool}
-            />
+            <fieldset>
+              <legend>fullWidth</legend>
+              <Toggle
+                id="fullWidth"
+                name="fullWidth"
+                value={fullWidth}
+                handleToggle={this.handlePropChangeBool}
+              />
+            </fieldset>
           </div>
 
           <div className="lab-playground__item">
-            <p>
-              <strong>ariaDisabled</strong>
-            </p>
-            <Toggle
-              id="selectedAriaDisabled"
-              name="selectedAriaDisabled"
-              value={selectedAriaDisabled}
-              handleToggle={this.handlePropChangeBool}
-            />
+            <fieldset>
+              <legend>ariaDisabled</legend>
+              <Toggle
+                id="selectedAriaDisabled"
+                name="selectedAriaDisabled"
+                value={selectedAriaDisabled}
+                handleToggle={this.handlePropChangeBool}
+              />
+            </fieldset>
           </div>
 
           <div className="lab-playground__item">
-            <p>
-              <strong>disabled</strong>
-            </p>
-            <Toggle
-              id="selectedIsDisabled"
-              name="selectedIsDisabled"
-              value={selectedIsDisabled}
-              handleToggle={this.handlePropChangeBool}
-            />
+            <fieldset>
+              <legend>disabled</legend>
+              <Toggle
+                id="selectedIsDisabled"
+                name="selectedIsDisabled"
+                value={selectedIsDisabled}
+                handleToggle={this.handlePropChangeBool}
+              />
+            </fieldset>
           </div>
         </div>
       </div>
