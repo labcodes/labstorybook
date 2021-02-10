@@ -18,6 +18,18 @@
       margin-right: $spacing-2;
     }
   }
+
+  legend, label {
+    display: block;
+    font-family: $family-sans-serif;
+    font-size: $font-size-3;
+    font-weight: $weight-semibold;
+}
+
+  select {
+    display: block;
+    margin-top: $spacing-1;
+  }
 }
 
 .lab-playground__configs {
