@@ -175,6 +175,7 @@ export default class TextInputPlayground extends React.Component {
           <div className="lab-playground__item">
             <strong>Variation: </strong>
             <fieldset>
+              <legend>Variation</legend>
               <Radio
                 id="TextInput"
                 label="TextInput"
@@ -277,43 +278,49 @@ export default class TextInputPlayground extends React.Component {
               onChange={this.handlePropChangeText}
             />
           </span>
-          <span className="lab-playground__item">
-            <p>
-              <strong>Required</strong>
-            </p>
-            <Toggle
-              id="required"
-              name="required"
-              value={required}
-              handleToggle={this.handlePropChangeBool}
-            />
-            <p>
-              <strong>Disabled</strong>
-            </p>
-            <Toggle
-              id="disabled"
-              name="disabled"
-              value={disabled}
-              handleToggle={this.handlePropChangeBool}
-            />
-            <p>
-              <strong>AriaDisabled</strong>
-            </p>
-            <Toggle
-              id="ariaDisabled"
-              name="ariaDisabled"
-              value={ariaDisabled}
-              handleToggle={this.handlePropChangeBool}
-            />
-            <p>
-              <strong>isValid</strong>
-            </p>
-            <Toggle
-              id="isValid"
-              name="isValid"
-              value={isValid}
-              handleToggle={this.handlePropChangeBool}
-            />
+          <span className="lab-playground__inline-item">
+            <fieldset>
+              <legend>Required</legend>
+              <Toggle
+                id="required"
+                name="required"
+                value={required}
+                handleToggle={this.handlePropChangeBool}
+              />
+            </fieldset>
+          </span>
+          <span className="lab-playground__inline-item">
+            <fieldset>
+              <legend>Disabled</legend>
+              <Toggle
+                id="disabled"
+                name="disabled"
+                value={disabled}
+                handleToggle={this.handlePropChangeBool}
+              />
+            </fieldset>
+          </span>
+          <span className="lab-playground__inline-item">
+            <fieldset>
+              <legend>AriaDisabled</legend>
+              <Toggle
+                id="ariaDisabled"
+                name="ariaDisabled"
+                value={ariaDisabled}
+                handleToggle={this.handlePropChangeBool}
+              />
+            </fieldset>
+          </span>
+          <span className="lab-playground__inline-item">
+            <fieldset>
+              <legend>isValid</legend>
+              <Toggle
+                id="isValid"
+                name="isValid"
+                value={isValid}
+                handleToggle={this.handlePropChangeBool}
+              />
+            </fieldset>
           </span>
         </div>
       </div>
