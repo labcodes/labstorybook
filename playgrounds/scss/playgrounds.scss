@@ -52,6 +52,11 @@
     display: block;
     margin-top: $spacing-1;
   }
+
+  .lab-btn {
+    margin-top: $spacing-2;
+    margin-right: $spacing-2;
+  }
 }
 
 // Control blocks
@@ -62,10 +67,6 @@
 
   p {
     margin: $spacing-1 0;
-  }
-
-  .lab-btn {
-    margin: $spacing-1;
   }
 }
 
