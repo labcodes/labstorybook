@@ -130,6 +130,7 @@ export default class ButtonPlayground extends React.Component {
           <div className="lab-playground__item">
             <strong>variation: </strong>
             <fieldset>
+              <legend>Variation</legend>
               <Radio
                 id="ButtonVariationRadio-1"
                 label="Button"
@@ -203,6 +204,7 @@ export default class ButtonPlayground extends React.Component {
           <div className="lab-playground__item">
             <strong>size: </strong>
             <fieldset>
+              <legend>Size</legend>
               <Radio
                 id="ButtonSizeRadio-1"
                 label="small"
