@@ -301,7 +301,7 @@ export default class CardPlayground extends React.Component {
             </span>
           ) : null}
 
-          <span className="lab-playground__item">
+          <span className="lab-playground__inline-item">
             <fieldset>
               <legend>isHorizontal</legend>
               <Toggle
@@ -314,7 +314,7 @@ export default class CardPlayground extends React.Component {
             </fieldset>
           </span>
 
-          <span className="lab-playground__item">
+          <span className="lab-playground__inline-item">
             <fieldset>
               <legend>isCompact</legend>
               <Toggle
@@ -369,7 +369,7 @@ export default class CardPlayground extends React.Component {
             />
           </div>
 
-          <span className="lab-playground__item">
+          <span className="lab-playground__inline-item">
             <fieldset>
               <legend>Category Icon</legend>
               <select
@@ -387,7 +387,7 @@ export default class CardPlayground extends React.Component {
             </fieldset>
           </span>
 
-          <span className="lab-playground__item">
+          <span className="lab-playground__inline-item">
             <fieldset>
               <legend>Category Color</legend>
               <select
@@ -432,7 +432,7 @@ export default class CardPlayground extends React.Component {
           </span>
 
           <h4>CardImage</h4>
-          <span className="lab-playground__item">
+          <span className="lab-playground__inline-item">
             <fieldset>
               <legend>Show image</legend>
               <Toggle
@@ -447,7 +447,7 @@ export default class CardPlayground extends React.Component {
             </fieldset>
           </span>
 
-          <span className="lab-playground__item">
+          <span className="lab-playground__inline-item">
             <fieldset>
               <legend>Display on top</legend>
               <Toggle
@@ -496,7 +496,7 @@ export default class CardPlayground extends React.Component {
           </span>
 
           <h4>CardDivider</h4>
-          <span className="lab-playground__item">
+          <span className="lab-playground__inline-item">
             <fieldset>
               <legend>Show divider</legend>
               <Toggle
@@ -508,7 +508,7 @@ export default class CardPlayground extends React.Component {
             </fieldset>
           </span>
 
-          <span className="lab-playground__item">
+          <span className="lab-playground__inline-item">
             <fieldset>
               <legend>isOverflowed</legend>
               <Toggle
