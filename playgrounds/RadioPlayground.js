@@ -101,25 +101,27 @@ export default class RadioPlayground extends React.Component {
                 onChange={this.handleClassName}
               />
             </span>
-            <span className="lab-playground__item">
-              <p>
-                <strong>Disable Option 1</strong>
-              </p>
-              <Toggle
-                id="disabled1"
-                name="disabled1"
-                value={disabled1}
-                handleToggle={this.handleDisabled1}
-              />
-              <p>
-                <strong>Disable Option 2</strong>
-              </p>
-              <Toggle
-                id="disabled2"
-                name="disabled2"
-                value={disabled2}
-                handleToggle={this.handleDisabled2}
-              />
+            <span className="lab-playground__inline-item">
+              <fieldset>
+                <legend>Disable Option 1</legend>
+                <Toggle
+                  id="disabled1"
+                  name="disabled1"
+                  value={disabled1}
+                  handleToggle={this.handleDisabled1}
+                />
+              </fieldset>
+            </span>
+            <span className="lab-playground__inline-item">
+              <fieldset>
+                <legend>Disable Option 2</legend>
+                <Toggle
+                  id="disabled2"
+                  name="disabled2"
+                  value={disabled2}
+                  handleToggle={this.handleDisabled2}
+                />
+              </fieldset>
             </span>
           </div>
         </div>
