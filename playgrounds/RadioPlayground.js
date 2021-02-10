@@ -54,6 +54,7 @@ export default class RadioPlayground extends React.Component {
         <div className="columns lab-playground">
           <div className="column lab-playground__component">
             <fieldset>
+              <legend>Example Group</legend>
               <Radio
                 id="radio-playground-item1"
                 name="radio-playground-group"
