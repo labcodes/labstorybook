@@ -334,7 +334,6 @@ export default class NarrowSidebarPlayground extends React.Component {
                   required
                 />
               </span>
-              <br />
               <Button
                 text="Add item"
                 size="normal"
@@ -411,7 +410,6 @@ export default class NarrowSidebarPlayground extends React.Component {
                   required
                 />
               </span>
-              <br />
               <Button
                 text="Add footer button"
                 size="normal"
