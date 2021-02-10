@@ -128,7 +128,6 @@ export default class ButtonPlayground extends React.Component {
           <h3>Prop Settings</h3>
 
           <div className="lab-playground__item">
-            <strong>variation: </strong>
             <fieldset>
               <legend>Variation</legend>
               <Radio
@@ -169,7 +168,7 @@ export default class ButtonPlayground extends React.Component {
 
           <div className="lab-playground__item">
             <label htmlFor="selectedIcon">
-              <strong>icon: </strong>
+              Icon
               <select
                 id="selectedIcon"
                 value={selectedIcon}
@@ -186,7 +185,7 @@ export default class ButtonPlayground extends React.Component {
 
           <div className="lab-playground__item">
             <label htmlFor="selectedSkin">
-              <strong>skin: </strong>
+              Skin
               <select
                 id="selectedSkin"
                 value={selectedSkin}
@@ -202,7 +201,6 @@ export default class ButtonPlayground extends React.Component {
           </div>
 
           <div className="lab-playground__item">
-            <strong>size: </strong>
             <fieldset>
               <legend>Size</legend>
               <Radio
