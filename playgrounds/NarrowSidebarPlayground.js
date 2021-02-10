@@ -5,6 +5,7 @@ import NarrowSidebar from "../labsystem/src/Sidebar/NarrowSidebar";
 import TextInput from "../labsystem/src/Input/TextInput";
 import Toggle from "../labsystem/src/Toggle";
 import OutlineButton from "../labsystem/src/Button/OutlineButton";
+import Button from "../labsystem/src/Button/Button";
 import Icon from "../labsystem/src/Icon";
 
 export default class NarrowSidebarPlayground extends React.Component {
@@ -334,14 +335,14 @@ export default class NarrowSidebarPlayground extends React.Component {
                 />
               </span>
               <br />
-              <OutlineButton
+              <Button
                 text="Add item"
-                size="small"
+                size="normal"
                 onClick={this.addNewItem}
               />
               <OutlineButton
                 text="Remove last item"
-                size="small"
+                size="normal"
                 onClick={this.removeLastItem}
               />
             </React.Fragment>
@@ -411,14 +412,14 @@ export default class NarrowSidebarPlayground extends React.Component {
                 />
               </span>
               <br />
-              <OutlineButton
+              <Button
                 text="Add footer button"
-                size="small"
+                size="normal"
                 onClick={this.addNewFooterButton}
               />
               <OutlineButton
                 text="Remove last footer button"
-                size="small"
+                size="normal"
                 onClick={this.removeLastFooterButton}
               />
             </React.Fragment>
