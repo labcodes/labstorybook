@@ -151,7 +151,7 @@ export default class DialogPlayground extends React.Component {
 
           <span className="lab-playground__item">
             <label htmlFor="currentComponent">
-              <strong>variation: </strong>
+              Variation
               <select onChange={this.handleCurrentComponentChange}>
                 {Object.keys(availableComponents).map((option) => (
                   <option key={option} value={option}>
@@ -161,7 +161,6 @@ export default class DialogPlayground extends React.Component {
               </select>
             </label>
           </span>
-          <br />
 
           <span className="lab-playground__item">
             <TextInput
@@ -171,12 +170,10 @@ export default class DialogPlayground extends React.Component {
               label="title"
             />
           </span>
-          <br />
 
           <span className="lab-playground__item">
             <label htmlFor="selectedContent">
-              <strong>content:</strong>
-              <br />
+              Content
               <textarea
                 id="selectedContent"
                 onChange={this.handleTextPropChange}
@@ -189,7 +186,6 @@ export default class DialogPlayground extends React.Component {
               />
             </label>
           </span>
-          <br />
 
           <span className="lab-playground__item">
             <TextInput
@@ -199,7 +195,6 @@ export default class DialogPlayground extends React.Component {
               label="buttonProps.text"
             />
           </span>
-          <br />
 
           <span className="lab-playground__item">
             <TextInput
@@ -209,42 +204,41 @@ export default class DialogPlayground extends React.Component {
               label="outlineButtonProps.text"
             />
           </span>
-          <br />
 
           {!windowIsSmall ? (
             <React.Fragment>
               <span className="lab-playground__item">
-                <p>
-                  <strong>isModal</strong>
-                </p>
-                <Toggle
-                  id="selectedIsModal"
-                  name="selectedIsModal"
-                  label="selectedIsModal"
-                  value={selectedIsModal}
-                  handleToggle={this.handleBoolPropChange}
-                />
+                <fieldset>
+                  <legend>isModal</legend>
+                  <Toggle
+                    id="selectedIsModal"
+                    name="selectedIsModal"
+                    label="selectedIsModal"
+                    value={selectedIsModal}
+                    handleToggle={this.handleBoolPropChange}
+                  />
+                </fieldset>
               </span>
             </React.Fragment>
           ) : null}
 
           <span className="lab-playground__item">
-            <p>
-              <strong>isLarge</strong>
-            </p>
-            <Toggle
-              id="selectedIsLarge"
-              name="selectedIsLarge"
-              label="selectedIsLarge"
-              value={selectedIsLarge}
-              handleToggle={this.handleBoolPropChange}
-            />
+            <fieldset>
+              <legend>isLarge</legend>
+              <Toggle
+                id="selectedIsLarge"
+                name="selectedIsLarge"
+                label="selectedIsLarge"
+                value={selectedIsLarge}
+                handleToggle={this.handleBoolPropChange}
+              />
+            </fieldset>
           </span>
 
           {currentComponent === "MessageDialog" ? (
             <span className="lab-playground__item">
               <label htmlFor="selectedIcon">
-                <strong>icon: </strong>
+                Icon
                 <select
                   id="selectedIcon"
                   value={selectedIcon}
