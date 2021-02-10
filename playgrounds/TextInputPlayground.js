@@ -105,7 +105,7 @@ export default class TextInputPlayground extends React.Component {
     } = this.state;
 
     const iconOptions = [
-      "",
+      "none",
       "arrow-down",
       "arrow-left",
       "arrow-right",
