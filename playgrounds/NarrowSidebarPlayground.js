@@ -200,42 +200,42 @@ export default class NarrowSidebarPlayground extends React.Component {
           </div>
         </div>
         <div className="column lab-playground__configs">
-          <h4>Configurations</h4>
-          <p>
-            <strong>NarrowSidebar</strong>
-          </p>
-          <span className="lab-playground__item">
-            isVivid
-            <br />
-            <Toggle
-              id="isVivid"
-              name="isVivid"
-              label="isVivid"
-              value={isVivid}
-              handleToggle={this.handlePropChangeBool}
-            />
+          <h3>Prop Settings</h3>
+          <span className="lab-playground__inline-item">
+            <fieldset>
+              <legend>isVivid</legend>
+              <Toggle
+                id="isVivid"
+                name="isVivid"
+                label="isVivid"
+                value={isVivid}
+                handleToggle={this.handlePropChangeBool}
+              />
+            </fieldset>
           </span>
           <span className="lab-playground__item">
-            withDividers
-            <br />
-            <Toggle
-              id="withDividers"
-              name="withDividers"
-              label="withDividers"
-              value={withDividers}
-              handleToggle={this.handlePropChangeBool}
-            />
+            <fieldset>
+              <legend>withDividers</legend>
+              <Toggle
+                id="withDividers"
+                name="withDividers"
+                label="withDividers"
+                value={withDividers}
+                handleToggle={this.handlePropChangeBool}
+              />
+            </fieldset>
           </span>
           <span className="lab-playground__item">
-            Show avatar in the header
-            <br />
-            <Toggle
-              id="useAvatarInHeader"
-              name="useAvatarInHeader"
-              label="useAvatarInHeader"
-              value={useAvatarInHeader}
-              handleToggle={this.handlePropChangeBool}
-            />
+            <fieldset>
+              <legend>Show avatar in the header</legend>
+              <Toggle
+                id="useAvatarInHeader"
+                name="useAvatarInHeader"
+                label="useAvatarInHeader"
+                value={useAvatarInHeader}
+                handleToggle={this.handlePropChangeBool}
+              />
+            </fieldset>
           </span>
           <p
             onClick={() => this.handleToggleFor("showHeaderConfigs")}
