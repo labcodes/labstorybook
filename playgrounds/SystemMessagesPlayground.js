@@ -147,7 +147,7 @@ export default class SystemMessagesPlayground extends React.Component {
 
           <span className="lab-playground__item">
             <label htmlFor="selectedIcon">
-              <strong>Icon: </strong>
+              Icon
               <select
                 id="selectedIcon"
                 value={selectedIcon}

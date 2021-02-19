@@ -172,7 +172,7 @@ export default class TagPlayground extends React.Component {
 
           <span className="lab-playground__item">
             <label htmlFor="currentComponent">
-              <strong>variation: </strong>
+              Variation
               <select onChange={this.handleCurrentComponentChange}>
                 {Object.keys(availableComponents).map((option) => (
                   <option key={option} value={option}>
@@ -194,7 +194,7 @@ export default class TagPlayground extends React.Component {
 
           <span className="lab-playground__item">
             <label htmlFor="selectedColor">
-              <strong>color: </strong>
+              Color:
               <select
                 id="selectedColor"
                 value={selectedColor}
@@ -309,7 +309,7 @@ export default class TagPlayground extends React.Component {
               selectedThumbSrc === "icon" ? (
                 <span className="lab-playground__item">
                   <label htmlFor="selectedIcon">
-                    <strong>icon: </strong>
+                    Icon
                     <select
                       id="selectedIcon"
                       value={selectedIcon}
