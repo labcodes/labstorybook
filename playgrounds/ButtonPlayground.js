@@ -128,8 +128,8 @@ export default class ButtonPlayground extends React.Component {
           <h3>Prop Settings</h3>
 
           <div className="lab-playground__item">
-            <strong>variation: </strong>
             <fieldset>
+              <legend>Variation</legend>
               <Radio
                 id="ButtonVariationRadio-1"
                 label="Button"
@@ -168,7 +168,7 @@ export default class ButtonPlayground extends React.Component {
 
           <div className="lab-playground__item">
             <label htmlFor="selectedIcon">
-              <strong>icon: </strong>
+              Icon
               <select
                 id="selectedIcon"
                 value={selectedIcon}
@@ -185,7 +185,7 @@ export default class ButtonPlayground extends React.Component {
 
           <div className="lab-playground__item">
             <label htmlFor="selectedSkin">
-              <strong>skin: </strong>
+              Skin
               <select
                 id="selectedSkin"
                 value={selectedSkin}
@@ -201,8 +201,8 @@ export default class ButtonPlayground extends React.Component {
           </div>
 
           <div className="lab-playground__item">
-            <strong>size: </strong>
             <fieldset>
+              <legend>Size</legend>
               <Radio
                 id="ButtonSizeRadio-1"
                 label="small"
@@ -230,40 +230,40 @@ export default class ButtonPlayground extends React.Component {
             </fieldset>
           </div>
 
-          <div className="lab-playground__item">
-            <p>
-              <strong>full width</strong>
-            </p>
-            <Toggle
-              id="fullWidth"
-              name="fullWidth"
-              value={fullWidth}
-              handleToggle={this.handlePropChangeBool}
-            />
+          <div className="lab-playground__inline-item">
+            <fieldset>
+              <legend>fullWidth</legend>
+              <Toggle
+                id="fullWidth"
+                name="fullWidth"
+                value={fullWidth}
+                handleToggle={this.handlePropChangeBool}
+              />
+            </fieldset>
           </div>
 
-          <div className="lab-playground__item">
-            <p>
-              <strong>ariaDisabled</strong>
-            </p>
-            <Toggle
-              id="selectedAriaDisabled"
-              name="selectedAriaDisabled"
-              value={selectedAriaDisabled}
-              handleToggle={this.handlePropChangeBool}
-            />
+          <div className="lab-playground__inline-item">
+            <fieldset>
+              <legend>ariaDisabled</legend>
+              <Toggle
+                id="selectedAriaDisabled"
+                name="selectedAriaDisabled"
+                value={selectedAriaDisabled}
+                handleToggle={this.handlePropChangeBool}
+              />
+            </fieldset>
           </div>
 
-          <div className="lab-playground__item">
-            <p>
-              <strong>disabled</strong>
-            </p>
-            <Toggle
-              id="selectedIsDisabled"
-              name="selectedIsDisabled"
-              value={selectedIsDisabled}
-              handleToggle={this.handlePropChangeBool}
-            />
+          <div className="lab-playground__inline-item">
+            <fieldset>
+              <legend>disabled</legend>
+              <Toggle
+                id="selectedIsDisabled"
+                name="selectedIsDisabled"
+                value={selectedIsDisabled}
+                handleToggle={this.handlePropChangeBool}
+              />
+            </fieldset>
           </div>
         </div>
       </div>

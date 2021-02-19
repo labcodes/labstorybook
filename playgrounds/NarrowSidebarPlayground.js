@@ -5,6 +5,7 @@ import NarrowSidebar from "../labsystem/src/Sidebar/NarrowSidebar";
 import TextInput from "../labsystem/src/Input/TextInput";
 import Toggle from "../labsystem/src/Toggle";
 import OutlineButton from "../labsystem/src/Button/OutlineButton";
+import Button from "../labsystem/src/Button/Button";
 import Icon from "../labsystem/src/Icon";
 
 export default class NarrowSidebarPlayground extends React.Component {
@@ -200,54 +201,55 @@ export default class NarrowSidebarPlayground extends React.Component {
           </div>
         </div>
         <div className="column lab-playground__configs">
-          <h4>Configurations</h4>
-          <p>
-            <strong>NarrowSidebar</strong>
-          </p>
-          <span className="lab-playground__item">
-            isVivid
-            <br />
-            <Toggle
-              id="isVivid"
-              name="isVivid"
-              label="isVivid"
-              value={isVivid}
-              handleToggle={this.handlePropChangeBool}
-            />
+          <h3>Prop Settings</h3>
+          <span className="lab-playground__inline-item">
+            <fieldset>
+              <legend>isVivid</legend>
+              <Toggle
+                id="isVivid"
+                name="isVivid"
+                label="isVivid"
+                value={isVivid}
+                handleToggle={this.handlePropChangeBool}
+              />
+            </fieldset>
           </span>
-          <span className="lab-playground__item">
-            withDividers
-            <br />
-            <Toggle
-              id="withDividers"
-              name="withDividers"
-              label="withDividers"
-              value={withDividers}
-              handleToggle={this.handlePropChangeBool}
-            />
+          <span className="lab-playground__inline-item">
+            <fieldset>
+              <legend>withDividers</legend>
+              <Toggle
+                id="withDividers"
+                name="withDividers"
+                label="withDividers"
+                value={withDividers}
+                handleToggle={this.handlePropChangeBool}
+              />
+            </fieldset>
           </span>
-          <span className="lab-playground__item">
-            Show avatar in the header
-            <br />
-            <Toggle
-              id="useAvatarInHeader"
-              name="useAvatarInHeader"
-              label="useAvatarInHeader"
-              value={useAvatarInHeader}
-              handleToggle={this.handlePropChangeBool}
-            />
+          <span className="lab-playground__inline-item">
+            <fieldset>
+              <legend>Show avatar in the header</legend>
+              <Toggle
+                id="useAvatarInHeader"
+                name="useAvatarInHeader"
+                label="useAvatarInHeader"
+                value={useAvatarInHeader}
+                handleToggle={this.handlePropChangeBool}
+              />
+            </fieldset>
           </span>
-          <p
+          <span
+            className="lab-playground__item"
             onClick={() => this.handleToggleFor("showHeaderConfigs")}
             onKeyPress={() => this.handleToggleFor("showHeaderConfigs")}
-            style={{ cursor: "pointer", display: "flex" }}
+            style={{ cursor: "pointer", display: "flex", alignItems: "center" }}
             role="button"
           >
-            <strong>Header</strong>
+            <h4>Header</h4>
             <Icon
               type={showHeaderConfigs ? "collapse-open" : "collapse-closed"}
             />
-          </p>
+          </span>
           {showHeaderConfigs && useAvatarInHeader ? (
             <React.Fragment>
               <span className="lab-playground__item">
@@ -301,17 +303,18 @@ export default class NarrowSidebarPlayground extends React.Component {
               </span>
             </React.Fragment>
           ) : null}
-          <p
+          <span
+            className="lab-playground__item"
             onClick={() => this.handleToggleFor("showBodyConfigs")}
             onKeyPress={() => this.handleToggleFor("showBodyConfigs")}
-            style={{ cursor: "pointer", display: "flex" }}
+            style={{ cursor: "pointer", display: "flex", alignItems: "center" }}
             role="button"
           >
-            <strong>Body</strong>
+            <h4>Body</h4>
             <Icon
               type={showBodyConfigs ? "collapse-open" : "collapse-closed"}
             />
-          </p>
+          </span>
           {showBodyConfigs ? (
             <React.Fragment>
               <span className="lab-playground__item">
@@ -331,32 +334,32 @@ export default class NarrowSidebarPlayground extends React.Component {
                   required
                 />
               </span>
-              <br />
-              <OutlineButton
+              <Button
                 text="Add item"
-                size="small"
+                size="normal"
                 onClick={this.addNewItem}
               />
               <OutlineButton
                 text="Remove last item"
-                size="small"
+                size="normal"
                 onClick={this.removeLastItem}
               />
             </React.Fragment>
           ) : (
             ""
           )}
-          <p
+          <span
+            className="lab-playground__item"
             onClick={() => this.handleToggleFor("showFooterConfigs")}
             onKeyPress={() => this.handleToggleFor("showFooterConfigs")}
-            style={{ cursor: "pointer", display: "flex" }}
+            style={{ cursor: "pointer", display: "flex", alignItems: "center" }}
             role="button"
           >
-            <strong>Footer</strong>
+            <h4>Footer</h4>
             <Icon
               type={showFooterConfigs ? "collapse-open" : "collapse-closed"}
             />
-          </p>
+          </span>
           {showFooterConfigs && !useAvatarInHeader ? (
             <React.Fragment>
               <span className="lab-playground__item">
@@ -407,15 +410,14 @@ export default class NarrowSidebarPlayground extends React.Component {
                   required
                 />
               </span>
-              <br />
-              <OutlineButton
+              <Button
                 text="Add footer button"
-                size="small"
+                size="normal"
                 onClick={this.addNewFooterButton}
               />
               <OutlineButton
                 text="Remove last footer button"
-                size="small"
+                size="normal"
                 onClick={this.removeLastFooterButton}
               />
             </React.Fragment>

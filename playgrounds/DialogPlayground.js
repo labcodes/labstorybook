@@ -149,9 +149,9 @@ export default class DialogPlayground extends React.Component {
         <div className="column lab-playground__configs">
           <h3>Prop Settings</h3>
 
-          <span className="lab-playground__item">
+          <span className="lab-playground__inline-item">
             <label htmlFor="currentComponent">
-              <strong>variation: </strong>
+              Variation
               <select onChange={this.handleCurrentComponentChange}>
                 {Object.keys(availableComponents).map((option) => (
                   <option key={option} value={option}>
@@ -161,90 +161,11 @@ export default class DialogPlayground extends React.Component {
               </select>
             </label>
           </span>
-          <br />
-
-          <span className="lab-playground__item">
-            <TextInput
-              id="selectedTitle"
-              onChange={this.handleTextPropChange}
-              value={selectedTitle}
-              label="title"
-            />
-          </span>
-          <br />
-
-          <span className="lab-playground__item">
-            <label htmlFor="selectedContent">
-              <strong>content:</strong>
-              <br />
-              <textarea
-                id="selectedContent"
-                onChange={this.handleTextPropChange}
-                value={selectedContent}
-                style={{
-                  width: "100%",
-                  minHeight: "100px",
-                  resize: "none",
-                }}
-              />
-            </label>
-          </span>
-          <br />
-
-          <span className="lab-playground__item">
-            <TextInput
-              id="selectedButtonText"
-              onChange={this.handleTextPropChange}
-              value={selectedButtonText}
-              label="buttonProps.text"
-            />
-          </span>
-          <br />
-
-          <span className="lab-playground__item">
-            <TextInput
-              id="selectedOutlineButtonText"
-              onChange={this.handleTextPropChange}
-              value={selectedOutlineButtonText}
-              label="outlineButtonProps.text"
-            />
-          </span>
-          <br />
-
-          {!windowIsSmall ? (
-            <React.Fragment>
-              <span className="lab-playground__item">
-                <p>
-                  <strong>isModal</strong>
-                </p>
-                <Toggle
-                  id="selectedIsModal"
-                  name="selectedIsModal"
-                  label="selectedIsModal"
-                  value={selectedIsModal}
-                  handleToggle={this.handleBoolPropChange}
-                />
-              </span>
-            </React.Fragment>
-          ) : null}
-
-          <span className="lab-playground__item">
-            <p>
-              <strong>isLarge</strong>
-            </p>
-            <Toggle
-              id="selectedIsLarge"
-              name="selectedIsLarge"
-              label="selectedIsLarge"
-              value={selectedIsLarge}
-              handleToggle={this.handleBoolPropChange}
-            />
-          </span>
 
           {currentComponent === "MessageDialog" ? (
-            <span className="lab-playground__item">
+            <span className="lab-playground__inline-item">
               <label htmlFor="selectedIcon">
-                <strong>icon: </strong>
+                Icon
                 <select
                   id="selectedIcon"
                   value={selectedIcon}
@@ -259,6 +180,81 @@ export default class DialogPlayground extends React.Component {
               </label>
             </span>
           ) : null}
+
+          <div>
+            {!windowIsSmall ? (
+              <React.Fragment>
+                <span className="lab-playground__inline-item">
+                  <fieldset>
+                    <legend>isModal</legend>
+                    <Toggle
+                      id="selectedIsModal"
+                      name="selectedIsModal"
+                      label="selectedIsModal"
+                      value={selectedIsModal}
+                      handleToggle={this.handleBoolPropChange}
+                    />
+                  </fieldset>
+                </span>
+              </React.Fragment>
+            ) : null}
+
+            <span className="lab-playground__inline-item">
+              <fieldset>
+                <legend>isLarge</legend>
+                <Toggle
+                  id="selectedIsLarge"
+                  name="selectedIsLarge"
+                  label="selectedIsLarge"
+                  value={selectedIsLarge}
+                  handleToggle={this.handleBoolPropChange}
+                />
+              </fieldset>
+            </span>
+          </div>
+
+          <span className="lab-playground__item">
+            <TextInput
+              id="selectedTitle"
+              onChange={this.handleTextPropChange}
+              value={selectedTitle}
+              label="title"
+            />
+          </span>
+
+          <span className="lab-playground__item">
+            <label htmlFor="selectedContent">
+              Content
+              <textarea
+                id="selectedContent"
+                onChange={this.handleTextPropChange}
+                value={selectedContent}
+                style={{
+                  width: "100%",
+                  minHeight: "100px",
+                  resize: "none",
+                }}
+              />
+            </label>
+          </span>
+
+          <span className="lab-playground__item">
+            <TextInput
+              id="selectedButtonText"
+              onChange={this.handleTextPropChange}
+              value={selectedButtonText}
+              label="buttonProps.text"
+            />
+          </span>
+
+          <span className="lab-playground__item">
+            <TextInput
+              id="selectedOutlineButtonText"
+              onChange={this.handleTextPropChange}
+              value={selectedOutlineButtonText}
+              label="outlineButtonProps.text"
+            />
+          </span>
         </div>
       </div>
     );

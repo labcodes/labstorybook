@@ -172,7 +172,7 @@ export default class TagPlayground extends React.Component {
 
           <span className="lab-playground__item">
             <label htmlFor="currentComponent">
-              <strong>variation: </strong>
+              Variation
               <select onChange={this.handleCurrentComponentChange}>
                 {Object.keys(availableComponents).map((option) => (
                   <option key={option} value={option}>
@@ -194,7 +194,7 @@ export default class TagPlayground extends React.Component {
 
           <span className="lab-playground__item">
             <label htmlFor="selectedColor">
-              <strong>color: </strong>
+              Color:
               <select
                 id="selectedColor"
                 value={selectedColor}
@@ -233,40 +233,42 @@ export default class TagPlayground extends React.Component {
             </span>
           ) : null}
 
-          <span className="lab-playground__item">
-            <span className="lab-playground__item">
-              {currentComponent !== "SimpleTag" ? (
-                <React.Fragment>
-                  <p>
-                    <strong>Disabled</strong>
-                  </p>
+          {currentComponent !== "SimpleTag" ? (
+            <React.Fragment>
+              <span className="lab-playground__inline-item">
+                <fieldset>
+                  <legend>Disabled</legend>
                   <Toggle
                     id="selectedIsDisabled"
                     name="selectedIsDisabled"
                     handleToggle={this.handleBoolPropChange}
                     value={selectedIsDisabled}
                   />
-                  <p>
-                    <strong>AriaDisabled</strong>
-                  </p>
+                </fieldset>
+              </span>
+              <span className="lab-playground__inline-item">
+                <fieldset>
+                  <legend>AriaDisabled</legend>
                   <Toggle
                     id="selectedAriaDisabled"
                     name="selectedAriaDisabled"
                     handleToggle={this.handleBoolPropChange}
                     value={selectedAriaDisabled}
                   />
-                </React.Fragment>
-              ) : null}
-              <p>
-                <strong>isOutline</strong>
-              </p>
+                </fieldset>
+              </span>
+            </React.Fragment>
+          ) : null}
+          <span className="lab-playground__inline-item">
+            <fieldset>
+              <legend>isOutline</legend>
               <Toggle
                 id="selectedIsOutline"
                 name="selectedIsOutline"
                 handleToggle={this.handleBoolPropChange}
                 value={selectedIsOutline}
               />
-            </span>
+            </fieldset>
           </span>
 
           {currentComponent !== "TogglableTag" &&
@@ -307,7 +309,7 @@ export default class TagPlayground extends React.Component {
               selectedThumbSrc === "icon" ? (
                 <span className="lab-playground__item">
                   <label htmlFor="selectedIcon">
-                    <strong>icon: </strong>
+                    Icon
                     <select
                       id="selectedIcon"
                       value={selectedIcon}

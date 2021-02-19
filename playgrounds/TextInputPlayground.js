@@ -105,7 +105,7 @@ export default class TextInputPlayground extends React.Component {
     } = this.state;
 
     const iconOptions = [
-      "",
+      "none",
       "arrow-down",
       "arrow-left",
       "arrow-right",
@@ -144,6 +144,26 @@ export default class TextInputPlayground extends React.Component {
       "workspace",
     ];
 
+    const iconColorOptions = [
+      "white",
+      "black",
+      "black-75",
+      "mineral-10",
+      "mineral-20",
+      "mineral-30",
+      "mineral-40",
+      "mineral-60",
+      "mineral-70",
+      "mineral-80",
+      "mineral-90",
+      "teal-40",
+      "teal-60",
+      "teal-70",
+      "purple-40",
+      "purple-60",
+      "purple-70",
+    ];
+
     return (
       <div className="columns lab-playground">
         <div className="column lab-playground__component">
@@ -153,8 +173,8 @@ export default class TextInputPlayground extends React.Component {
         <div className="column lab-playground__configs">
           <h3>Prop Settings</h3>
           <div className="lab-playground__item">
-            <strong>Variation: </strong>
             <fieldset>
+              <legend>Variation</legend>
               <Radio
                 id="TextInput"
                 label="TextInput"
@@ -189,10 +209,9 @@ export default class TextInputPlayground extends React.Component {
               onChange={this.handlePropChangeText}
             />
           </span>
-          <span className="lab-playground__item">
+          <span className="lab-playground__inline-item">
             <label htmlFor="icon">
-              icon
-              <br />
+              Icon
               <select
                 name="icons"
                 id="icon"
@@ -206,17 +225,20 @@ export default class TextInputPlayground extends React.Component {
               </select>
             </label>
           </span>
-          <span className="lab-playground__item">
+          <span className="lab-playground__inline-item">
             <label htmlFor="iconColor">
               iconColor
-              <br />
-              <input
+              <select
+                name="iconColor"
                 id="iconColor"
-                type="text"
-                label="iconColor"
-                value={iconColor}
                 onChange={this.handlePropChangeText}
-              />
+              >
+                {iconColorOptions.map((item) => (
+                  <option value={item} key={item}>
+                    {item}
+                  </option>
+                ))}
+              </select>
             </label>
           </span>
           <span className="lab-playground__item">
@@ -251,43 +273,49 @@ export default class TextInputPlayground extends React.Component {
               onChange={this.handlePropChangeText}
             />
           </span>
-          <span className="lab-playground__item">
-            <p>
-              <strong>Required</strong>
-            </p>
-            <Toggle
-              id="required"
-              name="required"
-              value={required}
-              handleToggle={this.handlePropChangeBool}
-            />
-            <p>
-              <strong>Disabled</strong>
-            </p>
-            <Toggle
-              id="disabled"
-              name="disabled"
-              value={disabled}
-              handleToggle={this.handlePropChangeBool}
-            />
-            <p>
-              <strong>AriaDisabled</strong>
-            </p>
-            <Toggle
-              id="ariaDisabled"
-              name="ariaDisabled"
-              value={ariaDisabled}
-              handleToggle={this.handlePropChangeBool}
-            />
-            <p>
-              <strong>isValid</strong>
-            </p>
-            <Toggle
-              id="isValid"
-              name="isValid"
-              value={isValid}
-              handleToggle={this.handlePropChangeBool}
-            />
+          <span className="lab-playground__inline-item">
+            <fieldset>
+              <legend>Required</legend>
+              <Toggle
+                id="required"
+                name="required"
+                value={required}
+                handleToggle={this.handlePropChangeBool}
+              />
+            </fieldset>
+          </span>
+          <span className="lab-playground__inline-item">
+            <fieldset>
+              <legend>Disabled</legend>
+              <Toggle
+                id="disabled"
+                name="disabled"
+                value={disabled}
+                handleToggle={this.handlePropChangeBool}
+              />
+            </fieldset>
+          </span>
+          <span className="lab-playground__inline-item">
+            <fieldset>
+              <legend>AriaDisabled</legend>
+              <Toggle
+                id="ariaDisabled"
+                name="ariaDisabled"
+                value={ariaDisabled}
+                handleToggle={this.handlePropChangeBool}
+              />
+            </fieldset>
+          </span>
+          <span className="lab-playground__inline-item">
+            <fieldset>
+              <legend>isValid</legend>
+              <Toggle
+                id="isValid"
+                name="isValid"
+                value={isValid}
+                handleToggle={this.handlePropChangeBool}
+              />
+            </fieldset>
           </span>
         </div>
       </div>
