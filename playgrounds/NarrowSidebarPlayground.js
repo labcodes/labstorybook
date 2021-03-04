@@ -307,15 +307,15 @@ export default class NarrowSidebarPlayground extends React.Component {
                 required
               />
             </span>
-            <Button
-              text="Add item"
-              size="normal"
-              onClick={this.addNewItem}
-            />
             <OutlineButton
               text="Remove last item"
               size="normal"
               onClick={this.removeLastItem}
+            />
+            <Button
+              text="Add item"
+              size="normal"
+              onClick={this.addNewItem}
             />
           </React.Fragment>
           <h4>Footer</h4>
@@ -366,15 +366,15 @@ export default class NarrowSidebarPlayground extends React.Component {
                 required
               />
             </span>
-            <Button
-              text="Add footer button"
-              size="normal"
-              onClick={this.addNewFooterButton}
-            />
             <OutlineButton
               text="Remove last footer button"
               size="normal"
               onClick={this.removeLastFooterButton}
+            />
+            <Button
+              text="Add footer button"
+              size="normal"
+              onClick={this.addNewFooterButton}
             />
           </React.Fragment>
         </div>
