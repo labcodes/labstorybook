@@ -4,7 +4,7 @@ import { isEmpty } from "lodash";
 import Radio from "../labsystem/src/Radio";
 import TextInput from "../labsystem/src/Input/TextInput";
 import { Button, OutlineButton, TextButton } from "../labsystem/src/Button";
-import { iconOptions, buttonSkinOptions } from "./assets";
+import { iconOptions, buttonSkinOptions, skinsWithBackground } from "./assets";
 import Toggle from "../labsystem/src/Toggle";
 
 export default class ButtonPlayground extends React.Component {
@@ -119,7 +119,11 @@ export default class ButtonPlayground extends React.Component {
       <div className="columns lab-playground">
         <div
           className="column lab-playground__component"
-          style={selectedSkin === "light" ? { background: "#2E3942" } : {}}
+          style={
+            skinsWithBackground.includes(selectedSkin)
+              ? { background: "#2E3942" }
+              : {}
+          }
         >
           {this.renderCurrentComponent()}
         </div>
