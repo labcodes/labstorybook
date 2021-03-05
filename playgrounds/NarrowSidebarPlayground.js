@@ -238,56 +238,6 @@ export default class NarrowSidebarPlayground extends React.Component {
               />
             </fieldset>
           </span>
-          <h4>Header</h4>
-          <React.Fragment>
-            <span className="lab-playground__item">
-              <TextInput
-                id="avatarSrc"
-                label="avatarSrc"
-                value={avatarSrc}
-                onChange={this.handlePropChangeText}
-                required
-              />
-            </span>
-            <span className="lab-playground__item">
-              <TextInput
-                id="avatarAltText"
-                label="avatarAltText"
-                value={avatarAltText}
-                onChange={this.handlePropChangeText}
-                required
-              />
-            </span>
-            <span className="lab-playground__item">
-              <TextInput
-                id="avatarCaption"
-                label="avatarCaption"
-                value={avatarCaption}
-                onChange={this.handlePropChangeText}
-                required
-              />
-            </span>
-          </React.Fragment>
-          <React.Fragment>
-            <span className="lab-playground__item">
-              <TextInput
-                id="logoSrc"
-                label="logoSrc"
-                value={logoSrc}
-                onChange={this.handlePropChangeText}
-                required
-              />
-            </span>
-            <span className="lab-playground__item">
-              <TextInput
-                id="logoAltText"
-                label="logoAltText"
-                value={logoAltText}
-                onChange={this.handlePropChangeText}
-                required
-              />
-            </span>
-          </React.Fragment>
           <h4>Body</h4>
           <React.Fragment>
             <span className="lab-playground__item">
@@ -319,35 +269,6 @@ export default class NarrowSidebarPlayground extends React.Component {
             />
           </React.Fragment>
           <h4>Footer</h4>
-          <React.Fragment>
-            <span className="lab-playground__item">
-              <TextInput
-                id="avatarSrc"
-                label="avatarSrc"
-                value={avatarSrc}
-                onChange={this.handlePropChangeText}
-                required
-              />
-            </span>
-            <span className="lab-playground__item">
-              <TextInput
-                id="avatarAltText"
-                label="avatarAltText"
-                value={avatarAltText}
-                onChange={this.handlePropChangeText}
-                required
-              />
-            </span>
-            <span className="lab-playground__item">
-              <TextInput
-                id="avatarCaption"
-                label="avatarCaption"
-                value={avatarCaption}
-                onChange={this.handlePropChangeText}
-                required
-              />
-            </span>
-          </React.Fragment>
           <React.Fragment>
             <span className="lab-playground__item">
               <TextInput
