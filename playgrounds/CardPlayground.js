@@ -245,8 +245,6 @@ export default class CardPlayground extends React.Component {
           {this.renderCurrentComponent()}
         </div>
         <div className="column lab-playground__configs">
-          <h3>Prop Settings</h3>
-
           <h4>Card Style</h4>
           <span className="lab-playground__item">
             <fieldset>

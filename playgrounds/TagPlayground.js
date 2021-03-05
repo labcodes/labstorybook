@@ -168,8 +168,6 @@ export default class TagPlayground extends React.Component {
         </div>
 
         <div className="column lab-playground__configs">
-          <h3>Prop Settings</h3>
-
           <span className="lab-playground__item">
             <label htmlFor="currentComponent">
               Variation

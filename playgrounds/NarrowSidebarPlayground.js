@@ -201,7 +201,6 @@ export default class NarrowSidebarPlayground extends React.Component {
           </div>
         </div>
         <div className="column lab-playground__configs">
-          <h3>Prop Settings</h3>
           <span className="lab-playground__inline-item">
             <fieldset>
               <legend>isVivid</legend>

@@ -129,8 +129,6 @@ export default class ButtonPlayground extends React.Component {
         </div>
 
         <div className="column lab-playground__configs">
-          <h3>Prop Settings</h3>
-
           <div className="lab-playground__item">
             <fieldset>
               <legend>Variation</legend>

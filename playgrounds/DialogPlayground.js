@@ -147,8 +147,6 @@ export default class DialogPlayground extends React.Component {
         </div>
 
         <div className="column lab-playground__configs">
-          <h3>Prop Settings</h3>
-
           <span className="lab-playground__inline-item">
             <label htmlFor="currentComponent">
               Variation
