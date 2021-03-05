@@ -237,7 +237,7 @@ export default class NarrowSidebarPlayground extends React.Component {
               />
             </fieldset>
           </span>
-          <h4>Body</h4>
+          <h3>Body</h3>
           <React.Fragment>
             <span className="lab-playground__item">
               <TextInput
@@ -267,7 +267,7 @@ export default class NarrowSidebarPlayground extends React.Component {
               onClick={this.addNewItem}
             />
           </React.Fragment>
-          <h4>Footer</h4>
+          <h3>Footer</h3>
           <React.Fragment>
             <span className="lab-playground__item">
               <TextInput

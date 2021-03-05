@@ -245,7 +245,7 @@ export default class CardPlayground extends React.Component {
           {this.renderCurrentComponent()}
         </div>
         <div className="column lab-playground__configs">
-          <h4>Card Style</h4>
+          <h3>Card Style</h3>
           <span className="lab-playground__item">
             <fieldset>
               <legend>Variation</legend>
@@ -324,7 +324,7 @@ export default class CardPlayground extends React.Component {
             </fieldset>
           </span>
 
-          <h4>CardHeader</h4>
+          <h3>CardHeader</h3>
           <span className="lab-playground__item">
             <fieldset>
               <legend>isOverlay</legend>
@@ -429,7 +429,7 @@ export default class CardPlayground extends React.Component {
             </fieldset>
           </span>
 
-          <h4>CardImage</h4>
+          <h3>CardImage</h3>
           <span className="lab-playground__inline-item">
             <fieldset>
               <legend>Show image</legend>
@@ -475,7 +475,7 @@ export default class CardPlayground extends React.Component {
             </fieldset>
           </span>
 
-          <h4>Content</h4>
+          <h3>Content</h3>
           <span className="lab-playground__item" style={{ width: "100%" }}>
             <label htmlFor="cardBodyHTML">
               Children
@@ -493,7 +493,7 @@ export default class CardPlayground extends React.Component {
             </label>
           </span>
 
-          <h4>CardDivider</h4>
+          <h3>CardDivider</h3>
           <span className="lab-playground__inline-item">
             <fieldset>
               <legend>Show divider</legend>
@@ -521,7 +521,7 @@ export default class CardPlayground extends React.Component {
             </fieldset>
           </span>
 
-          <h4>CardAction</h4>
+          <h3>CardAction</h3>
           <span className="lab-playground__item">
             <fieldset>
               <legend>Show Card Actions</legend>
