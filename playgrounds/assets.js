@@ -72,3 +72,9 @@ export const buttonSkinOptions = {
   OutlineButton: ["", "light", "dark"],
   TextButton: ["", "light", "dark"],
 };
+
+export const skinsWithBackground = [
+  "light",
+  "destructive-invert",
+  "confirmation-invert",
+];

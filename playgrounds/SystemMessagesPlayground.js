@@ -91,8 +91,6 @@ export default class SystemMessagesPlayground extends React.Component {
         </div>
 
         <div className="column lab-playground__configs">
-          <h3>Prop Settings</h3>
-
           <span className="lab-playground__item">
             <fieldset>
               <legend>Variation</legend>
