@@ -1,7 +1,7 @@
 .doc-caption {
   color: $black-75;
   font-size: $font-size-5;
-  margin-block-end: $spacing-03;
+  margin-block-end: $spacing-3;
   font-family: $family-sans-serif;
   font-weight: $weight-semibold;
   text-align: left;
@@ -11,8 +11,8 @@
   width: 100%;
 
   th, tr, td {
-    border-left: none !important; 
-    border-right: none !important; 
+    border-left: none !important;
+    border-right: none !important;
     border-top: none !important;
     padding-left: 0 !important;
   }
@@ -34,5 +34,5 @@
 
 .doc-message_elements {
   background-color: $black-50;
-  padding: $spacing-04;
+  padding: $spacing-4;
 }
